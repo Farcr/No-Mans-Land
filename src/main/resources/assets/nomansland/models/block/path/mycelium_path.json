@@ -1,8 +1,0 @@
-{
-  "parent": "nomansland:block/path_template",
-  "textures": {
-    "bottom": "minecraft:block/dirt",
-    "top": "nomandsland:block/path/mycelium_path_top",
-    "side": "nomansland:block/path/mycelium_path_side"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "nomansland:block/path_template",
-  "textures": {
-    "bottom": "minecraft:block/gravel",
-    "top": "nomandsland:block/path/gravel_path_top",
-    "side": "nomansland:block/path/gravel_path_side"
-  }
-}

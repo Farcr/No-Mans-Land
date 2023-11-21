@@ -1,8 +1,8 @@
 {
   "pack": {
     "description": {
-      "text": "No Man's Land Resources"
+      "text": "${mod_id} resources"
     },
-    "pack_format": ${pack_format_number}
+    "pack_format": 15
   }
 }

@@ -1,8 +1,0 @@
-{
-  "parent": "nomansland:block/path_template",
-  "textures": {
-    "bottom": "minecraft:block/dirt",
-    "top": "nomandsland:block/path/podzol_path_top",
-    "side": "nomansland:block/path/podzol_path_side"
-  }
-}
