@@ -1,5 +1,6 @@
 {
 	"credit": "Made by Farcr",
+	"render_type": "minecraft:cutout",
 	"ambientocclusion": false,
 	"textures": {
 		"particle": "#top"

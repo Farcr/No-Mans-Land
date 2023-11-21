@@ -37,8 +37,18 @@ public class NMLBlocks {
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), NMLWoodTypes.PINE));
     public static final RegistryObject<Block> PINE_LEAVES = registerBlock("pine_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
-//     public static final RegistryObject<Block> PINE_SAPLING = registerBlock("pine_sapling",
+    //     public static final RegistryObject<Block> PINE_SAPLING = registerBlock("pine_sapling",
 //        () -> new SaplingBlock(() -> new SaplingBlock(new PineTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING))));
+    public static final RegistryObject<Block> PINE_BUTTON = registerBlock("pine_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON),
+                    NMLBlockSetTypes.PINE, 15, true));
+    public static final RegistryObject<Block> PINE_PRESSURE_PLATE = registerBlock("pine_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
+                    BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), NMLBlockSetTypes.PINE));
+    public static final RegistryObject<Block> PINE_DOOR = registerBlock("pine_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), NMLBlockSetTypes.PINE));
+    public static final RegistryObject<Block> PINE_TRAPDOOR = registerBlock("pine_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), NMLBlockSetTypes.PINE));
 
 
 
