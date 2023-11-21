@@ -1,7 +1,6 @@
 package com.farcr.nomansland.data.client;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -16,7 +15,6 @@ public class NMLBlockStateProvider extends BlockStateProvider {
     }
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(NMLBlocks.PINE_PLANKS);
 
     }
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

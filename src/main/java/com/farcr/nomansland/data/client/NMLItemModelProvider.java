@@ -16,7 +16,20 @@ public class NMLItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-
+//     simplePineBlockItem("pine_planks");
+//     simplePineBlockItem("pine_stairs");
+//     simplePineBlockItem("pine_slab");
+//     simplePineBlockItem("pine_leaves");
+//     simplePineBlockItem("pine_log");
+//     simplePineBlockItem("pine_wood");
+//     simplePineBlockItem("stripped_pine_log");
+//     simplePineBlockItem("stripped_pine_wood");
+//     simplePineBlockItem("pine_button_inventory");
+//     simplePineBlockItem("pine_fence_inventory");
+//     simplePineBlockItem("pine_fence_gate");
+//     simplePineBlockItem("pine_pressure_plate");
+//     simplePineBlockItem("trimmed_pine_planks");
+     //simplePineBlockItem("pine_trapdoor_bottom");
     }
 
     private ItemModelBuilder simpleItem(String parent) {
@@ -34,6 +47,10 @@ public class NMLItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder simpleBlockItem(String parent) {
         return withExistingParent(parent,
                 new ResourceLocation("nomansland:block/" + parent));
+    }
+    private ItemModelBuilder simplePineBlockItem(String parent) {
+        return withExistingParent(parent,
+                new ResourceLocation("nomansland:block/pine/" + parent));
     }
 
     private ItemModelBuilder spawnEggItem(RegistryObject<Item> item) {

@@ -21,13 +21,12 @@ public class NMLItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-//        tag(Tags.Items.EGGS).add(ItemRegistry.UGG_EGG.get());
-//
-//        this.tag(ItemTags.LOGS_THAT_BURN)
-//                .add(NMLBlockRegistry.PINE_LOG.get().asItem())
-//                .add(NMLBlockRegistry.PINE_WOOD.get().asItem())
-//                .add(NMLBlockRegistry.STRIPPED_PINE_LOG.get().asItem())
-//                .add(NMLBlockRegistry.STRIPPED_PINE_WOOD.get().asItem());
+
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .add(NMLBlocks.PINE_LOG.get().asItem())
+                .add(NMLBlocks.PINE_WOOD.get().asItem())
+                .add(NMLBlocks.STRIPPED_PINE_LOG.get().asItem())
+                .add(NMLBlocks.STRIPPED_PINE_WOOD.get().asItem());
 
         this.tag(ItemTags.PLANKS)
                 .add(NMLBlocks.PINE_PLANKS.get().asItem());

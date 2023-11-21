@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "minecraft:block/stripped_oak_log_horizontal",
+      "model": "nomansland:block/pine/stripped_pine_log_horizontal",
       "x": 90,
       "y": 90
     },
     "axis=y": {
-      "model": "minecraft:block/stripped_oak_log"
+      "model": "nomansland:block/pine/stripped_pine_log"
     },
     "axis=z": {
-      "model": "minecraft:block/stripped_oak_log_horizontal",
+      "model": "nomansland:block/pine/stripped_pine_log_horizontal",
       "x": 90
     }
   }
