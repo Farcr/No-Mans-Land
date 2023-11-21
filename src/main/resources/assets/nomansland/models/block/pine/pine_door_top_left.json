@@ -1,0 +1,8 @@
+{
+  "parent": "nomansland:block/alt_door_top_left",
+  "textures": {
+    "bottom": "nomansland:block/pine/pine_door_bottom",
+    "top": "nomansland:block/pine/pine_door_top",
+    "side": "nomansland:block/pine/pine_door_sides"
+  }
+}

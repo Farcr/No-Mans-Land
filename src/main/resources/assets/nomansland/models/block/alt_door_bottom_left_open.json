@@ -1,0 +1,20 @@
+{
+	"credit": "Made by Farcr",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "#bottom"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [3, 16, 16],
+			"faces": {
+				"north": {"uv": [16, 8, 14.5, 16], "texture": "#side", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#bottom"},
+				"south": {"uv": [16, 8, 14.5, 16], "texture": "#side", "cullface": "north"},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#bottom", "cullface": "west"},
+				"down": {"uv": [8, 0, 0, 1.5], "rotation": 90, "texture": "#side", "cullface": "down"}
+			}
+		}
+	]
+}
