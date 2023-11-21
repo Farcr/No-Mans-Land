@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#A",
+        "A#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:granite"
+        },
+        "A": {
+            "item": "nomansland:limestone"
+        }
+    },
+    "result": {
+        "item": "minecraft:dripstone_block",
+        "count": 4
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "nomansland:block/pine/trimmed_pine_planks_top",
+    "side": "nomansland:block/pine/trimmed_pine_planks_lower"
+  }
+}
