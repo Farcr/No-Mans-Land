@@ -1,7 +1,7 @@
 package com.farcr.nomansland.core;
 
-import com.farcr.nomansland.core.registry.NMLBlockRegistry;
-import com.farcr.nomansland.core.registry.NMLItemRegistry;
+import com.farcr.nomansland.core.registry.NMLBlocks;
+import com.farcr.nomansland.core.registry.NMLItems;
 import com.mojang.logging.LogUtils;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -23,9 +23,9 @@ public class NoMansLand {
 
         modEventBus.addListener(this::commonSetup);
 
-        NMLBlockRegistry.BLOCKS.register(modEventBus);
+        NMLBlocks.BLOCKS.register(modEventBus);
 
-        NMLItemRegistry.ITEMS.register(modEventBus);
+        NMLItems.ITEMS.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 

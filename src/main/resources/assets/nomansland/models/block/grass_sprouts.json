@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/tinted_cross",
   "textures": {
-    "cross": "nomansland:block/short_grass"
+    "cross": "nomansland:block/grass_sprouts"
   }
 }
