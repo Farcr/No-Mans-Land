@@ -1,7 +1,8 @@
 package com.farcr.nomansland.core.registry;
 
-import com.farcr.nomansland.core.content.LogBlock;
 import com.farcr.nomansland.core.NoMansLand;
+import com.farcr.nomansland.core.content.LogBlock;
+import com.farcr.nomansland.core.content.PineTreeGrower;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -38,8 +39,8 @@ public class NMLBlocks {
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), NMLWoodTypes.PINE));
     public static final RegistryObject<Block> PINE_LEAVES = registerBlock("pine_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
-    //     public static final RegistryObject<Block> PINE_SAPLING = registerBlock("pine_sapling",
-//        () -> new SaplingBlock(() -> new SaplingBlock(new PineTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING))));
+    public static final RegistryObject<Block> PINE_SAPLING = registerBlock("pine_sapling",
+            () -> new SaplingBlock((new PineTreeGrower()), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<Block> PINE_BUTTON = registerBlock("pine_button",
             () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON),
                     NMLBlockSetTypes.PINE, 15, true));
