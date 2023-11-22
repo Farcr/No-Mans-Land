@@ -74,7 +74,7 @@ public class NMLBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.GREEN_WOOL)));
     public static final RegistryObject<Block> CYAN_DYE_SACK = registerBlock("cyan_dye_sack",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CYAN_WOOL)));
-    public static final RegistryObject<Block> LIGHT_BLUE_DYE_SACK = registerBlock("blue_dye_sack",
+    public static final RegistryObject<Block> LIGHT_BLUE_DYE_SACK = registerBlock("light_blue_dye_sack",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_WOOL)));
     public static final RegistryObject<Block> BLUE_DYE_SACK = registerBlock("blue_dye_sack",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BLUE_WOOL)));
