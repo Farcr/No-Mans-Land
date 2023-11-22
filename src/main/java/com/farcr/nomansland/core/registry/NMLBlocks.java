@@ -51,6 +51,11 @@ public class NMLBlocks {
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), NMLBlockSetTypes.PINE));
     public static final RegistryObject<Block> PINE_TRAPDOOR = registerBlock("pine_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), NMLBlockSetTypes.PINE));
+    //wip stuff under here
+    public static final RegistryObject<Block> PINE_BOOKSHELF = registerBlock("pine_bookshelf",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
+    public static final RegistryObject<Block> TRIMMED_PINE_PLANKS = registerBlock("trimmed_pine_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.PINE_PLANKS.get())));
 
     //Dye Sacks
     public static final RegistryObject<Block> WHITE_DYE_SACK = registerBlock("white_dye_sack",

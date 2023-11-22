@@ -21,6 +21,7 @@ public class NMLItems {
             event.accept(NMLBlocks.PINE_PLANKS);
             event.accept(NMLBlocks.PINE_STAIRS);
             event.accept(NMLBlocks.PINE_SLAB);
+            event.accept(NMLBlocks.TRIMMED_PINE_PLANKS);
             event.accept(NMLBlocks.PINE_FENCE);
             event.accept(NMLBlocks.PINE_FENCE_GATE);
             event.accept(NMLBlocks.PINE_DOOR);
@@ -31,7 +32,10 @@ public class NMLItems {
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(NMLBlocks.PINE_LOG);
             event.accept(NMLBlocks.PINE_LEAVES);
-//            event.accept(NMLBlocks.PINE_SAPLING);
+            event.accept(NMLBlocks.PINE_SAPLING);
+        }
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.accept(NMLBlocks.PINE_BOOKSHELF);
         }
         if(event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             event.accept(NMLBlocks.WHITE_DYE_SACK);
