@@ -1,8 +1,9 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.LogBlock;
-import com.farcr.nomansland.core.content.PineTreeGrower;
+import com.farcr.nomansland.core.content.block.GrassSproutsBlock;
+import com.farcr.nomansland.core.content.block.LogBlock;
+import com.farcr.nomansland.core.content.world.tree.PineTreeGrower;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -98,6 +99,8 @@ public class NMLBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PINK_WOOL)));
 
 
+    public static final RegistryObject<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
+            () -> new GrassSproutsBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

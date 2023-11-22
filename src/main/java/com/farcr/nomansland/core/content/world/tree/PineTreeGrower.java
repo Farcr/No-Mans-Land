@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content;
+package com.farcr.nomansland.core.content.world.tree;
 
 import com.farcr.nomansland.core.NoMansLand;
 import net.minecraft.core.registries.Registries;
