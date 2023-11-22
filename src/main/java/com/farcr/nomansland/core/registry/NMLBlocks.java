@@ -20,7 +20,7 @@ public class NMLBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, NoMansLand.MODID);
 
     public static final RegistryObject<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
-            () -> new GrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+            () -> new GrassSproutsBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
 
     //Pine
     public static final RegistryObject<Block> PINE_PLANKS = registerBlock("pine_planks",
@@ -97,10 +97,6 @@ public class NMLBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MAGENTA_WOOL)));
     public static final RegistryObject<Block> PINK_DYE_SACK = registerBlock("pink_dye_sack",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PINK_WOOL)));
-
-
-    public static final RegistryObject<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
-            () -> new GrassSproutsBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
