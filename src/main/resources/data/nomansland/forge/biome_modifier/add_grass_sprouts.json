@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "nomansland:patch_grass_sprouts_normal"
+  ],
+  "step": "vegetal_decoration"
+}

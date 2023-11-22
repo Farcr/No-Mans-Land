@@ -18,6 +18,9 @@ public class NMLBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, NoMansLand.MODID);
 
+    public static final RegistryObject<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
+            () -> new GrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+
     //Pine
     public static final RegistryObject<Block> PINE_PLANKS = registerBlock("pine_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
@@ -41,6 +44,9 @@ public class NMLBlocks {
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> PINE_SAPLING = registerBlock("pine_sapling",
             () -> new SaplingBlock((new PineTreeGrower()), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> POTTED_PINE_SAPLING = BLOCKS.register("potted_pine_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PINE_SAPLING,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
     public static final RegistryObject<Block> PINE_BUTTON = registerBlock("pine_button",
             () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON),
                     NMLBlockSetTypes.PINE, 15, true));

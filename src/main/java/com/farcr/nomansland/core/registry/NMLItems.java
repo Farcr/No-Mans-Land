@@ -30,6 +30,7 @@ public class NMLItems {
             event.accept(NMLBlocks.PINE_BUTTON);
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(NMLBlocks.GRASS_SPROUTS);
             event.accept(NMLBlocks.PINE_LOG);
             event.accept(NMLBlocks.PINE_LEAVES);
             event.accept(NMLBlocks.PINE_SAPLING);
