@@ -4,6 +4,8 @@ import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.farcr.nomansland.core.registry.NMLFlammability;
 import com.farcr.nomansland.core.registry.NMLItems;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -37,6 +39,9 @@ public class NoMansLand {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             NMLFlammability.init();
+        });
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.PINE_SAPLING.getId(), NMLBlocks.POTTED_PINE_SAPLING);
         });
     }
 

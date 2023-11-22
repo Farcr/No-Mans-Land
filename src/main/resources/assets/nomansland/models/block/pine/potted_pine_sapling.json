@@ -2,6 +2,6 @@
   "parent": "minecraft:block/flower_pot_cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "plant": "minecraft:block/pine/pine_sapling"
+    "plant": "nomansland:block/pine/pine_sapling"
   }
 }
