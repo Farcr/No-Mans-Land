@@ -1,4 +1,4 @@
-package com.farcr.nomansland.common.block;
+package com.farcr.nomansland.core.content;
 
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.core.BlockPos;

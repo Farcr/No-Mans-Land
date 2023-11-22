@@ -1,6 +1,7 @@
 package com.farcr.nomansland.core;
 
 import com.farcr.nomansland.core.registry.NMLBlocks;
+import com.farcr.nomansland.core.registry.NMLFlammability;
 import com.farcr.nomansland.core.registry.NMLItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
@@ -34,6 +35,9 @@ public class NoMansLand {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            NMLFlammability.init();
+        });
     }
 
     @SubscribeEvent

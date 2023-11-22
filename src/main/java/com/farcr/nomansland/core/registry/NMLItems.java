@@ -20,6 +20,7 @@ public class NMLItems {
             event.accept(NMLBlocks.STRIPPED_PINE_WOOD);
             event.accept(NMLBlocks.PINE_PLANKS);
             event.accept(NMLBlocks.PINE_STAIRS);
+            event.accept(NMLBlocks.PINE_SLAB);
             event.accept(NMLBlocks.PINE_FENCE);
             event.accept(NMLBlocks.PINE_FENCE_GATE);
             event.accept(NMLBlocks.PINE_DOOR);

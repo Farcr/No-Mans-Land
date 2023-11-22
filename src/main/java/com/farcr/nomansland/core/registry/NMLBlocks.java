@@ -1,6 +1,6 @@
 package com.farcr.nomansland.core.registry;
 
-import com.farcr.nomansland.common.block.LogBlock;
+import com.farcr.nomansland.core.content.LogBlock;
 import com.farcr.nomansland.core.NoMansLand;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -49,8 +49,6 @@ public class NMLBlocks {
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), NMLBlockSetTypes.PINE));
     public static final RegistryObject<Block> PINE_TRAPDOOR = registerBlock("pine_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), NMLBlockSetTypes.PINE));
-
-
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
