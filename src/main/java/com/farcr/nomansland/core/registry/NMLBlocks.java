@@ -17,6 +17,7 @@ public class NMLBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, NoMansLand.MODID);
 
+    //Pine
     public static final RegistryObject<Block> PINE_PLANKS = registerBlock("pine_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> PINE_STAIRS = registerBlock("pine_stairs",
@@ -49,6 +50,41 @@ public class NMLBlocks {
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), NMLBlockSetTypes.PINE));
     public static final RegistryObject<Block> PINE_TRAPDOOR = registerBlock("pine_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), NMLBlockSetTypes.PINE));
+
+    //Dye Sacks
+    public static final RegistryObject<Block> WHITE_DYE_SACK = registerBlock("white_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
+    public static final RegistryObject<Block> LIGHT_GRAY_DYE_SACK = registerBlock("light_gray_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_WOOL)));
+    public static final RegistryObject<Block> GRAY_DYE_SACK = registerBlock("gray_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRAY_WOOL)));
+    public static final RegistryObject<Block> BLACK_DYE_SACK = registerBlock("black_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BLACK_WOOL)));
+    public static final RegistryObject<Block> BROWN_DYE_SACK = registerBlock("brown_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_WOOL)));
+    public static final RegistryObject<Block> RED_DYE_SACK = registerBlock("red_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.RED_WOOL)));
+    public static final RegistryObject<Block> ORANGE_DYE_SACK = registerBlock("orange_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.ORANGE_WOOL)));
+    public static final RegistryObject<Block> YELLOW_DYE_SACK = registerBlock("yellow_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_WOOL)));
+    public static final RegistryObject<Block> LIME_DYE_SACK = registerBlock("lime_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.LIME_WOOL)));
+    public static final RegistryObject<Block> GREEN_DYE_SACK = registerBlock("green_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GREEN_WOOL)));
+    public static final RegistryObject<Block> CYAN_DYE_SACK = registerBlock("cyan_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CYAN_WOOL)));
+    public static final RegistryObject<Block> LIGHT_BLUE_DYE_SACK = registerBlock("blue_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_WOOL)));
+    public static final RegistryObject<Block> BLUE_DYE_SACK = registerBlock("blue_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BLUE_WOOL)));
+    public static final RegistryObject<Block> PURPLE_DYE_SACK = registerBlock("purple_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.PURPLE_WOOL)));
+    public static final RegistryObject<Block> MAGENTA_DYE_SACK = registerBlock("magenta_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MAGENTA_WOOL)));
+    public static final RegistryObject<Block> PINK_DYE_SACK = registerBlock("pink_dye_sack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.PINK_WOOL)));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

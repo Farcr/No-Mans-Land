@@ -33,6 +33,24 @@ public class NMLItems {
             event.accept(NMLBlocks.PINE_LEAVES);
 //            event.accept(NMLBlocks.PINE_SAPLING);
         }
+        if(event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
+            event.accept(NMLBlocks.WHITE_DYE_SACK);
+            event.accept(NMLBlocks.LIGHT_GRAY_DYE_SACK);
+            event.accept(NMLBlocks.GRAY_DYE_SACK);
+            event.accept(NMLBlocks.BLACK_DYE_SACK);
+            event.accept(NMLBlocks.BROWN_DYE_SACK);
+            event.accept(NMLBlocks.RED_DYE_SACK);
+            event.accept(NMLBlocks.ORANGE_DYE_SACK);
+            event.accept(NMLBlocks.YELLOW_DYE_SACK);
+            event.accept(NMLBlocks.LIME_DYE_SACK);
+            event.accept(NMLBlocks.GREEN_DYE_SACK);
+            event.accept(NMLBlocks.CYAN_DYE_SACK);
+            event.accept(NMLBlocks.LIGHT_BLUE_DYE_SACK);
+            event.accept(NMLBlocks.BLUE_DYE_SACK);
+            event.accept(NMLBlocks.PURPLE_DYE_SACK);
+            event.accept(NMLBlocks.MAGENTA_DYE_SACK);
+            event.accept(NMLBlocks.PINK_DYE_SACK);
+        }
 
 
     }
