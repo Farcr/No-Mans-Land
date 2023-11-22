@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/pine/pine_bookshelf"
+      },
+      {
+        "model": "nomansland:block/pine/pine_bookshelf_alt"
+      }
+    ]
+  }
+}
