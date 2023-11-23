@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "nomansland:block/grass_sprouts"
+      "model": "nomansland:block/plants/grass_sprouts"
     }
   }
 }
