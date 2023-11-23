@@ -22,7 +22,24 @@
   "block.nomansland.pine_sign": "Pine Sign",
   "block.nomansland.pine_wall_sign": "Pine Wall Sign",
   "block.nomansland.pine_hanging_sign": "Pine Hanging Sign",
-  "block.nomansland.pine_wall_hanging_sign": "Pine Hanging Sign",
+  "block.nomansland.pine_wall_hanging_sign": "Pine Wall Hanging Sign",
   "item.nomansland.pine_boat": "Pine Boat",
-  "item.nomansland.pine_chest_boat": "Pine Boat with Chest"
+  "item.nomansland.pine_chest_boat": "Pine Boat with Chest",
+
+  "block.nomansland.white_dye_sack": "White Dye Sack",
+  "block.nomansland.light_gray_dye_sack": "Light Gray Dye Sack",
+  "block.nomansland.gray_dye_sack": "Gray Dye Sack",
+  "block.nomansland.black_dye_sack": "Black Dye Sack",
+  "block.nomansland.brown_dye_sack": "Brown Dye Sack",
+  "block.nomansland.red_dye_sack": "Red Dye Sack",
+  "block.nomansland.orange_dye_sack": "Orange Dye Sack",
+  "block.nomansland.yellow_dye_sack": "Yellow Dye Sack",
+  "block.nomansland.lime_dye_sack": "Lime Dye Sack",
+  "block.nomansland.green_dye_sack": "Green Dye Sack",
+  "block.nomansland.cyan_dye_sack": "Cyan Dye Sack",
+  "block.nomansland.blue_dye_sack": "Blue Dye Sack",
+  "block.nomansland.light_blue_dye_sack": "Light Blue Dye Sack",
+  "block.nomansland.purple_dye_sack": "Purple Dye Sack",
+  "block.nomansland.magenta_dye_sack": "Magenta Dye Sack",
+  "block.nomansland.pink_dye_sack": "Pink Dye Sack"
 }

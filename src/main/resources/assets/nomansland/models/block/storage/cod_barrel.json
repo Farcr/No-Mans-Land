@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "nomansland:block/storage/cod_barrel_top",
+    "bottom": "nomansland:block/storage/cod_barrel_bottom",
+    "side": "nomansland:block/storage/cod_barrel_side"
+  }
+}

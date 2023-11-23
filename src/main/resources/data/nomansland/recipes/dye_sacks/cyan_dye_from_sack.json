@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "nomansland:cyan_dye_sack"
+        }
+    ],
+    "result": {
+        "item": "minecraft:cyan_dye",
+        "count": 9
+    },
+    "group": "dye_from_sacks"
+}

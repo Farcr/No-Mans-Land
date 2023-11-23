@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "nomansland:block/storage/tropical_fish_top",
+    "bottom": "nomansland:block/storage/tropical_fish_bottom",
+    "side": "nomansland:block/storage/tropical_fish_barrel_side"
+  }
+}

@@ -64,6 +64,7 @@ public class NMLBlocks {
     public static final RegistryObject<Block> TRIMMED_PINE_PLANKS = registerBlock("trimmed_pine_planks",
             () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.PINE_PLANKS.get())));
 
+
     //Dye Sacks
     public static final RegistryObject<Block> WHITE_DYE_SACK = registerBlock("white_dye_sack",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
@@ -97,6 +98,7 @@ public class NMLBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MAGENTA_WOOL)));
     public static final RegistryObject<Block> PINK_DYE_SACK = registerBlock("pink_dye_sack",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PINK_WOOL)));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
