@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "nomansland:block/building/polished_stone",
+    "side": "nomansland:block/building/polished_stone_slab"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nomansland:block/building/polished_stone_slab"
+    },
+    "type=double": {
+      "model": "nomansland:block/building/polished_stone_slab_double"
+    },
+    "type=top": {
+      "model": "nomansland:block/building/polished_stone_slab_top"
+    }
+  }
+}

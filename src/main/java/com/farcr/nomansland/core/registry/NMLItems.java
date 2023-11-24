@@ -14,6 +14,11 @@ public class NMLItems {
 
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(NMLBlocks.FADED_STONE_BRICKS);
+            event.accept(NMLBlocks.POLISHED_STONE);
+            event.accept(NMLBlocks.POLISHED_STONE_STAIRS);
+            event.accept(NMLBlocks.POLISHED_STONE_SLAB);
+
             event.accept(NMLBlocks.PINE_LOG);
             event.accept(NMLBlocks.PINE_WOOD);
             event.accept(NMLBlocks.STRIPPED_PINE_LOG);
@@ -31,6 +36,7 @@ public class NMLItems {
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(NMLBlocks.GRASS_SPROUTS);
+
             event.accept(NMLBlocks.PINE_LOG);
             event.accept(NMLBlocks.PINE_LEAVES);
             event.accept(NMLBlocks.PINE_SAPLING);

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/building/faded_stone_bricks_0"
+      },
+      {
+        "model": "nomansland:block/building/faded_stone_bricks_1"
+      },
+      {
+        "model": "nomansland:block/building/faded_stone_bricks_2"
+      },
+      {
+        "model": "nomansland:block/building/faded_stone_bricks_3"
+      }
+	  
+    ]
+  }
+}
