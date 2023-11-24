@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_single_face",
+  "textures": {
+    "texture": "nomansland:block/mushrooms/field_mushroom_block"
+  }
+}

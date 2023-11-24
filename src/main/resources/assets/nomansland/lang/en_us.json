@@ -2,6 +2,10 @@
   "block.nomansland.grass_sprouts": "Grass Sprouts",
   "block.nomansland.pebbles": "Pebbles",
 
+  "block.nomansland.field_mushroom": "Field Mushroom",
+  "block.nomansland.field_mushroom_block": "Field Mushroom Block",
+  "block.nomansland.potted_field_mushroom": "Potted Field Mushroom",
+
   "block.nomansland.faded_stone_bricks": "Faded Stone Bricks",
   "block.nomansland.polished_stone": "Polished Stone",
   "block.nomansland.polished_stone_slab": "Polished Stone Slab",

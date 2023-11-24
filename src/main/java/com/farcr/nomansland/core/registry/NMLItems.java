@@ -36,10 +36,13 @@ public class NMLItems {
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(NMLBlocks.GRASS_SPROUTS);
+            event.accept(NMLBlocks.FIELD_MUSHROOM);
+            event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
 
             event.accept(NMLBlocks.PINE_LOG);
             event.accept(NMLBlocks.PINE_LEAVES);
             event.accept(NMLBlocks.PINE_SAPLING);
+
         }
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(NMLBlocks.PINE_BOOKSHELF);
