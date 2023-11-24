@@ -54,6 +54,9 @@ public class NMLItems {
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(NMLBlocks.PINE_BOOKSHELF);
         }
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(NMLItems.MASHED_POTATOES_WITH_MUSHROOMS);
+        }
         if(event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             event.accept(NMLBlocks.WHITE_DYE_SACK);
             event.accept(NMLBlocks.LIGHT_GRAY_DYE_SACK);
