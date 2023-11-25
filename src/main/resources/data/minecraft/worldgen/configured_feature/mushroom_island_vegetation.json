@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "minecraft:huge_brown_mushroom",
+    "features": [
+      {
+        "chance": 0.33,
+        "feature": "minecraft:huge_red_mushroom"
+      },
+      {
+        "chance": 0.33,
+        "feature": "nomansland:huge_field_mushroom"
+      }
+    ]
+  }
+}

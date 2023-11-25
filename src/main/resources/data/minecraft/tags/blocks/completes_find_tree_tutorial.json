@@ -1,8 +1,3 @@
 {
-  "values": [
-    "nomansland:pine_log",
-    "nomansland:pine_wood",
-    "nomansland:stripped_pine_log",
-    "nomansland:stripped_pine_wood"
-  ]
+  "values": "minecraft:overworld_natural_logs"
 }
