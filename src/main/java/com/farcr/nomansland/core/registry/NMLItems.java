@@ -61,6 +61,7 @@ public class NMLItems {
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(NMLBlocks.GRASS_SPROUTS);
+            event.accept(NMLBlocks.PEBBLES);
             event.accept(NMLBlocks.FIELD_MUSHROOM);
             event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
 

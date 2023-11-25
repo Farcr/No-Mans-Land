@@ -1,0 +1,60 @@
+{
+  "variants": {
+    "": [
+      { "model": "nomansland:block/pebble/pebble_1" },
+	  { "model": "nomansland:block/pebble/pebble_1", "y": 90 },
+      { "model": "nomansland:block/pebble/pebble_1", "y": 180 },
+      { "model": "nomansland:block/pebble/pebble_1", "y": 270 },
+	  
+      { "model": "nomansland:block/pebble/pebble_2" },
+	  { "model": "nomansland:block/pebble/pebble_2", "y": 90 },
+      { "model": "nomansland:block/pebble/pebble_2", "y": 180 },
+      { "model": "nomansland:block/pebble/pebble_2", "y": 270 },
+	  
+      { "model": "nomansland:block/pebble/pebble_3" },
+	  { "model": "nomansland:block/pebble/pebble_3", "y": 90 },
+      { "model": "nomansland:block/pebble/pebble_3", "y": 180 },
+      { "model": "nomansland:block/pebble/pebble_3", "y": 270 },
+	  
+      { "model": "nomansland:block/pebble/pebble_4" },
+	  { "model": "nomansland:block/pebble/pebble_4", "y": 90 },
+      { "model": "nomansland:block/pebble/pebble_4", "y": 180 },
+      { "model": "nomansland:block/pebble/pebble_4", "y": 270 },
+	  
+      { "model": "nomansland:block/pebble/pebble_5" },
+	  { "model": "nomansland:block/pebble/pebble_5", "y": 90 },
+      { "model": "nomansland:block/pebble/pebble_5", "y": 180 },
+      { "model": "nomansland:block/pebble/pebble_5", "y": 270 },
+	  
+      { "model": "nomansland:block/pebble/pebble_6" },
+	  { "model": "nomansland:block/pebble/pebble_6", "y": 90 },
+      { "model": "nomansland:block/pebble/pebble_6", "y": 180 },
+      { "model": "nomansland:block/pebble/pebble_6", "y": 270 },
+	  
+      { "model": "nomansland:block/pebble/pebble_7" },
+	  { "model": "nomansland:block/pebble/pebble_7", "y": 90 },
+      { "model": "nomansland:block/pebble/pebble_7", "y": 180 },
+      { "model": "nomansland:block/pebble/pebble_7", "y": 270 },
+	  
+      { "model": "nomansland:block/pebble/pebble_8" },
+	  { "model": "nomansland:block/pebble/pebble_8", "y": 90 },
+      { "model": "nomansland:block/pebble/pebble_8", "y": 180 },
+      { "model": "nomansland:block/pebble/pebble_8", "y": 270 },
+	  
+      { "model": "nomansland:block/pebble/pebble_9" },
+	  { "model": "nomansland:block/pebble/pebble_9", "y": 90 },
+      { "model": "nomansland:block/pebble/pebble_9", "y": 180 },
+      { "model": "nomansland:block/pebble/pebble_9", "y": 270 },
+	  
+      { "model": "nomansland:block/pebble/pebble_10" },
+	  { "model": "nomansland:block/pebble/pebble_10", "y": 90 },
+      { "model": "nomansland:block/pebble/pebble_10", "y": 180 },
+      { "model": "nomansland:block/pebble/pebble_10", "y": 270 },
+	  
+      { "model": "nomansland:block/pebble/pebble_11" },
+	  { "model": "nomansland:block/pebble/pebble_11", "y": 90 },
+      { "model": "nomansland:block/pebble/pebble_11", "y": 180 },
+      { "model": "nomansland:block/pebble/pebble_11", "y": 270 }
+        ]
+    }
+}

@@ -4,12 +4,15 @@ import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.block.BookshelfBlock;
 import com.farcr.nomansland.core.content.block.GrassSproutsBlock;
 import com.farcr.nomansland.core.content.block.LogBlock;
+import com.farcr.nomansland.core.content.block.PebbleBlock;
 import com.farcr.nomansland.core.content.world.tree.HugeMushrooms;
 import com.farcr.nomansland.core.content.world.tree.PineTreeGrower;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -29,7 +32,10 @@ public class NMLBlocks {
             () -> new HugeMushroomBlock((BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM_BLOCK))));
     public static final RegistryObject<Block> POTTED_FIELD_MUSHROOM = BLOCKS.register("potted_field_mushroom",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.FIELD_MUSHROOM,
-                    BlockBehaviour.Properties.copy(Blocks.POTTED_RED_MUSHROOM).noOcclusion()));godor
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_RED_MUSHROOM).noOcclusion()));
+
+    public static final RegistryObject<Block> PEBBLES = registerBlock("pebbles",
+            () -> new PebbleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noCollission().instabreak().sound(SoundType.STONE).pushReaction(PushReaction.DESTROY)));
 
     //Stone
     public static final RegistryObject<Block> FADED_STONE_BRICKS = registerBlock("faded_stone_bricks",
