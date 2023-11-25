@@ -5,7 +5,7 @@
   "mushroom_fields"
 ],
   "features": [
-    "nomansland:patch_field_mushroom_fields"
+    "nomansland:patch_field_mushroom_extra"
   ],
   "step": "vegetal_decoration"
 }

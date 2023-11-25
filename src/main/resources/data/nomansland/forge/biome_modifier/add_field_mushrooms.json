@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
+  "biomes": "#nomansland:has_field_mushroom",
   "features": [
     "nomansland:patch_field_mushroom_normal"
   ],

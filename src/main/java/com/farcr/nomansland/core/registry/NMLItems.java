@@ -41,22 +41,6 @@ public class NMLItems {
             event.accept(NMLBlocks.PINE_PRESSURE_PLATE);
             event.accept(NMLBlocks.PINE_BUTTON);
         }
-        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-            event.accept(NMLBlocks.GRASS_SPROUTS);
-            event.accept(NMLBlocks.FIELD_MUSHROOM);
-            event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
-
-            event.accept(NMLBlocks.PINE_LOG);
-            event.accept(NMLBlocks.PINE_LEAVES);
-            event.accept(NMLBlocks.PINE_SAPLING);
-
-        }
-        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-            event.accept(NMLBlocks.PINE_BOOKSHELF);
-        }
-        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(NMLItems.MASHED_POTATOES_WITH_MUSHROOMS);
-        }
         if(event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             event.accept(NMLBlocks.WHITE_DYE_SACK);
             event.accept(NMLBlocks.LIGHT_GRAY_DYE_SACK);
@@ -74,6 +58,22 @@ public class NMLItems {
             event.accept(NMLBlocks.PURPLE_DYE_SACK);
             event.accept(NMLBlocks.MAGENTA_DYE_SACK);
             event.accept(NMLBlocks.PINK_DYE_SACK);
+        }
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(NMLBlocks.GRASS_SPROUTS);
+            event.accept(NMLBlocks.FIELD_MUSHROOM);
+            event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
+
+            event.accept(NMLBlocks.PINE_LOG);
+            event.accept(NMLBlocks.PINE_LEAVES);
+            event.accept(NMLBlocks.PINE_SAPLING);
+
+        }
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.accept(NMLBlocks.PINE_BOOKSHELF);
+        }
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(NMLItems.MASHED_POTATOES_WITH_MUSHROOMS);
         }
 
 

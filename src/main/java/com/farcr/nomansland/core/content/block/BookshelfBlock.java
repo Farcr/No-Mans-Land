@@ -1,4 +1,10 @@
 package com.farcr.nomansland.core.content.block;
 
-public class BookshelfBlock {
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+
+public class BookshelfBlock extends Block {
+    public BookshelfBlock(BlockBehaviour.Properties pProperties) {
+        super(pProperties);
+    }
 }

@@ -1,8 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_swamp",
-  "features": [
-    "nomansland:patch_field_mushroom_swamp"
-  ],
-  "step": "vegetal_decoration"
-}
