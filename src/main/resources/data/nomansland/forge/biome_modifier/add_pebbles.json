@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "nomansland:pebbles_checked"
+  ],
+  "step": "underground_decoration"
+}
