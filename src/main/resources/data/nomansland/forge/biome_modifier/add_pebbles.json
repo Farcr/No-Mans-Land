@@ -4,5 +4,5 @@
   "features": [
     "nomansland:pebbles_checked"
   ],
-  "step": "underground_decoration"
+  "step": "local_modifications"
 }
