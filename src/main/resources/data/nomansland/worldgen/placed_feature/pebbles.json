@@ -3,7 +3,7 @@
   "placement": [
     {
       "type": "minecraft:count_on_every_layer",
-      "count": 2
+      "count": 1
     },
     {
       "type": "minecraft:environment_scan",
@@ -30,8 +30,8 @@
           {
             "type": "minecraft:not",
             "predicate": {
-              "type": "minecraft:matching_blocks",
-              "blocks": "minecraft:ice"
+              "type": "minecraft:matching_block_tag",
+              "tag":"nomansland:pebbles_cant_spawn_on"
             }
           }
         ]
