@@ -16,8 +16,13 @@ public class NMLItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, NoMansLand.MODID);
 
+    public static final RegistryObject<Item> NO_MANS_GLOBE = registerItem("no_mans_globe",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> MASHED_POTATOES_WITH_MUSHROOMS = registerItem("mashed_potatoes_with_mushrooms",
             () -> new BowlFoodItem(new Item.Properties().food(NMLFoods.MASHED_POTATOES_WITH_MUSHROOMS)));
+    public static final RegistryObject<Item> GRILLED_MUSHROOMS = registerItem("grilled_mushrooms",
+            () -> new Item(new Item.Properties().food(NMLFoods.GRILLED_MUSHROOMS)));
 
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
@@ -40,6 +45,11 @@ public class NMLItems {
             event.accept(NMLBlocks.PINE_TRAPDOOR);
             event.accept(NMLBlocks.PINE_PRESSURE_PLATE);
             event.accept(NMLBlocks.PINE_BUTTON);
+
+            event.accept(NMLBlocks.COD_BARREL);
+            event.accept(NMLBlocks.SALMON_BARREL);
+            event.accept(NMLBlocks.PUFFERFISH_BARREL);
+            event.accept(NMLBlocks.TROPICAL_FISH_BARREL);
         }
         if(event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             event.accept(NMLBlocks.WHITE_DYE_SACK);
@@ -75,6 +85,7 @@ public class NMLItems {
         }
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(NMLItems.MASHED_POTATOES_WITH_MUSHROOMS);
+            event.accept(NMLItems.GRILLED_MUSHROOMS);
         }
 
 

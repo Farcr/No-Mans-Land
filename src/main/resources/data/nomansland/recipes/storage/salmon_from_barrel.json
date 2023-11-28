@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "nomansland:salmon_barrel"
+        }
+    ],
+    "result": {
+        "item": "minecraft:salmon",
+        "count": 9
+    },
+    "group": "fish_barrels"
+}

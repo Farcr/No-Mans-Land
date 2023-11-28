@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:cod"
+        }
+    },
+    "result": {
+        "item": "nomansland:cod_barrel",
+        "count": 1
+    },
+    "group": "fish_barrels"
+}

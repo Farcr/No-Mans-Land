@@ -125,6 +125,17 @@ public class NMLBlocks {
     public static final RegistryObject<Block> PINK_DYE_SACK = registerBlock("pink_dye_sack",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PINK_WOOL)));
 
+    //Storage
+    public static final RegistryObject<Block> COD_BARREL = registerBlock("cod_barrel",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+    public static final RegistryObject<Block> SALMON_BARREL = registerBlock("salmon_barrel",
+            () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.COD_BARREL.get())));
+    public static final RegistryObject<Block> PUFFERFISH_BARREL = registerBlock("pufferfish_barrel",
+            () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.COD_BARREL.get())));
+    public static final RegistryObject<Block> TROPICAL_FISH_BARREL = registerBlock("tropical_fish_barrel",
+            () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.COD_BARREL.get())));
+
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
