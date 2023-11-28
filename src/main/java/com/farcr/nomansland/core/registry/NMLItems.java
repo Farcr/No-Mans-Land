@@ -1,16 +1,28 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
+import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Supplier;
 
 public class NMLItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, NoMansLand.MODID);
+
+    public static final RegistryObject<Item> NO_MANS_GLOBE = registerItem("no_mans_globe",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> MASHED_POTATOES_WITH_MUSHROOMS = registerItem("mashed_potatoes_with_mushrooms",
+            () -> new BowlFoodItem(new Item.Properties().food(NMLFoods.MASHED_POTATOES_WITH_MUSHROOMS)));
+    public static final RegistryObject<Item> GRILLED_MUSHROOMS = registerItem("grilled_mushrooms",
+            () -> new Item(new Item.Properties().food(NMLFoods.GRILLED_MUSHROOMS)));
 
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
@@ -33,19 +45,11 @@ public class NMLItems {
             event.accept(NMLBlocks.PINE_TRAPDOOR);
             event.accept(NMLBlocks.PINE_PRESSURE_PLATE);
             event.accept(NMLBlocks.PINE_BUTTON);
-        }
-        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-            event.accept(NMLBlocks.GRASS_SPROUTS);
-            event.accept(NMLBlocks.FIELD_MUSHROOM);
-            event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
 
-            event.accept(NMLBlocks.PINE_LOG);
-            event.accept(NMLBlocks.PINE_LEAVES);
-            event.accept(NMLBlocks.PINE_SAPLING);
-
-        }
-        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-            event.accept(NMLBlocks.PINE_BOOKSHELF);
+            event.accept(NMLBlocks.COD_BARREL);
+            event.accept(NMLBlocks.SALMON_BARREL);
+            event.accept(NMLBlocks.PUFFERFISH_BARREL);
+            event.accept(NMLBlocks.TROPICAL_FISH_BARREL);
         }
         if(event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             event.accept(NMLBlocks.WHITE_DYE_SACK);
@@ -65,8 +69,30 @@ public class NMLItems {
             event.accept(NMLBlocks.MAGENTA_DYE_SACK);
             event.accept(NMLBlocks.PINK_DYE_SACK);
         }
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(NMLBlocks.GRASS_SPROUTS);
+            event.accept(NMLBlocks.PEBBLES);
+            event.accept(NMLBlocks.FIELD_MUSHROOM);
+            event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
+
+            event.accept(NMLBlocks.PINE_LOG);
+            event.accept(NMLBlocks.PINE_LEAVES);
+            event.accept(NMLBlocks.PINE_SAPLING);
+
+        }
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.accept(NMLBlocks.PINE_BOOKSHELF);
+        }
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(NMLItems.MASHED_POTATOES_WITH_MUSHROOMS);
+            event.accept(NMLItems.GRILLED_MUSHROOMS);
+        }
 
 
+    }
+    private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<T> item) {
+        RegistryObject<T> toReturn = ITEMS.register(name, item);
+        return toReturn;
     }
 
     public static void register(IEventBus eventBus) {

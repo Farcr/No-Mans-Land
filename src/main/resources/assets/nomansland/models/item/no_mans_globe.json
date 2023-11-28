@@ -1,0 +1,42 @@
+{
+	"credit": "Made by Farcr",
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "nomansland:item/no_mans_globe",
+		"particle": "nomansland:item/no_mans_globe"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 8, 8, 16], "texture": "#0"},
+				"west": {"uv": [8, 8, 16, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 8, 8], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "cube_outline",
+			"from": [17, 17, 17],
+			"to": [-1, -1, -1],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [8, 0, 16, 8], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [8, 0, 16, 8], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [8, 0, 16, 8], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [8, 0, 16, 8], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [8, 0, 16, 8], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [8, 0, 16, 8], "rotation": 180, "texture": "#0"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"gui": {
+			"rotation": [30, 135, 0],
+			"scale": [0.625, 0.625, 0.625]
+		}
+	}
+}

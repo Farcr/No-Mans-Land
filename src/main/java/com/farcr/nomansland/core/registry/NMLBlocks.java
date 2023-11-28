@@ -1,14 +1,18 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
+import com.farcr.nomansland.core.content.block.BookshelfBlock;
 import com.farcr.nomansland.core.content.block.GrassSproutsBlock;
 import com.farcr.nomansland.core.content.block.LogBlock;
+import com.farcr.nomansland.core.content.block.PebbleBlock;
 import com.farcr.nomansland.core.content.world.tree.HugeMushrooms;
 import com.farcr.nomansland.core.content.world.tree.PineTreeGrower;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -29,6 +33,9 @@ public class NMLBlocks {
     public static final RegistryObject<Block> POTTED_FIELD_MUSHROOM = BLOCKS.register("potted_field_mushroom",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.FIELD_MUSHROOM,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_RED_MUSHROOM).noOcclusion()));
+
+    public static final RegistryObject<Block> PEBBLES = registerBlock("pebbles",
+            () -> new PebbleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noCollission().instabreak().sound(SoundType.STONE).pushReaction(PushReaction.DESTROY)));
 
     //Stone
     public static final RegistryObject<Block> FADED_STONE_BRICKS = registerBlock("faded_stone_bricks",
@@ -79,7 +86,7 @@ public class NMLBlocks {
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), NMLBlockSetTypes.PINE));
     //wip stuff under here
     public static final RegistryObject<Block> PINE_BOOKSHELF = registerBlock("pine_bookshelf",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
+            () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_PINE_PLANKS = registerBlock("trimmed_pine_planks",
             () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.PINE_PLANKS.get())));
 
@@ -117,6 +124,17 @@ public class NMLBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MAGENTA_WOOL)));
     public static final RegistryObject<Block> PINK_DYE_SACK = registerBlock("pink_dye_sack",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PINK_WOOL)));
+
+    //Storage
+    public static final RegistryObject<Block> COD_BARREL = registerBlock("cod_barrel",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+    public static final RegistryObject<Block> SALMON_BARREL = registerBlock("salmon_barrel",
+            () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.COD_BARREL.get())));
+    public static final RegistryObject<Block> PUFFERFISH_BARREL = registerBlock("pufferfish_barrel",
+            () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.COD_BARREL.get())));
+    public static final RegistryObject<Block> TROPICAL_FISH_BARREL = registerBlock("tropical_fish_barrel",
+            () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.COD_BARREL.get())));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -35,6 +35,12 @@
   "item.nomansland.pine_boat": "Pine Boat",
   "item.nomansland.pine_chest_boat": "Pine Boat with Chest",
 
+  "block.nomansland.cod_barrel": "Cod Barrel",
+  "block.nomansland.salmon_barrel": "Salmon Barrel",
+  "block.nomansland.tropical_fish_barrel": "Tropical Fish Barrel",
+  "block.nomansland.pufferfish_barrel": "Pufferfish Barrel",
+  "block.nomansland.gunpowder_barrel": "Gunpowder Barrel",
+
   "block.nomansland.white_dye_sack": "White Dye Sack",
   "block.nomansland.light_gray_dye_sack": "Light Gray Dye Sack",
   "block.nomansland.gray_dye_sack": "Gray Dye Sack",
@@ -50,5 +56,9 @@
   "block.nomansland.light_blue_dye_sack": "Light Blue Dye Sack",
   "block.nomansland.purple_dye_sack": "Purple Dye Sack",
   "block.nomansland.magenta_dye_sack": "Magenta Dye Sack",
-  "block.nomansland.pink_dye_sack": "Pink Dye Sack"
+  "block.nomansland.pink_dye_sack": "Pink Dye Sack",
+
+  "item.nomansland.mashed_potatoes_with_mushrooms": "Mashed Potatoes with Mushrooms",
+
+  "item.nomansland.no_mans_globe": "No Man's Globe"
 }

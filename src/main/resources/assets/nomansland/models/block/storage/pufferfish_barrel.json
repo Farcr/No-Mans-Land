@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "top": "nomansland:block/storage/pufferfish_top",
-    "bottom": "nomansland:block/storage/pufferfish_bottom",
+    "top": "nomansland:block/storage/pufferfish_barrel_top",
+    "bottom": "nomansland:block/storage/pufferfish_barrel_bottom",
     "side": "nomansland:block/storage/pufferfish_barrel_side"
   }
 }

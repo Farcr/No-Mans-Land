@@ -6,11 +6,11 @@
     "targets": [
       {
         "target": {
-          "predicate_type": "minecraft:block_match",
-          "block": "minecraft:dirt"
+          "predicate_type": "minecraft:tag_match",
+          "tag": "nomansland:riverbed_replaceable"
         },
         "state": {
-          "Name": "minecraft:sand"
+          "Name": "minecraft:gravel"
         }
       }
     ]

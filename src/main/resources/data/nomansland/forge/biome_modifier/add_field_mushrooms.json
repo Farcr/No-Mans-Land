@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#nomansland:has_field_mushroom",
+  "features": [
+    "nomansland:patch_field_mushroom_normal"
+  ],
+  "step": "vegetal_decoration"
+}

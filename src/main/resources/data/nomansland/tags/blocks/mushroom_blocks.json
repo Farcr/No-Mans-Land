@@ -3,6 +3,6 @@
     "minecraft:mushroom_stem",
     "minecraft:red_mushroom_block",
     "minecraft:brown_mushroom_block",
-    "nomansland_field_mushroom_block"
+    "nomansland:field_mushroom_block"
   ]
 }
