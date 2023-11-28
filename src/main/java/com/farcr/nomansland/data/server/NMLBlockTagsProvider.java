@@ -1,11 +1,8 @@
 package com.farcr.nomansland.data.server;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.tags.BlockTags;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -51,10 +48,10 @@ public class NMLBlockTagsProvider extends BlockTagsProvider {
 //              .add(NMLBlocks.PINE_WOOD.get())
 //              .add(NMLBlocks.STRIPPED_PINE_LOG.get())
 //              .add(NMLBlocks.STRIPPED_PINE_WOOD.get());
-              this.tag(BlockTags.FENCES)
-              .add(NMLBlocks.PINE_FENCE.get());
-               this.tag(Tags.Blocks.FENCES_WOODEN)
-                .add(NMLBlocks.PINE_FENCE.get());
+//              this.tag(BlockTags.FENCES)
+//              .add(NMLBlocks.PINE_FENCE.get());
+//               this.tag(Tags.Blocks.FENCES_WOODEN)
+//                .add(NMLBlocks.PINE_FENCE.get());
 //
 //        this.tag(BlockTags.PLANKS)
 //                .add(NMLBlocks.PINE_PLANKS.get());

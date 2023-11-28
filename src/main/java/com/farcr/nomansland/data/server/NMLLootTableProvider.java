@@ -1,6 +1,5 @@
 package com.farcr.nomansland.data.server;
 
-import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -19,7 +18,25 @@ public class NMLLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-//        dropSelf(NMLBlocks.GRASS_SPROUTS.get());
+        dropSelf(NMLBlocks.COD_BARREL.get());
+        dropSelf(NMLBlocks.PUFFERFISH_BARREL.get());
+        dropSelf(NMLBlocks.SALMON_BARREL.get());
+        dropSelf(NMLBlocks.TROPICAL_FISH_BARREL.get());
+        dropSelf(NMLBlocks.RED_DYE_SACK.get());
+        dropSelf(NMLBlocks.PINK_DYE_SACK.get());
+        dropSelf(NMLBlocks.ORANGE_DYE_SACK.get());
+        dropSelf(NMLBlocks.YELLOW_DYE_SACK.get());
+        dropSelf(NMLBlocks.LIME_DYE_SACK.get());
+        dropSelf(NMLBlocks.GREEN_DYE_SACK.get());
+        dropSelf(NMLBlocks.CYAN_DYE_SACK.get());
+        dropSelf(NMLBlocks.BLUE_DYE_SACK.get());
+        dropSelf(NMLBlocks.LIGHT_BLUE_DYE_SACK.get());
+        dropSelf(NMLBlocks.MAGENTA_DYE_SACK.get());
+        dropSelf(NMLBlocks.PURPLE_DYE_SACK.get());
+        dropSelf(NMLBlocks.BLACK_DYE_SACK.get());
+        dropSelf(NMLBlocks.WHITE_DYE_SACK.get());
+        dropSelf(NMLBlocks.LIGHT_GRAY_DYE_SACK.get());
+        dropSelf(NMLBlocks.BROWN_DYE_SACK.get());
     }
 
     @Override

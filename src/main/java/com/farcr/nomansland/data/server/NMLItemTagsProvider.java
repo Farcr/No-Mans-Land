@@ -1,11 +1,9 @@
 package com.farcr.nomansland.data.server;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -22,14 +20,14 @@ public class NMLItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
 
-        this.tag(ItemTags.LOGS_THAT_BURN)
-                .add(NMLBlocks.PINE_LOG.get().asItem())
-                .add(NMLBlocks.PINE_WOOD.get().asItem())
-                .add(NMLBlocks.STRIPPED_PINE_LOG.get().asItem())
-                .add(NMLBlocks.STRIPPED_PINE_WOOD.get().asItem());
+//        this.tag(ItemTags.LOGS_THAT_BURN)
+//                .add(NMLBlocks.PINE_LOG.get().asItem())
+//                .add(NMLBlocks.PINE_WOOD.get().asItem())
+//                .add(NMLBlocks.STRIPPED_PINE_LOG.get().asItem())
+//                .add(NMLBlocks.STRIPPED_PINE_WOOD.get().asItem());
 
-        this.tag(ItemTags.PLANKS)
-                .add(NMLBlocks.PINE_PLANKS.get().asItem());
+//        this.tag(ItemTags.PLANKS)
+//                .add(NMLBlocks.PINE_PLANKS.get().asItem());
     }
 }
 
