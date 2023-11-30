@@ -27,7 +27,7 @@ public class NMLBlocks {
     public static final RegistryObject<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
             () -> new GrassSproutsBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
     public static final RegistryObject<Block> FIELD_MUSHROOM = registerBlock("field_mushroom",
-            () -> new MushroomBlock((BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM)), HugeMushrooms.HUGE_FIELD_MUSHROOM));
+            () -> new MushroomBlock((BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).mapColor(MapColor.TERRACOTTA_WHITE)), HugeMushrooms.HUGE_FIELD_MUSHROOM));
     public static final RegistryObject<Block> FIELD_MUSHROOM_BLOCK = registerBlock("field_mushroom_block",
             () -> new HugeMushroomBlock((BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM_BLOCK))));
     public static final RegistryObject<Block> POTTED_FIELD_MUSHROOM = BLOCKS.register("potted_field_mushroom",

@@ -1,6 +1,8 @@
 {
   "values": [
     "minecraft:ice",
+    "minecraft:packed_ice",
+    "minecraft:blue_ice",
     "minecraft:sand",
     "minecraft:sandstone",
     "minecraft:red_sand",
