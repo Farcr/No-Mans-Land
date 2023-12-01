@@ -1,6 +1,7 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
+import com.google.common.collect.Sets;
 import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
@@ -10,13 +11,17 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.LinkedHashSet;
 import java.util.function.Supplier;
 
 public class NMLItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, NoMansLand.MODID);
 
-    public static final RegistryObject<Item> NO_MANS_GLOBE = registerItem("no_mans_globe",
+    public static LinkedHashSet<RegistryObject<Item>> CREATIVE_TAB_ITEMS =
+            Sets.newLinkedHashSet();
+
+    public static final RegistryObject<Item> NO_MANS_GLOBE = ITEMS.register("no_mans_globe",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> MASHED_POTATOES_WITH_MUSHROOMS = registerItem("mashed_potatoes_with_mushrooms",
@@ -25,7 +30,7 @@ public class NMLItems {
             () -> new Item(new Item.Properties().food(NMLFoods.GRILLED_MUSHROOMS)));
 
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(NMLBlocks.FADED_STONE_BRICKS);
             event.accept(NMLBlocks.POLISHED_STONE);
             event.accept(NMLBlocks.POLISHED_STONE_STAIRS);
@@ -51,7 +56,7 @@ public class NMLItems {
             event.accept(NMLBlocks.PUFFERFISH_BARREL);
             event.accept(NMLBlocks.TROPICAL_FISH_BARREL);
         }
-        if(event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
+        if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             event.accept(NMLBlocks.WHITE_DYE_SACK);
             event.accept(NMLBlocks.LIGHT_GRAY_DYE_SACK);
             event.accept(NMLBlocks.GRAY_DYE_SACK);
@@ -69,7 +74,7 @@ public class NMLItems {
             event.accept(NMLBlocks.MAGENTA_DYE_SACK);
             event.accept(NMLBlocks.PINK_DYE_SACK);
         }
-        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(NMLBlocks.GRASS_SPROUTS);
             event.accept(NMLBlocks.PEBBLES);
             event.accept(NMLBlocks.FIELD_MUSHROOM);
@@ -80,18 +85,19 @@ public class NMLItems {
             event.accept(NMLBlocks.PINE_SAPLING);
 
         }
-        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(NMLBlocks.PINE_BOOKSHELF);
         }
-        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(NMLItems.MASHED_POTATOES_WITH_MUSHROOMS);
             event.accept(NMLItems.GRILLED_MUSHROOMS);
         }
 
 
     }
-    private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<T> item) {
-        RegistryObject<T> toReturn = ITEMS.register(name, item);
+    public static RegistryObject<Item> registerItem(final String name, final Supplier<Item> supplier) {
+        RegistryObject<Item> toReturn = ITEMS.register(name, supplier);
+        CREATIVE_TAB_ITEMS.add(toReturn);
         return toReturn;
     }
 
