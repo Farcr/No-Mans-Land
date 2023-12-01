@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "nomansland:block/vanilla_woods/trimmed_oak_planks_top",
+    "side": "nomansland:block/vanilla_woods/trimmed_oak_planks"
+  }
+}

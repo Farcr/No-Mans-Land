@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "minecraft:block/dark_oak_planks",
+    "side": "nomansland:block/vanilla_woods/dark_oak_bookshelf_alt"
+  }
+}
