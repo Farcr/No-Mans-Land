@@ -73,47 +73,7 @@ public class NMLItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("nomansland:block/pine/" + parent));
     }
 
-    private ItemModelBuilder simpleAcaciaItem(String parent) {
-        return withExistingParent(parent,
-                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
-    }
-
-    private ItemModelBuilder simpleOakItem(String parent) {
-        return withExistingParent(parent,
-                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
-    }
-
-    private ItemModelBuilder simpleBirchItem(String parent) {
-        return withExistingParent(parent,
-                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
-    }
-
-    private ItemModelBuilder simpleDarkOakItem(String parent) {
-        return withExistingParent(parent,
-                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
-    }
-
-    private ItemModelBuilder simpleCrimsonItem(String parent) {
-        return withExistingParent(parent,
-                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
-    }
-
-    private ItemModelBuilder simpleWarpedItem(String parent) {
-        return withExistingParent(parent,
-                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
-    }
-
-    private ItemModelBuilder simpleBambooItem(String parent) {
-        return withExistingParent(parent,
-                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
-    }
-
-    private ItemModelBuilder simpleCherryItem(String parent) {
-        return withExistingParent(parent,
-                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
-    }
-
-    private ItemModelBuilder simpleJungleItem(String parent) {
+    private ItemModelBuilder simpleVanillaWoodItem(String parent) {
         return withExistingParent(parent,
                 new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
     }
