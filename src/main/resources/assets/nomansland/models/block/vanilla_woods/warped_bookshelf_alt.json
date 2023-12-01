@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "minecraft:block/warped_planks",
+    "side": "nomansland:block/vanilla_woods/warped_bookshelf_alt"
+  }
+}

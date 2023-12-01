@@ -37,16 +37,6 @@ public class NMLLootTableProvider extends BlockLootSubProvider {
 //        dropSelf(NMLBlocks.WHITE_DYE_SACK.get());
 //        dropSelf(NMLBlocks.LIGHT_GRAY_DYE_SACK.get());
 //        dropSelf(NMLBlocks.BROWN_DYE_SACK.get());
-        dropSelf(NMLBlocks.TRIMMED_ACACIA_PLANKS.get());
-        dropSelf(NMLBlocks.TRIMMED_CHERRY_PLANKS.get());
-        dropSelf(NMLBlocks.TRIMMED_CRIMSON_PLANKS.get());
-        dropSelf(NMLBlocks.TRIMMED_JUNGLE_PLANKS.get());
-        dropSelf(NMLBlocks.TRIMMED_DARK_OAK_PLANKS.get());
-        dropSelf(NMLBlocks.TRIMMED_MANGROVE_PLANKS.get());
-        dropSelf(NMLBlocks.TRIMMED_WARPED_PLANKS.get());
-        dropSelf(NMLBlocks.TRIMMED_OAK_PLANKS.get());
-        dropSelf(NMLBlocks.TRIMMED_SPRUCE_PLANKS.get());
-        dropSelf(NMLBlocks.TRIMMED_BIRCH_PLANKS.get());
 
 
     }

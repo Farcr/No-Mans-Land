@@ -16,6 +16,24 @@ public class NMLItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleCherryItem("cherry_bookshelf");
+        simpleCherryItem("trimmed_cherry_planks");
+        simpleBambooItem("bamboo_bookshelf");
+        simpleBambooItem("trimmed_bamboo_planks");
+        simpleAcaciaItem("acacia_bookshelf");
+        simpleAcaciaItem("trimmed_acacia_planks");
+        simpleOakItem("trimmed_oak_planks");
+        simpleDarkOakItem("dark_oak_bookshelf");
+        simpleDarkOakItem("trimmed_dark_oak_planks");
+        simpleCrimsonItem("crimson_bookshelf");
+        simpleCrimsonItem("trimmed_crimson_planks");
+        simpleJungleItem("jungle_bookshelf");
+        simpleJungleItem("trimmed_jungle_planks");
+        simpleBirchItem("birch_bookshelf");
+        simpleBirchItem("trimmed_birch_planks");
+        simpleWarpedItem("warped_bookshelf");
+        simpleWarpedItem("trimmed_warped_planks");
+
 //     simplePineBlockItem("pine_planks");
 //     simplePineBlockItem("pine_stairs");
 //     simplePineBlockItem("pine_slab");
@@ -29,7 +47,7 @@ public class NMLItemModelProvider extends ItemModelProvider {
 //     simplePineBlockItem("pine_fence_gate");
 //     simplePineBlockItem("pine_pressure_plate");
 //     simplePineBlockItem("trimmed_pine_planks");
-     //simplePineBlockItem("pine_trapdoor_bottom");
+        //simplePineBlockItem("pine_trapdoor_bottom");
 
     }
 
@@ -49,10 +67,57 @@ public class NMLItemModelProvider extends ItemModelProvider {
         return withExistingParent(parent,
                 new ResourceLocation("nomansland:block/" + parent));
     }
+
     private ItemModelBuilder simplePineBlockItem(String parent) {
         return withExistingParent(parent,
                 new ResourceLocation("nomansland:block/pine/" + parent));
     }
+
+    private ItemModelBuilder simpleAcaciaItem(String parent) {
+        return withExistingParent(parent,
+                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
+    }
+
+    private ItemModelBuilder simpleOakItem(String parent) {
+        return withExistingParent(parent,
+                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
+    }
+
+    private ItemModelBuilder simpleBirchItem(String parent) {
+        return withExistingParent(parent,
+                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
+    }
+
+    private ItemModelBuilder simpleDarkOakItem(String parent) {
+        return withExistingParent(parent,
+                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
+    }
+
+    private ItemModelBuilder simpleCrimsonItem(String parent) {
+        return withExistingParent(parent,
+                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
+    }
+
+    private ItemModelBuilder simpleWarpedItem(String parent) {
+        return withExistingParent(parent,
+                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
+    }
+
+    private ItemModelBuilder simpleBambooItem(String parent) {
+        return withExistingParent(parent,
+                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
+    }
+
+    private ItemModelBuilder simpleCherryItem(String parent) {
+        return withExistingParent(parent,
+                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
+    }
+
+    private ItemModelBuilder simpleJungleItem(String parent) {
+        return withExistingParent(parent,
+                new ResourceLocation("nomansland:block/vanilla_woods/" + parent));
+    }
+
 
     private ItemModelBuilder spawnEggItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
