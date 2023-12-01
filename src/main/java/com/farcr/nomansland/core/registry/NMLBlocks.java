@@ -7,6 +7,7 @@ import com.farcr.nomansland.core.content.block.LogBlock;
 import com.farcr.nomansland.core.content.block.PebbleBlock;
 import com.farcr.nomansland.core.content.world.tree.HugeMushrooms;
 import com.farcr.nomansland.core.content.world.tree.PineTreeGrower;
+import com.google.common.collect.Sets;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -18,11 +19,14 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.LinkedHashSet;
 import java.util.function.Supplier;
 
 public class NMLBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, NoMansLand.MODID);
+
+    public static LinkedHashSet<RegistryObject<Item>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
 
     public static final RegistryObject<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
             () -> new GrassSproutsBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
@@ -177,7 +181,7 @@ public class NMLBlocks {
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn);
+        CREATIVE_TAB_ITEMS.add(registerBlockItem(name, toReturn));
         return toReturn;
     }
 

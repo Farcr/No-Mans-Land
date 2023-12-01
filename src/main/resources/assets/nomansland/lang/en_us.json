@@ -60,5 +60,6 @@
 
   "item.nomansland.mashed_potatoes_with_mushrooms": "Mashed Potatoes with Mushrooms",
 
-  "item.nomansland.no_mans_globe": "No Man's Globe"
+  "item.nomansland.no_mans_globe": "No Man's Globe",
+  "itemGroup.nomansland": "No Man's land"
 }
