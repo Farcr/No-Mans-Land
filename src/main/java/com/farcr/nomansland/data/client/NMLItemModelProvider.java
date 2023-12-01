@@ -16,24 +16,6 @@ public class NMLItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleCherryItem("cherry_bookshelf");
-        simpleCherryItem("trimmed_cherry_planks");
-        simpleBambooItem("bamboo_bookshelf");
-        simpleBambooItem("trimmed_bamboo_planks");
-        simpleAcaciaItem("acacia_bookshelf");
-        simpleAcaciaItem("trimmed_acacia_planks");
-        simpleOakItem("trimmed_oak_planks");
-        simpleDarkOakItem("dark_oak_bookshelf");
-        simpleDarkOakItem("trimmed_dark_oak_planks");
-        simpleCrimsonItem("crimson_bookshelf");
-        simpleCrimsonItem("trimmed_crimson_planks");
-        simpleJungleItem("jungle_bookshelf");
-        simpleJungleItem("trimmed_jungle_planks");
-        simpleBirchItem("birch_bookshelf");
-        simpleBirchItem("trimmed_birch_planks");
-        simpleWarpedItem("warped_bookshelf");
-        simpleWarpedItem("trimmed_warped_planks");
-
 //     simplePineBlockItem("pine_planks");
 //     simplePineBlockItem("pine_stairs");
 //     simplePineBlockItem("pine_slab");
