@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bookshelves",
+  "key": {
+    "#": {
+      "item": "minecraft:birch_planks"
+    },
+    "X": {
+      "item": "minecraft:book"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "item": "nomansland:birch_bookshelf"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bookshelves",
+  "key": {
+    "#": {
+      "item": "minecraft::jungle_planks"
+    },
+    "X": {
+      "item": "minecraft:book"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "item": "nomansland:jungle_bookshelf"
+  },
+  "show_notification": true
+}

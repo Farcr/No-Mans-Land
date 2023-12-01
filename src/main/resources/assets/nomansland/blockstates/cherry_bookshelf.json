@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/vanilla_woods/cherry_bookshelf"
+      },
+      {
+        "model": "nomansland:block/vanilla_woods/cherry_bookshelf_alt"
+      }
+    ]
+  }
+}

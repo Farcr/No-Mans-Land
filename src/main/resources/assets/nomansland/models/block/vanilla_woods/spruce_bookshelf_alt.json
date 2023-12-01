@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "minecraft:block/spruce_planks",
+    "side": "nomansland:block/vanilla_woods/spruce_bookshelf_alt"
+  }
+}

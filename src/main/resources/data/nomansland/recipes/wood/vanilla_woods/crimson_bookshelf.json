@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bookshelves",
+  "key": {
+    "#": {
+      "item": "minecraft:crimson_planks"
+    },
+    "X": {
+      "item": "minecraft:book"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "item": "nomansland:crimson_bookshelf"
+  },
+  "show_notification": true
+}

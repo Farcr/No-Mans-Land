@@ -18,25 +18,37 @@ public class NMLLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(NMLBlocks.COD_BARREL.get());
-        dropSelf(NMLBlocks.PUFFERFISH_BARREL.get());
-        dropSelf(NMLBlocks.SALMON_BARREL.get());
-        dropSelf(NMLBlocks.TROPICAL_FISH_BARREL.get());
-        dropSelf(NMLBlocks.RED_DYE_SACK.get());
-        dropSelf(NMLBlocks.PINK_DYE_SACK.get());
-        dropSelf(NMLBlocks.ORANGE_DYE_SACK.get());
-        dropSelf(NMLBlocks.YELLOW_DYE_SACK.get());
-        dropSelf(NMLBlocks.LIME_DYE_SACK.get());
-        dropSelf(NMLBlocks.GREEN_DYE_SACK.get());
-        dropSelf(NMLBlocks.CYAN_DYE_SACK.get());
-        dropSelf(NMLBlocks.BLUE_DYE_SACK.get());
-        dropSelf(NMLBlocks.LIGHT_BLUE_DYE_SACK.get());
-        dropSelf(NMLBlocks.MAGENTA_DYE_SACK.get());
-        dropSelf(NMLBlocks.PURPLE_DYE_SACK.get());
-        dropSelf(NMLBlocks.BLACK_DYE_SACK.get());
-        dropSelf(NMLBlocks.WHITE_DYE_SACK.get());
-        dropSelf(NMLBlocks.LIGHT_GRAY_DYE_SACK.get());
-        dropSelf(NMLBlocks.BROWN_DYE_SACK.get());
+//        dropSelf(NMLBlocks.COD_BARREL.get());
+//        dropSelf(NMLBlocks.PUFFERFISH_BARREL.get());
+//        dropSelf(NMLBlocks.SALMON_BARREL.get());
+//        dropSelf(NMLBlocks.TROPICAL_FISH_BARREL.get());
+//        dropSelf(NMLBlocks.RED_DYE_SACK.get());
+//        dropSelf(NMLBlocks.PINK_DYE_SACK.get());
+//        dropSelf(NMLBlocks.ORANGE_DYE_SACK.get());
+//        dropSelf(NMLBlocks.YELLOW_DYE_SACK.get());
+//        dropSelf(NMLBlocks.LIME_DYE_SACK.get());
+//        dropSelf(NMLBlocks.GREEN_DYE_SACK.get());
+//        dropSelf(NMLBlocks.CYAN_DYE_SACK.get());
+//        dropSelf(NMLBlocks.BLUE_DYE_SACK.get());
+//        dropSelf(NMLBlocks.LIGHT_BLUE_DYE_SACK.get());
+//        dropSelf(NMLBlocks.MAGENTA_DYE_SACK.get());
+//        dropSelf(NMLBlocks.PURPLE_DYE_SACK.get());
+//        dropSelf(NMLBlocks.BLACK_DYE_SACK.get());
+//        dropSelf(NMLBlocks.WHITE_DYE_SACK.get());
+//        dropSelf(NMLBlocks.LIGHT_GRAY_DYE_SACK.get());
+//        dropSelf(NMLBlocks.BROWN_DYE_SACK.get());
+        dropSelf(NMLBlocks.TRIMMED_ACACIA_PLANKS.get());
+        dropSelf(NMLBlocks.TRIMMED_CHERRY_PLANKS.get());
+        dropSelf(NMLBlocks.TRIMMED_CRIMSON_PLANKS.get());
+        dropSelf(NMLBlocks.TRIMMED_JUNGLE_PLANKS.get());
+        dropSelf(NMLBlocks.TRIMMED_DARK_OAK_PLANKS.get());
+        dropSelf(NMLBlocks.TRIMMED_MANGROVE_PLANKS.get());
+        dropSelf(NMLBlocks.TRIMMED_WARPED_PLANKS.get());
+        dropSelf(NMLBlocks.TRIMMED_OAK_PLANKS.get());
+        dropSelf(NMLBlocks.TRIMMED_SPRUCE_PLANKS.get());
+        dropSelf(NMLBlocks.TRIMMED_BIRCH_PLANKS.get());
+
+
     }
 
     @Override

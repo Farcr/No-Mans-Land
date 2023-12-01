@@ -50,6 +50,17 @@ public class NMLItems {
             event.accept(NMLBlocks.SALMON_BARREL);
             event.accept(NMLBlocks.PUFFERFISH_BARREL);
             event.accept(NMLBlocks.TROPICAL_FISH_BARREL);
+
+            event.accept(NMLBlocks.TRIMMED_OAK_PLANKS);
+            event.accept(NMLBlocks.TRIMMED_SPRUCE_PLANKS);
+            event.accept(NMLBlocks.TRIMMED_BIRCH_PLANKS);
+            event.accept(NMLBlocks.TRIMMED_JUNGLE_PLANKS);
+            event.accept(NMLBlocks.TRIMMED_ACACIA_PLANKS);
+            event.accept(NMLBlocks.TRIMMED_DARK_OAK_PLANKS);
+            event.accept(NMLBlocks.TRIMMED_CHERRY_PLANKS);
+            event.accept(NMLBlocks.TRIMMED_MANGROVE_PLANKS);
+            event.accept(NMLBlocks.TRIMMED_CRIMSON_PLANKS);
+            event.accept(NMLBlocks.TRIMMED_WARPED_PLANKS);
         }
         if(event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             event.accept(NMLBlocks.WHITE_DYE_SACK);
@@ -82,6 +93,15 @@ public class NMLItems {
         }
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(NMLBlocks.PINE_BOOKSHELF);
+            event.accept(NMLBlocks.SPRUCE_BOOKSHELF);
+            event.accept(NMLBlocks.BIRCH_BOOKSHELF);
+            event.accept(NMLBlocks.JUNGLE_BOOKSHELF);
+            event.accept(NMLBlocks.ACACIA_BOOKSHELF);
+            event.accept(NMLBlocks.DARK_OAK_BOOKSHELF);
+            event.accept(NMLBlocks.CHERRY_BOOKSHELF);
+            event.accept(NMLBlocks.MANGROVE_BOOKSHELF);
+            event.accept(NMLBlocks.CRIMSON_BOOKSHELF);
+            event.accept(NMLBlocks.WARPED_BOOKSHELF);
         }
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(NMLItems.MASHED_POTATOES_WITH_MUSHROOMS);

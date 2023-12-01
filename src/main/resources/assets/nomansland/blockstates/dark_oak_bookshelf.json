@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/vanilla_woods/dark_oak_bookshelf"
+      },
+      {
+        "model": "nomansland:block/vanilla_woods/dark_oak_bookshelf_alt"
+      }
+    ]
+  }
+}

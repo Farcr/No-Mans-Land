@@ -17,6 +17,20 @@ public class NMLFlammability {
         fireBlock.setFlammable(NMLBlocks.PINE_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(NMLBlocks.PINE_BOOKSHELF.get(), 30, 20);
         fireBlock.setFlammable(NMLBlocks.TRIMMED_PINE_PLANKS.get(), 5, 20);
+
+        fireBlock.setFlammable(NMLBlocks.TRIMMED_OAK_PLANKS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.SPRUCE_BOOKSHELF.get(), 30, 20);
+        fireBlock.setFlammable(NMLBlocks.TRIMMED_SPRUCE_PLANKS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.BIRCH_BOOKSHELF.get(), 30, 20);
+        fireBlock.setFlammable(NMLBlocks.TRIMMED_BIRCH_PLANKS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.JUNGLE_BOOKSHELF.get(), 30, 20);
+        fireBlock.setFlammable(NMLBlocks.TRIMMED_JUNGLE_PLANKS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.DARK_OAK_BOOKSHELF.get(), 30, 20);
+        fireBlock.setFlammable(NMLBlocks.TRIMMED_DARK_OAK_PLANKS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.CHERRY_BOOKSHELF.get(), 30, 20);
+        fireBlock.setFlammable(NMLBlocks.TRIMMED_CHERRY_PLANKS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.MANGROVE_BOOKSHELF.get(), 30, 20);
+        fireBlock.setFlammable(NMLBlocks.TRIMMED_MANGROVE_PLANKS.get(), 5, 20);
     }
 
 
