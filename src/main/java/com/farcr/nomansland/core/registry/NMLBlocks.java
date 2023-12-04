@@ -1,10 +1,7 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.block.BookshelfBlock;
-import com.farcr.nomansland.core.content.block.GrassSproutsBlock;
-import com.farcr.nomansland.core.content.block.LogBlock;
-import com.farcr.nomansland.core.content.block.PebbleBlock;
+import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.world.tree.HugeMushrooms;
 import com.farcr.nomansland.core.content.world.tree.PineTreeGrower;
 import com.google.common.collect.Sets;
@@ -46,43 +43,43 @@ public class NMLBlocks {
 
     //Trimmed Planks and Bookshelves
     public static final RegistryObject<Block> TRIMMED_OAK_PLANKS = registerBlock("trimmed_oak_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> SPRUCE_BOOKSHELF = registerBlock("spruce_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_SPRUCE_PLANKS = registerBlock("trimmed_spruce_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS)));
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS)));
     public static final RegistryObject<Block> BIRCH_BOOKSHELF = registerBlock("birch_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_BIRCH_PLANKS = registerBlock("trimmed_birch_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS)));
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS)));
     public static final RegistryObject<Block> JUNGLE_BOOKSHELF = registerBlock("jungle_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_JUNGLE_PLANKS = registerBlock("trimmed_jungle_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.JUNGLE_PLANKS)));
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_PLANKS)));
     public static final RegistryObject<Block> DARK_OAK_BOOKSHELF = registerBlock("dark_oak_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_DARK_OAK_PLANKS = registerBlock("trimmed_dark_oak_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS)));
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS)));
     public static final RegistryObject<Block> ACACIA_BOOKSHELF = registerBlock("acacia_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_ACACIA_PLANKS = registerBlock("trimmed_acacia_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS)));
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS)));
     public static final RegistryObject<Block> MANGROVE_BOOKSHELF = registerBlock("mangrove_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_MANGROVE_PLANKS = registerBlock("trimmed_mangrove_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS)));
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS)));
     public static final RegistryObject<Block> CHERRY_BOOKSHELF = registerBlock("cherry_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_CHERRY_PLANKS = registerBlock("trimmed_cherry_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS)));
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS)));
     public static final RegistryObject<Block> WARPED_BOOKSHELF = registerBlock("warped_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_WARPED_PLANKS = registerBlock("trimmed_warped_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS)));
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS)));
     public static final RegistryObject<Block> CRIMSON_BOOKSHELF = registerBlock("crimson_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_CRIMSON_PLANKS = registerBlock("trimmed_crimson_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)));
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)));
 
     //Pine
     public static final RegistryObject<Block> PINE_PLANKS = registerBlock("pine_planks",
@@ -121,10 +118,18 @@ public class NMLBlocks {
     public static final RegistryObject<Block> PINE_TRAPDOOR = registerBlock("pine_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), NMLBlockSetTypes.PINE));
     //wip stuff under here
+    public static final RegistryObject<Block> PINE_SIGN = BLOCKS.register("pine_sign",
+            () -> new NMLStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), NMLWoodTypes.PINE));
+    public static final RegistryObject<Block> PINE_WALL_SIGN = BLOCKS.register("pine_wall_sign",
+            () -> new NMLWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), NMLWoodTypes.PINE));
+    public static final RegistryObject<Block> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",
+            () -> new NMLHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), NMLWoodTypes.PINE));
+    public static final RegistryObject<Block> PINE_HANGING_WALL_SIGN = BLOCKS.register("pine_wall_hanging_sign",
+            () -> new NMLWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), NMLWoodTypes.PINE));
     public static final RegistryObject<Block> PINE_BOOKSHELF = registerBlock("pine_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_PINE_PLANKS = registerBlock("trimmed_pine_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.PINE_PLANKS.get())));
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(NMLBlocks.PINE_PLANKS.get())));
 
 
     //Dye Sacks

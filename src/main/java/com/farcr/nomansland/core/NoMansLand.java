@@ -1,9 +1,6 @@
 package com.farcr.nomansland.core;
 
-import com.farcr.nomansland.core.registry.NMLBlocks;
-import com.farcr.nomansland.core.registry.NMLCreativeTabs;
-import com.farcr.nomansland.core.registry.NMLFlammability;
-import com.farcr.nomansland.core.registry.NMLItems;
+import com.farcr.nomansland.core.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -31,6 +28,8 @@ public class NoMansLand {
         NMLBlocks.BLOCKS.register(modEventBus);
 
         NMLItems.ITEMS.register(modEventBus);
+
+        NMLBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
         NMLCreativeTabs.CREATIVE_TABS.register(modEventBus);
 

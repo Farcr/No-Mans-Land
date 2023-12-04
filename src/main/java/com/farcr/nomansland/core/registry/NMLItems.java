@@ -2,9 +2,7 @@ package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.google.common.collect.Sets;
-import net.minecraft.world.item.BowlFoodItem;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,6 +26,13 @@ public class NMLItems {
             () -> new BowlFoodItem(new Item.Properties().food(NMLFoods.MASHED_POTATOES_WITH_MUSHROOMS)));
     public static final RegistryObject<Item> GRILLED_MUSHROOMS = registerItem("grilled_mushrooms",
             () -> new Item(new Item.Properties().food(NMLFoods.GRILLED_MUSHROOMS)));
+
+    public static final RegistryObject<Item> PINE_SIGN = registerItem("pine_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.PINE_SIGN.get(), NMLBlocks.PINE_WALL_SIGN.get()));
+    public static final RegistryObject<Item> PINE_HANGING_SIGN = registerItem("pine_hanging_sign",
+            () -> new HangingSignItem(NMLBlocks.PINE_HANGING_SIGN.get(), NMLBlocks.PINE_HANGING_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
+
+
 
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
@@ -107,6 +112,8 @@ public class NMLItems {
             event.accept(NMLBlocks.MANGROVE_BOOKSHELF);
             event.accept(NMLBlocks.CRIMSON_BOOKSHELF);
             event.accept(NMLBlocks.WARPED_BOOKSHELF);
+            event.accept(NMLItems.PINE_SIGN);
+            event.accept(NMLItems.PINE_HANGING_SIGN);
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(NMLItems.MASHED_POTATOES_WITH_MUSHROOMS);

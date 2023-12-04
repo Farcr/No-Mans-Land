@@ -4,7 +4,7 @@
   "group": "hanging_sign",
   "key": {
     "#": {
-      "item": "minecraft:stripped_acacia_log"
+      "item": "nomansland:stripped_pine_log"
     },
     "X": {
       "item": "minecraft:chain"
