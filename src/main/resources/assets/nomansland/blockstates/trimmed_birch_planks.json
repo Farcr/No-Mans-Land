@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "up=false,down=false": {
+      "model": "nomansland:block/vanilla_woods/trimmed_birch_planks_middle"
+    },
+    "up=true,down=false": {
+      "model": "nomansland:block/vanilla_woods/trimmed_birch_planks_upper"
+    },
+    "up=false,down=true": {
+      "model": "nomansland:block/vanilla_woods/trimmed_birch_planks_lower"
+    },
+    "up=true,down=true": {
+      "model": "nomansland:block/vanilla_woods/trimmed_birch_planks"
+    }
+  }
+}
