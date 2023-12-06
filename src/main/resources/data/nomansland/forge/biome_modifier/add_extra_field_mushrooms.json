@@ -2,7 +2,7 @@
   "type": "forge:add_features",
   "biomes": [
   "minecraft:meadow",
-  "mushroom_fields"
+  "minecraft:mushroom_fields"
 ],
   "features": [
     "nomansland:patch_field_mushroom_extra"

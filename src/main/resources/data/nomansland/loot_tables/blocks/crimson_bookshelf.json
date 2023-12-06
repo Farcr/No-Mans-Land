@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "nomansland:warped_bookshelf"
+              "name": "nomansland:crimson_bookshelf"
             },
             {
               "type": "minecraft:item",
@@ -46,5 +46,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "nomansland:blocks/warped_bookshelf"
+  "random_sequence": "nomansland:blocks/crimson_bookshelf"
 }

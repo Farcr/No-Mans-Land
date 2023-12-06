@@ -71,6 +71,7 @@ public class NMLItems {
             event.accept(NMLBlocks.TRIMMED_MANGROVE_PLANKS);
             event.accept(NMLBlocks.TRIMMED_CRIMSON_PLANKS);
             event.accept(NMLBlocks.TRIMMED_WARPED_PLANKS);
+            event.accept(NMLBlocks.TRIMMED_BAMBOO_PLANKS);
         }
         if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             event.accept(NMLBlocks.WHITE_DYE_SACK);
@@ -112,6 +113,7 @@ public class NMLItems {
             event.accept(NMLBlocks.MANGROVE_BOOKSHELF);
             event.accept(NMLBlocks.CRIMSON_BOOKSHELF);
             event.accept(NMLBlocks.WARPED_BOOKSHELF);
+            event.accept(NMLBlocks.BAMBOO_BOOKSHELF);
             event.accept(NMLItems.PINE_SIGN);
             event.accept(NMLItems.PINE_HANGING_SIGN);
         }

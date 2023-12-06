@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/vanilla_woods/bamboo_bookshelf"
+      },
+      {
+        "model": "nomansland:block/vanilla_woods/bamboo_bookshelf_alt"
+      }
+    ]
+  }
+}

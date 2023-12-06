@@ -31,6 +31,8 @@ public class NMLFlammability {
         fireBlock.setFlammable(NMLBlocks.TRIMMED_CHERRY_PLANKS.get(), 5, 20);
         fireBlock.setFlammable(NMLBlocks.MANGROVE_BOOKSHELF.get(), 30, 20);
         fireBlock.setFlammable(NMLBlocks.TRIMMED_MANGROVE_PLANKS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.BAMBOO_BOOKSHELF.get(), 30, 20);
+        fireBlock.setFlammable(NMLBlocks.TRIMMED_BAMBOO_PLANKS.get(), 5, 20);
     }
 
 

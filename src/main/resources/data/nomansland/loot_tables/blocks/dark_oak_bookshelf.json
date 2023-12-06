@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "nomansland:jungle_bookshelf"
+              "name": "nomansland:dark_oak_bookshelf"
             },
             {
               "type": "minecraft:item",
@@ -46,5 +46,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "nomansland:blocks/jungle_bookshelf"
+  "random_sequence": "nomansland:blocks/dark_oak_bookshelf"
 }

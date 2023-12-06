@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:jungle",
+  "features": [
+    "nomansland:coarse_dirt_patch_extra"
+  ],
+  "step": "local_modifications"
+}

@@ -80,6 +80,10 @@ public class NMLBlocks {
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_CRIMSON_PLANKS = registerBlock("trimmed_crimson_planks",
             () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)));
+    public static final RegistryObject<Block> BAMBOO_BOOKSHELF = registerBlock("bamboo_bookshelf",
+            () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
+    public static final RegistryObject<Block> TRIMMED_BAMBOO_PLANKS = registerBlock("trimmed_bamboo_planks",
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO_PLANKS)));
 
     //Pine
     public static final RegistryObject<Block> PINE_PLANKS = registerBlock("pine_planks",
@@ -122,8 +126,7 @@ public class NMLBlocks {
             () -> new NMLStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), NMLWoodTypes.PINE));
     public static final RegistryObject<Block> PINE_WALL_SIGN = BLOCKS.register("pine_wall_sign",
             () -> new NMLWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), NMLWoodTypes.PINE));
-    public static final RegistryObject<Block> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",
-            () -> new NMLHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), NMLWoodTypes.PINE));
+    public static final RegistryObject<Block> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",           () -> new NMLHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), NMLWoodTypes.PINE));
     public static final RegistryObject<Block> PINE_HANGING_WALL_SIGN = BLOCKS.register("pine_wall_hanging_sign",
             () -> new NMLWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), NMLWoodTypes.PINE));
     public static final RegistryObject<Block> PINE_BOOKSHELF = registerBlock("pine_bookshelf",

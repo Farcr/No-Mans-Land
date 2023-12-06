@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "nomansland:mangrove_bookshelf"
+              "name": "nomansland:cherry_bookshelf"
             },
             {
               "type": "minecraft:item",
@@ -46,5 +46,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "nomansland:blocks/mangrove_bookshelf"
+  "random_sequence": "nomansland:blocks/cherry_bookshelf"
 }

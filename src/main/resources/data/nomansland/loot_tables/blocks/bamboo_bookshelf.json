@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "nomansland:spruce_bookshelf"
+              "name": "nomansland:bamboo_bookshelf"
             },
             {
               "type": "minecraft:item",
@@ -46,5 +46,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "nomansland:blocks/spruce_bookshelf"
+  "random_sequence": "nomansland:blocks/bamboo_bookshelf"
 }

@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "nomansland:cherry_bookshelf"
+              "name": "nomansland:acacia_bookshelf"
             },
             {
               "type": "minecraft:item",
@@ -46,5 +46,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "nomansland:blocks/cherry_bookshelf"
+  "random_sequence": "nomansland:blocks/acacia_bookshelf"
 }
