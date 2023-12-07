@@ -1,7 +1,9 @@
 package com.farcr.nomansland.core;
 
+import com.farcr.nomansland.core.content.entity.client.NMLBoatRenderer;
 import com.farcr.nomansland.core.registry.*;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,6 +30,8 @@ public class NoMansLand {
         NMLBlocks.BLOCKS.register(modEventBus);
 
         NMLItems.ITEMS.register(modEventBus);
+
+        NMLEntities.ENTITY_TYPES.register(modEventBus);
 
         NMLBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
@@ -56,6 +60,8 @@ public class NoMansLand {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(NMLEntities.BOAT.get(), pContext -> new NMLBoatRenderer(pContext, false));
+            EntityRenderers.register(NMLEntities.CHEST_BOAT.get(), pContext -> new NMLBoatRenderer(pContext, true));
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "nomansland:item/pine_chest_boat"
+    "layer0": "nomansland:item/pine_boat_with_chest"
   }
 }

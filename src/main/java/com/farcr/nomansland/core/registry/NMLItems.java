@@ -1,6 +1,8 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
+import com.farcr.nomansland.core.content.entity.BoatEntity;
+import com.farcr.nomansland.core.content.item.BoatItem;
 import com.google.common.collect.Sets;
 import net.minecraft.world.item.*;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -31,6 +33,10 @@ public class NMLItems {
             () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.PINE_SIGN.get(), NMLBlocks.PINE_WALL_SIGN.get()));
     public static final RegistryObject<Item> PINE_HANGING_SIGN = registerItem("pine_hanging_sign",
             () -> new HangingSignItem(NMLBlocks.PINE_HANGING_SIGN.get(), NMLBlocks.PINE_HANGING_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> PINE_BOAT = registerItem("pine_boat",
+            () -> new BoatItem(false, BoatEntity.Type.PINE, new Item.Properties()));
+    public static final RegistryObject<Item> PINE_CHEST_BOAT = registerItem("pine_chest_boat",
+            () -> new BoatItem(true, BoatEntity.Type.PINE, new Item.Properties()));
 
 
 
@@ -120,6 +126,10 @@ public class NMLItems {
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(NMLItems.MASHED_POTATOES_WITH_MUSHROOMS);
             event.accept(NMLItems.GRILLED_MUSHROOMS);
+        }
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(NMLItems.PINE_BOAT);
+            event.accept(NMLItems.PINE_CHEST_BOAT);
         }
 
 
