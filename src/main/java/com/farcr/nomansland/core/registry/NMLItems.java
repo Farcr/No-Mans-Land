@@ -34,9 +34,9 @@ public class NMLItems {
     public static final RegistryObject<Item> PINE_HANGING_SIGN = registerItem("pine_hanging_sign",
             () -> new HangingSignItem(NMLBlocks.PINE_HANGING_SIGN.get(), NMLBlocks.PINE_HANGING_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> PINE_BOAT = registerItem("pine_boat",
-            () -> new BoatItem(false, BoatEntity.Type.PINE, new Item.Properties()));
+            () -> new BoatItem(false, BoatEntity.Type.PINE, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> PINE_CHEST_BOAT = registerItem("pine_chest_boat",
-            () -> new BoatItem(true, BoatEntity.Type.PINE, new Item.Properties()));
+            () -> new BoatItem(true, BoatEntity.Type.PINE, new Item.Properties().stacksTo(1)));
 
 
 
@@ -100,6 +100,8 @@ public class NMLItems {
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(NMLBlocks.GRASS_SPROUTS);
             event.accept(NMLBlocks.PEBBLES);
+            event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES);
+            event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
             event.accept(NMLBlocks.FIELD_MUSHROOM);
             event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
 

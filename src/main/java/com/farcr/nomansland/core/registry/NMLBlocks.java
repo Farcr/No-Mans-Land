@@ -1,12 +1,13 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.block.StandingSignBlock;
 import com.farcr.nomansland.core.content.block.WallHangingSignBlock;
 import com.farcr.nomansland.core.content.block.WallSignBlock;
+import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.world.tree.HugeMushrooms;
 import com.farcr.nomansland.core.content.world.tree.PineTreeGrower;
+import com.farcr.nomansland.core.content.world.tree.YellowBirchTreeGrower;
 import com.google.common.collect.Sets;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -33,6 +34,10 @@ public class NMLBlocks {
 
     public static final RegistryObject<Block> PEBBLES = registerBlock("pebbles",
             () -> new PebbleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noCollission().instabreak().sound(SoundType.STONE).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> YELLOW_BIRCH_LEAVES = registerBlock("yellow_birch_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_LEAVES)));
+    public static final RegistryObject<Block> YELLOW_BIRCH_SAPLING = registerBlock("yellow_birch_sapling",
+            () -> new SaplingBlock((new YellowBirchTreeGrower()), BlockBehaviour.Properties.copy(Blocks.BIRCH_SAPLING)));
 
     //Stone
     public static final RegistryObject<Block> FADED_STONE_BRICKS = registerBlock("faded_stone_bricks",

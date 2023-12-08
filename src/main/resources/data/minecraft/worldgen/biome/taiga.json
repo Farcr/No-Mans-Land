@@ -6,16 +6,22 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.4,
+  "downfall": 0.8,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 7710766,
-    "grass_color": 9419352,
+    "foliage_color": 6791778,
+    "grass_color": 8696962,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
+    },
+    "music": {
+     "max_delay": 24000,
+     "min_delay": 12000,
+     "replace_current_music": false,
+     "sound": "music.overworld.old_growth_taiga"
     },
     "sky_color": 7907327,
     "water_color": 3443121,
@@ -71,20 +77,21 @@
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
-    [
-      "minecraft:trees_plains"
+    [  
+      "minecraft:trees_taiga"
     ],
     [
-      "minecraft:patch_grass_plain",
-      "nomansland:patch_grass_sprouts_normal"
+      "minecraft:patch_grass_taiga_2",
+      "minecraft:patch_large_fern"
     ],
     [
-      "minecraft:patch_tall_grass_2",
-      "minecraft:flower_plains",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
+      "minecraft:glow_lichen",
+      "minecraft:flower_default",
+      "minecraft:brown_mushroom_taiga",
+      "minecraft:red_mushroom_taiga",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_pumpkin",
+      "minecraft:patch_berry_common"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -106,38 +113,44 @@
       {
         "type": "minecraft:sheep",
         "maxCount": 4,
-        "minCount": 4,
-        "weight": 12
+        "minCount": 1,
+        "weight": 6
       },
       {
         "type": "minecraft:pig",
-        "maxCount": 4,
+        "maxCount": 6,
         "minCount": 4,
-        "weight": 10
+        "weight": 14
       },
       {
         "type": "minecraft:chicken",
-        "maxCount": 4,
+        "maxCount": 8,
         "minCount": 4,
         "weight": 10
       },
       {
         "type": "minecraft:cow",
         "maxCount": 4,
+        "minCount": 1,
+        "weight": 6
+      },
+      {
+        "type": "minecraft:wolf",
+        "maxCount": 4,
         "minCount": 4,
         "weight": 8
       },
       {
-        "type": "minecraft:horse",
-        "maxCount": 6,
+        "type": "minecraft:rabbit",
+        "maxCount": 3,
         "minCount": 2,
-        "weight": 5
+        "weight": 12
       },
       {
-        "type": "minecraft:donkey",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 1
+        "type": "minecraft:fox",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 8
       }
     ],
     "misc": [],
@@ -202,5 +215,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.8
+  "temperature": 0.35
 }

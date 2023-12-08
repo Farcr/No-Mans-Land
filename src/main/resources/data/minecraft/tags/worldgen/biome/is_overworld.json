@@ -1,7 +1,6 @@
 {
   "values": [
-    "#minecraft:is_jungle",
-    "#minecraft:is_savanna",
+    "nomansland:caves",
     "nomansland:old_growth_forest",
     "nomansland:boreal_forest"
   ]

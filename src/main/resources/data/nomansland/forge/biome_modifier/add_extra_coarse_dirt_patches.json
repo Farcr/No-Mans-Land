@@ -1,6 +1,8 @@
 {
   "type": "forge:add_features",
-  "biomes": "minecraft:jungle",
+  "biomes": [
+   "minecraft:jungle", "nomansland:old_growth_forest"
+  ],
   "features": [
     "nomansland:coarse_dirt_patch_extra"
   ],

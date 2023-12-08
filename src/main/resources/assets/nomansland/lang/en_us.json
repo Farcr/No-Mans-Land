@@ -2,8 +2,16 @@
   "item.nomansland.no_mans_globe": "No Man's Globe",
   "itemGroup.nomansland": "No Man's Land",
 
+  "biome.nomansland.caves": "Caves",
+  "biome.nomansland.deep_caves": "Deep Caves",
+  "biome.nomansland.old_growth_forest": "Old Growth Forest",
+  "biome.nomansland.boreal_forest": "Boreal Forest",
+
   "block.nomansland.grass_sprouts": "Grass Sprouts",
   "block.nomansland.pebbles": "Pebbles",
+
+  "block.nomansland.yellow_birch_leaves": "Yellow Birch Leaves",
+  "block.nomansland.yellow_birch_sapling": "Yellow Birch Sapling",
 
   "block.nomansland.field_mushroom": "Field Mushroom",
   "block.nomansland.field_mushroom_block": "Field Mushroom Block",
