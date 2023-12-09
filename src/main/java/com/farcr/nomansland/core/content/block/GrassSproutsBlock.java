@@ -26,7 +26,7 @@ public class GrassSproutsBlock extends BushBlock implements BonemealableBlock, n
     }
 
     @Override
-    public boolean isValidBonemealTarget (LevelReader pLevel, BlockPos pPos, BlockState pState, boolean pIsClient) {
+    public boolean isValidBonemealTarget(LevelReader pLevel, BlockPos pPos, BlockState pState, boolean pIsClient) {
         return true;
     }
 
@@ -38,12 +38,11 @@ public class GrassSproutsBlock extends BushBlock implements BonemealableBlock, n
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, LivingEntity pPlacer, ItemStack pStack) {
         pLevel.setBlock(pPos, pState, 3);
     }
-
     @Override
     public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
-        TallGrassBlock tallgrassblock = (TallGrassBlock) (pState.is(Blocks.FERN) ? Blocks.LARGE_FERN : Blocks.TALL_GRASS);
-        if (tallgrassblock.defaultBlockState().canSurvive(pLevel, pPos)) {
-            pLevel.setBlock(pPos, pState, 3);
+        BlockState blockstate = Blocks.GRASS.defaultBlockState();
+        if (blockstate.canSurvive(pLevel, pPos)) {
+            pLevel.setBlock(pPos, blockstate.getBlock().defaultBlockState(), 2);
         }
     }
 }
