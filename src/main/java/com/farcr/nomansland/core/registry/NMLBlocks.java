@@ -38,6 +38,11 @@ public class NMLBlocks {
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_LEAVES)));
     public static final RegistryObject<Block> YELLOW_BIRCH_SAPLING = registerBlock("yellow_birch_sapling",
             () -> new SaplingBlock((new YellowBirchTreeGrower()), BlockBehaviour.Properties.copy(Blocks.BIRCH_SAPLING)));
+    public static final RegistryObject<Block> POTTED_YELLOW_BIRCH_SAPLING = BLOCKS.register("potted_yellow_birch_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.YELLOW_BIRCH_SAPLING,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_BIRCH_SAPLING).noOcclusion()));
+    //public static final RegistryObject<Block> CLOVER_PATCH = registerBlock("clover_patch",
+    //        () -> new FlowerPatchBlock(Block.Properties.copy(Blocks.POPPY)));
 
     //Stone
     public static final RegistryObject<Block> FADED_STONE_BRICKS = registerBlock("faded_stone_bricks",
