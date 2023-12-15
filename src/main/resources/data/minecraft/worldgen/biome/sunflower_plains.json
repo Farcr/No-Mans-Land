@@ -72,7 +72,7 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:trees_plains"
+      "nomansland:biome_trees/trees_sunflower_plains"
     ],
     [
       "minecraft:patch_grass_plain",
@@ -81,6 +81,7 @@
     [
       "minecraft:glow_lichen",
       "minecraft:flower_plains",
+      "minecraft:patch_sunflower",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
