@@ -10,6 +10,9 @@ public class NMLFlammability {
     }
     public static void registerFlammables() {
         FireBlock fireBlock = (FireBlock) Blocks.FIRE;
+
+        fireBlock.setFlammable(NMLBlocks.YELLOW_BIRCH_LEAVES.get(), 30, 60);
+
         fireBlock.setFlammable(NMLBlocks.PINE_PLANKS.get(), 5, 20);
         fireBlock.setFlammable(NMLBlocks.PINE_STAIRS.get(), 5, 20);
         fireBlock.setFlammable(NMLBlocks.PINE_SLAB.get(), 5, 20);

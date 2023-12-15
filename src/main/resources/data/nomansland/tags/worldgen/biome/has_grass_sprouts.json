@@ -43,6 +43,8 @@
     "minecraft:windswept_savanna",
     "minecraft:cherry_grove",
     "minecraft:frozen_peaks",
-    "minecraft:lush_caves"
+    "minecraft:lush_caves",
+    "nomansland:boreal_forest",
+    "nomansland:old_growth_forest"
   ]
 }
