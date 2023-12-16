@@ -41,8 +41,8 @@ public class NMLBlocks {
     public static final RegistryObject<Block> POTTED_YELLOW_BIRCH_SAPLING = BLOCKS.register("potted_yellow_birch_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.YELLOW_BIRCH_SAPLING,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_BIRCH_SAPLING).noOcclusion()));
-    //public static final RegistryObject<Block> CLOVER_PATCH = registerBlock("clover_patch",
-    //        () -> new FlowerPatchBlock(Block.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> CLOVER_PATCH = registerBlock("clover_patch",
+            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
 
     //Stone
     public static final RegistryObject<Block> FADED_STONE_BRICKS = registerBlock("faded_stone_bricks",

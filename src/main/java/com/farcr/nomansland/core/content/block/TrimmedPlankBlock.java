@@ -14,8 +14,12 @@ public class TrimmedPlankBlock extends Block {
     public TrimmedPlankBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
     }
+
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(UP);
         pBuilder.add(DOWN);
     }
+//    public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
+//        if pFacing == this.
+//    }
 }

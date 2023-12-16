@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/plants/clover_patch"
+      },
+      {
+        "model": "nomansland:block/plants/clover_patch",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/plants/clover_patch",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/plants/clover_patch",
+        "y": 270
+      }
+    ]
+  }
+}
