@@ -54,6 +54,13 @@ public class NMLBlocks {
     public static final RegistryObject<Block> POLISHED_STONE_SLAB = registerBlock("polished_stone_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(NMLBlocks.POLISHED_STONE.get())));
 
+    public static final RegistryObject<Block> COBBLESTONE_BRICKS = registerBlock("cobblestone_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+    public static final RegistryObject<Block> COBBLESTONE_BRICK_STAIRS = registerBlock("cobblestone_brick_stairs",
+            () -> new StairBlock(() -> COBBLESTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(NMLBlocks.COBBLESTONE_BRICKS.get())));
+    public static final RegistryObject<Block> COBBLESTONE_BRICK_SLAB = registerBlock("cobblestone_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(NMLBlocks.COBBLESTONE_BRICKS.get())));
+
     //Trimmed Planks and Bookshelves
     public static final RegistryObject<Block> TRIMMED_OAK_PLANKS = registerBlock("trimmed_oak_planks",
             () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
