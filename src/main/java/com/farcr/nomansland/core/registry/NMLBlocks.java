@@ -5,10 +5,7 @@ import com.farcr.nomansland.core.content.block.StandingSignBlock;
 import com.farcr.nomansland.core.content.block.WallHangingSignBlock;
 import com.farcr.nomansland.core.content.block.WallSignBlock;
 import com.farcr.nomansland.core.content.block.*;
-import com.farcr.nomansland.core.content.world.tree.HugeMushrooms;
-import com.farcr.nomansland.core.content.world.tree.PineTreeGrower;
-import com.farcr.nomansland.core.content.world.tree.RedMapleTreeGrower;
-import com.farcr.nomansland.core.content.world.tree.YellowBirchTreeGrower;
+import com.farcr.nomansland.core.content.world.tree.*;
 import com.google.common.collect.Sets;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -149,18 +146,67 @@ public class NMLBlocks {
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), NMLBlockSetTypes.PINE));
     public static final RegistryObject<Block> PINE_TRAPDOOR = registerBlock("pine_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), NMLBlockSetTypes.PINE));
-    //wip stuff under here
     public static final RegistryObject<Block> PINE_SIGN = BLOCKS.register("pine_sign",
             () -> new StandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), NMLWoodTypes.PINE));
     public static final RegistryObject<Block> PINE_WALL_SIGN = BLOCKS.register("pine_wall_sign",
             () -> new WallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), NMLWoodTypes.PINE));
-    public static final RegistryObject<Block> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",           () -> new HangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), NMLWoodTypes.PINE));
+    public static final RegistryObject<Block> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",
+            () -> new HangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), NMLWoodTypes.PINE));
     public static final RegistryObject<Block> PINE_HANGING_WALL_SIGN = BLOCKS.register("pine_wall_hanging_sign",
             () -> new WallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), NMLWoodTypes.PINE));
     public static final RegistryObject<Block> PINE_BOOKSHELF = registerBlock("pine_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_PINE_PLANKS = registerBlock("trimmed_pine_planks",
             () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(NMLBlocks.PINE_PLANKS.get())));
+
+    //Maple
+    public static final RegistryObject<Block> MAPLE_PLANKS = registerBlock("maple_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> MAPLE_STAIRS = registerBlock("maple_stairs",
+            () -> new StairBlock(() -> MAPLE_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(NMLBlocks.MAPLE_PLANKS.get())));
+    public static final RegistryObject<Block> MAPLE_SLAB = registerBlock("maple_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(NMLBlocks.MAPLE_PLANKS.get())));
+    public static final RegistryObject<Block> MAPLE_LOG = registerBlock("maple_log",
+            () -> new LogBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
+    public static final RegistryObject<Block> MAPLE_WOOD = registerBlock("maple_wood",
+            () -> new LogBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
+    public static final RegistryObject<Block> STRIPPED_MAPLE_LOG = registerBlock("stripped_maple_log",
+            () -> new LogBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final RegistryObject<Block> STRIPPED_MAPLE_WOOD = registerBlock("stripped_maple_wood",
+            () -> new LogBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final RegistryObject<Block> MAPLE_FENCE = registerBlock("maple_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+    public static final RegistryObject<Block> MAPLE_FENCE_GATE = registerBlock("maple_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), NMLWoodTypes.MAPLE));
+    public static final RegistryObject<Block> MAPLE_LEAVES = registerBlock("maple_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
+            () -> new SaplingBlock((new MapleTreeGrower()), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> POTTED_MAPLE_SAPLING = BLOCKS.register("potted_maple_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.MAPLE_SAPLING,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
+    public static final RegistryObject<Block> MAPLE_BUTTON = registerBlock("maple_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON),
+                    NMLBlockSetTypes.MAPLE, 15, true));
+    public static final RegistryObject<Block> MAPLE_PRESSURE_PLATE = registerBlock("maple_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
+                    BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), NMLBlockSetTypes.MAPLE));
+    public static final RegistryObject<Block> MAPLE_DOOR = registerBlock("maple_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), NMLBlockSetTypes.MAPLE));
+    public static final RegistryObject<Block> MAPLE_TRAPDOOR = registerBlock("maple_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), NMLBlockSetTypes.MAPLE));
+    public static final RegistryObject<Block> MAPLE_SIGN = BLOCKS.register("maple_sign",
+            () -> new StandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), NMLWoodTypes.MAPLE));
+    public static final RegistryObject<Block> MAPLE_WALL_SIGN = BLOCKS.register("maple_wall_sign",
+            () -> new WallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), NMLWoodTypes.MAPLE));
+    public static final RegistryObject<Block> MAPLE_HANGING_SIGN = BLOCKS.register("maple_hanging_sign",
+            () -> new HangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), NMLWoodTypes.MAPLE));
+    public static final RegistryObject<Block> MAPLE_HANGING_WALL_SIGN = BLOCKS.register("maple_wall_hanging_sign",
+            () -> new WallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), NMLWoodTypes.MAPLE));
+    public static final RegistryObject<Block> MAPLE_BOOKSHELF = registerBlock("maple_bookshelf",
+            () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
+    public static final RegistryObject<Block> TRIMMED_MAPLE_PLANKS = registerBlock("trimmed_maple_planks",
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(NMLBlocks.MAPLE_PLANKS.get())));
 
 
     //Dye Sacks

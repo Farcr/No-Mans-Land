@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nomansland:block/maple/maple_slab"
+    },
+    "type=double": {
+      "model": "nomansland:block/maple/maple_planks"
+    },
+    "type=top": {
+      "model": "nomansland:block/maple/maple_slab_top"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/maple/maple_bookshelf"
+      },
+      {
+        "model": "nomansland:block/maple/maple_bookshelf_alt"
+      }
+    ]
+  }
+}

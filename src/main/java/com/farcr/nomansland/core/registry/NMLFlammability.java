@@ -21,6 +21,15 @@ public class NMLFlammability {
         fireBlock.setFlammable(NMLBlocks.PINE_BOOKSHELF.get(), 30, 20);
         fireBlock.setFlammable(NMLBlocks.TRIMMED_PINE_PLANKS.get(), 5, 20);
 
+        fireBlock.setFlammable(NMLBlocks.MAPLE_PLANKS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.MAPLE_STAIRS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.MAPLE_SLAB.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.MAPLE_FENCE.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.MAPLE_LEAVES.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.RED_MAPLE_LEAVES.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.MAPLE_BOOKSHELF.get(), 30, 20);
+        fireBlock.setFlammable(NMLBlocks.TRIMMED_MAPLE_PLANKS.get(), 5, 20);
+
         fireBlock.setFlammable(NMLBlocks.TRIMMED_OAK_PLANKS.get(), 5, 20);
         fireBlock.setFlammable(NMLBlocks.SPRUCE_BOOKSHELF.get(), 30, 20);
         fireBlock.setFlammable(NMLBlocks.TRIMMED_SPRUCE_PLANKS.get(), 5, 20);

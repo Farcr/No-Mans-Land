@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "trimmed_planks",
+  "key": {
+    "#": {
+      "item": "nomansland:maple_planks"
+    }
+  },
+  "pattern": [
+    " # ",
+    " # ",
+    " # "
+  ],
+  "result": {
+    "count": 3,
+    "item": "nomansland:trimmed_maple_planks"
+  },
+  "show_notification": true
+}

@@ -15,14 +15,17 @@ public class ColorHandler {
         event.getItemColors().register((stack, index) -> {
                     return GrassColor.get(0.5D, 1.0D);
                 },
-                NMLBlocks.GRASS_SPROUTS.get());
+                NMLBlocks.GRASS_SPROUTS.get(),
+                NMLBlocks.MAPLE_LEAVES.get()
+        );
     }
     @SubscribeEvent
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
         event.getBlockColors().register((state, world, pos, tintIndex) -> {
                     return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
                 },
-                NMLBlocks.GRASS_SPROUTS.get()
+                NMLBlocks.GRASS_SPROUTS.get(),
+                NMLBlocks.MAPLE_LEAVES.get()
         );
     }
 

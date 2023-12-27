@@ -1,0 +1,7 @@
+{
+  "parent": "nomansland:block/alt_trapdoor_open",
+  "textures": {
+    "front": "nomansland:block/maple/maple_trapdoor",
+    "side": "nomansland:block/maple/maple_trapdoor_sides"
+  }
+}

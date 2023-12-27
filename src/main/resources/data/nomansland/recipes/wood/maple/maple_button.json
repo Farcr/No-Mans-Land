@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "nomansland:maple_planks"
+    }
+  ],
+  "result": {
+    "item": "nomansland:maple_button"
+  }
+}

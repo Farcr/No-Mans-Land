@@ -38,6 +38,15 @@ public class NMLItems {
     public static final RegistryObject<Item> PINE_CHEST_BOAT = registerItem("pine_chest_boat",
             () -> new BoatItem(true, BoatEntity.Type.PINE, new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> MAPLE_SIGN = registerItem("maple_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.MAPLE_SIGN.get(), NMLBlocks.MAPLE_WALL_SIGN.get()));
+    public static final RegistryObject<Item> MAPLE_HANGING_SIGN = registerItem("maple_hanging_sign",
+            () -> new HangingSignItem(NMLBlocks.MAPLE_HANGING_SIGN.get(), NMLBlocks.MAPLE_HANGING_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> MAPLE_BOAT = registerItem("maple_boat",
+            () -> new BoatItem(false, BoatEntity.Type.MAPLE, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> MAPLE_CHEST_BOAT = registerItem("maple_chest_boat",
+            () -> new BoatItem(true, BoatEntity.Type.MAPLE, new Item.Properties().stacksTo(1)));
+
 
 
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -65,6 +74,21 @@ public class NMLItems {
             event.accept(NMLBlocks.PINE_TRAPDOOR);
             event.accept(NMLBlocks.PINE_PRESSURE_PLATE);
             event.accept(NMLBlocks.PINE_BUTTON);
+
+            event.accept(NMLBlocks.MAPLE_LOG);
+            event.accept(NMLBlocks.MAPLE_WOOD);
+            event.accept(NMLBlocks.STRIPPED_MAPLE_LOG);
+            event.accept(NMLBlocks.STRIPPED_MAPLE_WOOD);
+            event.accept(NMLBlocks.MAPLE_PLANKS);
+            event.accept(NMLBlocks.MAPLE_STAIRS);
+            event.accept(NMLBlocks.MAPLE_SLAB);
+            event.accept(NMLBlocks.TRIMMED_MAPLE_PLANKS);
+            event.accept(NMLBlocks.MAPLE_FENCE);
+            event.accept(NMLBlocks.MAPLE_FENCE_GATE);
+            event.accept(NMLBlocks.MAPLE_DOOR);
+            event.accept(NMLBlocks.MAPLE_TRAPDOOR);
+            event.accept(NMLBlocks.MAPLE_PRESSURE_PLATE);
+            event.accept(NMLBlocks.MAPLE_BUTTON);
 
             event.accept(NMLBlocks.COD_BARREL);
             event.accept(NMLBlocks.SALMON_BARREL);
@@ -107,14 +131,18 @@ public class NMLItems {
             event.accept(NMLBlocks.PEBBLES);
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES);
             event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
-            event.accept(NMLBlocks.RED_MAPLE_LEAVES);
-            event.accept(NMLBlocks.RED_MAPLE_SAPLING);
             event.accept(NMLBlocks.FIELD_MUSHROOM);
             event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
 
             event.accept(NMLBlocks.PINE_LOG);
             event.accept(NMLBlocks.PINE_LEAVES);
             event.accept(NMLBlocks.PINE_SAPLING);
+
+            event.accept(NMLBlocks.MAPLE_LOG);
+            event.accept(NMLBlocks.MAPLE_LEAVES);
+            event.accept(NMLBlocks.MAPLE_SAPLING);
+            event.accept(NMLBlocks.RED_MAPLE_LEAVES);
+            event.accept(NMLBlocks.RED_MAPLE_SAPLING);
 
         }
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {

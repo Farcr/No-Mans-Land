@@ -2,7 +2,6 @@
   "values": [
     "#nomansland:mushroom_blocks",
     "#minecraft:wool",
-    "nomansland:pine_leaves",
-    "nomansland:yellow_birch_leaves"
+    "#minecraft:leaves"
   ]
 }

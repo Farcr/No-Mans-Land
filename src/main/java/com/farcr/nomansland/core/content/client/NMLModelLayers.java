@@ -11,4 +11,9 @@ public class NMLModelLayers {
     public static final ModelLayerLocation PINE_CHEST_BOAT_LAYER = new ModelLayerLocation(
             new ResourceLocation(NoMansLand.MODID, "chest_boat/pine"), "main");
 
+    public static final ModelLayerLocation MAPLE_BOAT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(NoMansLand.MODID, "boat/maple"), "main");
+    public static final ModelLayerLocation MAPLE_CHEST_BOAT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(NoMansLand.MODID, "chest_boat/maple"), "main");
+
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "nomansland:block/maple/maple_leaves"
+  }
+}

@@ -43,6 +43,14 @@ public class LogBlock extends RotatedPillarBlock {
             if (state.is(NMLBlocks.PINE_WOOD.get())) {
                 return NMLBlocks.STRIPPED_PINE_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
+
+            if (state.is(NMLBlocks.MAPLE_LOG.get())) {
+                return NMLBlocks.STRIPPED_MAPLE_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+
+            if (state.is(NMLBlocks.MAPLE_WOOD.get())) {
+                return NMLBlocks.STRIPPED_MAPLE_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
         }
 
         return super.getToolModifiedState(state, context, toolAction, simulate);

@@ -37,6 +37,7 @@ public class ChestBoatEntity extends ChestBoat {
     public Item getDropItem() {
         return switch(getModVariant()) {
             case PINE -> NMLItems.PINE_CHEST_BOAT.get();
+            case MAPLE -> NMLItems.MAPLE_CHEST_BOAT.get();
         };
     }
 
@@ -51,6 +52,7 @@ public class ChestBoatEntity extends ChestBoat {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DATA_ID_TYPE, BoatEntity.Type.PINE.ordinal());
+        this.entityData.define(DATA_ID_TYPE, BoatEntity.Type.MAPLE.ordinal());
     }
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {
@@ -64,7 +66,9 @@ public class ChestBoatEntity extends ChestBoat {
     }
 
     public static enum Type implements StringRepresentable {
-        PINE(NMLBlocks.PINE_PLANKS.get(), "pine");
+        PINE(NMLBlocks.PINE_PLANKS.get(), "pine"),
+        MAPLE(NMLBlocks.MAPLE_PLANKS.get(), "maple");
+
 
         private final String name;
         private final Block planks;
