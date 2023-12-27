@@ -52,7 +52,6 @@ public class ChestBoatEntity extends ChestBoat {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DATA_ID_TYPE, BoatEntity.Type.PINE.ordinal());
-        this.entityData.define(DATA_ID_TYPE, BoatEntity.Type.MAPLE.ordinal());
     }
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {
