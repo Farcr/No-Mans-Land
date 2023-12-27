@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "nomansland:pine_checked",
+    "features": [
+      {
+        "chance": 0.3,
+        "feature": "minecraft:oak_checked"
+      }
+    ]
+  }
+}

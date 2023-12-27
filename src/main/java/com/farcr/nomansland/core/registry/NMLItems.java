@@ -25,7 +25,7 @@ public class NMLItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> MASHED_POTATOES_WITH_MUSHROOMS = registerItem("mashed_potatoes_with_mushrooms",
-            () -> new BowlFoodItem(new Item.Properties().food(NMLFoods.MASHED_POTATOES_WITH_MUSHROOMS)));
+            () -> new BowlFoodItem(new Item.Properties().food(NMLFoods.MASHED_POTATOES_WITH_MUSHROOMS).stacksTo(1)));
     public static final RegistryObject<Item> GRILLED_MUSHROOMS = registerItem("grilled_mushrooms",
             () -> new Item(new Item.Properties().food(NMLFoods.GRILLED_MUSHROOMS)));
 
@@ -107,6 +107,8 @@ public class NMLItems {
             event.accept(NMLBlocks.PEBBLES);
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES);
             event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
+            event.accept(NMLBlocks.RED_MAPLE_LEAVES);
+            event.accept(NMLBlocks.RED_MAPLE_SAPLING);
             event.accept(NMLBlocks.FIELD_MUSHROOM);
             event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
 

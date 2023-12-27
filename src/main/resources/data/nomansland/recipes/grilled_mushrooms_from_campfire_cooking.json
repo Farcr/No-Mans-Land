@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.20,
+  "ingredient": {
+    "tag": "nomansland:edible_mushrooms"
+  },
+  "result": "nomansland:grilled_mushrooms"
+}

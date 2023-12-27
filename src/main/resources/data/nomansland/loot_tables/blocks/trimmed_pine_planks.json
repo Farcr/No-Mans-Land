@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "nomansland:pine_cabinet"
+          "name": "nomansland:trimmed_pine_planks"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "minecraft:blocks/pine_cabinet"
+  "random_sequence": "nomansland:blocks/trimmed_pine_planks"
 }

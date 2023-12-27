@@ -10,6 +10,10 @@
       {
         "chance": 0.2,
         "feature": "nomansland:pine_checked"
+      },
+      {
+        "chance": 0.2,
+        "feature": "nomansland:red_maple_checked"
       }
     ]
   }

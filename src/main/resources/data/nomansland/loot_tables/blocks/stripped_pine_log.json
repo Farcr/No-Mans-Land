@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stripped_pine_log"
+          "name": "nomansland:stripped_pine_log"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "minecraft:blocks/stripped_pine_log"
+  "random_sequence": "nomansland:blocks/stripped_pine_log"
 }
