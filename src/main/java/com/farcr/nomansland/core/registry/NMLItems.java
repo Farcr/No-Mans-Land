@@ -56,9 +56,9 @@ public class NMLItems {
             event.accept(NMLBlocks.POLISHED_STONE_STAIRS);
             event.accept(NMLBlocks.POLISHED_STONE_SLAB);
 
-            event.accept(NMLBlocks.COBBLESTONE_BRICKS);
-            event.accept(NMLBlocks.COBBLESTONE_BRICK_STAIRS);
-            event.accept(NMLBlocks.COBBLESTONE_BRICK_SLAB);
+//            event.accept(NMLBlocks.COBBLESTONE_BRICKS);
+//            event.accept(NMLBlocks.COBBLESTONE_BRICK_STAIRS);
+//            event.accept(NMLBlocks.COBBLESTONE_BRICK_SLAB);
 
             event.accept(NMLBlocks.PINE_LOG);
             event.accept(NMLBlocks.PINE_WOOD);

@@ -3,10 +3,12 @@
     "minecraft:ice",
     "minecraft:packed_ice",
     "minecraft:blue_ice",
+    "minecraft:snow_block",
     "minecraft:sand",
     "minecraft:sandstone",
     "minecraft:red_sand",
     "minecraft:red_sandstone",
-    "#minecraft:terracotta"
+    "#minecraft:terracotta",
+    "#nomansland:mushroom_blocks"
   ]
 }
