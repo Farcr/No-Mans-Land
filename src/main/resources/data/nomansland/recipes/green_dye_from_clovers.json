@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "green_dye",
+  "ingredients": [
+    {
+        "item": "nomansland:clover_patch"
+    },
+    {
+        "item": "nomansland:clover_patch"
+    },
+    {
+        "item": "nomansland:clover_patch"
+    },
+    {
+        "item": "nomansland:clover_patch"
+    },
+    {
+        "item": "nomansland:clover_patch"
+    },
+    {
+        "item": "nomansland:clover_patch"
+    }
+],
+  "result": {
+    "count": 1,
+    "item": "minecraft:green_dye"
+  }
+}
