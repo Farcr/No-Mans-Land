@@ -2,6 +2,7 @@ package com.farcr.nomansland.core.content.client.color;
 
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
@@ -15,7 +16,11 @@ public class ColorHandler {
         event.getItemColors().register((stack, index) -> {
                     return GrassColor.get(0.5D, 1.0D);
                 },
-                NMLBlocks.GRASS_SPROUTS.get(),
+                NMLBlocks.GRASS_SPROUTS.get()
+        );
+        event.getItemColors().register((stack, index) -> {
+                    return FoliageColor.get(0.5D, 1.0D);
+                },
                 NMLBlocks.MAPLE_LEAVES.get()
         );
     }
@@ -24,7 +29,11 @@ public class ColorHandler {
         event.getBlockColors().register((state, world, pos, tintIndex) -> {
                     return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
                 },
-                NMLBlocks.GRASS_SPROUTS.get(),
+                NMLBlocks.GRASS_SPROUTS.get()
+        );
+        event.getBlockColors().register((state, world, pos, tintIndex) -> {
+                    return world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : GrassColor.get(0.5D, 1.0D);
+                },
                 NMLBlocks.MAPLE_LEAVES.get()
         );
     }
