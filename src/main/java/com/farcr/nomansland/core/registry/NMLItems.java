@@ -131,6 +131,8 @@ public class NMLItems {
             event.accept(NMLBlocks.PEBBLES);
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES);
             event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
+            event.accept(NMLBlocks.AUTUMNAL_OAK_LEAVES);
+            event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
             event.accept(NMLBlocks.FIELD_MUSHROOM);
             event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
 

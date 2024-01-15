@@ -6,6 +6,7 @@
   "biome.nomansland.deep_caves": "Deep Caves",
   "biome.nomansland.old_growth_forest": "Old Growth Forest",
   "biome.nomansland.boreal_forest": "Boreal Forest",
+  "biome.nomansland.autumnal_forest": "Autumnal Forest",
 
   "block.nomansland.grass_sprouts": "Grass Sprouts",
   "block.nomansland.pebbles": "Pebbles",
@@ -14,6 +15,10 @@
   "block.nomansland.yellow_birch_leaves": "Yellow Birch Leaves",
   "block.nomansland.yellow_birch_sapling": "Yellow Birch Sapling",
   "block.nomansland.potted_yellow_birch_sapling": "Potted Yellow Birch Sapling",
+  
+  "block.nomansland.autumnal_oak_leaves": "Autumnal Oak Leaves",
+  "block.nomansland.autumnal_oak_sapling": "Autumnal Oak Sapling",
+  "block.nomansland.potted_autumnal_oak_sapling": "Potted Autumnal Oak Sapling",
 
   "block.nomansland.field_mushroom": "Field Mushroom",
   "block.nomansland.field_mushroom_block": "Field Mushroom Block",
