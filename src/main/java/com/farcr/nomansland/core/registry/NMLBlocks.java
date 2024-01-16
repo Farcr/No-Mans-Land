@@ -27,9 +27,9 @@ public class NMLBlocks {
 
     public static LinkedHashSet<RegistryObject<Item>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
 
+//Plants and Other Natural Decorations
     public static final RegistryObject<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
             () -> new GrassSproutsBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
-
     public static final RegistryObject<Block> PEBBLES = registerBlock("pebbles",
             () -> new PebbleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noCollission().instabreak().sound(SoundType.STONE).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> YELLOW_BIRCH_LEAVES = registerBlock("yellow_birch_leaves",
