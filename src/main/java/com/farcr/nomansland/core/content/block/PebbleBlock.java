@@ -43,11 +43,9 @@ public class PebbleBlock extends Block implements SimpleWaterloggedBlock {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        ItemStack itemstack = pPlayer.getItemInHand(pHand);
         ItemStack pebble = new ItemStack(NMLBlocks.PEBBLES.get());
         if (!pPlayer.addItem(pebble)) {
             pPlayer.drop(pebble, false);
-
         } else {
             pLevel.playSound(pPlayer,
                     pPlayer.getX(),
