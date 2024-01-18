@@ -2,6 +2,7 @@ package com.farcr.nomansland.core.events;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.client.NMLModelLayers;
+import com.farcr.nomansland.core.content.entity.client.MooseModel;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
@@ -27,5 +28,7 @@ public class ClientEvents {
 
         event.registerLayerDefinition(NMLModelLayers.MAPLE_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(NMLModelLayers.MAPLE_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+
+        event.registerLayerDefinition(NMLModelLayers.MOOSE_LAYER, MooseModel::createBodyLayer);
     }
 }

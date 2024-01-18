@@ -54,6 +54,8 @@ public class NMLItems {
             () -> new BoatItem(false, BoatEntity.Type.MAPLE, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> MAPLE_CHEST_BOAT = registerItem("maple_chest_boat",
             () -> new BoatItem(true, BoatEntity.Type.MAPLE, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> MOOSE_SPAWN_EGG = ITEMS.register("moose_spawn_egg",
+            () -> new ForgeSpawnEggItem(NMLEntities.MOOSE, 0x8b4513 , 0xa52a2a, new Item.Properties()));
 
 
 
