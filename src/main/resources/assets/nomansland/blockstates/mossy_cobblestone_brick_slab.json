@@ -1,0 +1,37 @@
+{
+  "variants": {
+    "type=bottom": [
+      {
+        "model": "nomansland:block/building/cobblestone_bricks/mossy_cobblestone_brick_slab_0"
+      },
+      {
+        "model": "nomansland:block/building/cobblestone_bricks/mossy_cobblestone_brick_slab_1"
+      },
+      {
+        "model": "nomansland:block/building/cobblestone_bricks/mossy_cobblestone_brick_slab_2"
+      }
+    ],
+    "type=double": [
+      {
+        "model": "nomansland:block/building/cobblestone_bricks/mossy_cobblestone_bricks_0"
+      },
+      {
+        "model": "nomansland:block/building/cobblestone_bricks/mossy_cobblestone_bricks_1"
+      },
+      {
+        "model": "nomansland:block/building/cobblestone_bricks/mossy_cobblestone_bricks_2"
+      }
+    ],
+    "type=top": [
+      {
+        "model": "nomansland:block/building/cobblestone_bricks/mossy_cobblestone_brick_slab_top_0"
+      },
+      {
+        "model": "nomansland:block/building/cobblestone_bricks/mossy_cobblestone_brick_slab_top_1"
+      },
+      {
+        "model": "nomansland:block/building/cobblestone_bricks/mossy_cobblestone_brick_slab_top_2"
+      }
+    ]
+  }
+}

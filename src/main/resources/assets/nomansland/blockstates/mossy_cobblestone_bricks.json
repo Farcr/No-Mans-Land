@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/building/cobblestone_bricks/mossy_cobblestone_bricks_0"
+      },
+      {
+        "model": "nomansland:block/building/cobblestone_bricks/mossy_cobblestone_bricks_1"
+      },
+      {
+        "model": "nomansland:block/building/cobblestone_bricks/mossy_cobblestone_bricks_2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "nomansland:block/building/mossy_cobblestone_bricks_0"
+  }
+}

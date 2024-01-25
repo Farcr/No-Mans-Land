@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "nomansland:block/building/mossy_cobblestone_bricks_0"
+  }
+}

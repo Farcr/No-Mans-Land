@@ -7,6 +7,7 @@
   "biome.nomansland.old_growth_forest": "Old Growth Forest",
   "biome.nomansland.boreal_forest": "Boreal Forest",
   "biome.nomansland.autumnal_forest": "Autumnal Forest",
+  "biome.nomansland.autumnal_fields": "Autumnal Fields",
 
   "block.nomansland.grass_sprouts": "Grass Sprouts",
   "block.nomansland.pebbles": "Pebbles",
@@ -51,6 +52,16 @@
   "block.nomansland.polished_stone": "Polished Stone",
   "block.nomansland.polished_stone_slab": "Polished Stone Slab",
   "block.nomansland.polished_stone_stairs": "Polished Stone Stairs",
+
+  "block.nomansland.cobblestone_bricks": "Cobblestone Bricks",
+  "block.nomansland.cobblestone_brick_slab": "Cobblestone Brick Slab",
+  "block.nomansland.cobblestone_brick_stairs": "Cobblestone Brick Stairs",
+  "block.nomansland.cobblestone_brick_wall": "Cobblestone Brick Wall",
+
+  "block.nomansland.mossy_cobblestone_bricks": "Mossy Cobblestone Bricks",
+  "block.nomansland.mossy_cobblestone_brick_slab": "Mossy Cobblestone Brick Slab",
+  "block.nomansland.mossy_cobblestone_brick_stairs": "Mossy Cobblestone Brick Stairs",
+  "block.nomansland.mossy_cobblestone_brick_wall": "Mossy Cobblestone Brick Wall",
 
   
   "entity.nomansland.boat": "Boat",

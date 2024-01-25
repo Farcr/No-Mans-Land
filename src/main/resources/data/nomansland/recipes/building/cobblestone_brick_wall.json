@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cobblestone_bricks",
+  "key": {
+    "#": {
+      "item": "nomansland:cobblestone_bricks"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "nomansland:cobblestone_brick_wall"
+  },
+  "show_notification": true
+}
