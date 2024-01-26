@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:dirt_path",
+    "nomansland:dirt_path",
+    "nomansland:podzol_path",
+    "nomansland:mycelium_path",
+    "nomansland:snowy_grass_path",
+    "nomansland:snow_path",
+    "nomansland:gravel_path",
+    "nomansland:sand_path",
+    "nomansland:red_sand_path"
+  ]
+}

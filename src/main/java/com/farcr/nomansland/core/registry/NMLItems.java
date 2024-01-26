@@ -143,7 +143,14 @@ public class NMLItems {
             event.accept(NMLBlocks.AUTUMNAL_OAK_LEAVES);
             event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
             event.accept(NMLBlocks.FIELD_MUSHROOM);
-            event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
+            event.accept(NMLBlocks.DIRT_PATH);
+            event.accept(NMLBlocks.MYCELIUM_PATH);
+            event.accept(NMLBlocks.PODZOL_PATH);
+            event.accept(NMLBlocks.SNOWY_GRASS_PATH);
+            event.accept(NMLBlocks.SNOW_PATH);
+            event.accept(NMLBlocks.GRAVEL_PATH);
+            event.accept(NMLBlocks.SAND_PATH);
+            event.accept(NMLBlocks.RED_SAND_PATH);
 
             event.accept(NMLBlocks.PINE_LOG);
             event.accept(NMLBlocks.PINE_LEAVES);

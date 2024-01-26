@@ -2,7 +2,7 @@
   "parent": "nomansland:block/path_template",
   "textures": {
     "bottom": "minecraft:block/dirt",
-    "top": "nomandsland:block/path/snow_path_top",
+    "top": "nomansland:block/path/snow_path_top",
     "side": "nomansland:block/path/snowy_grass_path_side"
   }
 }

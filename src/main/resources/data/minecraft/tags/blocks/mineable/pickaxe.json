@@ -3,6 +3,14 @@
     "nomansland:polished_stone",
     "nomansland:polished_stone_slab",
     "nomansland:polished_stone_stairs",
-    "nomansland:faded_stone_bricks"
+    "nomansland:faded_stone_bricks",
+    "nomansland:cobblestone_bricks",
+    "nomansland:cobblestone_brick_slab",
+    "nomansland:cobblestone_brick_stairs",
+    "nomansland:cobblestone_brick_wall",
+    "nomansland:mossy_cobblestone_bricks",
+    "nomansland:mossy_cobblestone_brick_slab",
+    "nomansland:mossy_cobblestone_brick_stairs",
+    "nomansland:mossy_cobblestone_brick_wall"
   ]
 }
