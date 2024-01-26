@@ -14,9 +14,10 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import javax.annotation.Nullable;
 
 public class PathBlock extends DirtPathBlock {
-    private final Block mainBlock;
+    public final Block mainBlock;
+    boolean hasGravity;
 
-    public PathBlock(Properties properties, Block mainBlock) {
+    public PathBlock(Properties properties, Block mainBlock, boolean hasGravity) {
         super(properties);
         this.mainBlock = mainBlock;
     }

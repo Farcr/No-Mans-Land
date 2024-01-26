@@ -50,21 +50,21 @@ public class NMLBlocks {
             () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> DIRT_PATH = registerBlock("dirt_path",
-            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT), Blocks.DIRT));
+            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT), Blocks.DIRT, false));
     public static final RegistryObject<Block> MYCELIUM_PATH = registerBlock("mycelium_path",
-            () -> new PathBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(0.6F).sound(SoundType.GRASS), Blocks.DIRT));
+            () -> new PathBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(0.6F).sound(SoundType.GRASS), Blocks.DIRT, false));
     public static final RegistryObject<Block> PODZOL_PATH = registerBlock("podzol_path",
-            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL), Blocks.DIRT));
+            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL), Blocks.DIRT, false));
     public static final RegistryObject<Block> SNOWY_GRASS_PATH = registerBlock("snowy_grass_path",
-            () -> new PathBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).strength(0.6F).sound(SoundType.GRASS), Blocks.DIRT));
+            () -> new PathBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).strength(0.6F).sound(SoundType.GRASS), Blocks.DIRT, false));
     public static final RegistryObject<Block> SNOW_PATH = registerBlock("snow_path",
-            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK), Blocks.SNOW_BLOCK));
+            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK), Blocks.SNOW_BLOCK, false));
     public static final RegistryObject<Block> GRAVEL_PATH = registerBlock("gravel_path",
-            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL), Blocks.GRAVEL));
+            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL), Blocks.GRAVEL,true));
     public static final RegistryObject<Block> SAND_PATH = registerBlock("sand_path",
-            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.SAND), Blocks.SAND));
+            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.SAND), Blocks.SAND,true));
     public static final RegistryObject<Block> RED_SAND_PATH = registerBlock("red_sand_path",
-            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.RED_SAND), Blocks.RED_SAND));
+            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.RED_SAND), Blocks.RED_SAND,true));
 
     //Stone
     public static final RegistryObject<Block> FADED_STONE_BRICKS = registerBlock("faded_stone_bricks",
