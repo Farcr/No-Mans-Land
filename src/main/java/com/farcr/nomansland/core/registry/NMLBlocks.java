@@ -54,7 +54,7 @@ public class NMLBlocks {
     public static final RegistryObject<Block> MYCELIUM_PATH = registerBlock("mycelium_path",
             () -> new PathBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(0.6F).sound(SoundType.GRASS), Blocks.DIRT, false));
     public static final RegistryObject<Block> PODZOL_PATH = registerBlock("podzol_path",
-            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL), Blocks.DIRT, false));
+            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL), Blocks.PODZOL, false));
     public static final RegistryObject<Block> SNOWY_GRASS_PATH = registerBlock("snowy_grass_path",
             () -> new PathBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).strength(0.6F).sound(SoundType.GRASS), Blocks.DIRT, false));
     public static final RegistryObject<Block> SNOW_PATH = registerBlock("snow_path",

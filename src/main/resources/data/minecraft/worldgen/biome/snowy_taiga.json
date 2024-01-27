@@ -9,8 +9,8 @@
   "downfall": 0.4,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 6391896,
-    "grass_color": 8494981,
+    "foliage_color": 10858602,
+    "grass_color": 10205860,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -132,7 +132,7 @@
         "type": "minecraft:cow",
         "maxCount": 4,
         "minCount": 1,
-        "weight": 6
+        "weight": 4
       },
       {
         "type": "minecraft:wolf",
@@ -150,7 +150,13 @@
         "type": "minecraft:fox",
         "maxCount": 4,
         "minCount": 2,
-        "weight": 8
+        "weight": 10
+      },
+      {
+        "type": "minecraft:polar_bear",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 2
       }
     ],
     "misc": [],
