@@ -76,14 +76,18 @@
     [
       "minecraft:spring_water",
       "minecraft:spring_lava",
-      "nomansland:coarse_dirt_patch_normal"
+      "nomansland:podzol_patch"
+    ],
+    [
+      "minecraft:dark_forest_vegetation"
+    ],
+    [
+      "minecraft:patch_grass_forest"
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:dark_forest_vegetation",
       "minecraft:forest_flowers",
       "minecraft:flower_default",
-      "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
