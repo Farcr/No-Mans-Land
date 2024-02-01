@@ -1,7 +1,7 @@
 {
 	"credit": "Made by Farcr",
-	"render_type": "minecraft:cutout",
 	"ambientocclusion": false,
+	"render_type": "minecraft:cutout",
 	"textures": {
 		"particle": "#top"
 	},
@@ -12,9 +12,9 @@
 			"faces": {
 				"north": {"uv": [16, 0, 14.5, 8], "texture": "#side", "cullface": "north"},
 				"east": {"uv": [0, 0, 16, 16], "texture": "#top"},
-				"south": {"uv": [16, 0, 14.5, 8], "texture": "#side", "cullface": "south"},
+				"south": {"uv": [9.5, 0, 8, 8], "texture": "#side", "cullface": "south"},
 				"west": {"uv": [16, 0, 0, 16], "texture": "#top", "cullface": "west"},
-				"up": {"uv": [0, 1.5, 8, 0], "rotation": 90, "texture": "#side", "cullface": "up"}
+				"up": {"uv": [8, 1.5, 0, 0], "rotation": 90, "texture": "#side", "cullface": "up"}
 			}
 		}
 	]
