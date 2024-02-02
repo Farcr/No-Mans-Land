@@ -7,10 +7,12 @@ import com.farcr.nomansland.core.content.block.WallSignBlock;
 import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.world.tree.*;
 import com.google.common.collect.Sets;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -67,6 +69,10 @@ public class NMLBlocks {
             () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.SAND), Blocks.SAND,true));
     public static final RegistryObject<Block> RED_SAND_PATH = registerBlock("red_sand_path",
             () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.RED_SAND), Blocks.RED_SAND,true));
+
+
+    public static final RegistryObject<Block> REMAINS = registerBlock("remains",
+            () ->  new BrushableBlock(Blocks.DIRT, BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
 
     //Stone
     public static final RegistryObject<Block> FADED_STONE_BRICKS = registerBlock("faded_stone_bricks",

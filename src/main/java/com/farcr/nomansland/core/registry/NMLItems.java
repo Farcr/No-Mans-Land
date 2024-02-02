@@ -153,6 +153,8 @@ public class NMLItems {
             event.accept(NMLBlocks.SAND_PATH);
             event.accept(NMLBlocks.RED_SAND_PATH);
 
+            event.accept(NMLBlocks.REMAINS);
+
             event.accept(NMLBlocks.PINE_LOG);
             event.accept(NMLBlocks.PINE_LEAVES);
             event.accept(NMLBlocks.PINE_SAPLING);
