@@ -22,7 +22,10 @@ public class ColorHandler {
                 NMLBlocks.GRASS_SPROUTS.get()
         );
         event.getItemColors().register((stack, index) -> {
-                    return GrassColor.get(0.5D, 1.0D);
+                    int grassColorPacked = GrassColor.get(0.5D, 1.0D);
+                    return packColor(unpackRed(grassColorPacked)   / 0.556862745F,
+                            unpackGreen(grassColorPacked) / 0.745098039F,
+                            unpackBlue(grassColorPacked)  / 0.705882353F);
                 },
                 NMLBlocks.OAT_GRASS.get()
         );
