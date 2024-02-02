@@ -1,8 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#nomansland:has_coarse_dirt_patch",
-  "features": [
-    "nomansland:coarse_dirt_patch_normal"
-  ],
-  "step": "local_modifications"
-}

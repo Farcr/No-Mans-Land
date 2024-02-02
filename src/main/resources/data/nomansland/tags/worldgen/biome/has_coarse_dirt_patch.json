@@ -1,9 +1,0 @@
-{
-  "values": [
-    "#minecraft:is_jungle",
-    "#minecraft:is_savanna",
-    "nomansland:old_growth_forest",
-    "nomansland:boreal_forest",
-    "nomansland:autumnal_forest"
-  ]
-}
