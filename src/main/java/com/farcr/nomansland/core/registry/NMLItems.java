@@ -136,6 +136,7 @@ public class NMLItems {
         }
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(NMLBlocks.GRASS_SPROUTS);
+            event.accept(NMLBlocks.OAT_GRASS);
             event.accept(NMLBlocks.CLOVER_PATCH);
             event.accept(NMLBlocks.PEBBLES);
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES);

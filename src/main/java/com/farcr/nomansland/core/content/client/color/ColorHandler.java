@@ -19,6 +19,11 @@ public class ColorHandler {
                 NMLBlocks.GRASS_SPROUTS.get()
         );
         event.getItemColors().register((stack, index) -> {
+                    return GrassColor.get(0.5D, 1.0D);
+                },
+                NMLBlocks.OAT_GRASS.get()
+        );
+        event.getItemColors().register((stack, index) -> {
                     return FoliageColor.get(0.5D, 1.0D);
                 },
                 NMLBlocks.MAPLE_LEAVES.get()
@@ -30,6 +35,11 @@ public class ColorHandler {
                     return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
                 },
                 NMLBlocks.GRASS_SPROUTS.get()
+        );
+        event.getBlockColors().register((state, world, pos, tintIndex) -> {
+                    return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
+                },
+                NMLBlocks.OAT_GRASS.get()
         );
         event.getBlockColors().register((state, world, pos, tintIndex) -> {
                     return world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : GrassColor.get(0.5D, 1.0D);
