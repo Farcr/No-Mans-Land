@@ -2,12 +2,15 @@ package com.farcr.nomansland.core.content.client.color;
 
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.util.Mth;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.awt.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ColorHandler {
@@ -37,7 +40,11 @@ public class ColorHandler {
                 NMLBlocks.GRASS_SPROUTS.get()
         );
         event.getBlockColors().register((state, world, pos, tintIndex) -> {
-                    return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
+                    int grassColorPacked = GrassColor.get(0.5D, 1.0D);
+                    if (world != null && pos != null) grassColorPacked = BiomeColors.getAverageGrassColor(world, pos);
+                    return packColor(unpackRed(grassColorPacked)   / 0.556862745F,
+                            unpackGreen(grassColorPacked) / 0.745098039F,
+                            unpackBlue(grassColorPacked)  / 0.705882353F);
                 },
                 NMLBlocks.OAT_GRASS.get()
         );
@@ -46,6 +53,21 @@ public class ColorHandler {
                 },
                 NMLBlocks.MAPLE_LEAVES.get()
         );
+    }
+
+    private static float unpackRed(int rgb) {
+        return ((rgb >> 16) & 0xFF) / 255.0F;
+    }
+    private static float unpackGreen(int rgb) {
+        return ((rgb >> 8)  & 0xFF) / 255.0F;
+    }
+    private static float unpackBlue(int rgb) {
+        return ((rgb >> 0)  & 0xFF) / 255.0F;
+    }
+    private static int packColor(float r, float g, float b) {
+        return (((int) (Mth.clamp(r, 0, 1) * 255.0F) & 0xFF) << 16) |
+                (((int) (Mth.clamp(g, 0, 1) * 255.0F) & 0xFF) << 8) |
+                (((int) (Mth.clamp(b, 0, 1) * 255.0F) & 0xFF) << 0);
     }
 
 }
