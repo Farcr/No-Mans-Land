@@ -1,21 +1,8 @@
 {
   "variants": {
-    "": [
+    "": 
       {
         "model": "nomansland:block/plants/oat_grass"
-      },
-      {
-        "model": "nomansland:block/plants/oat_grass",
-        "y": 90
-      },
-      {
-        "model": "nomansland:block/plants/oat_grass",
-        "y": 180
-      },
-      {
-        "model": "nomansland:block/plants/oat_grass",
-        "y": 270
       }
-    ]
   }
 }
