@@ -29,7 +29,7 @@ public class NMLBlocks {
 
 //Plants and Other Natural Decorations
     public static final RegistryObject<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
-        () -> new GrassSproutsBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
+            () -> new GrassSproutsBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
     public static final RegistryObject<Block> CLOVER_PATCH = registerBlock("clover_patch",
             () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> OAT_GRASS = registerBlock("oat_grass",
