@@ -72,7 +72,7 @@ public class NMLBlocks {
 
 
     public static final RegistryObject<Block> REMAINS = registerBlock("remains",
-            () ->  new BrushableBlock(Blocks.DIRT, BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
+            () ->  new RemainsBlock(Blocks.COARSE_DIRT, BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
 
     //Stone
     public static final RegistryObject<Block> FADED_STONE_BRICKS = registerBlock("faded_stone_bricks",
