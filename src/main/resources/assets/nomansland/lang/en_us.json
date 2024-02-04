@@ -37,6 +37,8 @@
   "block.nomansland.gravel_path": "Gravel Path",
 
   "block.nomansland.remains": "Remains",
+  "entity.nomansland.buried": "Buried",
+  "item.nomansland.buried_spawn_egg": "Buried Spawn Egg",
 
   "block.nomansland.trimmed_oak_planks": "Trimmed Oak Planks",
   "block.nomansland.spruce_bookshelf": "Spruce Bookshelf",
@@ -79,6 +81,7 @@
   
   "entity.nomansland.boat": "Boat",
   "entity.nomansland.chest_boat": "Boat with Chest",
+
 
   "block.nomansland.pine_planks": "Pine Planks",
   "block.nomansland.pine_stairs": "Pine Stairs",

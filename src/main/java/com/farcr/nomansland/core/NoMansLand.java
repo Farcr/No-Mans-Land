@@ -1,5 +1,6 @@
 package com.farcr.nomansland.core;
 
+import com.farcr.nomansland.core.content.entity.client.BuriedRenderer;
 import com.farcr.nomansland.core.content.entity.client.NMLBoatRenderer;
 import com.farcr.nomansland.core.registry.*;
 import com.mojang.logging.LogUtils;
@@ -64,8 +65,11 @@ public class NoMansLand {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(NMLEntities.BURIED.get(), BuriedRenderer::new);
+
             EntityRenderers.register(NMLEntities.BOAT.get(), pContext -> new NMLBoatRenderer(pContext, false));
             EntityRenderers.register(NMLEntities.CHEST_BOAT.get(), pContext -> new NMLBoatRenderer(pContext, true));
+
         }
     }
 }
