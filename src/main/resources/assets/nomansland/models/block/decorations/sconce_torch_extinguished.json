@@ -1,0 +1,6 @@
+{
+  "parent": "nomansland:block/sconce_torch_template",
+  "textures": {
+    "texture": "nomansland:block/sconce_torch_extinguished"
+  }
+}

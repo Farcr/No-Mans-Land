@@ -1,0 +1,54 @@
+{
+	"credit": "Made by Farcr",
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"particle": "#texture"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 15],
+			"to": [9, 12, 17],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 0, 16]},
+			"faces": {
+				"north": {"uv": [6, 4, 8, 16], "texture": "#texture"},
+				"east": {"uv": [6, 4, 8, 16], "texture": "#texture"},
+				"south": {"uv": [6, 4, 8, 16], "texture": "#texture"},
+				"west": {"uv": [6, 4, 8, 16], "texture": "#texture"},
+				"up": {"uv": [6, 1, 8, 3], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [6, 9, 14],
+			"to": [10, 11, 18],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 0, 16]},
+			"faces": {
+				"north": {"uv": [1, 1, 5, 3], "texture": "#texture"},
+				"east": {"uv": [1, 1, 5, 3], "texture": "#texture"},
+				"south": {"uv": [1, 1, 5, 3], "texture": "#texture"},
+				"west": {"uv": [1, 1, 5, 3], "texture": "#texture"},
+				"down": {"uv": [1, 4, 5, 8], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [10, 11, 18],
+			"to": [6, 9, 14],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 0, 16]},
+			"faces": {
+				"north": {"uv": [1, 3, 5, 1], "texture": "#texture"},
+				"east": {"uv": [1, 3, 5, 1], "texture": "#texture"},
+				"south": {"uv": [1, 3, 5, 1], "texture": "#texture"},
+				"west": {"uv": [1, 3, 5, 1], "texture": "#texture"},
+				"up": {"uv": [1, 9, 5, 13], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [8, 7, 13],
+			"to": [8, 9, 16],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 0, 12]},
+			"faces": {
+				"east": {"uv": [4, 14, 1, 16], "texture": "#texture"},
+				"west": {"uv": [1, 14, 4, 16], "texture": "#texture"}
+			}
+		}
+	]
+}

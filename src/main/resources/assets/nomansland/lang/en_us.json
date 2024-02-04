@@ -79,6 +79,10 @@
   "block.nomansland.mossy_cobblestone_brick_wall": "Mossy Cobblestone Brick Wall",
 
   
+  "block.nomansland.sconce_torch": "Sconce Torch",
+  "block.nomansland.sconce_soul_torch": "Sconce Soul Torch",
+
+  
   "entity.nomansland.boat": "Boat",
   "entity.nomansland.chest_boat": "Boat with Chest",
 
