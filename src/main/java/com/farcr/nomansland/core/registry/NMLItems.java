@@ -35,7 +35,7 @@ public class NMLItems {
             () -> new Item(new Item.Properties().food(NMLFoods.COOKED_FROG_LEG)));
 
     public static final RegistryObject<Item> BURIED_SPAWN_EGG = ITEMS.register("buried_spawn_egg",
-            () -> new ForgeSpawnEggItem(NMLEntities.BURIED, 0x6e7f80, 0x536872, new Item.Properties()));
+            () -> new ForgeSpawnEggItem(NMLEntities.BURIED, 0x9a8977, 0x96775d, new Item.Properties()));
 
     public static final RegistryObject<Item> PINE_SIGN = registerItem("pine_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.PINE_SIGN.get(), NMLBlocks.PINE_WALL_SIGN.get()));
