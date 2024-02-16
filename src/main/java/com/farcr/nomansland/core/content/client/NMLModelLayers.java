@@ -19,6 +19,6 @@ public class NMLModelLayers {
     public static final ModelLayerLocation BURIED_LAYER = new ModelLayerLocation(
             new ResourceLocation(NoMansLand.MODID, "buried"), "main");
     public static final ModelLayerLocation MOOSE_LAYER = new ModelLayerLocation(
-            new ResourceLocation(NoMansLand.MODID, "moose/maple"), "main")
+            new ResourceLocation(NoMansLand.MODID, "moose/maple"), "main");
 
 }
