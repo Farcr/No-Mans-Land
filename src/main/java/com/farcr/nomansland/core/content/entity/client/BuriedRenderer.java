@@ -21,6 +21,8 @@ public class BuriedRenderer extends MobRenderer<BuriedEntity, BuriedModel<Buried
                         new ResourceLocation(NoMansLand.MODID, "textures/entity/buried/buried_0.png"));
                 p_114874_.put(BuriedVariant.ONE,
                         new ResourceLocation(NoMansLand.MODID, "textures/entity/buried/buried_1.png"));
+                p_114874_.put(BuriedVariant.TWO,
+                        new ResourceLocation(NoMansLand.MODID, "textures/entity/buried/buried_2.png"));
             });
 
     public BuriedRenderer(EntityRendererProvider.Context pContext) {

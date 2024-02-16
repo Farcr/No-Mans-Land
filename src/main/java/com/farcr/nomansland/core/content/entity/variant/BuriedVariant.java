@@ -5,7 +5,8 @@ import java.util.Comparator;
 
 public enum BuriedVariant {
     ZERO(0),
-    ONE(1);
+    ONE(1),
+    TWO(2);
 
     private static final BuriedVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.comparingInt(BuriedVariant::getId)).toArray(BuriedVariant[]::new);
     private final int id;
