@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#T#",
+        " # "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:iron_nugget"
+        },
+        "T": {
+            "item": "minecraft:soul_torch"
+        }
+    },
+    "result": {
+        "item": "nomansland:sconce_soul_torch",
+        "count": 1
+    }
+}
