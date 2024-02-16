@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#nomansland:has_fiddlehead",
+  "features": [
+    "nomansland:patch_fiddlehead"
+  ],
+  "step": "vegetal_decoration"
+}

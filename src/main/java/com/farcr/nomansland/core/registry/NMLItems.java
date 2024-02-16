@@ -141,6 +141,7 @@ public class NMLItems {
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(NMLBlocks.GRASS_SPROUTS);
             event.accept(NMLBlocks.OAT_GRASS);
+            event.accept(NMLBlocks.FIDDLEHEAD);
             event.accept(NMLBlocks.CLOVER_PATCH);
             event.accept(NMLBlocks.PEBBLES);
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES);
@@ -184,6 +185,8 @@ public class NMLItems {
             event.accept(NMLBlocks.BAMBOO_BOOKSHELF);
             event.accept(NMLItems.PINE_SIGN);
             event.accept(NMLItems.PINE_HANGING_SIGN);
+            event.accept(NMLItems.MAPLE_SIGN);
+            event.accept(NMLItems.MAPLE_HANGING_SIGN);
             event.accept(NMLBlocks.SCONCE_TORCH);
             event.accept(NMLBlocks.SCONCE_SOUL_TORCH);
         }

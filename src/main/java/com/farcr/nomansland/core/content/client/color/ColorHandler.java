@@ -10,8 +10,6 @@ import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import java.awt.*;
-
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ColorHandler {
     @SubscribeEvent
@@ -19,7 +17,8 @@ public class ColorHandler {
         event.getItemColors().register((stack, index) -> {
                     return GrassColor.get(0.5D, 1.0D);
                 },
-                NMLBlocks.GRASS_SPROUTS.get()
+                NMLBlocks.GRASS_SPROUTS.get(),
+                NMLBlocks.FIDDLEHEAD.get()
         );
         event.getItemColors().register((stack, index) -> {
                     int grassColorPacked = GrassColor.get(0.5D, 1.0D);
@@ -40,7 +39,8 @@ public class ColorHandler {
         event.getBlockColors().register((state, world, pos, tintIndex) -> {
                     return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
                 },
-                NMLBlocks.GRASS_SPROUTS.get()
+                NMLBlocks.GRASS_SPROUTS.get(),
+                NMLBlocks.FIDDLEHEAD.get()
         );
         event.getBlockColors().register((state, world, pos, tintIndex) -> {
                     int grassColorPacked = GrassColor.get(0.5D, 1.0D);
