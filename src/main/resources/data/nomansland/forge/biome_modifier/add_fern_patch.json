@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#minecraft:is_forest",
+  "biomes": "#nomansland:has_fern_patch",
   "features": [
     "nomansland:patch_fern_forest"
   ],

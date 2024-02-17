@@ -1,7 +1,12 @@
 {
   "variants": {
-    "": {
-      "model": "nomansland:block/plants/fiddlehead"
-    }
+    "": [
+      {
+        "model": "nomansland:block/plants/fiddlehead_0"
+      },
+      {
+        "model": "nomansland:block/plants/fiddlehead_1"
+      }
+    ]
   }
 }
