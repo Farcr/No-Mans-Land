@@ -1,5 +1,9 @@
 {
   "values": [
-    "nomansland:pine_sapling"
+    "nomansland:pine_sapling",
+    "nomansland:maple_sapling",
+    "nomansland:red_maple_sapling",
+    "nomansland:yellow_birch_sapling",
+    "nomansland:autumnal_oak_sapling"
   ]
 }
