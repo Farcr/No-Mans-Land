@@ -76,8 +76,12 @@ public class NMLBlocks {
     //Decorations
     public static final RegistryObject<Block> SCONCE_TORCH = registerBlock("sconce_torch",
             () -> new SconceTorchBlock(BlockBehaviour.Properties.copy(Blocks.TORCH).sound(SoundType.LANTERN), ParticleTypes.FLAME));
+    public static final RegistryObject<Block> SCONCE_WALL_TORCH = BLOCKS.register("sconce_wall_torch",
+            () -> new SconceWallTorchBlock(BlockBehaviour.Properties.copy(Blocks.WALL_TORCH).sound(SoundType.LANTERN), ParticleTypes.FLAME));
     public static final RegistryObject<Block> SCONCE_SOUL_TORCH = registerBlock("sconce_soul_torch",
             () -> new SconceTorchBlock(BlockBehaviour.Properties.copy(Blocks.SOUL_TORCH).sound(SoundType.LANTERN), ParticleTypes.SOUL_FIRE_FLAME));
+    public static final RegistryObject<Block> SCONCE_WALL_SOUL_TORCH = BLOCKS.register("sconce_wall_soul_torch",
+            () -> new SconceWallTorchBlock(BlockBehaviour.Properties.copy(Blocks.SOUL_WALL_TORCH).sound(SoundType.LANTERN), ParticleTypes.SOUL_FIRE_FLAME));
 
     //Dungeon
     public static final RegistryObject<Block> REMAINS = registerBlock("remains",
