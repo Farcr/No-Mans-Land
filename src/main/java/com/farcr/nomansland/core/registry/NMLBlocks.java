@@ -36,9 +36,11 @@ public class NMLBlocks {
     public static final RegistryObject<Block> CLOVER_PATCH = registerBlock("clover_patch",
             () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> OAT_GRASS = registerBlock("oat_grass",
-            () -> new GrassSproutsBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
+            () -> new SimpleFoliageBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final RegistryObject<Block> FIDDLEHEAD = registerBlock("fiddlehead",
-            () -> new GrassSproutsBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
+            () -> new SimpleFoliageBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
+    public static final RegistryObject<Block> CATTAIL = registerBlock("cattail",
+            () -> new WaterDoublePlantBlock(Block.Properties.copy(Blocks.TALL_GRASS).offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final RegistryObject<Block> PEBBLES = registerBlock("pebbles",
             () -> new PebbleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noCollission().instabreak().sound(SoundType.STONE).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> YELLOW_BIRCH_LEAVES = registerBlock("yellow_birch_leaves",

@@ -142,6 +142,7 @@ public class NMLItems {
             event.accept(NMLBlocks.GRASS_SPROUTS);
             event.accept(NMLBlocks.OAT_GRASS);
             event.accept(NMLBlocks.FIDDLEHEAD);
+            event.accept(NMLBlocks.CATTAIL);
             event.accept(NMLBlocks.CLOVER_PATCH);
             event.accept(NMLBlocks.PEBBLES);
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES);
@@ -201,7 +202,7 @@ public class NMLItems {
             event.accept(NMLItems.PINE_CHEST_BOAT);
         }
         if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-            event.accept(NMLItems.BURIED_SPAWN_EGG);
+//            event.accept(NMLItems.BURIED_SPAWN_EGG);
         }
 
 
