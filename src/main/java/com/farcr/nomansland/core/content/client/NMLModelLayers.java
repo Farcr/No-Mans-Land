@@ -16,6 +16,12 @@ public class NMLModelLayers {
     public static final ModelLayerLocation MAPLE_CHEST_BOAT_LAYER = new ModelLayerLocation(
             new ResourceLocation(NoMansLand.MODID, "chest_boat/maple"), "main");
 
+
+    public static final ModelLayerLocation WALNUT_BOAT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(NoMansLand.MODID, "boat/walnut"), "main");
+    public static final ModelLayerLocation WALNUT_CHEST_BOAT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(NoMansLand.MODID, "chest_boat/walnut"), "main");
+
     public static final ModelLayerLocation BURIED_LAYER = new ModelLayerLocation(
             new ResourceLocation(NoMansLand.MODID, "buried"), "main");
 

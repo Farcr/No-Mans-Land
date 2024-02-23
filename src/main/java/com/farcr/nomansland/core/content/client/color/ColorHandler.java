@@ -31,7 +31,8 @@ public class ColorHandler {
         event.getItemColors().register((stack, index) -> {
                     return FoliageColor.get(0.5D, 1.0D);
                 },
-                NMLBlocks.MAPLE_LEAVES.get()
+                NMLBlocks.MAPLE_LEAVES.get(),
+                NMLBlocks.WALNUT_LEAVES.get()
         );
     }
     @SubscribeEvent
@@ -54,7 +55,8 @@ public class ColorHandler {
         event.getBlockColors().register((state, world, pos, tintIndex) -> {
                     return world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : GrassColor.get(0.5D, 1.0D);
                 },
-                NMLBlocks.MAPLE_LEAVES.get()
+                NMLBlocks.MAPLE_LEAVES.get(),
+                NMLBlocks.WALNUT_LEAVES.get()
         );
     }
 

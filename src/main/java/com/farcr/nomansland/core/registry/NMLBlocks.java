@@ -268,6 +268,55 @@ public class NMLBlocks {
     public static final RegistryObject<Block> TRIMMED_MAPLE_PLANKS = registerBlock("trimmed_maple_planks",
             () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(NMLBlocks.MAPLE_PLANKS.get())));
 
+    //Walnut
+    public static final RegistryObject<Block> WALNUT_PLANKS = registerBlock("walnut_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> WALNUT_STAIRS = registerBlock("walnut_stairs",
+            () -> new StairBlock(() -> WALNUT_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(NMLBlocks.WALNUT_PLANKS.get())));
+    public static final RegistryObject<Block> WALNUT_SLAB = registerBlock("walnut_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(NMLBlocks.WALNUT_PLANKS.get())));
+    public static final RegistryObject<Block> WALNUT_LOG = registerBlock("walnut_log",
+            () -> new LogBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
+    public static final RegistryObject<Block> WALNUT_WOOD = registerBlock("walnut_wood",
+            () -> new LogBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
+    public static final RegistryObject<Block> STRIPPED_WALNUT_LOG = registerBlock("stripped_walnut_log",
+            () -> new LogBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final RegistryObject<Block> STRIPPED_WALNUT_WOOD = registerBlock("stripped_walnut_wood",
+            () -> new LogBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final RegistryObject<Block> WALNUT_FENCE = registerBlock("walnut_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+    public static final RegistryObject<Block> WALNUT_FENCE_GATE = registerBlock("walnut_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), NMLWoodTypes.WALNUT));
+    public static final RegistryObject<Block> WALNUT_LEAVES = registerBlock("walnut_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Block> WALNUT_SAPLING = registerBlock("walnut_sapling",
+            () -> new SaplingBlock((new WalnutTreeGrower()), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> POTTED_WALNUT_SAPLING = BLOCKS.register("potted_walnut_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WALNUT_SAPLING,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
+    public static final RegistryObject<Block> WALNUT_BUTTON = registerBlock("walnut_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON),
+                    NMLBlockSetTypes.WALNUT, 15, true));
+    public static final RegistryObject<Block> WALNUT_PRESSURE_PLATE = registerBlock("walnut_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
+                    BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), NMLBlockSetTypes.WALNUT));
+    public static final RegistryObject<Block> WALNUT_DOOR = registerBlock("walnut_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), NMLBlockSetTypes.WALNUT));
+    public static final RegistryObject<Block> WALNUT_TRAPDOOR = registerBlock("walnut_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), NMLBlockSetTypes.WALNUT));
+    public static final RegistryObject<Block> WALNUT_SIGN = BLOCKS.register("walnut_sign",
+            () -> new StandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), NMLWoodTypes.WALNUT));
+    public static final RegistryObject<Block> WALNUT_WALL_SIGN = BLOCKS.register("walnut_wall_sign",
+            () -> new WallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), NMLWoodTypes.WALNUT));
+    public static final RegistryObject<Block> WALNUT_HANGING_SIGN = BLOCKS.register("walnut_hanging_sign",
+            () -> new HangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), NMLWoodTypes.WALNUT));
+    public static final RegistryObject<Block> WALNUT_HANGING_WALL_SIGN = BLOCKS.register("walnut_wall_hanging_sign",
+            () -> new WallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), NMLWoodTypes.WALNUT));
+    public static final RegistryObject<Block> WALNUT_BOOKSHELF = registerBlock("walnut_bookshelf",
+            () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
+    public static final RegistryObject<Block> TRIMMED_WALNUT_PLANKS = registerBlock("trimmed_walnut_planks",
+            () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(NMLBlocks.WALNUT_PLANKS.get())));
+
 
     //Dye Sacks
     public static final RegistryObject<Block> WHITE_DYE_SACK = registerBlock("white_dye_sack",

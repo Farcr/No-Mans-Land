@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/walnut/walnut_bookshelf"
+      },
+      {
+        "model": "nomansland:block/walnut/walnut_bookshelf_alt"
+      }
+    ]
+  }
+}

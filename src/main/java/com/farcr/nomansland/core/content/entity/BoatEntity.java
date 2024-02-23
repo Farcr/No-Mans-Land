@@ -36,6 +36,7 @@ public class BoatEntity extends Boat{
        return switch(getModVariant()) {
            case PINE -> NMLItems.PINE_BOAT.get();
            case MAPLE -> NMLItems.MAPLE_BOAT.get();
+           case WALNUT -> NMLItems.WALNUT_BOAT.get();
        };
     }
 
@@ -64,7 +65,8 @@ public class BoatEntity extends Boat{
 
     public static enum Type implements StringRepresentable {
         PINE(NMLBlocks.PINE_PLANKS.get(), "pine"),
-        MAPLE(NMLBlocks.MAPLE_PLANKS.get(), "maple");
+        MAPLE(NMLBlocks.MAPLE_PLANKS.get(), "maple"),
+        WALNUT(NMLBlocks.WALNUT_PLANKS.get(), "walnut");
 
         private final String name;
         private final Block planks;
