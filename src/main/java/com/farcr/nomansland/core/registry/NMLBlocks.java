@@ -37,6 +37,9 @@ public class NMLBlocks {
             () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> OAT_GRASS = registerBlock("oat_grass",
             () -> new SimpleFoliageBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
+
+    public static final RegistryObject<Block> DRIED_GRASS = registerBlock("dried_grass",
+            () -> new DryFoliageBlock(Block.Properties.copy(Blocks.DEAD_BUSH).offsetType(BlockBehaviour.OffsetType.XZ)));
     public static final RegistryObject<Block> FIDDLEHEAD = registerBlock("fiddlehead",
             () -> new SimpleFoliageBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final RegistryObject<Block> CATTAIL = registerBlock("cattail",
