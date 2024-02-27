@@ -39,7 +39,7 @@ public class NMLBlocks {
             () -> new SimpleFoliageBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
 
     public static final RegistryObject<Block> DRIED_GRASS = registerBlock("dried_grass",
-            () -> new DryFoliageBlock(Block.Properties.copy(Blocks.DEAD_BUSH).offsetType(BlockBehaviour.OffsetType.XZ)));
+            () -> new DriedGrassBlock(Block.Properties.copy(Blocks.DEAD_BUSH).offsetType(BlockBehaviour.OffsetType.XZ)));
     public static final RegistryObject<Block> FIDDLEHEAD = registerBlock("fiddlehead",
             () -> new SimpleFoliageBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final RegistryObject<Block> CATTAIL = registerBlock("cattail",
