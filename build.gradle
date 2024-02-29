@@ -4,6 +4,7 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 version = mod_version
@@ -121,6 +122,20 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+
+    maven {
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        url = "https://maven.blamejared.com/"
+    }
+    maven {
+        url = "https://modmaven.dev"
+    }
+    maven {
+        url = "https://www.cursemaven.com"
+    }
+
 }
 
 dependencies {
@@ -130,6 +145,10 @@ dependencies {
     // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+    implementation fg.deobf("curse.maven:farmers-delight-398521:${farmers_delight_version}")
 
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
@@ -153,6 +172,7 @@ dependencies {
 // See https://docs.gradle.org/current/dsl/org.gradle.language.jvm.tasks.ProcessResources.html
 tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
+            farmers_delight_version: farmers_delight_version, farmersdelight_version_range: farmersdelight_version_range,
             minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
             forge_version: forge_version, forge_version_range: forge_version_range,
             loader_version_range: loader_version_range,
