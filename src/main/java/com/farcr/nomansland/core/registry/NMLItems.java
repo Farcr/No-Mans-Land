@@ -34,9 +34,6 @@ public class NMLItems {
     public static final RegistryObject<Item> COOKED_FROG_LEG = registerItem("cooked_frog_leg",
             () -> new Item(new Item.Properties().food(NMLFoods.COOKED_FROG_LEG)));
 
-    public static final RegistryObject<Item> BURIED_SPAWN_EGG = ITEMS.register("buried_spawn_egg",
-            () -> new ForgeSpawnEggItem(NMLEntities.BURIED, 0x9a8977, 0x96775d, new Item.Properties()));
-
     public static final RegistryObject<Item> PINE_SIGN = registerItem("pine_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.PINE_SIGN.get(), NMLBlocks.PINE_WALL_SIGN.get()));
     public static final RegistryObject<Item> PINE_HANGING_SIGN = registerItem("pine_hanging_sign",
@@ -239,10 +236,6 @@ public class NMLItems {
             event.accept(NMLItems.WALNUT_BOAT);
             event.accept(NMLItems.WALNUT_CHEST_BOAT);
         }
-        if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-//            event.accept(NMLItems.BURIED_SPAWN_EGG);
-        }
-
 
     }
     public static RegistryObject<Item> registerItem(final String name, final Supplier<Item> supplier) {

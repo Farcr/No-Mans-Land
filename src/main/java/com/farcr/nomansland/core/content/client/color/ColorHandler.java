@@ -58,7 +58,7 @@ public class ColorHandler {
                 },
                 NMLBlocks.MAPLE_LEAVES.get(),
                 NMLBlocks.WALNUT_LEAVES.get(),
-                NMLBlocks.CUT_VINE.get()y
+                NMLBlocks.CUT_VINE.get()
         );
     }
 
