@@ -41,7 +41,8 @@ public class ColorHandler {
                     return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
                 },
                 NMLBlocks.GRASS_SPROUTS.get(),
-                NMLBlocks.FIDDLEHEAD.get()
+                NMLBlocks.FIDDLEHEAD.get(),
+                NMLBlocks.CUT_SUGAR_CANE.get()
         );
         event.getBlockColors().register((state, world, pos, tintIndex) -> {
                     int grassColorPacked = GrassColor.get(0.5D, 1.0D);
@@ -56,7 +57,8 @@ public class ColorHandler {
                     return world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : GrassColor.get(0.5D, 1.0D);
                 },
                 NMLBlocks.MAPLE_LEAVES.get(),
-                NMLBlocks.WALNUT_LEAVES.get()
+                NMLBlocks.WALNUT_LEAVES.get(),
+                NMLBlocks.CUT_VINE.get()y
         );
     }
 
