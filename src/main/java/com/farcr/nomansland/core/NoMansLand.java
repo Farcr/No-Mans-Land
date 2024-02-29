@@ -1,6 +1,5 @@
 package com.farcr.nomansland.core;
 
-import com.farcr.nomansland.core.content.entity.client.BuriedRenderer;
 import com.farcr.nomansland.core.content.entity.client.NMLBoatRenderer;
 import com.farcr.nomansland.core.registry.*;
 import com.mojang.logging.LogUtils;
