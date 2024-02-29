@@ -1,7 +1,9 @@
 {
   "values": [
-    "#nomansland:bookshelves",
+    "#forge:bookshelves",
     "#nomansland:trimmed_planks",
-    "#nomansland:fish_barrels"
+    "#nomansland:fish_barrels",
+    "nomansland:cut_sugar_cane",
+    "nomansland:cut_vine"
   ]
 }

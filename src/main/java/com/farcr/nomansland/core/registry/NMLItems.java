@@ -165,6 +165,7 @@ public class NMLItems {
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(NMLBlocks.GRASS_SPROUTS);
             event.accept(NMLBlocks.OAT_GRASS);
+            event.accept(NMLBlocks.DRIED_GRASS);
             event.accept(NMLBlocks.FIDDLEHEAD);
             event.accept(NMLBlocks.CATTAIL);
             event.accept(NMLBlocks.CLOVER_PATCH);
@@ -174,6 +175,7 @@ public class NMLItems {
             event.accept(NMLBlocks.AUTUMNAL_OAK_LEAVES);
             event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
             event.accept(NMLBlocks.FIELD_MUSHROOM);
+            event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
             event.accept(NMLBlocks.DIRT_PATH);
             event.accept(NMLBlocks.MYCELIUM_PATH);
             event.accept(NMLBlocks.PODZOL_PATH);

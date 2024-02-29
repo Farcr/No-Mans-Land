@@ -1,0 +1,7 @@
+{
+  "type": "forge:remove_features",
+  "biomes": "minecraft:mushroom_fields",
+  "features": [
+    "nomansland:patch_grass_sprouts_normal"
+  ]
+}

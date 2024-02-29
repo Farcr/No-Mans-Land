@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#nomansland:has_dried_grass",
+  "features": [
+    "nomansland:dried_grass_patch"
+  ],
+  "step": "vegetal_decoration"
+}
