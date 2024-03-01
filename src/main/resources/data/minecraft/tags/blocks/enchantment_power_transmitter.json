@@ -1,7 +1,6 @@
 {
   "values": [
     "minecraft:sugar_cane",
-    "nomansland:cut_sugar_cane",
-    "nomansland:cut_vine"
+    "nomansland:cut_sugar_cane"
   ]
 }
