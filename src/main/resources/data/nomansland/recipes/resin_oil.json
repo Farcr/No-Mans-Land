@@ -11,37 +11,29 @@
         ],
         "recipe": {
             "type": "farmersdelight:cooking",
-            "cookingtime": 100,
-            "experience": 0.5,
+            "container": {
+                "item": "minecraft:glass_bottle"
+              },
+            "cookingtime": 75,
+            "experience": 0.25,
             "ingredients": [
                 {
                     "item": "nomansland:resin"
                 },
                 {
-                    "item": "minecraft:kelp"
+                    "item": "nomansland:resin"
                 },
                 {
-                    "item": "minecraft:kelp"
-                },
-                {
-                    "item": "minecraft:charcoal"
-                },
-                {
-                    "item": "minecraft:charcoal"
-                },
-                {
-                    "item": "minecraft:charcoal"
+                    "item": "minecraft:honeycomb"
                 }
             ],
             "result": {
-                "item": "minecraft:slime_ball"
+                "item": "nomansland:resin_oil"
             }
         }
       },
       {
-        "conditions": [
-            {}
-          ],
+        "conditions": [],
         "recipe": {
             "type": "minecraft:crafting_shapeless",
             "ingredients": [
@@ -49,23 +41,17 @@
                     "item": "nomansland:resin"
                 },
                 {
-                    "item": "minecraft:kelp"
+                    "item": "nomansland:resin"
                 },
                 {
-                    "item": "minecraft:kelp"
+                    "item": "minecraft:honeycomb"
                 },
                 {
-                    "item": "minecraft:charcoal"
-                },
-                {
-                    "item": "minecraft:charcoal"
-                },
-                {
-                    "item": "minecraft:charcoal"
+                    "item": "minecraft:glass_bottle"
                 }
             ],
             "result": {
-                "item": "minecraft:slime_ball",
+                "item": "nomansland:resin_oil",
                 "count": 1
             }
         }

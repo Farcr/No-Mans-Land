@@ -39,9 +39,7 @@
         }
       },
       {
-        "conditions": [
-            {}
-          ],
+        "conditions": [],
         "recipe": {
             "type": "minecraft:crafting_shapeless",
             "ingredients": [
