@@ -5,9 +5,9 @@ import com.farcr.nomansland.core.content.entity.BoatEntity;
 import com.farcr.nomansland.core.content.item.BoatItem;
 import com.google.common.collect.Sets;
 import net.minecraft.world.item.*;
-import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -172,6 +172,9 @@ public class NMLItems {
             event.accept(NMLBlocks.AUTUMNAL_OAK_LEAVES);
             event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
             event.accept(NMLBlocks.FIELD_MUSHROOM);
+            if (ModList.get().isLoaded("farmersdelight")) {
+                event.accept(NMLBlocks.FIELD_MUSHROOM_COLONY);
+            }
             event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
             event.accept(NMLBlocks.DIRT_PATH);
             event.accept(NMLBlocks.MYCELIUM_PATH);
@@ -243,6 +246,15 @@ public class NMLItems {
         CREATIVE_TAB_ITEMS.add(toReturn);
         return toReturn;
     }
+
+    public static RegistryObject<Item> registerIntegrationItem(final String name, final Supplier<Item> supplier, String modId) {
+        RegistryObject<Item> toReturn = ITEMS.register(name, supplier);
+        if (ModList.get().isLoaded(modId)) {
+        CREATIVE_TAB_ITEMS.add(toReturn);
+        }
+        return toReturn;
+    }
+    // I think I can just make it not register entirely? to deviate from the suggestion
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

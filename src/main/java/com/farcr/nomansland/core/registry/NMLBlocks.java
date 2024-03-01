@@ -6,6 +6,7 @@ import com.farcr.nomansland.core.content.block.WallHangingSignBlock;
 import com.farcr.nomansland.core.content.block.WallSignBlock;
 import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.world.tree.*;
+import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -17,6 +18,7 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -30,7 +32,7 @@ public class NMLBlocks {
 
     public static LinkedHashSet<RegistryObject<Item>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
 
-//Plants and Other Natural Decorations
+    //Plants and Other Natural Decorations
     public static final RegistryObject<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
             () -> new GrassSproutsBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
     public static final RegistryObject<Block> CLOVER_PATCH = registerBlock("clover_patch",
@@ -61,7 +63,7 @@ public class NMLBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.AUTUMNAL_OAK_SAPLING,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
 
-    public static final RegistryObject<Block> CUT_VINE =  BLOCKS.register("cut_vine",
+    public static final RegistryObject<Block> CUT_VINE = BLOCKS.register("cut_vine",
             () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> CUT_SUGAR_CANE = BLOCKS.register("cut_sugar_cane",
             () -> new SugarCaneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
@@ -77,11 +79,11 @@ public class NMLBlocks {
     public static final RegistryObject<Block> SNOW_PATH = registerBlock("snow_path",
             () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK), Blocks.SNOW_BLOCK, false));
     public static final RegistryObject<Block> GRAVEL_PATH = registerBlock("gravel_path",
-            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL), Blocks.GRAVEL,true));
+            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL), Blocks.GRAVEL, true));
     public static final RegistryObject<Block> SAND_PATH = registerBlock("sand_path",
-            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.SAND), Blocks.SAND,true));
+            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.SAND), Blocks.SAND, true));
     public static final RegistryObject<Block> RED_SAND_PATH = registerBlock("red_sand_path",
-            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.RED_SAND), Blocks.RED_SAND,true));
+            () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.RED_SAND), Blocks.RED_SAND, true));
 
     //Decorations
     public static final RegistryObject<Block> SCONCE_TORCH = registerBlock("sconce_torch",
@@ -95,7 +97,7 @@ public class NMLBlocks {
 
     //Dungeon
     public static final RegistryObject<Block> REMAINS = registerBlock("remains",
-            () ->  new RemainsBlock(Blocks.COARSE_DIRT, BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
+            () -> new RemainsBlock(Blocks.COARSE_DIRT, BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
 
     //Stone
     public static final RegistryObject<Block> FADED_STONE_BRICKS = registerBlock("faded_stone_bricks",
@@ -124,7 +126,6 @@ public class NMLBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.copy(NMLBlocks.MOSSY_COBBLESTONE_BRICKS.get())));
     public static final RegistryObject<Block> MOSSY_COBBLESTONE_BRICK_WALL = registerBlock("mossy_cobblestone_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(NMLBlocks.MOSSY_COBBLESTONE_BRICKS.get())));
-
 
 
     //Trimmed Planks and Bookshelves
@@ -373,6 +374,10 @@ public class NMLBlocks {
     //Mushrooms
     public static final RegistryObject<Block> FIELD_MUSHROOM = registerBlock("field_mushroom",
             () -> new SurfaceMushroomBlock((BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).mapColor(MapColor.TERRACOTTA_WHITE)), HugeMushrooms.HUGE_FIELD_MUSHROOM));
+
+    public static final RegistryObject<Block> FIELD_MUSHROOM_COLONY = registerIntegrationBlock("field_mushroom_colony",
+            ModList.get().isLoaded("farmersdelight") == false ? () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.FIELD_MUSHROOM.get())) : FDIntegration.mushroomColony(), "farmersdelight");
+
     public static final RegistryObject<Block> FIELD_MUSHROOM_BLOCK = registerBlock("field_mushroom_block",
             () -> new HugeMushroomBlock((BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM_BLOCK))));
     public static final RegistryObject<Block> POTTED_FIELD_MUSHROOM = BLOCKS.register("potted_field_mushroom",
@@ -385,6 +390,13 @@ public class NMLBlocks {
         CREATIVE_TAB_ITEMS.add(registerBlockItem(name, toReturn));
         return toReturn;
     }
+    private static <T extends Block> RegistryObject<T> registerIntegrationBlock(String name, Supplier<T> block, String modId) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        if (ModList.get().isLoaded(modId)) {
+            CREATIVE_TAB_ITEMS.add(registerBlockItem(name, toReturn));
+        }
+        return toReturn;
+    }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return NMLItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
@@ -393,4 +405,5 @@ public class NMLBlocks {
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
+
 }
