@@ -54,7 +54,7 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "minecraft:tall_fern",
+          "block": "minecraft:large_fern",
           "properties": {
             "half": "lower"
           }
@@ -65,7 +65,7 @@
           "predicate": {
             "block": {
               "blocks": [
-                "minecraft:tall_fern"
+                "minecraft:large_fern"
               ],
               "state": {
                 "half": "upper"
@@ -128,7 +128,7 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "minecraft:tall_fern",
+          "block": "minecraft:large_fern",
           "properties": {
             "half": "upper"
           }
@@ -139,7 +139,7 @@
           "predicate": {
             "block": {
               "blocks": [
-                "minecraft:tall_fern"
+                "minecraft:large_fern"
               ],
               "state": {
                 "half": "lower"
@@ -150,5 +150,5 @@
       ]
     }
   ],
-  "random_sequence": "minecraft:blocks/tall_fern"
+  "random_sequence": "minecraft:blocks/large_fern"
 }
