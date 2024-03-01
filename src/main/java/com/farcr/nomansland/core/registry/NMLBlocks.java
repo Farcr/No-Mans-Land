@@ -220,6 +220,9 @@ public class NMLBlocks {
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_PINE_PLANKS = registerBlock("trimmed_pine_planks",
             () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(NMLBlocks.PINE_PLANKS.get())));
+    public static final RegistryObject<Block> PINE_CABINET = registerIntegrationBlock("pine_cabinet",
+            ModList.get().isLoaded("farmersdelight") == false ? 
+                    () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.FIELD_MUSHROOM.get())) : FDIntegration.cabinetBlock(), "farmersdelight");
 
     //Maple
     public static final RegistryObject<Block> MAPLE_PLANKS = registerBlock("maple_planks",
@@ -276,6 +279,9 @@ public class NMLBlocks {
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_MAPLE_PLANKS = registerBlock("trimmed_maple_planks",
             () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(NMLBlocks.MAPLE_PLANKS.get())));
+    public static final RegistryObject<Block> MAPLE_CABINET = registerIntegrationBlock("maple_cabinet",
+            ModList.get().isLoaded("farmersdelight") == false ?
+                    () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.FIELD_MUSHROOM.get())) : FDIntegration.cabinetBlock(), "farmersdelight");
 
     //Walnut
     public static final RegistryObject<Block> WALNUT_PLANKS = registerBlock("walnut_planks",
@@ -325,7 +331,9 @@ public class NMLBlocks {
             () -> new BookshelfBlock(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> TRIMMED_WALNUT_PLANKS = registerBlock("trimmed_walnut_planks",
             () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(NMLBlocks.WALNUT_PLANKS.get())));
-
+    public static final RegistryObject<Block> WALNUT_CABINET = registerIntegrationBlock("walnut_cabinet",
+            ModList.get().isLoaded("farmersdelight") == false ?
+                    () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.FIELD_MUSHROOM.get())) : FDIntegration.cabinetBlock(), "farmersdelight");
 
     //Dye Sacks
     public static final RegistryObject<Block> WHITE_DYE_SACK = registerBlock("white_dye_sack",
@@ -374,9 +382,9 @@ public class NMLBlocks {
     //Mushrooms
     public static final RegistryObject<Block> FIELD_MUSHROOM = registerBlock("field_mushroom",
             () -> new SurfaceMushroomBlock((BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).mapColor(MapColor.TERRACOTTA_WHITE)), HugeMushrooms.HUGE_FIELD_MUSHROOM));
-
     public static final RegistryObject<Block> FIELD_MUSHROOM_COLONY = registerIntegrationBlock("field_mushroom_colony",
-            ModList.get().isLoaded("farmersdelight") == false ? () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.FIELD_MUSHROOM.get())) : FDIntegration.mushroomColony(), "farmersdelight");
+            ModList.get().isLoaded("farmersdelight") == false ? () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.FIELD_MUSHROOM.get()))
+                    : FDIntegration.mushroomColony(), "farmersdelight");
 
     public static final RegistryObject<Block> FIELD_MUSHROOM_BLOCK = registerBlock("field_mushroom_block",
             () -> new HugeMushroomBlock((BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM_BLOCK))));

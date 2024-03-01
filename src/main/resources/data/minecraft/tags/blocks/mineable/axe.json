@@ -4,6 +4,9 @@
     "#nomansland:trimmed_planks",
     "#nomansland:fish_barrels",
     "nomansland:cut_sugar_cane",
-    "nomansland:cut_vine"
+    "nomansland:cut_vine",
+    "nomansland:pine_cabinet",
+    "nomansland:maple_cabinet",
+    "nomansland:walnut_cabinet"
   ]
 }
