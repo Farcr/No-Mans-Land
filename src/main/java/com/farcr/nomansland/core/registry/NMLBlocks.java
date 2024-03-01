@@ -222,7 +222,7 @@ public class NMLBlocks {
             () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(NMLBlocks.PINE_PLANKS.get())));
     public static final RegistryObject<Block> PINE_CABINET = registerIntegrationBlock("pine_cabinet",
             ModList.get().isLoaded("farmersdelight") == false ? 
-                    () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.FIELD_MUSHROOM.get())) : FDIntegration.cabinetBlock(), "farmersdelight");
+                    () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight");
 
     //Maple
     public static final RegistryObject<Block> MAPLE_PLANKS = registerBlock("maple_planks",
@@ -281,7 +281,7 @@ public class NMLBlocks {
             () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(NMLBlocks.MAPLE_PLANKS.get())));
     public static final RegistryObject<Block> MAPLE_CABINET = registerIntegrationBlock("maple_cabinet",
             ModList.get().isLoaded("farmersdelight") == false ?
-                    () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.FIELD_MUSHROOM.get())) : FDIntegration.cabinetBlock(), "farmersdelight");
+                    () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight");
 
     //Walnut
     public static final RegistryObject<Block> WALNUT_PLANKS = registerBlock("walnut_planks",
@@ -333,7 +333,7 @@ public class NMLBlocks {
             () -> new TrimmedPlankBlock(BlockBehaviour.Properties.copy(NMLBlocks.WALNUT_PLANKS.get())));
     public static final RegistryObject<Block> WALNUT_CABINET = registerIntegrationBlock("walnut_cabinet",
             ModList.get().isLoaded("farmersdelight") == false ?
-                    () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.FIELD_MUSHROOM.get())) : FDIntegration.cabinetBlock(), "farmersdelight");
+                    () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight");
 
     //Dye Sacks
     public static final RegistryObject<Block> WHITE_DYE_SACK = registerBlock("white_dye_sack",
@@ -401,13 +401,17 @@ public class NMLBlocks {
     private static <T extends Block> RegistryObject<T> registerIntegrationBlock(String name, Supplier<T> block, String modId) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         if (ModList.get().isLoaded(modId)) {
-            CREATIVE_TAB_ITEMS.add(registerBlockItem(name, toReturn));
+            CREATIVE_TAB_ITEMS.add(registerIntegrationBlockItem(name, toReturn));
         }
         return toReturn;
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return NMLItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    private static <T extends Block> RegistryObject<Item> registerIntegrationBlockItem(String name, RegistryObject<T> block) {
+        return NMLItems.ITEMS.register(name, () -> new MissingIntegrationBlock(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {
