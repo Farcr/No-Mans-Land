@@ -24,7 +24,7 @@ public class NMLItems {
 
     public static final RegistryObject<Item> NO_MANS_GLOBE = ITEMS.register("no_mans_globe",
             () -> new Item(new Item.Properties()));
-
+//Foods
     public static final RegistryObject<Item> MASHED_POTATOES_WITH_MUSHROOMS = registerItem("mashed_potatoes_with_mushrooms",
             () -> new BowlFoodItem(new Item.Properties().food(NMLFoods.MASHED_POTATOES_WITH_MUSHROOMS).stacksTo(1)));
     public static final RegistryObject<Item> GRILLED_MUSHROOMS = registerItem("grilled_mushrooms",
@@ -33,6 +33,14 @@ public class NMLItems {
             () -> new Item(new Item.Properties().food(NMLFoods.FROG_LEG)));
     public static final RegistryObject<Item> COOKED_FROG_LEG = registerItem("cooked_frog_leg",
             () -> new Item(new Item.Properties().food(NMLFoods.COOKED_FROG_LEG)));
+
+//Materials
+    public static final RegistryObject<Item> RESIN = registerItem("resin",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RESIN_OIL = registerItem("resin_oil",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MAPLE_SYRUP = registerItem("maple_syrup",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> PINE_SIGN = registerItem("pine_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.PINE_SIGN.get(), NMLBlocks.PINE_WALL_SIGN.get()));
@@ -93,6 +101,9 @@ public class NMLItems {
             event.accept(NMLBlocks.PINE_TRAPDOOR);
             event.accept(NMLBlocks.PINE_PRESSURE_PLATE);
             event.accept(NMLBlocks.PINE_BUTTON);
+            if (ModList.get().isLoaded("farmersdelight")) {
+                event.accept(NMLBlocks.PINE_CABINET);
+            }
 
             event.accept(NMLBlocks.MAPLE_LOG);
             event.accept(NMLBlocks.MAPLE_WOOD);
@@ -108,6 +119,9 @@ public class NMLItems {
             event.accept(NMLBlocks.MAPLE_TRAPDOOR);
             event.accept(NMLBlocks.MAPLE_PRESSURE_PLATE);
             event.accept(NMLBlocks.MAPLE_BUTTON);
+            if (ModList.get().isLoaded("farmersdelight")) {
+                event.accept(NMLBlocks.MAPLE_CABINET);
+            }
 
             event.accept(NMLBlocks.WALNUT_LOG);
             event.accept(NMLBlocks.WALNUT_WOOD);
@@ -123,6 +137,9 @@ public class NMLItems {
             event.accept(NMLBlocks.WALNUT_TRAPDOOR);
             event.accept(NMLBlocks.WALNUT_PRESSURE_PLATE);
             event.accept(NMLBlocks.WALNUT_BUTTON);
+            if (ModList.get().isLoaded("farmersdelight")) {
+                event.accept(NMLBlocks.WALNUT_CABINET);
+            }
 
             event.accept(NMLBlocks.COD_BARREL);
             event.accept(NMLBlocks.SALMON_BARREL);
@@ -230,6 +247,7 @@ public class NMLItems {
             event.accept(NMLItems.GRILLED_MUSHROOMS);
             event.accept(NMLItems.FROG_LEG);
             event.accept(NMLItems.COOKED_FROG_LEG);
+            event.accept(NMLItems.MAPLE_SYRUP);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(NMLItems.PINE_BOAT);
@@ -238,6 +256,13 @@ public class NMLItems {
             event.accept(NMLItems.MAPLE_CHEST_BOAT);
             event.accept(NMLItems.WALNUT_BOAT);
             event.accept(NMLItems.WALNUT_CHEST_BOAT);
+        }
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(NMLItems.RESIN_OIL);
+        }
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(NMLItems.RESIN);
+            event.accept(NMLItems.RESIN_OIL);
         }
 
     }

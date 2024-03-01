@@ -1,0 +1,74 @@
+{
+    "type": "forge:conditional",
+  
+    "recipes": [
+      {
+        "conditions": [
+          {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+          }
+        ],
+        "recipe": {
+            "type": "farmersdelight:cooking",
+            "cookingtime": 200,
+            "experience": 1.0,
+            "ingredients": [
+                {
+                    "item": "nomansland:resin"
+                },
+                {
+                    "item": "minecraft:kelp"
+                },
+                {
+                    "item": "minecraft:kelp"
+                },
+                {
+                    "item": "minecraft:charcoal"
+                },
+                {
+                    "item": "minecraft:charcoal"
+                },
+                {
+                    "item": "minecraft:charcoal"
+                }
+            ],
+            "result": {
+                "item": "minecraft:slime_ball"
+            }
+        }
+      },
+      {
+        "conditions": [
+            {}
+          ],
+        "recipe": {
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                {
+                    "item": "nomansland:resin"
+                },
+                {
+                    "item": "minecraft:kelp"
+                },
+                {
+                    "item": "minecraft:kelp"
+                },
+                {
+                    "item": "minecraft:charcoal"
+                },
+                {
+                    "item": "minecraft:charcoal"
+                },
+                {
+                    "item": "minecraft:charcoal"
+                }
+            ],
+            "result": {
+                "item": "minecraft:slime_ball",
+                "count": 1
+            }
+        }
+      }
+    ]
+  }
