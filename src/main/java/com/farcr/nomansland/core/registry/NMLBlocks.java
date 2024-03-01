@@ -411,7 +411,7 @@ public class NMLBlocks {
     }
 
     private static <T extends Block> RegistryObject<Item> registerIntegrationBlockItem(String name, RegistryObject<T> block) {
-        return NMLItems.ITEMS.register(name, () -> new MissingIntegrationBlock(block.get(), new Item.Properties()));
+        return NMLItems.ITEMS.register(name, ModList.get().isLoaded("farmersdelight") == false ? () -> new MissingIntegrationBlock(block.get(), new Item.Properties()) : () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {
