@@ -11,7 +11,7 @@
         ],
         "recipe": {
             "type": "farmersdelight:cooking",
-            "cookingtime": 200,
+            "cookingtime": 150,
             "experience": 1.0,
             "ingredients": [
                 {
