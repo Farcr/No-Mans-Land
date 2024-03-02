@@ -372,7 +372,7 @@ public class NMLBlocks {
 
     //Tapping
     public static final RegistryObject<Block> TAP = registerBlock("tap",
-            () -> new TapBlock(BlockBehaviour.Properties.of().noOcclusion().pushReaction(PushReaction.DESTROY)));
+            () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
             () -> new PowderSnowCauldronBlock(BlockBehaviour.Properties.copy(Blocks.POWDER_SNOW_CAULDRON), LayeredCauldronBlock.SNOW, CauldronInteraction.POWDER_SNOW));
 
