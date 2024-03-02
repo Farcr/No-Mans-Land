@@ -8,6 +8,7 @@ import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.world.tree.*;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
+import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
@@ -368,6 +369,13 @@ public class NMLBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MAGENTA_WOOL)));
     public static final RegistryObject<Block> PINK_DYE_SACK = registerBlock("pink_dye_sack",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PINK_WOOL)));
+
+    //Tapping
+    public static final RegistryObject<Block> TAP = registerBlock("tap",
+            () -> new TapBlock(BlockBehaviour.Properties.of().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
+            () -> new PowderSnowCauldronBlock(BlockBehaviour.Properties.copy(Blocks.POWDER_SNOW_CAULDRON), LayeredCauldronBlock.SNOW, CauldronInteraction.POWDER_SNOW));
+
 
     //Storage
     public static final RegistryObject<Block> COD_BARREL = registerBlock("cod_barrel",
