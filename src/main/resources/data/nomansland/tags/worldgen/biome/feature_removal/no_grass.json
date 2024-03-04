@@ -1,0 +1,6 @@
+{
+  "values": [
+    "minecraft:mushroom_fields",
+    "#forge:is_snowy"
+  ]
+}

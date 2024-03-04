@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#nomansland:has_fiddlehead",
+  "biomes": "#nomansland:feature_addition/has_fiddlehead",
   "features": [
     "nomansland:patch_fiddlehead"
   ],

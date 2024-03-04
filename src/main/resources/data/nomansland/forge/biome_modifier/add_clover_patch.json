@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#nomansland:has_clovers",
+  "biomes": "#nomansland:feature_addition/has_clovers",
   "features": [
     "nomansland:clover_patch"
   ],

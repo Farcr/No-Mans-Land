@@ -241,6 +241,7 @@ public class NMLItems {
             event.accept(NMLItems.WALNUT_HANGING_SIGN);
             event.accept(NMLBlocks.SCONCE_TORCH);
             event.accept(NMLBlocks.SCONCE_SOUL_TORCH);
+            event.accept(NMLBlocks.TAP);
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(NMLItems.MASHED_POTATOES_WITH_MUSHROOMS);
