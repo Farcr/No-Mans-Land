@@ -1,7 +1,10 @@
 {
     "replace": false,
     "entries": [
-      "nomansland:straw",
-      "nomansland:straw2"
+      "nomansland:fd_integration/straw_from_grass_sprouts",
+      "nomansland:fd_integration/straw_from_dried_grass",
+      "nomansland:fd_integration/straw_from_oat_grass",
+      "nomansland:fd_integration/straw_from_fiddlehead",
+      "nomansland:fd_integration/straw_from_cattail"
     ]
   }
