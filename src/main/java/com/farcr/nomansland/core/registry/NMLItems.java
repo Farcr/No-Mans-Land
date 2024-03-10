@@ -11,6 +11,7 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.item.MushroomColonyItem;
 
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
@@ -33,6 +34,9 @@ public class NMLItems {
             () -> new Item(new Item.Properties().food(NMLFoods.FROG_LEG)));
     public static final RegistryObject<Item> COOKED_FROG_LEG = registerItem("cooked_frog_leg",
             () -> new Item(new Item.Properties().food(NMLFoods.COOKED_FROG_LEG)));
+
+    public static final RegistryObject<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
+            () -> new MushroomColonyItem(NMLBlocks.FIELD_MUSHROOM_COLONY.get(), new Item.Properties()), "farmersdelight");
 
 //Materials
     public static final RegistryObject<Item> RESIN = registerItem("resin",
@@ -190,7 +194,7 @@ public class NMLItems {
             event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
             event.accept(NMLBlocks.FIELD_MUSHROOM);
             if (ModList.get().isLoaded("farmersdelight")) {
-                event.accept(NMLBlocks.FIELD_MUSHROOM_COLONY);
+                event.accept(NMLItems.FIELD_MUSHROOM_COLONY);
             }
             event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
             event.accept(NMLBlocks.DIRT_PATH);
@@ -265,7 +269,6 @@ public class NMLItems {
             event.accept(NMLItems.RESIN);
             event.accept(NMLItems.RESIN_OIL);
         }
-
     }
     public static RegistryObject<Item> registerItem(final String name, final Supplier<Item> supplier) {
         RegistryObject<Item> toReturn = ITEMS.register(name, supplier);
