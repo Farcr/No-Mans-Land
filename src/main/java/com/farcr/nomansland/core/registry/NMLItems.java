@@ -268,6 +268,7 @@ public class NMLItems {
             event.accept(NMLItems.MAPLE_CHEST_BOAT);
             event.accept(NMLItems.WALNUT_BOAT);
             event.accept(NMLItems.WALNUT_CHEST_BOAT);
+            event.accept(Items.BUNDLE);
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(NMLItems.RESIN_OIL);

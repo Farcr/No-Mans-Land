@@ -24,19 +24,19 @@
             "slow_scale": 1.0,
             "states": [
               {
-                "Name": "minecraft:dandelion"
+                "Name": "minecraft:pink_tulip"
               },
               {
-                "Name": "nomansland:yellow_lupine"
+                "Name": "minecraft:white_tulip"
               },
               {
-                "Name": "minecraft:oxeye_daisy"
-              },
-              {
-                "Name": "minecraft:lily_of_the_valley"
+                "Name": "nomansland:wild_mint"
               },
               {
                 "Name": "nomansland:pink_lupine"
+              },
+              {
+                "Name": "nomansland:light_blue_lupine"
               }
             ],
             "variety": [

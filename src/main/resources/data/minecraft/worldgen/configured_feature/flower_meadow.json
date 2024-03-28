@@ -13,7 +13,7 @@
               ],
               "firstOctave": -3
             },
-            "scale": 0.5,
+            "scale": 1.0,
             "seed": 2345,
             "slow_noise": {
               "amplitudes": [
@@ -24,19 +24,31 @@
             "slow_scale": 1.0,
             "states": [
               {
+                "Name": "minecraft:allium"
+              },
+              {
+                "Name": "minecraft:poppy"
+              },
+              {
+                "Name": "minecraft:azure_bluet"
+              },
+              {
                 "Name": "minecraft:dandelion"
               },
               {
-                "Name": "nomansland:yellow_lupine"
+                "Name": "minecraft:cornflower"
               },
               {
                 "Name": "minecraft:oxeye_daisy"
               },
               {
-                "Name": "minecraft:lily_of_the_valley"
+                "Name": "nomansland:wild_mint"
               },
               {
-                "Name": "nomansland:pink_lupine"
+                "Name": "nomansland:aconite"
+              },
+              {
+                "Name": "minecraft:grass"
               }
             ],
             "variety": [
@@ -56,7 +68,7 @@
         }
       ]
     },
-    "tries": 69,
+    "tries": 96,
     "xz_spread": 6,
     "y_spread": 2
   }

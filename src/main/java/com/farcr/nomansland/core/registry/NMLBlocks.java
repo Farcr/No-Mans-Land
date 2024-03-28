@@ -95,7 +95,7 @@ public class NMLBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.AUTUMN_CROCUS,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final RegistryObject<Block> WILD_MINT = registerBlock("wild_mint",
-            () -> new FlowerBlock(MobEffects.SATURATION, 5,BlockBehaviour.Properties.copy(Blocks.POPPY)));
+            () -> new FlowerBlock(MobEffects.SATURATION, 1,BlockBehaviour.Properties.copy(Blocks.POPPY)));
     public static final RegistryObject<Block> POTTED_WILD_MINT = BLOCKS.register("potted_wild_mint",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));

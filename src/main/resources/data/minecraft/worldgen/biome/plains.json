@@ -76,7 +76,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:flower_plains",
+      "nomansland:flower_patches/flowers_plains",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",

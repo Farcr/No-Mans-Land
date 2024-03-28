@@ -27,16 +27,31 @@
                 "Name": "minecraft:dandelion"
               },
               {
+                "Name": "minecraft:orange_tulip"
+              },
+              {
+                "Name": "minecraft:red_tulip"
+              },
+              {
+                "Name": "minecraft:pink_tulip"
+              },
+              {
+                "Name": "minecraft:white_tulip"
+              },
+              {
+                "Name": "minecraft:cornflower"
+              },
+              {
                 "Name": "nomansland:yellow_lupine"
               },
               {
-                "Name": "minecraft:oxeye_daisy"
-              },
-              {
-                "Name": "minecraft:lily_of_the_valley"
+                "Name": "nomansland:red_lupine"
               },
               {
                 "Name": "nomansland:pink_lupine"
+              },
+              {
+                "Name": "nomansland:blue_lupine"
               }
             ],
             "variety": [
