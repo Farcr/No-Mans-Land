@@ -187,6 +187,13 @@ public class NMLItems {
             event.accept(NMLBlocks.FIDDLEHEAD);
             event.accept(NMLBlocks.CATTAIL);
             event.accept(NMLBlocks.CLOVER_PATCH);
+            event.accept(NMLBlocks.RED_LUPINE);
+            event.accept(NMLBlocks.BLUE_LUPINE);
+            event.accept(NMLBlocks.PINK_LUPINE);
+            event.accept(NMLBlocks.YELLOW_LUPINE);
+            event.accept(NMLBlocks.ACONITE);
+            event.accept(NMLBlocks.WILD_MINT);
+            event.accept(NMLBlocks.AUTUMN_CROCUS);
             event.accept(NMLBlocks.PEBBLES);
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES);
             event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);

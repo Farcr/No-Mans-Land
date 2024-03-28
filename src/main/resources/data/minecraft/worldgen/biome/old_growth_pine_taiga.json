@@ -82,13 +82,10 @@
       "minecraft:trees_old_growth_pine_taiga"
     ],
     [
-      "minecraft:patch_grass_taiga",
-      "minecraft:patch_large_fern"
-    ],
-    [
       "minecraft:glow_lichen",
       "minecraft:flower_default",
-      "minecraft:patch_dead_bush",
+      "nomansland:flower_patches/flowers_taiga",
+      "nomansland:patch_rose_bush",
       "minecraft:brown_mushroom_old_growth",
       "minecraft:red_mushroom_old_growth",
       "minecraft:brown_mushroom_normal",
@@ -96,6 +93,10 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "minecraft:patch_berry_common"
+    ],
+    [
+      "minecraft:patch_grass_taiga",
+      "minecraft:patch_large_fern"
     ],
     [
       "minecraft:freeze_top_layer"

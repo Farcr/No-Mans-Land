@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "nomansland:wild_mint"
+        }
+    },
+    "result": {
+        "item": "minecraft:light_gray_dye",
+        "count": 1
+    }
+}

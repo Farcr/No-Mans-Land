@@ -75,9 +75,6 @@
       "minecraft:trees_water"
     ],
     [
-      "minecraft:patch_grass_normal"
-    ],
-    [
       "minecraft:glow_lichen",
       "minecraft:flower_default",
       "minecraft:brown_mushroom_normal",
@@ -85,6 +82,9 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "minecraft:seagrass_river"
+    ],
+    [
+      "minecraft:patch_grass_normal"
     ],
     [
       "minecraft:freeze_top_layer"

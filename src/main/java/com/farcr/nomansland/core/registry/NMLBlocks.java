@@ -10,6 +10,7 @@ import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -62,6 +63,42 @@ public class NMLBlocks {
     public static final RegistryObject<Block> POTTED_AUTUMNAL_OAK_SAPLING = BLOCKS.register("potted_autumnal_oak_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.AUTUMNAL_OAK_SAPLING,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
+
+    public static final RegistryObject<Block> ACONITE = registerBlock("aconite",
+            () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 20,BlockBehaviour.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> POTTED_ACONITE = BLOCKS.register("potted_aconite",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.ACONITE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final RegistryObject<Block> BLUE_LUPINE = registerBlock("blue_lupine",
+            () -> new FlowerBlock(MobEffects.ABSORPTION, 5,BlockBehaviour.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> POTTED_BLUE_LUPINE = BLOCKS.register("potted_blue_lupine",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.BLUE_LUPINE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final RegistryObject<Block> RED_LUPINE = registerBlock("red_lupine",
+            () -> new FlowerBlock(MobEffects.ABSORPTION, 5,BlockBehaviour.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> POTTED_RED_LUPINE = BLOCKS.register("potted_red_lupine",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.RED_LUPINE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final RegistryObject<Block> YELLOW_LUPINE = registerBlock("yellow_lupine",
+            () -> new FlowerBlock(MobEffects.ABSORPTION, 5,BlockBehaviour.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> POTTED_YELLOW_LUPINE = BLOCKS.register("potted_yellow_lupine",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.YELLOW_LUPINE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final RegistryObject<Block> PINK_LUPINE = registerBlock("pink_lupine",
+            () -> new FlowerBlock(MobEffects.ABSORPTION, 5,BlockBehaviour.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> POTTED_PINK_LUPINE = BLOCKS.register("potted_pink_lupine",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PINK_LUPINE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final RegistryObject<Block> AUTUMN_CROCUS = registerBlock("autumn_crocus",
+            () -> new FlowerBlock(MobEffects.BLINDNESS, 10,BlockBehaviour.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> POTTED_AUTUMN_CROCUS = BLOCKS.register("potted_autumn_crocus",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.AUTUMN_CROCUS,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final RegistryObject<Block> WILD_MINT = registerBlock("wild_mint",
+            () -> new FlowerBlock(MobEffects.SATURATION, 5,BlockBehaviour.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> POTTED_WILD_MINT = BLOCKS.register("potted_wild_mint",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
 
     public static final RegistryObject<Block> CUT_VINE = BLOCKS.register("cut_vine",
             () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
