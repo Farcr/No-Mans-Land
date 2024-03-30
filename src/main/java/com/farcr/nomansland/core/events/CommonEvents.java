@@ -38,13 +38,17 @@ public class CommonEvents {
                         state.is(Blocks.MYCELIUM) ||
                         state.is(Blocks.SAND) ||
                         state.is(Blocks.RED_SAND) ||
-                        state.is(Blocks.SNOW_BLOCK) ||
+                        state.is(Blocks.GRAVEL) ||
                         state.is(Blocks.DIRT) ||
                         state.is(Blocks.COARSE_DIRT) ||
                         state.is(Blocks.ROOTED_DIRT)) {
                     if (state.is(BlockTags.SAND)) {
                         level.playSound(player, pos, SoundEvents.SAND_FALL, SoundSource.BLOCKS, 1.0F, 1.0F);
-                    } else {
+                    }
+                    else if (state.is(Blocks.GRAVEL)) {
+                        level.playSound(player, pos, SoundEvents.GRAVEL_FALL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    }
+                    else  {
                         level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
                     }
                     if (!level.isClientSide) {
@@ -56,7 +60,7 @@ public class CommonEvents {
                                         state.is(Blocks.MYCELIUM) ? NMLBlocks.MYCELIUM_PATH.get().defaultBlockState() :
                                                 state.is(Blocks.SAND) ? NMLBlocks.SAND_PATH.get().defaultBlockState() :
                                                         state.is(Blocks.RED_SAND) ? NMLBlocks.RED_SAND_PATH.get().defaultBlockState() :
-                                                                state.is(Blocks.SNOW_BLOCK) ? NMLBlocks.SNOW_PATH.get().defaultBlockState() :
+                                                                state.is(Blocks.GRAVEL) ? NMLBlocks.GRAVEL_PATH.get().defaultBlockState() :
                                                                         NMLBlocks.DIRT_PATH.get().defaultBlockState(), 11);
                     }
                     event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));

@@ -4,6 +4,7 @@ import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;
 import com.farcr.nomansland.core.content.item.BoatItem;
 import com.google.common.collect.Sets;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.*;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -46,6 +47,10 @@ public class NMLItems {
 //            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MAPLE_SYRUP = registerItem("maple_syrup",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SCONCE_TORCH = registerItem("sconce_torch",
+            () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_TORCH.get(), NMLBlocks.SCONCE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> SCONCE_SOUL_TORCH = registerItem("sconce_soul_torch",
+            () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_SOUL_TORCH.get(), NMLBlocks.SCONCE_SOUL_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
 
     public static final RegistryObject<Item> PINE_SIGN = registerItem("pine_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.PINE_SIGN.get(), NMLBlocks.PINE_WALL_SIGN.get()));
@@ -251,8 +256,8 @@ public class NMLItems {
             event.accept(NMLItems.MAPLE_HANGING_SIGN);
             event.accept(NMLItems.WALNUT_SIGN);
             event.accept(NMLItems.WALNUT_HANGING_SIGN);
-            event.accept(NMLBlocks.SCONCE_TORCH);
-            event.accept(NMLBlocks.SCONCE_SOUL_TORCH);
+            event.accept(NMLItems.SCONCE_TORCH);
+            event.accept(NMLItems.SCONCE_SOUL_TORCH);
             event.accept(NMLBlocks.TAP);
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "nomansland:block/decorations/sconce_soul_wall_torch"
+    },
+    "facing=west": {
+      "model": "nomansland:block/decorations/sconce_soul_wall_torch",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "nomansland:block/decorations/sconce_soul_wall_torch",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "nomansland:block/decorations/sconce_soul_wall_torch",
+      "y": 180
+    }
+  }
+}
