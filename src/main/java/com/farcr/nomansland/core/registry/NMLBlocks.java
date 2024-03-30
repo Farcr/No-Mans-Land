@@ -103,7 +103,7 @@ public class NMLBlocks {
     public static final RegistryObject<Block> CUT_VINE = BLOCKS.register("cut_vine",
             () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> CUT_SUGAR_CANE = BLOCKS.register("cut_sugar_cane",
-            () -> new SugarCaneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new CutSugarCaneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> DIRT_PATH = registerBlock("dirt_path",
             () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT), Blocks.DIRT, false));

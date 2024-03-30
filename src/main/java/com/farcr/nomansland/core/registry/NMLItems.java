@@ -276,7 +276,7 @@ public class NMLItems {
 //        }
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(NMLItems.RESIN);
-            event.accept(NMLItems.RESIN_OIL);
+//            event.accept(NMLItems.RESIN_OIL);
         }
     }
     public static RegistryObject<Item> registerItem(final String name, final Supplier<Item> supplier) {
