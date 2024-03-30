@@ -32,8 +32,7 @@
               0
             ],
             "blocks": [
-              "minecraft:air", 
-              "minecraft:cave_air"
+              "minecraft:air"
             ]
           },
           {
@@ -41,7 +40,7 @@
           },
           {
               "type": "minecraft:matching_block_tag",
-              "tag": "nomansland:dirt" 
+              "tag": "minecraft:dirt" 
           }
         ]
       }

@@ -82,18 +82,18 @@
       "nomansland:biome_trees/trees_autumnal_field"
     ],
     [
-      "minecraft:patch_grass_plain",
-      "minecraft:patch_tall_grass_2"
-    ],
-    [
       "minecraft:glow_lichen",
-      "minecraft:flower_plains",
+      "nomansland:flower_patches/flowers_autumnal_fields",
       "minecraft:brown_mushroom_taiga",
       "minecraft:red_mushroom_normal",
       "nomansland:patch_field_mushroom_extra",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "nomansland:patch_pumpkin_autumnal"
+    ],
+    [
+      "minecraft:patch_grass_plain",
+      "minecraft:patch_tall_grass_2"
     ],
     [
       "minecraft:freeze_top_layer"
