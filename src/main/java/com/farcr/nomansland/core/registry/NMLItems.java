@@ -41,8 +41,9 @@ public class NMLItems {
 //Materials
     public static final RegistryObject<Item> RESIN = registerItem("resin",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RESIN_OIL = registerItem("resin_oil",
-            () -> new Item(new Item.Properties()));
+//    !!!Depends on Alembic
+//    public static final RegistryObject<Item> RESIN_OIL = registerItem("resin_oil",
+//            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MAPLE_SYRUP = registerItem("maple_syrup",
             () -> new Item(new Item.Properties()));
 
@@ -270,9 +271,9 @@ public class NMLItems {
             event.accept(NMLItems.WALNUT_CHEST_BOAT);
             event.accept(Items.BUNDLE);
         }
-        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
-            event.accept(NMLItems.RESIN_OIL);
-        }
+//        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+//            event.accept(NMLItems.RESIN_OIL);
+//        }
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(NMLItems.RESIN);
             event.accept(NMLItems.RESIN_OIL);
