@@ -3,6 +3,7 @@ package com.farcr.nomansland.core.registry;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;
 import com.farcr.nomansland.core.content.item.BoatItem;
+import com.farcr.nomansland.core.content.item.MapleSyrupBottleItem;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.*;
@@ -44,9 +45,9 @@ public class NMLItems {
             () -> new Item(new Item.Properties()));
 //    !!!Depends on Alembic
 //    public static final RegistryObject<Item> RESIN_OIL = registerItem("resin_oil",
-//            () -> new Item(new Item.Properties()));
+//            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
     public static final RegistryObject<Item> MAPLE_SYRUP = registerItem("maple_syrup",
-            () -> new Item(new Item.Properties()));
+            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
     public static final RegistryObject<Item> SCONCE_TORCH = registerItem("sconce_torch",
             () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_TORCH.get(), NMLBlocks.SCONCE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
     public static final RegistryObject<Item> SCONCE_SOUL_TORCH = registerItem("sconce_soul_torch",
