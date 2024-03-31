@@ -126,7 +126,12 @@ public class CommonEvents {
                 if (state.is(Blocks.TORCH) ||
                         state.is(Blocks.WALL_TORCH) ||
                         state.is(Blocks.SOUL_TORCH) ||
-                        state.is(Blocks.SOUL_WALL_TORCH)) {
+                        state.is(Blocks.SOUL_WALL_TORCH) ||
+                        state.is(NMLBlocks.SCONCE_TORCH.get()) ||
+                        state.is(NMLBlocks.SCONCE_SOUL_TORCH.get()) ||
+                        state.is(NMLBlocks.SCONCE_WALL_TORCH.get()) ||
+                        state.is(NMLBlocks.SCONCE_SOUL_WALL_TORCH.get()))
+                {
                         level.playSound(player, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0F, 1.0F);
                     if (!level.isClientSide) {
                         stack.hurtAndBreak(1, player, (damage) -> {
@@ -135,7 +140,11 @@ public class CommonEvents {
                         level.setBlock(pos,
                                 state.is(Blocks.WALL_TORCH) ? NMLBlocks.EXTINGUISHED_WALL_TORCH.get().withPropertiesOf(state) :
                                         state.is(Blocks.SOUL_TORCH) ? NMLBlocks.EXTINGUISHED_SOUL_TORCH.get().defaultBlockState() :
-                                                state.is(Blocks.SOUL_WALL_TORCH) ? NMLBlocks.EXTINGUISHED_WALL_SOUL_TORCH.get().withPropertiesOf(state) :
+                                                state.is(Blocks.SOUL_WALL_TORCH) ? NMLBlocks.EXTINGUISHED_SOUL_WALL_TORCH.get().withPropertiesOf(state) :
+                                                        state.is(NMLBlocks.SCONCE_TORCH.get()) ? NMLBlocks.EXTINGUISHED_SCONCE_TORCH.get().defaultBlockState() :
+                                                                state.is(NMLBlocks.SCONCE_WALL_TORCH.get()) ? NMLBlocks.EXTINGUISHED_SCONCE_WALL_TORCH.get().withPropertiesOf(state) :
+                                                                        state.is(NMLBlocks.SCONCE_SOUL_TORCH.get()) ? NMLBlocks.EXTINGUISHED_SCONCE_SOUL_TORCH.get().defaultBlockState() :
+                                                                                state.is(NMLBlocks.SCONCE_SOUL_WALL_TORCH.get()) ? NMLBlocks.EXTINGUISHED_SCONCE_SOUL_WALL_TORCH.get().withPropertiesOf(state) :
                                                         NMLBlocks.EXTINGUISHED_TORCH.get().defaultBlockState(), 11);
                     }
                     event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
