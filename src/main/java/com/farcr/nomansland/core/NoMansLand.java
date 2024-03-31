@@ -2,6 +2,7 @@ package com.farcr.nomansland.core;
 
 import com.farcr.nomansland.core.content.entity.client.NMLBoatRenderer;
 import com.farcr.nomansland.core.registry.*;
+import com.farcr.nomansland.core.registry.NMLLootModifiers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
@@ -38,6 +39,8 @@ public class NoMansLand {
         NMLCreativeTabs.CREATIVE_TABS.register(modEventBus);
 
         modEventBus.addListener(NMLItems::addCreative);
+
+        NMLLootModifiers.LOOT_MODIFIER_SERIALIZERS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
