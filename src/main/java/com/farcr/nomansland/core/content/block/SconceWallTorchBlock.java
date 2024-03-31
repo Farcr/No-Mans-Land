@@ -34,6 +34,8 @@ public class SconceWallTorchBlock extends WallTorchBlock {
         return AABBS.get(pState.getValue(FACING));
     }
 
+    //TODO:PARTICLES ARE FUCKED UP!!!!!
+
     @Override
     public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
         Direction direction = pState.getValue(FACING);

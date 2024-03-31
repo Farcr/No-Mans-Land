@@ -132,6 +132,15 @@ public class NMLBlocks {
     public static final RegistryObject<Block> SCONCE_SOUL_WALL_TORCH = BLOCKS.register("sconce_soul_wall_torch",
             () -> new SconceWallTorchBlock(BlockBehaviour.Properties.copy(Blocks.SOUL_WALL_TORCH).sound(SoundType.LANTERN), ParticleTypes.SOUL_FIRE_FLAME));
 
+    public static final RegistryObject<Block> EXTINGUISHED_TORCH = BLOCKS.register("extinguished_torch",
+            () -> new ExtinguishedTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY), Blocks.TORCH, ParticleTypes.FLAME));
+    public static final RegistryObject<Block> EXTINGUISHED_WALL_TORCH = BLOCKS.register("extinguished_wall_torch",
+            () -> new ExtinguishedWallTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY), Blocks.WALL_TORCH, ParticleTypes.FLAME));
+    public static final RegistryObject<Block> EXTINGUISHED_SOUL_TORCH = BLOCKS.register("extinguished_soul_torch",
+            () -> new ExtinguishedTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY), Blocks.SOUL_TORCH, ParticleTypes.SOUL_FIRE_FLAME));
+    public static final RegistryObject<Block> EXTINGUISHED_WALL_SOUL_TORCH = BLOCKS.register("extinguished_wall_soul_torch",
+            () -> new ExtinguishedWallTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY), Blocks.SOUL_WALL_TORCH, ParticleTypes.SOUL_FIRE_FLAME));
+
     //Dungeon
     public static final RegistryObject<Block> REMAINS = registerBlock("remains",
             () -> new RemainsBlock(Blocks.COARSE_DIRT, BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
