@@ -63,6 +63,8 @@ public class NMLBlocks {
     public static final RegistryObject<Block> POTTED_AUTUMNAL_OAK_SAPLING = BLOCKS.register("potted_autumnal_oak_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.AUTUMNAL_OAK_SAPLING,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
+//    public static final RegistryObject<Block> BUSH = registerBlock("bush",
+//            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_LEAVES)));
 
     public static final RegistryObject<Block> ACONITE = registerBlock("aconite",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 20,BlockBehaviour.Properties.copy(Blocks.POPPY)));
