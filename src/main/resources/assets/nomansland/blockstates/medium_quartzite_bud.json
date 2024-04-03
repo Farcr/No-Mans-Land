@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "nomansland:block/underground/medium_quartzite_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "nomansland:block/underground/medium_quartzite_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "nomansland:block/underground/medium_quartzite_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "nomansland:block/underground/medium_quartzite_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "nomansland:block/underground/medium_quartzite_bud"
+    },
+    "facing=west": {
+      "model": "nomansland:block/underground/medium_quartzite_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

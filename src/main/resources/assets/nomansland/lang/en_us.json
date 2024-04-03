@@ -8,6 +8,7 @@
   "biome.nomansland.boreal_forest": "Boreal Forest",
   "biome.nomansland.autumnal_forest": "Autumnal Forest",
   "biome.nomansland.autumnal_fields": "Autumnal Fields",
+  "biome.nomansland.maple_forest": "Maple Forest",
 
   "block.nomansland.grass_sprouts": "Grass Sprouts",
   "block.nomansland.oat_grass": "Oat Grass",
@@ -38,7 +39,6 @@
   "block.nomansland.field_mushroom_block": "Field Mushroom Block",
   "block.nomansland.potted_field_mushroom": "Potted Field Mushroom",
 
-  
   "block.nomansland.dirt_path": "Dirt Path",
   "block.nomansland.snowy_grass_path": "Snowy Grass Path",
   "block.nomansland.mycelium_path": "Mycelium Path",
@@ -51,6 +51,13 @@
   "block.nomansland.remains": "Remains",
   "entity.nomansland.buried": "Buried",
   "item.nomansland.buried_spawn_egg": "Buried Spawn Egg",
+  
+  "block.nomansland.quartzite": "Quartzite",
+  "block.nomansland.budding_quartzite": "Budding Quartzite",
+  "block.nomansland.small_quartzite_bud": "Small Quartzite Bud",
+  "block.nomansland.medium_quartzite_bud": "Medium Quartzite Bud",
+  "block.nomansland.large_quartzite_bud": "Large Quartzite Bud",
+  "block.nomansland.quartzite_cluster": "Quartzite Cluster",
 
   "block.nomansland.trimmed_oak_planks": "Trimmed Oak Planks",
   "block.nomansland.spruce_bookshelf": "Spruce Bookshelf",
@@ -217,6 +224,9 @@
   "item.nomansland.resin_oil": "Resin Oil",
 
   "tooltip.nomansland.missing_interaction_block": "§8This block is part of Mod Integration, but its Mod is missing!",
-  "tooltip.nomansland.missing_interaction_item": "§8This item is part of Mod Integration, but its Mod is missing!"
+  "tooltip.nomansland.missing_interaction_item": "§8This item is part of Mod Integration, but its Mod is missing!",
+
+  "blocks.minecraft.dirt_path": "Grass Path",
+  "items.minecraft.quartz": "Quartz"
 
 }

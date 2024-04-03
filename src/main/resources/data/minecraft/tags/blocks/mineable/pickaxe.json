@@ -11,6 +11,12 @@
     "nomansland:mossy_cobblestone_bricks",
     "nomansland:mossy_cobblestone_brick_slab",
     "nomansland:mossy_cobblestone_brick_stairs",
-    "nomansland:mossy_cobblestone_brick_wall"
+    "nomansland:mossy_cobblestone_brick_wall",
+    "nomansland:quartzite",
+    "nomansland:budding_quartzite",
+    "nomansland:quartzite_cluster",
+    "nomansland:small_quartzite_bud",
+    "nomansland:medium_quartzite_bud",
+    "nomansland:large_quartzite_bud"
   ]
 }

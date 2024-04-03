@@ -63,7 +63,7 @@ public class NMLBlocks {
     public static final RegistryObject<Block> POTTED_AUTUMNAL_OAK_SAPLING = BLOCKS.register("potted_autumnal_oak_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.AUTUMNAL_OAK_SAPLING,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
-//    public static final RegistryObject<Block> BUSH = registerBlock("bush",
+//    public static final RegistryObject<Block> SHRUB = registerBlock("shrub",
 //            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_LEAVES)));
 
     public static final RegistryObject<Block> ACONITE = registerBlock("aconite",
@@ -106,7 +106,28 @@ public class NMLBlocks {
             () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> CUT_SUGAR_CANE = BLOCKS.register("cut_sugar_cane",
             () -> new CutSugarCaneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
-
+    //Underground
+    public static final RegistryObject<Block> QUARTZITE = registerBlock("quartzite",
+            () -> new AmethystBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(1.3F).sound(SoundType.NETHER_GOLD_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BUDDING_QUARTZITE = registerBlock("budding_quartzite",
+            () -> new BuddingQuartziteBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).randomTicks().strength(1.3F).sound(SoundType.NETHER_GOLD_ORE).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> QUARTZITE_CLUSTER = registerBlock("quartzite_cluster",
+            () -> new AmethystClusterBlock(7, 3, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).forceSolidOn().noOcclusion().randomTicks().sound(SoundType.NETHER_GOLD_ORE).strength(1.3F).lightLevel((p_152632_) -> {
+                return 5;
+            }).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> SMALL_QUARTZITE_BUD = registerBlock("small_quartzite_bud",
+            () -> new AmethystClusterBlock(3, 4, BlockBehaviour.Properties.copy(NMLBlocks.QUARTZITE_CLUSTER.get()).sound(SoundType.NETHER_GOLD_ORE).forceSolidOn().lightLevel((p_187409_) -> {
+                return 1;
+            }).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> MEDIUM_QUARTZITE_BUD = registerBlock("medium_quartzite_bud",
+            () -> new AmethystClusterBlock(4, 3, BlockBehaviour.Properties.copy(NMLBlocks.QUARTZITE_CLUSTER.get()).sound(SoundType.NETHER_GOLD_ORE).forceSolidOn().lightLevel((p_152617_) -> {
+                return 2;
+            }).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> LARGE_QUARTZITE_BUD = registerBlock("large_quartzite_bud",
+            () -> new AmethystClusterBlock(5, 3, BlockBehaviour.Properties.copy(NMLBlocks.QUARTZITE_CLUSTER.get()).sound(SoundType.NETHER_GOLD_ORE).forceSolidOn().lightLevel((p_152629_) -> {
+                return 4;
+            }).pushReaction(PushReaction.DESTROY)));
+    //Paths
     public static final RegistryObject<Block> DIRT_PATH = registerBlock("dirt_path",
             () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT), Blocks.DIRT, false));
     public static final RegistryObject<Block> MYCELIUM_PATH = registerBlock("mycelium_path",
