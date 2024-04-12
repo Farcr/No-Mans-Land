@@ -6,26 +6,20 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.8,
+  "downfall": 0.3,
   "effects": {
-    "fog_color": 12639487,
-    "sky_color": 8431871,
-    "foliage_color": 6465351,
-    "grass_color": 8501355,
+    "fog_color": 12906239,
+    "sky_color": 8435944,
+    "foliage_color": 8960833,
+    "grass_color": 9680231,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "minecraft:music.overworld.meadow"
-    },
-    "water_color": 3895992,
-    "water_fog_color": 2386591
+    "water_color": 4159204,
+    "water_fog_color": 329011
   },
   "features": [
     [],
@@ -70,29 +64,23 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel",
-      "minecraft:ore_emerald"
+      "minecraft:disk_gravel"
     ],
-    [
-      "minecraft:ore_infested"
-    ],
+    [],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:trees_meadow"
-    ],
-    [
       "minecraft:glow_lichen",
+      "minecraft:flower_default",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
-      "minecraft:flower_meadow",
-      "nomansland:clover_patch_meadow"
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_pumpkin"
     ],
     [
-      "minecraft:patch_grass_plain",
-      "minecraft:patch_tall_grass_2"
+      "minecraft:patch_grass_badlands"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -110,38 +98,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:donkey",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 2
-      },
-      {
-        "type": "minecraft:rabbit",
-        "maxCount": 6,
-        "minCount": 2,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:sheep",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 20
-      },
-      {
-        "type": "minecraft:goat",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 8
-      },
-      {
-        "type": "minecraft:cow",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 8
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
@@ -204,5 +161,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.5
+  "temperature": 0.2
 }
