@@ -6,20 +6,26 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.5,
+  "downfall": 0.8,
   "effects": {
-    "fog_color": 12906239,
-    "sky_color": 8435944,
-    "foliage_color": 8960833,
-    "grass_color": 9680231,
+    "fog_color": 12639487,
+    "sky_color": 8431871,
+    "foliage_color": 6465351,
+    "grass_color": 8501355,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "water_color": 3902136,
-    "water_fog_color": 2388383
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.overworld.meadow"
+    },
+    "water_color": 3895992,
+    "water_fog_color": 2386591
   },
   "features": [
     [],
@@ -64,27 +70,28 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+      "minecraft:ore_emerald"
     ],
-    [],
+    [
+      "minecraft:ore_infested"
+    ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:trees_water"
+      "minecraft:trees_meadow"
     ],
     [
       "minecraft:glow_lichen",
-      "nomansland:flower_patches/flowers_white",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "minecraft:seagrass_river"
+      "minecraft:flower_meadow"
     ],
     [
-      "minecraft:patch_grass_normal"
+      "minecraft:patch_tall_grass_2",
+      "minecraft:patch_grass_plain"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -102,7 +109,38 @@
       }
     ],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "minecraft:donkey",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 2
+      },
+      {
+        "type": "minecraft:rabbit",
+        "maxCount": 6,
+        "minCount": 2,
+        "weight": 10
+      },
+      {
+        "type": "minecraft:sheep",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 20
+      },
+      {
+        "type": "minecraft:goat",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 8
+      },
+      {
+        "type": "minecraft:cow",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 8
+      }
+    ],
     "misc": [],
     "monster": [
       {
@@ -152,12 +190,6 @@
         "maxCount": 1,
         "minCount": 1,
         "weight": 5
-      },
-      {
-        "type": "minecraft:drowned",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 100
       }
     ],
     "underground_water_creature": [
@@ -168,22 +200,8 @@
         "weight": 10
       }
     ],
-    "water_ambient": [
-      {
-        "type": "minecraft:salmon",
-        "maxCount": 5,
-        "minCount": 1,
-        "weight": 5
-      }
-    ],
-    "water_creature": [
-      {
-        "type": "minecraft:squid",
-        "maxCount": 4,
-        "minCount": 1,
-        "weight": 2
-      }
-    ]
+    "water_ambient": [],
+    "water_creature": []
   },
   "temperature": 0.5
 }

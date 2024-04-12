@@ -8,7 +8,8 @@
   },
   "downfall": 0.4,
   "effects": {
-    "fog_color": 12638463,
+    "fog_color": 13820927,
+    "sky_color": 9680639,
     "foliage_color": 10858602,
     "grass_color": 10205860,
     "mood_sound": {
@@ -23,7 +24,6 @@
      "replace_current_music": false,
      "sound": "music.overworld.old_growth_taiga"
     },
-    "sky_color": 7907327,
     "water_color": 4223408,
     "water_fog_color": 2383519
   },
@@ -127,12 +127,6 @@
         "maxCount": 8,
         "minCount": 4,
         "weight": 10
-      },
-      {
-        "type": "minecraft:cow",
-        "maxCount": 4,
-        "minCount": 1,
-        "weight": 4
       },
       {
         "type": "minecraft:wolf",

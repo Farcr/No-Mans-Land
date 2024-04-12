@@ -8,9 +8,9 @@
   },
   "downfall": 0.9,
   "effects": {
-    "fog_color": 12638463,
-    "foliage_color": 6003988,
-    "grass_color": 6336551,
+    "fog_color": 11071699,
+    "foliage_color": 6528293,
+    "grass_color": 7123514,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -23,7 +23,7 @@
       "replace_current_music": false,
       "sound": "minecraft:music.overworld.jungle"
     },
-    "sky_color": 7842047,
+    "sky_color": 7194319,
     "water_color": 2403207,
     "water_fog_color": 1479552
   },
@@ -112,12 +112,6 @@
     ],
     "axolotls": [],
     "creature": [
-      {
-        "type": "minecraft:sheep",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 6
-      },
       {
         "type": "minecraft:pig",
         "maxCount": 4,

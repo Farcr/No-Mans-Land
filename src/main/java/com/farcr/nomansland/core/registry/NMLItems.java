@@ -220,6 +220,11 @@ public class NMLItems {
             event.accept(NMLBlocks.SAND_PATH);
             event.accept(NMLBlocks.RED_SAND_PATH);
 
+
+            event.accept(NMLBlocks.QUARTZITE);
+            event.accept(NMLBlocks.QUARTZITE_CLUSTER);
+            event.accept(NMLBlocks.BUDDING_QUARTZITE);
+
             event.accept(NMLBlocks.REMAINS);
 
             event.accept(NMLBlocks.PINE_LOG);
