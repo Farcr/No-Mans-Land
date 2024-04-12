@@ -90,8 +90,8 @@
       "minecraft:flower_meadow"
     ],
     [
-      "minecraft:patch_tall_grass_2",
-      "minecraft:patch_grass_plain"
+      "minecraft:patch_grass_plain",
+      "minecraft:patch_tall_grass_2"
     ],
     [
       "minecraft:freeze_top_layer"
