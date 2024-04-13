@@ -13,6 +13,13 @@ public class NMLFlammability {
 
         fireBlock.setFlammable(NMLBlocks.YELLOW_BIRCH_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(NMLBlocks.AUTUMNAL_OAK_LEAVES.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.PALE_CHERRY_LEAVES.get(), 30, 60);
+
+
+        fireBlock.setFlammable(NMLBlocks.GRASS_SPROUTS.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.OAT_GRASS.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.FIDDLEHEAD.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.DRIED_GRASS.get(), 30, 60);
 
         fireBlock.setFlammable(NMLBlocks.PINE_PLANKS.get(), 5, 20);
         fireBlock.setFlammable(NMLBlocks.PINE_STAIRS.get(), 5, 20);

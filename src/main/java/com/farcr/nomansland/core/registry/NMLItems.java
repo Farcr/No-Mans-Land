@@ -54,6 +54,9 @@ public class NMLItems {
     public static final RegistryObject<Item> SCONCE_SOUL_TORCH = registerItem("sconce_soul_torch",
             () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_SOUL_TORCH.get(), NMLBlocks.SCONCE_SOUL_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
 
+    public static final RegistryObject<Item> TRINKET = ITEMS.register("trinket",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> PINE_SIGN = registerItem("pine_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.PINE_SIGN.get(), NMLBlocks.PINE_WALL_SIGN.get()));
     public static final RegistryObject<Item> PINE_HANGING_SIGN = registerItem("pine_hanging_sign",
