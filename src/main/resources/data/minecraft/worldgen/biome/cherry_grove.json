@@ -9,7 +9,7 @@
   "downfall": 0.8,
   "effects": {
     "fog_color": 15724287,
-    "sky_color": 9484520,
+    "sky_color": 8307162,
     "foliage_color": 9098883,
     "grass_color": 9620606,
     "mood_sound": {
@@ -88,7 +88,8 @@
       "minecraft:flower_cherry",
       "nomansland:flower_patches/flowers_cherry",
       "minecraft:brown_mushroom_normal",
-      "minecraft:patch_sugar_cane"
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_waterlily"
     ],
     [
       "minecraft:patch_grass_plain",
@@ -113,27 +114,27 @@
     "creature": [
       {
         "type": "minecraft:pig",
-        "maxCount": 2,
+        "maxCount": 8,
         "minCount": 1,
-        "weight": 2
+        "weight": 4
       },
       {
         "type": "minecraft:rabbit",
         "maxCount": 6,
         "minCount": 2,
-        "weight": 4
+        "weight": 8
       },
       {
         "type": "minecraft:sheep",
         "maxCount": 4,
         "minCount": 2,
-        "weight": 4
+        "weight": 8
       },
       {
         "type": "minecraft:chicken",
-        "maxCount": 4,
+        "maxCount": 6,
         "minCount": 2,
-        "weight": 2
+        "weight": 4
       }
     ],
     "misc": [],
