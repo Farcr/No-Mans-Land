@@ -4,6 +4,7 @@ import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;
 import com.farcr.nomansland.core.content.item.BoatItem;
 import com.farcr.nomansland.core.content.item.MapleSyrupBottleItem;
+import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.*;
@@ -13,7 +14,6 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.common.item.MushroomColonyItem;
 
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
@@ -38,7 +38,8 @@ public class NMLItems {
             () -> new Item(new Item.Properties().food(NMLFoods.COOKED_FROG_LEG)));
 
     public static final RegistryObject<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
-            () -> new MushroomColonyItem(NMLBlocks.FIELD_MUSHROOM_COLONY.get(), new Item.Properties()), "farmersdelight");
+            !ModList.get().isLoaded("farmersdelight") ? () -> new Item(new Item.Properties())
+                    : FDIntegration.mushroomColonyItem(), "farmersdelight");
 
 //Materials
     public static final RegistryObject<Item> RESIN = registerItem("resin",
