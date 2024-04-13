@@ -1,5 +1,5 @@
 {
-  "id": "minecraft:soul_torch",
+  "id": "nomansland:sconce_soul_torch",
   "modifiers": [
     {
       "type": "append",
