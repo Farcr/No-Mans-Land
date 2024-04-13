@@ -34,6 +34,8 @@ public class NoMansLand {
 
         NMLEntities.ENTITY_TYPES.register(modEventBus);
 
+        NMLParticleTypes.PARTICLE_TYPES.register(modEventBus);
+
         NMLBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
         NMLCreativeTabs.CREATIVE_TABS.register(modEventBus);
