@@ -63,6 +63,14 @@ public class NMLBlocks {
     public static final RegistryObject<Block> POTTED_AUTUMNAL_OAK_SAPLING = BLOCKS.register("potted_autumnal_oak_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.AUTUMNAL_OAK_SAPLING,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
+
+    public static final RegistryObject<Block> PALE_CHERRY_LEAVES = registerBlock("pale_cherry_leaves",
+            () -> new CherryLeavesBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LEAVES)));
+    public static final RegistryObject<Block> PALE_CHERRY_SAPLING = registerBlock("pale_cherry_sapling",
+            () -> new SaplingBlock((new PaleCherryTreeGrower()), BlockBehaviour.Properties.copy(Blocks.CHERRY_SAPLING)));
+    public static final RegistryObject<Block> POTTED_PALE_CHERRY_SAPLING = BLOCKS.register("potted_pale_cherry_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PALE_CHERRY_SAPLING,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_CHERRY_SAPLING).noOcclusion()));
 //    public static final RegistryObject<Block> SHRUB = registerBlock("shrub",
 //            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_LEAVES)));
 
