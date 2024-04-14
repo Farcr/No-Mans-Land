@@ -3,6 +3,7 @@ package com.farcr.nomansland.core.registry;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;
 import com.farcr.nomansland.core.content.item.BoatItem;
+import com.farcr.nomansland.core.content.item.FuelItem;
 import com.farcr.nomansland.core.content.item.MapleSyrupBottleItem;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
@@ -43,7 +44,7 @@ public class NMLItems {
 
 //Materials
     public static final RegistryObject<Item> RESIN = registerItem("resin",
-            () -> new Item(new Item.Properties()));
+            () -> new FuelItem(new Item.Properties(), 1000 ));
 //    !!!Depends on Alembic
 //    public static final RegistryObject<Item> RESIN_OIL = registerItem("resin_oil",
 //            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
