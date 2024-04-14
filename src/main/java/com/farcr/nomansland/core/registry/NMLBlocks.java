@@ -8,6 +8,8 @@ import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.world.tree.*;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffects;
@@ -65,12 +67,13 @@ public class NMLBlocks {
                     BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
 
     public static final RegistryObject<Block> PALE_CHERRY_LEAVES = registerBlock("pale_cherry_leaves",
-            () -> new CherryLeavesBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LEAVES)));
+            () -> new ParticleLeavesBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LEAVES), NMLParticleTypes.PALE_CHERRY_LEAVES));
     public static final RegistryObject<Block> PALE_CHERRY_SAPLING = registerBlock("pale_cherry_sapling",
             () -> new SaplingBlock((new PaleCherryTreeGrower()), BlockBehaviour.Properties.copy(Blocks.CHERRY_SAPLING)));
     public static final RegistryObject<Block> POTTED_PALE_CHERRY_SAPLING = BLOCKS.register("potted_pale_cherry_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PALE_CHERRY_SAPLING,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_CHERRY_SAPLING).noOcclusion()));
+
 //    public static final RegistryObject<Block> SHRUB = registerBlock("shrub",
 //            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_LEAVES)));
 
