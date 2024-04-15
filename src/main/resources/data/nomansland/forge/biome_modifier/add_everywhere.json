@@ -3,7 +3,8 @@
   "biomes": "#minecraft:is_overworld",
   "features": [
     "nomansland:patch_grass_sprouts_normal",
-    "nomansland:patch_roots"
+    "nomansland:patch_roots",
+    "nomansland:patch_cattail"
   ],
   "step": "vegetal_decoration"
 }

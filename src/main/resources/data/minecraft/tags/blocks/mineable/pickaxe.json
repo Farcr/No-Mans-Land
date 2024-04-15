@@ -17,6 +17,8 @@
     "nomansland:quartzite_cluster",
     "nomansland:small_quartzite_bud",
     "nomansland:medium_quartzite_bud",
-    "nomansland:large_quartzite_bud"
+    "nomansland:large_quartzite_bud",
+    "nomansland:petrified_log",
+    "nomansland:petrified_wood"
   ]
 }

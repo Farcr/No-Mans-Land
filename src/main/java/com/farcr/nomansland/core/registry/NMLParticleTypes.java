@@ -15,6 +15,8 @@ public class NMLParticleTypes {
             DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, NoMansLand.MODID);
     public static final RegistryObject<ParticleType> PALE_CHERRY_LEAVES = registerParticle("pale_cherry_leaves",
             ()-> new SimpleParticleType(false) {});
+    public static final RegistryObject<ParticleType> CAVE_DUST = registerParticle("cave_dust",
+            ()-> new SimpleParticleType(false) {});
 
     private static <T extends ParticleType> RegistryObject<T> registerParticle(String name, Supplier<T> particle ) {
         RegistryObject<T> toReturn = PARTICLE_TYPES.register(name, particle);

@@ -8,8 +8,6 @@ import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.world.tree.*;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
-import net.minecraft.client.particle.Particle;
-import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffects;
@@ -113,10 +111,11 @@ public class NMLBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
 
-    public static final RegistryObject<Block> CUT_VINE = BLOCKS.register("cut_vine",
-            () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+//    public static final RegistryObject<Block> CUT_VINE = BLOCKS.register("cut_vine",
+//            () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> CUT_SUGAR_CANE = BLOCKS.register("cut_sugar_cane",
             () -> new CutSugarCaneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+
     //Underground
     public static final RegistryObject<Block> QUARTZITE = registerBlock("quartzite",
             () -> new AmethystBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(1.3F).sound(SoundType.NETHER_GOLD_ORE).requiresCorrectToolForDrops()));
@@ -138,6 +137,11 @@ public class NMLBlocks {
             () -> new AmethystClusterBlock(5, 3, BlockBehaviour.Properties.copy(NMLBlocks.QUARTZITE_CLUSTER.get()).sound(SoundType.NETHER_GOLD_ORE).forceSolidOn().lightLevel((p_152629_) -> {
                 return 4;
             }).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> PETRIFIED_LOG = registerBlock("petrified_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
+    public static final RegistryObject<Block> PETRIFIED_WOOD = registerBlock("petrified_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
+
     //Paths
     public static final RegistryObject<Block> DIRT_PATH = registerBlock("dirt_path",
             () -> new PathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT), Blocks.DIRT, false));

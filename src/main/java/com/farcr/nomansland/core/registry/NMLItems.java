@@ -231,6 +231,8 @@ public class NMLItems {
             event.accept(NMLBlocks.QUARTZITE);
             event.accept(NMLBlocks.QUARTZITE_CLUSTER);
             event.accept(NMLBlocks.BUDDING_QUARTZITE);
+            event.accept(NMLBlocks.PETRIFIED_LOG);
+            event.accept(NMLBlocks.PETRIFIED_WOOD);
 
             event.accept(NMLBlocks.REMAINS);
 

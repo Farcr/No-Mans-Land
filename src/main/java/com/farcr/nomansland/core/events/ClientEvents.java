@@ -1,6 +1,6 @@
 package com.farcr.nomansland.core.events;
 
-import com.farcr.nomansland.client.particles.PaleCherryParticle;
+import com.farcr.nomansland.client.particles.FallingParticle;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.client.NMLModelLayers;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
@@ -36,6 +36,11 @@ public class ClientEvents {
     }
     @SubscribeEvent
     public static void registerParticleProviders(RegisterParticleProvidersEvent event){
-        event.registerSpriteSet(NMLParticleTypes.PALE_CHERRY_LEAVES.get(),pSprites ->(simpleParticleType, clientLevel, d, e, f, g, h, i) -> new PaleCherryParticle(clientLevel, d, e, f, pSprites) );
+        event.registerSpriteSet(NMLParticleTypes.PALE_CHERRY_LEAVES.get(),pSprites
+                ->(simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new FallingParticle(clientLevel, d, e, f, pSprites) );
+        event.registerSpriteSet(NMLParticleTypes.CAVE_DUST.get(),pSprites
+                ->(simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new FallingParticle(clientLevel, d, e, f, pSprites) );
     }
 }
