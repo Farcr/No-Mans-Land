@@ -85,14 +85,12 @@
     ],
     [
       "minecraft:glow_lichen",
+      "minecraft:patch_grass_plain",
+      "minecraft:patch_tall_grass_2",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:flower_meadow",
       "nomansland:clover_patch_meadow"
-    ],
-    [
-      "minecraft:patch_grass_plain",
-      "minecraft:patch_tall_grass_2"
     ],
     [
       "minecraft:freeze_top_layer"

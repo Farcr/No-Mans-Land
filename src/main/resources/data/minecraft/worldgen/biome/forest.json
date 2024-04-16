@@ -84,13 +84,11 @@
       "minecraft:glow_lichen",
       "minecraft:forest_flowers",
       "nomansland:flower_patches/flowers_forest",
+      "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin"
-    ],
-    [
-      "minecraft:patch_grass_forest"
     ],
     [
       "minecraft:freeze_top_layer"

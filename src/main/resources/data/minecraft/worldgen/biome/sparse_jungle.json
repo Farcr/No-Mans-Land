@@ -83,15 +83,13 @@
     [
       "minecraft:glow_lichen",
       "minecraft:flower_warm",
+      "minecraft:patch_grass_jungle",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "minecraft:vines",
       "minecraft:patch_melon_sparse"
-    ],
-    [
-      "minecraft:patch_grass_jungle"
     ],
     [
       "minecraft:freeze_top_layer"

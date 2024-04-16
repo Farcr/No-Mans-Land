@@ -83,15 +83,13 @@
     [
       "minecraft:glow_lichen",
       "minecraft:flower_default",
+      "minecraft:patch_grass_taiga_2",
+      "minecraft:patch_large_fern",
       "minecraft:brown_mushroom_taiga",
       "minecraft:red_mushroom_taiga",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "minecraft:patch_berry_common"
-    ],
-    [
-      "minecraft:patch_grass_taiga_2",
-      "minecraft:patch_large_fern"
     ],
     [
       "minecraft:freeze_top_layer"
