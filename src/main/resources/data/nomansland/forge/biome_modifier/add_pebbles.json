@@ -1,8 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
-  "features": [
-    "nomansland:pebbles"
-  ],
-  "step": "local_modifications"
-}

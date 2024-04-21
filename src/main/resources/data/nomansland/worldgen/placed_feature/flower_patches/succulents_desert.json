@@ -1,6 +1,11 @@
 {
-  "feature": "nomansland:dried_grass_patch",
+  "feature": "nomansland:flower_patches/succulents_desert",
   "placement": [
+    
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 8
+    },
     {
       "type": "minecraft:in_square"
     },

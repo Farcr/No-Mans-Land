@@ -42,7 +42,7 @@ public class NMLBlocks {
             () -> new SimpleFoliageBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
 
     public static final RegistryObject<Block> DRIED_GRASS = registerBlock("dried_grass",
-            () -> new DriedGrassBlock(Block.Properties.copy(Blocks.DEAD_BUSH).offsetType(BlockBehaviour.OffsetType.XZ)));
+            () -> new DesertPlantBlock(Block.Properties.copy(Blocks.DEAD_BUSH).offsetType(BlockBehaviour.OffsetType.XZ)));
     public static final RegistryObject<Block> FIDDLEHEAD = registerBlock("fiddlehead",
             () -> new SimpleFoliageBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final RegistryObject<Block> CATTAIL = registerBlock("cattail",
@@ -110,9 +110,28 @@ public class NMLBlocks {
     public static final RegistryObject<Block> POTTED_WILD_MINT = BLOCKS.register("potted_wild_mint",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
-
-//    public static final RegistryObject<Block> CUT_VINE = BLOCKS.register("cut_vine",
-//            () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> BARREL_CACTUS = registerBlock("barrel_cactus",
+            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> POTTED_BARREL_CACTUS = BLOCKS.register("potted_barrel_cactus",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.BARREL_CACTUS,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final RegistryObject<Block> HEARTY_SUCCULENT = registerBlock("hearty_succulent",
+            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> POTTED_HEARTY_SUCCULENT = BLOCKS.register("potted_hearty_succulent",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.HEARTY_SUCCULENT,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final RegistryObject<Block> BRANCHY_SUCCULENT = registerBlock("branchy_succulent",
+            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> POTTED_BRANCHY_SUCCULENT = BLOCKS.register("potted_branchy_succulent",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.BRANCHY_SUCCULENT,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final RegistryObject<Block> PRICKLY_SUCCULENT = registerBlock("prickly_succulent",
+            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> POTTED_PRICKLY_SUCCULENT = BLOCKS.register("potted_prickly_succulent",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PRICKLY_SUCCULENT,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final RegistryObject<Block> CUT_VINE = BLOCKS.register("cut_vine",
+            () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> CUT_SUGAR_CANE = BLOCKS.register("cut_sugar_cane",
             () -> new CutSugarCaneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
 

@@ -81,14 +81,14 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:flower_default",
+      "nomansland:flower_patches/flowers_all_tulips",
+      "nomansland:flower_patches/succulents_desert",
       "minecraft:patch_grass_badlands",
       "minecraft:patch_dead_bush_2",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane_desert",
-      "minecraft:patch_pumpkin",
-      "minecraft:patch_cactus_desert"
+      "minecraft:patch_cactus_desert",
+      "nomansland:patch_barrel_cactus_desert"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -67,6 +67,10 @@ public class NoMansLand {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.PINK_LUPINE.getId(), NMLBlocks.POTTED_PINK_LUPINE);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.WILD_MINT.getId(), NMLBlocks.POTTED_WILD_MINT);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.AUTUMN_CROCUS.getId(), NMLBlocks.POTTED_AUTUMN_CROCUS);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.HEARTY_SUCCULENT.getId(), NMLBlocks.POTTED_HEARTY_SUCCULENT);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.BRANCHY_SUCCULENT.getId(), NMLBlocks.POTTED_BRANCHY_SUCCULENT);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.PRICKLY_SUCCULENT.getId(), NMLBlocks.POTTED_PRICKLY_SUCCULENT);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.BARREL_CACTUS.getId(), NMLBlocks.POTTED_BARREL_CACTUS);
         });
     }
 

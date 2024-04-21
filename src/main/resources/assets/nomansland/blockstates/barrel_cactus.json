@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/plants/barrel_cactus_0"
+      },
+      {
+        "model": "nomansland:block/plants/barrel_cactus_1"
+      },
+      {
+        "model": "nomansland:block/plants/barrel_cactus_2"
+      }
+    ]
+  }
+}
