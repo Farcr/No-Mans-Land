@@ -11,22 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:flower_pot"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "nomansland:pine_sapling"
+          "name": "nomansland:branchy_succulent"
         }
       ],
       "rolls": 1.0

@@ -111,22 +111,22 @@ public class NMLBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final RegistryObject<Block> BARREL_CACTUS = registerBlock("barrel_cactus",
-            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)));
+            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).sound(SoundType.BIG_DRIPLEAF)));
     public static final RegistryObject<Block> POTTED_BARREL_CACTUS = BLOCKS.register("potted_barrel_cactus",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.BARREL_CACTUS,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final RegistryObject<Block> HEARTY_SUCCULENT = registerBlock("hearty_succulent",
-            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)));
+            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).sound(SoundType.BIG_DRIPLEAF)));
     public static final RegistryObject<Block> POTTED_HEARTY_SUCCULENT = BLOCKS.register("potted_hearty_succulent",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.HEARTY_SUCCULENT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final RegistryObject<Block> BRANCHY_SUCCULENT = registerBlock("branchy_succulent",
-            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)));
+            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).sound(SoundType.BIG_DRIPLEAF)));
     public static final RegistryObject<Block> POTTED_BRANCHY_SUCCULENT = BLOCKS.register("potted_branchy_succulent",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.BRANCHY_SUCCULENT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final RegistryObject<Block> PRICKLY_SUCCULENT = registerBlock("prickly_succulent",
-            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)));
+            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).sound(SoundType.BIG_DRIPLEAF)));
     public static final RegistryObject<Block> POTTED_PRICKLY_SUCCULENT = BLOCKS.register("potted_prickly_succulent",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PRICKLY_SUCCULENT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
