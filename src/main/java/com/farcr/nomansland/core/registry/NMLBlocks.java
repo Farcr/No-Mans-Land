@@ -8,6 +8,7 @@ import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.world.tree.*;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
+import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffects;
@@ -111,22 +112,22 @@ public class NMLBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final RegistryObject<Block> BARREL_CACTUS = registerBlock("barrel_cactus",
-            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).sound(SoundType.BIG_DRIPLEAF)));
+            () -> new DesertPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.BIG_DRIPLEAF).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> POTTED_BARREL_CACTUS = BLOCKS.register("potted_barrel_cactus",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.BARREL_CACTUS,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final RegistryObject<Block> HEARTY_SUCCULENT = registerBlock("hearty_succulent",
-            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).sound(SoundType.BIG_DRIPLEAF)));
+            () -> new DesertPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.FLOWERING_AZALEA).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> POTTED_HEARTY_SUCCULENT = BLOCKS.register("potted_hearty_succulent",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.HEARTY_SUCCULENT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final RegistryObject<Block> BRANCHY_SUCCULENT = registerBlock("branchy_succulent",
-            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).sound(SoundType.BIG_DRIPLEAF)));
+            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(NMLBlocks.HEARTY_SUCCULENT.get())));
     public static final RegistryObject<Block> POTTED_BRANCHY_SUCCULENT = BLOCKS.register("potted_branchy_succulent",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.BRANCHY_SUCCULENT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final RegistryObject<Block> PRICKLY_SUCCULENT = registerBlock("prickly_succulent",
-            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).sound(SoundType.BIG_DRIPLEAF)));
+            () -> new DesertPlantBlock(BlockBehaviour.Properties.copy(NMLBlocks.HEARTY_SUCCULENT.get())));
     public static final RegistryObject<Block> POTTED_PRICKLY_SUCCULENT = BLOCKS.register("potted_prickly_succulent",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PRICKLY_SUCCULENT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
@@ -483,8 +484,8 @@ public class NMLBlocks {
     //Tapping
     public static final RegistryObject<Block> TAP = registerBlock("tap",
             () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
-//    public static final RegistryObject<Block> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
-//            () -> new ResinCauldronBlock(BlockBehaviour.Properties.copy(Blocks.POWDER_SNOW_CAULDRON), LayeredCauldronBlock.SNOW, CauldronInteraction.POWDER_SNOW));
+    public static final RegistryObject<Block> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
+            () -> new ResinCauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON), LayeredCauldronBlock.RAIN, CauldronInteraction.EMPTY));
 
 
     //Storage
