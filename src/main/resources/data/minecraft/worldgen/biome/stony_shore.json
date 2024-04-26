@@ -73,7 +73,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:flower_default",
+      "nomansland:flower_patches/flowers_white",
+      "nomansland:flower_patches/flowerbed_white",
       "minecraft:patch_grass_badlands",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",

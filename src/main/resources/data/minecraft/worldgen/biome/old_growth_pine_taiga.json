@@ -84,6 +84,7 @@
     [
       "minecraft:glow_lichen",
       "nomansland:flower_patches/flowers_taiga",
+      "nomansland:flower_patches/flowerbed_taiga",
       "minecraft:patch_grass_taiga",
       "minecraft:patch_large_fern",
       "nomansland:patch_rose_bush",

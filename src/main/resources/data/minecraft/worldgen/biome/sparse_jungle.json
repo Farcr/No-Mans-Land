@@ -83,6 +83,7 @@
     [
       "minecraft:glow_lichen",
       "minecraft:flower_warm",
+      "nomansland:flower_patches/flowerbed_jungle",
       "minecraft:patch_grass_jungle",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",

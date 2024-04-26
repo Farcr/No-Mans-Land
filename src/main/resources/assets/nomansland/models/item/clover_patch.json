@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "nomansland:block/plants/clover_patch_item"
+    "layer0": "nomansland:item/clover_patch_inventory"
   }
 }

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/plants/white_flowerbed"
+      },
+      {
+        "model": "nomansland:block/plants/white_flowerbed",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/plants/white_flowerbed",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/plants/white_flowerbed",
+        "y": 270
+      }
+    ]
+  }
+}

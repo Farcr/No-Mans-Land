@@ -3,6 +3,6 @@
 	"render_type": "minecraft:cutout",
   "textures": {
     "1": "nomansland:block/plants/clover_patch",
-    "particle": "nomansland:block/plants/clover_patch_item"
+    "particle": "nomansland:item/clover_patch_inventory"
   }
 }

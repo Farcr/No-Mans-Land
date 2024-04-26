@@ -37,8 +37,6 @@ public class NMLBlocks {
     //Plants and Other Natural Decorations
     public static final RegistryObject<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
             () -> new GrassSproutsBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
-    public static final RegistryObject<Block> CLOVER_PATCH = registerBlock("clover_patch",
-            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> OAT_GRASS = registerBlock("oat_grass",
             () -> new SimpleFoliageBlock(Block.Properties.copy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
 
@@ -135,7 +133,18 @@ public class NMLBlocks {
             () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> CUT_SUGAR_CANE = BLOCKS.register("cut_sugar_cane",
             () -> new CutSugarCaneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
-
+    public static final RegistryObject<Block> CLOVER_PATCH = registerBlock("clover_patch",
+            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> WHITE_FLOWERBED = registerBlock("white_flowerbed",
+            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> YELLOW_FLOWERBED = registerBlock("yellow_flowerbed",
+            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> RED_FLOWERBED = registerBlock("red_flowerbed",
+            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> BLUE_FLOWERBED = registerBlock("blue_flowerbed",
+            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> VIOLET_FLOWERBED = registerBlock("violet_flowerbed",
+            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     //Underground
     public static final RegistryObject<Block> QUARTZITE = registerBlock("quartzite",
             () -> new AmethystBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(1.3F).sound(SoundType.NETHER_GOLD_ORE).requiresCorrectToolForDrops()));
