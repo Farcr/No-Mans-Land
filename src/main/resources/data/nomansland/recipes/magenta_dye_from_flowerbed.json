@@ -1,6 +1,6 @@
 {
   "category": "misc",
-  "group": "green_dye",
+  "group": "magenta_dye",
   "type": "minecraft:crafting_shaped",
     "pattern": [
         "###",
@@ -9,11 +9,11 @@
     ],
     "key": {
         "#": {
-            "item": "nomansland:clovers"
+            "item": "nomansland:violet_flowerbed"
         }
     },
   "result": {
     "count": 1,
-    "item": "minecraft:green_dye"
+    "item": "minecraft:magenta_dye"
   }
 }

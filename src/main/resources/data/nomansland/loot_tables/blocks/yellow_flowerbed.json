@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "nomansland:clover_patch",
+          "name": "nomansland:yellow_flowerbed",
           "conditions": [
             {
               "condition": "minecraft:match_tool",
