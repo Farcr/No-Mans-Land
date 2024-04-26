@@ -83,9 +83,10 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:forest_flowers",
+      "nomansland:flower_patches/flowers_maple",
+      "nomansland:flower_patches/flowerbed_red",
+      "nomansland:patch_rose_bush",
       "minecraft:patch_grass_forest",
-      "minecraft:flower_default",
       "minecraft:brown_mushroom_old_growth",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",

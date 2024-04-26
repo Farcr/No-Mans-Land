@@ -8,7 +8,8 @@
   },
   "downfall": 0.8,
   "effects": {
-    "fog_color": 12638463,
+    "fog_color": 12906239,
+    "sky_color": 8435944,
     "foliage_color": 8230207,
     "grass_color": 8893516,
     "mood_sound": {
@@ -23,8 +24,7 @@
       "replace_current_music": false,
       "sound": "minecraft:music.overworld.forest"
     },
-    "sky_color": 7972607,
-    "water_color": 3443121,
+    "water_color": 3902136,
     "water_fog_color": 2388383
   },
   "features": [
@@ -87,8 +87,9 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:forest_flowers",
-      "minecraft:flower_default",
+      "nomansland:flower_patches/flowers_maple",
+      "nomansland:flower_patches/flowerbed_red",
+      "nomansland:patch_rose_bush",
       "minecraft:patch_dead_bush",
       "minecraft:brown_mushroom_old_growth",
       "minecraft:red_mushroom_old_growth",

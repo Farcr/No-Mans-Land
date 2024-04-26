@@ -11,6 +11,7 @@ import com.google.common.collect.Sets;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -109,6 +110,8 @@ public class NMLBlocks {
     public static final RegistryObject<Block> POTTED_WILD_MINT = BLOCKS.register("potted_wild_mint",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final RegistryObject<Block> RAFFLESIA = registerBlock("rafflesia",
+            () -> new FlatFlowerBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)));
     public static final RegistryObject<Block> BARREL_CACTUS = registerBlock("barrel_cactus",
             () -> new DesertPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.BIG_DRIPLEAF).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> POTTED_BARREL_CACTUS = BLOCKS.register("potted_barrel_cactus",

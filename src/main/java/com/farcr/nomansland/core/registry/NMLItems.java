@@ -211,6 +211,7 @@ public class NMLItems {
             event.accept(NMLBlocks.ACONITE);
             event.accept(NMLBlocks.WILD_MINT);
             event.accept(NMLBlocks.AUTUMN_CROCUS);
+            event.accept(NMLBlocks.RAFFLESIA);
             event.accept(NMLBlocks.PEBBLES);
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES);
             event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
