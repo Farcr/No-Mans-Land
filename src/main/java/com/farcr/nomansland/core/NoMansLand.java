@@ -40,6 +40,8 @@ public class NoMansLand {
 
         NMLCreativeTabs.CREATIVE_TABS.register(modEventBus);
 
+        NMLFeatures.FEATURES.register(modEventBus);
+
         modEventBus.addListener(NMLItems::addCreative);
 
         NMLLootModifiers.LOOT_MODIFIER_SERIALIZERS.register(modEventBus);

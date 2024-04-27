@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:flower",
+  "type": "nomansland:spread_patch",
   "config": {
     "feature": {
       "feature": {
@@ -53,7 +53,7 @@
         }
       ]
     },
-    "tries": 1020,
+    "tries": 5020,
     "xz_spread": 7,
     "y_spread": 3
   }
