@@ -6,23 +6,17 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.8,
+  "downfall": 0.4,
   "effects": {
-    "fog_color": 13822166,
-    "sky_color": 8435944,
-    "foliage_color": 11314505,
-    "grass_color": 12236372,
+    "fog_color": 15322775,
+    "sky_color": 12113089,
+    "foliage_color": 16620365,
+    "grass_color": 16762969,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
-    },
-    "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "minecraft:music.overworld.forest"
     },
     "water_color": 3902136,
     "water_fog_color": 2388383
@@ -75,24 +69,22 @@
     [],
     [
       "minecraft:spring_water",
-      "minecraft:spring_lava",
-      "nomansland:coarse_dirt_patch_normal"
+      "minecraft:spring_lava"
     ],
     [
-      "nomansland:biome_trees/trees_autumnal_field"
+      "nomansland:biome_trees/trees_golden_land"
     ],
     [
       "minecraft:glow_lichen",
-      "nomansland:flower_patches/flowers_autumnal_fields",
-      "nomansland:flower_patches/flowerbed_autumnal",
+      "nomansland:flower_patches/flowers_sunflower_plains",
+      "nomansland:flower_patches/flowerbed_yellow",
       "minecraft:patch_grass_plain",
       "minecraft:patch_tall_grass_2",
-      "minecraft:brown_mushroom_taiga",
+      "minecraft:patch_sunflower",
+      "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
-      "nomansland:patch_field_mushroom_extra",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "nomansland:patch_pumpkin_autumnal"
+      "minecraft:patch_pumpkin"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -101,14 +93,7 @@
   "has_precipitation": true,
   "spawn_costs": {},
   "spawners": {
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "maxCount": 8,
-        "minCount": 8,
-        "weight": 10
-      }
-    ],
+    "ambient": [],
     "axolotls": [],
     "creature": [
       {
@@ -122,12 +107,6 @@
         "maxCount": 4,
         "minCount": 2,
         "weight": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 2
       },
       {
         "type": "minecraft:cow",
@@ -152,75 +131,13 @@
         "maxCount": 6,
         "minCount": 3,
         "weight": 8
-      },
-      {
-        "type": "minecraft:fox",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 1
       }
     ],
     "misc": [],
-    "monster": [
-      {
-        "type": "minecraft:spider",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:zombie",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 95
-      },
-      {
-        "type": "minecraft:zombie_villager",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "minecraft:skeleton",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:creeper",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:slime",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:enderman",
-        "maxCount": 4,
-        "minCount": 1,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:witch",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
-      }
-    ],
-    "underground_water_creature": [
-      {
-        "type": "minecraft:glow_squid",
-        "maxCount": 6,
-        "minCount": 4,
-        "weight": 10
-      }
-    ],
+    "monster": [],
+    "underground_water_creature": [],
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.7
+  "temperature": 0.8
 }
