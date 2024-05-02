@@ -46,9 +46,9 @@ public class NMLItems {
     public static final RegistryObject<Item> RESIN = registerItem("resin",
             () -> new FuelItem(new Item.Properties(), 1000 ));
 //    !!!Depends on Alembic
-//    public static final RegistryObject<Item> RESIN_OIL = registerItem("resin_oil",
+//    public static final RegistryObject<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
 //            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
-    public static final RegistryObject<Item> MAPLE_SYRUP = registerItem("maple_syrup",
+    public static final RegistryObject<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
             () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
     public static final RegistryObject<Item> SCONCE_TORCH = registerItem("sconce_torch",
             () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_TORCH.get(), NMLBlocks.SCONCE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
@@ -175,22 +175,22 @@ public class NMLItems {
             event.accept(NMLBlocks.TRIMMED_BAMBOO_PLANKS);
         }
         if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
-            event.accept(NMLBlocks.WHITE_DYE_SACK);
-            event.accept(NMLBlocks.LIGHT_GRAY_DYE_SACK);
-            event.accept(NMLBlocks.GRAY_DYE_SACK);
-            event.accept(NMLBlocks.BLACK_DYE_SACK);
-            event.accept(NMLBlocks.BROWN_DYE_SACK);
-            event.accept(NMLBlocks.RED_DYE_SACK);
-            event.accept(NMLBlocks.ORANGE_DYE_SACK);
-            event.accept(NMLBlocks.YELLOW_DYE_SACK);
-            event.accept(NMLBlocks.LIME_DYE_SACK);
-            event.accept(NMLBlocks.GREEN_DYE_SACK);
-            event.accept(NMLBlocks.CYAN_DYE_SACK);
-            event.accept(NMLBlocks.LIGHT_BLUE_DYE_SACK);
-            event.accept(NMLBlocks.BLUE_DYE_SACK);
-            event.accept(NMLBlocks.PURPLE_DYE_SACK);
-            event.accept(NMLBlocks.MAGENTA_DYE_SACK);
-            event.accept(NMLBlocks.PINK_DYE_SACK);
+//            event.accept(NMLBlocks.WHITE_DYE_SACK);
+//            event.accept(NMLBlocks.LIGHT_GRAY_DYE_SACK);
+//            event.accept(NMLBlocks.GRAY_DYE_SACK);
+//            event.accept(NMLBlocks.BLACK_DYE_SACK);
+//            event.accept(NMLBlocks.BROWN_DYE_SACK);
+//            event.accept(NMLBlocks.RED_DYE_SACK);
+//            event.accept(NMLBlocks.ORANGE_DYE_SACK);
+            //event.accept(NMLBlocks.YELLOW_DYE_SACK);
+            //event.accept(NMLBlocks.LIME_DYE_SACK);
+            //event.accept(NMLBlocks.GREEN_DYE_SACK);
+            //event.accept(NMLBlocks.CYAN_DYE_SACK);
+            //event.accept(NMLBlocks.LIGHT_BLUE_DYE_SACK);
+            //event.accept(NMLBlocks.BLUE_DYE_SACK);
+            //event.accept(NMLBlocks.PURPLE_DYE_SACK);
+            //event.accept(NMLBlocks.MAGENTA_DYE_SACK);
+            //event.accept(NMLBlocks.PINK_DYE_SACK);
         }
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(NMLBlocks.GRASS_SPROUTS);
@@ -286,7 +286,7 @@ public class NMLItems {
             event.accept(NMLItems.GRILLED_MUSHROOMS);
             event.accept(NMLItems.FROG_LEG);
             event.accept(NMLItems.COOKED_FROG_LEG);
-            event.accept(NMLItems.MAPLE_SYRUP);
+            event.accept(NMLItems.MAPLE_SYRUP_BOTTLE);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(NMLItems.PINE_BOAT);
