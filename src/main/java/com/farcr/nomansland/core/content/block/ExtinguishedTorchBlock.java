@@ -27,7 +27,8 @@ public class ExtinguishedTorchBlock extends TorchBlock {
     public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {}
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {        if (pPlayer.getItemInHand(pHand).is(NMLTags.FIRESTARTERS))
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (pPlayer.getItemInHand(pHand).is(NMLTags.FIRESTARTERS))
         {
             pLevel.playSound(pPlayer,
                     pPlayer.getX(),

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:pink_dye"
+        }
+    },
+    "result": {
+        "item": "nomansland:pink_dye_sack",
+        "count": 1
+    },
+    "group": "dye_sacks"
+}

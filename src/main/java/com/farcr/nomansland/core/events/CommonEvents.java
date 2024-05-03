@@ -69,7 +69,7 @@ public class CommonEvents {
             }
 
             //Snow Path (TODO: Add extra checks for snow layers on top)
-            else if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && level.isEmptyBlock(pos.above())) {
+            if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && level.isEmptyBlock(pos.above())) {
                 if (state.is(Blocks.SNOW_BLOCK)) {
                     level.playSound(player, pos, SoundEvents.SNOW_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
                     if (!level.isClientSide) {
@@ -84,7 +84,7 @@ public class CommonEvents {
             }
 
             //Dirt Path into Farmland
-            else if (stack.is(ItemTags.HOES) && state.is(NMLBlocks.DIRT_PATH.get()) && !player.isSpectator() && level.isEmptyBlock(pos.above())) {
+            if (stack.is(ItemTags.HOES) && state.is(NMLBlocks.DIRT_PATH.get()) && !player.isSpectator() && level.isEmptyBlock(pos.above())) {
                 level.playSound(player, pos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!level.isClientSide()) {
                     stack.hurtAndBreak(1, player, (damage) -> {
@@ -96,7 +96,7 @@ public class CommonEvents {
                 event.setCanceled(true);
             }
             //Farmland untilling
-            else if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && state.is(Blocks.FARMLAND) && !player.isSpectator() && level.isEmptyBlock(pos.above())) {
+            if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && state.is(Blocks.FARMLAND) && !player.isSpectator() && level.isEmptyBlock(pos.above())) {
                 level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!level.isClientSide()) {
                     stack.hurtAndBreak(1, player, (damage) -> {
@@ -109,7 +109,7 @@ public class CommonEvents {
 
             }
             //Sugarcane Cutting
-            else if (event.getFace() != Direction.DOWN && stack.is(Items.SHEARS) && state.is(Blocks.SUGAR_CANE) && !player.isSpectator()) {
+            if (event.getFace() != Direction.DOWN && stack.is(Items.SHEARS) && state.is(Blocks.SUGAR_CANE) && !player.isSpectator()) {
                 level.playSound(player, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!level.isClientSide()) {
                     stack.hurtAndBreak(1, player, (damage) -> {
@@ -132,7 +132,7 @@ public class CommonEvents {
                         state.is(NMLBlocks.SCONCE_WALL_TORCH.get()) ||
                         state.is(NMLBlocks.SCONCE_SOUL_WALL_TORCH.get()))
                 {
-                        level.playSound(player, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0F, 1.0F);
+                        level.playSound(player, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.4F, 1.0F);
                     if (!level.isClientSide) {
                         stack.hurtAndBreak(1, player, (damage) -> {
                             damage.broadcastBreakEvent(event.getHand());

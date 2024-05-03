@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:light_blue_dye"
+        }
+    },
+    "result": {
+        "item": "nomansland:light_blue_dye_sack",
+        "count": 1
+    },
+    "group": "dye_sacks"
+}

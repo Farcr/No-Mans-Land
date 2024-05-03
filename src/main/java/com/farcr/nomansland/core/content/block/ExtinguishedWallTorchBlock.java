@@ -28,7 +28,6 @@ public class ExtinguishedWallTorchBlock extends WallTorchBlock {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-
         if (pPlayer.getItemInHand(pHand).is(NMLTags.FIRESTARTERS))
         {
             pLevel.playSound(pPlayer,
