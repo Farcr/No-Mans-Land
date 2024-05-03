@@ -10,4 +10,8 @@ public class NMLTags {
     private static TagKey<Item> createKey(String pName) {
         return TagKey.create(Registries.ITEM, new ResourceLocation(pName));
     }
+
+    public static TagKey<Item> create(final ResourceLocation name) {
+        return TagKey.create(Registries.ITEM, name);
+    }
 }

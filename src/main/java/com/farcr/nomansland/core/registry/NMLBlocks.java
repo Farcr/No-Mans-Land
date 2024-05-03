@@ -493,10 +493,10 @@ public class NMLBlocks {
     //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.PINK_WOOL)));
 
     //Tapping
-    public static final RegistryObject<Block> TAP = registerBlock("tap",
-            () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
-    public static final RegistryObject<Block> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
-            () -> new ResinCauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON), LayeredCauldronBlock.RAIN, CauldronInteraction.EMPTY));
+//    public static final RegistryObject<Block> TAP = registerBlock("tap",
+//            () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
+//    public static final RegistryObject<Block> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
+//            () -> new ResinCauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON), LayeredCauldronBlock.RAIN, CauldronInteraction.EMPTY));
 
 
     //Storage
