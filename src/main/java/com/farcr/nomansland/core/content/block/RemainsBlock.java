@@ -8,12 +8,15 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BrushableBlock;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BrushableBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.Random;
 
@@ -50,6 +53,21 @@ public class RemainsBlock extends BrushableBlock {
         }
     }
 
+    @Override
+    public void onBrokenAfterFall(Level pLevel, BlockPos pPos, FallingBlockEntity pFallingBlock) {
+        Vec3 vec3 = pFallingBlock.getBoundingBox().getCenter();
+        pLevel.levelEvent(2001, BlockPos.containing(vec3), Block.getId(pFallingBlock.getBlockState()));
+        pLevel.gameEvent(pFallingBlock, GameEvent.BLOCK_DESTROY, vec3);
+        int a = new Random().nextInt(10);
+        if (a < 5) {
+            Pig pig = EntityType.PIG.create(pLevel);
+            if (pig != null) {
+                pig.moveTo((double) pPos.getX() + 0.5D, (double) pPos.getY(), (double) pPos.getZ() + 0.5D, 0.0F, 0.0F);
+                pLevel.addFreshEntity(pig);
+                pig.spawnAnim();
+            }
+        }
+    }
 
 }
 
