@@ -48,8 +48,7 @@ public class NMLBiomeSlices {
         return ResourceKey.create(BlueprintDataPackRegistries.MODDED_BIOME_SLICES, new ResourceLocation(NoMansLand.MODID, name));
     }
 
-    //Modified version of OverworldBiomeBuilder to simplify Autumnity's slice
-    @SuppressWarnings("unchecked")
+    //Modified version of OverworldBiomeBuilder
     private static final class AutumnBiomeBuilder {
         private final Climate.Parameter FULL_RANGE = Climate.Parameter.span(-1.0F, 1.0F);
         private final Climate.Parameter[] temperatures = new Climate.Parameter[]{Climate.Parameter.span(-1.0F, -0.45F), Climate.Parameter.span(-0.45F, -0.15F), Climate.Parameter.span(-0.15F, 0.2F), Climate.Parameter.span(0.2F, 0.55F), Climate.Parameter.span(0.55F, 1.0F)};
