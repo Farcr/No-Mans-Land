@@ -8,7 +8,6 @@ import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.world.tree.*;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
-import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffects;
@@ -136,17 +135,17 @@ public class NMLBlocks {
     public static final RegistryObject<Block> CUT_SUGAR_CANE = BLOCKS.register("cut_sugar_cane",
             () -> new CutSugarCaneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> CLOVER_PATCH = registerBlock("clover_patch",
-            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().replaceable().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> WHITE_FLOWERBED = registerBlock("white_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().replaceable().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> YELLOW_FLOWERBED = registerBlock("yellow_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().replaceable().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> RED_FLOWERBED = registerBlock("red_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().replaceable().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> BLUE_FLOWERBED = registerBlock("blue_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().replaceable().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> VIOLET_FLOWERBED = registerBlock("violet_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().noCollission().instabreak().replaceable().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     //Underground
     public static final RegistryObject<Block> QUARTZITE = registerBlock("quartzite",
             () -> new AmethystBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(1.3F).sound(SoundType.NETHER_GOLD_ORE).requiresCorrectToolForDrops()));
