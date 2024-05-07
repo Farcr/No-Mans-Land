@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "nomansland:block/plants/autumn_crocus"
+      "model": "nomansland:block/plants/potted_autumn_crocus"
     }
   }
 }
