@@ -216,7 +216,8 @@ public class NMLBlocks {
             () -> new ExtinguishedSconceTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.LANTERN).pushReaction(PushReaction.DESTROY), NMLBlocks.SCONCE_SOUL_TORCH.get(), ParticleTypes.SOUL_FIRE_FLAME));
     public static final RegistryObject<Block> EXTINGUISHED_SCONCE_SOUL_WALL_TORCH = BLOCKS.register("extinguished_sconce_soul_wall_torch",
             () -> new ExtinguishedSconceWallTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.LANTERN).pushReaction(PushReaction.DESTROY), NMLBlocks.SCONCE_SOUL_WALL_TORCH.get(), ParticleTypes.SOUL_FIRE_FLAME));
-
+    public static final RegistryObject<Block> WOODEN_SCAFFOLDING = BLOCKS.register("wooden_scaffolding",
+            () -> new WoodenScaffoldingBlock(Block.Properties.copy(Blocks.SCAFFOLDING).sound(SoundType.CHERRY_WOOD_HANGING_SIGN)));
     //Dungeon
     public static final RegistryObject<Block> REMAINS = registerBlock("remains",
             () -> new RemainsBlock(Blocks.COARSE_DIRT, BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
@@ -456,40 +457,6 @@ public class NMLBlocks {
     public static final RegistryObject<Block> WALNUT_CABINET = registerIntegrationBlock("walnut_cabinet",
             !ModList.get().isLoaded("farmersdelight") ?
                     () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight", true);
-
-    //Dye Sacks (Unused, thinking about them)
-    // public static final RegistryObject<Block> WHITE_DYE_SACK = registerBlock("white_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
-    //public static final RegistryObject<Block> LIGHT_GRAY_DYE_SACK = registerBlock("light_gray_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_WOOL)));
-    //public static final RegistryObject<Block> GRAY_DYE_SACK = registerBlock("gray_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRAY_WOOL)));
-    //public static final RegistryObject<Block> BLACK_DYE_SACK = registerBlock("black_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.BLACK_WOOL)));
-    // public static final RegistryObject<Block> BROWN_DYE_SACK = registerBlock("brown_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_WOOL)));
-    // public static final RegistryObject<Block> RED_DYE_SACK = registerBlock("red_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.RED_WOOL)));
-    //public static final RegistryObject<Block> ORANGE_DYE_SACK = registerBlock("orange_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.ORANGE_WOOL)));
-    //public static final RegistryObject<Block> YELLOW_DYE_SACK = registerBlock("yellow_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_WOOL)));
-    //public static final RegistryObject<Block> LIME_DYE_SACK = registerBlock("lime_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.LIME_WOOL)));
-    //public static final RegistryObject<Block> GREEN_DYE_SACK = registerBlock("green_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.GREEN_WOOL)));
-    //public static final RegistryObject<Block> CYAN_DYE_SACK = registerBlock("cyan_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.CYAN_WOOL)));
-    //public static final RegistryObject<Block> LIGHT_BLUE_DYE_SACK = registerBlock("light_blue_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_WOOL)));
-    //public static final RegistryObject<Block> BLUE_DYE_SACK = registerBlock("blue_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.BLUE_WOOL)));
-    //public static final RegistryObject<Block> PURPLE_DYE_SACK = registerBlock("purple_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.PURPLE_WOOL)));
-    //public static final RegistryObject<Block> MAGENTA_DYE_SACK = registerBlock("magenta_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.MAGENTA_WOOL)));
-    //public static final RegistryObject<Block> PINK_DYE_SACK = registerBlock("pink_dye_sack",
-    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.PINK_WOOL)));
 
     //Tapping
 //    public static final RegistryObject<Block> TAP = registerBlock("tap",

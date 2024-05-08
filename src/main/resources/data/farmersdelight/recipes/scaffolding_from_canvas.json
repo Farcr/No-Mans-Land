@@ -1,0 +1,38 @@
+{
+  "type": "forge:conditional",
+
+  "recipes": [
+    {
+      "conditions": [
+      {
+        "type": "forge:mod_loaded",
+        "modid": "farmersdelight"
+      }
+    ],
+    "recipe":
+    {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "I": {
+          "item": "minecraft:stick"
+        },
+        "~": {
+          "item": "farmersdelight:canvas"
+        }
+      },
+      "pattern": [
+        "I~I",
+        "I I",
+        "I I"
+      ],
+      "result": {
+        "count": 6,
+        "item": "nomansland:wooden_scaffolding"
+      },
+      "show_notification": true
+    } 
+  }
+]
+
+}
