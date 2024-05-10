@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cross",
 	"render_type": "minecraft:cutout",
   "textures": {
-    "cross": "nomansland:block/plants/prickly_succulent"
+    "cross": "nomansland:block/plants/succulent"
   }
 }

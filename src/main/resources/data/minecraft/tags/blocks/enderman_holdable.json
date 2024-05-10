@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "nomansland:field_mushroom",
-    "#nomansland:succulents",
+    "nomansland:succulent",
     "nomansland:barrel_cactus"
   ]
 }

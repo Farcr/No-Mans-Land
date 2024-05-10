@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "nomansland:hearty_succulent"
+          "name": "nomansland:succulent"
         }
       ],
       "rolls": 1.0

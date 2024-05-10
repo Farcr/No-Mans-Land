@@ -67,9 +67,7 @@ public class NoMansLand {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.PINK_LUPINE.getId(), NMLBlocks.POTTED_PINK_LUPINE);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.WILD_MINT.getId(), NMLBlocks.POTTED_WILD_MINT);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.AUTUMN_CROCUS.getId(), NMLBlocks.POTTED_AUTUMN_CROCUS);
-            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.HEARTY_SUCCULENT.getId(), NMLBlocks.POTTED_HEARTY_SUCCULENT);
-            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.BRANCHY_SUCCULENT.getId(), NMLBlocks.POTTED_BRANCHY_SUCCULENT);
-            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.PRICKLY_SUCCULENT.getId(), NMLBlocks.POTTED_PRICKLY_SUCCULENT);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.SUCCULENT.getId(), NMLBlocks.POTTED_SUCCULENT);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.BARREL_CACTUS.getId(), NMLBlocks.POTTED_BARREL_CACTUS);
         });
         event.enqueueWork(() -> {
@@ -102,9 +100,7 @@ public class NoMansLand {
             ComposterBlock.COMPOSTABLES.put(NMLBlocks.WILD_MINT.get(), 0.65f);
             ComposterBlock.COMPOSTABLES.put(NMLBlocks.RAFFLESIA.get(), 0.85f);
             ComposterBlock.COMPOSTABLES.put(NMLBlocks.BARREL_CACTUS.get(), 0.50f);
-            ComposterBlock.COMPOSTABLES.put(NMLBlocks.HEARTY_SUCCULENT.get(), 0.50f);
-            ComposterBlock.COMPOSTABLES.put(NMLBlocks.BRANCHY_SUCCULENT.get(), 0.50f);
-            ComposterBlock.COMPOSTABLES.put(NMLBlocks.PRICKLY_SUCCULENT.get(), 0.50f);
+            ComposterBlock.COMPOSTABLES.put(NMLBlocks.SUCCULENT.get(), 0.50f);
             ComposterBlock.COMPOSTABLES.put(NMLBlocks.CUT_VINE.get(), 0.30f);
             ComposterBlock.COMPOSTABLES.put(NMLBlocks.CUT_SUGAR_CANE.get(), 0.30f);
             ComposterBlock.COMPOSTABLES.put(NMLBlocks.CLOVER_PATCH.get(), 0.65f);
