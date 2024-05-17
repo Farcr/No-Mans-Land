@@ -36,6 +36,11 @@ public class NMLItems {
     public static final RegistryObject<Item> COOKED_FROG_LEG = registerItem("cooked_frog_leg",
             () -> new Item(new Item.Properties().food(NMLFoods.COOKED_FROG_LEG)));
 
+    public static final RegistryObject<Item> RAW_HORSE = registerItem("raw_horse",
+            () -> new Item(new Item.Properties().food(NMLFoods.RAW_HORSE)));
+    public static final RegistryObject<Item> HORSE_STEAK = registerItem("horse_steak",
+            () -> new Item(new Item.Properties().food(NMLFoods.HORSE_STEAK)));
+
     public static final RegistryObject<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
             !ModList.get().isLoaded("farmersdelight") ? () -> new Item(new Item.Properties())
                     : FDIntegration.mushroomColonyItem(), "farmersdelight");
@@ -272,6 +277,8 @@ public class NMLItems {
             event.accept(NMLItems.GRILLED_MUSHROOMS);
             event.accept(NMLItems.FROG_LEG);
             event.accept(NMLItems.COOKED_FROG_LEG);
+            event.accept(NMLItems.RAW_HORSE);
+            event.accept(NMLItems.HORSE_STEAK);
 //            event.accept(NMLItems.MAPLE_SYRUP_BOTTLE);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {

@@ -166,6 +166,7 @@ dependencies {
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
     runtimeOnly fg.deobf("curse.maven:tagtooltips-899941:${tagtooltip_version}")
     runtimeOnly fg.deobf("curse.maven:cyanide-541676:${cyanide_version}")
+    runtimeOnly fg.deobf("curse.maven:appleskin-248787:4770828")
 
 
 
