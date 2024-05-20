@@ -3,8 +3,8 @@
 	"parent": "block/block",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "nomansland:block/dungeon/offering_basin",
-		"particle": "nomansland:block/dungeon/offering_basin"
+		"0": "nomansland:block/dungeon/anointment_basin",
+		"particle": "nomansland:block/dungeon/anointment_basin"
 	},
 	"elements": [
 		{
@@ -43,7 +43,14 @@
 				"west": {"uv": [11.5, 6, 15.5, 5], "texture": "#0"},
 				"up": {"uv": [11.5, 0.5, 15.5, 4.5], "texture": "#0"}
 			}
+		},
+		{
+			"from": [4, 2, 4],
+			"to": [12, 2, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 0, 4]},
+			"faces": {
+				"up": {"uv": [6, 6, 10, 10], "texture": "#0"}
+			}
 		}
-	],
-	"display": {}
+	]
 }

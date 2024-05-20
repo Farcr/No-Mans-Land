@@ -4,8 +4,7 @@
   "features": [
     "nomansland:patch_grass_sprouts_normal",
     "nomansland:patch_roots",
-    "nomansland:patch_cattail",
-    "nomansland:pebbles"
+    "nomansland:patch_cattail"
   ],
   "step": "vegetal_decoration"
 }

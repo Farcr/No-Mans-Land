@@ -211,7 +211,11 @@ public class NMLBlocks {
     //Dungeon
     public static final RegistryObject<Block> REMAINS = registerBlock("remains",
             () -> new RemainsBlock(Blocks.COARSE_DIRT, BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
-
+    //Tiles
+    public static final RegistryObject<Block> MUNDANE_TILES = registerBlock("mundane_tiles",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+    public static final RegistryObject<Block> EARTHEN_TILES = registerBlock("earthen_tiles",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
     //Stone
     public static final RegistryObject<Block> FADED_STONE_BRICKS = registerBlock("faded_stone_bricks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));

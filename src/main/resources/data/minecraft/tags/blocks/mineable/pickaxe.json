@@ -19,6 +19,8 @@
     "nomansland:medium_quartzite_bud",
     "nomansland:large_quartzite_bud",
     "nomansland:petrified_log",
-    "nomansland:petrified_wood"
+    "nomansland:petrified_wood",
+    "nomansland:earthen_tiles",
+    "nomansland:mundane_tiles"
   ]
 }
