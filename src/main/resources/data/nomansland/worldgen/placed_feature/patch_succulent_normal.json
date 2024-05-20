@@ -1,10 +1,10 @@
 {
-  "feature": "nomansland:flower_patches/succulents_desert",
+  "feature": "nomansland:patch_succulent",
   "placement": [
     
     {
       "type": "minecraft:rarity_filter",
-      "chance": 8
+      "chance": 16
     },
     {
       "type": "minecraft:in_square"
