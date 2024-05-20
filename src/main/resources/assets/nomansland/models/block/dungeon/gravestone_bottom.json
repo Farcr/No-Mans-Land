@@ -3,7 +3,8 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "nomansland:block/dungeon/gravestone",
-		"particle": "nomansland:block/dungeon/gravestone"
+		"1": "nomansland:block/building/cobblestone_bricks_0",
+		"particle": "nomansland:block/building/cobblestone_bricks_0"
 	},
 	"elements": [
 		{
@@ -14,12 +15,13 @@
 				"east": {"uv": [8, 14, 0, 16], "texture": "#0"},
 				"west": {"uv": [0, 14, 8, 16], "texture": "#0"},
 				"up": {"uv": [0, 0, 8, 8], "rotation": 90, "texture": "#0"},
-				"down": {"uv": [0, 0, 8, 8], "rotation": 270, "texture": "#0"}
+				"down": {"uv": [0, 0, 16, 16], "texture": "#1"}
 			}
 		},
 		{
 			"from": [2, 4, 2],
 			"to": [14, 6, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 4, 2]},
 			"faces": {
 				"north": {"uv": [1, 9, 7, 10], "texture": "#0"},
 				"east": {"uv": [8, 13, 1, 14], "texture": "#0"},
