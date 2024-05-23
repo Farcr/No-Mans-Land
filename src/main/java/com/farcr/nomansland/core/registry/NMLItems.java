@@ -110,6 +110,9 @@ public class NMLItems {
             event.accept(NMLBlocks.MOSSY_COBBLESTONE_BRICK_SLAB);
             event.accept(NMLBlocks.MOSSY_COBBLESTONE_BRICK_WALL);
 
+            event.accept(NMLBlocks.MUNDANE_TILES);
+            event.accept(NMLBlocks.EARTHEN_TILES);
+
             event.accept(NMLBlocks.PINE_LOG);
             event.accept(NMLBlocks.PINE_WOOD);
             event.accept(NMLBlocks.STRIPPED_PINE_LOG);

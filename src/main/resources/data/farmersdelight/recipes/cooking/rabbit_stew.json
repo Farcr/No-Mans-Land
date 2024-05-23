@@ -28,7 +28,7 @@
             "item": "minecraft:carrot"
           },
           {
-            "tag": "nomansland:edible_mushroom"
+            "tag": "nomansland:edible_mushrooms"
           }
         ],
         "recipe_book_tab": "meals",
