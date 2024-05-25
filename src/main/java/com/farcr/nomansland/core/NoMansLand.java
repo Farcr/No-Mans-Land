@@ -69,7 +69,6 @@ public class NoMansLand {
             EntityRenderers.register(NMLEntities.BURIED.get(), BuriedRenderer::new);
             EntityRenderers.register(NMLEntities.MOOSE.get(), MooseRenderer::new);
 
-
             EntityRenderers.register(NMLEntities.BOAT.get(), pContext -> new NMLBoatRenderer(pContext, false));
             EntityRenderers.register(NMLEntities.CHEST_BOAT.get(), pContext -> new NMLBoatRenderer(pContext, true));
         }

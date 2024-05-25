@@ -4,6 +4,7 @@ import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.client.NMLModelLayers;
 import com.farcr.nomansland.core.content.entity.BuriedEntity;
 import com.farcr.nomansland.core.content.entity.client.BuriedModel;
+import com.farcr.nomansland.core.content.entity.client.MooseModel;
 import com.farcr.nomansland.core.registry.NMLEntities;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -25,6 +26,7 @@ public class CommonEvents {
         @SubscribeEvent
         public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
             event.registerLayerDefinition(NMLModelLayers.BURIED_LAYER, BuriedModel::createBodyLayer);
+            event.registerLayerDefinition(NMLModelLayers.MOOSE_LAYER, MooseModel::createBodyLayer);
         }
     }
 }
