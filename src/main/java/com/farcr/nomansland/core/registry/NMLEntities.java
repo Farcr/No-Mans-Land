@@ -2,6 +2,7 @@ package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;
+import com.farcr.nomansland.core.content.entity.BuriedEntity;
 import com.farcr.nomansland.core.content.entity.ChestBoatEntity;
 import com.farcr.nomansland.core.content.entity.MooseEntity;
 import net.minecraft.world.entity.EntityType;
