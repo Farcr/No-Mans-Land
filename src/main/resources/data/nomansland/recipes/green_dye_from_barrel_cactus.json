@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "nomansland:barrel_cactus"
+  },
+  "result": "minecraft:green_dye"
+}

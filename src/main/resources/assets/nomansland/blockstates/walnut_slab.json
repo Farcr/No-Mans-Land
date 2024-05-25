@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nomansland:block/walnut/walnut_slab"
+    },
+    "type=double": {
+      "model": "nomansland:block/walnut/walnut_planks"
+    },
+    "type=top": {
+      "model": "nomansland:block/walnut/walnut_slab_top"
+    }
+  }
+}

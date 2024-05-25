@@ -1,0 +1,7 @@
+{
+  "type": "forge:remove_features",
+  "biomes": "#nomansland:feature_removal/no_grass",
+  "features": [
+    "nomansland:patch_grass_sprouts_normal"
+  ]
+}

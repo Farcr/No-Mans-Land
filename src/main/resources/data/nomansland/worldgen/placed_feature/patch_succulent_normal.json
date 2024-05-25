@@ -1,0 +1,20 @@
+{
+  "feature": "nomansland:patch_succulent",
+  "placement": [
+    
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 16
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "MOTION_BLOCKING_NO_LEAVES"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

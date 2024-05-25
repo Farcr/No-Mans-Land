@@ -1,8 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_forest",
-  "features": [
-    "nomansland:patch_fern_forest"
-  ],
-  "step": "vegetal_decoration"
-}

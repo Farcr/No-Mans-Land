@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:taiga",
+    "minecraft:old_growth_spruce_taiga",
+    "minecraft:old_growth_pine_taiga",
+    "#minecraft:is_forest",
+    "#minecraft:is_hill",
+    "minecraft:plains",
+    "minecraft:sunflower_plains",
+    "minecraft:meadow",
+    "minecraft:cherry_grove"
+  ]
+}

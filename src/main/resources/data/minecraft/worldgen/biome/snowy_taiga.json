@@ -8,7 +8,8 @@
   },
   "downfall": 0.4,
   "effects": {
-    "fog_color": 12638463,
+    "fog_color": 13820927,
+    "sky_color": 9680639,
     "foliage_color": 10858602,
     "grass_color": 10205860,
     "mood_sound": {
@@ -23,9 +24,8 @@
      "replace_current_music": false,
      "sound": "music.overworld.old_growth_taiga"
     },
-    "sky_color": 7907327,
-    "water_color": 3443121,
-    "water_fog_color": 2388383
+    "water_color": 4223408,
+    "water_fog_color": 2383519
   },
   "features": [
     [],
@@ -81,12 +81,10 @@
       "nomansland:biome_trees/trees_snowy_taiga"
     ],
     [
-      "minecraft:patch_grass_taiga_2",
-      "minecraft:patch_large_fern"
-    ],
-    [
       "minecraft:glow_lichen",
       "minecraft:flower_default",
+      "minecraft:patch_grass_taiga_2",
+      "minecraft:patch_large_fern",
       "minecraft:brown_mushroom_taiga",
       "minecraft:red_mushroom_taiga",
       "minecraft:patch_sugar_cane",
@@ -127,12 +125,6 @@
         "maxCount": 8,
         "minCount": 4,
         "weight": 10
-      },
-      {
-        "type": "minecraft:cow",
-        "maxCount": 4,
-        "minCount": 1,
-        "weight": 4
       },
       {
         "type": "minecraft:wolf",

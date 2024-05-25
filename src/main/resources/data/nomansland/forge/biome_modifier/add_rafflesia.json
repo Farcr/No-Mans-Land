@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_jungle",
+  "features": [
+    "nomansland:patch_rafflesia"
+  ],
+  "step": "vegetal_decoration"
+}

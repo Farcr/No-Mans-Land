@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:torch",
+    "minecraft:soul_torch",
+    "minecraft:flint_and_steel",
+    "nomansland:sconce_torch",
+    "nomansland:sconce_soul_torch"
+  ]
+}

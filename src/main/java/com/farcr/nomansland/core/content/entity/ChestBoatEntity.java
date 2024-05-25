@@ -38,6 +38,7 @@ public class ChestBoatEntity extends ChestBoat {
         return switch(getModVariant()) {
             case PINE -> NMLItems.PINE_CHEST_BOAT.get();
             case MAPLE -> NMLItems.MAPLE_CHEST_BOAT.get();
+            case WALNUT -> NMLItems.WALNUT_CHEST_BOAT.get();
         };
     }
 
@@ -66,7 +67,8 @@ public class ChestBoatEntity extends ChestBoat {
 
     public static enum Type implements StringRepresentable {
         PINE(NMLBlocks.PINE_PLANKS.get(), "pine"),
-        MAPLE(NMLBlocks.MAPLE_PLANKS.get(), "maple");
+        MAPLE(NMLBlocks.MAPLE_PLANKS.get(), "maple"),
+        WALNUT(NMLBlocks.WALNUT_PLANKS.get(), "maple");
 
 
         private final String name;

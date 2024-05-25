@@ -13,6 +13,13 @@ public class NMLFlammability {
 
         fireBlock.setFlammable(NMLBlocks.YELLOW_BIRCH_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(NMLBlocks.AUTUMNAL_OAK_LEAVES.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.PALE_CHERRY_LEAVES.get(), 30, 60);
+
+
+        fireBlock.setFlammable(NMLBlocks.GRASS_SPROUTS.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.OAT_GRASS.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.FIDDLEHEAD.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.DRIED_GRASS.get(), 30, 60);
 
         fireBlock.setFlammable(NMLBlocks.PINE_PLANKS.get(), 5, 20);
         fireBlock.setFlammable(NMLBlocks.PINE_STAIRS.get(), 5, 20);
@@ -30,6 +37,14 @@ public class NMLFlammability {
         fireBlock.setFlammable(NMLBlocks.RED_MAPLE_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(NMLBlocks.MAPLE_BOOKSHELF.get(), 30, 20);
         fireBlock.setFlammable(NMLBlocks.TRIMMED_MAPLE_PLANKS.get(), 5, 20);
+
+        fireBlock.setFlammable(NMLBlocks.WALNUT_PLANKS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.WALNUT_STAIRS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.WALNUT_SLAB.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.WALNUT_FENCE.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.WALNUT_LEAVES.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.WALNUT_BOOKSHELF.get(), 30, 20);
+        fireBlock.setFlammable(NMLBlocks.TRIMMED_WALNUT_PLANKS.get(), 5, 20);
 
         fireBlock.setFlammable(NMLBlocks.TRIMMED_OAK_PLANKS.get(), 5, 20);
         fireBlock.setFlammable(NMLBlocks.SPRUCE_BOOKSHELF.get(), 30, 20);

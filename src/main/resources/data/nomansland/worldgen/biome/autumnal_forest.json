@@ -8,9 +8,10 @@
   },
   "downfall": 0.8,
   "effects": {
-    "fog_color": 12638463,
-    "foliage_color": 12105048,
-    "grass_color": 9937752,
+    "fog_color": 13822166,
+    "sky_color": 8435944,
+    "foliage_color": 11314505,
+    "grass_color": 13217363,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -23,8 +24,7 @@
       "replace_current_music": false,
       "sound": "minecraft:music.overworld.forest"
     },
-    "sky_color": 7907327,
-    "water_color": 3443121,
+    "water_color": 3902136,
     "water_fog_color": 2388383
   },
   "features": [
@@ -34,7 +34,8 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "minecraft:forest_rock"
     ],
     [
       "minecraft:monster_room",
@@ -82,12 +83,10 @@
       "nomansland:biome_trees/trees_autumnal_forest"
     ],
     [
-      "minecraft:patch_grass_forest"
-    ],
-    [
       "minecraft:glow_lichen",
-      "minecraft:forest_flowers",
-      "minecraft:flower_default",
+      "nomansland:flower_patches/flowers_autumnal_forest",
+      "nomansland:flower_patches/flowerbed_autumnal",
+      "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_taiga",
       "minecraft:red_mushroom_taiga",
       "minecraft:patch_sugar_cane",

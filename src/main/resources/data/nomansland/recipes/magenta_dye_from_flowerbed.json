@@ -1,0 +1,19 @@
+{
+  "category": "misc",
+  "group": "magenta_dye",
+  "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "nomansland:violet_flowerbed"
+        }
+    },
+  "result": {
+    "count": 1,
+    "item": "minecraft:magenta_dye"
+  }
+}

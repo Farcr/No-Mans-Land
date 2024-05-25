@@ -1,5 +1,10 @@
 {
   "values": [
-    "nomansland:grass_sprouts"
+    "nomansland:grass_sprouts",
+    "nomansland:oat_grass",
+    "nomansland:fiddlehead",
+    "nomansland:dried_grass",
+    "nomansland:cattail",
+    "#nomansland:flowerbeds"
   ]
 }

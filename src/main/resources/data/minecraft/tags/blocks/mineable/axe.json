@@ -1,7 +1,15 @@
 {
   "values": [
-    "#nomansland:bookshelves",
+
+    "#forge:bookshelves",
     "#nomansland:trimmed_planks",
-    "#nomansland:fish_barrels"
+    "#nomansland:fish_barrels",
+    "nomansland:field_mushroom",
+    "nomansland:cut_sugar_cane",
+    "nomansland:cut_vine",
+    "nomansland:pine_cabinet",
+    "nomansland:maple_cabinet",
+    "nomansland:walnut_cabinet",
+    "nomansland:wooden_scaffolding"
   ]
 }

@@ -1,5 +1,11 @@
 {
   "values": [
-    "nomansland:pine_leaves"
+    "nomansland:pine_leaves",
+    "nomansland:yellow_birch_leaves",
+    "nomansland:autumnal_oak_leaves",
+    "nomansland:maple_leaves",
+    "nomansland:red_maple_leaves",
+    "nomansland:walnut_leaves",
+    "nomansland:pale_cherry_leaves"
   ]
 }

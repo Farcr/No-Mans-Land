@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#nomansland:has_oat_grass",
+  "biomes": "#nomansland:feature_addition/has_oat_grass",
   "features": [
     "nomansland:oat_grass_patch"
   ],

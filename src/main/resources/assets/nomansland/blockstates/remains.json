@@ -1,16 +1,72 @@
 {
   "variants": {
-    "dusted=0": {
-      "model": "nomansland:block/remains/remains_0"
-    },
-    "dusted=1": {
-      "model": "nomansland:block/remains/remains_1"
-    },
-    "dusted=2": {
-      "model": "nomansland:block/remains/remains_2"
-    },
-    "dusted=3": {
-      "model": "nomansland:block/remains/remains_3"
-    }
+    "dusted=0": [
+      {
+        "model": "nomansland:block/dungeon/remains_0"
+      },
+      {
+        "model": "nomansland:block/dungeon/remains_0",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/dungeon/remains_0",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/dungeon/remains_0",
+        "y": 270
+      }
+    ],
+    "dusted=1": [
+      {
+        "model": "nomansland:block/dungeon/remains_1"
+      },
+      {
+        "model": "nomansland:block/dungeon/remains_1",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/dungeon/remains_1",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/dungeon/remains_1",
+        "y": 270
+      }
+    ],
+    "dusted=2": [
+      {
+        "model": "nomansland:block/dungeon/remains_2"
+      },
+      {
+        "model": "nomansland:block/dungeon/remains_2",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/dungeon/remains_2",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/dungeon/remains_2",
+        "y": 270
+      }
+    ],
+    "dusted=3": [
+      {
+        "model": "nomansland:block/dungeon/remains_3"
+      },
+      {
+        "model": "nomansland:block/dungeon/remains_3",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/dungeon/remains_3",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/dungeon/remains_3",
+        "y": 270
+      }
+    ]
   }
 }

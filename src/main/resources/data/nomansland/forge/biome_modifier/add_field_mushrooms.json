@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#nomansland:has_field_mushroom",
+  "biomes": "#nomansland:feature_addition/has_field_mushroom",
   "features": [
     "nomansland:patch_field_mushroom_normal"
   ],

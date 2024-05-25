@@ -4,12 +4,24 @@
     "default": "nomansland:autumnal_oak_checked",
     "features": [
       {
-        "chance": 0.1,
+        "chance": 0.05,
         "feature": "minecraft:oak_checked"
       },
       {
-        "chance": 0.3,
+        "chance": 0.025,
+        "feature": "minecraft:fancy_oak_checked"
+      },
+      {
+        "chance": 0.025,
+        "feature": "nomansland:large_autumnal_oak_checked"
+      },
+      {
+        "chance": 0.2,
         "feature": "nomansland:red_maple_checked"
+      },
+      {
+        "chance": 0.05,
+        "feature": "nomansland:large_red_maple_checked"
       },
       {
         "chance": 0.3,

@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/plants/bush"
+      },
+      {
+        "model": "nomansland:block/plants/bush_1"
+      },
+      {
+        "model": "nomansland:block/plants/bush_1",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/plants/bush_2"
+      },
+      {
+        "model": "nomansland:block/plants/bush_2",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/plants/bush_3"
+      },
+      {
+        "model": "nomansland:block/plants/bush_3",
+        "y": 90
+      }
+    ]
+  }
+}

@@ -1,13 +1,8 @@
 {
   "values": [
     "nomansland:pine_log",
-    "nomansland:pine_wood",
-    "nomansland:stripped_pine_log",
-    "nomansland:stripped_pine_wood",
     "nomansland:maple_log",
-    "nomansland:maple_wood",
-    "nomansland:stripped_maple_log",
-    "nomansland:stripped_maple_wood"
+    "nomansland:walnut_log"
     
   ]
 }

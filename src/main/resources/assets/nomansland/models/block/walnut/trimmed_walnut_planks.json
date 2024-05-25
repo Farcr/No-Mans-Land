@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "nomansland:block/walnut/trimmed_walnut_planks_top",
+    "side": "nomansland:block/walnut/trimmed_walnut_planks"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "nomansland:block/plants/cattail_bottom"
+    },
+    "half=upper": {
+      "model": "nomansland:block/plants/cattail_top"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+    "type": "forge:conditional",
+  
+    "recipes": [
+      {
+        "conditions": [
+          {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+          }
+        ],
+        "recipe": {
+            "type": "farmersdelight:cooking",
+            "container": {
+                "item": "minecraft:glass_bottle"
+              },
+            "cookingtime": 100,
+            "experience": 0.25,
+            "ingredients": [
+                {
+                    "item": "nomansland:resin"
+                },
+                {
+                    "item": "nomansland:resin"
+                },
+                {
+                    "item": "minecraft:honeycomb"
+                }
+            ],
+            "result": {
+                "item": "nomansland:resin_oil"
+            }
+        }
+      },
+      {
+        "conditions": [],
+        "recipe": {
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                {
+                    "item": "nomansland:resin"
+                },
+                {
+                    "item": "nomansland:resin"
+                },
+                {
+                    "item": "minecraft:honeycomb"
+                },
+                {
+                    "item": "minecraft:glass_bottle"
+                }
+            ],
+            "result": {
+                "item": "nomansland:resin_oil",
+                "count": 1
+            }
+        }
+      }
+    ]
+  }

@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": [
+    "nomansland:underground/nether_quartzite_geode"
+  ],
+  "step": "local_modifications"
+}

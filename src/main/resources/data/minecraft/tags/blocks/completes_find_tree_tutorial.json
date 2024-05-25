@@ -1,3 +1,7 @@
 {
-  "values": "#minecraft:overworld_natural_logs"
+  "values": [
+    "nomansland:maple_log",
+    "nomansland:pine_log",
+    "nomansland:walnut_log"
+  ]
 }

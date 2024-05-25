@@ -1,15 +1,18 @@
 package com.farcr.nomansland.core.events;
 
+import com.farcr.nomansland.client.particles.FallingParticle;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.client.NMLModelLayers;
 import com.farcr.nomansland.core.content.entity.client.MooseModel;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
+import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -29,6 +32,18 @@ public class ClientEvents {
         event.registerLayerDefinition(NMLModelLayers.MAPLE_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(NMLModelLayers.MAPLE_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
 
+        event.registerLayerDefinition(NMLModelLayers.WALNUT_BOAT_LAYER, BoatModel::createBodyModel);
+        event.registerLayerDefinition(NMLModelLayers.WALNUT_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+        
         event.registerLayerDefinition(NMLModelLayers.MOOSE_LAYER, MooseModel::createBodyLayer);
+    }
+    @SubscribeEvent
+    public static void registerParticleProviders(RegisterParticleProvidersEvent event){
+        event.registerSpriteSet(NMLParticleTypes.PALE_CHERRY_LEAVES.get(),pSprites
+                ->(simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new FallingParticle(clientLevel, d, e, f, pSprites) );
+        event.registerSpriteSet(NMLParticleTypes.CAVE_DUST.get(),pSprites
+                ->(simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new FallingParticle(clientLevel, d, e, f, pSprites) );
     }
 }

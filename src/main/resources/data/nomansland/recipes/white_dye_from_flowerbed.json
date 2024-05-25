@@ -1,0 +1,19 @@
+{
+  "category": "misc",
+  "group": "white_dye",
+  "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "nomansland:white_flowerbed"
+        }
+    },
+  "result": {
+    "count": 1,
+    "item": "minecraft:white_dye"
+  }
+}

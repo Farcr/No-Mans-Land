@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "nomansland:block/walnut/walnut_cabinet_side",
+    "front": "nomansland:block/walnut/walnut_cabinet_front_open",
+    "top": "nomansland:block/walnut/walnut_cabinet_top"
+  }
+}

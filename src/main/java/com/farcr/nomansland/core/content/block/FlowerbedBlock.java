@@ -13,7 +13,7 @@ public class FlowerbedBlock extends BushBlock {
     public FlowerbedBlock(Properties pProperties) {
         super(pProperties);
     }
-
+@Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE;
     }

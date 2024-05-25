@@ -1,5 +1,6 @@
 {
   "values": [
-    "nomansland:grass_sprouts"
+    "#minecraft:replaceable_by_trees",
+    "nomansland:pebbles"
   ]
 }

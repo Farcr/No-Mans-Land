@@ -8,7 +8,8 @@
   },
   "downfall": 0.4,
   "effects": {
-    "fog_color": 12638463,
+    "fog_color": 12906239,
+    "sky_color": 8435944,
     "foliage_color": 10334529,
     "grass_color": 9943640,
     "mood_sound": {
@@ -17,8 +18,7 @@
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "sky_color": 7907327,
-    "water_color": 3443121,
+    "water_color": 3902136,
     "water_fog_color": 2388383
   },
   "features": [
@@ -75,12 +75,11 @@
       "nomansland:biome_trees/trees_sunflower_plains"
     ],
     [
-      "minecraft:patch_grass_plain",
-      "minecraft:patch_tall_grass_2"
-    ],
-    [
       "minecraft:glow_lichen",
-      "minecraft:flower_plains",
+      "nomansland:flower_patches/flowers_sunflower_plains",
+      "nomansland:flower_patches/flowerbed_yellow",
+      "minecraft:patch_grass_plain",
+      "minecraft:patch_tall_grass_2",
       "minecraft:patch_sunflower",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
@@ -115,12 +114,6 @@
         "maxCount": 4,
         "minCount": 2,
         "weight": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 2
       },
       {
         "type": "minecraft:cow",

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "nomansland:block/tapping/tap"
+    },
+    "facing=west": {
+      "model": "nomansland:block/tapping/tap",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "nomansland:block/tapping/tap",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "nomansland:block/tapping/tap",
+      "y": 180
+    }
+  }
+}

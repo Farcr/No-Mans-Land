@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "nomansland:block/plants/pale_cherry_leaves"
+  }
+}

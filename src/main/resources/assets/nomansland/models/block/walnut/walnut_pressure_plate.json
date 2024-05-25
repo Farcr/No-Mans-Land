@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_up",
+  "textures": {
+    "texture": "nomansland:block/walnut/walnut_planks"
+  }
+}

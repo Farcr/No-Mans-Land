@@ -1,8 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
-  "features": [
-    "nomansland:patch_roots"
-  ],
-  "step": "vegetal_decoration"
-}

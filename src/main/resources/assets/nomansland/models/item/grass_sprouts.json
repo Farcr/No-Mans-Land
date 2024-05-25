@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "nomansland:item/grass_sprouts"
+    "layer0": "nomansland:item/grass_sprouts_inventory"
   }
 }

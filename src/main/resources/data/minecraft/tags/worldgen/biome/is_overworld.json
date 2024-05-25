@@ -1,6 +1,8 @@
 {
   "values": [
     "nomansland:autumnal_forest",
-    "nomansland:autumnal_fields"
+    "nomansland:autumnal_fields",
+    "nomansland:old_growth_forest",
+    "nomansland:maple_forest"
   ]
 }

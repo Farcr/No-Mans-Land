@@ -1,7 +1,7 @@
 {
 	"credit": "Made by Farcr",
+	"ambientocclusion": false,
 	"render_type": "minecraft:cutout",
-    "ambientocclusion": false,
 	"textures": {
 		"particle": "#texture"
 	},
@@ -15,7 +15,8 @@
 				"east": {"uv": [6, 4, 8, 16], "texture": "#texture"},
 				"south": {"uv": [6, 4, 8, 16], "texture": "#texture"},
 				"west": {"uv": [6, 4, 8, 16], "texture": "#texture"},
-				"up": {"uv": [6, 1, 8, 3], "texture": "#texture"}
+				"up": {"uv": [6, 1, 8, 3], "texture": "#texture"},
+				"down": {"uv": [2, 5, 4, 7], "texture": "#texture"}
 			}
 		},
 		{

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "minecraft:cherry_bees_005",
+    "features": [
+      {
+        "chance": 0.25,
+        "feature": "minecraft:cherry_checked"
+      },
+      {
+        "chance": 0.3,
+        "feature": "nomansland:pale_cherry_checked"
+      },
+      {
+        "chance": 0.1,
+        "feature": "minecraft:fancy_oak_checked"
+      },
+      {
+        "chance": 0.1,
+        "feature": "minecraft:oak_checked"
+      }
+    ]
+  }
+}
