@@ -1,5 +1,6 @@
 package com.farcr.nomansland.core.content.block;
 
+import com.farcr.nomansland.core.content.blockentity.RemainsBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -17,6 +18,7 @@ import net.minecraft.world.level.block.entity.BrushableBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 
@@ -69,6 +71,10 @@ public class RemainsBlock extends BrushableBlock {
         }
     }
 
+    @Override
+    public @Nullable BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
+        return new RemainsBlockEntity(pPos, pState);
+    }
 }
 
 
