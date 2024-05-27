@@ -24,8 +24,10 @@ public class NMLEntities {
                     .sized(1.375f, 0.5625f).build("chest_boat"));
 
     public static final RegistryObject<EntityType<BuriedEntity>> BURIED =
-            ENTITY_TYPES.register("buried", () -> EntityType.Builder.<BuriedEntity>of(BuriedEntity::new, MobCategory.MONSTER)
-                    .sized(1.0f, 1.0f).clientTrackingRange(8).build("buried"));
+            ENTITY_TYPES.register("buried", () ->
+                    EntityType.Builder.of(BuriedEntity::new, MobCategory.MONSTER)
+                    .sized(1.0f, 1.0f)
+                    .clientTrackingRange(8).build("buried"));
                     
     public static final RegistryObject<EntityType<MooseEntity>> MOOSE =
             ENTITY_TYPES.register("moose", () -> EntityType.Builder.of(MooseEntity::new, MobCategory.CREATURE)

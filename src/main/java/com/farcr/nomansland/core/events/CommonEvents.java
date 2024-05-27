@@ -2,11 +2,11 @@ package com.farcr.nomansland.core.events;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.client.NMLModelLayers;
-import com.farcr.nomansland.core.content.entity.BuriedEntity;
+import com.farcr.nomansland.core.content.entity.MooseEntity;
 import com.farcr.nomansland.core.content.entity.client.BuriedModel;
 import com.farcr.nomansland.core.content.entity.client.MooseModel;
-import com.farcr.nomansland.core.registry.NMLEntities;
 import com.farcr.nomansland.core.registry.NMLBlocks;
+import com.farcr.nomansland.core.registry.NMLEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -166,6 +166,8 @@ public class CommonEvents {
         public static class ModEventBusEvents {
             @SubscribeEvent
             public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
+                event.put(NMLEntities.BURIED.get(), MooseEntity.createAttributes().build());
+                event.put(NMLEntities.MOOSE.get(), MooseEntity.createAttributes().build());
             }
 
             @SubscribeEvent
