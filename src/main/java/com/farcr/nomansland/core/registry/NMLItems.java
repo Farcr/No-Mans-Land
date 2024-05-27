@@ -3,6 +3,7 @@ package com.farcr.nomansland.core.registry;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;
 import com.farcr.nomansland.core.content.item.BoatItem;
+import com.farcr.nomansland.core.content.item.FuelItem;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Direction;
@@ -48,13 +49,13 @@ public class NMLItems {
 
 //Materials
 
-//    public static final RegistryObject<Item> RESIN = registerItem("resin",
-//            () -> new FuelItem(new Item.Properties(), 1000 ));
+    public static final RegistryObject<Item> RESIN = registerItem("resin",
+            () -> new FuelItem(new Item.Properties(), 1000 ));
 //    !!!Depends on Alembic
-//    public static final RegistryObject<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
-//            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
-//    public static final RegistryObject<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
-//            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+    public static final RegistryObject<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
+            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
+//    public static final RegistryObject<Item> MAPLE_SYRUP_BOTTLE = registerIntegrationItem("maple_syrup_bottle",
+//            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)), "alembic");
     public static final RegistryObject<Item> SCONCE_TORCH = registerItem("sconce_torch",
             () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_TORCH.get(), NMLBlocks.SCONCE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
     public static final RegistryObject<Item> SCONCE_SOUL_TORCH = registerItem("sconce_soul_torch",
@@ -275,7 +276,7 @@ public class NMLItems {
             event.accept(NMLItems.WALNUT_HANGING_SIGN);
             event.accept(NMLItems.SCONCE_TORCH);
             event.accept(NMLItems.SCONCE_SOUL_TORCH);
-//            event.accept(NMLBlocks.TAP);
+            event.accept(NMLBlocks.TAP);
             event.accept(NMLItems.WOODEN_SCAFFOLDING);
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
@@ -296,12 +297,12 @@ public class NMLItems {
             event.accept(NMLItems.WALNUT_CHEST_BOAT);
             event.accept(Items.BUNDLE);
         }
-//        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
-//            event.accept(NMLItems.RESIN_OIL);
-//        }
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(NMLItems.RESIN_OIL_BOTTLE);
+        }
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-//            event.accept(NMLItems.RESIN);
-//            event.accept(NMLItems.RESIN_OIL);
+            event.accept(NMLItems.RESIN);
+            event.accept(NMLItems.RESIN_OIL_BOTTLE);
         }
     }
     public static RegistryObject<Item> registerItem(final String name, final Supplier<Item> supplier) {

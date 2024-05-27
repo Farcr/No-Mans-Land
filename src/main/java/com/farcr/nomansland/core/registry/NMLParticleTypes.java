@@ -18,9 +18,14 @@ public class NMLParticleTypes {
     public static final RegistryObject<ParticleType> CAVE_DUST = registerParticle("cave_dust",
             ()-> new SimpleParticleType(false) {});
 
+    public static final RegistryObject<ParticleType> RESIN_DROPLET = registerParticle("resin_droplet",
+            ()-> new SimpleParticleType(false) {});
+
+    public static final RegistryObject<ParticleType> RESIN_DROPLET_FLAT = registerParticle("resin_droplet_flat",
+            ()-> new SimpleParticleType(false) {});
+
     private static <T extends ParticleType> RegistryObject<T> registerParticle(String name, Supplier<T> particle ) {
-        RegistryObject<T> toReturn = PARTICLE_TYPES.register(name, particle);
-        return toReturn;
+        return PARTICLE_TYPES.register(name, particle);
     }
 
     public static void register(IEventBus eventBus) {

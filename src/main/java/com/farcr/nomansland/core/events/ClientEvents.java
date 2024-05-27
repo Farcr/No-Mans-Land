@@ -1,6 +1,8 @@
 package com.farcr.nomansland.core.events;
 
 import com.farcr.nomansland.client.particles.FallingParticle;
+import com.farcr.nomansland.client.particles.ResinFallingParticle;
+import com.farcr.nomansland.client.particles.ResinLandParticle;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.client.NMLModelLayers;
 import com.farcr.nomansland.core.content.entity.client.MooseModel;
@@ -38,12 +40,18 @@ public class ClientEvents {
         event.registerLayerDefinition(NMLModelLayers.MOOSE_LAYER, MooseModel::createBodyLayer);
     }
     @SubscribeEvent
-    public static void registerParticleProviders(RegisterParticleProvidersEvent event){
-        event.registerSpriteSet(NMLParticleTypes.PALE_CHERRY_LEAVES.get(),pSprites
-                ->(simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new FallingParticle(clientLevel, d, e, f, pSprites) );
-        event.registerSpriteSet(NMLParticleTypes.CAVE_DUST.get(),pSprites
-                ->(simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new FallingParticle(clientLevel, d, e, f, pSprites) );
+    public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(NMLParticleTypes.PALE_CHERRY_LEAVES.get(), pSprites
+                -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new FallingParticle(clientLevel, d, e, f, pSprites));
+        event.registerSpriteSet(NMLParticleTypes.CAVE_DUST.get(), pSprites
+                -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new FallingParticle(clientLevel, d, e, f, pSprites));
+        event.registerSpriteSet(NMLParticleTypes.RESIN_DROPLET.get(), pSprites
+                -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new ResinFallingParticle(clientLevel, d, e, f, pSprites));
+        event.registerSpriteSet(NMLParticleTypes.RESIN_DROPLET_FLAT.get(), pSprites
+                -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new ResinLandParticle(clientLevel, d, e, f, pSprites));
     }
 }

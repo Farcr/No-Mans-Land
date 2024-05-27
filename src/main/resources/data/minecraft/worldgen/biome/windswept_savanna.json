@@ -10,16 +10,16 @@
   "effects": {
     "fog_color": 12711423,
     "sky_color": 7651291,
-    "foliage_color": 10067503,
-    "grass_color": 13415770,
+    "foliage_color": 8558386,
+    "grass_color": 12164442,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "water_color": 3906239,
-    "water_fog_color": 2979747
+    "water_color": 4159204,
+    "water_fog_color": 329011
   },
   "features": [
     [],
@@ -72,9 +72,6 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:trees_savanna"
-    ],
-    [
       "minecraft:glow_lichen",
       "minecraft:patch_tall_grass",
       "nomansland:flower_patches/flowers_savanna",
@@ -105,28 +102,28 @@
     "axolotls": [],
     "creature": [
       {
-        "type": "minecraft:sheep",
+        "type": "minecraft:goat",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 12
+        "weight": 6
       },
       {
         "type": "minecraft:pig",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 4
+        "weight": 8
       },
       {
         "type": "minecraft:chicken",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 4
+        "weight": 12
       },
       {
         "type": "minecraft:cow",
-        "maxCount": 6,
-        "minCount": 2,
-        "weight": 14
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 5
       },
       {
         "type": "minecraft:horse",
@@ -139,6 +136,12 @@
         "maxCount": 1,
         "minCount": 1,
         "weight": 1
+      },
+      {
+        "type": "minecraft:llama",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 8
       }
     ],
     "misc": [],
