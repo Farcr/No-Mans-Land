@@ -171,7 +171,7 @@ public class CommonEvents {
 
             //TODO: Check if above is air and play particles
             if (stack.is(Items.BONE_MEAL) && !player.isSpectator()) {
-                if (state.is(NMLTags.BONEMEAL_SPREADS_UPWARDS)) {
+                if (state.is(NMLTags.BONEMEAL_SPREADS_UPWARDS) && level.isEmptyBlock(pos.above())) {
                     level.playSound(player, pos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1F, 1F);
 //                    level.addParticle();
                     if (!level.isClientSide) {
