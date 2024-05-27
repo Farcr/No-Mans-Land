@@ -51,8 +51,8 @@ public class NMLItems {
     public static final RegistryObject<Item> RESIN = registerItem("resin",
             () -> new FuelItem(new Item.Properties(), 1000 ));
 //    !!!Depends on Alembic
-//    public static final RegistryObject<Item> RESIN_OIL_BOTTLE = registerIntegrationItem("resin_oil_bottle",
-//            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)), "alembic");
+    public static final RegistryObject<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
+            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
 //    public static final RegistryObject<Item> MAPLE_SYRUP_BOTTLE = registerIntegrationItem("maple_syrup_bottle",
 //            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)), "alembic");
     public static final RegistryObject<Item> SCONCE_TORCH = registerItem("sconce_torch",
@@ -294,12 +294,12 @@ public class NMLItems {
             event.accept(NMLItems.WALNUT_CHEST_BOAT);
             event.accept(Items.BUNDLE);
         }
-//        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
-//            event.accept(NMLItems.RESIN_OIL);
-//        }
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(NMLItems.RESIN_OIL_BOTTLE);
+        }
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(NMLItems.RESIN);
-//            event.accept(NMLItems.RESIN_OIL);
+            event.accept(NMLItems.RESIN_OIL_BOTTLE);
         }
     }
     public static RegistryObject<Item> registerItem(final String name, final Supplier<Item> supplier) {

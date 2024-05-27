@@ -1,3 +1,6 @@
 {
-  "parent": "nomansland:block/tapping/tap"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "nomansland:item/tap"
+  }
 }

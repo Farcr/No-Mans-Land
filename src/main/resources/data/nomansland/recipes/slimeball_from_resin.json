@@ -1,6 +1,5 @@
-
-    "type": "forge:conditional",
-  
+{
+   "type": "forge:conditional",
     "recipes": [
       {
         "conditions": [
