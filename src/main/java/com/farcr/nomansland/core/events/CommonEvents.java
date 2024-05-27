@@ -19,12 +19,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 public class CommonEvents {
     @Mod.EventBusSubscriber(modid = NoMansLand.MODID)
     public static class ForgeEvents {
+
         @SubscribeEvent
         public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
             Level level = event.getLevel();
