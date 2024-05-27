@@ -106,7 +106,7 @@ public class TapBlock extends Block {
     public float getTickingChance() {
         // TODO: check if this is for resin or something else, as different fluids could have different rates
         // The ticking chance is the chance that one tick will actually go through
-        return 0.3F;
+        return 0.1F;
     }
 
 
@@ -141,10 +141,35 @@ public class TapBlock extends Block {
     }
 
     private static void spawnResinParticle(Level pLevel, BlockPos pPos, BlockState pState) {
-        Vec3 offset = pState.getOffset(pLevel, pPos);
-        double x = (double)pPos.getX() + 0.5 + offset.x;
-        double y = (double)((float)(pPos.getY() + 1) - 0.75F) - 0.07;
-        double z = (double)pPos.getZ() + 0.32 + offset.z;
+        double x = pPos.getX();
+        double y = pPos.getY();
+        double z = pPos.getZ();
+        switch (pState.getValue(FACING)) {
+            case NORTH: {
+                x = (double)pPos.getX() + 0.5;
+                y = (double)((float)(pPos.getY() + 1) - 0.75F) - 0.07;
+                z = (double)pPos.getZ() + 0.68;
+                break;
+            }
+            case SOUTH: {
+                x = (double)pPos.getX() + 0.5;
+                y = (double)((float)(pPos.getY() + 1) - 0.75F) - 0.07;
+                z = (double)pPos.getZ() + 0.32;
+                break;
+            }
+            case EAST: {
+                x = (double)pPos.getX() + 0.32;
+                y = (double)((float)(pPos.getY() + 1) - 0.75F) - 0.07;
+                z = (double)pPos.getZ() + 0.5;
+                break;
+            }
+            case WEST: {
+                x = (double)pPos.getX() + 0.68;
+                y = (double)((float)(pPos.getY() + 1) - 0.75F) - 0.07;
+                z = (double)pPos.getZ() + 0.5;
+                break;
+            }
+        }
         ParticleOptions particle = (ParticleOptions) NMLParticleTypes.RESIN_DROPLET.get();
         pLevel.addParticle(particle, x, y, z, 0.0, 0.0, 0.0);
     }
