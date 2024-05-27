@@ -8,10 +8,10 @@
   },
   "downfall": 0.0,
   "effects": {
-    "fog_color": 13104895,
-    "sky_color": 8307162,
-    "foliage_color": 11320383,
-    "grass_color": 13354847,
+    "fog_color": 12711423,
+    "sky_color": 7651291,
+    "foliage_color": 10067503,
+    "grass_color": 13415770,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -77,8 +77,8 @@
     [
       "minecraft:glow_lichen",
       "minecraft:patch_tall_grass",
-      "nomansland:flower_patches/flowers_all_tulips",
-      "nomansland:flower_patches/flowerbed_autumnal",
+      "nomansland:flower_patches/flowers_savanna",
+      "nomansland:flower_patches/flowerbed_savanna",
       "minecraft:patch_grass_savanna",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",

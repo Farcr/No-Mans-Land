@@ -10,6 +10,8 @@ import net.minecraft.world.level.block.Block;
 public class NMLTags {
     public static final TagKey<Item> FIRESTARTERS = createItemTag("firestarters");
     public static final TagKey<Block> BONEMEAL_SPREADS = createBlockTag("bonemeal_spreads");
+    public static final TagKey<Block> BONEMEAL_SPREADS_UPWARDS = createBlockTag("bonemeal_spreads_upwards");
+    public static final TagKey<Block> CONIFEROUS_LOGS = createBlockTag("coniferous_logs");
     private static TagKey<Item> createItemTag(String pName) {
         return TagKey.create(Registries.ITEM, new ResourceLocation(NoMansLand.MODID, pName));
     }

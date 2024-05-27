@@ -2,6 +2,7 @@ package com.farcr.nomansland.core.events;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.registry.NMLBlocks;
+import com.farcr.nomansland.core.registry.NMLTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -152,7 +153,35 @@ public class CommonEvents {
                 }
             }
             //Bone-Mealing #bonemeal_spreads
-            //TODO
+
+            //TODO: Finish placement and play particles
+            if (stack.is(Items.BONE_MEAL) && !player.isSpectator()) {
+                if (state.is(NMLTags.BONEMEAL_SPREADS)) {
+                    level.playSound(player, pos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1F, 1F);
+//                    level.addParticle();
+                    if (!level.isClientSide) {
+                        stack.shrink(1);
+                        level.setBlock(pos, state,11 );
+                    }
+                    event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
+                    event.setCanceled(true);
+                }
+            }
+            //Bone-Mealing things that grow upwards #bonemeal_spreads_above
+
+            //TODO: Check if above is air and play particles
+            if (stack.is(Items.BONE_MEAL) && !player.isSpectator()) {
+                if (state.is(NMLTags.BONEMEAL_SPREADS_UPWARDS)) {
+                    level.playSound(player, pos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1F, 1F);
+//                    level.addParticle();
+                    if (!level.isClientSide) {
+                        stack.shrink(1);
+                        level.setBlock(pos.above(), state,11 );
+                    }
+                    event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
+                    event.setCanceled(true);
+                }
+            }
 
         }
 
