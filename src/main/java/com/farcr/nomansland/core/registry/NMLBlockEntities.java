@@ -2,6 +2,7 @@ package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.blockentity.NMLSignBlockEntity;
+import com.farcr.nomansland.core.content.blockentity.TapBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -27,6 +28,10 @@ public class NMLBlockEntities {
                             NMLBlocks.MAPLE_HANGING_SIGN.get(), NMLBlocks.MAPLE_HANGING_WALL_SIGN.get(),
                             NMLBlocks.WALNUT_HANGING_SIGN.get(), NMLBlocks.WALNUT_HANGING_WALL_SIGN.get()
                     ).build(null));
+
+    public static final RegistryObject<BlockEntityType<TapBlockEntity>> TAP =
+            BLOCK_ENTITIES.register("tap", () ->
+                    BlockEntityType.Builder.of(TapBlockEntity::new, NMLBlocks.TAP.get()).build(null));
 
     public static void register (IEventBus eventBus) {BLOCK_ENTITIES.register(eventBus);}
 }

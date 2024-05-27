@@ -458,6 +458,8 @@ public class NMLBlocks {
             () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
             () -> new ResinCauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON), null, CauldronInteraction.EMPTY));
+    public static final RegistryObject<Block> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
+            () -> new HoneyCauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON), null, CauldronInteraction.EMPTY));
 
 
     //Storage
@@ -469,6 +471,8 @@ public class NMLBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.COD_BARREL.get())));
     public static final RegistryObject<Block> TROPICAL_FISH_BARREL = registerBlock("tropical_fish_barrel",
             () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.COD_BARREL.get())));
+    public static final RegistryObject<Block> BRITTLE_POT = registerBlock("brittle_pot",
+            () -> new BrittlePotBlock(BlockBehaviour.Properties.copy(Blocks.DECORATED_POT)));
 
     //Mushrooms
     public static final RegistryObject<Block> FIELD_MUSHROOM = registerBlock("field_mushroom",

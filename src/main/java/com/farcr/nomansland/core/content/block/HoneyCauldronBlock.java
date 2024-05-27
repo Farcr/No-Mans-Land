@@ -1,6 +1,5 @@
 package com.farcr.nomansland.core.content.block;
 
-import com.farcr.nomansland.core.registry.NMLItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.sounds.SoundEvents;
@@ -10,6 +9,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
@@ -24,8 +24,8 @@ import net.minecraft.world.phys.HitResult;
 import java.util.Map;
 import java.util.function.Predicate;
 
-public class ResinCauldronBlock extends LayeredCauldronBlock {
-    public ResinCauldronBlock(Properties pProperties, Predicate<Biome.Precipitation> pFillPredicate, Map<Item, CauldronInteraction> pInteractions) {
+public class HoneyCauldronBlock extends LayeredCauldronBlock {
+    public HoneyCauldronBlock(Properties pProperties, Predicate<Biome.Precipitation> pFillPredicate, Map<Item, CauldronInteraction> pInteractions) {
         super(pProperties, pFillPredicate, pInteractions);
     }
 
@@ -45,21 +45,38 @@ public class ResinCauldronBlock extends LayeredCauldronBlock {
     }
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        ItemStack resin = new ItemStack(NMLItems.RESIN.get(), pLevel.random.nextInt(2, 5));
-        if (!pPlayer.addItem(resin)) {
-            pPlayer.drop(resin, false);
-        } else {
-            pLevel.playSound(pPlayer,
-                    pPlayer.getX(),
-                    pPlayer.getY(),
-                    pPlayer.getZ(),
-                    SoundEvents.ITEM_PICKUP,
-                    SoundSource.PLAYERS,
-                    0.2F,
-                    (pLevel.random.nextFloat() - pLevel.random.nextFloat()) * 1.4F + 2.0F);
+        ItemStack honey = new ItemStack(Items.HONEY_BOTTLE);
+        // Give player honey block if cauldron is full
+        if (pPlayer.isHolding(Items.GLASS_BOTTLE)) {
+            if (!pPlayer.addItem(honey)) {
+                pPlayer.drop(honey, false);
+            } else {
+                pPlayer.setItemInHand(pHand, new ItemStack(Items.GLASS_BOTTLE, pPlayer.getItemInHand(pHand).getCount() - 1));
+                pLevel.playSound(pPlayer,
+                        pPlayer.getX(),
+                        pPlayer.getY(),
+                        pPlayer.getZ(),
+                        SoundEvents.BOTTLE_FILL,
+                        SoundSource.PLAYERS,
+                        0.2F,
+                        (pLevel.random.nextFloat() - pLevel.random.nextFloat()) * 1.4F + 2.0F);
+                lowerFillLevel(pState, pLevel, pPos);
+                return InteractionResult.sidedSuccess(pLevel.isClientSide);
+            }
+        } else if (pPlayer.isHolding(Items.HONEY_BOTTLE)) {
+                pPlayer.setItemInHand(pHand, new ItemStack(Items.HONEY_BOTTLE, pPlayer.getItemInHand(pHand).getCount() - 1));
+                pLevel.playSound(pPlayer,
+                        pPlayer.getX(),
+                        pPlayer.getY(),
+                        pPlayer.getZ(),
+                        SoundEvents.BOTTLE_EMPTY,
+                        SoundSource.PLAYERS,
+                        0.2F,
+                        (pLevel.random.nextFloat() - pLevel.random.nextFloat()) * 1.4F + 2.0F);
+                fillUp(pState, pLevel, pPos);
+                return InteractionResult.sidedSuccess(pLevel.isClientSide);
         }
-        lowerFillLevel(pState, pLevel, pPos);
-        return InteractionResult.sidedSuccess(pLevel.isClientSide);
+        return InteractionResult.FAIL;
     }
 
     @Override
