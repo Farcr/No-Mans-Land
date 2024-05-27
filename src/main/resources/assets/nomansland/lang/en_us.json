@@ -261,7 +261,9 @@
 
   "item.nomansland.resin": "Resin",
   "item.nomansland.resin_oil_bottle": "Resin Oil Bottle",
+  
+  "item.nomansland.firebomb": "Firebomb",
 
-  "tooltip.nomansland.missing_interaction_block": "§8This block is part of Mod Integration, but its Mod is missing!",
-  "tooltip.nomansland.missing_interaction_item": "§8This item is part of Mod Integration, but its Mod is missing!"
+  "tooltip.nomansland.missing_interaction_block": "§8This block is part of Mod Integration, but its required Mod is missing!",
+  "tooltip.nomansland.missing_interaction_item": "§8This item is part of Mod Integration, but its required Mod is missing!"
 }

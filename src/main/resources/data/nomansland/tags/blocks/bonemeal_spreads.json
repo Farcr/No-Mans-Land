@@ -2,6 +2,8 @@
   "values": [
     "#minecraft:small_flowers",
     "minecraft:lily_pad",
-    "nomansland:clover_patch"
+    "nomansland:clover_patch",
+    "nomansland:oat_grass",
+    "nomansland:fiddlehead"
   ]
 }

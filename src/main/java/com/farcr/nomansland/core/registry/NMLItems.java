@@ -4,7 +4,6 @@ import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;
 import com.farcr.nomansland.core.content.item.BoatItem;
 import com.farcr.nomansland.core.content.item.FuelItem;
-import com.farcr.nomansland.core.content.item.MapleSyrupBottleItem;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Direction;
@@ -274,7 +273,7 @@ public class NMLItems {
             event.accept(NMLItems.WALNUT_HANGING_SIGN);
             event.accept(NMLItems.SCONCE_TORCH);
             event.accept(NMLItems.SCONCE_SOUL_TORCH);
-//            event.accept(NMLBlocks.TAP);
+            event.accept(NMLBlocks.TAP);
             event.accept(NMLItems.WOODEN_SCAFFOLDING);
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
@@ -299,7 +298,7 @@ public class NMLItems {
 //            event.accept(NMLItems.RESIN_OIL);
 //        }
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-//            event.accept(NMLItems.RESIN);
+            event.accept(NMLItems.RESIN);
 //            event.accept(NMLItems.RESIN_OIL);
         }
     }
