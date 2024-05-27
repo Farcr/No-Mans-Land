@@ -2,15 +2,11 @@ package com.farcr.nomansland.core.content.entity.client;// Made with Blockbench 
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.monster.Zombie;
 
 public class BuriedModel<T extends Entity> extends EntityModel<T> {
     private final ModelPart buried;
@@ -63,6 +59,7 @@ public class BuriedModel<T extends Entity> extends EntityModel<T> {
 
     @Override
     public void setupAnim(T pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
+
         if (head.yRot != 0) {
             body.yRot = (head.yRot / 10);
             body.zRot = (head.yRot / 10);

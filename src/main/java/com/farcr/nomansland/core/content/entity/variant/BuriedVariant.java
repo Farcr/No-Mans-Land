@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public enum BuriedVariant {
+
     ZERO(0),
     ONE(1),
     TWO(2);
