@@ -36,7 +36,7 @@ public class ResinFallingParticle extends TextureSheetParticle {
     }
 
     protected void preMoveUpdate() {
-        if (this.lifetime <= 0) {
+        if (this.lifetime-- <= 0) {
             this.remove();
         }
 

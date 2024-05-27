@@ -7,7 +7,7 @@ public class ResinLandParticle extends ResinFallingParticle {
 
     public ResinLandParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet) {
         super(level, x, y, z, spriteSet);
-        this.lifetime = (int)(64.0 / (Math.random() * 0.8 + 0.2));
+        this.lifetime = (int)(16.0 / (Math.random() * 0.8 + 0.2));
     }
 
     @Override

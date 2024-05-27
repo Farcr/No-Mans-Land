@@ -44,7 +44,7 @@ public class ResinCauldronBlock extends LayeredCauldronBlock {
     }
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        ItemStack resin = new ItemStack(NMLItems.RESIN.get());
+        ItemStack resin = new ItemStack(NMLItems.RESIN.get(), pLevel.random.nextInt(2, 5));
         if (!pPlayer.addItem(resin)) {
             pPlayer.drop(resin, false);
         } else {
