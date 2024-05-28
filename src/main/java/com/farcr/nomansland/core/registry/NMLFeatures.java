@@ -3,7 +3,6 @@ package com.farcr.nomansland.core.registry;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.world.feature.SpreadPatchFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

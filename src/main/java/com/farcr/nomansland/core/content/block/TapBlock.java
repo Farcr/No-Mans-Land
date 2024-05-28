@@ -7,7 +7,6 @@ import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import com.farcr.nomansland.core.registry.NMLTags;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;

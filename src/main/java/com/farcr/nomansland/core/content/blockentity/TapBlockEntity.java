@@ -8,7 +8,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BeehiveBlock;
 import net.minecraft.world.level.block.CauldronBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 
@@ -30,6 +29,8 @@ public class TapBlockEntity extends BlockEntity {
 
         // Fill selected cauldron with honey if the block behind is a full beehive
         if (blockBehindState.getBlock() instanceof BeehiveBlock && blockBehindState.getValue(HONEY_LEVEL) == 5) {
+            // TODO: make it wait a few seconds while outputting a ton of dripping particles?
+            if(level.random.nextFloat() <= 0.6F) return;
             boolean honeyConsumed = false;
             if (cauldronState.getBlock() instanceof HoneyCauldronBlock cauldron) {
                 if (!cauldron.isFull(cauldronState)) {
