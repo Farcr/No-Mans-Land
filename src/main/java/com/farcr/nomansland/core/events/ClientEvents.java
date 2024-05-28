@@ -6,6 +6,7 @@ import com.farcr.nomansland.client.models.MooseModel;
 import com.farcr.nomansland.client.particle.FallingParticle;
 import com.farcr.nomansland.client.particle.ResinFallingParticle;
 import com.farcr.nomansland.client.particle.ResinLandParticle;
+import com.farcr.nomansland.client.particles.SculkAmbienceParticle;
 import com.farcr.nomansland.client.render.BuriedRenderer;
 import com.farcr.nomansland.client.render.FirebombRenderer;
 import com.farcr.nomansland.client.render.MooseRenderer;

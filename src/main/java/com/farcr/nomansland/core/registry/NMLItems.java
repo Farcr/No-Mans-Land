@@ -310,6 +310,10 @@ public class NMLItems {
             event.accept(NMLItems.RESIN);
             event.accept(NMLItems.RESIN_OIL_BOTTLE);
         }
+
+        if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
+            event.accept(NMLBlocks.SPIKE_TRAP);
+        }
     }
     public static RegistryObject<Item> registerItem(final String name, final Supplier<Item> supplier) {
         RegistryObject<Item> toReturn = ITEMS.register(name, supplier);

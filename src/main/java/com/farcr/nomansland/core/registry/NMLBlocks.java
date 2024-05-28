@@ -461,6 +461,9 @@ public class NMLBlocks {
     public static final RegistryObject<Block> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
             () -> new HoneyCauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON), null, CauldronInteraction.EMPTY));
 
+    public static final RegistryObject<Block> SPIKE_TRAP = registerBlock("spike_trap",
+            () -> new SpikeTrapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).noOcclusion().randomTicks()));
+
 
     //Storage
     public static final RegistryObject<Block> COD_BARREL = registerBlock("cod_barrel",

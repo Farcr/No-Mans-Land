@@ -45,7 +45,6 @@ public class NoMansLand {
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, NMLConfig.COMMON_CONFIG);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
