@@ -8,8 +8,10 @@
   },
   "downfall": 0.4,
   "effects": {
-    "fog_color": 200458,
-    "sky_color": 200458,
+    "fog_color": 745045,
+    "sky_color": 745045,
+    "foliage_color": 7631435,
+    "grass_color": 8622426,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -26,7 +28,7 @@
       "options": {
         "type": "nomansland:sculk_ambience"
       },
-      "probability": 0.118093334
+      "probability": 0.005
     },
     "water_color": 1327441,
     "water_fog_color": 662565

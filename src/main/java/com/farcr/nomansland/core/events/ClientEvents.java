@@ -3,6 +3,7 @@ package com.farcr.nomansland.core.events;
 import com.farcr.nomansland.client.particles.FallingParticle;
 import com.farcr.nomansland.client.particles.ResinFallingParticle;
 import com.farcr.nomansland.client.particles.ResinLandParticle;
+import com.farcr.nomansland.client.particles.SculkAmbienceParticle;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.client.NMLModelLayers;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
@@ -50,5 +51,8 @@ public class ClientEvents {
         event.registerSpriteSet(NMLParticleTypes.RESIN_DROPLET_FLAT.get(), pSprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
                 -> new ResinLandParticle(clientLevel, d, e, f, pSprites));
+        event.registerSpriteSet(NMLParticleTypes.SCULK_AMBIENCE.get(), pSprites
+                -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new SculkAmbienceParticle(clientLevel, d, e, f, pSprites));
     }
 }
