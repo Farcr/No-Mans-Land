@@ -12,7 +12,7 @@ import com.farcr.nomansland.client.render.FirebombRenderer;
 import com.farcr.nomansland.client.render.MooseRenderer;
 import com.farcr.nomansland.client.render.NMLBoatRenderer;
 import com.farcr.nomansland.client.particles.FallingParticle;
-import com.farcr.nomansland.client.particles.FlameParticle;
+import com.farcr.nomansland.client.particle.FlameParticle;
 import com.farcr.nomansland.client.particles.ResinFallingParticle;
 import com.farcr.nomansland.client.particles.ResinLandParticle;
 import com.farcr.nomansland.core.NoMansLand;
