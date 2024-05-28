@@ -27,6 +27,8 @@ public class NoMansLand {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public NoMansLand() {
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, NMLConfig.COMMON_CONFIG);
+
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
@@ -49,7 +51,6 @@ public class NoMansLand {
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, NMLConfig.COMMON_CONFIG);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -76,6 +77,7 @@ public class NoMansLand {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(NMLBlocks.BARREL_CACTUS.getId(), NMLBlocks.POTTED_BARREL_CACTUS);
         });
         event.enqueueWork(() -> {
+
             ComposterBlock.COMPOSTABLES.put(NMLBlocks.YELLOW_BIRCH_LEAVES.get(), 0.30f);
             ComposterBlock.COMPOSTABLES.put(NMLBlocks.AUTUMNAL_OAK_LEAVES.get(), 0.30f);
             ComposterBlock.COMPOSTABLES.put(NMLBlocks.PALE_CHERRY_LEAVES.get(), 0.30f);
