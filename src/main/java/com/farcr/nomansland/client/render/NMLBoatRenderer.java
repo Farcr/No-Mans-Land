@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.entity.client;
+package com.farcr.nomansland.client.render;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;

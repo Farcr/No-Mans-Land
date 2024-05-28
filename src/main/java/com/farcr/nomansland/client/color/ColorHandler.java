@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.client.color;
+package com.farcr.nomansland.client.color;
 
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.client.renderer.BiomeColors;

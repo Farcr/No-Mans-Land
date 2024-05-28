@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.client;
+package com.farcr.nomansland.client;
 
 import com.farcr.nomansland.core.NoMansLand;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -26,5 +26,10 @@ public class NMLModelLayers {
 
     public static final ModelLayerLocation MOOSE_LAYER = new ModelLayerLocation(
             new ResourceLocation(NoMansLand.MODID, "moose/maple"), "main");
+
+    public static final ModelLayerLocation BOMB_LAYER = new ModelLayerLocation(
+            new ResourceLocation(NoMansLand.MODID, "bombs/firebomb"), "main");
+
+
 
 }

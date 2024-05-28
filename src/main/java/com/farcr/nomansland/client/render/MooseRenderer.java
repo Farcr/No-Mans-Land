@@ -1,7 +1,8 @@
-package com.farcr.nomansland.core.content.entity.client;
+package com.farcr.nomansland.client.render;
 
+import com.farcr.nomansland.client.models.MooseModel;
+import com.farcr.nomansland.client.NMLModelLayers;
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.client.NMLModelLayers;
 import com.farcr.nomansland.core.content.entity.MooseEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;

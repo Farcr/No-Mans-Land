@@ -1,11 +1,12 @@
 package com.farcr.nomansland.core.events;
 
-import com.farcr.nomansland.client.particles.FallingParticle;
-import com.farcr.nomansland.client.particles.ResinFallingParticle;
-import com.farcr.nomansland.client.particles.ResinLandParticle;
+import com.farcr.nomansland.client.models.BuriedModel;
+import com.farcr.nomansland.client.particle.FallingParticle;
+import com.farcr.nomansland.client.particle.ResinFallingParticle;
+import com.farcr.nomansland.client.particle.ResinLandParticle;
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.client.NMLModelLayers;
-import com.farcr.nomansland.core.content.entity.client.MooseModel;
+import com.farcr.nomansland.client.NMLModelLayers;
+import com.farcr.nomansland.client.models.MooseModel;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.client.model.BoatModel;
@@ -38,6 +39,7 @@ public class ClientEvents {
         event.registerLayerDefinition(NMLModelLayers.WALNUT_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
         
         event.registerLayerDefinition(NMLModelLayers.MOOSE_LAYER, MooseModel::createBodyLayer);
+        event.registerLayerDefinition(NMLModelLayers.BURIED_LAYER, BuriedModel::createBodyLayer);
     }
     @SubscribeEvent
     public static void registerParticleProviders(RegisterParticleProvidersEvent event) {

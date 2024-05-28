@@ -1,10 +1,7 @@
 package com.farcr.nomansland.core.events;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.client.NMLModelLayers;
 import com.farcr.nomansland.core.content.entity.MooseEntity;
-import com.farcr.nomansland.core.content.entity.client.BuriedModel;
-import com.farcr.nomansland.core.content.entity.client.MooseModel;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.farcr.nomansland.core.registry.NMLEntities;
 import com.farcr.nomansland.core.registry.NMLTags;
@@ -21,10 +18,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -199,12 +194,6 @@ public class CommonEvents {
             public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
                 event.put(NMLEntities.BURIED.get(), MooseEntity.createAttributes().build());
                 event.put(NMLEntities.MOOSE.get(), MooseEntity.createAttributes().build());
-            }
-
-            @SubscribeEvent
-            public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-                event.registerLayerDefinition(NMLModelLayers.BURIED_LAYER, BuriedModel::createBodyLayer);
-                event.registerLayerDefinition(NMLModelLayers.MOOSE_LAYER, MooseModel::createBodyLayer);
             }
 
         }

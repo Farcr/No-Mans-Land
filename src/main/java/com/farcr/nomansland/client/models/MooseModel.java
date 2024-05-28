@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.entity.client;
+package com.farcr.nomansland.client.models;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

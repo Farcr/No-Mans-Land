@@ -1,7 +1,8 @@
-package com.farcr.nomansland.core.content.entity.client;
+package com.farcr.nomansland.client.render;
 
+import com.farcr.nomansland.client.models.BuriedModel;
+import com.farcr.nomansland.client.NMLModelLayers;
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.client.NMLModelLayers;
 import com.farcr.nomansland.core.content.entity.BuriedEntity;
 import com.farcr.nomansland.core.content.entity.variant.BuriedVariant;
 import com.google.common.collect.Maps;
@@ -22,10 +23,10 @@ public class BuriedRenderer extends MobRenderer<BuriedEntity, BuriedModel<Buried
                 p_114874_.put(BuriedVariant.TWO,
                         new ResourceLocation(NoMansLand.MODID, "textures/entity/buried/buried_2.png"));
             });
+
     public BuriedRenderer(EntityRendererProvider.Context pContext) {
         super(pContext, new BuriedModel(pContext.bakeLayer(NMLModelLayers.BURIED_LAYER)), 0.5f);
     }
-
 
     @Override
     public ResourceLocation getTextureLocation(BuriedEntity instance) {

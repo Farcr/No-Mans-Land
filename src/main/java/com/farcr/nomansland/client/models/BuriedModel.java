@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.entity.client;// Made with Blockbench 4.9.3, Made by Farcr
+package com.farcr.nomansland.client.models;// Made with Blockbench 4.9.3, Made by Farcr
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
