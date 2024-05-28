@@ -261,7 +261,7 @@
 [30Nov.2023 22:30:58.115] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.1.0, for MC 1.20.1 with MCP 20230612.114412
 [30Nov.2023 22:30:58.127] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.1.0 Initialized
 [30Nov.2023 22:30:58.269] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for nomansland
-[30Nov.2023 22:30:58.279] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.farcr.nomansland.core.content.client.color.ColorHandler to MOD
+[30Nov.2023 22:30:58.279] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.farcr.nomansland.client.color.ColorHandler to MOD
 [30Nov.2023 22:30:58.295] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.farcr.nomansland.core.NoMansLand$ClientModEvents to MOD
 [30Nov.2023 22:30:58.298] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.farcr.nomansland.data.DataGenerators to MOD
 [30Nov.2023 22:30:58.346] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: -Dio.netty.noUnsafe: false

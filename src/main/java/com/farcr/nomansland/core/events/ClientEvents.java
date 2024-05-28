@@ -1,25 +1,50 @@
 package com.farcr.nomansland.core.events;
 
-import com.farcr.nomansland.client.particles.FallingParticle;
-import com.farcr.nomansland.client.particles.ResinFallingParticle;
-import com.farcr.nomansland.client.particles.ResinLandParticle;
-import com.farcr.nomansland.client.particles.SculkAmbienceParticle;
+import com.farcr.nomansland.client.NMLModelLayers;
+import com.farcr.nomansland.client.models.BuriedModel;
+import com.farcr.nomansland.client.models.MooseModel;
+import com.farcr.nomansland.client.particle.FallingParticle;
+import com.farcr.nomansland.client.particle.ResinFallingParticle;
+import com.farcr.nomansland.client.particle.ResinLandParticle;
+import com.farcr.nomansland.client.render.BuriedRenderer;
+import com.farcr.nomansland.client.render.FirebombRenderer;
+import com.farcr.nomansland.client.render.MooseRenderer;
+import com.farcr.nomansland.client.render.NMLBoatRenderer;
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.client.NMLModelLayers;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
+import com.farcr.nomansland.core.registry.NMLEntities;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = NoMansLand.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEvents {
+    @SubscribeEvent
+    public static void onClientSetup(FMLClientSetupEvent event) {
+        EntityRenderers.register(NMLEntities.BOAT.get(), pContext -> new NMLBoatRenderer(pContext, false));
+        EntityRenderers.register(NMLEntities.CHEST_BOAT.get(), pContext -> new NMLBoatRenderer(pContext, true));
+
+        EntityRenderers.register(NMLEntities.BURIED.get(), BuriedRenderer::new);
+        EntityRenderers.register(NMLEntities.MOOSE.get(), MooseRenderer::new);
+
+        EntityRenderers.register(NMLEntities.FIREBOMB.get(), FirebombRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerModels(ModelEvent.RegisterAdditional event) {
+        event.register(new ResourceLocation(NoMansLand.MODID, "entity/firebomb"));
+    }
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(NMLBlockEntities.NML_SIGN.get(), SignRenderer::new);
@@ -36,6 +61,9 @@ public class ClientEvents {
 
         event.registerLayerDefinition(NMLModelLayers.WALNUT_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(NMLModelLayers.WALNUT_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+        
+        event.registerLayerDefinition(NMLModelLayers.MOOSE_LAYER, MooseModel::createBodyLayer);
+        event.registerLayerDefinition(NMLModelLayers.BURIED_LAYER, BuriedModel::createBodyLayer);
     }
     @SubscribeEvent
     public static void registerParticleProviders(RegisterParticleProvidersEvent event) {

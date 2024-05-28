@@ -1,4 +1,4 @@
-package com.farcr.nomansland.client.particles;
+package com.farcr.nomansland.client.particle;
 
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.CherryParticle;

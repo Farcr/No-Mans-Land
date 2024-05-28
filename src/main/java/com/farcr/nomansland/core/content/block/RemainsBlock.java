@@ -1,12 +1,12 @@
 package com.farcr.nomansland.core.content.block;
 
 import com.farcr.nomansland.core.content.blockentity.RemainsBlockEntity;
+import com.farcr.nomansland.core.content.entity.BuriedEntity;
+import com.farcr.nomansland.core.registry.NMLEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -21,12 +21,11 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
-
 public class RemainsBlock extends BrushableBlock {
+
     public RemainsBlock(Block pTurnsInto, Properties pProperties, SoundEvent pBrushSound, SoundEvent pBrushCompletedSound) {
         super(pTurnsInto, pProperties, pBrushSound, pBrushCompletedSound);
     }
-
     @Override
     public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         BlockEntity blockentity = pLevel.getBlockEntity(pPos);
@@ -46,11 +45,11 @@ public class RemainsBlock extends BrushableBlock {
         super.spawnAfterBreak(pState, pLevel, pPos, pStack, pDropExperience);
         int a = new Random().nextInt(10);
         if (a < 1) {
-            Pig pig = EntityType.PIG.create(pLevel);
-            if (pig != null) {
-                pig.moveTo((double) pPos.getX() + 0.5D, (double) pPos.getY(), (double) pPos.getZ() + 0.5D, 0.0F, 0.0F);
-                pLevel.addFreshEntity(pig);
-                pig.spawnAnim();
+            BuriedEntity buried = NMLEntities.BURIED.get().create(pLevel);
+            if (buried != null) {
+                buried.moveTo((double) pPos.getX() + 0.5D, (double) pPos.getY(), (double) pPos.getZ() + 0.5D, 0.0F, 0.0F);
+                pLevel.addFreshEntity(buried);
+                buried.spawnAnim();
             }
         }
     }
@@ -62,11 +61,11 @@ public class RemainsBlock extends BrushableBlock {
         pLevel.gameEvent(pFallingBlock, GameEvent.BLOCK_DESTROY, vec3);
         int a = new Random().nextInt(10);
         if (a < 5) {
-            Pig pig = EntityType.PIG.create(pLevel);
-            if (pig != null) {
-                pig.moveTo((double) pPos.getX() + 0.5D, (double) pPos.getY(), (double) pPos.getZ() + 0.5D, 0.0F, 0.0F);
-                pLevel.addFreshEntity(pig);
-                pig.spawnAnim();
+            BuriedEntity buried = NMLEntities.BURIED.get().create(pLevel);
+            if (buried != null) {
+                buried.moveTo((double) pPos.getX() + 0.5D, (double) pPos.getY(), (double) pPos.getZ() + 0.5D, 0.0F, 0.0F);
+                pLevel.addFreshEntity(buried);
+                buried.spawnAnim();
             }
         }
     }
