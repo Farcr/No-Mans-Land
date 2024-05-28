@@ -160,8 +160,6 @@ public class CommonEvents {
                 }
             }
             //Bone-Mealing #bonemeal_spreads
-
-            //TODO: Finish placement and play particles
             if (stack.is(Items.BONE_MEAL) && !player.isSpectator()) {
 
                 // Bonemealing flowers and such #bonemeal_spreads
@@ -253,8 +251,6 @@ public class CommonEvents {
                         }
                     }
                 }
-
-                //TODO: Check if above is air and play particles
             }
         }
 

@@ -20,7 +20,9 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = NoMansLand.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class FogModifiers {
     //Made with infinite help from big man Cappin
+    //This class definitely isn't the cleanest code or uses the best practices but its effects are too good to give up on.
 
+    //TODO: add config
     private static float deepDarkTransition = 0;
     private static float FoggyBiomeTransition = 0;
     private static float WeatherTransition = 0;
@@ -46,7 +48,7 @@ public class FogModifiers {
     @SubscribeEvent
     public static void EverywhereFog(ViewportEvent.RenderFog event) {
             event.setCanceled(true);
-            event.scaleNearPlaneDistance(0.05f);
+            event.scaleNearPlaneDistance(0.15f);
             if (biome == null) return;
     //Deep Dark
             if (biome.is(Biomes.DEEP_DARK)) {
@@ -56,7 +58,7 @@ public class FogModifiers {
                 deepDarkTransition = Mth.lerp(0.005f,deepDarkTransition,0.0f);
             }
             if (deepDarkTransition > 0.01){
-                event.scaleNearPlaneDistance(Mth.lerp(deepDarkTransition,1.0f,-5f));
+                event.scaleNearPlaneDistance(Mth.lerp(deepDarkTransition,1.0f,-2f));
             }
     //Dense Fog Biomes
             if (biome.is(NMLTags.HAS_DENSE_FOG)) {
@@ -66,7 +68,7 @@ public class FogModifiers {
                 FoggyBiomeTransition = Mth.lerp(0.005f,FoggyBiomeTransition,0.0f);
             }
             if (FoggyBiomeTransition > 0.01){
-                event.scaleNearPlaneDistance(Mth.lerp(FoggyBiomeTransition,1.0f,-2f));
+                event.scaleNearPlaneDistance(Mth.lerp(FoggyBiomeTransition,1.0f,-0.5f));
             }
 
     }
