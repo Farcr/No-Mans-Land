@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "nomansland:block/dungeon/monster_anchor"
+    },
+    "active=true": {
+      "model": "nomansland:block/dungeon/monster_anchor_active"
+    }
+  }
+}

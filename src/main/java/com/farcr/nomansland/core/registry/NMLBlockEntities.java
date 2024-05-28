@@ -1,6 +1,7 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
+import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.core.content.blockentity.NMLSignBlockEntity;
 import com.farcr.nomansland.core.content.blockentity.TapBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -32,6 +33,10 @@ public class NMLBlockEntities {
     public static final RegistryObject<BlockEntityType<TapBlockEntity>> TAP =
             BLOCK_ENTITIES.register("tap", () ->
                     BlockEntityType.Builder.of(TapBlockEntity::new, NMLBlocks.TAP.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<MonsterAnchorBlockEntity>> MONSTER_ANCHOR =
+            BLOCK_ENTITIES.register("monster_anchor", () ->
+                    BlockEntityType.Builder.of(MonsterAnchorBlockEntity::new, NMLBlocks.MONSTER_ANCHOR.get()).build(null));
 
     public static void register (IEventBus eventBus) {BLOCK_ENTITIES.register(eventBus);}
 }
