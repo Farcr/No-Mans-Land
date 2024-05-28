@@ -3,11 +3,13 @@ package com.farcr.nomansland.core.registry;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;
 import com.farcr.nomansland.core.content.item.BoatItem;
+import com.farcr.nomansland.core.content.item.FirebombItem;
 import com.farcr.nomansland.core.content.item.FuelItem;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
@@ -63,6 +65,9 @@ public class NMLItems {
     public static final RegistryObject<Item> TRINKET = ITEMS.register("trinket",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> FIREBOMB = registerItem("firebomb",
+            () -> new FirebombItem(new Item.Properties()));
+
     public static final RegistryObject<Item> WOODEN_SCAFFOLDING = registerItem("wooden_scaffolding",
             () -> new ScaffoldingBlockItem(NMLBlocks.WOODEN_SCAFFOLDING.get(), new Item.Properties()));
 
@@ -83,6 +88,8 @@ public class NMLItems {
             () -> new BoatItem(false, BoatEntity.Type.MAPLE, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> MAPLE_CHEST_BOAT = registerItem("maple_chest_boat",
             () -> new BoatItem(true, BoatEntity.Type.MAPLE, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> MOOSE_SPAWN_EGG = ITEMS.register("moose_spawn_egg",
+            () -> new ForgeSpawnEggItem(NMLEntities.MOOSE, 0x8b4513 , 0xa52a2a, new Item.Properties()));
 
     public static final RegistryObject<Item> WALNUT_SIGN = registerItem("walnut_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.WALNUT_SIGN.get(), NMLBlocks.WALNUT_WALL_SIGN.get()));
@@ -296,10 +303,16 @@ public class NMLItems {
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(NMLItems.RESIN_OIL_BOTTLE);
+            event.accept(NMLItems.FIREBOMB);
         }
+
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(NMLItems.RESIN);
             event.accept(NMLItems.RESIN_OIL_BOTTLE);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
+            event.accept(NMLBlocks.SPIKE_TRAP);
         }
     }
     public static RegistryObject<Item> registerItem(final String name, final Supplier<Item> supplier) {
@@ -315,7 +328,6 @@ public class NMLItems {
         }
         return toReturn;
     }
-    // I think I can just make it not register entirely? to deviate from the suggestion
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

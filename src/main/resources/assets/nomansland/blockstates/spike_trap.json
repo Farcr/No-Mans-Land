@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "facing=north,active=false": {
+      "model": "nomansland:block/dungeon/spike_trap",
+      "x": 90
+    },
+    "facing=west,active=false": {
+      "model": "nomansland:block/dungeon/spike_trap",
+      "y": 270,
+      "x": 90
+    },
+    "facing=east,active=false": {
+      "model": "nomansland:block/dungeon/spike_trap",
+      "y": 90,
+      "x": 90
+    },
+    "facing=south,active=false": {
+      "model": "nomansland:block/dungeon/spike_trap",
+      "y": 180,
+      "x": 90
+    },
+    "facing=up,active=false": {
+      "model": "nomansland:block/dungeon/spike_trap"
+    },
+    "facing=north,active=true": {
+      "model": "nomansland:block/dungeon/spike_trap_base",
+      "x": 90
+    },
+    "facing=west,active=true": {
+      "model": "nomansland:block/dungeon/spike_trap_base",
+      "y": 270,
+      "x": 90
+    },
+    "facing=east,active=true": {
+      "model": "nomansland:block/dungeon/spike_trap_base",
+      "y": 90,
+      "x": 90
+    },
+    "facing=south,active=true": {
+      "model": "nomansland:block/dungeon/spike_trap_base",
+      "y": 180,
+      "x": 90
+    },
+    "facing=up,active=true": {
+      "model": "nomansland:block/dungeon/spike_trap_base"
+    }
+  }
+}

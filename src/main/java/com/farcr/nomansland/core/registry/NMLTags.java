@@ -14,6 +14,8 @@ public class NMLTags {
     public static final TagKey<Block> BONEMEAL_SPREADS_UPWARDS = createBlockTag("bonemeal_spreads_upwards");
     public static final TagKey<Block> CONIFEROUS_LOGS = createBlockTag("coniferous_logs");
     public static final TagKey<Biome> HAS_DENSE_FOG = createBiomeTag("has_dense_fog");
+    public static final TagKey<Block> FIREBOMB_EXPLODE = createBlockTag("firebomb_explode");
+    
     private static TagKey<Item> createItemTag(String pName) {
         return TagKey.create(Registries.ITEM, new ResourceLocation(NoMansLand.MODID, pName));
     }

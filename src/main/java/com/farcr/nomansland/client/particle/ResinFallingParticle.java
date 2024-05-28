@@ -1,4 +1,4 @@
-package com.farcr.nomansland.client.particles;
+package com.farcr.nomansland.client.particle;
 
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.client.multiplayer.ClientLevel;

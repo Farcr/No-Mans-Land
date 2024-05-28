@@ -3,9 +3,9 @@
 	"parent": "minecraft:block/cube_all",
 	"render_type": "minecraft:cutout",
 	"textures": {
-		"0": "nomansland:block/spike_trap_top",
-		"1": "nomansland:block/spike_trap_side",
-		"particle": "nomansland:block/spike_trap_top"
+		"0": "nomansland:block/dungeon/spike_trap_top",
+		"1": "nomansland:block/dungeon/spike_trap_side",
+		"particle": "nomansland:block/dungeon/spike_trap_top"
 	},
 	"elements": [
 		{

@@ -1,8 +1,8 @@
 {
   "textures": [
-  "nomansland:malevolent_flame_0",
-	"nomansland:malevolent_flame_1",
+    "nomansland:malevolent_flame_1",
 	"nomansland:malevolent_flame_2",
-	"nomansland:malevolent_flame_3"
+	"nomansland:malevolent_flame_3",
+	"nomansland:malevolent_flame_4"
   ]
 }
