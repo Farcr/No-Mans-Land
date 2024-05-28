@@ -20,12 +20,15 @@ public class NMLParticleTypes {
 
     public static final RegistryObject<ParticleType> RESIN_DROPLET = registerParticle("resin_droplet",
             ()-> new SimpleParticleType(false) {});
-
     public static final RegistryObject<ParticleType> RESIN_DROPLET_FLAT = registerParticle("resin_droplet_flat",
             ()-> new SimpleParticleType(false) {});
+
     public static final RegistryObject<ParticleType> MALEVOLENT_FLAME = registerParticle("malevolent_flame",
             ()-> new SimpleParticleType(false) {});
     public static final RegistryObject<ParticleType> MALEVOLENT_EMBERS = registerParticle("malevolent_embers",
+            ()-> new SimpleParticleType(false) {});
+
+    public static final RegistryObject<ParticleType> SCULK_AMBIENCE = registerParticle("sculk_ambience",
             ()-> new SimpleParticleType(false) {});
 
     private static <T extends ParticleType> RegistryObject<T> registerParticle(String name, Supplier<T> particle ) {
