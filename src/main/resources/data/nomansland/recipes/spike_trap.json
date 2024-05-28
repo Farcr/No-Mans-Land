@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "III",
+        "SRS"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:flint"
+        },
+        "I": {
+            "item": "minecraft:iron_nugget"
+        },
+        "S": {
+            "item": "minecraft:smooth_stone"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "item": "nomansland:spike_trap",
+        "count": 1
+    }
+}

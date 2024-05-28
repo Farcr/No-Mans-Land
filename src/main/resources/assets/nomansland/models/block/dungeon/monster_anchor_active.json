@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "nomansland:block/dungeon/monster_anchor_top",
+    "side": "nomansland:block/dungeon/monster_anchor_active"
+  }
+}

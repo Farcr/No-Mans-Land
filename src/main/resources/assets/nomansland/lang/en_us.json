@@ -78,6 +78,10 @@
   "block.nomansland.remains": "Remains",
   "entity.nomansland.buried": "Buried",
   "item.nomansland.buried_spawn_egg": "Buried Spawn Egg",
+
+  "block.nomansland.monster_anchor": "Monster Anchor",
+
+  "block.nomansland.spike_trap": "Spike Trap",
   
   "block.nomansland.quartzite": "Quartzite",
   "block.nomansland.budding_quartzite": "Budding Quartzite",
