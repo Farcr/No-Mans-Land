@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SpreadingSnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -162,35 +163,6 @@ public class CommonEvents {
 
             //TODO: Finish placement and play particles
             if (stack.is(Items.BONE_MEAL) && !player.isSpectator()) {
-                if (state.is(NMLTags.BONEMEAL_SPREADS)) {
-                    level.playSound(player, pos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1F, 1F);
-//                    level.addParticle();
-                    if (!level.isClientSide) {
-                        stack.shrink(1);
-                        level.setBlock(pos, state,11 );
-                    }
-                    event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
-                    event.setCanceled(true);
-                }
-            }
-            //Bone-Mealing things that grow upwards #bonemeal_spreads_above
-
-            //TODO: Check if above is air and play particles
-            if (stack.is(Items.BONE_MEAL) && !player.isSpectator()) {
-                if (state.is(NMLTags.BONEMEAL_SPREADS_UPWARDS) && level.isEmptyBlock(pos.above())) {
-                    level.playSound(player, pos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1F, 1F);
-//                    level.addParticle();
-                    if (!level.isClientSide) {
-                        stack.shrink(1);
-                        level.setBlock(pos.above(), state,11 );
-                    }
-                    event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
-                    event.setCanceled(true);
-                }
-            }
-
-            //TODO: Finish placement and play particles
-            if (stack.is(Items.BONE_MEAL) && !player.isSpectator()) {
 
                 // Bonemealing flowers and such #bonemeal_spreads
                 if (state.is(NMLTags.BONEMEAL_SPREADS)) {
@@ -286,7 +258,6 @@ public class CommonEvents {
             }
         }
 
-       
         @Mod.EventBusSubscriber(modid = NoMansLand.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
         public static class ModEventBusEvents {
             @SubscribeEvent
@@ -295,6 +266,9 @@ public class CommonEvents {
                 event.put(NMLEntities.MOOSE.get(), MooseEntity.createAttributes().build());
             }
 
+            @SubscribeEvent
+            public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            }
         }
     }
 }

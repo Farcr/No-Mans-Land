@@ -11,6 +11,10 @@ import com.farcr.nomansland.client.render.BuriedRenderer;
 import com.farcr.nomansland.client.render.FirebombRenderer;
 import com.farcr.nomansland.client.render.MooseRenderer;
 import com.farcr.nomansland.client.render.NMLBoatRenderer;
+import com.farcr.nomansland.client.particles.FallingParticle;
+import com.farcr.nomansland.client.particles.FlameParticle;
+import com.farcr.nomansland.client.particles.ResinFallingParticle;
+import com.farcr.nomansland.client.particles.ResinLandParticle;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.farcr.nomansland.core.registry.NMLEntities;
@@ -62,7 +66,7 @@ public class ClientEvents {
 
         event.registerLayerDefinition(NMLModelLayers.WALNUT_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(NMLModelLayers.WALNUT_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
-        
+
         event.registerLayerDefinition(NMLModelLayers.MOOSE_LAYER, MooseModel::createBodyLayer);
         event.registerLayerDefinition(NMLModelLayers.BURIED_LAYER, BuriedModel::createBodyLayer);
     }
@@ -83,5 +87,8 @@ public class ClientEvents {
         event.registerSpriteSet(NMLParticleTypes.SCULK_AMBIENCE.get(), pSprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
                 -> new SculkAmbienceParticle(clientLevel, d, e, f, pSprites));
+        event.registerSpriteSet(NMLParticleTypes.MALEVOLENT_EMBERS.get(), pSprites
+                -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new FlameParticle(clientLevel, d, e, f, g, h, i, pSprites));
     }
 }
