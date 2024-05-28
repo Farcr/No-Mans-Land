@@ -1,9 +1,10 @@
 package com.farcr.nomansland.core;
 
-import com.farcr.nomansland.core.content.entity.client.BuriedRenderer;
-import com.farcr.nomansland.core.content.entity.client.MooseRenderer;
+import com.farcr.nomansland.client.render.FirebombRenderer;
 import com.farcr.nomansland.core.config.NMLConfig;
-import com.farcr.nomansland.core.content.entity.client.NMLBoatRenderer;
+import com.farcr.nomansland.client.render.BuriedRenderer;
+import com.farcr.nomansland.client.render.MooseRenderer;
+import com.farcr.nomansland.client.render.NMLBoatRenderer;
 import com.farcr.nomansland.core.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -134,6 +135,8 @@ public class NoMansLand {
             EntityRenderers.register(NMLEntities.BURIED.get(), BuriedRenderer::new);
             EntityRenderers.register(NMLEntities.MOOSE.get(), MooseRenderer::new);
 
+            EntityRenderers.register(NMLEntities.FIREBOMB.get(), FirebombRenderer::new);
         }
     }
+
 }

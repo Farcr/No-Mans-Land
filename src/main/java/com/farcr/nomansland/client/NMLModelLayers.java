@@ -27,9 +27,4 @@ public class NMLModelLayers {
     public static final ModelLayerLocation MOOSE_LAYER = new ModelLayerLocation(
             new ResourceLocation(NoMansLand.MODID, "moose/maple"), "main");
 
-    public static final ModelLayerLocation BOMB_LAYER = new ModelLayerLocation(
-            new ResourceLocation(NoMansLand.MODID, "bombs/firebomb"), "main");
-
-
-
 }
