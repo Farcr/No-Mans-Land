@@ -14,14 +14,17 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SpreadingSnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.util.Iterator;
 
 public class CommonEvents {
     @Mod.EventBusSubscriber(modid = NoMansLand.MODID)
@@ -58,13 +61,13 @@ public class CommonEvents {
                         stack.hurtAndBreak(1, player, (damage) -> {
                             damage.broadcastBreakEvent(event.getHand());
                         });
-                        level.setBlock(pos,
+                        level.setBlockAndUpdate(pos,
                                 state.is(Blocks.PODZOL) ? NMLBlocks.PODZOL_PATH.get().defaultBlockState() :
                                         state.is(Blocks.MYCELIUM) ? NMLBlocks.MYCELIUM_PATH.get().defaultBlockState() :
                                                 state.is(Blocks.SAND) ? NMLBlocks.SAND_PATH.get().defaultBlockState() :
                                                         state.is(Blocks.RED_SAND) ? NMLBlocks.RED_SAND_PATH.get().defaultBlockState() :
                                                                 state.is(Blocks.GRAVEL) ? NMLBlocks.GRAVEL_PATH.get().defaultBlockState() :
-                                                                        NMLBlocks.DIRT_PATH.get().defaultBlockState(), 11);
+                                                                        NMLBlocks.DIRT_PATH.get().defaultBlockState());
                     }
                     event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
                     event.setCanceled(true);
@@ -79,7 +82,7 @@ public class CommonEvents {
                         stack.hurtAndBreak(1, player, (damage) -> {
                             damage.broadcastBreakEvent(event.getHand());
                         });
-                        level.setBlock(pos, NMLBlocks.SNOW_PATH.get().defaultBlockState(), 11);
+                        level.setBlockAndUpdate(pos, NMLBlocks.SNOW_PATH.get().defaultBlockState());
                     }
                     event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
                     event.setCanceled(true);
@@ -93,7 +96,7 @@ public class CommonEvents {
                     stack.hurtAndBreak(1, player, (damage) -> {
                         damage.broadcastBreakEvent(event.getHand());
                     });
-                    level.setBlock(pos, Blocks.FARMLAND.defaultBlockState(), 11);
+                    level.setBlockAndUpdate(pos, Blocks.FARMLAND.defaultBlockState());
                 }
                 event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
                 event.setCanceled(true);
@@ -105,7 +108,7 @@ public class CommonEvents {
                     stack.hurtAndBreak(1, player, (damage) -> {
                         damage.broadcastBreakEvent(event.getHand());
                     });
-                    level.setBlock(pos, Blocks.DIRT.defaultBlockState(), 11);
+                    level.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
                 }
                 event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
                 event.setCanceled(true);
@@ -118,7 +121,7 @@ public class CommonEvents {
                     stack.hurtAndBreak(1, player, (damage) -> {
                         damage.broadcastBreakEvent(event.getHand());
                     });
-                    level.setBlock(pos, NMLBlocks.CUT_SUGAR_CANE.get().defaultBlockState(), 11);
+                    level.setBlockAndUpdate(pos, NMLBlocks.CUT_SUGAR_CANE.get().defaultBlockState());
                 }
                 event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
                 event.setCanceled(true);
@@ -140,7 +143,7 @@ public class CommonEvents {
                         stack.hurtAndBreak(1, player, (damage) -> {
                             damage.broadcastBreakEvent(event.getHand());
                         });
-                        level.setBlock(pos,
+                        level.setBlockAndUpdate(pos,
                                 state.is(Blocks.WALL_TORCH) ? NMLBlocks.EXTINGUISHED_WALL_TORCH.get().withPropertiesOf(state) :
                                         state.is(Blocks.SOUL_TORCH) ? NMLBlocks.EXTINGUISHED_SOUL_TORCH.get().defaultBlockState() :
                                                 state.is(Blocks.SOUL_WALL_TORCH) ? NMLBlocks.EXTINGUISHED_SOUL_WALL_TORCH.get().withPropertiesOf(state) :
@@ -148,7 +151,7 @@ public class CommonEvents {
                                                                 state.is(NMLBlocks.SCONCE_WALL_TORCH.get()) ? NMLBlocks.EXTINGUISHED_SCONCE_WALL_TORCH.get().withPropertiesOf(state) :
                                                                         state.is(NMLBlocks.SCONCE_SOUL_TORCH.get()) ? NMLBlocks.EXTINGUISHED_SCONCE_SOUL_TORCH.get().defaultBlockState() :
                                                                                 state.is(NMLBlocks.SCONCE_SOUL_WALL_TORCH.get()) ? NMLBlocks.EXTINGUISHED_SCONCE_SOUL_WALL_TORCH.get().withPropertiesOf(state) :
-                                                        NMLBlocks.EXTINGUISHED_TORCH.get().defaultBlockState(), 11);
+                                                        NMLBlocks.EXTINGUISHED_TORCH.get().defaultBlockState());
                     }
                     event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
                     event.setCanceled(true);
@@ -162,11 +165,42 @@ public class CommonEvents {
                     level.playSound(player, pos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1F, 1F);
 //                    level.addParticle();
                     if (!level.isClientSide) {
-                        stack.shrink(1);
-                        level.setBlock(pos, state,11 );
+                        if (!player.isCreative()) stack.shrink(1);
+
+                        int x = pos.getX();
+                        int y = pos.getY();
+                        int z = pos.getZ();
+
+                        Iterator<BlockPos> it = BlockPos.betweenClosedStream(x-3, y-1, z-3, x+3, y+2, z+3).iterator();
+                        while (it.hasNext()) {
+                            BlockPos bp = it.next();
+                            Block block = level.getBlockState(bp).getBlock();
+                            if(level.random.nextFloat() <= 0.3F && state.canSurvive(level, bp) && level.getBlockState(bp) == Blocks.AIR.defaultBlockState()) level.setBlockAndUpdate(bp, state);
+                        }
                     }
                     event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
                     event.setCanceled(true);
+                }
+                if (state.getBlock().equals(Blocks.DIRT) && level.getBlockState(pos.above()) == Blocks.AIR.defaultBlockState()) {
+                    for (Direction d : Direction.values()) {
+                        if(level.getBlockState(pos.relative(d)).getBlock() instanceof SpreadingSnowyDirtBlock) {
+                            if (!player.isCreative()) stack.shrink(1);
+                            bonemealDirt(level, pos, level.getBlockState(pos.relative(d)));
+                            event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
+                            event.setCanceled(true);
+                            break;
+                        } else {
+                            for (Direction d1 : Direction.values()) {
+                                if(!(d == d1) && level.getBlockState(pos.relative(d).relative(d1)).getBlock() instanceof SpreadingSnowyDirtBlock) {
+                                    if (!player.isCreative()) stack.shrink(1);
+                                    bonemealDirt(level, pos, level.getBlockState(pos.relative(d).relative(d1)));
+                                    event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
+                                    event.setCanceled(true);
+                                    return;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             //Bone-Mealing things that grow upwards #bonemeal_spreads_above
@@ -177,11 +211,41 @@ public class CommonEvents {
                     level.playSound(player, pos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1F, 1F);
 //                    level.addParticle();
                     if (!level.isClientSide) {
-                        stack.shrink(1);
-                        level.setBlock(pos.above(), state,11 );
+                        if (!player.isCreative()) stack.shrink(1);
+                        level.setBlockAndUpdate(pos.above(), state);
                     }
                     event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
                     event.setCanceled(true);
+                }
+            }
+        }
+
+        public static void bonemealDirt(Level level, BlockPos pos, BlockState state) {
+            if (level.isClientSide) return;
+            level.setBlockAndUpdate(pos, state);
+
+            int x = pos.getX();
+            int y = pos.getY();
+            int z = pos.getZ();
+
+            Iterator<BlockPos> it = BlockPos.betweenClosedStream(x-3, y-1, z-3, x+3, y+2, z+3).iterator();
+            while (it.hasNext()) {
+                BlockPos bp = it.next();
+                Block block = level.getBlockState(bp).getBlock();
+                if (level.random.nextFloat() <= 0.3F && level.getBlockState(bp) == Blocks.DIRT.defaultBlockState()) {
+                    for (Direction d : Direction.values()) {
+                        if (level.getBlockState(bp.relative(d)).getBlock() instanceof SpreadingSnowyDirtBlock) {
+                            level.setBlockAndUpdate(bp, state);
+                            break;
+                        } else {
+                            for (Direction d1 : Direction.values()) {
+                                if (!(d == d1) && level.getBlockState(bp.relative(d).relative(d1)).getBlock() instanceof SpreadingSnowyDirtBlock) {
+                                    level.setBlockAndUpdate(bp, state);
+                                    return;
+                                }
+                            }
+                        }
+                    }
                 }
             }
 

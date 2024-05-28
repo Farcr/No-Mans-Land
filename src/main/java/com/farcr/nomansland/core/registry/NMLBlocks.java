@@ -471,8 +471,6 @@ public class NMLBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.COD_BARREL.get())));
     public static final RegistryObject<Block> TROPICAL_FISH_BARREL = registerBlock("tropical_fish_barrel",
             () -> new Block(BlockBehaviour.Properties.copy(NMLBlocks.COD_BARREL.get())));
-    public static final RegistryObject<Block> BRITTLE_POT = registerBlock("brittle_pot",
-            () -> new BrittlePotBlock(BlockBehaviour.Properties.copy(Blocks.DECORATED_POT)));
 
     //Mushrooms
     public static final RegistryObject<Block> FIELD_MUSHROOM = registerBlock("field_mushroom",

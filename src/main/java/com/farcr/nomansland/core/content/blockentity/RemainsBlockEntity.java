@@ -2,15 +2,15 @@ package com.farcr.nomansland.core.content.blockentity;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BrushableBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BrushableBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.Random;
 
@@ -21,7 +21,7 @@ public class RemainsBlockEntity extends BrushableBlockEntity {
 
     @Override
     public void brushingCompleted(Player pPlayer) {
-        if (this.level != null && this.level.getServer() != null) {
+        if (level != null && level.getServer() != null) {
             Block remainsBlockState = this.getBlockState().getBlock();
             if (remainsBlockState instanceof BrushableBlock) {
                 float a = new Random().nextFloat();
@@ -29,7 +29,10 @@ public class RemainsBlockEntity extends BrushableBlockEntity {
                 if (a <= 0.05F) {
                     Pig pig = EntityType.PIG.create(level);
                     if (pig != null) {
-                        pig.moveTo((double) worldPosition.getX() + 0.5D, (double) worldPosition.getY() + 1, (double) worldPosition.getZ() + 0.5D, 0.0F, 0.0F);
+                        Vec3 playerPosition = pPlayer.getPosition(1);
+                        BlockPos spawningPosition = worldPosition.relative(this.getHitDirection());
+                        if (level.getBlockState(spawningPosition) == Blocks.AIR.defaultBlockState()) pig.moveTo(spawningPosition.getCenter());
+                        else pig.moveTo((playerPosition.x + worldPosition.getX())/2, (playerPosition.y + worldPosition.getY())/2, (playerPosition.z + worldPosition.getZ())/2);
                         level.addFreshEntity(pig);
                         pig.spawnAnim();
                     }
