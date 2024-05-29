@@ -1,7 +1,7 @@
 package com.farcr.nomansland.client.render;
 
-import com.farcr.nomansland.client.models.BuriedModel;
 import com.farcr.nomansland.client.NMLModelLayers;
+import com.farcr.nomansland.client.models.BuriedModel;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BuriedEntity;
 import com.farcr.nomansland.core.content.entity.variant.BuriedVariant;

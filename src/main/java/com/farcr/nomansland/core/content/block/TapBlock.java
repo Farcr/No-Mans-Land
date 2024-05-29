@@ -185,27 +185,27 @@ public class TapBlock extends BaseEntityBlock {
         double z = pPos.getZ();
         switch (pState.getValue(FACING)) {
             case NORTH: {
-                x = (double)pPos.getX() + 0.5;
-                y = (double)((float)(pPos.getY() + 1) - 0.75F) - 0.07;
-                z = (double)pPos.getZ() + 0.68;
+                x = (double)pPos.getX()+0.5;
+                y = (double)((float)(pPos.getY()+1) - 0.75F) - 0.07;
+                z = (double)pPos.getZ()+0.68;
                 break;
             }
             case SOUTH: {
-                x = (double)pPos.getX() + 0.5;
-                y = (double)((float)(pPos.getY() + 1) - 0.75F) - 0.07;
-                z = (double)pPos.getZ() + 0.32;
+                x = (double)pPos.getX()+0.5;
+                y = (double)((float)(pPos.getY()+1) - 0.75F) - 0.07;
+                z = (double)pPos.getZ()+0.32;
                 break;
             }
             case EAST: {
-                x = (double)pPos.getX() + 0.32;
-                y = (double)((float)(pPos.getY() + 1) - 0.75F) - 0.07;
-                z = (double)pPos.getZ() + 0.5;
+                x = (double)pPos.getX()+0.32;
+                y = (double)((float)(pPos.getY()+1) - 0.75F) - 0.07;
+                z = (double)pPos.getZ()+0.5;
                 break;
             }
             case WEST: {
-                x = (double)pPos.getX() + 0.68;
-                y = (double)((float)(pPos.getY() + 1) - 0.75F) - 0.07;
-                z = (double)pPos.getZ() + 0.5;
+                x = (double)pPos.getX()+0.68;
+                y = (double)((float)(pPos.getY()+1) - 0.75F) - 0.07;
+                z = (double)pPos.getZ()+0.5;
                 break;
             }
         }
