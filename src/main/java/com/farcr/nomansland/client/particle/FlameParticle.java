@@ -10,7 +10,6 @@ public class FlameParticle extends RisingParticle {
     public FlameParticle(ClientLevel level, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed, SpriteSet spriteSet) {
         super(level, pX, pY, pZ, pXSpeed, pYSpeed, pZSpeed);
         this.setSprite(spriteSet.get(this.random.nextInt(4), 4));
-        this.lifetime = (int)(64.0 / (Math.random() * 0.8 + 0.2));
     }
 
     public void move(double pX, double pY, double pZ) {
