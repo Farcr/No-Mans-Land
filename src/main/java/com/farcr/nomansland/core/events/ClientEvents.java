@@ -82,7 +82,7 @@ public class ClientEvents {
                 -> new SculkAmbienceParticle(clientLevel, d, e, f, pSprites));
         event.registerSpriteSet(NMLParticleTypes.MALEVOLENT_EMBERS.get(), pSprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new FlameParticle(clientLevel, d, e, f, g, h, i, pSprites));
+                -> new EmbersParticle(clientLevel, d, e, f, g, h, i, pSprites));
         event.registerSpriteSet(NMLParticleTypes.MALEVOLENT_FLAME.get(), pSprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
                 -> new FlameParticle(clientLevel, d, e, f, g, h, i, pSprites));

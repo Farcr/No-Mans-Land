@@ -3,16 +3,14 @@ package com.farcr.nomansland.core.content.block;
 import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
-import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -23,9 +21,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MonsterAnchorBlock extends BaseEntityBlock {
     public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
@@ -53,14 +48,14 @@ public class MonsterAnchorBlock extends BaseEntityBlock {
 
     @Override
     public int getExpDrop(BlockState state, LevelReader level, RandomSource randomSource, BlockPos pos, int fortuneLevel, int silkTouchLevel) {
-        return 15 + randomSource.nextInt(15) + randomSource.nextInt(15);
+        return 15+randomSource.nextInt(15)+randomSource.nextInt(15);
     }
 
     @Override
     @OnlyIn(Dist.CLIENT)
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        if (!state.getValue(ACTIVE) && random.nextFloat() <= 0.05F) {
-            level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, pos.getX(), pos.getY(), pos.getZ(), 0, 0 ,0);
+        if (!state.getValue(ACTIVE)) {
+            level.addParticle(ParticleTypes.SMOKE, pos.getX()+0.5+random.nextIntBetweenInclusive(1, 3)*0.1, pos.getY()+0.5+random.nextIntBetweenInclusive(1, 3)*0.1, pos.getZ()+0.5+random.nextIntBetweenInclusive(1, 3)*0.1, 0, 0 ,0);
         }
     }
 

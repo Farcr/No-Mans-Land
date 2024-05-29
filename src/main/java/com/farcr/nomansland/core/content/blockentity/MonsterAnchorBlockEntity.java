@@ -5,13 +5,16 @@ import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -19,9 +22,12 @@ import net.minecraft.world.level.gameevent.BlockPositionSource;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.gameevent.GameEventListener;
 import net.minecraft.world.level.gameevent.PositionSource;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventListener.Holder<MonsterAnchorBlockEntity.AnchorListener> {
 
@@ -42,6 +48,7 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
         ServerLevel serverLevel = (ServerLevel) level;
         List<LivingEntity> entityQueue = monsterAnchor.entityQueue;
         boolean empty = entityQueue.isEmpty();
+        RandomSource random = level.random;
 
         if (empty) {
             // Start counting ticks
@@ -63,13 +70,23 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
         monsterAnchor.timeResurrecting++;
 
         // While it is resurrecting, these particles will always spawn with a particle count proportional to the progress of the current resurrection, thus playing in a loop
-        serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get(), pos.getX() + Math.random(), pos.getY() + Math.random(), pos.getZ() + Math.random(), monsterAnchor.timeResurrecting, 0, 0, 0, 0.0);
+        serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get(),
+                pos.getX()+random.nextFloat(),
+                pos.getY()+random.nextFloat(),
+                pos.getZ()+random.nextFloat(),
+                monsterAnchor.timeResurrecting, 0, 0, 0, 0.0);
 
         // Loop through all the entities in the queue
         for (int i = 0; i < entityQueue.size(); i++) {
-            Vec3 spawningPosition = entityQueue.get(i).getPosition(1);
+            Vec3 spawningPosition = entityQueue.get(i).getPosition(0);
+
             // Spawn particles at the entity death location will stay until they are out of the queue
-            serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_EMBERS.get(), spawningPosition.x + Math.random(), spawningPosition.y + Math.random(), spawningPosition.z + Math.random(), 3, 0, 0, 0, 0.0);
+
+            if (level.random.nextFloat() <= 0.1F) serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get(),
+                    spawningPosition.x+random.nextFloat() - random.nextFloat(),
+                    spawningPosition.y+random.nextFloat() - random.nextFloat(),
+                    spawningPosition.z+random.nextFloat() - random.nextFloat(),
+                    3, 0,0,0,0);
 
             // Select the first entity on the list
             if (i == 0) {
@@ -91,6 +108,18 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
                         resurrectedEntity.moveTo(spawningPosition.x, spawningPosition.y, spawningPosition.z);
                         level.addFreshEntity(resurrectedEntity);
                         entityQueue.remove(i);
+                        for(int p = 0; p <= 20; p++) {
+                            serverLevel.sendParticles(ParticleTypes.SMOKE,
+                                    pos.getX()+random.nextFloat(),
+                                    pos.getY()+1,
+                                    pos.getZ()+random.nextFloat(),
+                                    5, 0, 0,0,0);
+                            serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get(),
+                                    spawningPosition.x+random.nextFloat() - random.nextFloat(),
+                                    spawningPosition.y+1+random.nextFloat() - random.nextFloat(),
+                                    spawningPosition.z+random.nextFloat() - random.nextFloat(),
+                                    3, 0,0,0,0.2);
+                        }
                     }
                 }
             }
@@ -126,25 +155,89 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
         public boolean handleGameEvent(ServerLevel level, GameEvent event, GameEvent.Context context, Vec3 pos) {
             if (event == GameEvent.ENTITY_DIE) {
                 Entity entity = context.sourceEntity();
-                if (entity instanceof LivingEntity deadEntity && !(entity instanceof Player)) {
+                if (entity instanceof Monster deadEntity) {
                     if (!deadEntity.wasExperienceConsumed()) {
                         // Add the entity to the dead entity list
                         this.positionSource.getPosition(level).ifPresent((sourcePos) -> {
                             MonsterAnchorBlockEntity monsterAnchorBlockEntity = (MonsterAnchorBlockEntity) level.getBlockEntity(BlockPos.containing(sourcePos));
                             monsterAnchorBlockEntity.entityQueue.add(deadEntity);
-//                            level.scheduleTick(BlockPos.containing(sourcePos), state.getBlock(), 1);
                         });
 
                         // Stop the mob from dropping experience and loot
                         deadEntity.skipDropExperience();
-//                    if (!deadEntity.captureDrops().isEmpty()) deadEntity.captureDrops().clear();
-//                        Collection<ItemEntity> drops = deadEntity.captureDrops();
-//                        if (drops != null) drops.forEach(itemEntity -> itemEntity.remove(Entity.RemovalReason.KILLED));
+                        Collection<ItemEntity> drops = entity.captureDrops(null);
+                        if (drops != null) drops.forEach(itemEntity -> itemEntity.remove(Entity.RemovalReason.KILLED));
+
+                        AABB boundingBox = deadEntity.getBoundingBox();
+                        processPoints(level, boundingBox, 0.2D).forEach(point -> {
+                            level.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_EMBERS.get(), point.x, point.y, point.z, 1, 0,0,0, 0);
+                        });
                     }
                     return true;
                 }
             }
             return false;
+        }
+
+        // Get all the points on all the faces of a bounding box depending on the resolution and process them
+        public static List<Vec3> processPoints(ServerLevel level, AABB boundingBox, double step) {
+            double minX = boundingBox.minX;
+            double minY = boundingBox.minY;
+            double minZ = boundingBox.minZ;
+            double maxX = boundingBox.maxX;
+            double maxY = boundingBox.maxY;
+            double maxZ = boundingBox.maxZ;
+
+            List<Vec3> pointList = new ArrayList<>();
+
+            // Front face (minZ face)
+            for (double x = minX; x <= maxX; x += step) {
+                for (double y = minY; y <= maxY; y += step) {
+                    Vec3 point = new Vec3(x, y, minZ);
+                    pointList.add(point);
+                }
+            }
+
+            // Back face (maxZ face)
+            for (double x = minX; x <= maxX; x += step) {
+                for (double y = minY; y <= maxY; y += step) {
+                    Vec3 point = new Vec3(x, y, maxZ);
+                    pointList.add(point);
+                }
+            }
+
+            // Left face (minX face)
+            for (double z = minZ; z <= maxZ; z += step) {
+                for (double y = minY; y <= maxY; y += step) {
+                    Vec3 point = new Vec3(minX, y, z);
+                    pointList.add(point);
+                }
+            }
+
+            // Right face (maxX face)
+            for (double z = minZ; z <= maxZ; z += step) {
+                for (double y = minY; y <= maxY; y += step) {
+                    Vec3 point = new Vec3(maxX, y, z);
+                    pointList.add(point);
+                }
+            }
+
+            // Top face (maxY face)
+            for (double x = minX; x <= maxX; x += step) {
+                for (double z = minZ; z <= maxZ; z += step) {
+                    Vec3 point = new Vec3(x, maxY, z);
+                    pointList.add(point);
+                }
+            }
+
+            // Bottom face (minY face)
+            for (double x = minX; x <= maxX; x += step) {
+                for (double z = minZ; z <= maxZ; z += step) {
+                    Vec3 point = new Vec3(x, minY, z);
+                    pointList.add(point);
+                }
+            }
+            return pointList;
         }
     }
 }
