@@ -9,7 +9,8 @@ import org.jetbrains.annotations.NotNull;
 public class EmbersParticle extends BaseAshSmokeParticle {
 
     public EmbersParticle(ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, SpriteSet spriteSet) {
-        super(level, x, y, z, 0.1F, -0.1F, 0.1F, xSpeed, ySpeed, zSpeed, 2F, spriteSet, 0.5F, 25, 0.1F, true);
+        super(level, x, y, z, 0.1F, -0.1F, 0.1F, xSpeed, ySpeed, zSpeed, 2F, spriteSet, 0.5F, 0, 0.1F, true);
+        this.lifetime = 80;
     }
 
     @Override

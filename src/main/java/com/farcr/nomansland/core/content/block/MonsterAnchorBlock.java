@@ -55,7 +55,7 @@ public class MonsterAnchorBlock extends BaseEntityBlock {
     @OnlyIn(Dist.CLIENT)
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (!state.getValue(ACTIVE)) {
-            level.addParticle(ParticleTypes.SMOKE, pos.getX()+0.5+random.nextIntBetweenInclusive(1, 3)*0.1, pos.getY()+0.5+random.nextIntBetweenInclusive(1, 3)*0.1, pos.getZ()+0.5+random.nextIntBetweenInclusive(1, 3)*0.1, 0, 0 ,0);
+            level.addParticle(ParticleTypes.SMOKE, pos.getX()+0.5, pos.getY()+0.5, pos.getZ()+0.5, 0, 0 ,0);
         }
     }
 

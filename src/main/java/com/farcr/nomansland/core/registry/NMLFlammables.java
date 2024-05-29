@@ -3,12 +3,8 @@ package com.farcr.nomansland.core.registry;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;
 
-public class NMLFlammability {
-
-    public static void init() {
-        registerFlammables();
-    }
-    public static void registerFlammables() {
+public class NMLFlammables {
+    public static void register() {
         FireBlock fireBlock = (FireBlock) Blocks.FIRE;
 
         fireBlock.setFlammable(NMLBlocks.YELLOW_BIRCH_LEAVES.get(), 30, 60);

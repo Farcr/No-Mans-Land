@@ -2,6 +2,7 @@ package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.lootmodifiers.AddItemModifier;
+import com.farcr.nomansland.core.content.lootmodifiers.PreventDropsModifier;
 import com.mojang.serialization.Codec;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,6 +16,9 @@ public class NMLLootModifiers {
 
     public static final RegistryObject<Codec<? extends IGlobalLootModifier>> ADD_ITEM =
             LOOT_MODIFIER_SERIALIZERS.register("add_item", AddItemModifier.CODEC);
+
+    public static final RegistryObject<Codec<? extends IGlobalLootModifier>> PREVENT_DROPS =
+            LOOT_MODIFIER_SERIALIZERS.register("prevent_drops", PreventDropsModifier.CODEC);
 
     //TODO: ADD MOD LOADED CONDITION TO LOOT MODIFIER
     //TODO: ABILITY TO ADD DROPS TO ENTITIES TOO (MAY ALREADY BE A THING?)
