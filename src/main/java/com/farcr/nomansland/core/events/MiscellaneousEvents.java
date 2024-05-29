@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.commonevents;
+package com.farcr.nomansland.core.events;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.MooseEntity;

@@ -1,5 +1,6 @@
-package com.farcr.nomansland.client;
+package com.farcr.nomansland.client.events;
 
+import com.farcr.nomansland.client.NMLModelLayers;
 import com.farcr.nomansland.client.models.BuriedModel;
 import com.farcr.nomansland.client.models.MooseModel;
 import com.farcr.nomansland.client.particle.*;

@@ -1,4 +1,4 @@
-package com.farcr.nomansland.client;
+package com.farcr.nomansland.client.events;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.registry.NMLTags;
