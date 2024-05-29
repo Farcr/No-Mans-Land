@@ -16,7 +16,8 @@ public class NMLLootModifiers {
     public static final RegistryObject<Codec<? extends IGlobalLootModifier>> ADD_ITEM =
             LOOT_MODIFIER_SERIALIZERS.register("add_item", AddItemModifier.CODEC);
 
-    //TODO: ADD FUCKING MOD CONDITIONAL LOOT MODIFIER
+    //TODO: ADD MOD LOADED CONDITION TO LOOT MODIFIER
+    //TODO: ABILITY TO ADD DROPS TO ENTITIES TOO (MAY ALREADY BE A THING?)
 
 
     public static void register(IEventBus eventBus) {

@@ -68,7 +68,7 @@ public class FogModifiers {
                 FoggyBiomeTransition = Mth.lerp(0.005f,FoggyBiomeTransition,0.0f);
             }
             if (FoggyBiomeTransition > 0.01){
-                event.scaleNearPlaneDistance(Mth.lerp(FoggyBiomeTransition,1.0f,-0.5f));
+                event.scaleNearPlaneDistance(Mth.lerp(FoggyBiomeTransition,1.0f,-0.75f));
             }
 
     }
