@@ -132,6 +132,7 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:tagtooltips-899941:${tagtooltip_version}")
     runtimeOnly fg.deobf("curse.maven:cyanide-541676:${cyanide_version}")
     runtimeOnly fg.deobf("curse.maven:appleskin-248787:4770828")
+    runtimeOnly fg.deobf("curse.maven:worldedit-225608:4586218")
 
 
 
