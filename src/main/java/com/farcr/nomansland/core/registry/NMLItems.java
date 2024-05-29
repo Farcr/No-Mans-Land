@@ -66,7 +66,7 @@ public class NMLItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> FIREBOMB = registerItem("firebomb",
-            () -> new FirebombItem(new Item.Properties()));
+            () -> new FirebombItem(new Item.Properties().stacksTo(8)));
 
     public static final RegistryObject<Item> WOODEN_SCAFFOLDING = registerItem("wooden_scaffolding",
             () -> new ScaffoldingBlockItem(NMLBlocks.WOODEN_SCAFFOLDING.get(), new Item.Properties()));
