@@ -2,6 +2,7 @@ package com.farcr.nomansland.core;
 
 import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.registry.*;
+import com.farcr.nomansland.core.registry.NMLLootModifiers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -42,6 +43,8 @@ public class NoMansLand {
         NMLFeatures.FEATURES.register(modEventBus);
 
         modEventBus.addListener(NMLItems::addCreative);
+
+        NMLLootModifiers.LOOT_MODIFIER_SERIALIZERS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
