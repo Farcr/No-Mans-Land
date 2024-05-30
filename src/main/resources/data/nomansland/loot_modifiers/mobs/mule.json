@@ -1,0 +1,10 @@
+{
+  "type": "nomansland:add_loot_table",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/mule"
+    }
+  ],
+  "lootTable": "nomansland:entities/buried/buried"
+}

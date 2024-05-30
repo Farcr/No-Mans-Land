@@ -2,5 +2,5 @@
   "type": "nomansland:prevent_drops",
   "conditions": [
   ],
-  "item": "nomansland:firebomb"
+  "preventDrops": true
 }

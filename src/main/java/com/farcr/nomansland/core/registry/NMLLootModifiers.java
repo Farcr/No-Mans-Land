@@ -1,9 +1,11 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.lootmodifiers.AddItemModifier;
+import com.farcr.nomansland.core.content.lootmodifiers.AddLootTableModifier;
 import com.farcr.nomansland.core.content.lootmodifiers.PreventDropsModifier;
 import com.mojang.serialization.Codec;
+import net.minecraft.world.level.storage.loot.predicates.LootItemConditions;
+import net.minecraftforge.common.data.ForgeLootTableProvider;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -14,9 +16,8 @@ public class NMLLootModifiers {
     public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =
             DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, NoMansLand.MODID);
 
-    public static final RegistryObject<Codec<? extends IGlobalLootModifier>> ADD_ITEM =
-            LOOT_MODIFIER_SERIALIZERS.register("add_item", AddItemModifier.CODEC);
-
+    public static final RegistryObject<Codec<? extends IGlobalLootModifier>> ADD_LOOT_TABLE =
+            LOOT_MODIFIER_SERIALIZERS.register("add_loot_table", AddLootTableModifier.CODEC);
     public static final RegistryObject<Codec<? extends IGlobalLootModifier>> PREVENT_DROPS =
             LOOT_MODIFIER_SERIALIZERS.register("prevent_drops", PreventDropsModifier.CODEC);
 
