@@ -4,15 +4,18 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.AbstractCauldronBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -44,37 +47,21 @@ public class HoneyCauldronBlock extends LayeredCauldronBlock {
     public void handlePrecipitation(BlockState pState, Level pLevel, BlockPos pPos, Biome.Precipitation pPrecipitation) {
     }
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        ItemStack honey = new ItemStack(Items.HONEY_BOTTLE);
-        // Give player honey block if cauldron is full
-        if (pPlayer.isHolding(Items.GLASS_BOTTLE)) {
-            if (!pPlayer.addItem(honey)) {
-                pPlayer.drop(honey, false);
-            } else {
-                pPlayer.setItemInHand(pHand, new ItemStack(Items.GLASS_BOTTLE, pPlayer.getItemInHand(pHand).getCount() - 1));
-                pLevel.playSound(pPlayer,
-                        pPlayer.getX(),
-                        pPlayer.getY(),
-                        pPlayer.getZ(),
-                        SoundEvents.BOTTLE_FILL,
-                        SoundSource.PLAYERS,
-                        0.2F,
-                        (pLevel.random.nextFloat() - pLevel.random.nextFloat()) * 1.4F + 2.0F);
-                lowerFillLevel(pState, pLevel, pPos);
-                return InteractionResult.sidedSuccess(pLevel.isClientSide);
-            }
-        } else if (pPlayer.isHolding(Items.HONEY_BOTTLE)) {
-                pPlayer.setItemInHand(pHand, new ItemStack(Items.HONEY_BOTTLE, pPlayer.getItemInHand(pHand).getCount() - 1));
-                pLevel.playSound(pPlayer,
-                        pPlayer.getX(),
-                        pPlayer.getY(),
-                        pPlayer.getZ(),
-                        SoundEvents.BOTTLE_EMPTY,
-                        SoundSource.PLAYERS,
-                        0.2F,
-                        (pLevel.random.nextFloat() - pLevel.random.nextFloat()) * 1.4F + 2.0F);
-                fillUp(pState, pLevel, pPos);
-                return InteractionResult.sidedSuccess(pLevel.isClientSide);
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult pHit) {
+        AbstractCauldronBlock cauldron = (AbstractCauldronBlock) state.getBlock();
+        if (player.isHolding(Items.GLASS_BOTTLE)) {
+            player.setItemInHand(hand, ItemUtils.createFilledResult(player.getItemInHand(hand), player, new ItemStack(Items.HONEY_BOTTLE)));
+            player.awardStat(Stats.USE_CAULDRON);
+            player.awardStat(Stats.ITEM_USED.get(Items.GLASS_BOTTLE));
+            lowerFillLevel(state, level, pos);
+            level.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+        } else if (player.isHolding(Items.HONEY_BOTTLE) && !cauldron.isFull(state)) {
+            player.setItemInHand(hand, ItemUtils.createFilledResult(player.getItemInHand(hand), player, new ItemStack(Items.GLASS_BOTTLE)));
+            player.awardStat(Stats.USE_CAULDRON);
+            player.awardStat(Stats.ITEM_USED.get(Items.HONEY_BOTTLE));
+            fillUp(state, level, pos);
+            level.playSound(null, pos, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
+            return InteractionResult.sidedSuccess(level.isClientSide);
         }
         return InteractionResult.FAIL;
     }

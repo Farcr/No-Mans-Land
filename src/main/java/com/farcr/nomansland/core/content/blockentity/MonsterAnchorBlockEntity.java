@@ -5,6 +5,7 @@ import com.farcr.nomansland.core.events.listeners.AnchorListener;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -12,17 +13,24 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.BlockPositionSource;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.gameevent.GameEventListener;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+
+import static com.farcr.nomansland.core.events.listeners.AnchorListener.processPoints;
 
 public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventListener.Holder<AnchorListener> {
 
@@ -55,7 +63,8 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
             if (state.getValue(MonsterAnchorBlock.ACTIVE)) {
                     level.playSound(null, pos, SoundEvents.BEACON_DEACTIVATE, SoundSource.BLOCKS, 1, 0.75F);
                     level.setBlockAndUpdate(pos, state.setValue(MonsterAnchorBlock.ACTIVE, false));
-            }
+                    level.gameEvent(GameEvent.BLOCK_DEACTIVATE, pos, GameEvent.Context.of(state));
+            } else if (monsterAnchor.timeIdle%5 == 0) serverLevel.sendParticles(ParticleTypes.SMOKE, pos.getX()+0.5+random.nextInt(0,3)*0.01 - random.nextInt(0,3)*0.01, pos.getY()+0.2, pos.getZ()+0.5+random.nextInt(0,3)*0.01 - random.nextInt(0,3)*0.01, 3, 0,0,0,0);
             return;
         }
 
@@ -74,9 +83,8 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
 
         // Loop through all the entities in the queue
         for (int i = 0; i < deadEntities.size(); i++) {
-            Vec3 spawningPosition = entityQueue.get(deadEntities.get(i));
-
-            // Spawn particles at the entity death location will stay until they are out of the queue
+            LivingEntity deadEntity = deadEntities.get(i);
+            Vec3 spawningPosition = entityQueue.get(deadEntity);
 
             if (level.random.nextFloat() <= 0.1F) serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get(),
                     spawningPosition.x+random.nextFloat() - random.nextFloat(),
@@ -84,37 +92,56 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
                     spawningPosition.z+random.nextFloat() - random.nextFloat(),
                     3, 0,0,0,0);
 
-            // Select the first entity on the list
+            if (monsterAnchor.timeResurrecting%80 == 0 && i != 0) {
+                for (double y = 0; y <= 4; y++) {
+                    if(level.getBlockState(BlockPos.containing(spawningPosition.relative(Direction.DOWN, y))).isSolid()) {
+                        y=y-1.1D;
+                        LivingEntity tempEntity = (LivingEntity) deadEntity.getType().create(level);
+                        if (tempEntity!= null) tempEntity.moveTo(spawningPosition);
+                        if (tempEntity instanceof Zombie zombie) zombie.setBaby(deadEntity.isBaby());
+                        double finalY = y;
+                        processPoints(serverLevel, tempEntity.getBoundingBox(), 0.2D).forEach(point -> {
+                            serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_EMBERS.get(), point.x, spawningPosition.y-finalY, point.z, 1, 0,0,0, 0);
+                        });
+                        tempEntity.remove(Entity.RemovalReason.DISCARDED);
+                        break;
+                    }
+                }
+            }
+
+
+                // Select the first entity on the list
             if (i == 0) {
                 // This sound plays a bit late, so it is played before the mob is resurrected to time it perfectly
                 if (monsterAnchor.timeResurrecting <= 2) {
                     // Turn the block active on mob resurrection
                     if (!state.getValue(MonsterAnchorBlock.ACTIVE)) {
-                        level.setBlockAndUpdate(pos, state.setValue(MonsterAnchorBlock.ACTIVE, true));
                         level.playSound(null, pos, SoundEvents.BEACON_POWER_SELECT, SoundSource.BLOCKS, 1, 0.25F);
+                        level.setBlockAndUpdate(pos, state.setValue(MonsterAnchorBlock.ACTIVE, true));
+                        level.gameEvent(GameEvent.BLOCK_ACTIVATE, pos, GameEvent.Context.of(state));
                     }
                     level.playSound(null, pos, SoundEvents.BELL_RESONATE, SoundSource.BLOCKS, 1, 0.5F);
                 }
                 if (monsterAnchor.timeResurrecting == 80) {
                     monsterAnchor.timeResurrecting = 0;
                     // Resurrect the entity
-                    LivingEntity resurrectedEntity = (LivingEntity) deadEntities.get(i).getType().create(level);
+                    LivingEntity resurrectedEntity = (LivingEntity) deadEntity.getType().create(level);
                     if (resurrectedEntity != null) {
-                        if (resurrectedEntity instanceof AgeableMob ageableMob) ageableMob.setBaby(deadEntities.get(i).isBaby());
+                        if (resurrectedEntity instanceof Zombie zombie) zombie.setBaby(deadEntity.isBaby());
                         resurrectedEntity.moveTo(spawningPosition.x, spawningPosition.y, spawningPosition.z);
                         level.addFreshEntity(resurrectedEntity);
-                        entityQueue.remove(deadEntities.get(i));
-                        for(int p = 0; p <= 20; p++) {
+                        entityQueue.remove(deadEntity);
+                        for(int p = 0; p <= 10; p++) {
                             serverLevel.sendParticles(ParticleTypes.SMOKE,
-                                    pos.getX()+random.nextFloat(),
+                                    pos.getX()+Math.random(),
                                     pos.getY()+1,
-                                    pos.getZ()+random.nextFloat(),
+                                    pos.getZ()+Math.random(),
                                     5, 0, 0,0,0);
                             serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get(),
                                     spawningPosition.x+random.nextFloat() - random.nextFloat(),
-                                    spawningPosition.y+1+random.nextFloat() - random.nextFloat(),
+                                    spawningPosition.y+random.nextFloat() - random.nextFloat(),
                                     spawningPosition.z+random.nextFloat() - random.nextFloat(),
-                                    3, 0,0,0,0.2);
+                                    2, 0,0,0,0.1);
                         }
                     }
                 }

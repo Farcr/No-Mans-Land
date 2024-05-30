@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -44,22 +45,15 @@ public class ResinCauldronBlock extends LayeredCauldronBlock {
     public void handlePrecipitation(BlockState pState, Level pLevel, BlockPos pPos, Biome.Precipitation pPrecipitation) {
     }
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        ItemStack resin = new ItemStack(NMLItems.RESIN.get(), pLevel.random.nextInt(2, 5));
-        if (!pPlayer.addItem(resin)) {
-            pPlayer.drop(resin, false);
-        } else {
-            pLevel.playSound(pPlayer,
-                    pPlayer.getX(),
-                    pPlayer.getY(),
-                    pPlayer.getZ(),
-                    SoundEvents.ITEM_PICKUP,
-                    SoundSource.PLAYERS,
-                    0.2F,
-                    (pLevel.random.nextFloat() - pLevel.random.nextFloat()) * 1.4F + 2.0F);
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        ItemStack resin = new ItemStack(NMLItems.RESIN.get(), level.random.nextInt(2, 5));
+        if(!player.addItem(resin)) {
+            if(!player.isCreative()) player.drop(resin, false);
         }
-        lowerFillLevel(pState, pLevel, pPos);
-        return InteractionResult.sidedSuccess(pLevel.isClientSide);
+        player.awardStat(Stats.USE_CAULDRON);
+        lowerFillLevel(state, level, pos);
+        level.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2F, (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
+        return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
     @Override

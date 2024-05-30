@@ -39,7 +39,7 @@ import static net.minecraft.world.level.block.BeehiveBlock.HONEY_LEVEL;
 public class TapBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
-    enum FluidType {
+    public enum FluidType {
         RESIN,
         HONEY
     }
@@ -50,11 +50,11 @@ public class TapBlock extends BaseEntityBlock {
     }
 
     @Nullable
-    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
         BlockState blockstate = this.defaultBlockState();
-        LevelReader levelreader = pContext.getLevel();
-        BlockPos blockpos = pContext.getClickedPos();
-        Direction[] adirection = pContext.getNearestLookingDirections();
+        LevelReader levelreader = context.getLevel();
+        BlockPos blockpos = context.getClickedPos();
+        Direction[] adirection = context.getNearestLookingDirections();
 
         for (Direction direction : adirection) {
             if (direction.getAxis().isHorizontal()) {
@@ -69,8 +69,8 @@ public class TapBlock extends BaseEntityBlock {
         return null;
     }
 
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING);
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FACING);
     }
 
     private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
@@ -80,29 +80,29 @@ public class TapBlock extends BaseEntityBlock {
             Direction.EAST, Block.box(0.0D, 3.0D, 6.0D, 6.0D, 8.0D, 10.0D)
     ));
 
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return getShape(pState);
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return getShape(state);
     }
 
-    public static VoxelShape getShape(BlockState pState) {
-        return AABBS.get(pState.getValue(FACING));
+    public static VoxelShape getShape(BlockState state) {
+        return AABBS.get(state.getValue(FACING));
     }
 
     @Override
-    public RenderShape getRenderShape(BlockState pState) {
+    public RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
     }
 
-    public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
-        return pLevel.getBlockState(pPos.relative(pState.getValue(FACING).getOpposite())).isSolid();
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        return level.getBlockState(pos.relative(state.getValue(FACING).getOpposite())).isSolid();
     }
 
-    public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        return pFacing.getOpposite() == pState.getValue(FACING) && !pState.canSurvive(pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+        return facing.getOpposite() == state.getValue(FACING) && !state.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
     }
 
-    public BlockState rotate(BlockState pState, Rotation pRotation) {
-        return pState.setValue(FACING, pRotation.rotate(pState.getValue(FACING)));
+    public BlockState rotate(BlockState state, Rotation pRotation) {
+        return state.setValue(FACING, pRotation.rotate(state.getValue(FACING)));
     }
 
     public static BlockState getBlockStateBehind(Level level, BlockPos pos, BlockState state) {
@@ -111,7 +111,7 @@ public class TapBlock extends BaseEntityBlock {
     }
 
     @Override
-    public boolean isRandomlyTicking(BlockState pState) {
+    public boolean isRandomlyTicking(BlockState state) {
         return true;
     }
 
@@ -179,40 +179,44 @@ public class TapBlock extends BaseEntityBlock {
         }
     }
 
-    private static void spawnDrippingParticles(Level pLevel, BlockPos pPos, BlockState pState, FluidType fluidType) {
-        double x = pPos.getX();
-        double y = pPos.getY();
-        double z = pPos.getZ();
-        switch (pState.getValue(FACING)) {
+    public static void spawnDrippingParticles(Level level, BlockPos pos, BlockState state, FluidType fluidType) {
+        double x = pos.getX();
+        double y = pos.getY();
+        double z = pos.getZ();
+        switch (state.getValue(FACING)) {
             case NORTH: {
-                x = (double)pPos.getX()+0.5;
-                y = (double)((float)(pPos.getY()+1) - 0.75F) - 0.07;
-                z = (double)pPos.getZ()+0.68;
+                x = (double)pos.getX()+0.5;
+                y = (double)((float)(pos.getY()+1) - 0.75F) - 0.09;
+                z = (double)pos.getZ()+0.68;
                 break;
             }
             case SOUTH: {
-                x = (double)pPos.getX()+0.5;
-                y = (double)((float)(pPos.getY()+1) - 0.75F) - 0.07;
-                z = (double)pPos.getZ()+0.32;
+                x = (double)pos.getX()+0.5;
+                y = (double)((float)(pos.getY()+1) - 0.75F) - 0.09;
+                z = (double)pos.getZ()+0.32;
                 break;
             }
             case EAST: {
-                x = (double)pPos.getX()+0.32;
-                y = (double)((float)(pPos.getY()+1) - 0.75F) - 0.07;
-                z = (double)pPos.getZ()+0.5;
+                x = (double)pos.getX()+0.32;
+                y = (double)((float)(pos.getY()+1) - 0.75F) - 0.09;
+                z = (double)pos.getZ()+0.5;
                 break;
             }
             case WEST: {
-                x = (double)pPos.getX()+0.68;
-                y = (double)((float)(pPos.getY()+1) - 0.75F) - 0.07;
-                z = (double)pPos.getZ()+0.5;
+                x = (double)pos.getX()+0.68;
+                y = (double)((float)(pos.getY()+1) - 0.75F) - 0.09;
+                z = (double)pos.getZ()+0.5;
                 break;
             }
         }
         ParticleOptions particle = null;
         if (fluidType.equals(FluidType.RESIN)) particle = (ParticleOptions) NMLParticleTypes.RESIN_DROPLET.get();
-        if (fluidType.equals(FluidType.HONEY)) particle = ParticleTypes.DRIPPING_HONEY;
-        pLevel.addParticle(particle, x, y, z, 0.0, 0.0, 0.0);
+        if (fluidType.equals(FluidType.HONEY)) particle = ParticleTypes.FALLING_HONEY;
+        if (level.isClientSide) level.addParticle(particle, x, y, z, 0.0, 0.0, 0.0);
+        else {
+            ServerLevel serverLevel = (ServerLevel) level;
+            serverLevel.sendParticles(particle, x, y, z, 1, 0,0,0,0);
+        }
     }
 
     @Override
@@ -233,8 +237,8 @@ public class TapBlock extends BaseEntityBlock {
 
     @Nullable
     @Override
-    public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new TapBlockEntity(blockPos, blockState);
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new TapBlockEntity(pos, state);
     }
 
     @Nullable

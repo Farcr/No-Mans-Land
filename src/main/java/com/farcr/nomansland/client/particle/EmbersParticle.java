@@ -11,6 +11,11 @@ public class EmbersParticle extends BaseAshSmokeParticle {
     public EmbersParticle(ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, SpriteSet spriteSet) {
         super(level, x, y, z, 0.1F, -0.1F, 0.1F, xSpeed, ySpeed, zSpeed, 2F, spriteSet, 0.5F, 0, 0.1F, true);
         this.lifetime = 80;
+        this.setSprite(spriteSet.get(this.random.nextInt(4), 4));
+    }
+
+    @Override
+    public void setSpriteFromAge(SpriteSet pSprite) {
     }
 
     @Override

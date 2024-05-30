@@ -3,7 +3,6 @@ package com.farcr.nomansland.core.content.block;
 import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -17,8 +16,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraft.world.level.pathfinder.PathComputationType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -46,17 +44,24 @@ public class MonsterAnchorBlock extends BaseEntityBlock {
         return state.getValue(ACTIVE) ? 4 : 0;
     }
 
-    @Override
-    public int getExpDrop(BlockState state, LevelReader level, RandomSource randomSource, BlockPos pos, int fortuneLevel, int silkTouchLevel) {
-        return 15+randomSource.nextInt(15)+randomSource.nextInt(15);
+    public boolean hasAnalogOutputSignal(BlockState pState) {
+        return true;
+    }
+
+    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
+        MonsterAnchorBlockEntity anchor = (MonsterAnchorBlockEntity) level.getBlockEntity(pos);
+        if (anchor.entityQueue.size() >= 20) return 15;
+        if (anchor.entityQueue.size() == 1) return 1;
+        return 15 / (anchor.entityQueue.size() - 1)*anchor.entityQueue.size();
+    }
+
+    public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {
+        return false;
     }
 
     @Override
-    @OnlyIn(Dist.CLIENT)
-    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        if (!state.getValue(ACTIVE)) {
-            level.addParticle(ParticleTypes.SMOKE, pos.getX()+0.5, pos.getY()+0.2, pos.getZ()+0.5, 0, 0 ,0);
-        }
+    public int getExpDrop(BlockState state, LevelReader level, RandomSource randomSource, BlockPos pos, int fortuneLevel, int silkTouchLevel) {
+        return 15+randomSource.nextInt(15)+randomSource.nextInt(15);
     }
 
     @Nullable
