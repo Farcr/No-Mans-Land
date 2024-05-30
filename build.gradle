@@ -116,9 +116,6 @@ dependencies {
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    //Blueprint Dependency
-    implementation fg.deobf("com.teamabnormals:blueprint:${minecraft_version}-${project.blueprint_version}")
-
     //SmartBrainLib Dependency
     implementation fg.deobf("net.tslat.smartbrainlib:SmartBrainLib-forge-${minecraft_version}:${sbl_version}");
 

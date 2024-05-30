@@ -3,8 +3,8 @@
   "conditions": [
     {
       "condition": "forge:loot_table_id",
-      "loot_table_id": "minecraft:entities/mule"
+      "loot_table_id": "minecraft:entities/horse"
     }
   ],
-  "lootTable": "nomansland:entities/mule_addition"
+  "lootTable": "nomansland:entities/horse_addition"
 }

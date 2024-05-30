@@ -1,12 +1,8 @@
 {
-  "modifiers": [
-    {
-      "type": "pools",
-      "config": {
-        "pools": [
-          {
+    "type": "minecraft:entity",
+    "pools": [
+        {
             "rolls": 1,
-            "name": "nomansland:mule",
             "bonus_rolls": 0,
             "entries": [
               {
@@ -18,7 +14,7 @@
                     "count": {
                       "type": "minecraft:uniform",
                       "min": 0,
-                      "max": 2
+                      "max": 1
                     },
                     "add": false
                   },
@@ -43,17 +39,11 @@
                       "min": 0,
                       "max": 1
                     },
-                    "limit": 3
+                    "limit": 2
                   }
                 ]
               }
             ]
           }
-        ],
-        "replace": false
-      }
-    }
-  ],
-  "priority": "normal",
-  "selector": "minecraft:entities/mule"
-}
+    ]
+  }
