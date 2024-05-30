@@ -314,6 +314,10 @@ public class NMLItems {
         if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
             event.accept(NMLBlocks.SPIKE_TRAP);
         }
+
+        if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            event.accept(NMLBlocks.MONSTER_ANCHOR);
+        }
     }
     public static RegistryObject<Item> registerItem(final String name, final Supplier<Item> supplier) {
         RegistryObject<Item> toReturn = ITEMS.register(name, supplier);
