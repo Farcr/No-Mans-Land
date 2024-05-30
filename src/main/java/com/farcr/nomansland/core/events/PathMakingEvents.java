@@ -18,9 +18,8 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+@Mod.EventBusSubscriber(modid = NoMansLand.MODID)
 public class PathMakingEvents {
-    @Mod.EventBusSubscriber(modid = NoMansLand.MODID)
-    public static class ForgeEvents {
         @SubscribeEvent
         public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
             Level level = event.getLevel();
@@ -105,4 +104,4 @@ public class PathMakingEvents {
             }
         }
     }
-}
+

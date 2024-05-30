@@ -23,9 +23,8 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.Iterator;
 
+@Mod.EventBusSubscriber(modid = NoMansLand.MODID)
 public class BoneMealingEvents {
-    @Mod.EventBusSubscriber(modid = NoMansLand.MODID)
-    public static class ForgeEvents {
 
         @SubscribeEvent
         public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
@@ -142,7 +141,6 @@ public class BoneMealingEvents {
                 }
             }
         }
-    }
     public static void bonemealDirt (Level level, BlockPos pos, BlockState state) {
         if (!level.isClientSide) level.setBlockAndUpdate(pos, state);
 

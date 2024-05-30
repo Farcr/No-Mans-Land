@@ -22,6 +22,7 @@
     "nomansland:petrified_wood",
     "nomansland:earthen_tiles",
     "nomansland:mundane_tiles",
-    "nomansland:tap"
+    "nomansland:tap",
+    "nomansland:monster_anchor"
   ]
 }
