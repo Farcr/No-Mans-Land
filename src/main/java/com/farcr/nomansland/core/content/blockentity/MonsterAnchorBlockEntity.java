@@ -12,7 +12,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Zombie;
@@ -22,8 +21,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.BlockPositionSource;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.gameevent.GameEventListener;
-import net.minecraft.world.level.levelgen.structure.BoundingBox;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
@@ -95,11 +92,10 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
             if (monsterAnchor.timeResurrecting%80 == 0 && i != 0) {
                 for (double y = 0; y <= 4; y++) {
                     if(level.getBlockState(BlockPos.containing(spawningPosition.relative(Direction.DOWN, y))).isSolid()) {
-                        y=y-1.1D;
                         LivingEntity tempEntity = (LivingEntity) deadEntity.getType().create(level);
                         if (tempEntity!= null) tempEntity.moveTo(spawningPosition);
                         if (tempEntity instanceof Zombie zombie) zombie.setBaby(deadEntity.isBaby());
-                        double finalY = y;
+                        double finalY = y-1.1D;
                         processPoints(serverLevel, tempEntity.getBoundingBox(), 0.2D).forEach(point -> {
                             serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_EMBERS.get(), point.x, spawningPosition.y-finalY, point.z, 1, 0,0,0, 0);
                         });
@@ -131,17 +127,13 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
                         resurrectedEntity.moveTo(spawningPosition.x, spawningPosition.y, spawningPosition.z);
                         level.addFreshEntity(resurrectedEntity);
                         entityQueue.remove(deadEntity);
-                        for(int p = 0; p <= 10; p++) {
-                            serverLevel.sendParticles(ParticleTypes.SMOKE,
-                                    pos.getX()+Math.random(),
-                                    pos.getY()+1,
-                                    pos.getZ()+Math.random(),
-                                    5, 0, 0,0,0);
-                            serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get(),
-                                    spawningPosition.x+random.nextFloat() - random.nextFloat(),
-                                    spawningPosition.y+random.nextFloat() - random.nextFloat(),
-                                    spawningPosition.z+random.nextFloat() - random.nextFloat(),
-                                    2, 0,0,0,0.1);
+                        for (double y = 0; y <= 4; y++) {
+                            if(level.getBlockState(BlockPos.containing(spawningPosition.relative(Direction.DOWN, y))).isSolid()) {
+                                double finalY = y - 1.1D;
+                                processPoints(serverLevel, resurrectedEntity.getBoundingBox(), 0.4D).forEach(point -> {
+                                    serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get(), point.x, spawningPosition.y - finalY, point.z, 1, 0, 0, 0, 0.1);
+                                });
+                            }
                         }
                     }
                 }

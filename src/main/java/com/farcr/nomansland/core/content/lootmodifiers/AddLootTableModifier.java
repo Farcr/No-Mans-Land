@@ -10,16 +10,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemConditions;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
-import vectorwing.farmersdelight.common.Configuration;
-import vectorwing.farmersdelight.common.loot.modifier.AddItemModifier;
 
-import javax.annotation.Nonnull;
 import java.util.Objects;
-import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class AddLootTableModifier extends LootModifier {
@@ -40,7 +35,6 @@ public class AddLootTableModifier extends LootModifier {
 
         return generatedLoot;
     }
-
     public Codec<? extends IGlobalLootModifier> codec() {
         return CODEC.get();
     }

@@ -24,7 +24,6 @@ public class RemainsBlockEntity extends BrushableBlockEntity {
             Block remainsBlockState = this.getBlockState().getBlock();
             if (remainsBlockState instanceof BrushableBlock) {
                 float a = new Random().nextFloat();
-                // TODO: possibly tweak this
                 if (a <= 0.05F) {
                     BuriedEntity buried = NMLEntities.BURIED.get().create(level);
                     if (buried != null) {

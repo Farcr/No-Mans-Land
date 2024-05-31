@@ -116,7 +116,9 @@ public class TapBlock extends BaseEntityBlock {
     }
 
     public float getTickingChance() {
-        // TODO: check if this is for resin or something else, as different fluids could have different rates
+        // this is here for the offchance that we support stuff other than resin (or a mod adds the support)
+        // to allow easy changing of ticking chance depending on fluid type
+
         // The ticking chance is the chance that one tick will actually go through
         return 0.1F;
     }

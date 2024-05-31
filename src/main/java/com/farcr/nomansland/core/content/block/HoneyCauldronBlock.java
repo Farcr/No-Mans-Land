@@ -55,6 +55,7 @@ public class HoneyCauldronBlock extends LayeredCauldronBlock {
             player.awardStat(Stats.ITEM_USED.get(Items.GLASS_BOTTLE));
             lowerFillLevel(state, level, pos);
             level.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+            return InteractionResult.sidedSuccess(level.isClientSide);
         } else if (player.isHolding(Items.HONEY_BOTTLE) && !cauldron.isFull(state)) {
             player.setItemInHand(hand, ItemUtils.createFilledResult(player.getItemInHand(hand), player, new ItemStack(Items.GLASS_BOTTLE)));
             player.awardStat(Stats.USE_CAULDRON);
