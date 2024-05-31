@@ -7,6 +7,10 @@
       "nomansland:fd_integration/straw_from_fiddlehead",
       "nomansland:fd_integration/straw_from_cattail",
       "nomansland:mobs/prevent_drops",
+      "nomansland:mobs/donkey",
+      "nomansland:mobs/frog",
+      "nomansland:mobs/goat",
+      "nomansland:mobs/horse",
       "nomansland:mobs/mule"
     ]
   }
