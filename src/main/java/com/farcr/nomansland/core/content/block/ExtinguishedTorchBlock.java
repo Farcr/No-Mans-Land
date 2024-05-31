@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.TorchBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
-// TODO: make sure this works
 public class ExtinguishedTorchBlock extends TorchBlock {
 
     public final Block mainBlock;

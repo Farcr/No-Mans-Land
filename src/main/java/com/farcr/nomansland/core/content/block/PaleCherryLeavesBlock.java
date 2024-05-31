@@ -1,8 +1,8 @@
 package com.farcr.nomansland.core.content.block;
 
+import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
@@ -10,12 +10,9 @@ import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
-// TODO: make sure this works
-public class ParticleLeavesBlock extends LeavesBlock {
-    public final ParticleOptions particle;
-    public ParticleLeavesBlock(BlockBehaviour.Properties p_273704_, ParticleOptions particle) {
+public class PaleCherryLeavesBlock extends LeavesBlock {
+    public PaleCherryLeavesBlock(BlockBehaviour.Properties p_273704_) {
         super(p_273704_);
-        this.particle = particle;
     }
 
     /**
@@ -27,7 +24,7 @@ public class ParticleLeavesBlock extends LeavesBlock {
             BlockPos blockpos = p_273218_.below();
             BlockState blockstate = p_272837_.getBlockState(blockpos);
             if (!isFaceFull(blockstate.getCollisionShape(p_272837_, blockpos), Direction.UP)) {
-                ParticleUtils.spawnParticleBelow(p_272837_, p_273218_, p_273360_, particle);
+                ParticleUtils.spawnParticleBelow(p_272837_, p_273218_, p_273360_, NMLParticleTypes.PALE_CHERRY_LEAVES.get());
             }
         }
     }

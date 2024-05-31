@@ -8,13 +8,9 @@ import com.farcr.nomansland.core.content.item.FuelItem;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Block;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -56,10 +52,10 @@ public class NMLItems {
             () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
 //    public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerIntegrationItem("maple_syrup_bottle",
 //            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)), "alembic");
-//    public static final DeferredItem<Item> SCONCE_TORCH = registerItem("sconce_torch",
-//            () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_TORCH.get(), NMLBlocks.SCONCE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
-//    public static final DeferredItem<Item> SCONCE_SOUL_TORCH = registerItem("sconce_soul_torch",
-//            () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_SOUL_TORCH.get(), NMLBlocks.SCONCE_SOUL_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
+    public static final DeferredItem<Item> SCONCE_TORCH = registerItem("sconce_torch",
+            () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_TORCH.get(), NMLBlocks.SCONCE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
+    public static final DeferredItem<Item> SCONCE_SOUL_TORCH = registerItem("sconce_soul_torch",
+            () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_SOUL_TORCH.get(), NMLBlocks.SCONCE_SOUL_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
 
     public static final DeferredItem<Item> TRINKET = ITEMS.register("trinket",
             () -> new Item(new Item.Properties()));
@@ -218,8 +214,7 @@ public class NMLItems {
 //            event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
             event.accept(NMLBlocks.AUTUMNAL_OAK_LEAVES.get());
 //            event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
-            // TODO: re-add pale cherry leaves
-//            event.accept(NMLBlocks.PALE_CHERRY_LEAVES.get());
+            event.accept(NMLBlocks.PALE_CHERRY_LEAVES.get());
 //            event.accept(NMLBlocks.PALE_CHERRY_SAPLING);
             event.accept(NMLBlocks.FIELD_MUSHROOM.get());
             if (ModList.get().isLoaded("farmersdelight")) {
@@ -279,9 +274,8 @@ public class NMLItems {
             event.accept(NMLItems.MAPLE_HANGING_SIGN.get());
             event.accept(NMLItems.WALNUT_SIGN.get());
             event.accept(NMLItems.WALNUT_HANGING_SIGN.get());
-            // TODO: re-add sconces
-//            event.accept(NMLItems.SCONCE_TORCH.get());
-//            event.accept(NMLItems.SCONCE_SOUL_TORCH.get());
+            event.accept(NMLItems.SCONCE_TORCH.get());
+            event.accept(NMLItems.SCONCE_SOUL_TORCH.get());
             event.accept(NMLBlocks.TAP.get());
             event.accept(NMLItems.WOODEN_SCAFFOLDING.get());
         }

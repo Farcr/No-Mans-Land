@@ -6,7 +6,6 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -28,7 +27,6 @@ public class PreventDropsModifier extends LootModifier {
 
     @Override
     public @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        Level level = context.getLevel();
         if(context.getParamOrNull(LootContextParams.THIS_ENTITY) instanceof Monster monster && monster.wasExperienceConsumed() && monster.isPersistenceRequired() && preventDrops) generatedLoot.clear();
 
         return generatedLoot;

@@ -18,7 +18,10 @@ import java.util.Objects;
 import java.util.function.Supplier;
 
 public class AddLootTableModifier extends LootModifier {
-    public static final Supplier<Codec<AddLootTableModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create((inst) -> codecStart(inst).and(ResourceLocation.CODEC.fieldOf("lootTable").forGetter((m) -> m.lootTable)).apply(inst, AddLootTableModifier::new)));
+    public static final Supplier<Codec<AddLootTableModifier>> CODEC = Suppliers.memoize(
+            () -> RecordCodecBuilder.create((inst) -> codecStart(inst).and(ResourceLocation.CODEC
+                    .fieldOf("lootTable").forGetter((m) -> m.lootTable)).apply(inst, AddLootTableModifier::new)));
+
     private final ResourceLocation lootTable;
 
     protected AddLootTableModifier(LootItemCondition[] conditionsIn, ResourceLocation lootTable) {

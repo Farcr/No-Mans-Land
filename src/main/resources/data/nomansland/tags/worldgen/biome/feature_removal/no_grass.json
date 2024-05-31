@@ -1,6 +1,6 @@
 {
   "values": [
     "minecraft:mushroom_fields",
-    "#forge:is_snowy"
+    "#c:is_snowy"
   ]
 }

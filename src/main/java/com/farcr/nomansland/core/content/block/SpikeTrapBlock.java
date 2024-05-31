@@ -22,7 +22,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import static java.lang.Boolean.FALSE;
 
-// TODO: make sure this works
 public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterloggedBlock {
     public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;

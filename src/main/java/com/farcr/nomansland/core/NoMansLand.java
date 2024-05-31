@@ -16,15 +16,16 @@ public class NoMansLand {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public NoMansLand(IEventBus modEventBus) {
-        NMLParticleTypes.PARTICLE_TYPES.register(modEventBus);
+
         NMLItems.ITEMS.register(modEventBus);
         NMLBlocks.BLOCKS.register(modEventBus);
         NMLEntities.ENTITIES.register(modEventBus);
         NMLFeatures.FEATURES.register(modEventBus);
-        NMLBlockEntities.BLOCK_ENTITIES.register(modEventBus);
         NMLCreativeTabs.CREATIVE_TABS.register(modEventBus);
-        NMLLootItemConditions.LOOT_CONDITIONS.register(modEventBus);
+        NMLParticleTypes.PARTICLE_TYPES.register(modEventBus);
+        NMLBlockEntities.BLOCK_ENTITIES.register(modEventBus);
         NMLLootModifiers.LOOT_MODIFIERS.register(modEventBus);
+        NMLLootItemConditions.LOOT_CONDITIONS.register(modEventBus);
 
         modEventBus.addListener(NMLItems::addCreative);
         modEventBus.addListener(this::commonSetup);

@@ -8,14 +8,13 @@ public class NMLCompostabies {
     public static void register() {
         ComposterBlock.COMPOSTABLES.put(NMLBlocks.YELLOW_BIRCH_LEAVES.get(), 0.30f);
         ComposterBlock.COMPOSTABLES.put(NMLBlocks.AUTUMNAL_OAK_LEAVES.get(), 0.30f);
-        // TODO: re-add
-//        ComposterBlock.COMPOSTABLES.put(NMLBlocks.PALE_CHERRY_LEAVES.get(), 0.30f);
+        ComposterBlock.COMPOSTABLES.put(NMLBlocks.PALE_CHERRY_LEAVES.get(), 0.30f);
         ComposterBlock.COMPOSTABLES.put(NMLBlocks.RED_MAPLE_LEAVES.get(), 0.30f);
         ComposterBlock.COMPOSTABLES.put(NMLBlocks.MAPLE_LEAVES.get(), 0.30f);
         ComposterBlock.COMPOSTABLES.put(NMLBlocks.PINE_LEAVES.get(), 0.30f);
         ComposterBlock.COMPOSTABLES.put(NMLBlocks.WALNUT_LEAVES.get(), 0.30f);
 
-        // TODO: fix
+        // TODO: fix saplings
 //        ComposterBlock.COMPOSTABLES.put(NMLBlocks.YELLOW_BIRCH_SAPLING.get(), 0.30f);
 //        ComposterBlock.COMPOSTABLES.put(NMLBlocks.AUTUMNAL_OAK_SAPLING.get(), 0.30f);
 //        ComposterBlock.COMPOSTABLES.put(NMLBlocks.PALE_CHERRY_SAPLING.get(), 0.30f);
