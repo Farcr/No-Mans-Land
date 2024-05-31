@@ -3,7 +3,8 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.gradle.userdev' version '7.0.97'
+    id 'net.neoforged.gradle.userdev' version '7.0.41'
+    id 'net.neoforged.gradle.mixin' version '7.0.41'
 }
 
 version = mod_version
@@ -87,9 +88,10 @@ repositories {
     }
     maven {
         name = "JEI"
-        url = "https://dvs1.progwml6.com/files/maven/"
+        url = "https://maven.blamejared.com/"
     }
 }
+
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
 
@@ -100,15 +102,16 @@ dependencies {
 //    implementation fg.deobf("curse.maven:farmers-delight-398521:${farmers_delight_version}")
 
     // compile against the JEI API but do not include it at runtime
-//    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
-//    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
-//    // at runtime, use the full JEI jar for Forge
-//    runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
+    // at runtime, use the full JEI jar for Forge
+    runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
 //    runtimeOnly fg.deobf("curse.maven:tagtooltips-899941:${tagtooltip_version}")
 //    runtimeOnly fg.deobf("curse.maven:cyanide-541676:${cyanide_version}")
 //    runtimeOnly fg.deobf("curse.maven:appleskin-248787:4770828")
 //    runtimeOnly fg.deobf("curse.maven:worldedit-225608:4586218")
 }
+
 
 // This block of code expands all declared replace properties in the specified resource targets.
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.
