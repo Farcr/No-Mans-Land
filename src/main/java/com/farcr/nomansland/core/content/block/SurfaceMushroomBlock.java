@@ -10,17 +10,17 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.MushroomBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraftforge.fml.ModList;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
+import net.neoforged.fml.ModList;
+//import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class SurfaceMushroomBlock extends MushroomBlock {
-    public SurfaceMushroomBlock(Properties pProperties, ResourceKey<ConfiguredFeature<?, ?>> pFeature) {
-        super(pProperties, pFeature);
+    public SurfaceMushroomBlock(ResourceKey<ConfiguredFeature<?, ?>> pFeature, Properties pProperties) {
+        super(pFeature, pProperties);
     }
 
     protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
         if(ModList.get().isLoaded("farmersdelight")) {
-            return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND) || pState.is(ModBlocks.ORGANIC_COMPOST.get());
+//            return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND) || pState.is(ModBlocks.ORGANIC_COMPOST.get());
         }
         return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND);
     }

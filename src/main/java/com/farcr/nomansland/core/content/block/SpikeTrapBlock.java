@@ -1,5 +1,6 @@
 package com.farcr.nomansland.core.content.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -21,6 +22,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import static java.lang.Boolean.FALSE;
 
+// TODO: make sure this works
 public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterloggedBlock {
     public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -34,6 +36,11 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, Boolean.valueOf(false))
                 .setValue(FACING, Direction.UP).setValue(ACTIVE, Boolean.valueOf(true)));
+    }
+
+    @Override
+    protected MapCodec<? extends DirectionalBlock> codec() {
+        return null;
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {

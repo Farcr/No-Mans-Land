@@ -11,11 +11,11 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeManager;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.ViewportEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.client.event.ViewportEvent;
+import net.neoforged.neoforge.event.TickEvent;
 
 @Mod.EventBusSubscriber(modid = NoMansLand.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class FogModifiers {
@@ -30,7 +30,7 @@ public class FogModifiers {
     private static int timer = 0;
 
     @SubscribeEvent
-    public static void GetBiome(TickEvent.ClientTickEvent event) {
+    public static void getBiome(TickEvent.ClientTickEvent event) {
         timer++;
         if (timer >= 60) {
             timer = 0;
@@ -46,7 +46,7 @@ public class FogModifiers {
 
 
     @SubscribeEvent
-    public static void EverywhereFog(ViewportEvent.RenderFog event) {
+    public static void everywhereFog(ViewportEvent.RenderFog event) {
             event.setCanceled(true);
             event.scaleNearPlaneDistance(0.15f);
             if (biome == null) return;

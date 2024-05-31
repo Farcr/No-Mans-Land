@@ -1,34 +1,22 @@
 package com.farcr.nomansland.core.config;
 
-import com.farcr.nomansland.core.NoMansLand;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
-@Mod.EventBusSubscriber(modid = NoMansLand.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class NMLConfig {
-    public static ForgeConfigSpec COMMON_CONFIG;
-    public static final ForgeConfigSpec.BooleanValue MYCELIUM_SPREADS;
-    public static final ForgeConfigSpec.BooleanValue GRASS_SPREADS;
 
-    public static ForgeConfigSpec CLIENT_CONFIG;
-    public static ForgeConfigSpec SERVER_CONFIG;
+    public static ModConfigSpec COMMON_CONFIG;
+    public static ModConfigSpec.BooleanValue MYCELIUM_SPREADS;
+    public static ModConfigSpec.BooleanValue GRASS_SPREADS;
 
     static {
 
-        ForgeConfigSpec.Builder commonConfig = new ForgeConfigSpec.Builder();
+        ModConfigSpec.Builder COMMON_BUILDER = new ModConfigSpec.Builder();
 
-        GRASS_SPREADS = commonConfig.comment("Should grass spread to adjacent dirt?")
-                .define("grassSpreads", true);
-        MYCELIUM_SPREADS = commonConfig.comment("Should mycelium spread to adjacent dirt?")
-                .define("myceliumSpreads", true);
+        COMMON_BUILDER.comment("Should mycelium or grass spread to nearby dirt?");
+        GRASS_SPREADS = COMMON_BUILDER.define("grassSpreads", true);
+        MYCELIUM_SPREADS = COMMON_BUILDER.define("grassSpreads", true);
 
-        COMMON_CONFIG = commonConfig.build();
-
-        ForgeConfigSpec.Builder serverConfig = new ForgeConfigSpec.Builder();
-        SERVER_CONFIG = serverConfig.build();
-
-        ForgeConfigSpec.Builder clientBuilder = new ForgeConfigSpec.Builder();
-        CLIENT_CONFIG = clientBuilder.build();
+        COMMON_CONFIG =  COMMON_BUILDER.build();
     }
 
 }

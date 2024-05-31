@@ -2,7 +2,7 @@ package com.farcr.nomansland.core.content.block;
 
 import com.farcr.nomansland.core.registry.NMLTags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -15,11 +15,12 @@ import net.minecraft.world.level.block.TorchBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
+// TODO: make sure this works
 public class ExtinguishedTorchBlock extends TorchBlock {
 
     public final Block mainBlock;
-    public ExtinguishedTorchBlock(Properties pProperties, Block mainBlock, ParticleOptions pFlameParticle) {
-        super(pProperties, pFlameParticle);
+    public ExtinguishedTorchBlock(SimpleParticleType pFlameParticle, Properties pProperties, Block mainBlock) {
+        super(pFlameParticle, pProperties);
         this.mainBlock = mainBlock;
     }
 

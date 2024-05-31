@@ -1,16 +1,17 @@
 package com.farcr.nomansland.client.color;
 
+import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = NoMansLand.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ColorHandler {
     @SubscribeEvent
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {

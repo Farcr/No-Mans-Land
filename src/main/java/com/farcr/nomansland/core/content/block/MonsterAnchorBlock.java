@@ -2,6 +2,7 @@ package com.farcr.nomansland.core.content.block;
 
 import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
@@ -20,6 +21,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+// TODO: make sure this works
 public class MonsterAnchorBlock extends BaseEntityBlock {
     public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
 
@@ -27,6 +29,11 @@ public class MonsterAnchorBlock extends BaseEntityBlock {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(ACTIVE, false));
 
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return null;
     }
 
     @Override

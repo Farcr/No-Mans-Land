@@ -4,10 +4,10 @@ import com.farcr.nomansland.core.NoMansLand;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.client.model.generators.ItemModelBuilder;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 public class NMLItemModelProvider extends ItemModelProvider {
     public NMLItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -62,12 +62,12 @@ public class NMLItemModelProvider extends ItemModelProvider {
     }
 
 
-    private ItemModelBuilder spawnEggItem(RegistryObject<Item> item) {
+    private ItemModelBuilder spawnEggItem(DeferredItem<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("minecraft:item/template_spawn_egg"));
     }
 
-    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+    private ItemModelBuilder handheldItem(DeferredItem<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/handheld")).texture("layer0",
                 new ResourceLocation(NoMansLand.MODID, "item/" + item.getId().getPath()));

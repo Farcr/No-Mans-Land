@@ -1,8 +1,8 @@
 package com.farcr.nomansland.core.content.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -14,8 +14,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class SconceTorchBlock extends TorchBlock {
     protected static final VoxelShape AABB = Block.box(6.0D, 0.0D, 6.0D, 10.0D, 12.0D, 10.0D);
-    public SconceTorchBlock(Properties pProperties, ParticleOptions pFlameParticle) {
-        super(pProperties, pFlameParticle);
+    public SconceTorchBlock(SimpleParticleType pFlameParticle, Properties pProperties) {
+        super(pFlameParticle, pProperties);
 
     }
     @Override

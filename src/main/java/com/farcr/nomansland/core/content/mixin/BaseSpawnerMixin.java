@@ -15,7 +15,7 @@ public class BaseSpawnerMixin {
     @ModifyArg(method = "clientTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V"), index = 0)
     private ParticleOptions injected(ParticleOptions particle) {
         if (particle == ParticleTypes.FLAME) {
-            return particle = (ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get();
+            return NMLParticleTypes.MALEVOLENT_FLAME.get();
         }
         return particle;
     }

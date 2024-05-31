@@ -24,7 +24,7 @@ import java.util.Random;
 public class RemainsBlock extends BrushableBlock {
 
     public RemainsBlock(Block pTurnsInto, Properties pProperties, SoundEvent pBrushSound, SoundEvent pBrushCompletedSound) {
-        super(pTurnsInto, pProperties, pBrushSound, pBrushCompletedSound);
+        super(pTurnsInto, pBrushSound, pBrushCompletedSound, pProperties);
     }
     @Override
     public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {

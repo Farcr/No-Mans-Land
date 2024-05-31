@@ -4,8 +4,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -46,7 +46,7 @@ public class SconceWallTorchBlock extends WallTorchBlock {
         pLevel.addParticle(ParticleTypes.SMOKE, d0 + 0.27D * (double)direction1.getStepX(), d1 + 0.22D, d2 + 0.27D * (double)direction1.getStepZ(), 0.0D, 0.0D, 0.0D);
         pLevel.addParticle(this.flameParticle, d0 + 0.27D * (double)direction1.getStepX(), d1 + 0.22D, d2 + 0.27D * (double)direction1.getStepZ(), 0.0D, 0.0D, 0.0D);
     }
-    public SconceWallTorchBlock(Properties pProperties, ParticleOptions pFlameParticle) {
-        super(pProperties, pFlameParticle);
+    public SconceWallTorchBlock(SimpleParticleType pFlameParticle, Properties pProperties) {
+        super(pFlameParticle, pProperties);
     }
 }

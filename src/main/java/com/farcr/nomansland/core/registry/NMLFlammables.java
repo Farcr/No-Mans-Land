@@ -9,7 +9,8 @@ public class NMLFlammables {
 
         fireBlock.setFlammable(NMLBlocks.YELLOW_BIRCH_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(NMLBlocks.AUTUMNAL_OAK_LEAVES.get(), 30, 60);
-        fireBlock.setFlammable(NMLBlocks.PALE_CHERRY_LEAVES.get(), 30, 60);
+        // TODO: re-add pale cherry leaves
+//        fireBlock.setFlammable(NMLBlocks.PALE_CHERRY_LEAVES.get(), 30, 60);
 
 
         fireBlock.setFlammable(NMLBlocks.GRASS_SPROUTS.get(), 30, 60);

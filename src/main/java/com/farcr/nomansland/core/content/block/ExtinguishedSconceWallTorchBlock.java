@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -20,6 +20,11 @@ public class ExtinguishedSconceWallTorchBlock extends ExtinguishedWallTorchBlock
             Direction.WEST, Block.box(11.0D, 1.5D, 5.5D, 16.0D, 13.5D, 10.5D),
             Direction.EAST, Block.box(0.0D, 1.5D, 5.5D, 5.0D, 13.5D, 10.5D)
     ));
+
+    public ExtinguishedSconceWallTorchBlock(Properties pProperties, Block mainBlock, SimpleParticleType pFlameParticle) {
+        super(pFlameParticle, pProperties, mainBlock);
+    }
+
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return getShape(pState);
@@ -27,8 +32,4 @@ public class ExtinguishedSconceWallTorchBlock extends ExtinguishedWallTorchBlock
     public static VoxelShape getShape(BlockState pState) {
         return AABBS.get(pState.getValue(FACING));
     }
-    public ExtinguishedSconceWallTorchBlock(Properties pProperties, Block mainBlock, ParticleOptions pFlameParticle) {
-        super(pProperties, mainBlock, pFlameParticle);
-    }
-
 }

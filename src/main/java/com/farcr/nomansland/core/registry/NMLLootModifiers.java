@@ -4,23 +4,23 @@ import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.lootmodifiers.AddLootTableModifier;
 import com.farcr.nomansland.core.content.lootmodifiers.PreventDropsModifier;
 import com.mojang.serialization.Codec;
-import net.minecraftforge.common.loot.IGlobalLootModifier;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import com.mojang.serialization.MapCodec;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
+import java.util.function.Supplier;
+
+@SuppressWarnings("unused")
 public class NMLLootModifiers {
-    public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =
-            DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, NoMansLand.MODID);
+    public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIERS =
+            DeferredRegister.create(NeoForgeRegistries.GLOBAL_LOOT_MODIFIER_SERIALIZERS, NoMansLand.MODID);
 
-    public static final RegistryObject<Codec<? extends IGlobalLootModifier>> ADD_LOOT_TABLE =
-            LOOT_MODIFIER_SERIALIZERS.register("add_loot_table", AddLootTableModifier.CODEC);
-    public static final RegistryObject<Codec<? extends IGlobalLootModifier>> PREVENT_DROPS =
-            LOOT_MODIFIER_SERIALIZERS.register("prevent_drops", PreventDropsModifier.CODEC);
+    private static final DeferredHolder<Codec<? extends IGlobalLootModifier>, Codec<PreventDropsModifier>> PREVENT_DROPS =
+            LOOT_MODIFIERS.register("prevent_drops", PreventDropsModifier.CODEC);
 
-
-    public static void register(IEventBus eventBus) {
-        LOOT_MODIFIER_SERIALIZERS.register(eventBus);
-    }
+    private static final DeferredHolder<Codec<? extends IGlobalLootModifier>, Codec<AddLootTableModifier>> ADD_LOOT_TABLE =
+            LOOT_MODIFIERS.register("add_loot_table", AddLootTableModifier.CODEC);
 }

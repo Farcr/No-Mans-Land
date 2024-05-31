@@ -6,7 +6,6 @@
   "mixins": [
     "AbstractCauldronBlockMixin",
     "BaseSpawnerMixin",
-    "FieldMushroomRichSoilMixin",
     "SpreadingSnowyDirtBlockMixin"
   ],
   "client": [

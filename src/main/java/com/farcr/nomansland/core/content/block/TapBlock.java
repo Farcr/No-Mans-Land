@@ -7,6 +7,7 @@ import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import com.farcr.nomansland.core.registry.NMLTags;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
@@ -28,8 +29,8 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 import java.util.Map;
@@ -47,6 +48,11 @@ public class TapBlock extends BaseEntityBlock {
     public TapBlock(Properties pProperties) {
         super(pProperties);
 
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return null;
     }
 
     @Nullable

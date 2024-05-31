@@ -8,332 +8,330 @@ import com.farcr.nomansland.core.content.item.FuelItem;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.*;
-import net.minecraftforge.common.ForgeSpawnEggItem;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.level.block.Block;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
 
 public class NMLItems {
-    public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, NoMansLand.MODID);
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(NoMansLand.MODID);
 
-    public static LinkedHashSet<RegistryObject<Item>> CREATIVE_TAB_ITEMS =
-            Sets.newLinkedHashSet();
+    public static LinkedHashSet<DeferredItem<Item>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
 
-    public static final RegistryObject<Item> NO_MANS_GLOBE = ITEMS.register("no_mans_globe",
+    public static final DeferredItem<Item> NO_MANS_GLOBE = ITEMS.register("no_mans_globe",
             () -> new Item(new Item.Properties()));
 //Foods
-    public static final RegistryObject<Item> MASHED_POTATOES_WITH_MUSHROOMS = registerItem("mashed_potatoes_with_mushrooms",
+    public static final DeferredItem<Item> MASHED_POTATOES_WITH_MUSHROOMS = registerItem("mashed_potatoes_with_mushrooms",
             () -> new BowlFoodItem(new Item.Properties().food(NMLFoods.MASHED_POTATOES_WITH_MUSHROOMS).stacksTo(1)));
-    public static final RegistryObject<Item> GRILLED_MUSHROOMS = registerItem("grilled_mushrooms",
+    public static final DeferredItem<Item> GRILLED_MUSHROOMS = registerItem("grilled_mushrooms",
             () -> new Item(new Item.Properties().food(NMLFoods.GRILLED_MUSHROOMS)));
-    public static final RegistryObject<Item> FROG_LEG = registerItem("frog_leg",
+    public static final DeferredItem<Item> FROG_LEG = registerItem("frog_leg",
             () -> new Item(new Item.Properties().food(NMLFoods.FROG_LEG)));
-    public static final RegistryObject<Item> COOKED_FROG_LEG = registerItem("cooked_frog_leg",
+    public static final DeferredItem<Item> COOKED_FROG_LEG = registerItem("cooked_frog_leg",
             () -> new Item(new Item.Properties().food(NMLFoods.COOKED_FROG_LEG)));
 
-    public static final RegistryObject<Item> RAW_HORSE = registerItem("raw_horse",
+    public static final DeferredItem<Item> RAW_HORSE = registerItem("raw_horse",
             () -> new Item(new Item.Properties().food(NMLFoods.RAW_HORSE)));
-    public static final RegistryObject<Item> HORSE_STEAK = registerItem("horse_steak",
+    public static final DeferredItem<Item> HORSE_STEAK = registerItem("horse_steak",
             () -> new Item(new Item.Properties().food(NMLFoods.HORSE_STEAK)));
 
-    public static final RegistryObject<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
+    public static final DeferredItem<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
             !ModList.get().isLoaded("farmersdelight") ? () -> new Item(new Item.Properties())
                     : FDIntegration.mushroomColonyItem(), "farmersdelight");
 
 //Materials
 
-    public static final RegistryObject<Item> RESIN = registerItem("resin",
+    public static final DeferredItem<Item> RESIN = registerItem("resin",
             () -> new FuelItem(new Item.Properties(), 1000 ));
 //    !!!Depends on Alembic
-    public static final RegistryObject<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
+    public static final DeferredItem<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
             () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
-//    public static final RegistryObject<Item> MAPLE_SYRUP_BOTTLE = registerIntegrationItem("maple_syrup_bottle",
+//    public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerIntegrationItem("maple_syrup_bottle",
 //            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)), "alembic");
-    public static final RegistryObject<Item> SCONCE_TORCH = registerItem("sconce_torch",
-            () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_TORCH.get(), NMLBlocks.SCONCE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
-    public static final RegistryObject<Item> SCONCE_SOUL_TORCH = registerItem("sconce_soul_torch",
-            () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_SOUL_TORCH.get(), NMLBlocks.SCONCE_SOUL_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
+//    public static final DeferredItem<Item> SCONCE_TORCH = registerItem("sconce_torch",
+//            () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_TORCH.get(), NMLBlocks.SCONCE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
+//    public static final DeferredItem<Item> SCONCE_SOUL_TORCH = registerItem("sconce_soul_torch",
+//            () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_SOUL_TORCH.get(), NMLBlocks.SCONCE_SOUL_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
 
-    public static final RegistryObject<Item> TRINKET = ITEMS.register("trinket",
+    public static final DeferredItem<Item> TRINKET = ITEMS.register("trinket",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> FIREBOMB = registerItem("firebomb",
+    public static final DeferredItem<Item> FIREBOMB = registerItem("firebomb",
             () -> new FirebombItem(new Item.Properties().stacksTo(8)));
 
-    public static final RegistryObject<Item> WOODEN_SCAFFOLDING = registerItem("wooden_scaffolding",
+    public static final DeferredItem<Item> WOODEN_SCAFFOLDING = registerItem("wooden_scaffolding",
             () -> new ScaffoldingBlockItem(NMLBlocks.WOODEN_SCAFFOLDING.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> PINE_SIGN = registerItem("pine_sign",
+    public static final DeferredItem<Item> PINE_SIGN = registerItem("pine_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.PINE_SIGN.get(), NMLBlocks.PINE_WALL_SIGN.get()));
-    public static final RegistryObject<Item> PINE_HANGING_SIGN = registerItem("pine_hanging_sign",
+    public static final DeferredItem<Item> PINE_HANGING_SIGN = registerItem("pine_hanging_sign",
             () -> new HangingSignItem(NMLBlocks.PINE_HANGING_SIGN.get(), NMLBlocks.PINE_HANGING_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> PINE_BOAT = registerItem("pine_boat",
+    public static final DeferredItem<Item> PINE_BOAT = registerItem("pine_boat",
             () -> new BoatItem(false, BoatEntity.Type.PINE, new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> PINE_CHEST_BOAT = registerItem("pine_chest_boat",
+    public static final DeferredItem<Item> PINE_CHEST_BOAT = registerItem("pine_chest_boat",
             () -> new BoatItem(true, BoatEntity.Type.PINE, new Item.Properties().stacksTo(1)));
 
-    public static final RegistryObject<Item> MAPLE_SIGN = registerItem("maple_sign",
+    public static final DeferredItem<Item> MAPLE_SIGN = registerItem("maple_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.MAPLE_SIGN.get(), NMLBlocks.MAPLE_WALL_SIGN.get()));
-    public static final RegistryObject<Item> MAPLE_HANGING_SIGN = registerItem("maple_hanging_sign",
+    public static final DeferredItem<Item> MAPLE_HANGING_SIGN = registerItem("maple_hanging_sign",
             () -> new HangingSignItem(NMLBlocks.MAPLE_HANGING_SIGN.get(), NMLBlocks.MAPLE_HANGING_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> MAPLE_BOAT = registerItem("maple_boat",
+    public static final DeferredItem<Item> MAPLE_BOAT = registerItem("maple_boat",
             () -> new BoatItem(false, BoatEntity.Type.MAPLE, new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> MAPLE_CHEST_BOAT = registerItem("maple_chest_boat",
+    public static final DeferredItem<Item> MAPLE_CHEST_BOAT = registerItem("maple_chest_boat",
             () -> new BoatItem(true, BoatEntity.Type.MAPLE, new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> MOOSE_SPAWN_EGG = ITEMS.register("moose_spawn_egg",
-            () -> new ForgeSpawnEggItem(NMLEntities.MOOSE, 0x8b4513 , 0xa52a2a, new Item.Properties()));
+    public static final DeferredItem<Item> MOOSE_SPAWN_EGG = registerItem("moose_spawn_egg",
+            () -> new SpawnEggItem(NMLEntities.MOOSE.get(), 0x8b4513 , 0xa52a2a, new Item.Properties()));
 
-    public static final RegistryObject<Item> WALNUT_SIGN = registerItem("walnut_sign",
+    public static final DeferredItem<Item> WALNUT_SIGN = registerItem("walnut_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.WALNUT_SIGN.get(), NMLBlocks.WALNUT_WALL_SIGN.get()));
-    public static final RegistryObject<Item> WALNUT_HANGING_SIGN = registerItem("walnut_hanging_sign",
+    public static final DeferredItem<Item> WALNUT_HANGING_SIGN = registerItem("walnut_hanging_sign",
             () -> new HangingSignItem(NMLBlocks.WALNUT_HANGING_SIGN.get(), NMLBlocks.WALNUT_HANGING_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> WALNUT_BOAT = registerItem("walnut_boat",
+    public static final DeferredItem<Item> WALNUT_BOAT = registerItem("walnut_boat",
             () -> new BoatItem(false, BoatEntity.Type.WALNUT, new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> WALNUT_CHEST_BOAT = registerItem("walnut_chest_boat",
+    public static final DeferredItem<Item> WALNUT_CHEST_BOAT = registerItem("walnut_chest_boat",
             () -> new BoatItem(true, BoatEntity.Type.WALNUT, new Item.Properties().stacksTo(1)));
 
 
 
+    // TODO: re-add saplings
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(NMLBlocks.FADED_STONE_BRICKS);
-            event.accept(NMLBlocks.POLISHED_STONE);
-            event.accept(NMLBlocks.POLISHED_STONE_STAIRS);
-            event.accept(NMLBlocks.POLISHED_STONE_SLAB);
+            event.accept(NMLBlocks.FADED_STONE_BRICKS.get());
+            event.accept(NMLBlocks.POLISHED_STONE.get());
+            event.accept(NMLBlocks.POLISHED_STONE_STAIRS.get());
+            event.accept(NMLBlocks.POLISHED_STONE_SLAB.get());
 
-            event.accept(NMLBlocks.COBBLESTONE_BRICKS);
-            event.accept(NMLBlocks.COBBLESTONE_BRICK_STAIRS);
-            event.accept(NMLBlocks.COBBLESTONE_BRICK_SLAB);
-            event.accept(NMLBlocks.COBBLESTONE_BRICK_WALL);
-            event.accept(NMLBlocks.MOSSY_COBBLESTONE_BRICKS);
-            event.accept(NMLBlocks.MOSSY_COBBLESTONE_BRICK_STAIRS);
-            event.accept(NMLBlocks.MOSSY_COBBLESTONE_BRICK_SLAB);
-            event.accept(NMLBlocks.MOSSY_COBBLESTONE_BRICK_WALL);
+            event.accept(NMLBlocks.COBBLESTONE_BRICKS.get());
+            event.accept(NMLBlocks.COBBLESTONE_BRICK_STAIRS.get());
+            event.accept(NMLBlocks.COBBLESTONE_BRICK_SLAB.get());
+            event.accept(NMLBlocks.COBBLESTONE_BRICK_WALL.get());
+            event.accept(NMLBlocks.MOSSY_COBBLESTONE_BRICKS.get());
+            event.accept(NMLBlocks.MOSSY_COBBLESTONE_BRICK_STAIRS.get());
+            event.accept(NMLBlocks.MOSSY_COBBLESTONE_BRICK_SLAB.get());
+            event.accept(NMLBlocks.MOSSY_COBBLESTONE_BRICK_WALL.get());
 
-            event.accept(NMLBlocks.MUNDANE_TILES);
-            event.accept(NMLBlocks.EARTHEN_TILES);
+            event.accept(NMLBlocks.MUNDANE_TILES.get());
+            event.accept(NMLBlocks.EARTHEN_TILES.get());
 
-            event.accept(NMLBlocks.PINE_LOG);
-            event.accept(NMLBlocks.PINE_WOOD);
-            event.accept(NMLBlocks.STRIPPED_PINE_LOG);
-            event.accept(NMLBlocks.STRIPPED_PINE_WOOD);
-            event.accept(NMLBlocks.PINE_PLANKS);
-            event.accept(NMLBlocks.PINE_STAIRS);
-            event.accept(NMLBlocks.PINE_SLAB);
-            event.accept(NMLBlocks.TRIMMED_PINE_PLANKS);
-            event.accept(NMLBlocks.PINE_FENCE);
-            event.accept(NMLBlocks.PINE_FENCE_GATE);
-            event.accept(NMLBlocks.PINE_DOOR);
-            event.accept(NMLBlocks.PINE_TRAPDOOR);
-            event.accept(NMLBlocks.PINE_PRESSURE_PLATE);
-            event.accept(NMLBlocks.PINE_BUTTON);
+            event.accept(NMLBlocks.PINE_LOG.get());
+            event.accept(NMLBlocks.PINE_WOOD.get());
+            event.accept(NMLBlocks.STRIPPED_PINE_LOG.get());
+            event.accept(NMLBlocks.STRIPPED_PINE_WOOD.get());
+            event.accept(NMLBlocks.PINE_PLANKS.get());
+            event.accept(NMLBlocks.PINE_STAIRS.get());
+            event.accept(NMLBlocks.PINE_SLAB.get());
+            event.accept(NMLBlocks.TRIMMED_PINE_PLANKS.get());
+            event.accept(NMLBlocks.PINE_FENCE.get());
+            event.accept(NMLBlocks.PINE_FENCE_GATE.get());
+            event.accept(NMLBlocks.PINE_DOOR.get());
+            event.accept(NMLBlocks.PINE_TRAPDOOR.get());
+            event.accept(NMLBlocks.PINE_PRESSURE_PLATE.get());
+            event.accept(NMLBlocks.PINE_BUTTON.get());
             if (ModList.get().isLoaded("farmersdelight")) {
-                event.accept(NMLBlocks.PINE_CABINET);
+                event.accept(NMLBlocks.PINE_CABINET.get());
             }
 
-            event.accept(NMLBlocks.MAPLE_LOG);
-            event.accept(NMLBlocks.MAPLE_WOOD);
-            event.accept(NMLBlocks.STRIPPED_MAPLE_LOG);
-            event.accept(NMLBlocks.STRIPPED_MAPLE_WOOD);
-            event.accept(NMLBlocks.MAPLE_PLANKS);
-            event.accept(NMLBlocks.MAPLE_STAIRS);
-            event.accept(NMLBlocks.MAPLE_SLAB);
-            event.accept(NMLBlocks.TRIMMED_MAPLE_PLANKS);
-            event.accept(NMLBlocks.MAPLE_FENCE);
-            event.accept(NMLBlocks.MAPLE_FENCE_GATE);
-            event.accept(NMLBlocks.MAPLE_DOOR);
-            event.accept(NMLBlocks.MAPLE_TRAPDOOR);
-            event.accept(NMLBlocks.MAPLE_PRESSURE_PLATE);
-            event.accept(NMLBlocks.MAPLE_BUTTON);
+            event.accept(NMLBlocks.MAPLE_LOG.get());
+            event.accept(NMLBlocks.MAPLE_WOOD.get());
+            event.accept(NMLBlocks.STRIPPED_MAPLE_LOG.get());
+            event.accept(NMLBlocks.STRIPPED_MAPLE_WOOD.get());
+            event.accept(NMLBlocks.MAPLE_PLANKS.get());
+            event.accept(NMLBlocks.MAPLE_STAIRS.get());
+            event.accept(NMLBlocks.MAPLE_SLAB.get());
+            event.accept(NMLBlocks.TRIMMED_MAPLE_PLANKS.get());
+            event.accept(NMLBlocks.MAPLE_FENCE.get());
+            event.accept(NMLBlocks.MAPLE_FENCE_GATE.get());
+            event.accept(NMLBlocks.MAPLE_DOOR.get());
+            event.accept(NMLBlocks.MAPLE_TRAPDOOR.get());
+            event.accept(NMLBlocks.MAPLE_PRESSURE_PLATE.get());
+            event.accept(NMLBlocks.MAPLE_BUTTON.get());
             if (ModList.get().isLoaded("farmersdelight")) {
-                event.accept(NMLBlocks.MAPLE_CABINET);
+                event.accept(NMLBlocks.MAPLE_CABINET.get());
             }
 
-            event.accept(NMLBlocks.WALNUT_LOG);
-            event.accept(NMLBlocks.WALNUT_WOOD);
-            event.accept(NMLBlocks.STRIPPED_WALNUT_LOG);
-            event.accept(NMLBlocks.STRIPPED_WALNUT_WOOD);
-            event.accept(NMLBlocks.WALNUT_PLANKS);
-            event.accept(NMLBlocks.WALNUT_STAIRS);
-            event.accept(NMLBlocks.WALNUT_SLAB);
-            event.accept(NMLBlocks.TRIMMED_WALNUT_PLANKS);
-            event.accept(NMLBlocks.WALNUT_FENCE);
-            event.accept(NMLBlocks.WALNUT_FENCE_GATE);
-            event.accept(NMLBlocks.WALNUT_DOOR);
-            event.accept(NMLBlocks.WALNUT_TRAPDOOR);
-            event.accept(NMLBlocks.WALNUT_PRESSURE_PLATE);
-            event.accept(NMLBlocks.WALNUT_BUTTON);
+            event.accept(NMLBlocks.WALNUT_LOG.get());
+            event.accept(NMLBlocks.WALNUT_WOOD.get());
+            event.accept(NMLBlocks.STRIPPED_WALNUT_LOG.get());
+            event.accept(NMLBlocks.STRIPPED_WALNUT_WOOD.get());
+            event.accept(NMLBlocks.WALNUT_PLANKS.get());
+            event.accept(NMLBlocks.WALNUT_STAIRS.get());
+            event.accept(NMLBlocks.WALNUT_SLAB.get());
+            event.accept(NMLBlocks.TRIMMED_WALNUT_PLANKS.get());
+            event.accept(NMLBlocks.WALNUT_FENCE.get());
+            event.accept(NMLBlocks.WALNUT_FENCE_GATE.get());
+            event.accept(NMLBlocks.WALNUT_DOOR.get());
+            event.accept(NMLBlocks.WALNUT_TRAPDOOR.get());
+            event.accept(NMLBlocks.WALNUT_PRESSURE_PLATE.get());
+            event.accept(NMLBlocks.WALNUT_BUTTON.get());
             if (ModList.get().isLoaded("farmersdelight")) {
-                event.accept(NMLBlocks.WALNUT_CABINET);
+                event.accept(NMLBlocks.WALNUT_CABINET.get());
             }
 
-            event.accept(NMLBlocks.COD_BARREL);
-            event.accept(NMLBlocks.SALMON_BARREL);
-            event.accept(NMLBlocks.PUFFERFISH_BARREL);
-            event.accept(NMLBlocks.TROPICAL_FISH_BARREL);
+            event.accept(NMLBlocks.COD_BARREL.get());
+            event.accept(NMLBlocks.SALMON_BARREL.get());
+            event.accept(NMLBlocks.PUFFERFISH_BARREL.get());
+            event.accept(NMLBlocks.TROPICAL_FISH_BARREL.get());
 
-            event.accept(NMLBlocks.TRIMMED_OAK_PLANKS);
-            event.accept(NMLBlocks.TRIMMED_SPRUCE_PLANKS);
-            event.accept(NMLBlocks.TRIMMED_BIRCH_PLANKS);
-            event.accept(NMLBlocks.TRIMMED_JUNGLE_PLANKS);
-            event.accept(NMLBlocks.TRIMMED_ACACIA_PLANKS);
-            event.accept(NMLBlocks.TRIMMED_DARK_OAK_PLANKS);
-            event.accept(NMLBlocks.TRIMMED_CHERRY_PLANKS);
-            event.accept(NMLBlocks.TRIMMED_MANGROVE_PLANKS);
-            event.accept(NMLBlocks.TRIMMED_CRIMSON_PLANKS);
-            event.accept(NMLBlocks.TRIMMED_WARPED_PLANKS);
-            event.accept(NMLBlocks.TRIMMED_BAMBOO_PLANKS);
+            event.accept(NMLBlocks.TRIMMED_OAK_PLANKS.get());
+            event.accept(NMLBlocks.TRIMMED_SPRUCE_PLANKS.get());
+            event.accept(NMLBlocks.TRIMMED_BIRCH_PLANKS.get());
+            event.accept(NMLBlocks.TRIMMED_JUNGLE_PLANKS.get());
+            event.accept(NMLBlocks.TRIMMED_ACACIA_PLANKS.get());
+            event.accept(NMLBlocks.TRIMMED_DARK_OAK_PLANKS.get());
+            event.accept(NMLBlocks.TRIMMED_CHERRY_PLANKS.get());
+            event.accept(NMLBlocks.TRIMMED_MANGROVE_PLANKS.get());
+            event.accept(NMLBlocks.TRIMMED_CRIMSON_PLANKS.get());
+            event.accept(NMLBlocks.TRIMMED_WARPED_PLANKS.get());
+            event.accept(NMLBlocks.TRIMMED_BAMBOO_PLANKS.get());
         }
         if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {}
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-            event.accept(NMLBlocks.GRASS_SPROUTS);
-            event.accept(NMLBlocks.OAT_GRASS);
-            event.accept(NMLBlocks.DRIED_GRASS);
-            event.accept(NMLBlocks.FIDDLEHEAD);
-            event.accept(NMLBlocks.CATTAIL);
-            event.accept(NMLBlocks.CLOVER_PATCH);
-            event.accept(NMLBlocks.RED_FLOWERBED);
-            event.accept(NMLBlocks.YELLOW_FLOWERBED);
-            event.accept(NMLBlocks.BLUE_FLOWERBED);
-            event.accept(NMLBlocks.VIOLET_FLOWERBED);
-            event.accept(NMLBlocks.WHITE_FLOWERBED);
-            event.accept(NMLBlocks.RED_LUPINE);
-            event.accept(NMLBlocks.BLUE_LUPINE);
-            event.accept(NMLBlocks.PINK_LUPINE);
-            event.accept(NMLBlocks.YELLOW_LUPINE);
-            event.accept(NMLBlocks.ACONITE);
-            event.accept(NMLBlocks.WILD_MINT);
-            event.accept(NMLBlocks.AUTUMN_CROCUS);
-            event.accept(NMLBlocks.RAFFLESIA);
-            event.accept(NMLBlocks.PEBBLES);
-            event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES);
-            event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
-            event.accept(NMLBlocks.AUTUMNAL_OAK_LEAVES);
-            event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
-            event.accept(NMLBlocks.PALE_CHERRY_LEAVES);
-            event.accept(NMLBlocks.PALE_CHERRY_SAPLING);
-            event.accept(NMLBlocks.FIELD_MUSHROOM);
+            event.accept(NMLBlocks.GRASS_SPROUTS.get());
+            event.accept(NMLBlocks.OAT_GRASS.get());
+            event.accept(NMLBlocks.DRIED_GRASS.get());
+            event.accept(NMLBlocks.FIDDLEHEAD.get());
+            event.accept(NMLBlocks.CATTAIL.get());
+            event.accept(NMLBlocks.CLOVER_PATCH.get());
+            event.accept(NMLBlocks.RED_FLOWERBED.get());
+            event.accept(NMLBlocks.YELLOW_FLOWERBED.get());
+            event.accept(NMLBlocks.BLUE_FLOWERBED.get());
+            event.accept(NMLBlocks.VIOLET_FLOWERBED.get());
+            event.accept(NMLBlocks.WHITE_FLOWERBED.get());
+            event.accept(NMLBlocks.RED_LUPINE.get());
+            event.accept(NMLBlocks.BLUE_LUPINE.get());
+            event.accept(NMLBlocks.PINK_LUPINE.get());
+            event.accept(NMLBlocks.YELLOW_LUPINE.get());
+            event.accept(NMLBlocks.ACONITE.get());
+            event.accept(NMLBlocks.WILD_MINT.get());
+            event.accept(NMLBlocks.AUTUMN_CROCUS.get());
+            event.accept(NMLBlocks.RAFFLESIA.get());
+            event.accept(NMLBlocks.PEBBLES.get());
+            event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES.get());
+//            event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
+            event.accept(NMLBlocks.AUTUMNAL_OAK_LEAVES.get());
+//            event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
+            // TODO: re-add pale cherry leaves
+//            event.accept(NMLBlocks.PALE_CHERRY_LEAVES.get());
+//            event.accept(NMLBlocks.PALE_CHERRY_SAPLING);
+            event.accept(NMLBlocks.FIELD_MUSHROOM.get());
             if (ModList.get().isLoaded("farmersdelight")) {
-                event.accept(NMLItems.FIELD_MUSHROOM_COLONY);
+                event.accept(NMLItems.FIELD_MUSHROOM_COLONY.get());
             }
-            event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK);
-            event.accept(NMLBlocks.DIRT_PATH);
-            event.accept(NMLBlocks.MYCELIUM_PATH);
-            event.accept(NMLBlocks.PODZOL_PATH);
-            event.accept(NMLBlocks.SNOWY_GRASS_PATH);
-            event.accept(NMLBlocks.SNOW_PATH);
-            event.accept(NMLBlocks.GRAVEL_PATH);
-            event.accept(NMLBlocks.SAND_PATH);
-            event.accept(NMLBlocks.RED_SAND_PATH);
+            event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK.get());
+            event.accept(NMLBlocks.DIRT_PATH.get());
+            event.accept(NMLBlocks.MYCELIUM_PATH.get());
+            event.accept(NMLBlocks.PODZOL_PATH.get());
+            event.accept(NMLBlocks.SNOWY_GRASS_PATH.get());
+            event.accept(NMLBlocks.SNOW_PATH.get());
+            event.accept(NMLBlocks.GRAVEL_PATH.get());
+            event.accept(NMLBlocks.SAND_PATH.get());
+            event.accept(NMLBlocks.RED_SAND_PATH.get());
 
 
-            event.accept(NMLBlocks.QUARTZITE);
-            event.accept(NMLBlocks.QUARTZITE_CLUSTER);
-            event.accept(NMLBlocks.BUDDING_QUARTZITE);
-            event.accept(NMLBlocks.PETRIFIED_LOG);
-            event.accept(NMLBlocks.PETRIFIED_WOOD);
+            event.accept(NMLBlocks.QUARTZITE.get());
+            event.accept(NMLBlocks.QUARTZITE_CLUSTER.get());
+            event.accept(NMLBlocks.BUDDING_QUARTZITE.get());
+            event.accept(NMLBlocks.PETRIFIED_LOG.get());
+            event.accept(NMLBlocks.PETRIFIED_WOOD.get());
 
-            event.accept(NMLBlocks.REMAINS);
+            event.accept(NMLBlocks.REMAINS.get());
 
-            event.accept(NMLBlocks.PINE_LOG);
-            event.accept(NMLBlocks.PINE_LEAVES);
-            event.accept(NMLBlocks.PINE_SAPLING);
+            event.accept(NMLBlocks.PINE_LOG.get());
+            event.accept(NMLBlocks.PINE_LEAVES.get());
+//            event.accept(NMLBlocks.PINE_SAPLING);
 
-            event.accept(NMLBlocks.MAPLE_LOG);
-            event.accept(NMLBlocks.MAPLE_LEAVES);
-            event.accept(NMLBlocks.MAPLE_SAPLING);
-            event.accept(NMLBlocks.RED_MAPLE_LEAVES);
-            event.accept(NMLBlocks.RED_MAPLE_SAPLING);
+            event.accept(NMLBlocks.MAPLE_LOG.get());
+            event.accept(NMLBlocks.MAPLE_LEAVES.get());
+//            event.accept(NMLBlocks.MAPLE_SAPLING);
+            event.accept(NMLBlocks.RED_MAPLE_LEAVES.get());
+//            event.accept(NMLBlocks.RED_MAPLE_SAPLING);
 
-            event.accept(NMLBlocks.WALNUT_LOG);
-            event.accept(NMLBlocks.WALNUT_LEAVES);
-            event.accept(NMLBlocks.WALNUT_SAPLING);
+            event.accept(NMLBlocks.WALNUT_LOG.get());
+            event.accept(NMLBlocks.WALNUT_LEAVES.get());
+//            event.accept(NMLBlocks.WALNUT_SAPLING);
 
         }
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-            event.accept(NMLBlocks.PINE_BOOKSHELF);
-            event.accept(NMLBlocks.MAPLE_BOOKSHELF);
-            event.accept(NMLBlocks.WALNUT_BOOKSHELF);
-            event.accept(NMLBlocks.SPRUCE_BOOKSHELF);
-            event.accept(NMLBlocks.BIRCH_BOOKSHELF);
-            event.accept(NMLBlocks.JUNGLE_BOOKSHELF);
-            event.accept(NMLBlocks.ACACIA_BOOKSHELF);
-            event.accept(NMLBlocks.DARK_OAK_BOOKSHELF);
-            event.accept(NMLBlocks.CHERRY_BOOKSHELF);
-            event.accept(NMLBlocks.MANGROVE_BOOKSHELF);
-            event.accept(NMLBlocks.CRIMSON_BOOKSHELF);
-            event.accept(NMLBlocks.WARPED_BOOKSHELF);
-            event.accept(NMLBlocks.BAMBOO_BOOKSHELF);
-            event.accept(NMLItems.PINE_SIGN);
-            event.accept(NMLItems.PINE_HANGING_SIGN);
-            event.accept(NMLItems.MAPLE_SIGN);
-            event.accept(NMLItems.MAPLE_HANGING_SIGN);
-            event.accept(NMLItems.WALNUT_SIGN);
-            event.accept(NMLItems.WALNUT_HANGING_SIGN);
-            event.accept(NMLItems.SCONCE_TORCH);
-            event.accept(NMLItems.SCONCE_SOUL_TORCH);
-            event.accept(NMLBlocks.TAP);
-            event.accept(NMLItems.WOODEN_SCAFFOLDING);
+            event.accept(NMLBlocks.PINE_BOOKSHELF.get());
+            event.accept(NMLBlocks.MAPLE_BOOKSHELF.get());
+            event.accept(NMLBlocks.WALNUT_BOOKSHELF.get());
+            event.accept(NMLBlocks.SPRUCE_BOOKSHELF.get());
+            event.accept(NMLBlocks.BIRCH_BOOKSHELF.get());
+            event.accept(NMLBlocks.JUNGLE_BOOKSHELF.get());
+            event.accept(NMLBlocks.ACACIA_BOOKSHELF.get());
+            event.accept(NMLBlocks.DARK_OAK_BOOKSHELF.get());
+            event.accept(NMLBlocks.CHERRY_BOOKSHELF.get());
+            event.accept(NMLBlocks.MANGROVE_BOOKSHELF.get());
+            event.accept(NMLBlocks.CRIMSON_BOOKSHELF.get());
+            event.accept(NMLBlocks.WARPED_BOOKSHELF.get());
+            event.accept(NMLBlocks.BAMBOO_BOOKSHELF.get());
+            event.accept(NMLItems.PINE_SIGN.get());
+            event.accept(NMLItems.PINE_HANGING_SIGN.get());
+            event.accept(NMLItems.MAPLE_SIGN.get());
+            event.accept(NMLItems.MAPLE_HANGING_SIGN.get());
+            event.accept(NMLItems.WALNUT_SIGN.get());
+            event.accept(NMLItems.WALNUT_HANGING_SIGN.get());
+            // TODO: re-add sconces
+//            event.accept(NMLItems.SCONCE_TORCH.get());
+//            event.accept(NMLItems.SCONCE_SOUL_TORCH.get());
+            event.accept(NMLBlocks.TAP.get());
+            event.accept(NMLItems.WOODEN_SCAFFOLDING.get());
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(NMLItems.MASHED_POTATOES_WITH_MUSHROOMS);
-            event.accept(NMLItems.GRILLED_MUSHROOMS);
-            event.accept(NMLItems.FROG_LEG);
-            event.accept(NMLItems.COOKED_FROG_LEG);
-            event.accept(NMLItems.RAW_HORSE);
-            event.accept(NMLItems.HORSE_STEAK);
+            event.accept(NMLItems.MASHED_POTATOES_WITH_MUSHROOMS.get());
+            event.accept(NMLItems.GRILLED_MUSHROOMS.get());
+            event.accept(NMLItems.FROG_LEG.get());
+            event.accept(NMLItems.COOKED_FROG_LEG.get());
+            event.accept(NMLItems.RAW_HORSE.get());
+            event.accept(NMLItems.HORSE_STEAK.get());
 //            event.accept(NMLItems.MAPLE_SYRUP_BOTTLE);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(NMLItems.PINE_BOAT);
-            event.accept(NMLItems.PINE_CHEST_BOAT);
-            event.accept(NMLItems.MAPLE_BOAT);
-            event.accept(NMLItems.MAPLE_CHEST_BOAT);
-            event.accept(NMLItems.WALNUT_BOAT);
-            event.accept(NMLItems.WALNUT_CHEST_BOAT);
+            event.accept(NMLItems.PINE_BOAT.get());
+            event.accept(NMLItems.PINE_CHEST_BOAT.get());
+            event.accept(NMLItems.MAPLE_BOAT.get());
+            event.accept(NMLItems.MAPLE_CHEST_BOAT.get());
+            event.accept(NMLItems.WALNUT_BOAT.get());
+            event.accept(NMLItems.WALNUT_CHEST_BOAT.get());
             event.accept(Items.BUNDLE);
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
-            event.accept(NMLItems.RESIN_OIL_BOTTLE);
-            event.accept(NMLItems.FIREBOMB);
+            event.accept(NMLItems.RESIN_OIL_BOTTLE.get());
+            event.accept(NMLItems.FIREBOMB.get());
         }
 
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(NMLItems.RESIN);
-            event.accept(NMLItems.RESIN_OIL_BOTTLE);
+            event.accept(NMLItems.RESIN.get());
+            event.accept(NMLItems.RESIN_OIL_BOTTLE.get());
         }
 
         if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
-            event.accept(NMLBlocks.SPIKE_TRAP);
+            event.accept(NMLBlocks.SPIKE_TRAP.get());
         }
 
         if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-            event.accept(NMLBlocks.MONSTER_ANCHOR);
+            event.accept(NMLBlocks.MONSTER_ANCHOR.get());
         }
     }
-    public static RegistryObject<Item> registerItem(final String name, final Supplier<Item> supplier) {
-        RegistryObject<Item> toReturn = ITEMS.register(name, supplier);
-        CREATIVE_TAB_ITEMS.add(toReturn);
-        return toReturn;
+    public static <T extends Item> DeferredItem<Item> registerItem(final String name, final Supplier<? extends Item> supplier) {
+        DeferredItem<Item> item = ITEMS.register(name, supplier);
+        CREATIVE_TAB_ITEMS.add(item);
+        return item;
     }
 
-    public static RegistryObject<Item> registerIntegrationItem(final String name, final Supplier<Item> supplier, String modId) {
-        RegistryObject<Item> toReturn = ITEMS.register(name, supplier);
+    public static <T extends Item> DeferredItem<Item> registerIntegrationItem(final String name, final Supplier<? extends Item> supplier, String modId) {
+        DeferredItem<Item> item = ITEMS.register(name, supplier);
         if (ModList.get().isLoaded(modId)) {
-        CREATIVE_TAB_ITEMS.add(toReturn);
+        CREATIVE_TAB_ITEMS.add(item);
         }
-        return toReturn;
-    }
-
-    public static void register(IEventBus eventBus) {
-        ITEMS.register(eventBus);
+        return item;
     }
 }
