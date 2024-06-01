@@ -1,48 +1,58 @@
 {
   "variants": {
-    "facing=north,active=false": {
+    "facing=north,powered=false": {
       "model": "nomansland:block/dungeon/spike_trap",
       "x": 90
     },
-    "facing=west,active=false": {
+    "facing=west,powered=false": {
       "model": "nomansland:block/dungeon/spike_trap",
       "y": 270,
       "x": 90
     },
-    "facing=east,active=false": {
+    "facing=east,powered=false": {
       "model": "nomansland:block/dungeon/spike_trap",
       "y": 90,
       "x": 90
     },
-    "facing=south,active=false": {
+    "facing=south,powered=false": {
       "model": "nomansland:block/dungeon/spike_trap",
       "y": 180,
       "x": 90
     },
-    "facing=up,active=false": {
+    "facing=up,powered=false": {
       "model": "nomansland:block/dungeon/spike_trap"
     },
-    "facing=north,active=true": {
+    "facing=down,powered=false": {
+      "model": "nomansland:block/dungeon/spike_trap",
+      "x": 180,
+      "y": 180
+    },
+    "facing=north,powered=true": {
       "model": "nomansland:block/dungeon/spike_trap_base",
       "x": 90
     },
-    "facing=west,active=true": {
+    "facing=west,powered=true": {
       "model": "nomansland:block/dungeon/spike_trap_base",
       "y": 270,
       "x": 90
     },
-    "facing=east,active=true": {
+    "facing=east,powered=true": {
       "model": "nomansland:block/dungeon/spike_trap_base",
       "y": 90,
       "x": 90
     },
-    "facing=south,active=true": {
+    "facing=south,powered=true": {
       "model": "nomansland:block/dungeon/spike_trap_base",
       "y": 180,
       "x": 90
     },
-    "facing=up,active=true": {
+    "facing=up,powered=true": {
       "model": "nomansland:block/dungeon/spike_trap_base"
+    },
+    "facing=down,powered=true": {
+      "model": "nomansland:block/dungeon/spike_trap_base",
+      "x": 180,
+      "y": 180
     }
   }
 }
