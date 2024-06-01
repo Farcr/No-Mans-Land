@@ -37,13 +37,12 @@ import static java.lang.Boolean.FALSE;
 public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterloggedBlock {
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    protected static final VoxelShape EAST_AABB = Block.box(0.0D, 0.0D, 0.0D, 9.0D, 16.0D, 16.0D);
-    protected static final VoxelShape WEST_AABB = Block.box(7.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
-    protected static final VoxelShape SOUTH_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 9.0D);
-    protected static final VoxelShape NORTH_AABB = Block.box(0.0D, 0.0D, 7.0D, 16.0D, 16.0D, 16.0D);
-    protected static final VoxelShape UP_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D);
-    protected static final VoxelShape DOWN_AABB = Block.box(0.0D, 7.0D, 0.0D, 16.0D, 16.0D, 16.0D);
-
+    protected static final VoxelShape EAST_AABB = Block.box(0.0D, 0.0D, 0.0D, 2.0D, 16.0D, 16.0D);
+    protected static final VoxelShape WEST_AABB = Block.box(14.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+    protected static final VoxelShape SOUTH_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 2.0D);
+    protected static final VoxelShape NORTH_AABB = Block.box(0.0D, 0.0D, 14.0D, 16.0D, 16.0D, 16.0D);
+    protected static final VoxelShape UP_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
+    protected static final VoxelShape DOWN_AABB = Block.box(0.0D, 14.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
     public SpikeTrapBlock(Properties pProperties) {
         super(pProperties);
@@ -152,19 +151,14 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
 
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
         if (!oldState.is(state.getBlock()) && !level.isClientSide) {
-
                 this.checkIfPowered(level, pos, state);
         }
-    }
-
-    @Override
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
         if (isMoving && !state.getValue(POWERED)) {
             Predicate<LivingEntity> livingEntityPredicate = LivingEntity::isAlive;
             List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, new AABB(pos), livingEntityPredicate);
             if (!entities.isEmpty())
                 entities.forEach(entity -> entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_SKEWER), 12));
-        } else super.onRemove(state, level, pos, oldState, isMoving);
+        }
     }
 
     public boolean canConnectRedstone(BlockState state, BlockGetter level, BlockPos pos, @Nullable Direction direction) {
