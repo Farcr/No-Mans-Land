@@ -1,0 +1,14 @@
+{
+  "block.spike_trap.active": {
+    "subtitle": "nomansland.subtitles.block.spike_trap.move",
+    "sounds": [
+      "nomansland:block/spike_trap/spike_trap_inactive"
+    ]
+  },
+  "block.spike_trap.inactive": {
+    "subtitle": "nomansland.subtitles.block.spike_trap.move",
+    "sounds": [
+      "nomansland:block/spike_trap/spike_trap_inactive"
+      ]
+  }
+}

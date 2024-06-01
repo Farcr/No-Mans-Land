@@ -12,6 +12,9 @@ public class NMLSounds {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
             DeferredRegister.create(Registries.SOUND_EVENT, NoMansLand.MODID);
 
+    public static final DeferredHolder<SoundEvent, SoundEvent>  SPIKE_TRAP_ACTIVE = registerSoundEvents("block.spike_trap.active");
+    public static final DeferredHolder<SoundEvent, SoundEvent>  SPIKE_TRAP_INACTIVE = registerSoundEvents("block.spike_trap.inactive");
+
     private static DeferredHolder<SoundEvent, SoundEvent> registerSoundEvents(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(NoMansLand.MODID, name)));
     }

@@ -268,6 +268,8 @@
   
   "item.nomansland.firebomb": "Firebomb",
 
+  "nomansland.subtitles.block.spike_trap.move": "Spikes move",
+
   "tooltip.nomansland.missing_interaction_block": "§8This block is part of Mod Integration, but its required Mod is missing!",
   "tooltip.nomansland.missing_interaction_item": "§8This item is part of Mod Integration, but its required Mod is missing!"
 }

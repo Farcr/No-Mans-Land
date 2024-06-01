@@ -21,6 +21,7 @@ public class NoMansLand {
         NMLBlocks.BLOCKS.register(modEventBus);
         NMLEntities.ENTITIES.register(modEventBus);
         NMLFeatures.FEATURES.register(modEventBus);
+        NMLSounds.SOUND_EVENTS.register(modEventBus);
         NMLCreativeTabs.CREATIVE_TABS.register(modEventBus);
         NMLParticleTypes.PARTICLE_TYPES.register(modEventBus);
         NMLBlockEntities.BLOCK_ENTITIES.register(modEventBus);
