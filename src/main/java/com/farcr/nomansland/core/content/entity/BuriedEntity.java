@@ -117,7 +117,7 @@ public class BuriedEntity extends Monster implements SmartBrainOwner<BuriedEntit
         return livingEntity.isHolding(stack -> stack.getItem() instanceof BowItem);
     }
 
-    public static AttributeSupplier.Builder createBuriedAttributes() {
+    public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 1.0F).add(Attributes.KNOCKBACK_RESISTANCE, -0.1F)
                 .add(Attributes.MAX_HEALTH, 14.0F);
     }

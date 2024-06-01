@@ -1,6 +1,7 @@
 package com.farcr.nomansland.core.events;
 
 import com.farcr.nomansland.core.NoMansLand;
+import com.farcr.nomansland.core.content.entity.BuriedEntity;
 import com.farcr.nomansland.core.content.entity.MooseEntity;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.farcr.nomansland.core.registry.NMLEntities;
@@ -14,14 +15,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 public class MiscellaneousEvents {
-    @Mod.EventBusSubscriber(modid = NoMansLand.MODID)
+    @Mod.EventBusSubscriber(modid = NoMansLand.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ForgeEvents {
         @SubscribeEvent
         public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
@@ -67,12 +68,8 @@ public class MiscellaneousEvents {
     public static class ModEventBusEvents {
         @SubscribeEvent
         public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
-            event.put(NMLEntities.BURIED.get(), MooseEntity.createAttributes().build());
+            event.put(NMLEntities.BURIED.get(), BuriedEntity.createAttributes().build());
             event.put(NMLEntities.MOOSE.get(), MooseEntity.createAttributes().build());
-        }
-
-        @SubscribeEvent
-        public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         }
     }
 }
