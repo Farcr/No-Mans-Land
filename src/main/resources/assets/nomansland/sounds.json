@@ -1,14 +1,14 @@
 {
-  "block.spike_trap.active": {
-    "subtitle": "nomansland.subtitles.block.spike_trap.move",
+  "block.spike_trap.spikes_extend": {
+    "subtitle": "nomansland.subtitles.block.spike_trap.extend",
     "sounds": [
-      "nomansland:block/spike_trap/spike_trap_inactive"
+      "nomansland:block/spike_trap/spikes_retract"
     ]
   },
-  "block.spike_trap.inactive": {
-    "subtitle": "nomansland.subtitles.block.spike_trap.move",
+  "block.spike_trap.spikes_retract": {
+    "subtitle": "nomansland.subtitles.block.spike_trap.retract",
     "sounds": [
-      "nomansland:block/spike_trap/spike_trap_inactive"
+      "nomansland:block/spike_trap/spikes_extend"
       ]
   }
 }

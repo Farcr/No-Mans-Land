@@ -268,7 +268,8 @@
   
   "item.nomansland.firebomb": "Firebomb",
 
-  "nomansland.subtitles.block.spike_trap.move": "Spikes move",
+  "nomansland.subtitles.block.spike_trap.spikes_extend": "Spikes extend",
+  "nomansland.subtitles.block.spike_trap.spikes_retract": "Spikes retract",
 
   "death.attack.nomansland.spike_fall": "%1$s found the sharp end of spikes",
   "death.attack.nomansland.spike_fall.player": "%1$s found the sharp end of spikes while fighting %2$s",
