@@ -23,6 +23,7 @@
     "nomansland:earthen_tiles",
     "nomansland:mundane_tiles",
     "nomansland:tap",
-    "nomansland:monster_anchor"
+    "nomansland:monster_anchor",
+    "nomansland:spike_trap"
   ]
 }

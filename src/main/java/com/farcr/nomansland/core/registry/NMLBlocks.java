@@ -465,7 +465,7 @@ public class NMLBlocks {
             () -> new HoneyCauldronBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
 
     public static final DeferredBlock<Block> SPIKE_TRAP = registerBlock("spike_trap",
-            () -> new SpikeTrapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).noOcclusion()));
+            () -> new SpikeTrapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(1.5F, 6.0F).noOcclusion()));
 
 
     //Storage

@@ -51,7 +51,6 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
     protected static final VoxelShape DOWN_AABB = Block.box(0.0D, 7.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
 
-
     public SpikeTrapBlock(Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, Boolean.valueOf(false))
@@ -84,11 +83,11 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
     }
 
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-            if (pState.getValue(WATERLOGGED)) {
-                pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
-            }
-            return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+        if (pState.getValue(WATERLOGGED)) {
+            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
         }
+        return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+    }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
@@ -134,7 +133,6 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
         }
     }
 
-    // TODO: fix wonky behaviour (block entity?)
     private void checkIfPowered(Level level, BlockPos pos, BlockState state) {
         boolean flag = false;
         for (Direction d : Direction.values()) {
@@ -153,7 +151,8 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
             level.gameEvent(GameEvent.BLOCK_ACTIVATE, pos, GameEvent.Context.of(state));
             Predicate<LivingEntity> livingEntityPredicate = LivingEntity::isAlive;
             List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, new AABB(pos), livingEntityPredicate);
-            if(!entities.isEmpty()) entities.forEach(entity -> entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE), 12));
+            if (!entities.isEmpty())
+                entities.forEach(entity -> entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE), 12));
         }
     }
 
