@@ -31,6 +31,7 @@ public class NoMansLand {
         modEventBus.addListener(this::commonSetup);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, NMLConfig.COMMON_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, NMLConfig.CLIENT_CONFIG);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

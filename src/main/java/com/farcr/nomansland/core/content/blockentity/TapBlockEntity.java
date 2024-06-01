@@ -1,5 +1,6 @@
 package com.farcr.nomansland.core.content.blockentity;
 
+import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.content.block.HoneyCauldronBlock;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.farcr.nomansland.core.registry.NMLBlocks;
@@ -36,7 +37,7 @@ public class TapBlockEntity extends BlockEntity {
             boolean honeyConsumed = false;
             if (cauldronState.getBlock() instanceof AbstractCauldronBlock cauldron) {
                 if (!cauldron.isFull(cauldronState)) {
-                    if (tap.timeHoney < 80) spawnDrippingParticles(level, pos, state, FluidType.HONEY);
+                    if (tap.timeHoney < NMLConfig.TIME_TO_FILL_CAULDRON.get()) spawnDrippingParticles(level, pos, state, FluidType.HONEY);
                     else if (cauldronState.getBlock() instanceof HoneyCauldronBlock honeyCauldron) {
                         honeyCauldron.fillUp(cauldronState, level, cauldronPos);
                         honeyConsumed = true;

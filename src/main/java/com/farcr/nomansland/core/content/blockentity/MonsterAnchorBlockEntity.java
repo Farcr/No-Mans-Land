@@ -1,5 +1,6 @@
 package com.farcr.nomansland.core.content.blockentity;
 
+import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.content.block.MonsterAnchorBlock;
 import com.farcr.nomansland.core.events.listeners.AnchorListener;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
@@ -50,6 +51,7 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
         List<LivingEntity> deadEntities = new ArrayList<>(entityQueue.keySet());
         boolean empty = entityQueue.isEmpty();
         RandomSource random = level.random;
+        int timeBetweenResurrections = NMLConfig.TIME_BETWEEN_RESURRECTIONS.get();
 
         if (empty) {
             // Start counting ticks
@@ -89,7 +91,7 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
                     spawningPosition.z+random.nextFloat() - random.nextFloat(),
                     3, 0,0,0,0);
 
-            if (monsterAnchor.timeResurrecting%80 == 0 && i != 0) {
+            if (monsterAnchor.timeResurrecting%timeBetweenResurrections == 0 && i != 0) {
                 for (double y = 0; y <= 4; y++) {
                     if(level.getBlockState(BlockPos.containing(spawningPosition.relative(Direction.DOWN, y))).isSolid()) {
                         LivingEntity tempEntity = (LivingEntity) deadEntity.getType().create(level);
@@ -109,7 +111,7 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
                 // Select the first entity on the list
             if (i == 0) {
                 // This sound plays a bit late, so it is played before the mob is resurrected to time it perfectly
-                if (monsterAnchor.timeResurrecting <= 2) {
+                if (monsterAnchor.timeResurrecting <= timeBetweenResurrections-78) {
                     // Turn the block active on mob resurrection
                     if (!state.getValue(MonsterAnchorBlock.ACTIVE)) {
                         level.playSound(null, pos, SoundEvents.BEACON_POWER_SELECT, SoundSource.BLOCKS, 1, 0.25F);
@@ -118,7 +120,7 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
                     }
                     level.playSound(null, pos, SoundEvents.BELL_RESONATE, SoundSource.BLOCKS, 1, 0.5F);
                 }
-                if (monsterAnchor.timeResurrecting == 80) {
+                if (monsterAnchor.timeResurrecting == timeBetweenResurrections) {
                     monsterAnchor.timeResurrecting = 0;
                     // Resurrect the entity
                     LivingEntity resurrectedEntity = (LivingEntity) deadEntity.getType().create(level);

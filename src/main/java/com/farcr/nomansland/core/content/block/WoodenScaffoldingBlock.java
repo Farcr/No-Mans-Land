@@ -1,5 +1,6 @@
 package com.farcr.nomansland.core.content.block;
 
+import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -32,8 +33,8 @@ public class WoodenScaffoldingBlock extends ScaffoldingBlock {
     public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         int $$4 = getDistance(pLevel, pPos);
         BlockState $$5 = (BlockState)((BlockState)pState.setValue(DISTANCE, $$4)).setValue(BOTTOM, this.isBottom(pLevel, pPos, $$4));
-        if ((Integer)$$5.getValue(DISTANCE) == 7) {
-            if ((Integer)pState.getValue(DISTANCE) == 7) {
+        if ((Integer)$$5.getValue(DISTANCE) == NMLConfig.WOODEN_SCAFFOLDING_DISTANCE.get()+1) {
+            if ((Integer)pState.getValue(DISTANCE) == NMLConfig.WOODEN_SCAFFOLDING_DISTANCE.get()+1) {
                 FallingBlockEntity.fall(pLevel, pPos, $$5);
             } else {
                 pLevel.destroyBlock(pPos, true);

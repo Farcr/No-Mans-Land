@@ -1,5 +1,6 @@
 package com.farcr.nomansland.core.content.block;
 
+import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.content.blockentity.TapBlockEntity;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.farcr.nomansland.core.registry.NMLBlocks;
@@ -126,7 +127,7 @@ public class TapBlock extends BaseEntityBlock {
         // to allow easy changing of ticking chance depending on fluid type
 
         // The ticking chance is the chance that one tick will actually go through
-        return 0.1F;
+        return (float) (0.1F* NMLConfig.FILLING_SPEED_MULTIPLIER.get());
     }
 
     public static BlockPos getCauldronPos(Level level, BlockPos tapPos) {
@@ -150,24 +151,6 @@ public class TapBlock extends BaseEntityBlock {
         BlockState cauldronState = level.getBlockState(cauldronPos);
 
         BlockState blockBehindState = getBlockStateBehind(level, pos, state);
-
-        if (blockBehindState.getBlock() instanceof BeehiveBlock && blockBehindState.getValue(HONEY_LEVEL) == 5) {
-            boolean honeyConsumed = false;
-            if (cauldronState.getBlock() instanceof HoneyCauldronBlock cauldron) {
-                if (!cauldron.isFull(cauldronState)) {
-                    honeyConsumed = true;
-                    cauldron.fillUp(cauldronState, level, cauldronPos);
-                }
-            } else if (cauldronState.getBlock() instanceof CauldronBlock) {
-                honeyConsumed = true;
-                level.setBlockAndUpdate(cauldronPos, NMLBlocks.HONEY_CAULDRON.get().defaultBlockState());
-                level.gameEvent(GameEvent.BLOCK_CHANGE, cauldronPos, GameEvent.Context.of(cauldronState));
-            }
-            if (!honeyConsumed) return;
-            BlockPos beehivePos = pos.relative(state.getValue(FACING).getOpposite());
-            level.setBlockAndUpdate(beehivePos, blockBehindState.setValue(HONEY_LEVEL, 0));
-            level.gameEvent(GameEvent.BLOCK_CHANGE, beehivePos, GameEvent.Context.of(blockBehindState));
-        }
 
         // Set ticking speed for resin
         if(random.nextFloat() > getTickingChance()) return;

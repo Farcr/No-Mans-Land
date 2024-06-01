@@ -64,7 +64,7 @@ public class NMLBlocks {
 
     public static final DeferredBlock<Block> PALE_CHERRY_LEAVES = registerBlock("pale_cherry_leaves",
             () -> new PaleCherryLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
-    
+
     // TODO: fix sapling
 //    public static final DeferredBlock<Block> PALE_CHERRY_SAPLING = registerBlock("pale_cherry_sapling",
 //            () -> new SaplingBlock((new PaleCherryTreeGrower()), BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_SAPLING)));
@@ -465,7 +465,7 @@ public class NMLBlocks {
             () -> new HoneyCauldronBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
 
     public static final DeferredBlock<Block> SPIKE_TRAP = registerBlock("spike_trap",
-            () -> new SpikeTrapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).noOcclusion().randomTicks()));
+            () -> new SpikeTrapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).noOcclusion()));
 
 
     //Storage

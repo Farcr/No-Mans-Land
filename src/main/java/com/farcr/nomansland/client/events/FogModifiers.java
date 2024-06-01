@@ -1,6 +1,7 @@
 package com.farcr.nomansland.client.events;
 
 import com.farcr.nomansland.core.NoMansLand;
+import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.registry.NMLTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
@@ -49,7 +50,7 @@ public class FogModifiers {
     public static void everywhereFog(ViewportEvent.RenderFog event) {
             event.setCanceled(true);
             event.scaleNearPlaneDistance(0.15f);
-            if (biome == null) return;
+            if (biome == null || !NMLConfig.FOG_MODIFIERS.get()) return;
     //Deep Dark
             if (biome.is(Biomes.DEEP_DARK)) {
                 deepDarkTransition = Mth.lerp(0.005f,deepDarkTransition,1.0f);
