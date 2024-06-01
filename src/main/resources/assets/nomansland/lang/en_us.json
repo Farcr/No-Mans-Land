@@ -270,6 +270,9 @@
 
   "nomansland.subtitles.block.spike_trap.move": "Spikes move",
 
+  "death.attack.farmersdelight.spike_trap": "%1$s was impaled by spikes",
+  "death.attack.farmersdelight.spike_trap.player": "%1$s was impaled  by spikes while fighting %2$s",
+
   "tooltip.nomansland.missing_interaction_block": "§8This block is part of Mod Integration, but its required Mod is missing!",
   "tooltip.nomansland.missing_interaction_item": "§8This item is part of Mod Integration, but its required Mod is missing!"
 }
