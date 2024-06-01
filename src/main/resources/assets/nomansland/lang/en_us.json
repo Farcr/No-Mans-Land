@@ -270,8 +270,17 @@
 
   "nomansland.subtitles.block.spike_trap.move": "Spikes move",
 
-  "death.attack.nomansland.spike": "%1$s was impaled by spikes",
-  "death.attack.nomansland.spike.player": "%1$s was impaled  by spikes while fighting %2$s",
+  "death.attack.nomansland.spike_fall": "%1$s found the sharp end of spikes",
+  "death.attack.nomansland.spike_fall.player": "%1$s found the sharp end of spikes while fighting %2$s",
+
+  "death.attack.nomansland.spike_impale": "%1$s was impaled by spikes",
+  "death.attack.nomansland.spike_impale.player": "%1$s was impaled by spikes while fighting %2$s",
+
+  "death.attack.nomansland.spike_poke": "%1$s was poked to death by spikes",
+  "death.attack.nomansland.spike_poke.player": "%1$s was poked to death by spikes while fighting %2$s",
+
+  "death.attack.nomansland.spike_skewer": "%1$s was skewered by moving spikes",
+  "death.attack.nomansland.spike_skewer.player": "%1$s was skewered by moving spikes while fighting %2$s",
 
   "tooltip.nomansland.missing_interaction_block": "§8This block is part of Mod Integration, but its required Mod is missing!",
   "tooltip.nomansland.missing_interaction_item": "§8This item is part of Mod Integration, but its required Mod is missing!"

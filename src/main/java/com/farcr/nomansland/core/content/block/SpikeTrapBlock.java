@@ -37,12 +37,6 @@ import static java.lang.Boolean.FALSE;
 public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterloggedBlock {
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    protected static final VoxelShape EAST_POWERED_AABB = Block.box(0.0D, 0.0D, 0.0D, 2.0D, 16.0D, 16.0D);
-    protected static final VoxelShape WEST_POWERED_AABB = Block.box(14.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
-    protected static final VoxelShape SOUTH_POWERED_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 2.0D);
-    protected static final VoxelShape NORTH_POWERED_AABB = Block.box(0.0D, 0.0D, 14.0D, 16.0D, 16.0D, 16.0D);
-    protected static final VoxelShape UP_POWERED_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
-    protected static final VoxelShape DOWN_POWERED_AABB = Block.box(0.0D, 14.0D, 0.0D, 16.0D, 16.0D, 16.0D);
     protected static final VoxelShape EAST_AABB = Block.box(0.0D, 0.0D, 0.0D, 9.0D, 16.0D, 16.0D);
     protected static final VoxelShape WEST_AABB = Block.box(7.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
     protected static final VoxelShape SOUTH_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 9.0D);
@@ -63,16 +57,7 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        if (pState.getValue(POWERED)) {
-            return switch (pState.getValue(FACING)) {
-                default -> UP_POWERED_AABB;
-                case NORTH -> NORTH_POWERED_AABB;
-                case SOUTH -> SOUTH_POWERED_AABB;
-                case WEST -> WEST_POWERED_AABB;
-                case EAST -> EAST_POWERED_AABB;
-                case DOWN -> DOWN_POWERED_AABB;
-            };
-        } else return switch (pState.getValue(FACING)) {
+        return switch (pState.getValue(FACING)) {
             default -> UP_AABB;
             case NORTH -> NORTH_AABB;
             case SOUTH -> SOUTH_AABB;
@@ -104,7 +89,7 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean b) {
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean isMoving) {
         if (!neighborBlock.equals(state.getBlock())) {
             if (!level.isClientSide) {
                 this.checkIfPowered(level, pos, state);
@@ -128,7 +113,7 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
 
             if (!level.isClientSide) {
                 if (up && entity instanceof Player && entity.isShiftKeyDown()) return;
-                entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE), 1.5f);
+                entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_POKE), 1.5f);
             }
         }
     }
@@ -143,34 +128,43 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
         }
         if (flag && !state.getValue(POWERED)) {
             level.setBlockAndUpdate(pos, state.setValue(POWERED, true));
-            level.playSound(null, pos, NMLSounds.SPIKE_TRAP_INACTIVE.get(), SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.2F + 0.6F);
+            level.playSound(null, pos, NMLSounds.SPIKES_RETRACT.get(), SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.2F + 0.6F);
             level.gameEvent(GameEvent.BLOCK_DEACTIVATE, pos, GameEvent.Context.of(state));
         } else if (!flag && state.getValue(POWERED)) {
             level.setBlockAndUpdate(pos, state.setValue(POWERED, false));
-            level.playSound(null, pos, NMLSounds.SPIKE_TRAP_ACTIVE.get(), SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.2F + 0.6F);
+            level.playSound(null, pos, NMLSounds.SPIKES_EXTEND.get(), SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.2F + 0.6F);
             level.gameEvent(GameEvent.BLOCK_ACTIVATE, pos, GameEvent.Context.of(state));
             Predicate<LivingEntity> livingEntityPredicate = LivingEntity::isAlive;
             List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, new AABB(pos), livingEntityPredicate);
             if (!entities.isEmpty())
-                entities.forEach(entity -> entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE), 12));
+                entities.forEach(entity -> entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_IMPALE), 12));
         }
     }
 
     @Override
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallingDistance) {
         if (state.getValue(FACING) == Direction.UP) {
-            entity.causeFallDamage(fallingDistance + 2.0F, 2.0F, NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE));
+            entity.causeFallDamage(fallingDistance + 2.0F, 2.0F, NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_FALL));
         } else {
             super.fallOn(level, state, pos, entity, fallingDistance);
         }
     }
 
-    public void onPlace(BlockState newState, Level level, BlockPos pos, BlockState state, boolean p_60229_) {
-        if (!state.is(newState.getBlock())) {
-            if (!level.isClientSide) {
-                this.checkIfPowered(level, pos, newState);
-            }
+    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
+        if (!oldState.is(state.getBlock()) && !level.isClientSide) {
+
+                this.checkIfPowered(level, pos, state);
         }
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
+        if (isMoving && !state.getValue(POWERED)) {
+            Predicate<LivingEntity> livingEntityPredicate = LivingEntity::isAlive;
+            List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, new AABB(pos), livingEntityPredicate);
+            if (!entities.isEmpty())
+                entities.forEach(entity -> entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_SKEWER), 12));
+        } else super.onRemove(state, level, pos, oldState, isMoving);
     }
 
     public boolean canConnectRedstone(BlockState state, BlockGetter level, BlockPos pos, @Nullable Direction direction) {

@@ -12,7 +12,15 @@ import net.minecraft.world.level.Level;
 public class NMLDamageTypes {
 
     // TODO: actually register these
-    public static final ResourceKey<DamageType> SPIKE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(NoMansLand.MODID, "spike"));
+    public static final ResourceKey<DamageType> SPIKE_POKE = registerDamageType("spike_poke");
+    public static final ResourceKey<DamageType> SPIKE_IMPALE = registerDamageType("spike_impale");
+    public static final ResourceKey<DamageType> SPIKE_FALL = registerDamageType("spike_fall");
+    public static final ResourceKey<DamageType> SPIKE_SKEWER = registerDamageType("spike_skewer");
+
+
+    public static ResourceKey<DamageType> registerDamageType(String name) {
+        return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(NoMansLand.MODID, name));
+    }
 
     public static DamageSource getSimpleDamageSource(Level level, ResourceKey<DamageType> type) {
         return new DamageSource(level.registryAccess().registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(type));
