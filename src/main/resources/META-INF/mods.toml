@@ -42,6 +42,13 @@ ordering = "NONE"
 side = "SERVER"
 
 [[dependencies.${mod_id}]]
+modId = "biomesquisher"
+type = "required"
+versionRange = "${bs_version_range}"
+ordering = "NONE"
+side = "SERVER"
+
+[[dependencies.${mod_id}]]
 modId = "farmersdelight"
 type = "discouraged"
 versionRange = "${fd_version_range}"
