@@ -28,29 +28,29 @@
       "y": 180
     },
     "facing=north,powered=true": {
-      "model": "nomansland:block/dungeon/spike_trap_base",
+      "model": "nomansland:block/dungeon/spike_trap_off",
       "x": 90
     },
     "facing=west,powered=true": {
-      "model": "nomansland:block/dungeon/spike_trap_base",
+      "model": "nomansland:block/dungeon/spike_trap_off",
       "y": 270,
       "x": 90
     },
     "facing=east,powered=true": {
-      "model": "nomansland:block/dungeon/spike_trap_base",
+      "model": "nomansland:block/dungeon/spike_trap_off",
       "y": 90,
       "x": 90
     },
     "facing=south,powered=true": {
-      "model": "nomansland:block/dungeon/spike_trap_base",
+      "model": "nomansland:block/dungeon/spike_trap_off",
       "y": 180,
       "x": 90
     },
     "facing=up,powered=true": {
-      "model": "nomansland:block/dungeon/spike_trap_base"
+      "model": "nomansland:block/dungeon/spike_trap_off"
     },
     "facing=down,powered=true": {
-      "model": "nomansland:block/dungeon/spike_trap_base",
+      "model": "nomansland:block/dungeon/spike_trap_off",
       "x": 180,
       "y": 180
     }
