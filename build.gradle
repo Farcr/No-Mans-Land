@@ -90,6 +90,10 @@ repositories {
         name = "JEI"
         url = "https://maven.blamejared.com/"
     }
+    maven {
+        name = "Biome Squisher"
+        url = "https://repo1.maven.org/maven2"
+    }
 }
 
 dependencies {
@@ -101,11 +105,14 @@ dependencies {
     //Optional Farmer's Delight Dependency, for compat use
 //    implementation fg.deobf("curse.maven:farmers-delight-398521:${farmers_delight_version}")
 
+    implementation "dev.lukebemish.biomesquisher:biomesquisher-neoforge-1.20.2:${bs_version}"
+
     // compile against the JEI API but do not include it at runtime
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
     // at runtime, use the full JEI jar for Forge
     runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+
 //    runtimeOnly fg.deobf("curse.maven:tagtooltips-899941:${tagtooltip_version}")
 //    runtimeOnly fg.deobf("curse.maven:cyanide-541676:${cyanide_version}")
 //    runtimeOnly fg.deobf("curse.maven:appleskin-248787:4770828")
@@ -128,6 +135,8 @@ tasks.withType(ProcessResources).configureEach {
             sbl_version_range      : sbl_version_range,
             fd_version             : fd_version,
             fd_version_range       : fd_version_range,
+            bs_version             : bs_version,
+            bs_version_range       : bs_version_range,
             mod_id                 : mod_id,
             mod_name               : mod_name,
             mod_license            : mod_license,
