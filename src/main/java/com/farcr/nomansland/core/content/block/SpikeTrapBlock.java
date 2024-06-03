@@ -1,5 +1,6 @@
 package com.farcr.nomansland.core.content.block;
 
+import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.registry.NMLDamageTypes;
 import com.farcr.nomansland.core.registry.NMLSounds;
 import com.mojang.serialization.MapCodec;
@@ -112,7 +113,7 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
 
             if (!level.isClientSide) {
                 if (up && entity instanceof Player && entity.isShiftKeyDown()) return;
-                entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_POKE), 1.5f);
+                entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_POKE), NMLConfig.POKING_DAMAGE.get().floatValue());
             }
         }
     }
@@ -136,14 +137,14 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
             Predicate<LivingEntity> livingEntityPredicate = LivingEntity::isAlive;
             List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, new AABB(pos), livingEntityPredicate);
             if (!entities.isEmpty())
-                entities.forEach(entity -> entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_IMPALE), 12));
+                entities.forEach(entity -> entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_IMPALE), NMLConfig.IMPALING_DAMAGE.get().floatValue()));
         }
     }
 
     @Override
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallingDistance) {
         if (state.getValue(FACING) == Direction.UP) {
-            entity.causeFallDamage(fallingDistance + 2.0F, 2.0F, NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_FALL));
+            entity.causeFallDamage(fallingDistance + 2.0F, NMLConfig.FALLING_DAMAGE.get().floatValue(), NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_FALL));
         } else {
             super.fallOn(level, state, pos, entity, fallingDistance);
         }
@@ -157,7 +158,7 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
             Predicate<LivingEntity> livingEntityPredicate = LivingEntity::isAlive;
             List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, new AABB(pos), livingEntityPredicate);
             if (!entities.isEmpty())
-                entities.forEach(entity -> entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_SKEWER), 12));
+                entities.forEach(entity -> entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_SKEWER), NMLConfig.SKEWERING_DAMAGE.get().floatValue()));
         }
     }
 

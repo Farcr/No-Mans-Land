@@ -18,10 +18,17 @@ public class NMLConfig {
     public static final String CATEGORY_ANCHOR = "monster_anchor";
     public static ModConfigSpec.IntValue TIME_BETWEEN_RESURRECTIONS;
 
+    public static final String CATEGORY_SPIKE = "spike";
+    public static ModConfigSpec.DoubleValue POKING_DAMAGE;
+    public static ModConfigSpec.DoubleValue FALLING_DAMAGE;
+    public static ModConfigSpec.DoubleValue IMPALING_DAMAGE;
+    public static ModConfigSpec.DoubleValue SKEWERING_DAMAGE;
+    
     public static final String CATEGORY_MISC = "miscellaneous";
+    public static ModConfigSpec.IntValue WOODEN_SCAFFOLDING_DISTANCE;
+    public static ModConfigSpec.DoubleValue BURIED_SPAWNING_CHANCE;
 
     public static ModConfigSpec CLIENT_CONFIG;
-    public static ModConfigSpec.IntValue WOODEN_SCAFFOLDING_DISTANCE;
 
     public static final String CATEGORY_FOG_MODIFIERS = "fog_modifiers";
     public static ModConfigSpec.BooleanValue FOG_MODIFIERS;
@@ -40,7 +47,7 @@ public class NMLConfig {
         COMMON_BUILDER.push(CATEGORY_TAP);
         FILLING_SPEED_MULTIPLIER = COMMON_BUILDER
                 .comment("Multiplier on how fast taps should fill up cauldrons with resin. Set it to 0.0 to disable this.")
-                .defineInRange("fillingSpeedMultiplier", 1.0, 0.0, 10);
+                .defineInRange("fillingSpeedMultiplier", 1.0, 0, 10);
         TIME_TO_FILL_CAULDRON = COMMON_BUILDER
                 .comment("The time taken (in ticks) it takes to fill a cauldron with honey using a tap. 20 ticks make one second.")
                 .defineInRange("timeToFillCauldron", 80, 1, 400);
@@ -49,13 +56,33 @@ public class NMLConfig {
         COMMON_BUILDER.push(CATEGORY_ANCHOR);
         TIME_BETWEEN_RESURRECTIONS = COMMON_BUILDER
                 .comment("The time between each resurrection from a monster anchor.")
-                .defineInRange("timeBetweenResurrections", 80, 10, 400);
+                .defineInRange("timeBetweenResurrections", 80, 78, 400);
+        COMMON_BUILDER.pop();
+
+        COMMON_BUILDER.push(CATEGORY_SPIKE);
+        COMMON_BUILDER.comment("Damage is dealt in hit points. 2 hit points make 1 heart.");
+        POKING_DAMAGE = COMMON_BUILDER
+                .comment("The damage dealt to an entity as it stands on an active spike.")
+                .defineInRange("impalingDamage", 1.5, 0, 0);
+        FALLING_DAMAGE = COMMON_BUILDER
+                .comment("The added damage dealt to an entity when it falls on a spike from any height.")
+                .defineInRange("impalingDamage", 2.0, 0, 0);
+        IMPALING_DAMAGE = COMMON_BUILDER
+                .comment("The damage dealt to an entity when an adjacent spike is activated.")
+                .defineInRange("impalingDamage", 12.0, 0, 0);
+        SKEWERING_DAMAGE = COMMON_BUILDER
+                .comment("The damage dealt to an entity when an active spike is pushed into it with a piston.")
+                .defineInRange("impalingDamage", 12.0, 0, 0);
         COMMON_BUILDER.pop();
 
         COMMON_BUILDER.push(CATEGORY_MISC);
         WOODEN_SCAFFOLDING_DISTANCE = COMMON_BUILDER
                 .comment("The max distance a wooden scaffolding can be from another scaffolding.")
                 .defineInRange("woodenScaffoldingDistance", 6, 2, 20);
+        BURIED_SPAWNING_CHANCE = COMMON_BUILDER
+                .comment("The chance a buried is spawned upon brushing a remains block.")
+                .defineInRange("buriedSpawningChance", 0.05, 0, 1);
+        COMMON_BUILDER.pop();
 
 
         COMMON_CONFIG =  COMMON_BUILDER.build();
