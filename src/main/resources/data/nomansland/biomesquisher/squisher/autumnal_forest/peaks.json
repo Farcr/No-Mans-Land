@@ -1,7 +1,7 @@
 {
   "biome": "nomansland:autumnal_forest",
   "injection": {
-    "radius": 1,
+    "radius": 0.1,
     "temperature": {
       "type": "squish",
       "position": 0.025,
