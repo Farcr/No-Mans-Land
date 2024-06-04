@@ -97,7 +97,6 @@ public class NMLItems {
 
 
 
-    // TODO: re-add saplings
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(NMLBlocks.FADED_STONE_BRICKS.get());
@@ -211,11 +210,11 @@ public class NMLItems {
             event.accept(NMLBlocks.RAFFLESIA.get());
             event.accept(NMLBlocks.PEBBLES.get());
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES.get());
-//            event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
+            event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
             event.accept(NMLBlocks.AUTUMNAL_OAK_LEAVES.get());
-//            event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
+            event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
             event.accept(NMLBlocks.PALE_CHERRY_LEAVES.get());
-//            event.accept(NMLBlocks.PALE_CHERRY_SAPLING);
+            event.accept(NMLBlocks.PALE_CHERRY_SAPLING);
             event.accept(NMLBlocks.FIELD_MUSHROOM.get());
             if (ModList.get().isLoaded("farmersdelight")) {
                 event.accept(NMLItems.FIELD_MUSHROOM_COLONY.get());
@@ -241,17 +240,17 @@ public class NMLItems {
 
             event.accept(NMLBlocks.PINE_LOG.get());
             event.accept(NMLBlocks.PINE_LEAVES.get());
-//            event.accept(NMLBlocks.PINE_SAPLING);
+            event.accept(NMLBlocks.PINE_SAPLING);
 
             event.accept(NMLBlocks.MAPLE_LOG.get());
             event.accept(NMLBlocks.MAPLE_LEAVES.get());
-//            event.accept(NMLBlocks.MAPLE_SAPLING);
+            event.accept(NMLBlocks.MAPLE_SAPLING);
             event.accept(NMLBlocks.RED_MAPLE_LEAVES.get());
-//            event.accept(NMLBlocks.RED_MAPLE_SAPLING);
+            event.accept(NMLBlocks.RED_MAPLE_SAPLING);
 
             event.accept(NMLBlocks.WALNUT_LOG.get());
             event.accept(NMLBlocks.WALNUT_LEAVES.get());
-//            event.accept(NMLBlocks.WALNUT_SAPLING);
+            event.accept(NMLBlocks.WALNUT_SAPLING);
 
         }
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
