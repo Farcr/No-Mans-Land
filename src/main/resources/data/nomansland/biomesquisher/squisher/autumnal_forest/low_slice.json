@@ -35,6 +35,7 @@
   },
   "snap": true,
   "relative": {
-    "temperature": "start"
+    "temperature": "end",
+    "humidity": "end"
   }
 }
