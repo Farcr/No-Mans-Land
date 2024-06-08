@@ -1,97 +1,345 @@
 {
-	"credit": "Made by Farcr",
-	"parent": "minecraft:block/cube_all",
-	"render_type": "minecraft:cutout",
-	"textures": {
-		"0": "nomansland:block/dungeon/spike_trap_top",
-		"1": "nomansland:block/dungeon/spike_trap_side",
-		"particle": "nomansland:block/dungeon/spike_trap_top"
-	},
-	"elements": [
-		{
-			"name": "base",
-			"from": [0, 0, 0],
-			"to": [16, 2, 16],
-			"faces": {
-				"north": {"uv": [0, 14, 16, 16], "texture": "#1"},
-				"east": {"uv": [0, 14, 16, 16], "texture": "#1"},
-				"south": {"uv": [0, 14, 16, 16], "texture": "#1"},
-				"west": {"uv": [0, 14, 16, 16], "texture": "#1"},
-				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
-			}
-		},
-		{
-			"from": [0.5, 2, 2],
-			"to": [15.5, 16, 2],
-			"shade": false,
-			"faces": {
-				"north": {"uv": [0, 0, 15, 14], "texture": "#1"},
-				"south": {"uv": [0, 0, 15, 14], "texture": "#1"}
-			}
-		},
-		{
-			"from": [0.5, 2, 6],
-			"to": [15.5, 16, 6],
-			"shade": false,
-			"faces": {
-				"north": {"uv": [0, 0, 15, 14], "texture": "#1"},
-				"south": {"uv": [0, 0, 15, 14], "texture": "#1"}
-			}
-		},
-		{
-			"from": [0.5, 2, 10],
-			"to": [15.5, 16, 10],
-			"shade": false,
-			"faces": {
-				"north": {"uv": [0, 0, 15, 14], "texture": "#1"},
-				"south": {"uv": [0, 0, 15, 14], "texture": "#1"}
-			}
-		},
-		{
-			"from": [0.5, 2, 14],
-			"to": [15.5, 16, 14],
-			"shade": false,
-			"faces": {
-				"north": {"uv": [0, 0, 15, 14], "texture": "#1"},
-				"south": {"uv": [0, 0, 15, 14], "texture": "#1"}
-			}
-		},
-		{
-			"from": [14, 2, 0.5],
-			"to": [14, 16, 15.5],
-			"shade": false,
-			"faces": {
-				"east": {"uv": [0, 0, 15, 14], "texture": "#1"},
-				"west": {"uv": [0, 0, 15, 14], "texture": "#1"}
-			}
-		},
-		{
-			"from": [10, 2, 0.5],
-			"to": [10, 16, 15.5],
-			"shade": false,
-			"faces": {
-				"east": {"uv": [0, 0, 15, 14], "texture": "#1"},
-				"west": {"uv": [0, 0, 15, 14], "texture": "#1"}
-			}
-		},
-		{
-			"from": [6, 2, 0.5],
-			"to": [6, 16, 15.5],
-			"shade": false,
-			"faces": {
-				"east": {"uv": [0, 0, 15, 14], "texture": "#1"},
-				"west": {"uv": [0, 0, 15, 14], "texture": "#1"}
-			}
-		},
-		{
-			"from": [2, 2, 0.5],
-			"to": [2, 16, 15.5],
-			"shade": false,
-			"faces": {
-				"east": {"uv": [0, 0, 15, 14], "texture": "#1"},
-				"west": {"uv": [0, 0, 15, 14], "texture": "#1"}
-			}
-		}
-	]
+  "credit": "Made by Farcr",
+  "parent": "minecraft:block/cube_all",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "nomansland:block/dungeon/spike_trap_top",
+    "1": "nomansland:block/dungeon/spike_trap_side",
+    "particle": "nomansland:block/dungeon/spike_trap_top"
+  },
+  "elements": [
+    {
+      "name": "base",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        2,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            14,
+            16,
+            16
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            0,
+            14,
+            16,
+            16
+          ],
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            0,
+            14,
+            16,
+            16
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            0,
+            14,
+            16,
+            16
+          ],
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "from": [
+        0.5,
+        2,
+        2
+      ],
+      "to": [
+        15.5,
+        16,
+        2
+      ],
+      "shade": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "from": [
+        0.5,
+        2,
+        6
+      ],
+      "to": [
+        15.5,
+        16,
+        6
+      ],
+      "shade": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "from": [
+        0.5,
+        2,
+        10
+      ],
+      "to": [
+        15.5,
+        16,
+        10
+      ],
+      "shade": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "from": [
+        0.5,
+        2,
+        14
+      ],
+      "to": [
+        15.5,
+        16,
+        14
+      ],
+      "shade": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "from": [
+        14,
+        2,
+        0.5
+      ],
+      "to": [
+        14,
+        16,
+        15.5
+      ],
+      "shade": false,
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "from": [
+        10,
+        2,
+        0.5
+      ],
+      "to": [
+        10,
+        16,
+        15.5
+      ],
+      "shade": false,
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "from": [
+        6,
+        2,
+        0.5
+      ],
+      "to": [
+        6,
+        16,
+        15.5
+      ],
+      "shade": false,
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "from": [
+        2,
+        2,
+        0.5
+      ],
+      "to": [
+        2,
+        16,
+        15.5
+      ],
+      "shade": false,
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            15,
+            14
+          ],
+          "texture": "#1"
+        }
+      }
+    }
+  ]
 }

@@ -1,24 +1,24 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#P",
-        "P#"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#P",
+    "P#"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "minecraft:white_terracotta"
+      },
+      {
+        "item": "minecraft:light_gray_terracotta"
+      }
     ],
-    "key": {
-        "#": [
-        {
-            "item": "minecraft:white_terracotta"
-        },
-        {
-            "item": "minecraft:light_gray_terracotta"
-        }
-    ],
-        "P": {
-            "item": "nomansland:cobblestone_bricks"
-        }
-    },
-    "result": {
-        "item": "nomansland:mundane_tiles",
-        "count": 4
+    "P": {
+      "item": "nomansland:cobblestone_bricks"
     }
+  },
+  "result": {
+    "item": "nomansland:mundane_tiles",
+    "count": 4
+  }
 }

@@ -23,11 +23,11 @@ public class FogModifiers {
     //Made with infinite help from big man Cappin
     //This class definitely isn't the cleanest code or uses the best practices but its effects are too good to give up on.
 
+    private static final float WeatherTransition = 0;
+    public static Holder<Biome> biome;
     //TODO: add config
     private static float deepDarkTransition = 0;
     private static float FoggyBiomeTransition = 0;
-    private static float WeatherTransition = 0;
-    public static Holder<Biome> biome;
     private static int timer = 0;
 
     @SubscribeEvent
@@ -45,32 +45,29 @@ public class FogModifiers {
         //If this applies every tick your fps get fucked so this only happens once every 3 seconds
     }
 
-
     @SubscribeEvent
     public static void everywhereFog(ViewportEvent.RenderFog event) {
-            event.setCanceled(true);
-            event.scaleNearPlaneDistance(0.15f);
-            if (biome == null || !NMLConfig.FOG_MODIFIERS.get()) return;
-    //Deep Dark
-            if (biome.is(Biomes.DEEP_DARK)) {
-                deepDarkTransition = Mth.lerp(0.005f,deepDarkTransition,1.0f);
-            }
-            else {
-                deepDarkTransition = Mth.lerp(0.005f,deepDarkTransition,0.0f);
-            }
-            if (deepDarkTransition > 0.01){
-                event.scaleNearPlaneDistance(Mth.lerp(deepDarkTransition,1.0f,-2f));
-            }
-    //Dense Fog Biomes
-            if (biome.is(NMLTags.HAS_DENSE_FOG)) {
-                FoggyBiomeTransition = Mth.lerp(0.005f,FoggyBiomeTransition,1.0f);
-            }
-            else {
-                FoggyBiomeTransition = Mth.lerp(0.005f,FoggyBiomeTransition,0.0f);
-            }
-            if (FoggyBiomeTransition > 0.01){
-                event.scaleNearPlaneDistance(Mth.lerp(FoggyBiomeTransition,1.0f,-0.75f));
-            }
+        event.setCanceled(true);
+        event.scaleNearPlaneDistance(0.15f);
+        if (biome == null || !NMLConfig.FOG_MODIFIERS.get()) return;
+        //Deep Dark
+        if (biome.is(Biomes.DEEP_DARK)) {
+            deepDarkTransition = Mth.lerp(0.005f, deepDarkTransition, 1.0f);
+        } else {
+            deepDarkTransition = Mth.lerp(0.005f, deepDarkTransition, 0.0f);
+        }
+        if (deepDarkTransition > 0.01) {
+            event.scaleNearPlaneDistance(Mth.lerp(deepDarkTransition, 1.0f, -2f));
+        }
+        //Dense Fog Biomes
+        if (biome.is(NMLTags.HAS_DENSE_FOG)) {
+            FoggyBiomeTransition = Mth.lerp(0.005f, FoggyBiomeTransition, 1.0f);
+        } else {
+            FoggyBiomeTransition = Mth.lerp(0.005f, FoggyBiomeTransition, 0.0f);
+        }
+        if (FoggyBiomeTransition > 0.01) {
+            event.scaleNearPlaneDistance(Mth.lerp(FoggyBiomeTransition, 1.0f, -0.75f));
+        }
 
     }
 }

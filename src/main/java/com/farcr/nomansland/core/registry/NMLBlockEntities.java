@@ -19,7 +19,7 @@ public class NMLBlockEntities {
                             NMLBlocks.PINE_SIGN.get(), NMLBlocks.PINE_WALL_SIGN.get(),
                             NMLBlocks.MAPLE_SIGN.get(), NMLBlocks.MAPLE_WALL_SIGN.get(),
                             NMLBlocks.WALNUT_SIGN.get(), NMLBlocks.WALNUT_WALL_SIGN.get()
-                            ).build(null));
+                    ).build(null));
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<NMLSignBlockEntity>> NML_HANGING_SIGN =
             BLOCK_ENTITIES.register("nml_hanging_sign", () ->

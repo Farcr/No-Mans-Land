@@ -12,14 +12,14 @@ public class SculkAmbienceParticle extends TextureSheetParticle {
         super(level, x, y, z);
         this.setSprite(spriteSet.get(this.random.nextInt(4), 4));
         this.gravity = 0.00001F;
-        this.lifetime = (int)(64.0 / (Math.random() * 0.8 + 0.2));
-        this.roll = (float)Math.random() * ((float)Math.PI * 2F);
+        this.lifetime = (int) (64.0 / (Math.random() * 0.8 + 0.2));
+        this.roll = (float) Math.random() * ((float) Math.PI * 2F);
         this.oRoll = this.roll;
     }
 
     @Override
     protected int getLightColor(float pPartialTick) {
-        return LightTexture.pack(2,0);
+        return LightTexture.pack(2, 0);
     }
 
     public void tick() {
@@ -28,7 +28,7 @@ public class SculkAmbienceParticle extends TextureSheetParticle {
         this.zo = this.z;
         this.preMoveUpdate();
         if (!this.removed) {
-            this.yd -= (double)this.gravity;
+            this.yd -= this.gravity;
             this.move(this.xd, this.yd, this.zd);
             if (!this.removed) {
                 this.xd *= 0.9800000190734863;
@@ -44,6 +44,7 @@ public class SculkAmbienceParticle extends TextureSheetParticle {
         }
 
     }
+
     @Override
     public ParticleRenderType getRenderType() {
         return ParticleRenderType.PARTICLE_SHEET_LIT;

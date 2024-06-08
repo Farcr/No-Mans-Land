@@ -1,62 +1,62 @@
 {
-   "type": "forge:conditional",
-    "recipes": [
-      {
-        "conditions": [
-          {
-            "type": "forge:mod_loaded",
-            "modid": "farmersdelight"
-          }
-        ],
-        "recipe": {
-            "type": "minecraft:crafting_shaped",
-            "pattern": [
-                "  #",
-                "GP ",
-                "GG "
-            ],
-            "key": {
-                "#": {
-                    "item": "farmersdelight:rope"
-                },
-                "G": {
-                    "item": "minecraft:gunpowder"
-                },
-                "P": {
-                    "item": "nomansland:resin"
-                }
-            },
-            "result": {
-                "item": "nomansland:firebomb",
-                "count": 2
-            }
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
         }
-      },
-      {
-        "conditions": [],
-        "recipe": {
-            "type": "minecraft:crafting_shaped",
-            "pattern": [
-                "  #",
-                "GP ",
-                "GG "
-            ],
-            "key": {
-                "#": {
-                    "item": "minecraft:string"
-                },
-                "G": {
-                    "item": "minecraft:gunpowder"
-                },
-                "P": {
-                    "item": "nomansland:resin"
-                }
-            },
-            "result": {
-                "item": "nomansland:firebomb",
-                "count": 2
-            }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "  #",
+          "GP ",
+          "GG "
+        ],
+        "key": {
+          "#": {
+            "item": "farmersdelight:rope"
+          },
+          "G": {
+            "item": "minecraft:gunpowder"
+          },
+          "P": {
+            "item": "nomansland:resin"
+          }
+        },
+        "result": {
+          "item": "nomansland:firebomb",
+          "count": 2
         }
       }
-    ]
-  }
+    },
+    {
+      "conditions": [],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "  #",
+          "GP ",
+          "GG "
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:string"
+          },
+          "G": {
+            "item": "minecraft:gunpowder"
+          },
+          "P": {
+            "item": "nomansland:resin"
+          }
+        },
+        "result": {
+          "item": "nomansland:firebomb",
+          "count": 2
+        }
+      }
+    }
+  ]
+}

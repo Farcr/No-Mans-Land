@@ -21,11 +21,13 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
+
 public class RemainsBlock extends BrushableBlock {
 
     public RemainsBlock(Block pTurnsInto, Properties pProperties, SoundEvent pBrushSound, SoundEvent pBrushCompletedSound) {
         super(pTurnsInto, pBrushSound, pBrushCompletedSound, pProperties);
     }
+
     @Override
     public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         BlockEntity blockentity = pLevel.getBlockEntity(pPos);
@@ -47,7 +49,7 @@ public class RemainsBlock extends BrushableBlock {
         if (a < 1) {
             BuriedEntity buried = NMLEntities.BURIED.get().create(pLevel);
             if (buried != null) {
-                buried.moveTo((double) pPos.getX() + 0.5D, (double) pPos.getY(), (double) pPos.getZ() + 0.5D, 0.0F, 0.0F);
+                buried.moveTo((double) pPos.getX() + 0.5D, pPos.getY(), (double) pPos.getZ() + 0.5D, 0.0F, 0.0F);
                 pLevel.addFreshEntity(buried);
                 buried.spawnAnim();
             }
@@ -63,7 +65,7 @@ public class RemainsBlock extends BrushableBlock {
         if (a < 5) {
             BuriedEntity buried = NMLEntities.BURIED.get().create(pLevel);
             if (buried != null) {
-                buried.moveTo((double) pPos.getX() + 0.5D, (double) pPos.getY(), (double) pPos.getZ() + 0.5D, 0.0F, 0.0F);
+                buried.moveTo((double) pPos.getX() + 0.5D, pPos.getY(), (double) pPos.getZ() + 0.5D, 0.0F, 0.0F);
                 pLevel.addFreshEntity(buried);
                 buried.spawnAnim();
             }

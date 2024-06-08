@@ -1,54 +1,54 @@
-modLoader="javafml" #mandatory
-loaderVersion="${loader_version_range}" #mandatory
-license="${mod_license}"
+modLoader = "javafml" #mandatory
+loaderVersion = "${loader_version_range}" #mandatory
+license = "${mod_license}"
 #issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
 [[mods]] #mandatory
-modId="${mod_id}" #mandatory
-version="${mod_version}" #mandatory
-displayName="${mod_name}" #mandatory
+modId = "${mod_id}" #mandatory
+version = "${mod_version}" #mandatory
+displayName = "${mod_name}" #mandatory
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
-logoFile="nomansland.png" #optional
+logoFile = "nomansland.png" #optional
 #credits="" #optional
-authors="${mod_authors}" #optional
-description='''${mod_description}'''
+authors = "${mod_authors}" #optional
+description = '''${mod_description}'''
 [[mixins]]
-config="${mod_id}.mixins.json"
+config = "${mod_id}.mixins.json"
 
-[[dependencies.${mod_id}]] #optional
-modId="neoforge" #mandatory
+[[dependencies.${ mod_id }]] #optional
+modId = "neoforge" #mandatory
 # The type of the dependency. Can be one of "required", "optional", "incompatible" or "discouraged" (case insensitive).
 # 'required' requires the mod to exist, 'optional' does not
 # 'incompatible' will prevent the game from loading when the mod exists, and 'discouraged' will show a warning
-type="required" #mandatory
+type = "required" #mandatory
 # reason="..."
 # The version range of the dependency
-versionRange="${neo_version_range}" #mandatory
-ordering="NONE"
-side="BOTH"
+versionRange = "${neo_version_range}" #mandatory
+ordering = "NONE"
+side = "BOTH"
 
-[[dependencies.${mod_id}]]
-modId="minecraft"
-type="required"
-versionRange="${minecraft_version_range}"
-ordering="NONE"
-side="BOTH"
+[[dependencies.${ mod_id }]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"
 
-[[dependencies.${mod_id}]]
+[[dependencies.${ mod_id }]]
 modId = "smartbrainlib"
 type = "required"
 versionRange = "${sbl_version_range}"
 ordering = "NONE"
 side = "SERVER"
 
-[[dependencies.${mod_id}]]
+[[dependencies.${ mod_id }]]
 modId = "biomesquisher"
 type = "required"
 versionRange = "${bs_version_range}"
 ordering = "NONE"
 side = "SERVER"
 
-[[dependencies.${mod_id}]]
+[[dependencies.${ mod_id }]]
 modId = "farmersdelight"
 type = "discouraged"
 versionRange = "${fd_version_range}"

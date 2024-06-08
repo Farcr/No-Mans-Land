@@ -13,7 +13,7 @@ public class HangingSignBlock extends CeilingHangingSignBlock {
     }
 
     @Override
-    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState){
+    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
         return new NMLHangingSignBlockEntity(pPos, pState);
     }
 }

@@ -40,15 +40,76 @@ import static net.minecraft.world.level.block.BeehiveBlock.HONEY_LEVEL;
 
 public class TapBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-
-    public enum FluidType {
-        RESIN,
-        HONEY
-    }
+    private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
+            Direction.NORTH, Block.box(6.0D, 3.0D, 10.0D, 10.0D, 8.0D, 16.0D),
+            Direction.SOUTH, Block.box(6.0D, 3.0D, 0.0D, 10.0D, 8.0D, 6.0D),
+            Direction.WEST, Block.box(10.0D, 3.0D, 6.0D, 16.0D, 8.0D, 10.0D),
+            Direction.EAST, Block.box(0.0D, 3.0D, 6.0D, 6.0D, 8.0D, 10.0D)
+    ));
 
     public TapBlock(Properties pProperties) {
         super(pProperties);
 
+    }
+
+    public static VoxelShape getShape(BlockState state) {
+        return AABBS.get(state.getValue(FACING));
+    }
+
+    public static BlockState getBlockStateBehind(Level level, BlockPos pos, BlockState state) {
+        BlockState levelBlockStateBehind = level.getBlockState(pos.relative(state.getValue(FACING).getOpposite()));
+        return levelBlockStateBehind;
+    }
+
+    public static BlockPos getCauldronPos(Level level, BlockPos tapPos) {
+        // Get the position and state of the closest cauldron downwards (up to a max of 3 blocks down)
+        for (int i = 0; i <= 3; i++) {
+            BlockState blockUnder = level.getBlockState(tapPos.relative(Direction.DOWN, i));
+            if (blockUnder.getBlock() instanceof AbstractCauldronBlock) {
+                return tapPos.relative(Direction.DOWN, i);
+            }
+        }
+        return null;
+    }
+
+    public static void spawnDrippingParticles(Level level, BlockPos pos, BlockState state, FluidType fluidType) {
+        double x = pos.getX();
+        double y = pos.getY();
+        double z = pos.getZ();
+        switch (state.getValue(FACING)) {
+            case NORTH: {
+                x = (double) pos.getX() + 0.5;
+                y = (double) ((float) (pos.getY() + 1) - 0.75F) - 0.09;
+                z = (double) pos.getZ() + 0.68;
+                break;
+            }
+            case SOUTH: {
+                x = (double) pos.getX() + 0.5;
+                y = (double) ((float) (pos.getY() + 1) - 0.75F) - 0.09;
+                z = (double) pos.getZ() + 0.32;
+                break;
+            }
+            case EAST: {
+                x = (double) pos.getX() + 0.32;
+                y = (double) ((float) (pos.getY() + 1) - 0.75F) - 0.09;
+                z = (double) pos.getZ() + 0.5;
+                break;
+            }
+            case WEST: {
+                x = (double) pos.getX() + 0.68;
+                y = (double) ((float) (pos.getY() + 1) - 0.75F) - 0.09;
+                z = (double) pos.getZ() + 0.5;
+                break;
+            }
+        }
+        ParticleOptions particle = null;
+        if (fluidType.equals(FluidType.RESIN)) particle = NMLParticleTypes.RESIN_DROPLET.get();
+        if (fluidType.equals(FluidType.HONEY)) particle = ParticleTypes.FALLING_HONEY;
+        if (level.isClientSide) level.addParticle(particle, x, y, z, 0.0, 0.0, 0.0);
+        else {
+            ServerLevel serverLevel = (ServerLevel) level;
+            serverLevel.sendParticles(particle, x, y, z, 1, 0, 0, 0, 0);
+        }
     }
 
     @Override
@@ -80,19 +141,8 @@ public class TapBlock extends BaseEntityBlock {
         builder.add(FACING);
     }
 
-    private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
-            Direction.NORTH, Block.box(6.0D, 3.0D, 10.0D, 10.0D, 8.0D, 16.0D),
-            Direction.SOUTH, Block.box(6.0D, 3.0D, 0.0D, 10.0D, 8.0D, 6.0D),
-            Direction.WEST, Block.box(10.0D, 3.0D, 6.0D, 16.0D, 8.0D, 10.0D),
-            Direction.EAST, Block.box(0.0D, 3.0D, 6.0D, 6.0D, 8.0D, 10.0D)
-    ));
-
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return getShape(state);
-    }
-
-    public static VoxelShape getShape(BlockState state) {
-        return AABBS.get(state.getValue(FACING));
     }
 
     @Override
@@ -112,11 +162,6 @@ public class TapBlock extends BaseEntityBlock {
         return state.setValue(FACING, pRotation.rotate(state.getValue(FACING)));
     }
 
-    public static BlockState getBlockStateBehind(Level level, BlockPos pos, BlockState state) {
-        BlockState levelBlockStateBehind = level.getBlockState(pos.relative(state.getValue(FACING).getOpposite()));
-        return levelBlockStateBehind;
-    }
-
     @Override
     public boolean isRandomlyTicking(BlockState state) {
         return true;
@@ -127,18 +172,7 @@ public class TapBlock extends BaseEntityBlock {
         // to allow easy changing of ticking chance depending on fluid type
 
         // The ticking chance is the chance that one tick will actually go through
-        return (float) (0.1F* NMLConfig.FILLING_SPEED_MULTIPLIER.get());
-    }
-
-    public static BlockPos getCauldronPos(Level level, BlockPos tapPos) {
-        // Get the position and state of the closest cauldron downwards (up to a max of 3 blocks down)
-        for (int i = 0; i <= 3; i++) {
-            BlockState blockUnder = level.getBlockState(tapPos.relative(Direction.DOWN, i));
-            if (blockUnder.getBlock() instanceof AbstractCauldronBlock) {
-                return tapPos.relative(Direction.DOWN, i);
-            }
-        }
-        return null;
+        return (float) (0.1F * NMLConfig.FILLING_SPEED_MULTIPLIER.get());
     }
 
     @Override
@@ -147,13 +181,13 @@ public class TapBlock extends BaseEntityBlock {
 
         // Ensure there is a cauldron within 3 blocks under the tap
         BlockPos cauldronPos = getCauldronPos(level, pos);
-        if(cauldronPos == null) return;
+        if (cauldronPos == null) return;
         BlockState cauldronState = level.getBlockState(cauldronPos);
 
         BlockState blockBehindState = getBlockStateBehind(level, pos, state);
 
         // Set ticking speed for resin
-        if(random.nextFloat() > getTickingChance()) return;
+        if (random.nextFloat() > getTickingChance()) return;
 
         // Fill selected cauldron with resin
         tryResin(blockBehindState, cauldronState, cauldronPos, level);
@@ -167,46 +201,6 @@ public class TapBlock extends BaseEntityBlock {
                 level.setBlockAndUpdate(cauldronPos, NMLBlocks.RESIN_CAULDRON.get().defaultBlockState());
                 level.gameEvent(GameEvent.BLOCK_CHANGE, cauldronPos, GameEvent.Context.of(cauldronState));
             }
-        }
-    }
-
-    public static void spawnDrippingParticles(Level level, BlockPos pos, BlockState state, FluidType fluidType) {
-        double x = pos.getX();
-        double y = pos.getY();
-        double z = pos.getZ();
-        switch (state.getValue(FACING)) {
-            case NORTH: {
-                x = (double)pos.getX()+0.5;
-                y = (double)((float)(pos.getY()+1) - 0.75F) - 0.09;
-                z = (double)pos.getZ()+0.68;
-                break;
-            }
-            case SOUTH: {
-                x = (double)pos.getX()+0.5;
-                y = (double)((float)(pos.getY()+1) - 0.75F) - 0.09;
-                z = (double)pos.getZ()+0.32;
-                break;
-            }
-            case EAST: {
-                x = (double)pos.getX()+0.32;
-                y = (double)((float)(pos.getY()+1) - 0.75F) - 0.09;
-                z = (double)pos.getZ()+0.5;
-                break;
-            }
-            case WEST: {
-                x = (double)pos.getX()+0.68;
-                y = (double)((float)(pos.getY()+1) - 0.75F) - 0.09;
-                z = (double)pos.getZ()+0.5;
-                break;
-            }
-        }
-        ParticleOptions particle = null;
-        if (fluidType.equals(FluidType.RESIN)) particle = (ParticleOptions) NMLParticleTypes.RESIN_DROPLET.get();
-        if (fluidType.equals(FluidType.HONEY)) particle = ParticleTypes.FALLING_HONEY;
-        if (level.isClientSide) level.addParticle(particle, x, y, z, 0.0, 0.0, 0.0);
-        else {
-            ServerLevel serverLevel = (ServerLevel) level;
-            serverLevel.sendParticles(particle, x, y, z, 1, 0,0,0,0);
         }
     }
 
@@ -225,7 +219,6 @@ public class TapBlock extends BaseEntityBlock {
         }
     }
 
-
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
@@ -235,5 +228,10 @@ public class TapBlock extends BaseEntityBlock {
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntity) {
         return createTickerHelper(blockEntity, NMLBlockEntities.TAP.get(), TapBlockEntity::tick);
+    }
+
+    public enum FluidType {
+        RESIN,
+        HONEY
     }
 }

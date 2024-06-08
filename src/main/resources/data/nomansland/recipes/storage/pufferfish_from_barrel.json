@@ -1,13 +1,13 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "item": "nomansland:pufferfish_barrel"
-        }
-    ],
-    "result": {
-        "item": "minecraft:pufferfish",
-        "count": 9
-    },
-    "group": "fish_barrels"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "nomansland:pufferfish_barrel"
+    }
+  ],
+  "result": {
+    "item": "minecraft:pufferfish",
+    "count": 9
+  },
+  "group": "fish_barrels"
 }

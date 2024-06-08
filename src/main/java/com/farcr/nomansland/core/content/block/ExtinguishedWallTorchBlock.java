@@ -18,18 +18,19 @@ import net.minecraft.world.phys.BlockHitResult;
 public class ExtinguishedWallTorchBlock extends WallTorchBlock {
 
     public final Block mainBlock;
+
     public ExtinguishedWallTorchBlock(SimpleParticleType pFlameParticle, Properties pProperties, Block mainBlock) {
         super(pFlameParticle, pProperties);
         this.mainBlock = mainBlock;
     }
 
     @Override
-    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {}
+    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
+    }
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (pPlayer.getItemInHand(pHand).is(NMLTags.FIRESTARTERS))
-        {
+        if (pPlayer.getItemInHand(pHand).is(NMLTags.FIRESTARTERS)) {
             pLevel.playSound(pPlayer,
                     pPlayer.getX(),
                     pPlayer.getY(),

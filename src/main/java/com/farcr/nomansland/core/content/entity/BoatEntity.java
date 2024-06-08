@@ -17,13 +17,14 @@ import net.minecraft.world.level.block.Block;
 
 import java.util.function.IntFunction;
 
-public class BoatEntity extends Boat{
+public class BoatEntity extends Boat {
     public static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(Boat.class, EntityDataSerializers.INT);
+
     public BoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
-    public BoatEntity(Level level, double pX, double pY,double pZ) {
+    public BoatEntity(Level level, double pX, double pY, double pZ) {
         this(NMLEntities.BOAT.get(), level);
         this.setPos(pX, pY, pZ);
         this.xo = pX;
@@ -33,11 +34,11 @@ public class BoatEntity extends Boat{
 
     @Override
     public Item getDropItem() {
-       return switch(getModVariant()) {
-           case PINE -> NMLItems.PINE_BOAT.get();
-           case MAPLE -> NMLItems.MAPLE_BOAT.get();
-           case WALNUT -> NMLItems.WALNUT_BOAT.get();
-       };
+        return switch (getModVariant()) {
+            case PINE -> NMLItems.PINE_BOAT.get();
+            case MAPLE -> NMLItems.MAPLE_BOAT.get();
+            case WALNUT -> NMLItems.WALNUT_BOAT.get();
+        };
     }
 
     public void setVariant(Type pVariant) {
@@ -63,20 +64,29 @@ public class BoatEntity extends Boat{
         }
     }
 
-    public static enum Type implements StringRepresentable {
+    public enum Type implements StringRepresentable {
         PINE(NMLBlocks.PINE_PLANKS.get(), "pine"),
         MAPLE(NMLBlocks.MAPLE_PLANKS.get(), "maple"),
         WALNUT(NMLBlocks.WALNUT_PLANKS.get(), "walnut");
 
-        private final String name;
-        private final Block planks;
         public static final StringRepresentable.EnumCodec<BoatEntity.Type> CODEC = StringRepresentable.fromEnum(BoatEntity.Type::values);
         private static final IntFunction<Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
+        private final String name;
+        private final Block planks;
 
-        private Type(Block pPlanks, String pName) {
+        Type(Block pPlanks, String pName) {
             this.name = pName;
             this.planks = pPlanks;
         }
+
+        public static BoatEntity.Type byId(int pId) {
+            return BY_ID.apply(pId);
+        }
+
+        public static BoatEntity.Type byName(String pName) {
+            return CODEC.byName(pName, PINE);
+        }
+
         public String getSerializedName() {
             return this.name;
         }
@@ -91,13 +101,6 @@ public class BoatEntity extends Boat{
 
         public String toString() {
             return this.name;
-        }
-        public static BoatEntity.Type byId(int pId) {
-            return BY_ID.apply(pId);
-        }
-
-        public static BoatEntity.Type byName(String pName) {
-            return CODEC.byName(pName, PINE);
         }
     }
 }

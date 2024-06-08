@@ -11,6 +11,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class FlowerbedBlock extends BushBlock {
     protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
+
     public FlowerbedBlock(Properties pProperties) {
         super(pProperties);
     }

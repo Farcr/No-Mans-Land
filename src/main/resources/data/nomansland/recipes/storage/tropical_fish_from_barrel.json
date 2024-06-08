@@ -1,13 +1,13 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "item": "nomansland:tropical_fish_barrel"
-        }
-    ],
-    "result": {
-        "item": "minecraft:tropical_fish",
-        "count": 9
-    },
-    "group": "fish_barrels"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "nomansland:tropical_fish_barrel"
+    }
+  ],
+  "result": {
+    "item": "minecraft:tropical_fish",
+    "count": 9
+  },
+  "group": "fish_barrels"
 }

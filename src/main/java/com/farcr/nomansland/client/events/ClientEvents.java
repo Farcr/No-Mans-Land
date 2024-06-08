@@ -43,11 +43,13 @@ public class ClientEvents {
     public static void registerModels(ModelEvent.RegisterAdditional event) {
         event.register(new ResourceLocation(NoMansLand.MODID, "entity/firebomb"));
     }
+
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(NMLBlockEntities.NML_SIGN.get(), SignRenderer::new);
         event.registerBlockEntityRenderer(NMLBlockEntities.NML_HANGING_SIGN.get(), HangingSignRenderer::new);
     }
+
     @SubscribeEvent
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
 
@@ -63,6 +65,7 @@ public class ClientEvents {
         event.registerLayerDefinition(NMLModelLayers.MOOSE_LAYER, MooseModel::createBodyLayer);
         event.registerLayerDefinition(NMLModelLayers.BURIED_LAYER, BuriedModel::createBodyLayer);
     }
+
     @SubscribeEvent
     public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(NMLParticleTypes.PALE_CHERRY_LEAVES.get(), pSprites

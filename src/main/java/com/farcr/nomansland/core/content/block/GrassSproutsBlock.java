@@ -48,6 +48,7 @@ public class GrassSproutsBlock extends BushBlock implements BonemealableBlock, I
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, LivingEntity pPlacer, ItemStack pStack) {
         pLevel.setBlock(pPos, pState, 3);
     }
+
     @Override
     public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
         BlockState blockstate = Blocks.SHORT_GRASS.defaultBlockState();

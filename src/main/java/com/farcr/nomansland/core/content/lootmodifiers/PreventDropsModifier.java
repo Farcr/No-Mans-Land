@@ -27,7 +27,8 @@ public class PreventDropsModifier extends LootModifier {
 
     @Override
     public @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        if(context.getParamOrNull(LootContextParams.THIS_ENTITY) instanceof Monster monster && monster.wasExperienceConsumed() && monster.isPersistenceRequired() && preventDrops) generatedLoot.clear();
+        if (context.getParamOrNull(LootContextParams.THIS_ENTITY) instanceof Monster monster && monster.wasExperienceConsumed() && monster.isPersistenceRequired() && preventDrops)
+            generatedLoot.clear();
 
         return generatedLoot;
     }

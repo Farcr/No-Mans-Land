@@ -1,6 +1,5 @@
 {
   "type": "forge:conditional",
-
   "recipes": [
     {
       "conditions": [
@@ -10,26 +9,26 @@
         }
       ],
       "recipe": {
-          "type": "farmersdelight:cutting",
-          "ingredients": [
-            {
-              "item": "nomansland:maple_log"
-            }
-          ],
-          "result": [
-            {
-              "item": "nomansland:stripped_maple_log"
-            },
-            {
-              "item": "farmersdelight:tree_bark"
-            }
-          ],
-          "sound": "minecraft:item.axe.strip",
-          "tool": {
-            "type": "farmersdelight:tool_action",
-            "action": "axe_strip"
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "nomansland:maple_log"
           }
+        ],
+        "result": [
+          {
+            "item": "nomansland:stripped_maple_log"
+          },
+          {
+            "item": "farmersdelight:tree_bark"
+          }
+        ],
+        "sound": "minecraft:item.axe.strip",
+        "tool": {
+          "type": "farmersdelight:tool_action",
+          "action": "axe_strip"
         }
+      }
     }
   ]
 }

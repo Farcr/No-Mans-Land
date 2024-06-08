@@ -58,7 +58,7 @@ public class MonsterAnchorBlock extends BaseEntityBlock {
         MonsterAnchorBlockEntity anchor = (MonsterAnchorBlockEntity) level.getBlockEntity(pos);
         if (anchor.entityQueue.size() >= 20) return 15;
         if (anchor.entityQueue.size() == 1) return 1;
-        return 15 / (anchor.entityQueue.size() - 1)*anchor.entityQueue.size();
+        return 15 / (anchor.entityQueue.size() - 1) * anchor.entityQueue.size();
     }
 
     public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {
@@ -67,7 +67,7 @@ public class MonsterAnchorBlock extends BaseEntityBlock {
 
     @Override
     public int getExpDrop(BlockState state, LevelReader level, RandomSource randomSource, BlockPos pos, int fortuneLevel, int silkTouchLevel) {
-        return 15+randomSource.nextInt(15)+randomSource.nextInt(15);
+        return 15 + randomSource.nextInt(15) + randomSource.nextInt(15);
     }
 
     @Nullable

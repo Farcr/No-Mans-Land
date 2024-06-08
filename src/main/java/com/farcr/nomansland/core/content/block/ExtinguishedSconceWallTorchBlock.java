@@ -13,7 +13,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.Map;
 
-public class ExtinguishedSconceWallTorchBlock extends ExtinguishedWallTorchBlock{
+public class ExtinguishedSconceWallTorchBlock extends ExtinguishedWallTorchBlock {
     private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
             Direction.NORTH, Block.box(5.5D, 1.5D, 11.0D, 10.5D, 13.5D, 16.0D),
             Direction.SOUTH, Block.box(5.5D, 1.5D, 0.0D, 10.5D, 13.5D, 5.0D),
@@ -25,11 +25,12 @@ public class ExtinguishedSconceWallTorchBlock extends ExtinguishedWallTorchBlock
         super(pFlameParticle, pProperties, mainBlock);
     }
 
+    public static VoxelShape getShape(BlockState pState) {
+        return AABBS.get(pState.getValue(FACING));
+    }
+
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return getShape(pState);
-    }
-    public static VoxelShape getShape(BlockState pState) {
-        return AABBS.get(pState.getValue(FACING));
     }
 }

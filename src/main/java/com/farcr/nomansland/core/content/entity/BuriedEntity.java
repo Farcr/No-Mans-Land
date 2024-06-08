@@ -58,6 +58,15 @@ public class BuriedEntity extends Monster implements SmartBrainOwner<BuriedEntit
         super(pEntityType, pLevel);
     }
 
+    private static boolean isHoldingBow(LivingEntity livingEntity) {
+        return livingEntity.isHolding(stack -> stack.getItem() instanceof BowItem);
+    }
+
+    public static AttributeSupplier.Builder createAttributes() {
+        return Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 1.0F).add(Attributes.KNOCKBACK_RESISTANCE, -0.1F)
+                .add(Attributes.MAX_HEALTH, 14.0F);
+    }
+
     //Brain Logic
     @Override
     protected Brain.Provider<?> brainProvider() {
@@ -113,15 +122,6 @@ public class BuriedEntity extends Monster implements SmartBrainOwner<BuriedEntit
         tickBrain(this);
     }
 
-    private static boolean isHoldingBow(LivingEntity livingEntity) {
-        return livingEntity.isHolding(stack -> stack.getItem() instanceof BowItem);
-    }
-
-    public static AttributeSupplier.Builder createAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 1.0F).add(Attributes.KNOCKBACK_RESISTANCE, -0.1F)
-                .add(Attributes.MAX_HEALTH, 14.0F);
-    }
-
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty,
                                         MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
         SpawnGroupData spawngroupdata = super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
@@ -130,12 +130,12 @@ public class BuriedEntity extends Monster implements SmartBrainOwner<BuriedEntit
         return spawngroupdata;
     }
 
-    private void setVariant(BuriedVariant variant) {
-        this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
-    }
-
     public BuriedVariant getVariant() {
         return BuriedVariant.byId(this.getTypeVariant() & 255);
+    }
+
+    private void setVariant(BuriedVariant variant) {
+        this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
     }
 
     private int getTypeVariant() {

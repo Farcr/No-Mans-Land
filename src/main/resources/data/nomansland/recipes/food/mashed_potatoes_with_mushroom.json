@@ -1,27 +1,27 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "tag": "nomansland:edible_mushrooms"
-        },
-        {
-            "tag": "nomansland:edible_mushrooms"
-        },
-        {
-            "tag": "nomansland:edible_mushrooms"
-        },
-        {
-            "item": "minecraft:baked_potato"
-        },
-        {
-            "item": "minecraft:baked_potato"
-        },
-        {
-            "item": "minecraft:bowl"
-        }
-    ],
-    "result": {
-        "item": "nomansland:mashed_potatoes_with_mushrooms",
-        "count": 1
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "nomansland:edible_mushrooms"
+    },
+    {
+      "tag": "nomansland:edible_mushrooms"
+    },
+    {
+      "tag": "nomansland:edible_mushrooms"
+    },
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "item": "minecraft:bowl"
     }
+  ],
+  "result": {
+    "item": "nomansland:mashed_potatoes_with_mushrooms",
+    "count": 1
+  }
 }

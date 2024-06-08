@@ -152,7 +152,7 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
 
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
         if (!oldState.is(state.getBlock()) && !level.isClientSide) {
-                this.checkIfPowered(level, pos, state);
+            this.checkIfPowered(level, pos, state);
         }
         if (isMoving && !state.getValue(POWERED)) {
             Predicate<LivingEntity> livingEntityPredicate = LivingEntity::isAlive;

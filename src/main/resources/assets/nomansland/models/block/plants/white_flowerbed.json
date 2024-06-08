@@ -1,6 +1,6 @@
 {
   "parent": "nomansland:block/flowerbed_base",
-	"render_type": "minecraft:cutout",
+  "render_type": "minecraft:cutout",
   "textures": {
     "1": "nomansland:block/plants/white_flowerbed",
     "particle": "nomansland:item/white_flowerbed_inventory"

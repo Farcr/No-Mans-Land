@@ -12,7 +12,7 @@ public class WallHangingSignBlock extends net.minecraft.world.level.block.WallHa
     }
 
     @Override
-    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState){
+    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
         return new NMLHangingSignBlockEntity(pPos, pState);
     }
 }

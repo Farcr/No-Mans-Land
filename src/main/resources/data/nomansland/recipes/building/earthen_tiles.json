@@ -1,24 +1,24 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#P",
-        "P#"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#P",
+    "P#"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "minecraft:terracotta"
+      },
+      {
+        "item": "minecraft:red_terracotta"
+      }
     ],
-    "key": {
-        "#": [
-            {
-                "item": "minecraft:terracotta"
-            },
-            {
-                "item": "minecraft:red_terracotta"
-            }
-        ],
-        "P": {
-            "item": "minecraft:packed_mud"
-        }
-    },
-    "result": {
-        "item": "nomansland:earthen_tiles",
-        "count": 4
+    "P": {
+      "item": "minecraft:packed_mud"
     }
+  },
+  "result": {
+    "item": "nomansland:earthen_tiles",
+    "count": 4
+  }
 }

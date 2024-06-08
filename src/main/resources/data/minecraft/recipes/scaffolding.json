@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "###",
-        "# #",
-        "# #"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:bamboo"
-        }
-    },
-    "result": {
-        "item": "minecraft:scaffolding",
-        "count": 6
-    },
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bamboo"
+    }
+  },
+  "result": {
+    "item": "minecraft:scaffolding",
+    "count": 6
+  },
   "show_notification": true
 }

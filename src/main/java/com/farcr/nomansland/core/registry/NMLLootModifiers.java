@@ -5,7 +5,6 @@ import com.farcr.nomansland.core.content.lootmodifiers.AddLootTableModifier;
 import com.farcr.nomansland.core.content.lootmodifiers.PreventDropsModifier;
 import com.mojang.serialization.Codec;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 

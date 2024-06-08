@@ -20,19 +20,15 @@ import java.util.stream.Stream;
 
 public class NMLBoatRenderer extends BoatRenderer {
     private final Map<BoatEntity.Type, Pair<ResourceLocation, ListModel<Boat>>> boatResources;
+
     public NMLBoatRenderer(EntityRendererProvider.Context pContext, boolean pChestBoat) {
         super(pContext, pChestBoat);
         this.boatResources = Stream.of(BoatEntity.Type.values()).collect(ImmutableMap.toImmutableMap(type -> type,
-                type -> Pair.of(new ResourceLocation(NoMansLand.MODID, getTextureLocation(type, pChestBoat)),this.createBoatModel(pContext, type, pChestBoat))));
-    }
-    private static String getTextureLocation(BoatEntity.Type pType, boolean pChestBoat) {
-        return pChestBoat ? "textures/entity/chest_boat/" + pType.getName() + ".png" : "textures/entity/boat/" + pType.getName() + ".png";
+                type -> Pair.of(new ResourceLocation(NoMansLand.MODID, getTextureLocation(type, pChestBoat)), this.createBoatModel(pContext, type, pChestBoat))));
     }
 
-    private ListModel<Boat> createBoatModel(EntityRendererProvider.Context pContext, BoatEntity.Type pType, boolean pChestBoat) {
-        ModelLayerLocation modellayerlocation = pChestBoat ? NMLBoatRenderer.createChestBoatModelName(pType) : NMLBoatRenderer.createBoatModelName(pType);
-        ModelPart modelpart = pContext.bakeLayer(modellayerlocation);
-        return pChestBoat ? new ChestBoatModel(modelpart) : new BoatModel(modelpart);
+    private static String getTextureLocation(BoatEntity.Type pType, boolean pChestBoat) {
+        return pChestBoat ? "textures/entity/chest_boat/" + pType.getName() + ".png" : "textures/entity/boat/" + pType.getName() + ".png";
     }
 
     public static ModelLayerLocation createBoatModelName(BoatEntity.Type pType) {
@@ -47,10 +43,16 @@ public class NMLBoatRenderer extends BoatRenderer {
         return new ModelLayerLocation(new ResourceLocation(NoMansLand.MODID, pPath), pModel);
     }
 
+    private ListModel<Boat> createBoatModel(EntityRendererProvider.Context pContext, BoatEntity.Type pType, boolean pChestBoat) {
+        ModelLayerLocation modellayerlocation = pChestBoat ? NMLBoatRenderer.createChestBoatModelName(pType) : NMLBoatRenderer.createBoatModelName(pType);
+        ModelPart modelpart = pContext.bakeLayer(modellayerlocation);
+        return pChestBoat ? new ChestBoatModel(modelpart) : new BoatModel(modelpart);
+    }
+
     public Pair<ResourceLocation, ListModel<Boat>> getModelWithLocation(Boat boat) {
-        if(boat instanceof BoatEntity modBoat) {
+        if (boat instanceof BoatEntity modBoat) {
             return this.boatResources.get(modBoat.getModVariant());
-        } else if(boat instanceof ChestBoatEntity modChestBoatEntity) {
+        } else if (boat instanceof ChestBoatEntity modChestBoatEntity) {
             return this.boatResources.get(modChestBoatEntity.getModVariant());
         } else {
             return null;

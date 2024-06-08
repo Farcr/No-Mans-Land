@@ -13,9 +13,7 @@ public class NMLBiomes {
     public static final ResourceKey<Biome> OLD_GROWTH_FOREST = createKey("old_growth_forest");
 
 
-
-
-    public static final ResourceKey<Biome> createKey(String name) {
+    public static ResourceKey<Biome> createKey(String name) {
         return ResourceKey.create(Registries.BIOME, new ResourceLocation(NoMansLand.MODID, name));
     }
 }

@@ -1,7 +1,6 @@
 {
   "feature": "nomansland:flower_patches/flowers_autumnal_fields",
   "placement": [
-    
     {
       "type": "minecraft:rarity_filter",
       "chance": 3

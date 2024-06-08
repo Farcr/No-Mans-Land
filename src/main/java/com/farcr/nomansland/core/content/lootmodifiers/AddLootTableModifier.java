@@ -31,13 +31,14 @@ public class AddLootTableModifier extends LootModifier {
 
     @Override
     public @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-            LootTable extraTable = context.getResolver().getLootTable(this.lootTable);
-            ServerLevel level = context.getLevel();
-            Objects.requireNonNull(generatedLoot);
-            extraTable.getRandomItemsRaw(context, LootTable.createStackSplitter(level, generatedLoot::add));
+        LootTable extraTable = context.getResolver().getLootTable(this.lootTable);
+        ServerLevel level = context.getLevel();
+        Objects.requireNonNull(generatedLoot);
+        extraTable.getRandomItemsRaw(context, LootTable.createStackSplitter(level, generatedLoot::add));
 
         return generatedLoot;
     }
+
     public Codec<? extends IGlobalLootModifier> codec() {
         return CODEC.get();
     }

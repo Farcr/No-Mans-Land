@@ -38,6 +38,7 @@ public class SpreadPatchFeature extends Feature<RandomPatchConfiguration> {
         }
         return true;
     }
+
     // determines if we should place at a block - if it's not yet loaded, we don't place anything there!!
     // also does some dithering so that it'll smoothly fade if it encounters an unloaded chunk,
     // rather than a really ugly hard cutoff
@@ -60,10 +61,6 @@ public class SpreadPatchFeature extends Feature<RandomPatchConfiguration> {
         }
 
         // totally arbitrary threshold
-        if (successfulTries > 5) {
-            return true;
-        }
-
-        return false;
+        return successfulTries > 5;
     }
 }

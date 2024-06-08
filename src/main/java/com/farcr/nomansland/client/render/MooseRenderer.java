@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+
 public class MooseRenderer extends MobRenderer<MooseEntity, MooseModel<MooseEntity>> {
     public MooseRenderer(EntityRendererProvider.Context pContext) {
         super(pContext, new MooseModel<>(pContext.bakeLayer(NMLModelLayers.MOOSE_LAYER)), 2f);
@@ -22,7 +23,7 @@ public class MooseRenderer extends MobRenderer<MooseEntity, MooseModel<MooseEnti
     @Override
     public void render(MooseEntity pEntity, float pEntityYaw, float pPartialTicks, PoseStack pMatrixStack,
                        MultiBufferSource pBuffer, int pPackedLight) {
-        if(pEntity.isBaby()) {
+        if (pEntity.isBaby()) {
             pMatrixStack.scale(0.5f, 0.5f, 0.5f);
         }
 

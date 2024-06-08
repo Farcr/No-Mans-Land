@@ -1,19 +1,19 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#A",
-        "A#"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:quartz"
-        },
-        "A": {
-            "item": "minecraft:granite"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#A",
+    "A#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:quartz"
     },
-    "result": {
-        "item": "minecraft:calcite",
-        "count": 3
+    "A": {
+      "item": "minecraft:granite"
     }
+  },
+  "result": {
+    "item": "minecraft:calcite",
+    "count": 3
+  }
 }

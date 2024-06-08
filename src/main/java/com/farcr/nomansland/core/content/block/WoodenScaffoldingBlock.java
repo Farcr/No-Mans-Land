@@ -16,9 +16,32 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
 
 public class WoodenScaffoldingBlock extends ScaffoldingBlock {
-//    public static final IntegerProperty DISTANCE = BlockStateProperties.STABILITY_DISTANCE;
+    //    public static final IntegerProperty DISTANCE = BlockStateProperties.STABILITY_DISTANCE;
     public WoodenScaffoldingBlock(Properties pProperties) {
         super(pProperties);
+    }
+
+    public static int getDistance(BlockGetter pLevel, BlockPos pPos) {
+        BlockPos.MutableBlockPos blockpos$mutableblockpos = pPos.mutable().move(Direction.DOWN);
+        BlockState blockstate = pLevel.getBlockState(blockpos$mutableblockpos);
+        int i = 7;
+        if (blockstate.is(NMLBlocks.WOODEN_SCAFFOLDING.get())) {
+            i = blockstate.getValue(DISTANCE);
+        } else if (blockstate.isFaceSturdy(pLevel, blockpos$mutableblockpos, Direction.UP)) {
+            return 0;
+        }
+
+        for (Direction direction : Direction.Plane.HORIZONTAL) {
+            BlockState blockstate1 = pLevel.getBlockState(blockpos$mutableblockpos.setWithOffset(pPos, direction));
+            if (blockstate1.is(NMLBlocks.WOODEN_SCAFFOLDING.get())) {
+                i = Math.min(i, blockstate1.getValue(DISTANCE) + 1);
+                if (i == 1) {
+                    break;
+                }
+            }
+        }
+
+        return i;
     }
 
     @Override
@@ -26,15 +49,15 @@ public class WoodenScaffoldingBlock extends ScaffoldingBlock {
         BlockPos $$1 = pContext.getClickedPos();
         Level $$2 = pContext.getLevel();
         int $$3 = getDistance($$2, $$1);
-        return (BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue(WATERLOGGED, $$2.getFluidState($$1).getType() == Fluids.WATER)).setValue(DISTANCE, $$3)).setValue(BOTTOM, this.isBottom($$2, $$1, $$3));
+        return this.defaultBlockState().setValue(WATERLOGGED, $$2.getFluidState($$1).getType() == Fluids.WATER).setValue(DISTANCE, $$3).setValue(BOTTOM, this.isBottom($$2, $$1, $$3));
     }
 
     @Override
     public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         int $$4 = getDistance(pLevel, pPos);
-        BlockState $$5 = (BlockState)((BlockState)pState.setValue(DISTANCE, $$4)).setValue(BOTTOM, this.isBottom(pLevel, pPos, $$4));
-        if ((Integer)$$5.getValue(DISTANCE) == NMLConfig.WOODEN_SCAFFOLDING_DISTANCE.get()+1) {
-            if ((Integer)pState.getValue(DISTANCE) == NMLConfig.WOODEN_SCAFFOLDING_DISTANCE.get()+1) {
+        BlockState $$5 = pState.setValue(DISTANCE, $$4).setValue(BOTTOM, this.isBottom(pLevel, pPos, $$4));
+        if ($$5.getValue(DISTANCE) == NMLConfig.WOODEN_SCAFFOLDING_DISTANCE.get() + 1) {
+            if (pState.getValue(DISTANCE) == NMLConfig.WOODEN_SCAFFOLDING_DISTANCE.get() + 1) {
                 FallingBlockEntity.fall(pLevel, pPos, $$5);
             } else {
                 pLevel.destroyBlock(pPos, true);
@@ -53,28 +76,5 @@ public class WoodenScaffoldingBlock extends ScaffoldingBlock {
     // more like isTwink
     private boolean isBottom(BlockGetter pLevel, BlockPos pPos, int pDistance) {
         return pDistance > 0 && !pLevel.getBlockState(pPos.below()).is(this);
-    }
-
-    public static int getDistance(BlockGetter pLevel, BlockPos pPos) {
-        BlockPos.MutableBlockPos blockpos$mutableblockpos = pPos.mutable().move(Direction.DOWN);
-        BlockState blockstate = pLevel.getBlockState(blockpos$mutableblockpos);
-        int i = 7;
-        if (blockstate.is(NMLBlocks.WOODEN_SCAFFOLDING.get())) {
-            i = blockstate.getValue(DISTANCE);
-        } else if (blockstate.isFaceSturdy(pLevel, blockpos$mutableblockpos, Direction.UP)) {
-            return 0;
-        }
-
-        for(Direction direction : Direction.Plane.HORIZONTAL) {
-            BlockState blockstate1 = pLevel.getBlockState(blockpos$mutableblockpos.setWithOffset(pPos, direction));
-            if (blockstate1.is(NMLBlocks.WOODEN_SCAFFOLDING.get())) {
-                i = Math.min(i, blockstate1.getValue(DISTANCE) + 1);
-                if (i == 1) {
-                    break;
-                }
-            }
-        }
-
-        return i;
     }
 }

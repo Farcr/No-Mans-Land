@@ -13,6 +13,7 @@ public class MissingIntegrationBlock extends BlockItem {
     public MissingIntegrationBlock(Block pBlock, Properties pProperties) {
         super(pBlock, pProperties);
     }
+
     @Override
     public void appendHoverText(ItemStack pStack, Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("tooltip.nomansland.missing_interaction_block"));

@@ -27,45 +27,6 @@ public class AnchorListener implements GameEventListener {
         this.positionSource = pPositionSource;
     }
 
-    public PositionSource getListenerSource() {
-        return this.positionSource;
-    }
-
-    public int getListenerRadius() {
-        return 5;
-    }
-
-    public DeliveryMode getDeliveryMode() {
-        return DeliveryMode.BY_DISTANCE;
-    }
-
-    public boolean handleGameEvent(ServerLevel level, GameEvent event, GameEvent.Context context, Vec3 pos) {
-        if (event == GameEvent.ENTITY_DIE) {
-            Entity entity = context.sourceEntity();
-            if (entity instanceof Monster deadEntity) {
-                if (!deadEntity.wasExperienceConsumed()) {
-                    // Add the entity to the dead entity list
-                    this.positionSource.getPosition(level).ifPresent((sourcePos) -> {
-                        MonsterAnchorBlockEntity monsterAnchorBlockEntity = (MonsterAnchorBlockEntity) level.getBlockEntity(BlockPos.containing(sourcePos));
-                        monsterAnchorBlockEntity.entityQueue.put(deadEntity, deadEntity.getPosition(0));
-                    });
-
-                    // Stop the mob from dropping experience and loot
-                    deadEntity.skipDropExperience();
-                    deadEntity.setPersistenceRequired();
-
-                    AABB boundingBox = deadEntity.getBoundingBox();
-                    processPoints(level, boundingBox, 0.2D).forEach(point -> {
-                        level.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_EMBERS.get(), point.x, point.y, point.z, 1, 0,0,0, 0);
-                    });
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-
     // Get all the points on all the faces of a bounding box depending on the resolution and process them
     public static List<Vec3> processPoints(ServerLevel level, AABB boundingBox, double step) {
         double minX = boundingBox.minX;
@@ -125,5 +86,43 @@ public class AnchorListener implements GameEventListener {
             }
         }
         return pointList;
+    }
+
+    public PositionSource getListenerSource() {
+        return this.positionSource;
+    }
+
+    public int getListenerRadius() {
+        return 5;
+    }
+
+    public DeliveryMode getDeliveryMode() {
+        return DeliveryMode.BY_DISTANCE;
+    }
+
+    public boolean handleGameEvent(ServerLevel level, GameEvent event, GameEvent.Context context, Vec3 pos) {
+        if (event == GameEvent.ENTITY_DIE) {
+            Entity entity = context.sourceEntity();
+            if (entity instanceof Monster deadEntity) {
+                if (!deadEntity.wasExperienceConsumed()) {
+                    // Add the entity to the dead entity list
+                    this.positionSource.getPosition(level).ifPresent((sourcePos) -> {
+                        MonsterAnchorBlockEntity monsterAnchorBlockEntity = (MonsterAnchorBlockEntity) level.getBlockEntity(BlockPos.containing(sourcePos));
+                        monsterAnchorBlockEntity.entityQueue.put(deadEntity, deadEntity.getPosition(0));
+                    });
+
+                    // Stop the mob from dropping experience and loot
+                    deadEntity.skipDropExperience();
+                    deadEntity.setPersistenceRequired();
+
+                    AABB boundingBox = deadEntity.getBoundingBox();
+                    processPoints(level, boundingBox, 0.2D).forEach(point -> {
+                        level.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_EMBERS.get(), point.x, point.y, point.z, 1, 0, 0, 0, 0);
+                    });
+                }
+            }
+            return true;
+        }
+        return false;
     }
 }

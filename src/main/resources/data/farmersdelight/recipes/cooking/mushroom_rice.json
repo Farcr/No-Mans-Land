@@ -1,44 +1,41 @@
 {
   "type": "forge:conditional",
-
   "recipes": [
     {
       "conditions": [
-      {
-        "type": "forge:mod_loaded",
-        "modid": "farmersdelight"
-      }
-    ],
-    "recipe":
-    {
-      "type": "farmersdelight:cooking",
-      "cookingtime": 200,
-      "experience": 1.0,
-      "ingredients": [
         {
-          "item": "minecraft:brown_mushroom"
-        },
-        {
-          "item": "nomansland:field_mushroom"
-        },
-        {
-          "tag": "forge:crops/rice"
-        },
-        [
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
           {
-            "item": "minecraft:carrot"
+            "item": "minecraft:brown_mushroom"
           },
           {
-            "item": "minecraft:potato"
-          }
-        ]
-      ],
-      "recipe_book_tab": "meals",
-      "result": {
-        "item": "farmersdelight:mushroom_rice"
+            "item": "nomansland:field_mushroom"
+          },
+          {
+            "tag": "forge:crops/rice"
+          },
+          [
+            {
+              "item": "minecraft:carrot"
+            },
+            {
+              "item": "minecraft:potato"
+            }
+          ]
+        ],
+        "recipe_book_tab": "meals",
+        "result": {
+          "item": "farmersdelight:mushroom_rice"
+        }
       }
     }
-  }
-]
-
+  ]
 }

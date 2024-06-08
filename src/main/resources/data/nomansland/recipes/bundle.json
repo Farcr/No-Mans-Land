@@ -1,21 +1,21 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        " # ",
-        "L L",
-        "LLL"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:string"
-        },
-        "L": {
-            "item": "minecraft:leather"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "L L",
+    "LLL"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:string"
     },
-    "result": {
-        "item": "minecraft:bundle",
-        "count": 1
-    },
-    "group": "bundle"
+    "L": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "item": "minecraft:bundle",
+    "count": 1
+  },
+  "group": "bundle"
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/coral_fan",
-	"render_type": "minecraft:cutout",
+  "render_type": "minecraft:cutout",
   "textures": {
     "fan": "nomansland:block/plants/rafflesia"
   }

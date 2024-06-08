@@ -32,10 +32,11 @@ import static com.farcr.nomansland.core.events.listeners.AnchorListener.processP
 
 public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventListener.Holder<AnchorListener> {
 
-    private final AnchorListener anchorListener;
     public final LinkedHashMap<LivingEntity, Vec3> entityQueue;
+    private final AnchorListener anchorListener;
     public int timeResurrecting;
     public int timeIdle;
+
     public MonsterAnchorBlockEntity(BlockPos pos, BlockState state) {
         super(NMLBlockEntities.MONSTER_ANCHOR.get(), pos, state);
         this.anchorListener = new AnchorListener(state, new BlockPositionSource(pos));
@@ -51,7 +52,7 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
         List<LivingEntity> deadEntities = new ArrayList<>(entityQueue.keySet());
         boolean empty = entityQueue.isEmpty();
         RandomSource random = level.random;
-        int timeBetweenResurrections = NMLConfig.TIME_BETWEEN_RESURRECTIONS.get();
+        int timeBetweenResurrections = NMLConfig.TICKS_BETWEEN_RESURRECTIONS.get();
 
         if (empty) {
             // Start counting ticks
@@ -60,10 +61,11 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
 
             // Deactivate the spawner after 10 seconds of inactivity
             if (state.getValue(MonsterAnchorBlock.ACTIVE)) {
-                    level.playSound(null, pos, SoundEvents.BEACON_DEACTIVATE, SoundSource.BLOCKS, 1, 0.75F);
-                    level.setBlockAndUpdate(pos, state.setValue(MonsterAnchorBlock.ACTIVE, false));
-                    level.gameEvent(GameEvent.BLOCK_DEACTIVATE, pos, GameEvent.Context.of(state));
-            } else if (monsterAnchor.timeIdle%5 == 0) serverLevel.sendParticles(ParticleTypes.SMOKE, pos.getX()+0.5+random.nextInt(0,3)*0.01 - random.nextInt(0,3)*0.01, pos.getY()+0.2, pos.getZ()+0.5+random.nextInt(0,3)*0.01 - random.nextInt(0,3)*0.01, 3, 0,0,0,0);
+                level.playSound(null, pos, SoundEvents.BEACON_DEACTIVATE, SoundSource.BLOCKS, 1, 0.75F);
+                level.setBlockAndUpdate(pos, state.setValue(MonsterAnchorBlock.ACTIVE, false));
+                level.gameEvent(GameEvent.BLOCK_DEACTIVATE, pos, GameEvent.Context.of(state));
+            } else if (monsterAnchor.timeIdle % 5 == 0)
+                serverLevel.sendParticles(ParticleTypes.SMOKE, pos.getX() + 0.5 + random.nextInt(0, 3) * 0.01 - random.nextInt(0, 3) * 0.01, pos.getY() + 0.2, pos.getZ() + 0.5 + random.nextInt(0, 3) * 0.01 - random.nextInt(0, 3) * 0.01, 3, 0, 0, 0, 0);
             return;
         }
 
@@ -75,9 +77,9 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
 
         // While it is resurrecting, these particles will always spawn with a particle count proportional to the progress of the current resurrection, thus playing in a loop
         serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get(),
-                pos.getX()+random.nextFloat(),
-                pos.getY()+random.nextFloat(),
-                pos.getZ()+random.nextFloat(),
+                pos.getX() + random.nextFloat(),
+                pos.getY() + random.nextFloat(),
+                pos.getZ() + random.nextFloat(),
                 monsterAnchor.timeResurrecting, 0, 0, 0, 0.0);
 
         // Loop through all the entities in the queue
@@ -85,21 +87,22 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
             LivingEntity deadEntity = deadEntities.get(i);
             Vec3 spawningPosition = entityQueue.get(deadEntity);
 
-            if (level.random.nextFloat() <= 0.1F) serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get(),
-                    spawningPosition.x+random.nextFloat() - random.nextFloat(),
-                    spawningPosition.y+random.nextFloat() - random.nextFloat(),
-                    spawningPosition.z+random.nextFloat() - random.nextFloat(),
-                    3, 0,0,0,0);
+            if (level.random.nextFloat() <= 0.1F)
+                serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get(),
+                        spawningPosition.x + random.nextFloat() - random.nextFloat(),
+                        spawningPosition.y + random.nextFloat() - random.nextFloat(),
+                        spawningPosition.z + random.nextFloat() - random.nextFloat(),
+                        3, 0, 0, 0, 0);
 
-            if (monsterAnchor.timeResurrecting%timeBetweenResurrections == 0 && i != 0) {
+            if (monsterAnchor.timeResurrecting % timeBetweenResurrections == 0 && i != 0) {
                 for (double y = 0; y <= 4; y++) {
-                    if(level.getBlockState(BlockPos.containing(spawningPosition.relative(Direction.DOWN, y))).isSolid()) {
+                    if (level.getBlockState(BlockPos.containing(spawningPosition.relative(Direction.DOWN, y))).isSolid()) {
                         LivingEntity tempEntity = (LivingEntity) deadEntity.getType().create(level);
-                        if (tempEntity!= null) tempEntity.moveTo(spawningPosition);
+                        if (tempEntity != null) tempEntity.moveTo(spawningPosition);
                         if (tempEntity instanceof Zombie zombie) zombie.setBaby(deadEntity.isBaby());
-                        double finalY = y-1.1D;
+                        double finalY = y - 1.1D;
                         processPoints(serverLevel, tempEntity.getBoundingBox(), 0.2D).forEach(point -> {
-                            serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_EMBERS.get(), point.x, spawningPosition.y-finalY, point.z, 1, 0,0,0, 0);
+                            serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_EMBERS.get(), point.x, spawningPosition.y - finalY, point.z, 1, 0, 0, 0, 0);
                         });
                         tempEntity.remove(Entity.RemovalReason.DISCARDED);
                         break;
@@ -108,10 +111,10 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
             }
 
 
-                // Select the first entity on the list
+            // Select the first entity on the list
             if (i == 0) {
                 // This sound plays a bit late, so it is played before the mob is resurrected to time it perfectly
-                if (monsterAnchor.timeResurrecting <= timeBetweenResurrections-78) {
+                if (monsterAnchor.timeResurrecting <= timeBetweenResurrections - 78) {
                     // Turn the block active on mob resurrection
                     if (!state.getValue(MonsterAnchorBlock.ACTIVE)) {
                         level.playSound(null, pos, SoundEvents.BEACON_POWER_SELECT, SoundSource.BLOCKS, 1, 0.25F);
@@ -130,7 +133,7 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
                         level.addFreshEntity(resurrectedEntity);
                         entityQueue.remove(deadEntity);
                         for (double y = 0; y <= 4; y++) {
-                            if(level.getBlockState(BlockPos.containing(spawningPosition.relative(Direction.DOWN, y))).isSolid()) {
+                            if (level.getBlockState(BlockPos.containing(spawningPosition.relative(Direction.DOWN, y))).isSolid()) {
                                 double finalY = y - 1.1D;
                                 processPoints(serverLevel, resurrectedEntity.getBoundingBox(), 0.4D).forEach(point -> {
                                     serverLevel.sendParticles((ParticleOptions) NMLParticleTypes.MALEVOLENT_FLAME.get(), point.x, spawningPosition.y - finalY, point.z, 1, 0, 0, 0, 0.1);

@@ -17,11 +17,11 @@ public enum BuriedVariant {
         this.id = id;
     }
 
-    public int getId() {
-        return this.id;
-    }
-
     public static BuriedVariant byId(int id) {
         return BY_ID[id % BY_ID.length];
+    }
+
+    public int getId() {
+        return this.id;
     }
 }

@@ -19,7 +19,7 @@ public class SurfaceMushroomBlock extends MushroomBlock {
     }
 
     protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        if(ModList.get().isLoaded("farmersdelight")) {
+        if (ModList.get().isLoaded("farmersdelight")) {
 //            return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND) || pState.is(ModBlocks.ORGANIC_COMPOST.get());
         }
         return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND);

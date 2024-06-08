@@ -34,7 +34,7 @@ public class PathBlock extends DirtPathBlock {
     }
 
     public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
-        if (this.hasGravity == true && FallingBlock.isFree(pLevel.getBlockState(pPos.below()))) {
+        if (this.hasGravity && FallingBlock.isFree(pLevel.getBlockState(pPos.below()))) {
             pLevel.scheduleTick(pPos, this, 2);
         }
     }
@@ -44,7 +44,7 @@ public class PathBlock extends DirtPathBlock {
             pLevel.scheduleTick(pCurrentPos, this, 1);
         }
 
-        if (this.hasGravity == true && FallingBlock.isFree(pLevel.getBlockState(pCurrentPos.below()))) {
+        if (this.hasGravity && FallingBlock.isFree(pLevel.getBlockState(pCurrentPos.below()))) {
             pLevel.scheduleTick(pCurrentPos, this, 2);
         }
 

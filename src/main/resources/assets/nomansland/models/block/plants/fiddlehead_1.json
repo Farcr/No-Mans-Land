@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/tinted_cross",
-	"render_type": "minecraft:cutout",
+  "render_type": "minecraft:cutout",
   "textures": {
     "cross": "nomansland:block/plants/fiddlehead_1"
   }

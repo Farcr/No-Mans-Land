@@ -11,6 +11,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class SimpleFoliageBlock extends BushBlock {
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
+
     public SimpleFoliageBlock(Properties pProperties) {
         super(pProperties);
     }

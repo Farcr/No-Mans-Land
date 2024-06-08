@@ -1,16 +1,14 @@
 {
   "type": "forge:conditional",
-
   "recipes": [
     {
       "conditions": [
-      {
-        "type": "forge:mod_loaded",
-        "modid": "farmersdelight"
-      }
-    ],
-    "recipe":
-    {
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
+      ],
+      "recipe": {
         "type": "farmersdelight:cooking",
         "container": {
           "item": "minecraft:bowl"
@@ -30,7 +28,6 @@
           "item": "minecraft:mushroom_stew"
         }
       }
-  }
-]
-
+    }
+  ]
 }

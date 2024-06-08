@@ -1,24 +1,24 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#S#",
-        "SCS",
-        "#S#"
-    ],
-    "key": {
-        "#": {
-            "item": "nomansland:polished_stone"
-        },
-        "S": {
-            "item": "minecraft:chiseled_stone_bricks"
-        },
-        "C": {
-            "item": "minecraft:compass"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#S#",
+    "SCS",
+    "#S#"
+  ],
+  "key": {
+    "#": {
+      "item": "nomansland:polished_stone"
     },
-    "result": {
-        "item": "minecraft:lodestone",
-        "count": 1
+    "S": {
+      "item": "minecraft:chiseled_stone_bricks"
     },
-    "group": "lodestone"
+    "C": {
+      "item": "minecraft:compass"
+    }
+  },
+  "result": {
+    "item": "minecraft:lodestone",
+    "count": 1
+  },
+  "group": "lodestone"
 }

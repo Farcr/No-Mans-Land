@@ -1,18 +1,18 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "###",
-        "###",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:salmon"
-        }
-    },
-    "result": {
-        "item": "nomansland:salmon_barrel",
-        "count": 1
-    },
-    "group": "fish_barrels"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:salmon"
+    }
+  },
+  "result": {
+    "item": "nomansland:salmon_barrel",
+    "count": 1
+  },
+  "group": "fish_barrels"
 }

@@ -1,23 +1,23 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#G#",
-        "GFG",
-        "#G#"
-    ],
-    "key": {
-        "#": {
-            "tag": "minecraft:logs"
-        },
-        "G": {
-            "item": "nomansland:resin"
-        },
-        "F": {
-            "item": "minecraft:furnace"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#G#",
+    "GFG",
+    "#G#"
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:logs"
     },
-    "result": {
-        "item": "minecraft:smoker",
-        "count": 1
+    "G": {
+      "item": "nomansland:resin"
+    },
+    "F": {
+      "item": "minecraft:furnace"
     }
+  },
+  "result": {
+    "item": "minecraft:smoker",
+    "count": 1
+  }
 }

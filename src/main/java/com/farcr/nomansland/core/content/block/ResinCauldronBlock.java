@@ -38,14 +38,16 @@ public class ResinCauldronBlock extends LayeredCauldronBlock {
     protected boolean canReceiveStalactiteDrip(Fluid pFluid) {
         return false;
     }
+
     @Override
     public void handlePrecipitation(BlockState pState, Level pLevel, BlockPos pPos, Biome.Precipitation pPrecipitation) {
     }
+
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack resin = new ItemStack(NMLItems.RESIN.get(), level.random.nextInt(2, 5));
-        if(!player.addItem(resin)) {
-            if(!player.isCreative()) player.drop(resin, false);
+        if (!player.addItem(resin)) {
+            if (!player.isCreative()) player.drop(resin, false);
         }
         player.awardStat(Stats.USE_CAULDRON);
         lowerFillLevel(state, level, pos);

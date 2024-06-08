@@ -1,18 +1,18 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "###",
-        "###",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:pufferfish"
-        }
-    },
-    "result": {
-        "item": "nomansland:pufferfish_barrel",
-        "count": 1
-    },
-    "group": "fish_barrels"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:pufferfish"
+    }
+  },
+  "result": {
+    "item": "nomansland:pufferfish_barrel",
+    "count": 1
+  },
+  "group": "fish_barrels"
 }

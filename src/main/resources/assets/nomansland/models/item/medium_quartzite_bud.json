@@ -1,11 +1,15 @@
-  {
+{
   "parent": "item/amethyst_bud",
   "textures": {
     "layer0": "nomansland:block/underground/medium_quartzite_bud"
   },
   "display": {
     "fixed": {
-      "translation": [ 0, 6, 0 ]
+      "translation": [
+        0,
+        6,
+        0
+      ]
     }
   }
 }

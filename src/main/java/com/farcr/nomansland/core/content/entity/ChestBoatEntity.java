@@ -21,11 +21,12 @@ import java.util.function.IntFunction;
 public class ChestBoatEntity extends ChestBoat {
 
     public static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(Boat.class, EntityDataSerializers.INT);
+
     public ChestBoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
-    public ChestBoatEntity(Level level, double pX, double pY,double pZ) {
+    public ChestBoatEntity(Level level, double pX, double pY, double pZ) {
         this(NMLEntities.CHEST_BOAT.get(), level);
         this.setPos(pX, pY, pZ);
         this.xo = pX;
@@ -35,7 +36,7 @@ public class ChestBoatEntity extends ChestBoat {
 
     @Override
     public Item getDropItem() {
-        return switch(getModVariant()) {
+        return switch (getModVariant()) {
             case PINE -> NMLItems.PINE_CHEST_BOAT.get();
             case MAPLE -> NMLItems.MAPLE_CHEST_BOAT.get();
             case WALNUT -> NMLItems.WALNUT_CHEST_BOAT.get();
@@ -65,21 +66,30 @@ public class ChestBoatEntity extends ChestBoat {
         }
     }
 
-    public static enum Type implements StringRepresentable {
+    public enum Type implements StringRepresentable {
         PINE(NMLBlocks.PINE_PLANKS.get(), "pine"),
         MAPLE(NMLBlocks.MAPLE_PLANKS.get(), "maple"),
         WALNUT(NMLBlocks.WALNUT_PLANKS.get(), "maple");
 
 
-        private final String name;
-        private final Block planks;
         public static final StringRepresentable.EnumCodec<ChestBoatEntity.Type> CODEC = StringRepresentable.fromEnum(ChestBoatEntity.Type::values);
         private static final IntFunction<ChestBoatEntity.Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
+        private final String name;
+        private final Block planks;
 
-        private Type(Block pPlanks, String pName) {
+        Type(Block pPlanks, String pName) {
             this.name = pName;
             this.planks = pPlanks;
         }
+
+        public static ChestBoatEntity.Type byId(int pId) {
+            return BY_ID.apply(pId);
+        }
+
+        public static ChestBoatEntity.Type byName(String pName) {
+            return CODEC.byName(pName, PINE);
+        }
+
         public String getSerializedName() {
             return this.name;
         }
@@ -94,13 +104,6 @@ public class ChestBoatEntity extends ChestBoat {
 
         public String toString() {
             return this.name;
-        }
-        public static ChestBoatEntity.Type byId(int pId) {
-            return BY_ID.apply(pId);
-        }
-
-        public static ChestBoatEntity.Type byName(String pName) {
-            return CODEC.byName(pName, PINE);
         }
     }
 }

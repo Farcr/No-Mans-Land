@@ -1,4 +1,4 @@
 {
-    "parent": "minecraft:block/vine",
-	"render_type": "minecraft:cutout"
+  "parent": "minecraft:block/vine",
+  "render_type": "minecraft:cutout"
 }

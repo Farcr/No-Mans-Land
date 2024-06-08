@@ -26,10 +26,10 @@ public class SconceWallTorchBlock extends WallTorchBlock {
             Direction.EAST, Block.box(0.0D, 1.5D, 5.5D, 5.0D, 13.5D, 10.5D)
     ));
 
-    @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return getShape(pState);
+    public SconceWallTorchBlock(SimpleParticleType pFlameParticle, Properties pProperties) {
+        super(pFlameParticle, pProperties);
     }
+
     public static VoxelShape getShape(BlockState pState) {
         return AABBS.get(pState.getValue(FACING));
     }
@@ -37,16 +37,18 @@ public class SconceWallTorchBlock extends WallTorchBlock {
     //TODO:PARTICLES ARE FUCKED UP!!!!!
 
     @Override
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        return getShape(pState);
+    }
+
+    @Override
     public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
         Direction direction = pState.getValue(FACING);
-        double d0 = (double)pPos.getX() + 0.45D;
-        double d1 = (double)pPos.getY() + 0.7D;
-        double d2 = (double)pPos.getZ() + 0.5D;
+        double d0 = (double) pPos.getX() + 0.45D;
+        double d1 = (double) pPos.getY() + 0.7D;
+        double d2 = (double) pPos.getZ() + 0.5D;
         Direction direction1 = direction.getOpposite();
-        pLevel.addParticle(ParticleTypes.SMOKE, d0 + 0.27D * (double)direction1.getStepX(), d1 + 0.22D, d2 + 0.27D * (double)direction1.getStepZ(), 0.0D, 0.0D, 0.0D);
-        pLevel.addParticle(this.flameParticle, d0 + 0.27D * (double)direction1.getStepX(), d1 + 0.22D, d2 + 0.27D * (double)direction1.getStepZ(), 0.0D, 0.0D, 0.0D);
-    }
-    public SconceWallTorchBlock(SimpleParticleType pFlameParticle, Properties pProperties) {
-        super(pFlameParticle, pProperties);
+        pLevel.addParticle(ParticleTypes.SMOKE, d0 + 0.27D * (double) direction1.getStepX(), d1 + 0.22D, d2 + 0.27D * (double) direction1.getStepZ(), 0.0D, 0.0D, 0.0D);
+        pLevel.addParticle(this.flameParticle, d0 + 0.27D * (double) direction1.getStepX(), d1 + 0.22D, d2 + 0.27D * (double) direction1.getStepZ(), 0.0D, 0.0D, 0.0D);
     }
 }

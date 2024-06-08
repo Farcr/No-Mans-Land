@@ -1,19 +1,19 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#C",
-        "C#"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:diorite"
-        },
-        "C": {
-            "item": "minecraft:cobblestone"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#C",
+    "C#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diorite"
     },
-    "result": {
-        "item": "minecraft:andesite",
-        "count": 4
+    "C": {
+      "item": "minecraft:cobblestone"
     }
+  },
+  "result": {
+    "item": "minecraft:andesite",
+    "count": 4
+  }
 }

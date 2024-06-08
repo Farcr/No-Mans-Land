@@ -1,19 +1,19 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#C",
-        "C#"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:quartz"
-        },
-        "C": {
-            "item": "minecraft:diorite"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#C",
+    "C#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:quartz"
     },
-    "result": {
-        "item": "minecraft:granite",
-        "count": 3
+    "C": {
+      "item": "minecraft:diorite"
     }
+  },
+  "result": {
+    "item": "minecraft:granite",
+    "count": 3
+  }
 }

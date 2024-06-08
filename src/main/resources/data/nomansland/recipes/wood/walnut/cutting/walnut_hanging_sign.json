@@ -1,6 +1,5 @@
 {
   "type": "forge:conditional",
-
   "recipes": [
     {
       "conditions": [
@@ -10,22 +9,22 @@
         }
       ],
       "recipe": {
-          "type": "farmersdelight:cutting",
-          "ingredients": [
-            {
-              "item": "nomansland:walnut_hanging_sign"
-            }
-          ],
-          "result": [
-            {
-              "item": "nomansland:walnut_planks"
-            }
-          ],
-          "tool": {
-            "type": "farmersdelight:tool_action",
-            "action": "axe_dig"
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "nomansland:walnut_hanging_sign"
           }
+        ],
+        "result": [
+          {
+            "item": "nomansland:walnut_planks"
+          }
+        ],
+        "tool": {
+          "type": "farmersdelight:tool_action",
+          "action": "axe_dig"
         }
+      }
     }
   ]
 }

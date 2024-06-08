@@ -18,6 +18,7 @@ import static net.minecraft.world.level.block.BeehiveBlock.HONEY_LEVEL;
 
 public class TapBlockEntity extends BlockEntity {
     public int timeHoney;
+
     public TapBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(NMLBlockEntities.TAP.get(), pPos, pBlockState);
         this.timeHoney = 0;
@@ -26,7 +27,7 @@ public class TapBlockEntity extends BlockEntity {
     public static void tick(Level level, BlockPos pos, BlockState state, TapBlockEntity tap) {
         // Ensure there is a cauldron within 3 blocks under the tap
         BlockPos cauldronPos = getCauldronPos(level, pos);
-        if(cauldronPos == null) return;
+        if (cauldronPos == null) return;
         BlockState cauldronState = level.getBlockState(cauldronPos);
 
         BlockState blockBehindState = getBlockStateBehind(level, pos, state);
@@ -37,7 +38,8 @@ public class TapBlockEntity extends BlockEntity {
             boolean honeyConsumed = false;
             if (cauldronState.getBlock() instanceof AbstractCauldronBlock cauldron) {
                 if (!cauldron.isFull(cauldronState)) {
-                    if (tap.timeHoney < NMLConfig.TIME_TO_FILL_CAULDRON.get()) spawnDrippingParticles(level, pos, state, FluidType.HONEY);
+                    if (tap.timeHoney < NMLConfig.TICKS_TO_FILL_CAULDRON.get())
+                        spawnDrippingParticles(level, pos, state, FluidType.HONEY);
                     else if (cauldronState.getBlock() instanceof HoneyCauldronBlock honeyCauldron) {
                         honeyCauldron.fillUp(cauldronState, level, cauldronPos);
                         honeyConsumed = true;

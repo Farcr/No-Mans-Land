@@ -22,7 +22,7 @@ import java.util.List;
 
 public abstract class ThrowableBombRenderer<T extends ThrowableBombEntity> extends EntityRenderer<T> {
 
-    public  ThrowableBombRenderer(EntityRendererProvider.Context pContext) {
+    public ThrowableBombRenderer(EntityRendererProvider.Context pContext) {
         super(pContext);
     }
 

@@ -36,5 +36,6 @@
   "snap": true,
   "relative": {
     "temperature": "end",
-    "humidity": "end"  }
+    "humidity": "end"
+  }
 }

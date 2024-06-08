@@ -1,19 +1,19 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#T#",
-        " # "
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:iron_nugget"
-        },
-        "T": {
-            "item": "minecraft:torch"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#T#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_nugget"
     },
-    "result": {
-        "item": "nomansland:sconce_torch",
-        "count": 1
+    "T": {
+      "item": "minecraft:torch"
     }
+  },
+  "result": {
+    "item": "nomansland:sconce_torch",
+    "count": 1
+  }
 }

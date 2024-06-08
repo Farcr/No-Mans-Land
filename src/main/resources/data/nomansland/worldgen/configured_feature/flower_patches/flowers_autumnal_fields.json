@@ -23,39 +23,39 @@
             },
             "slow_scale": 1.0,
             "states": [
-                {
-                    "Name": "nomansland:autumn_crocus"
-                  },
-                  {
-                    "Name": "minecraft:allium"
-                  },
-                  {
-                    "Name": "nomansland:red_lupine"
-                  },
-                  {
-                    "Name": "minecraft:poppy"
-                  },
-                  {
-                    "Name": "minecraft:red_tulip"
-                  },
-                  {
-                    "Name": "minecraft:orange_tulip"
-                  },
-                  {
-                    "Name": "minecraft:dandelion"
-                  },
-                  {
-                    "Name": "nomansland:yellow_lupine"
-                  },
-                  {
-                    "Name": "minecraft:oxeye_daisy"
-                  },
-                  {
-                    "Name": "minecraft:white_tulip"
-                  },
-                  {
-                    "Name": "minecraft:pink_tulip"
-                  }
+              {
+                "Name": "nomansland:autumn_crocus"
+              },
+              {
+                "Name": "minecraft:allium"
+              },
+              {
+                "Name": "nomansland:red_lupine"
+              },
+              {
+                "Name": "minecraft:poppy"
+              },
+              {
+                "Name": "minecraft:red_tulip"
+              },
+              {
+                "Name": "minecraft:orange_tulip"
+              },
+              {
+                "Name": "minecraft:dandelion"
+              },
+              {
+                "Name": "nomansland:yellow_lupine"
+              },
+              {
+                "Name": "minecraft:oxeye_daisy"
+              },
+              {
+                "Name": "minecraft:white_tulip"
+              },
+              {
+                "Name": "minecraft:pink_tulip"
+              }
             ],
             "variety": [
               1,

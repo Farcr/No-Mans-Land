@@ -1,35 +1,34 @@
 {
-    "type": "forge:conditional",
-  
-    "recipes": [
-      {
-        "conditions": [
-          {
-            "type": "forge:mod_loaded",
-            "modid": "farmersdelight"
-          }
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "L L",
+          "LLL"
         ],
-        "recipe": {
-          "type": "minecraft:crafting_shaped",
-          "pattern": [
-              "###",
-              "L L",
-              "LLL"
-          ],
-          "key": {
-              "#": {
-                  "item": "farmersdelight:rope"
-              },
-              "L": {
-                  "item": "minecraft:leather"
-              }
+        "key": {
+          "#": {
+            "item": "farmersdelight:rope"
           },
-          "result": {
-              "item": "minecraft:bundle",
-              "count": 1
-          },
-          "group": "bundle"
+          "L": {
+            "item": "minecraft:leather"
+          }
+        },
+        "result": {
+          "item": "minecraft:bundle",
+          "count": 1
+        },
+        "group": "bundle"
       }
-      }
-    ]
-  }
+    }
+  ]
+}

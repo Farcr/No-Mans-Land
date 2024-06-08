@@ -18,17 +18,17 @@ public class FlameParticle extends RisingParticle {
     }
 
     public float getQuadSize(float pScaleFactor) {
-        float $$1 = ((float)this.age + pScaleFactor) / (float)this.lifetime;
+        float $$1 = ((float) this.age + pScaleFactor) / (float) this.lifetime;
         return this.quadSize * (1.0F - $$1 * $$1 * 0.5F);
     }
 
     public int getLightColor(float pPartialTick) {
-        float $$1 = ((float)this.age + pPartialTick) / (float)this.lifetime;
+        float $$1 = ((float) this.age + pPartialTick) / (float) this.lifetime;
         $$1 = Mth.clamp($$1, 0.0F, 1.0F);
         int $$2 = super.getLightColor(pPartialTick);
         int $$3 = $$2 & 255;
         int $$4 = $$2 >> 16 & 255;
-        $$3 += (int)($$1 * 15.0F * 16.0F);
+        $$3 += (int) ($$1 * 15.0F * 16.0F);
         if ($$3 > 240) {
             $$3 = 240;
         }

@@ -1,22 +1,85 @@
 {
-	"credit": "Made by Farcr",
-	"parent": "minecraft:block/template_orientable_trapdoor_open",
-	"render_type": "minecraft:cutout",
-	"textures": {
-		"particle": "#front"
-	},
-	"elements": [
-		{
-			"from": [0, 0, 13],
-			"to": [16, 16, 16],
-			"faces": {
-				"north": {"uv": [0, 16, 16, 0], "texture": "#front"},
-				"east": {"uv": [16, 7, 0, 10], "rotation": 90, "texture": "#side", "cullface": "east"},
-				"south": {"uv": [0, 16, 16, 0], "texture": "#front", "cullface": "south"},
-				"west": {"uv": [0, 10, 16, 7], "rotation": 90, "texture": "#side", "cullface": "west"},
-				"up": {"uv": [16, 16, 0, 13], "texture": "#side", "cullface": "up"},
-				"down": {"uv": [16, 3, 0, 0], "texture": "#side", "cullface": "down"}
-			}
-		}
-	]
+  "credit": "Made by Farcr",
+  "parent": "minecraft:block/template_orientable_trapdoor_open",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "#front"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        13
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            16,
+            16,
+            0
+          ],
+          "texture": "#front"
+        },
+        "east": {
+          "uv": [
+            16,
+            7,
+            0,
+            10
+          ],
+          "rotation": 90,
+          "texture": "#side",
+          "cullface": "east"
+        },
+        "south": {
+          "uv": [
+            0,
+            16,
+            16,
+            0
+          ],
+          "texture": "#front",
+          "cullface": "south"
+        },
+        "west": {
+          "uv": [
+            0,
+            10,
+            16,
+            7
+          ],
+          "rotation": 90,
+          "texture": "#side",
+          "cullface": "west"
+        },
+        "up": {
+          "uv": [
+            16,
+            16,
+            0,
+            13
+          ],
+          "texture": "#side",
+          "cullface": "up"
+        },
+        "down": {
+          "uv": [
+            16,
+            3,
+            0,
+            0
+          ],
+          "texture": "#side",
+          "cullface": "down"
+        }
+      }
+    }
+  ]
 }

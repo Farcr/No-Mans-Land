@@ -30,8 +30,10 @@ public class RemainsBlockEntity extends BrushableBlockEntity {
                     if (buried != null) {
                         Vec3 playerPosition = pPlayer.getPosition(1);
                         BlockPos spawningPosition = worldPosition.relative(this.getHitDirection());
-                        if (level.getBlockState(spawningPosition) == Blocks.AIR.defaultBlockState()) buried.moveTo(spawningPosition.getCenter());
-                        else buried.moveTo((playerPosition.x + worldPosition.getX())/2, (playerPosition.y + worldPosition.getY())/2, (playerPosition.z + worldPosition.getZ())/2);
+                        if (level.getBlockState(spawningPosition) == Blocks.AIR.defaultBlockState())
+                            buried.moveTo(spawningPosition.getCenter());
+                        else
+                            buried.moveTo((playerPosition.x + worldPosition.getX()) / 2, (playerPosition.y + worldPosition.getY()) / 2, (playerPosition.z + worldPosition.getZ()) / 2);
                         level.addFreshEntity(buried);
                         buried.spawnAnim();
                     }

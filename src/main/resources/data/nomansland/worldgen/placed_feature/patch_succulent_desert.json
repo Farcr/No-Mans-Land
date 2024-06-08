@@ -1,7 +1,6 @@
 {
   "feature": "nomansland:patch_succulent",
   "placement": [
-    
     {
       "type": "minecraft:rarity_filter",
       "chance": 8

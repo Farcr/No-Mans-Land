@@ -14,9 +14,11 @@ import net.minecraft.world.level.material.Fluids;
 public class BuddingQuartziteBlock extends BuddingAmethystBlock {
     public static final int GROWTH_CHANCE = 5;
     private static final Direction[] DIRECTIONS = Direction.values();
+
     public BuddingQuartziteBlock(Properties pProperties) {
         super(pProperties);
     }
+
     @Override
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         if (pRandom.nextInt(5) == 0) {

@@ -40,9 +40,11 @@ public class HoneyCauldronBlock extends LayeredCauldronBlock {
     protected boolean canReceiveStalactiteDrip(Fluid pFluid) {
         return false;
     }
+
     @Override
     public void handlePrecipitation(BlockState pState, Level pLevel, BlockPos pPos, Biome.Precipitation pPrecipitation) {
     }
+
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult pHit) {
         AbstractCauldronBlock cauldron = (AbstractCauldronBlock) state.getBlock();

@@ -1,51 +1,48 @@
 {
   "type": "forge:conditional",
-
   "recipes": [
     {
       "conditions": [
-      {
-        "type": "forge:mod_loaded",
-        "modid": "farmersdelight"
-      }
-    ],
-    "recipe":
-    {
-      "type": "farmersdelight:cooking",
-      "cookingtime": 200,
-      "experience": 1.0,
-      "ingredients": [
         {
-          "tag": "forge:dough"
-        },
-        {
-          "tag": "forge:crops/cabbage"
-        },
-        {
-          "tag": "forge:crops/onion"
-        },
-        [
-          {
-            "tag": "forge:raw_chicken"
-          },
-          {
-            "tag": "forge:raw_pork"
-          },
-          {
-            "tag": "forge:raw_beef"
-          },
-          {
-            "tag": "nomansland:edible_mushrooms"
-          }
-        ]
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
       ],
-      "recipe_book_tab": "misc",
-      "result": {
-        "count": 2,
-        "item": "farmersdelight:dumplings"
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:dough"
+          },
+          {
+            "tag": "forge:crops/cabbage"
+          },
+          {
+            "tag": "forge:crops/onion"
+          },
+          [
+            {
+              "tag": "forge:raw_chicken"
+            },
+            {
+              "tag": "forge:raw_pork"
+            },
+            {
+              "tag": "forge:raw_beef"
+            },
+            {
+              "tag": "nomansland:edible_mushrooms"
+            }
+          ]
+        ],
+        "recipe_book_tab": "misc",
+        "result": {
+          "count": 2,
+          "item": "farmersdelight:dumplings"
+        }
       }
     }
-  }
-]
-
+  ]
 }

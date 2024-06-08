@@ -18,18 +18,19 @@ import net.minecraft.world.phys.BlockHitResult;
 public class ExtinguishedTorchBlock extends TorchBlock {
 
     public final Block mainBlock;
+
     public ExtinguishedTorchBlock(SimpleParticleType pFlameParticle, Properties pProperties, Block mainBlock) {
         super(pFlameParticle, pProperties);
         this.mainBlock = mainBlock;
     }
 
     @Override
-    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {}
+    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
+    }
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (pPlayer.getItemInHand(pHand).is(NMLTags.FIRESTARTERS))
-        {
+        if (pPlayer.getItemInHand(pHand).is(NMLTags.FIRESTARTERS)) {
             pLevel.playSound(pPlayer,
                     pPlayer.getX(),
                     pPlayer.getY(),
@@ -44,7 +45,7 @@ public class ExtinguishedTorchBlock extends TorchBlock {
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.FAIL;
-        }
+    }
 
     //TODO:Produce Smoke on break
 }

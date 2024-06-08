@@ -1,35 +1,34 @@
 {
-    "type": "forge:conditional",
-  
-    "recipes": [
-      {
-        "conditions": [
-          {
-            "type": "forge:mod_loaded",
-            "modid": "farmersdelight"
-          }
-        ],
-        "recipe": { 
-            "type": "minecraft:crafting_shaped",
-            "pattern": [
-                "___",
-                "S S",
-                "___"
-            ],
-            "key": {
-                "_": {
-                    "item": "nomansland:walnut_slab"
-                },
-                "S": {
-                    "item": "nomansland:walnut_trapdoor"
-                }
-            },
-            "result": {
-                "item": "nomansland:walnut_cabinet",
-                "count": 1
-            },
-            "group": "cabinets"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
         }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "___",
+          "S S",
+          "___"
+        ],
+        "key": {
+          "_": {
+            "item": "nomansland:walnut_slab"
+          },
+          "S": {
+            "item": "nomansland:walnut_trapdoor"
+          }
+        },
+        "result": {
+          "item": "nomansland:walnut_cabinet",
+          "count": 1
+        },
+        "group": "cabinets"
       }
-    ]
-  }
+    }
+  ]
+}
