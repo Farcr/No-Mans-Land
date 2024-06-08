@@ -14,14 +14,13 @@ public class NMLCompostabies {
         ComposterBlock.COMPOSTABLES.put(NMLBlocks.PINE_LEAVES.get(), 0.30f);
         ComposterBlock.COMPOSTABLES.put(NMLBlocks.WALNUT_LEAVES.get(), 0.30f);
 
-        // TODO: fix saplings
-//        ComposterBlock.COMPOSTABLES.put(NMLBlocks.YELLOW_BIRCH_SAPLING.get(), 0.30f);
-//        ComposterBlock.COMPOSTABLES.put(NMLBlocks.AUTUMNAL_OAK_SAPLING.get(), 0.30f);
-//        ComposterBlock.COMPOSTABLES.put(NMLBlocks.PALE_CHERRY_SAPLING.get(), 0.30f);
-//        ComposterBlock.COMPOSTABLES.put(NMLBlocks.RED_MAPLE_SAPLING.get(), 0.30f);
-//        ComposterBlock.COMPOSTABLES.put(NMLBlocks.MAPLE_SAPLING.get(), 0.30f);
-//        ComposterBlock.COMPOSTABLES.put(NMLBlocks.PINE_SAPLING.get(), 0.30f);
-//        ComposterBlock.COMPOSTABLES.put(NMLBlocks.WALNUT_SAPLING.get(), 0.30f);
+        ComposterBlock.COMPOSTABLES.put(NMLBlocks.YELLOW_BIRCH_SAPLING.get(), 0.30f);
+        ComposterBlock.COMPOSTABLES.put(NMLBlocks.AUTUMNAL_OAK_SAPLING.get(), 0.30f);
+        ComposterBlock.COMPOSTABLES.put(NMLBlocks.PALE_CHERRY_SAPLING.get(), 0.30f);
+        ComposterBlock.COMPOSTABLES.put(NMLBlocks.RED_MAPLE_SAPLING.get(), 0.30f);
+        ComposterBlock.COMPOSTABLES.put(NMLBlocks.MAPLE_SAPLING.get(), 0.30f);
+        ComposterBlock.COMPOSTABLES.put(NMLBlocks.PINE_SAPLING.get(), 0.30f);
+        ComposterBlock.COMPOSTABLES.put(NMLBlocks.WALNUT_SAPLING.get(), 0.30f);
 
         ComposterBlock.COMPOSTABLES.put(NMLBlocks.GRASS_SPROUTS.get(), 0.10f);
         ComposterBlock.COMPOSTABLES.put(NMLBlocks.OAT_GRASS.get(), 0.30f);

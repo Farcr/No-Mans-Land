@@ -11,7 +11,6 @@ import net.minecraft.world.level.Level;
 
 public class NMLDamageTypes {
 
-    // TODO: actually register these
     public static final ResourceKey<DamageType> SPIKE_POKE = registerDamageType("spike_poke");
     public static final ResourceKey<DamageType> SPIKE_IMPALE = registerDamageType("spike_impale");
     public static final ResourceKey<DamageType> SPIKE_FALL = registerDamageType("spike_fall");

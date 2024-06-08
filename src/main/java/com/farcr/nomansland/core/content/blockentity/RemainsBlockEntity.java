@@ -1,5 +1,6 @@
 package com.farcr.nomansland.core.content.blockentity;
 
+import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.content.entity.BuriedEntity;
 import com.farcr.nomansland.core.registry.NMLEntities;
 import net.minecraft.core.BlockPos;
@@ -24,7 +25,7 @@ public class RemainsBlockEntity extends BrushableBlockEntity {
             Block remainsBlockState = this.getBlockState().getBlock();
             if (remainsBlockState instanceof BrushableBlock) {
                 float a = new Random().nextFloat();
-                if (a <= 0.05F) {
+                if (a <= NMLConfig.BURIED_SPAWNING_CHANCE.get()) {
                     BuriedEntity buried = NMLEntities.BURIED.get().create(level);
                     if (buried != null) {
                         Vec3 playerPosition = pPlayer.getPosition(1);

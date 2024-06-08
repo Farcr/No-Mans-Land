@@ -20,4 +20,6 @@ public class BaseSpawnerMixin {
         }
         return particle;
     }
+
+    // TODO: add mixin to change particles to malevolent flames on spawn event
 }

@@ -47,30 +47,27 @@ public class NMLBlocks {
             () -> new PebbleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noCollission().instabreak().sound(SoundType.STONE).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> YELLOW_BIRCH_LEAVES = registerBlock("yellow_birch_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
-    // TODO: fix sapling
-//    public static final DeferredBlock<Block> YELLOW_BIRCH_SAPLING = registerBlock("yellow_birch_sapling",
-//            () -> new SaplingBlock((new YellowBirchTreeGrower()), BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_SAPLING)));
-//    public static final DeferredBlock<Block> POTTED_YELLOW_BIRCH_SAPLING = BLOCKS.register("potted_yellow_birch_sapling",
-//            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.YELLOW_BIRCH_SAPLING,
-//                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_BIRCH_SAPLING).noOcclusion()));
+    public static final DeferredBlock<Block> YELLOW_BIRCH_SAPLING = registerBlock("yellow_birch_sapling",
+            () -> new SaplingBlock(NMLTreeGrowers.YELLOW_BIRCH, BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_SAPLING)));
+    public static final DeferredBlock<Block> POTTED_YELLOW_BIRCH_SAPLING = BLOCKS.register("potted_yellow_birch_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.YELLOW_BIRCH_SAPLING,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_BIRCH_SAPLING).noOcclusion()));
     public static final DeferredBlock<Block> AUTUMNAL_OAK_LEAVES = registerBlock("autumnal_oak_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
-    // TODO: fix sapling
-//    public static final DeferredBlock<Block> AUTUMNAL_OAK_SAPLING = registerBlock("autumnal_oak_sapling",
-//            () -> new SaplingBlock((new AutumnalOakTreeGrower()), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-//    public static final DeferredBlock<Block> POTTED_AUTUMNAL_OAK_SAPLING = BLOCKS.register("potted_autumnal_oak_sapling",
-//            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.AUTUMNAL_OAK_SAPLING,
-//                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
+    public static final DeferredBlock<Block> AUTUMNAL_OAK_SAPLING = registerBlock("autumnal_oak_sapling",
+            () -> (new SaplingBlock(NMLTreeGrowers.AUTUMNAL_OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))));
+    public static final DeferredBlock<Block> POTTED_AUTUMNAL_OAK_SAPLING = BLOCKS.register("potted_autumnal_oak_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.AUTUMNAL_OAK_SAPLING,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
 
     public static final DeferredBlock<Block> PALE_CHERRY_LEAVES = registerBlock("pale_cherry_leaves",
             () -> new PaleCherryLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
 
-    // TODO: fix sapling
-//    public static final DeferredBlock<Block> PALE_CHERRY_SAPLING = registerBlock("pale_cherry_sapling",
-//            () -> new SaplingBlock((new PaleCherryTreeGrower()), BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_SAPLING)));
-//    public static final DeferredBlock<Block> POTTED_PALE_CHERRY_SAPLING = BLOCKS.register("potted_pale_cherry_sapling",
-//            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PALE_CHERRY_SAPLING,
-//                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_CHERRY_SAPLING).noOcclusion()));
+    public static final DeferredBlock<Block> PALE_CHERRY_SAPLING = registerBlock("pale_cherry_sapling",
+            () -> new SaplingBlock(NMLTreeGrowers.PALE_CHERRY, BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_SAPLING)));
+    public static final DeferredBlock<Block> POTTED_PALE_CHERRY_SAPLING = BLOCKS.register("potted_pale_cherry_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PALE_CHERRY_SAPLING,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_CHERRY_SAPLING).noOcclusion()));
 
 //    public static final DeferredBlock<Block> SHRUB = registerBlock("shrub",
 //            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)));
@@ -315,12 +312,11 @@ public class NMLBlocks {
             () -> new FenceGateBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)));
     public static final DeferredBlock<Block> PINE_LEAVES = registerBlock("pine_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
-    // TODO: fix sapling
-//    public static final DeferredBlock<Block> PINE_SAPLING = registerBlock("pine_sapling",
-//            () -> new SaplingBlock((new PineTreeGrower()), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-//    public static final DeferredBlock<Block> POTTED_PINE_SAPLING = BLOCKS.register("potted_pine_sapling",
-//            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PINE_SAPLING,
-//                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
+    public static final DeferredBlock<Block> PINE_SAPLING = registerBlock("pine_sapling",
+            () -> new SaplingBlock(NMLTreeGrowers.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    public static final DeferredBlock<Block> POTTED_PINE_SAPLING = BLOCKS.register("potted_pine_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PINE_SAPLING,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
     public static final DeferredBlock<Block> PINE_BUTTON = registerBlock("pine_button",
             () -> new ButtonBlock(NMLBlockSetTypes.PINE, 15, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
     public static final DeferredBlock<Block> PINE_PRESSURE_PLATE = registerBlock("pine_pressure_plate",
@@ -366,20 +362,18 @@ public class NMLBlocks {
             () -> new FenceGateBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)));
     public static final DeferredBlock<Block> MAPLE_LEAVES = registerBlock("maple_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
-    // TODO: fix sapling
-//    public static final DeferredBlock<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
-//            () -> new SaplingBlock((new MapleTreeGrower()), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-//    public static final DeferredBlock<Block> POTTED_MAPLE_SAPLING = BLOCKS.register("potted_maple_sapling",
-//            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.MAPLE_SAPLING,
-//                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
+    public static final DeferredBlock<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
+            () -> new SaplingBlock(NMLTreeGrowers.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    public static final DeferredBlock<Block> POTTED_MAPLE_SAPLING = BLOCKS.register("potted_maple_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.MAPLE_SAPLING,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
     public static final DeferredBlock<Block> RED_MAPLE_LEAVES = registerBlock("red_maple_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
-    // TODO: fix sapling
-//    public static final DeferredBlock<Block> RED_MAPLE_SAPLING = registerBlock("red_maple_sapling",
-//            () -> new SaplingBlock((new RedMapleTreeGrower()), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-//    public static final DeferredBlock<Block> POTTED_RED_MAPLE_SAPLING = BLOCKS.register("potted_red_maple_sapling",
-//            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.RED_MAPLE_SAPLING,
-//                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
+    public static final DeferredBlock<Block> RED_MAPLE_SAPLING = registerBlock("red_maple_sapling",
+            () -> new SaplingBlock(NMLTreeGrowers.RED_MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    public static final DeferredBlock<Block> POTTED_RED_MAPLE_SAPLING = BLOCKS.register("potted_red_maple_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.RED_MAPLE_SAPLING,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
     public static final DeferredBlock<Block> MAPLE_BUTTON = registerBlock("maple_button",
             () -> new ButtonBlock(NMLBlockSetTypes.MAPLE, 15, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
     public static final DeferredBlock<Block> MAPLE_PRESSURE_PLATE = registerBlock("maple_pressure_plate",
@@ -426,12 +420,11 @@ public class NMLBlocks {
             () -> new FenceGateBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)));
     public static final DeferredBlock<Block> WALNUT_LEAVES = registerBlock("walnut_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
-    // TODO: fix sapling
-//    public static final DeferredBlock<Block> WALNUT_SAPLING = registerBlock("walnut_sapling",
-//            () -> new SaplingBlock((new WalnutTreeGrower()), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-//    public static final DeferredBlock<Block> POTTED_WALNUT_SAPLING = BLOCKS.register("potted_walnut_sapling",
-//            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WALNUT_SAPLING,
-//                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
+    public static final DeferredBlock<Block> WALNUT_SAPLING = registerBlock("walnut_sapling",
+            () -> new SaplingBlock(NMLTreeGrowers.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    public static final DeferredBlock<Block> POTTED_WALNUT_SAPLING = BLOCKS.register("potted_walnut_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WALNUT_SAPLING,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
     public static final DeferredBlock<Block> WALNUT_BUTTON = registerBlock("walnut_button",
             () -> new ButtonBlock(NMLBlockSetTypes.WALNUT, 15, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
     public static final DeferredBlock<Block> WALNUT_PRESSURE_PLATE = registerBlock("walnut_pressure_plate",
