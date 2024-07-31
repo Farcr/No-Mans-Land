@@ -24,7 +24,6 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -36,6 +35,8 @@ import java.util.function.Predicate;
 import static java.lang.Boolean.FALSE;
 
 public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterloggedBlock {
+    public static final MapCodec<SpikeTrapBlock> CODEC = simpleCodec(SpikeTrapBlock::new);
+
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final VoxelShape EAST_AABB = Block.box(0.0D, 0.0D, 0.0D, 2.0D, 16.0D, 16.0D);
@@ -166,8 +167,5 @@ public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterlogge
         return true;
     }
 
-    @Override
-    public boolean isPathfindable(BlockState p_154112_, BlockGetter p_154113_, BlockPos p_154114_, PathComputationType p_154115_) {
-        return false;
-    }
+    // TODO: make mobs not pathfind on it
 }

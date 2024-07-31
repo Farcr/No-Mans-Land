@@ -17,14 +17,14 @@ public class NMLTags {
     public static final TagKey<Block> FIREBOMB_EXPLODE = createBlockTag("firebomb_explode");
 
     private static TagKey<Item> createItemTag(String pName) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation(NoMansLand.MODID, pName));
+        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, pName));
     }
 
     private static TagKey<Block> createBlockTag(String pName) {
-        return TagKey.create(Registries.BLOCK, new ResourceLocation(NoMansLand.MODID, pName));
+        return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, pName));
     }
 
     private static TagKey<Biome> createBiomeTag(String pName) {
-        return TagKey.create(Registries.BIOME, new ResourceLocation(NoMansLand.MODID, pName));
+        return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, pName));
     }
 }

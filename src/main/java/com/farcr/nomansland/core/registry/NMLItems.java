@@ -26,7 +26,7 @@ public class NMLItems {
     public static LinkedHashSet<DeferredItem<Item>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
     //Foods
     public static final DeferredItem<Item> MASHED_POTATOES_WITH_MUSHROOMS = registerItem("mashed_potatoes_with_mushrooms",
-            () -> new BowlFoodItem(new Item.Properties().food(NMLFoods.MASHED_POTATOES_WITH_MUSHROOMS).stacksTo(1)));
+            () -> new Item(new Item.Properties().food(NMLFoods.MASHED_POTATOES_WITH_MUSHROOMS).stacksTo(1)));
     public static final DeferredItem<Item> GRILLED_MUSHROOMS = registerItem("grilled_mushrooms",
             () -> new Item(new Item.Properties().food(NMLFoods.GRILLED_MUSHROOMS)));
     public static final DeferredItem<Item> FROG_LEG = registerItem("frog_leg",
@@ -38,7 +38,7 @@ public class NMLItems {
     public static final DeferredItem<Item> HORSE_STEAK = registerItem("horse_steak",
             () -> new Item(new Item.Properties().food(NMLFoods.HORSE_STEAK)));
 
-//Materials
+    //Materials
     public static final DeferredItem<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
             !ModList.get().isLoaded("farmersdelight") ? () -> new Item(new Item.Properties())
                     : FDIntegration.mushroomColonyItem(), "farmersdelight");
@@ -268,7 +268,7 @@ public class NMLItems {
             event.accept(NMLItems.WALNUT_HANGING_SIGN.get());
             event.accept(NMLItems.SCONCE_TORCH.get());
             event.accept(NMLItems.SCONCE_SOUL_TORCH.get());
-            event.accept(NMLBlocks.TAP.get());
+//            event.accept(NMLBlocks.TAP.get());
             event.accept(NMLItems.WOODEN_SCAFFOLDING.get());
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {

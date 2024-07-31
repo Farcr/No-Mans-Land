@@ -28,7 +28,7 @@ public class ExtinguishedWallTorchBlock extends WallTorchBlock {
     public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
     }
 
-    @Override
+    // TODO: ensure this works
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (pPlayer.getItemInHand(pHand).is(NMLTags.FIRESTARTERS)) {
             pLevel.playSound(pPlayer,

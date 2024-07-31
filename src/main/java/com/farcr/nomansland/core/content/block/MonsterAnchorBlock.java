@@ -4,10 +4,8 @@ import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
@@ -22,6 +20,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class MonsterAnchorBlock extends BaseEntityBlock {
+    public static final MapCodec<MonsterAnchorBlock> CODEC = simpleCodec(MonsterAnchorBlock::new);
+
     public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
 
     public MonsterAnchorBlock(Properties properties) {
@@ -32,7 +32,7 @@ public class MonsterAnchorBlock extends BaseEntityBlock {
 
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
-        return null;
+        return CODEC;
     }
 
     @Override
@@ -65,10 +65,11 @@ public class MonsterAnchorBlock extends BaseEntityBlock {
         return false;
     }
 
-    @Override
-    public int getExpDrop(BlockState state, LevelReader level, RandomSource randomSource, BlockPos pos, int fortuneLevel, int silkTouchLevel) {
-        return 15 + randomSource.nextInt(15) + randomSource.nextInt(15);
-    }
+    // TODO: change amount of experience dropped
+//    public int getExpDrop(BlockState state, LevelReader level, RandomSource randomSource, BlockPos pos, int fortuneLevel, int silkTouchLevel) {
+//        return 15 + randomSource.nextInt(15) + randomSource.nextInt(15);
+//    }
+
 
     @Nullable
     @Override

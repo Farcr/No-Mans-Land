@@ -17,11 +17,11 @@ public class BuriedRenderer extends MobRenderer<BuriedEntity, BuriedModel<Buried
     public static final Map<BuriedVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(BuriedVariant.class), (p_114874_) -> {
                 p_114874_.put(BuriedVariant.ZERO,
-                        new ResourceLocation(NoMansLand.MODID, "textures/entity/buried/buried_0.png"));
+                        ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "textures/entity/buried/buried_0.png"));
                 p_114874_.put(BuriedVariant.ONE,
-                        new ResourceLocation(NoMansLand.MODID, "textures/entity/buried/buried_1.png"));
+                        ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "textures/entity/buried/buried_1.png"));
                 p_114874_.put(BuriedVariant.TWO,
-                        new ResourceLocation(NoMansLand.MODID, "textures/entity/buried/buried_2.png"));
+                        ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "textures/entity/buried/buried_2.png"));
             });
 
     public BuriedRenderer(EntityRendererProvider.Context pContext) {

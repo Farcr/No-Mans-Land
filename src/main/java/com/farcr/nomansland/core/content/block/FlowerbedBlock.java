@@ -10,6 +10,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class FlowerbedBlock extends BushBlock {
+    public static final MapCodec<FlowerbedBlock> CODEC = simpleCodec(FlowerbedBlock::new);
+
     protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
 
     public FlowerbedBlock(Properties pProperties) {
@@ -18,7 +20,7 @@ public class FlowerbedBlock extends BushBlock {
 
     @Override
     protected MapCodec<? extends BushBlock> codec() {
-        return null;
+        return CODEC;
     }
 
     @Override

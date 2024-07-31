@@ -24,7 +24,7 @@ public class NMLBoatRenderer extends BoatRenderer {
     public NMLBoatRenderer(EntityRendererProvider.Context pContext, boolean pChestBoat) {
         super(pContext, pChestBoat);
         this.boatResources = Stream.of(BoatEntity.Type.values()).collect(ImmutableMap.toImmutableMap(type -> type,
-                type -> Pair.of(new ResourceLocation(NoMansLand.MODID, getTextureLocation(type, pChestBoat)), this.createBoatModel(pContext, type, pChestBoat))));
+                type -> Pair.of(ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, getTextureLocation(type, pChestBoat)), this.createBoatModel(pContext, type, pChestBoat))));
     }
 
     private static String getTextureLocation(BoatEntity.Type pType, boolean pChestBoat) {
@@ -40,7 +40,7 @@ public class NMLBoatRenderer extends BoatRenderer {
     }
 
     private static ModelLayerLocation createLocation(String pPath, String pModel) {
-        return new ModelLayerLocation(new ResourceLocation(NoMansLand.MODID, pPath), pModel);
+        return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, pPath), pModel);
     }
 
     private ListModel<Boat> createBoatModel(EntityRendererProvider.Context pContext, BoatEntity.Type pType, boolean pChestBoat) {

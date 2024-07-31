@@ -18,14 +18,15 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SpreadingSnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 import java.util.Iterator;
 
-@Mod.EventBusSubscriber(modid = NoMansLand.MODID)
+@EventBusSubscriber(modid = NoMansLand.MODID)
 public class BoneMealingEvents {
 
+    // TODO: make sure these events consume durability and can break the item
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         Level level = event.getLevel();
@@ -38,9 +39,8 @@ public class BoneMealingEvents {
         if (event.getFace() != Direction.DOWN && stack.is(Items.SHEARS) && state.is(Blocks.SUGAR_CANE) && !player.isSpectator()) {
             level.playSound(player, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
             if (!level.isClientSide()) {
-                stack.hurtAndBreak(1, player, (damage) -> {
-                    damage.broadcastBreakEvent(event.getHand());
-                });
+                stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
+
                 level.setBlockAndUpdate(pos, NMLBlocks.CUT_SUGAR_CANE.get().defaultBlockState());
             }
             event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));

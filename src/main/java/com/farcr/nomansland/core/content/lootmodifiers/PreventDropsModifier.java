@@ -2,6 +2,7 @@ package com.farcr.nomansland.core.content.lootmodifiers;
 
 import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.world.entity.monster.Monster;
@@ -16,8 +17,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public class PreventDropsModifier extends LootModifier {
-    public static final Supplier<Codec<PreventDropsModifier>> CODEC = Suppliers.memoize(()
-            -> RecordCodecBuilder.create(inst -> codecStart(inst).and(Codec.BOOL.fieldOf("preventDrops").forGetter(m -> m.preventDrops)).apply(inst, PreventDropsModifier::new)));
+    public static final Supplier<MapCodec<PreventDropsModifier>> CODEC = Suppliers.memoize(()
+            -> RecordCodecBuilder.mapCodec(inst -> codecStart(inst).and(Codec.BOOL.fieldOf("preventDrops").forGetter(m -> m.preventDrops)).apply(inst, PreventDropsModifier::new)));
     private final Boolean preventDrops;
 
     public PreventDropsModifier(LootItemCondition[] conditionsIn, Boolean preventDrops) {
@@ -34,7 +35,7 @@ public class PreventDropsModifier extends LootModifier {
     }
 
     @Override
-    public Codec<? extends IGlobalLootModifier> codec() {
+    public MapCodec<? extends IGlobalLootModifier> codec() {
         return CODEC.get();
     }
 }

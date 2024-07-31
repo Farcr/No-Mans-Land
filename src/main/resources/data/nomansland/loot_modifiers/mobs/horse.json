@@ -1,10 +1,10 @@
 {
-  "type": "nomansland:add_loot_table",
+  "type": "neoforge:add_table",
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
       "loot_table_id": "minecraft:entities/horse"
     }
   ],
-  "lootTable": "nomansland:entities/horse_addition"
+  "table": "nomansland:entities/horse_addition"
 }

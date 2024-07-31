@@ -17,7 +17,7 @@ public class NMLDamageTypes {
 
 
     public static ResourceKey<DamageType> registerDamageType(String name) {
-        return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(NoMansLand.MODID, name));
+        return ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, name));
     }
 
     public static DamageSource getSimpleDamageSource(Level level, ResourceKey<DamageType> type) {

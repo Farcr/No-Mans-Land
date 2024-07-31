@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.MushroomBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.common.util.TriState;
 //import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class SurfaceMushroomBlock extends MushroomBlock {
@@ -25,10 +26,12 @@ public class SurfaceMushroomBlock extends MushroomBlock {
         return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND);
     }
 
+
+    // TODO: fix
     public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
         BlockPos blockpos = pPos.below();
         if (pState.getBlock() == this)
-            return pLevel.getBlockState(blockpos).canSustainPlant(pLevel, blockpos, Direction.UP, this);
+            return pLevel.getBlockState(blockpos).canSustainPlant(pLevel, blockpos, Direction.UP, this.defaultBlockState()) == TriState.TRUE;
         return this.mayPlaceOn(pLevel.getBlockState(blockpos), pLevel, blockpos);
     }
 }

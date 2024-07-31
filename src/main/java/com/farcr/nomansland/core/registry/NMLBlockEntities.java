@@ -3,7 +3,6 @@ package com.farcr.nomansland.core.registry;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.core.content.blockentity.NMLSignBlockEntity;
-import com.farcr.nomansland.core.content.blockentity.TapBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -29,9 +28,9 @@ public class NMLBlockEntities {
                             NMLBlocks.WALNUT_HANGING_SIGN.get(), NMLBlocks.WALNUT_HANGING_WALL_SIGN.get()
                     ).build(null));
 
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TapBlockEntity>> TAP =
-            BLOCK_ENTITIES.register("tap", () ->
-                    BlockEntityType.Builder.of(TapBlockEntity::new, NMLBlocks.TAP.get()).build(null));
+//    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TapBlockEntity>> TAP =
+//            BLOCK_ENTITIES.register("tap", () ->
+//                    BlockEntityType.Builder.of(TapBlockEntity::new, NMLBlocks.TAP.get()).build(null));
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MonsterAnchorBlockEntity>> MONSTER_ANCHOR =
             BLOCK_ENTITIES.register("monster_anchor", () ->

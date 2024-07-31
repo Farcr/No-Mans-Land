@@ -12,9 +12,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.common.util.TriState;
 
 public class CutSugarCaneBlock extends SugarCaneBlock {
-
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 
     public CutSugarCaneBlock(Properties pProperties) {
@@ -26,10 +26,11 @@ public class CutSugarCaneBlock extends SugarCaneBlock {
         return SHAPE;
     }
 
+    // TODO: fix this
     @Override
     public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
         BlockState soil = pLevel.getBlockState(pPos.below());
-        if (soil.canSustainPlant(pLevel, pPos.below(), Direction.UP, this)) return true;
+        if (soil.canSustainPlant(pLevel, pPos.below(), Direction.UP, this.defaultBlockState()) == TriState.TRUE) return true;
         BlockState blockstate = pLevel.getBlockState(pPos.below());
         if (blockstate.is(Blocks.SUGAR_CANE)) {
             return true;

@@ -49,9 +49,10 @@ public class BoatEntity extends Boat {
         return Type.byId(this.entityData.get(DATA_ID_TYPE));
     }
 
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(DATA_ID_TYPE, Type.PINE.ordinal());
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        this.entityData.set(DATA_ID_TYPE, Type.PINE.ordinal());
     }
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {

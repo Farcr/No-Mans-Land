@@ -15,10 +15,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
-@Mod.EventBusSubscriber(modid = NoMansLand.MODID)
+@EventBusSubscriber(modid = NoMansLand.MODID)
 public class PathMakingEvents {
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
@@ -46,9 +46,8 @@ public class PathMakingEvents {
                     level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
                 }
                 if (!level.isClientSide) {
-                    stack.hurtAndBreak(1, player, (damage) -> {
-                        damage.broadcastBreakEvent(event.getHand());
-                    });
+                    stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
+
                     level.setBlockAndUpdate(pos,
                             state.is(Blocks.PODZOL) ? NMLBlocks.PODZOL_PATH.get().defaultBlockState() :
                                     state.is(Blocks.MYCELIUM) ? NMLBlocks.MYCELIUM_PATH.get().defaultBlockState() :
@@ -67,9 +66,7 @@ public class PathMakingEvents {
             if (state.is(Blocks.SNOW_BLOCK)) {
                 level.playSound(player, pos, SoundEvents.SNOW_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!level.isClientSide) {
-                    stack.hurtAndBreak(1, player, (damage) -> {
-                        damage.broadcastBreakEvent(event.getHand());
-                    });
+                    stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
                     level.setBlockAndUpdate(pos, NMLBlocks.SNOW_PATH.get().defaultBlockState());
                 }
                 event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
@@ -81,9 +78,8 @@ public class PathMakingEvents {
         if (stack.is(ItemTags.HOES) && state.is(NMLBlocks.DIRT_PATH.get()) && !player.isSpectator() && level.isEmptyBlock(pos.above())) {
             level.playSound(player, pos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
             if (!level.isClientSide()) {
-                stack.hurtAndBreak(1, player, (damage) -> {
-                    damage.broadcastBreakEvent(event.getHand());
-                });
+                stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
+
                 level.setBlockAndUpdate(pos, Blocks.FARMLAND.defaultBlockState());
             }
             event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
@@ -93,9 +89,8 @@ public class PathMakingEvents {
         if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && state.is(Blocks.FARMLAND) && !player.isSpectator() && level.isEmptyBlock(pos.above())) {
             level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
             if (!level.isClientSide()) {
-                stack.hurtAndBreak(1, player, (damage) -> {
-                    damage.broadcastBreakEvent(event.getHand());
-                });
+                stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
+
                 level.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
             }
             event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));

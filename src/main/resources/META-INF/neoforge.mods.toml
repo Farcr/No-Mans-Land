@@ -1,0 +1,56 @@
+modLoader="javafml" #mandatory
+loaderVersion="${loader_version_range}" #mandatory
+license="${mod_license}"
+#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+
+[[mods]] #mandatory
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+logoFile="nomansland.png" #optional
+#credits="" #optional
+authors="${mod_authors}" #optional
+description='''${mod_description}'''
+
+[[mixins]]
+config="${mod_id}.mixins.json"
+
+[[dependencies.${mod_id}]] #optional
+modId="neoforge" #mandatory
+type="required" #mandatory
+versionRange="${neo_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="minecraft"
+type="required"
+versionRange="${minecraft_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="smartbrainlib"
+type="required"
+reason="Smart mob AI"
+versionRange="${sbl_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="biomesquisher"
+type="required"
+reason="Biome Generation"
+versionRange="${bs_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="farmersdelight"
+type="optional"
+reason="No Man's Land ties well with Farmer's Delight"
+versionRange="${fd_version_range}"
+ordering="NONE"
+side="BOTH"

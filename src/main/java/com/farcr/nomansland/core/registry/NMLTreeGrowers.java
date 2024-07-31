@@ -14,8 +14,8 @@ public final class NMLTreeGrowers {
             0.1F,
             Optional.empty(),
             Optional.empty(),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NoMansLand.MODID, "maple"))),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NoMansLand.MODID, "large_maple"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "maple"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "large_maple"))),
             Optional.empty(),
             Optional.empty()
     );
@@ -25,8 +25,8 @@ public final class NMLTreeGrowers {
             0.1F,
             Optional.empty(),
             Optional.empty(),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NoMansLand.MODID, "red_maple"))),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NoMansLand.MODID, "large_red_maple"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "red_maple"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "large_red_maple"))),
             Optional.empty(),
             Optional.empty()
     );
@@ -34,7 +34,7 @@ public final class NMLTreeGrowers {
     public static final TreeGrower PALE_CHERRY = new TreeGrower(
             "pale_cherry",
             Optional.empty(),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NoMansLand.MODID, "pale_cherry"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "pale_cherry"))),
             Optional.empty()
     );
 
@@ -43,8 +43,8 @@ public final class NMLTreeGrowers {
             0.1F,
             Optional.empty(),
             Optional.empty(),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NoMansLand.MODID, "autumnal_oak"))),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NoMansLand.MODID, "large_autumnal_oak"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "autumnal_oak"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "large_autumnal_oak"))),
             Optional.empty(),
             Optional.empty()
     );
@@ -52,7 +52,7 @@ public final class NMLTreeGrowers {
     public static final TreeGrower PINE = new TreeGrower(
             "pine",
             Optional.empty(),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NoMansLand.MODID, "pine"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "pine"))),
             Optional.empty()
     );
 
@@ -61,8 +61,8 @@ public final class NMLTreeGrowers {
             0.1F,
             Optional.empty(),
             Optional.empty(),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NoMansLand.MODID, "walnut"))),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NoMansLand.MODID, "small_walnut"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "walnut"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "small_walnut"))),
             Optional.empty(),
             Optional.empty()
     );
@@ -70,7 +70,7 @@ public final class NMLTreeGrowers {
     public static final TreeGrower YELLOW_BIRCH = new TreeGrower(
             "yellow_birch",
             Optional.empty(),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NoMansLand.MODID, "yellow_birch"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "yellow_birch"))),
             Optional.empty()
     );
 }
