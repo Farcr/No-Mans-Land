@@ -2,21 +2,32 @@ package com.farcr.nomansland.core.content.blockentity;
 
 import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.content.entity.BuriedEntity;
+import com.farcr.nomansland.core.content.mixin.BlockEntityAccessor;
+import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.farcr.nomansland.core.registry.NMLEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BrushableBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.BrushableBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 public class RemainsBlockEntity extends BrushableBlockEntity {
     public RemainsBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(pPos, pBlockState);
+        ((BlockEntityAccessor) this).setType(NMLBlockEntities.REMAINS.get());
+    }
+
+    @Override
+    public boolean isValidBlockState(BlockState blockState) {
+        return NMLBlockEntities.REMAINS.get().isValid(blockState);
     }
 
     @Override

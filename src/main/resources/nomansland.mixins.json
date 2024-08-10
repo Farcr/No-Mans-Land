@@ -5,6 +5,7 @@
   "refmap": "nomansland.refmap.json",
   "mixins": [
     "BaseSpawnerMixin",
+    "BlockEntityAccessor",
     "SpreadingSnowyDirtBlockMixin"
   ],
   "client": [

@@ -56,16 +56,16 @@ public class NMLConfig {
         COMMON_BUILDER.comment("Damage is dealt in hit points. 2 hit points make 1 heart.");
         POKING_DAMAGE = COMMON_BUILDER
                 .comment("The continuous damage dealt to an entity as it stands on an active spike.")
-                .defineInRange("pokingDamage", 1.5, 0, 0);
+                .defineInRange("pokingDamage", 1.5, 0, Double.MAX_VALUE);
         FALLING_DAMAGE = COMMON_BUILDER
                 .comment("The added damage dealt to an entity when it falls on a spike from any height.")
-                .defineInRange("fallingDamage", 2.0, 0, 0);
+                .defineInRange("fallingDamage", 2.0, 0, Double.MAX_VALUE);
         IMPALING_DAMAGE = COMMON_BUILDER
                 .comment("The damage dealt to an entity when an adjacent spike is activated.")
-                .defineInRange("impalingDamage", 12.0, 0, 0);
+                .defineInRange("impalingDamage", 12.0, 0, Double.MAX_VALUE);
         SKEWERING_DAMAGE = COMMON_BUILDER
                 .comment("The damage dealt to an entity when an active spike is pushed into it.")
-                .defineInRange("skeweringDamage", 12.0, 0, 0);
+                .defineInRange("skeweringDamage", 12.0, 0, Double.MAX_VALUE);
         COMMON_BUILDER.pop();
 
         COMMON_BUILDER.push(CATEGORY_MISC);

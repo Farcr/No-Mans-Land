@@ -3,6 +3,7 @@ package com.farcr.nomansland.core.registry;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.core.content.blockentity.NMLSignBlockEntity;
+import com.farcr.nomansland.core.content.blockentity.RemainsBlockEntity;
 import com.farcr.nomansland.core.content.blockentity.TapBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -36,4 +37,9 @@ public class NMLBlockEntities {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MonsterAnchorBlockEntity>> MONSTER_ANCHOR =
             BLOCK_ENTITIES.register("monster_anchor", () ->
                     BlockEntityType.Builder.of(MonsterAnchorBlockEntity::new, NMLBlocks.MONSTER_ANCHOR.get()).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<RemainsBlockEntity>> REMAINS =
+            BLOCK_ENTITIES.register("remains", () ->
+                    BlockEntityType.Builder.of(RemainsBlockEntity::new, NMLBlocks.REMAINS.get()).build(null));
+
 }
