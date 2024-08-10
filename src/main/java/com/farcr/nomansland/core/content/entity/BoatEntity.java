@@ -18,10 +18,11 @@ import net.minecraft.world.level.block.Block;
 import java.util.function.IntFunction;
 
 public class BoatEntity extends Boat {
-    public static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(Boat.class, EntityDataSerializers.INT);
+    public static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(BoatEntity.class, EntityDataSerializers.INT);
 
     public BoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+        this.entityData.set(DATA_ID_TYPE, Type.PINE.ordinal());
     }
 
     public BoatEntity(Level level, double pX, double pY, double pZ) {
@@ -52,7 +53,7 @@ public class BoatEntity extends Boat {
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
-        builder.define(DATA_ID_TYPE, Type.PINE.ordinal());
+        builder.define(DATA_ID_TYPE, 0);
     }
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {

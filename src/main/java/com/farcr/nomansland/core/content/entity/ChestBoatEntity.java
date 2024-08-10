@@ -20,10 +20,11 @@ import java.util.function.IntFunction;
 
 public class ChestBoatEntity extends ChestBoat {
 
-    public static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(Boat.class, EntityDataSerializers.INT);
+    public static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(ChestBoatEntity.class, EntityDataSerializers.INT);
 
     public ChestBoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+        this.entityData.set(DATA_ID_TYPE, BoatEntity.Type.PINE.ordinal());
     }
 
     public ChestBoatEntity(Level level, double pX, double pY, double pZ) {
@@ -54,7 +55,7 @@ public class ChestBoatEntity extends ChestBoat {
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
-        builder.define(DATA_ID_TYPE, BoatEntity.Type.PINE.ordinal());
+        builder.define(DATA_ID_TYPE, 0);
     }
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {
