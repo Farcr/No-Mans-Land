@@ -1,0 +1,6 @@
+{
+  "angry_texture": "minecraft:entity/wolf/wolf_black_angry",
+  "biomes": "minecraft:dark_forest",
+  "tame_texture": "minecraft:entity/wolf/wolf_black_tame",
+  "wild_texture": "minecraft:entity/wolf/wolf_black"
+}
