@@ -81,12 +81,6 @@
     "nomansland:succulent": {
       "chance": 0.5
     },
-    "nomansland:cut_vine": {
-      "chance": 0.3
-    },
-    "nomansland:cut_sugarcane": {
-      "chance": 0.3
-    },
     "nomansland:clover_patch": {
       "chance": 0.65
     },

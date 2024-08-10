@@ -27,6 +27,8 @@ import java.util.function.Supplier;
 
 public class NMLBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(NoMansLand.MODID);
+    public static LinkedHashSet<DeferredHolder<Item, BlockItem>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
+
     public static final DeferredBlock<VineBlock> CUT_VINE = BLOCKS.register("cut_vine",
             () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<CutSugarCaneBlock> CUT_SUGAR_CANE = BLOCKS.register("cut_sugar_cane",
@@ -85,11 +87,10 @@ public class NMLBlocks {
             () -> new HangingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
     public static final DeferredBlock<WallHangingSignBlock> WALNUT_HANGING_WALL_SIGN = BLOCKS.register("walnut_wall_hanging_sign",
             () -> new WallHangingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
-//    public static final DeferredBlock<ResinCauldronBlock> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
-//            () -> new ResinCauldronBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
-//    public static final DeferredBlock<HoneyCauldronBlock> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
-//            () -> new HoneyCauldronBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
-    public static LinkedHashSet<DeferredHolder<Item, BlockItem>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
+    public static final DeferredBlock<ResinCauldronBlock> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
+            () -> new ResinCauldronBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
+    public static final DeferredBlock<HoneyCauldronBlock> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
+            () -> new HoneyCauldronBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
     //Plants and Other Natural Decorations
     public static final DeferredBlock<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
             () -> new GrassSproutsBlock(Block.Properties.ofFullCopy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
@@ -434,8 +435,8 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> WALNUT_CABINET = registerIntegrationBlock("walnut_cabinet",
             !ModList.get().isLoaded("farmersdelight") ?
                     () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight", true);
-//    public static final DeferredBlock<Block> TAP = registerBlock("tap",
-//            () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> TAP = registerBlock("tap",
+            () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> SPIKE_TRAP = registerBlock("spike_trap",
             () -> new SpikeTrapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(1.5F, 6.0F).noOcclusion()));
 
@@ -462,18 +463,20 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> FIELD_MUSHROOM_BLOCK = registerBlock("field_mushroom_block",
             () -> new HugeMushroomBlock((BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM_BLOCK))));
 
-    private static <T extends Block> DeferredBlock<Block> registerBlock(String name, Supplier<? extends Block> block) {
+    @SuppressWarnings("unchecked")
+    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<? extends Block> block) {
         DeferredBlock<Block> toReturn = BLOCKS.register(name, block);
         CREATIVE_TAB_ITEMS.add(registerBlockItem(name, toReturn));
-        return toReturn;
+        return (DeferredBlock<T>) toReturn;
     }
 
-    private static <T extends Block> DeferredBlock<Block> registerIntegrationBlock(String name, Supplier<? extends Block> block, String modId, Boolean blockItem) {
+    @SuppressWarnings("unchecked")
+    private static <T extends Block> DeferredBlock<T> registerIntegrationBlock(String name, Supplier<? extends Block> block, String modId, Boolean blockItem) {
         DeferredBlock<Block> blocks = BLOCKS.register(name, block);
         if (ModList.get().isLoaded(modId) && blockItem) {
             CREATIVE_TAB_ITEMS.add(registerIntegrationBlockItem(name, blocks));
         }
-        return blocks;
+        return (DeferredBlock<T>) blocks;
     }
 
     private static <T extends Block> DeferredHolder<Item, BlockItem> registerBlockItem(String name, Supplier<? extends Block> block) {

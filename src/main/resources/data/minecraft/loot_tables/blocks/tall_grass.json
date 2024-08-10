@@ -10,7 +10,7 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "minecraft:grass",
+              "name": "minecraft:short_grass",
               "functions": [
                 {
                   "function": "minecraft:set_count",
@@ -84,7 +84,7 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "minecraft:grass",
+              "name": "minecraft:short_grass",
               "functions": [
                 {
                   "function": "minecraft:set_count",

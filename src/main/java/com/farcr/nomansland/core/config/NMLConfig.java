@@ -37,14 +37,14 @@ public class NMLConfig {
                 .define("malevolentSpawner", true);
         COMMON_BUILDER.pop();
 
-//        COMMON_BUILDER.push(CATEGORY_TAP);
-//        FILLING_SPEED_MULTIPLIER = COMMON_BUILDER
-//                .comment("Multiplier on how fast taps should fill up cauldrons with resin. Set it to 0.0 to disable this.")
-//                .defineInRange("fillingSpeedMultiplier", 1.0, 0, 10);
-//        TICKS_TO_FILL_CAULDRON = COMMON_BUILDER
-//                .comment("The time it takes to fill a cauldron with honey using a tap. 20 ticks make one second.")
-//                .defineInRange("ticksToFillCauldron", 80, 1, 400);
-//        COMMON_BUILDER.pop();
+        COMMON_BUILDER.push(CATEGORY_TAP);
+        FILLING_SPEED_MULTIPLIER = COMMON_BUILDER
+                .comment("Multiplier on how fast taps should fill up cauldrons with resin. Set it to 0.0 to disable this.")
+                .defineInRange("fillingSpeedMultiplier", 1.0, 0, 10);
+        TICKS_TO_FILL_CAULDRON = COMMON_BUILDER
+                .comment("The time it takes to fill a cauldron with honey using a tap. 20 ticks make one second.")
+                .defineInRange("ticksToFillCauldron", 80, 1, 400);
+        COMMON_BUILDER.pop();
 
         COMMON_BUILDER.push(CATEGORY_ANCHOR);
         TICKS_BETWEEN_RESURRECTIONS = COMMON_BUILDER
