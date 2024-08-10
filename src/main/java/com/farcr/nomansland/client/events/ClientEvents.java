@@ -42,7 +42,7 @@ public class ClientEvents {
 
     @SubscribeEvent
     public static void registerModels(ModelEvent.RegisterAdditional event) {
-        event.register(ModelResourceLocation.inventory(ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "entity/firebomb")));
+        event.register(ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "entity/firebomb")));
     }
 
     @SubscribeEvent
