@@ -6,6 +6,7 @@
   "mixins": [
     "BaseSpawnerMixin",
     "BlockEntityAccessor",
+    "LivingEntityMixin",
     "SpreadingSnowyDirtBlockMixin"
   ],
   "client": [

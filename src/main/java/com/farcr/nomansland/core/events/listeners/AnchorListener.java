@@ -1,6 +1,7 @@
 package com.farcr.nomansland.core.events.listeners;
 
 import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
+import com.farcr.nomansland.core.content.mixinduck.LivingEntityDuck;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -111,7 +112,7 @@ public class AnchorListener implements GameEventListener {
 
                     // Stop the mob from dropping experience and loot
                     deadEntity.skipDropExperience();
-                    deadEntity.setPersistenceRequired();
+                    ((LivingEntityDuck) deadEntity).nomansland$skipDroppingDeathLoot();
 
                     AABB boundingBox = deadEntity.getBoundingBox();
                     processPoints(level, boundingBox, 0.2D).forEach(point -> {

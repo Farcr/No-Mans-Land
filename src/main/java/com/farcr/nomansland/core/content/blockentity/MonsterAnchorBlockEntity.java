@@ -14,8 +14,11 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -130,6 +133,17 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
                     if (resurrectedEntity != null) {
                         if (resurrectedEntity instanceof Zombie zombie) zombie.setBaby(deadEntity.isBaby());
                         resurrectedEntity.moveTo(spawningPosition.x, spawningPosition.y, spawningPosition.z);
+
+                        for (EquipmentSlot slot : EquipmentSlot.values()) {
+                            ItemStack oldItem = deadEntity.getItemBySlot(slot);
+                            resurrectedEntity.setItemSlot(slot, oldItem);
+                        }
+
+                        if (resurrectedEntity instanceof Mob resurrectedMob && deadEntity instanceof Mob deadMob) {
+                            if (deadMob.isPersistenceRequired())
+                                resurrectedMob.setPersistenceRequired();
+                        }
+
                         level.addFreshEntity(resurrectedEntity);
                         entityQueue.remove(deadEntity);
                         for (double y = 0; y <= 4; y++) {
