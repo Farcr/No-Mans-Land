@@ -436,9 +436,9 @@ public class NMLBlocks {
             !ModList.get().isLoaded("farmersdelight") ?
                     () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight", true);
     public static final DeferredBlock<Block> TAP = registerBlock("tap",
-            () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
+            () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops().noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> SPIKE_TRAP = registerBlock("spike_trap",
-            () -> new SpikeTrapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(1.5F, 6.0F).noOcclusion()));
+            () -> new SpikeTrapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(1.5F, 6.0F).requiresCorrectToolForDrops().noOcclusion()));
 
 
     //Storage
