@@ -86,11 +86,11 @@ dependencies {
     //Optional Farmer's Delight Dependency, for compat use
 //    implementation fg.deobf("curse.maven:farmers-delight-398521:${farmers_delight_version}")
 
-    implementation("dev.lukebemish:biomesquisher:${bs_version}") {
-        capabilities {
-            requireCapability('dev.lukebemish:biomesquisher-neoforge')
-        }
-    }
+//    implementation("dev.lukebemish:biomesquisher:${bs_version}") {
+//        capabilities {
+//            requireCapability('dev.lukebemish:biomesquisher-neoforge')
+//        }
+//    }
     // compile against the JEI API but do not include it at runtime
 //    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
 //    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"

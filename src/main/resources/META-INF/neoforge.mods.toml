@@ -39,13 +39,13 @@ versionRange="${sbl_version_range}"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.${mod_id}]]
-modId="biomesquisher"
-type="required"
-reason="Biome Generation"
-versionRange="${bs_version_range}"
-ordering="NONE"
-side="BOTH"
+#[[dependencies.${mod_id}]]
+#modId="biomesquisher"
+#type="required"
+#reason="Biome Generation"
+#versionRange="${bs_version_range}"
+#ordering="NONE"
+#side="BOTH"
 
 [[dependencies.${mod_id}]]
 modId="farmersdelight"
