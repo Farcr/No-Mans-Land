@@ -4,10 +4,12 @@ import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.core.content.mixinduck.LivingEntityDuck;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
+import com.farcr.nomansland.core.registry.NMLTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
@@ -31,20 +33,6 @@ public class AnchorListener implements GameEventListener {
     public AnchorListener(BlockState pBlockState, PositionSource pPositionSource) {
         this.state = pBlockState;
         this.positionSource = pPositionSource;
-    }
-
-    // Return a blacklist of entity types from config
-    public static List<EntityType> getBlacklist() {
-        List<EntityType> blacklist = new ArrayList<>();
-        NMLConfig.MONSTER_BLACKLIST.get().forEach(element -> {
-            if (element.contains(":")) {
-                EntityType<?> value = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath(Arrays.stream(element.split(":")).toList().get(0), Arrays.stream(element.split(":")).toList().get(1)));
-                if (value != null) {
-                    blacklist.add(value);
-                }
-            }
-        });
-        return blacklist;
     }
 
     // Get all the points on all the faces of a bounding box depending on the resolution and process them
@@ -120,7 +108,7 @@ public class AnchorListener implements GameEventListener {
     public boolean handleGameEvent(ServerLevel level, Holder<GameEvent> gameEvent, GameEvent.Context context, Vec3 pos) {
         if (gameEvent == GameEvent.ENTITY_DIE) {
             Entity entity = context.sourceEntity();
-            if (entity instanceof Monster deadEntity && !(getBlacklist().contains(entity.getType()))) {
+            if (entity instanceof Monster deadEntity && !(entity.getType().getTags().toList().contains(NMLTags.ANCHOR_BLACKLIST))) {
                 if (!deadEntity.wasExperienceConsumed()) {
                     // Add the entity to the dead entity list
                     this.positionSource.getPosition(level).ifPresent((sourcePos) -> {
