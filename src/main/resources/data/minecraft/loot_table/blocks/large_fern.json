@@ -10,7 +10,7 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "minecraft:short_grass",
+              "name": "minecraft:fern",
               "functions": [
                 {
                   "function": "minecraft:set_count",
@@ -22,9 +22,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 }
               ]
@@ -38,12 +36,12 @@
                 },
                 {
                   "condition": "minecraft:random_chance",
-                  "chance": 0.3
+                  "chance": 0.1
                 },
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "tag": "minecraft:hoes"
+                    "items": "#minecraft:hoes"
                   }
                 }
               ]
@@ -54,7 +52,7 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "minecraft:tall_grass",
+          "block": "minecraft:large_fern",
           "properties": {
             "half": "lower"
           }
@@ -65,7 +63,7 @@
           "predicate": {
             "block": {
               "blocks": [
-                "minecraft:tall_grass"
+                "minecraft:large_fern"
               ],
               "state": {
                 "half": "upper"
@@ -84,7 +82,7 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "minecraft:short_grass",
+              "name": "minecraft:fern",
               "functions": [
                 {
                   "function": "minecraft:set_count",
@@ -96,9 +94,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
+                    "items": "minecraft:shears"
                   }
                 }
               ]
@@ -112,12 +108,12 @@
                 },
                 {
                   "condition": "minecraft:random_chance",
-                  "chance": 0.3
+                  "chance": 0.1
                 },
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "tag": "minecraft:hoes"
+                    "items": "#minecraft:hoes"
                   }
                 }
               ]
@@ -128,7 +124,7 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "minecraft:tall_grass",
+          "block": "minecraft:large_fern",
           "properties": {
             "half": "upper"
           }
@@ -139,7 +135,7 @@
           "predicate": {
             "block": {
               "blocks": [
-                "minecraft:tall_grass"
+                "minecraft:large_fern"
               ],
               "state": {
                 "half": "lower"
@@ -150,5 +146,5 @@
       ]
     }
   ],
-  "random_sequence": "minecraft:blocks/tall_grass"
+  "random_sequence": "minecraft:blocks/large_fern"
 }

@@ -1,18 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
+  "pattern": [
+    "##",
+    "##"
+  ],
   "key": {
     "#": {
       "item": "nomansland:polished_stone"
     }
   },
-  "pattern": [
-    "##",
-    "##"
-  ],
   "result": {
-    "count": 4,
-    "item": "minecraft:stone_bricks"
-  },
-  "show_notification": true
+    "id": "minecraft:stone_bricks",
+    "count": 4
+  }
 }

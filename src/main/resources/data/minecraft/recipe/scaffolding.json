@@ -11,7 +11,7 @@
     }
   },
   "result": {
-    "item": "minecraft:scaffolding",
+    "id": "minecraft:scaffolding",
     "count": 6
   },
   "show_notification": true

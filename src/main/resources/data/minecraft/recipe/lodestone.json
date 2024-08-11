@@ -7,17 +7,17 @@
   ],
   "key": {
     "#": {
-      "item": "nomansland:polished_stone"
+      "item": "minecraft:chiseled_stone_bricks"
     },
     "S": {
-      "item": "minecraft:chiseled_stone_bricks"
+      "item": "nomansland:polished_stone"
     },
     "C": {
       "item": "minecraft:compass"
     }
   },
   "result": {
-    "item": "minecraft:lodestone",
+    "id": "minecraft:lodestone",
     "count": 1
   },
   "group": "lodestone"

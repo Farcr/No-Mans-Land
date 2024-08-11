@@ -6,11 +6,11 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:sand"
+      "item": "minecraft:red_sand"
     }
   },
   "result": {
-    "item": "minecraft:sandstone",
+    "id": "minecraft:red_sandstone",
     "count": 2
   }
 }
