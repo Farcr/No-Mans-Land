@@ -1,7 +1,6 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.lootmodifiers.PreventDropsModifier;
 import com.mojang.serialization.MapCodec;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -13,7 +12,4 @@ public class NMLLootModifiers {
 
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> LOOT_MODIFIERS =
             DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, NoMansLand.MODID);
-
-    public static final Supplier<MapCodec<? extends IGlobalLootModifier>> PREVENT_DROPS =
-            LOOT_MODIFIERS.register("prevent_drops", PreventDropsModifier.CODEC);
 }

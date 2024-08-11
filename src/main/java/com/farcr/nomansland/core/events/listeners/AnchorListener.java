@@ -1,13 +1,17 @@
 package com.farcr.nomansland.core.events.listeners;
 
+import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.core.content.mixinduck.LivingEntityDuck;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -17,16 +21,30 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class AnchorListener implements GameEventListener {
     private final BlockState state;
     private final PositionSource positionSource;
 
-
     public AnchorListener(BlockState pBlockState, PositionSource pPositionSource) {
         this.state = pBlockState;
         this.positionSource = pPositionSource;
+    }
+
+    // Return a blacklist of entity types from config
+    public static List<EntityType> getBlacklist() {
+        List<EntityType> blacklist = new ArrayList<>();
+        NMLConfig.MONSTER_BLACKLIST.get().forEach(element -> {
+            if (element.contains(":")) {
+                EntityType<?> value = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath(Arrays.stream(element.split(":")).toList().get(0), Arrays.stream(element.split(":")).toList().get(1)));
+                if (value != null) {
+                    blacklist.add(value);
+                }
+            }
+        });
+        return blacklist;
     }
 
     // Get all the points on all the faces of a bounding box depending on the resolution and process them
@@ -102,7 +120,7 @@ public class AnchorListener implements GameEventListener {
     public boolean handleGameEvent(ServerLevel level, Holder<GameEvent> gameEvent, GameEvent.Context context, Vec3 pos) {
         if (gameEvent == GameEvent.ENTITY_DIE) {
             Entity entity = context.sourceEntity();
-            if (entity instanceof Monster deadEntity) {
+            if (entity instanceof Monster deadEntity && !(getBlacklist().contains(entity.getType()))) {
                 if (!deadEntity.wasExperienceConsumed()) {
                     // Add the entity to the dead entity list
                     this.positionSource.getPosition(level).ifPresent((sourcePos) -> {

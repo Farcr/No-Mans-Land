@@ -1,6 +1,17 @@
 package com.farcr.nomansland.core.config;
 
+import com.farcr.nomansland.core.events.listeners.AnchorListener;
+import com.ibm.icu.impl.Trie2;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.Zombie;
 import net.neoforged.neoforge.common.ModConfigSpec;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class NMLConfig {
 
@@ -17,6 +28,7 @@ public class NMLConfig {
     public static ModConfigSpec.DoubleValue FILLING_SPEED_MULTIPLIER;
     public static ModConfigSpec.IntValue TICKS_TO_FILL_CAULDRON;
     public static ModConfigSpec.IntValue TICKS_BETWEEN_RESURRECTIONS;
+    public static ModConfigSpec.ConfigValue<List<? extends String>> MONSTER_BLACKLIST;
     public static ModConfigSpec.DoubleValue POKING_DAMAGE;
     public static ModConfigSpec.DoubleValue FALLING_DAMAGE;
     public static ModConfigSpec.DoubleValue IMPALING_DAMAGE;
@@ -50,6 +62,9 @@ public class NMLConfig {
         TICKS_BETWEEN_RESURRECTIONS = COMMON_BUILDER
                 .comment("The time between each resurrection from a monster anchor.")
                 .defineInRange("ticksBetweenResurrections", 80, 78, 400);
+        MONSTER_BLACKLIST = COMMON_BUILDER
+                .comment("A list of monsters that the monster anchor will not resurrect")
+                .defineList("monsterBlacklist", Arrays.asList("examplemod:example_entity"), () -> "", entry -> entry.toString().contains(":"));
         COMMON_BUILDER.pop();
 
         COMMON_BUILDER.push(CATEGORY_SPIKE);

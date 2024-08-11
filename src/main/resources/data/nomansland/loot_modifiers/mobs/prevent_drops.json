@@ -1,6 +1,0 @@
-{
-  "type": "nomansland:prevent_drops",
-  "conditions": [
-  ],
-  "preventDrops": true
-}
