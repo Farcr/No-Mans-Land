@@ -1,7 +1,7 @@
 package com.farcr.nomansland.core.content.blockentity;
 
 import com.farcr.nomansland.core.config.NMLConfig;
-import com.farcr.nomansland.core.content.block.HoneyCauldronBlock;
+import com.farcr.nomansland.core.content.block.cauldrons.HoneyCauldronBlock;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.core.BlockPos;

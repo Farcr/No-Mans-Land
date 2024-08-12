@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.block;
+package com.farcr.nomansland.core.content.block.cauldrons;
 
 import com.farcr.nomansland.core.registry.NMLItems;
 import net.minecraft.core.BlockPos;
@@ -22,8 +22,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 
 public class ResinCauldronBlock extends LayeredCauldronBlock {
-    public ResinCauldronBlock(Biome.Precipitation precipitation, CauldronInteraction.InteractionMap interactionMap, BlockBehaviour.Properties properties) {
-        super(precipitation, interactionMap, properties);
+    public ResinCauldronBlock() {
+        super(null, CauldronInteraction.EMPTY, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON));
     }
 
     public void fillUp(BlockState state, Level level, BlockPos pos) {

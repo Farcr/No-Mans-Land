@@ -5,6 +5,8 @@ import com.farcr.nomansland.core.content.block.StandingSignBlock;
 import com.farcr.nomansland.core.content.block.WallHangingSignBlock;
 import com.farcr.nomansland.core.content.block.WallSignBlock;
 import com.farcr.nomansland.core.content.block.*;
+import com.farcr.nomansland.core.content.block.cauldrons.HoneyCauldronBlock;
+import com.farcr.nomansland.core.content.block.cauldrons.ResinCauldronBlock;
 import com.farcr.nomansland.core.content.world.tree.HugeMushrooms;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
@@ -88,9 +90,9 @@ public class NMLBlocks {
     public static final DeferredBlock<WallHangingSignBlock> WALNUT_HANGING_WALL_SIGN = BLOCKS.register("walnut_wall_hanging_sign",
             () -> new WallHangingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
     public static final DeferredBlock<ResinCauldronBlock> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
-            () -> new ResinCauldronBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
+            ResinCauldronBlock::new);
     public static final DeferredBlock<HoneyCauldronBlock> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
-            () -> new HoneyCauldronBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
+            HoneyCauldronBlock::new);
     //Plants and Other Natural Decorations
     public static final DeferredBlock<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
             () -> new GrassSproutsBlock(Block.Properties.ofFullCopy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));

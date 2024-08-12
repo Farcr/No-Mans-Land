@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.block;
+package com.farcr.nomansland.core.content.block.cauldrons;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
@@ -25,8 +25,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 
 public class HoneyCauldronBlock extends LayeredCauldronBlock {
-    public HoneyCauldronBlock(Biome.Precipitation precipitation, CauldronInteraction.InteractionMap interactionMap, BlockBehaviour.Properties properties) {
-        super(precipitation, interactionMap, properties);
+    public HoneyCauldronBlock() {
+        super(null, CauldronInteraction.EMPTY, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON));
     }
 
     public void fillUp(BlockState state, Level level, BlockPos pos) {
@@ -63,7 +63,7 @@ public class HoneyCauldronBlock extends LayeredCauldronBlock {
             fillUp(state, level, pos);
             level.playSound(null, pos, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
             return ItemInteractionResult.sidedSuccess(level.isClientSide);
-        }
+        } else
         return ItemInteractionResult.FAIL;
     }
 

@@ -1,6 +1,7 @@
 package com.farcr.nomansland.core.content.block;
 
 import com.farcr.nomansland.core.config.NMLConfig;
+import com.farcr.nomansland.core.content.block.cauldrons.ResinCauldronBlock;
 import com.farcr.nomansland.core.content.blockentity.TapBlockEntity;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.farcr.nomansland.core.registry.NMLBlocks;
