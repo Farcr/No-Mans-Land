@@ -14,6 +14,10 @@
     {
       "condition": "block_state_property",
       "block": "nomansland:grass_sprouts"
+    },
+    {
+      "condition": "nomansland:mod_loaded",
+      "modid": "farmersdelight"
     }
   ],
   "item": "farmersdelight:straw"
