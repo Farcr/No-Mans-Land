@@ -4,7 +4,7 @@ import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.registry.*;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -15,7 +15,7 @@ public class NoMansLand {
     public static final String MODID = "nomansland";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public NoMansLand(IEventBus modEventBus, ModContainer modContainer) {
+    public NoMansLand(IEventBus modEventBus) {
 
         NMLItems.ITEMS.register(modEventBus);
         NMLBlocks.BLOCKS.register(modEventBus);
@@ -31,13 +31,14 @@ public class NoMansLand {
         modEventBus.addListener(NMLItems::addCreative);
         modEventBus.addListener(this::commonSetup);
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, NMLConfig.COMMON_CONFIG);
-        modContainer.registerConfig(ModConfig.Type.CLIENT, NMLConfig.CLIENT_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, NMLConfig.COMMON_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, NMLConfig.CLIENT_CONFIG);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             NMLFlammables.register();
+            NMLCompostabies.register();
             NMLPottables.register();
         });
     }

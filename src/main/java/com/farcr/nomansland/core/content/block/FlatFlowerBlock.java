@@ -11,9 +11,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class FlatFlowerBlock extends BushBlock {
 
-    public static final MapCodec<FlatFlowerBlock> CODEC = simpleCodec(FlatFlowerBlock::new);
-
-
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 5.0D, 14.0D);
 
     public FlatFlowerBlock(Properties pProperties) {
@@ -22,7 +19,7 @@ public class FlatFlowerBlock extends BushBlock {
 
     @Override
     protected MapCodec<? extends BushBlock> codec() {
-        return CODEC;
+        return null;
     }
 
     @Override

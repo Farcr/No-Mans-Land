@@ -14,6 +14,6 @@ public class NMLBiomes {
 
 
     public static ResourceKey<Biome> createKey(String name) {
-        return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, name));
+        return ResourceKey.create(Registries.BIOME, new ResourceLocation(NoMansLand.MODID, name));
     }
 }

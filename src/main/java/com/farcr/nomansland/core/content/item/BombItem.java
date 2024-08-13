@@ -24,8 +24,8 @@ public abstract class BombItem extends Item {
     }
 
     @Override
-    public int getUseDuration(ItemStack stack, LivingEntity entity) {
-        return 7200;
+    public int getUseDuration(ItemStack arg) {
+        return 72000;
     }
 
     @Override
@@ -35,14 +35,14 @@ public abstract class BombItem extends Item {
 
     @Override
     public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int remainingTicks) {
-        if (!entity.isShiftKeyDown() && this.getUseDuration(stack, entity) - remainingTicks >= DEFAULT_THROW_TIME) {
+        if (!entity.isShiftKeyDown() && this.getUseDuration(stack) - remainingTicks >= DEFAULT_THROW_TIME) {
             entity.releaseUsingItem();
         }
     }
 
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int remainingTicks) {
-        if (this.getUseDuration(stack, entity) - remainingTicks < DEFAULT_THROW_TIME) {
+        if (this.getUseDuration(stack) - remainingTicks < DEFAULT_THROW_TIME) {
             return;
         }
 

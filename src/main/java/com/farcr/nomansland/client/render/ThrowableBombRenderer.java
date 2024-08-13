@@ -12,7 +12,6 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
@@ -41,7 +40,7 @@ public abstract class ThrowableBombRenderer<T extends ThrowableBombEntity> exten
     private void renderQuadList(PoseStack matrixStack, VertexConsumer vertexConsumer, List<BakedQuad> quads, int packedLight, int packedOverlay) {
         PoseStack.Pose pose = matrixStack.last();
         for (BakedQuad bakedQuad : quads) {
-            vertexConsumer.putBulkData(pose, bakedQuad, 1.0F, 1.0F, 1.0F, 1.0F, packedLight, packedOverlay);
+            vertexConsumer.putBulkData(pose, bakedQuad, 1.0F, 1.0F, 1.0F, packedLight, packedOverlay);
         }
     }
 
@@ -68,5 +67,5 @@ public abstract class ThrowableBombRenderer<T extends ThrowableBombEntity> exten
         return InventoryMenu.BLOCK_ATLAS;
     }
 
-    public abstract ModelResourceLocation getModelLocation(T entity);
+    public abstract ResourceLocation getModelLocation(T entity);
 }

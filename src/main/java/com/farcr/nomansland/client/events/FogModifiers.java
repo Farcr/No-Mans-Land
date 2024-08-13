@@ -14,11 +14,11 @@ import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.ViewportEvent;
+import net.neoforged.neoforge.event.TickEvent;
 
-@EventBusSubscriber(modid = NoMansLand.MODID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = NoMansLand.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class FogModifiers {
     //Made with infinite help from big man Cappin
     //This class definitely isn't the cleanest code or uses the best practices but its effects are too good to give up on.
@@ -31,7 +31,7 @@ public class FogModifiers {
     private static int timer = 0;
 
     @SubscribeEvent
-    public static void getBiome(ClientTickEvent.Pre event) {
+    public static void getBiome(TickEvent.ClientTickEvent event) {
         timer++;
         if (timer >= 60) {
             timer = 0;

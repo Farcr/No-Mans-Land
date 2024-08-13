@@ -28,68 +28,68 @@ import java.util.function.Supplier;
 
 public class NMLBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(NoMansLand.MODID);
-    public static final DeferredBlock<VineBlock> CUT_VINE = BLOCKS.register("cut_vine",
+    public static final DeferredBlock<Block> CUT_VINE = BLOCKS.register("cut_vine",
             () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
-    public static final DeferredBlock<CutSugarCaneBlock> CUT_SUGAR_CANE = BLOCKS.register("cut_sugar_cane",
+    public static final DeferredBlock<Block> CUT_SUGAR_CANE = BLOCKS.register("cut_sugar_cane",
             () -> new CutSugarCaneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     //Decorations
-    public static final DeferredBlock<SconceTorchBlock> SCONCE_TORCH = BLOCKS.register("sconce_torch",
+    public static final DeferredBlock<Block> SCONCE_TORCH = BLOCKS.register("sconce_torch",
             () -> new SconceTorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH).sound(SoundType.LANTERN)));
-    public static final DeferredBlock<ExtinguishedSconceTorchBlock> EXTINGUISHED_SCONCE_TORCH = BLOCKS.register("extinguished_sconce_torch",
+    public static final DeferredBlock<Block> EXTINGUISHED_SCONCE_TORCH = BLOCKS.register("extinguished_sconce_torch",
             () -> new ExtinguishedSconceTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.LANTERN).pushReaction(PushReaction.DESTROY), NMLBlocks.SCONCE_TORCH.get(), ParticleTypes.FLAME));
-    public static final DeferredBlock<SconceWallTorchBlock> SCONCE_WALL_TORCH = BLOCKS.register("sconce_wall_torch",
+    public static final DeferredBlock<Block> SCONCE_WALL_TORCH = BLOCKS.register("sconce_wall_torch",
             () -> new SconceWallTorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.WALL_TORCH).sound(SoundType.LANTERN)));
-    public static final DeferredBlock<ExtinguishedSconceWallTorchBlock> EXTINGUISHED_SCONCE_WALL_TORCH = BLOCKS.register("extinguished_sconce_wall_torch",
+    public static final DeferredBlock<Block> EXTINGUISHED_SCONCE_WALL_TORCH = BLOCKS.register("extinguished_sconce_wall_torch",
             () -> new ExtinguishedSconceWallTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.LANTERN).pushReaction(PushReaction.DESTROY), NMLBlocks.SCONCE_WALL_TORCH.get(), ParticleTypes.FLAME));
-    public static final DeferredBlock<SconceTorchBlock> SCONCE_SOUL_TORCH = BLOCKS.register("sconce_soul_torch",
+    public static final DeferredBlock<Block> SCONCE_SOUL_TORCH = BLOCKS.register("sconce_soul_torch",
             () -> new SconceTorchBlock(ParticleTypes.SOUL_FIRE_FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_TORCH).sound(SoundType.LANTERN)));
-    public static final DeferredBlock<ExtinguishedSconceTorchBlock> EXTINGUISHED_SCONCE_SOUL_TORCH = BLOCKS.register("extinguished_sconce_soul_torch",
+    public static final DeferredBlock<Block> EXTINGUISHED_SCONCE_SOUL_TORCH = BLOCKS.register("extinguished_sconce_soul_torch",
             () -> new ExtinguishedSconceTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.LANTERN).pushReaction(PushReaction.DESTROY), NMLBlocks.SCONCE_SOUL_TORCH.get(), ParticleTypes.SOUL_FIRE_FLAME));
-    public static final DeferredBlock<SconceWallTorchBlock> SCONCE_SOUL_WALL_TORCH = BLOCKS.register("sconce_soul_wall_torch",
+    public static final DeferredBlock<Block> SCONCE_SOUL_WALL_TORCH = BLOCKS.register("sconce_soul_wall_torch",
             () -> new SconceWallTorchBlock(ParticleTypes.SOUL_FIRE_FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_WALL_TORCH).sound(SoundType.LANTERN)));
-    public static final DeferredBlock<ExtinguishedSconceWallTorchBlock> EXTINGUISHED_SCONCE_SOUL_WALL_TORCH = BLOCKS.register("extinguished_sconce_soul_wall_torch",
+    public static final DeferredBlock<Block> EXTINGUISHED_SCONCE_SOUL_WALL_TORCH = BLOCKS.register("extinguished_sconce_soul_wall_torch",
             () -> new ExtinguishedSconceWallTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.LANTERN).pushReaction(PushReaction.DESTROY), NMLBlocks.SCONCE_SOUL_WALL_TORCH.get(), ParticleTypes.SOUL_FIRE_FLAME));
-    public static final DeferredBlock<ExtinguishedTorchBlock> EXTINGUISHED_TORCH = BLOCKS.register("extinguished_torch",
+    public static final DeferredBlock<Block> EXTINGUISHED_TORCH = BLOCKS.register("extinguished_torch",
             () -> new ExtinguishedTorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY), Blocks.TORCH));
-    public static final DeferredBlock<ExtinguishedWallTorchBlock> EXTINGUISHED_WALL_TORCH = BLOCKS.register("extinguished_wall_torch",
+    public static final DeferredBlock<Block> EXTINGUISHED_WALL_TORCH = BLOCKS.register("extinguished_wall_torch",
             () -> new ExtinguishedWallTorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY), Blocks.WALL_TORCH));
-    public static final DeferredBlock<ExtinguishedTorchBlock> EXTINGUISHED_SOUL_TORCH = BLOCKS.register("extinguished_soul_torch",
+    public static final DeferredBlock<Block> EXTINGUISHED_SOUL_TORCH = BLOCKS.register("extinguished_soul_torch",
             () -> new ExtinguishedTorchBlock(ParticleTypes.SOUL_FIRE_FLAME, BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY), Blocks.SOUL_TORCH));
-    public static final DeferredBlock<ExtinguishedWallTorchBlock> EXTINGUISHED_SOUL_WALL_TORCH = BLOCKS.register("extinguished_soul_wall_torch",
+    public static final DeferredBlock<Block> EXTINGUISHED_SOUL_WALL_TORCH = BLOCKS.register("extinguished_soul_wall_torch",
             () -> new ExtinguishedWallTorchBlock(ParticleTypes.SOUL_FIRE_FLAME, BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY), Blocks.SOUL_WALL_TORCH));
-    public static final DeferredBlock<WoodenScaffoldingBlock> WOODEN_SCAFFOLDING = BLOCKS.register("wooden_scaffolding",
+    public static final DeferredBlock<Block> WOODEN_SCAFFOLDING = BLOCKS.register("wooden_scaffolding",
             () -> new WoodenScaffoldingBlock(Block.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.CHERRY_WOOD)));
-    public static final DeferredBlock<StandingSignBlock> PINE_SIGN = BLOCKS.register("pine_sign",
+    public static final DeferredBlock<Block> PINE_SIGN = BLOCKS.register("pine_sign",
             () -> new StandingSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
 
-    //    public static final DeferredBlock<Block> SHRUB = registerBlock("shrub",
+//    public static final DeferredBlock<Block> SHRUB = registerBlock("shrub",
 //            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)));
-    public static final DeferredBlock<WallSignBlock> PINE_WALL_SIGN = BLOCKS.register("pine_wall_sign",
+    public static final DeferredBlock<Block> PINE_WALL_SIGN = BLOCKS.register("pine_wall_sign",
             () -> new WallSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
-    public static final DeferredBlock<HangingSignBlock> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",
+    public static final DeferredBlock<Block> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",
             () -> new HangingSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
-    public static final DeferredBlock<WallHangingSignBlock> PINE_HANGING_WALL_SIGN = BLOCKS.register("pine_wall_hanging_sign",
+    public static final DeferredBlock<Block> PINE_HANGING_WALL_SIGN = BLOCKS.register("pine_wall_hanging_sign",
             () -> new WallHangingSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
-    public static final DeferredBlock<StandingSignBlock> MAPLE_SIGN = BLOCKS.register("maple_sign",
+    public static final DeferredBlock<Block> MAPLE_SIGN = BLOCKS.register("maple_sign",
             () -> new StandingSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
-    public static final DeferredBlock<WallSignBlock> MAPLE_WALL_SIGN = BLOCKS.register("maple_wall_sign",
+    public static final DeferredBlock<Block> MAPLE_WALL_SIGN = BLOCKS.register("maple_wall_sign",
             () -> new WallSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
-    public static final DeferredBlock<HangingSignBlock> MAPLE_HANGING_SIGN = BLOCKS.register("maple_hanging_sign",
+    public static final DeferredBlock<Block> MAPLE_HANGING_SIGN = BLOCKS.register("maple_hanging_sign",
             () -> new HangingSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
-    public static final DeferredBlock<WallHangingSignBlock> MAPLE_HANGING_WALL_SIGN = BLOCKS.register("maple_wall_hanging_sign",
+    public static final DeferredBlock<Block> MAPLE_HANGING_WALL_SIGN = BLOCKS.register("maple_wall_hanging_sign",
             () -> new WallHangingSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
-    public static final DeferredBlock<StandingSignBlock> WALNUT_SIGN = BLOCKS.register("walnut_sign",
+    public static final DeferredHolder<Block, StandingSignBlock> WALNUT_SIGN = BLOCKS.register("walnut_sign",
             () -> new StandingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
-    public static final DeferredBlock<WallSignBlock> WALNUT_WALL_SIGN = BLOCKS.register("walnut_wall_sign",
+    public static final DeferredHolder<Block, WallSignBlock> WALNUT_WALL_SIGN = BLOCKS.register("walnut_wall_sign",
             () -> new WallSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
-    public static final DeferredBlock<HangingSignBlock> WALNUT_HANGING_SIGN = BLOCKS.register("walnut_hanging_sign",
+    public static final DeferredHolder<Block, HangingSignBlock> WALNUT_HANGING_SIGN = BLOCKS.register("walnut_hanging_sign",
             () -> new HangingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
-    public static final DeferredBlock<WallHangingSignBlock> WALNUT_HANGING_WALL_SIGN = BLOCKS.register("walnut_wall_hanging_sign",
+    public static final DeferredHolder<Block, WallHangingSignBlock> WALNUT_HANGING_WALL_SIGN = BLOCKS.register("walnut_wall_hanging_sign",
             () -> new WallHangingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
-//    public static final DeferredBlock<ResinCauldronBlock> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
-//            () -> new ResinCauldronBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
-//    public static final DeferredBlock<HoneyCauldronBlock> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
-//            () -> new HoneyCauldronBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
+    public static final DeferredBlock<Block> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
+            () -> new ResinCauldronBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
+    public static final DeferredBlock<Block> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
+            () -> new HoneyCauldronBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
     public static LinkedHashSet<DeferredHolder<Item, BlockItem>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
     //Plants and Other Natural Decorations
     public static final DeferredBlock<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
@@ -242,13 +242,13 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> POLISHED_STONE = registerBlock("polished_stone",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS)));
     public static final DeferredBlock<Block> POLISHED_STONE_STAIRS = registerBlock("polished_stone_stairs",
-            () -> new StairBlock(POLISHED_STONE.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(NMLBlocks.POLISHED_STONE.get())));
+            () -> new StairBlock(() -> POLISHED_STONE.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(NMLBlocks.POLISHED_STONE.get())));
     public static final DeferredBlock<Block> POLISHED_STONE_SLAB = registerBlock("polished_stone_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(NMLBlocks.POLISHED_STONE.get())));
     public static final DeferredBlock<Block> COBBLESTONE_BRICKS = registerBlock("cobblestone_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE)));
     public static final DeferredBlock<Block> COBBLESTONE_BRICK_STAIRS = registerBlock("cobblestone_brick_stairs",
-            () -> new StairBlock(COBBLESTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(NMLBlocks.COBBLESTONE_BRICKS.get())));
+            () -> new StairBlock(() -> COBBLESTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(NMLBlocks.COBBLESTONE_BRICKS.get())));
     public static final DeferredBlock<Block> COBBLESTONE_BRICK_SLAB = registerBlock("cobblestone_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(NMLBlocks.COBBLESTONE_BRICKS.get())));
     public static final DeferredBlock<Block> COBBLESTONE_BRICK_WALL = registerBlock("cobblestone_brick_wall",
@@ -256,7 +256,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> MOSSY_COBBLESTONE_BRICKS = registerBlock("mossy_cobblestone_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_COBBLESTONE)));
     public static final DeferredBlock<Block> MOSSY_COBBLESTONE_BRICK_STAIRS = registerBlock("mossy_cobblestone_brick_stairs",
-            () -> new StairBlock(MOSSY_COBBLESTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(NMLBlocks.MOSSY_COBBLESTONE_BRICKS.get())));
+            () -> new StairBlock(() -> MOSSY_COBBLESTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(NMLBlocks.MOSSY_COBBLESTONE_BRICKS.get())));
     public static final DeferredBlock<Block> MOSSY_COBBLESTONE_BRICK_SLAB = registerBlock("mossy_cobblestone_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(NMLBlocks.MOSSY_COBBLESTONE_BRICKS.get())));
     public static final DeferredBlock<Block> MOSSY_COBBLESTONE_BRICK_WALL = registerBlock("mossy_cobblestone_brick_wall",
@@ -308,7 +308,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> PINE_PLANKS = registerBlock("pine_planks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
     public static final DeferredBlock<Block> PINE_STAIRS = registerBlock("pine_stairs",
-            () -> new StairBlock(PINE_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(NMLBlocks.PINE_PLANKS.get())));
+            () -> new StairBlock(() -> PINE_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(NMLBlocks.PINE_PLANKS.get())));
     public static final DeferredBlock<Block> PINE_SLAB = registerBlock("pine_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(NMLBlocks.PINE_PLANKS.get())));
     public static final DeferredBlock<Block> TRIMMED_PINE_PLANKS = registerBlock("trimmed_pine_planks",
@@ -329,7 +329,7 @@ public class NMLBlocks {
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
     public static final DeferredBlock<Block> PINE_SAPLING = registerBlock("pine_sapling",
             () -> new SaplingBlock(NMLTreeGrowers.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-    public static final DeferredBlock<FlowerPotBlock> POTTED_PINE_SAPLING = BLOCKS.register("potted_pine_sapling",
+    public static final DeferredBlock<Block> POTTED_PINE_SAPLING = BLOCKS.register("potted_pine_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PINE_SAPLING,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
     public static final DeferredBlock<Block> PINE_BUTTON = registerBlock("pine_button",
@@ -349,7 +349,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> MAPLE_PLANKS = registerBlock("maple_planks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
     public static final DeferredBlock<Block> MAPLE_STAIRS = registerBlock("maple_stairs",
-            () -> new StairBlock(MAPLE_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(NMLBlocks.MAPLE_PLANKS.get())));
+            () -> new StairBlock(() -> MAPLE_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(NMLBlocks.MAPLE_PLANKS.get())));
     public static final DeferredBlock<Block> MAPLE_SLAB = registerBlock("maple_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(NMLBlocks.MAPLE_PLANKS.get())));
     public static final DeferredBlock<Block> TRIMMED_MAPLE_PLANKS = registerBlock("trimmed_maple_planks",
@@ -370,14 +370,14 @@ public class NMLBlocks {
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
     public static final DeferredBlock<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
             () -> new SaplingBlock(NMLTreeGrowers.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-    public static final DeferredBlock<FlowerPotBlock> POTTED_MAPLE_SAPLING = BLOCKS.register("potted_maple_sapling",
+    public static final DeferredBlock<Block> POTTED_MAPLE_SAPLING = BLOCKS.register("potted_maple_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.MAPLE_SAPLING,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
     public static final DeferredBlock<Block> RED_MAPLE_LEAVES = registerBlock("red_maple_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
     public static final DeferredBlock<Block> RED_MAPLE_SAPLING = registerBlock("red_maple_sapling",
             () -> new SaplingBlock(NMLTreeGrowers.RED_MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-    public static final DeferredBlock<FlowerPotBlock> POTTED_RED_MAPLE_SAPLING = BLOCKS.register("potted_red_maple_sapling",
+    public static final DeferredBlock<Block> POTTED_RED_MAPLE_SAPLING = BLOCKS.register("potted_red_maple_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.RED_MAPLE_SAPLING,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
     public static final DeferredBlock<Block> MAPLE_BUTTON = registerBlock("maple_button",
@@ -398,7 +398,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> WALNUT_PLANKS = registerBlock("walnut_planks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
     public static final DeferredBlock<Block> WALNUT_STAIRS = registerBlock("walnut_stairs",
-            () -> new StairBlock(WALNUT_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(NMLBlocks.WALNUT_PLANKS.get())));
+            () -> new StairBlock(() -> WALNUT_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(NMLBlocks.WALNUT_PLANKS.get())));
     public static final DeferredBlock<Block> WALNUT_SLAB = registerBlock("walnut_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(NMLBlocks.WALNUT_PLANKS.get())));
     public static final DeferredBlock<Block> TRIMMED_WALNUT_PLANKS = registerBlock("trimmed_walnut_planks",
@@ -419,7 +419,7 @@ public class NMLBlocks {
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
     public static final DeferredBlock<Block> WALNUT_SAPLING = registerBlock("walnut_sapling",
             () -> new SaplingBlock(NMLTreeGrowers.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-    public static final DeferredBlock<FlowerPotBlock> POTTED_WALNUT_SAPLING = BLOCKS.register("potted_walnut_sapling",
+    public static final DeferredBlock<Block> POTTED_WALNUT_SAPLING = BLOCKS.register("potted_walnut_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WALNUT_SAPLING,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
     public static final DeferredBlock<Block> WALNUT_BUTTON = registerBlock("walnut_button",
@@ -435,8 +435,9 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> WALNUT_CABINET = registerIntegrationBlock("walnut_cabinet",
             !ModList.get().isLoaded("farmersdelight") ?
                     () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight", true);
-//    public static final DeferredBlock<Block> TAP = registerBlock("tap",
-//            () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
+    //Tapping
+    public static final DeferredBlock<Block> TAP = registerBlock("tap",
+            () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> SPIKE_TRAP = registerBlock("spike_trap",
             () -> new SpikeTrapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(1.5F, 6.0F).noOcclusion()));
 
@@ -457,7 +458,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> FIELD_MUSHROOM_COLONY = registerIntegrationBlock("field_mushroom_colony",
             !ModList.get().isLoaded("farmersdelight") ? () -> new Block(BlockBehaviour.Properties.ofFullCopy(NMLBlocks.FIELD_MUSHROOM.get()))
                     : FDIntegration.mushroomColony(), "farmersdelight", false);
-    public static final DeferredBlock<FlowerPotBlock> POTTED_FIELD_MUSHROOM = BLOCKS.register("potted_field_mushroom",
+    public static final DeferredHolder<Block, FlowerPotBlock> POTTED_FIELD_MUSHROOM = BLOCKS.register("potted_field_mushroom",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.FIELD_MUSHROOM,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_RED_MUSHROOM).noOcclusion()));
     public static final DeferredBlock<Block> FIELD_MUSHROOM_BLOCK = registerBlock("field_mushroom_block",

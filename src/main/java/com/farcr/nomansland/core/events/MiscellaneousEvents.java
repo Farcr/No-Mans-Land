@@ -16,12 +16,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 public class MiscellaneousEvents {
-    @EventBusSubscriber(modid = NoMansLand.MODID)
+    @Mod.EventBusSubscriber(modid = NoMansLand.MODID)
     public static class ForgeEvents {
         @SubscribeEvent
         public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
@@ -43,8 +43,9 @@ public class MiscellaneousEvents {
                         state.is(NMLBlocks.SCONCE_SOUL_WALL_TORCH.get())) {
                     level.playSound(player, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.4F, 1.0F);
                     if (!level.isClientSide) {
-                        stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
-
+                        stack.hurtAndBreak(1, player, (damage) -> {
+                            damage.broadcastBreakEvent(event.getHand());
+                        });
                         level.setBlockAndUpdate(pos,
                                 state.is(Blocks.WALL_TORCH) ? NMLBlocks.EXTINGUISHED_WALL_TORCH.get().withPropertiesOf(state) :
                                         state.is(Blocks.SOUL_TORCH) ? NMLBlocks.EXTINGUISHED_SOUL_TORCH.get().defaultBlockState() :
@@ -62,7 +63,7 @@ public class MiscellaneousEvents {
         }
     }
 
-    @EventBusSubscriber(modid = NoMansLand.MODID, bus = EventBusSubscriber.Bus.MOD)
+    @Mod.EventBusSubscriber(modid = NoMansLand.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ModEventBusEvents {
         @SubscribeEvent
         public static void entityAttributeEvent(EntityAttributeCreationEvent event) {

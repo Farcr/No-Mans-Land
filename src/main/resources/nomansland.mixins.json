@@ -1,9 +1,10 @@
 {
   "required": true,
   "package": "com.farcr.nomansland.core.content.mixin",
-  "compatibilityLevel": "JAVA_21",
+  "compatibilityLevel": "JAVA_17",
   "refmap": "nomansland.refmap.json",
   "mixins": [
+    "AbstractCauldronBlockMixin",
     "BaseSpawnerMixin",
     "SpreadingSnowyDirtBlockMixin"
   ],

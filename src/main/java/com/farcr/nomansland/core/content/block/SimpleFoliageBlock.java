@@ -10,8 +10,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class SimpleFoliageBlock extends BushBlock {
-    public static final MapCodec<SimpleFoliageBlock> CODEC = simpleCodec(SimpleFoliageBlock::new);
-
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
 
     public SimpleFoliageBlock(Properties pProperties) {
@@ -20,7 +18,7 @@ public class SimpleFoliageBlock extends BushBlock {
 
     @Override
     protected MapCodec<? extends BushBlock> codec() {
-        return CODEC;
+        return null;
     }
 
     @Override

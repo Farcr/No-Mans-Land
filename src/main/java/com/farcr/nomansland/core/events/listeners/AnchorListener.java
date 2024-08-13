@@ -3,7 +3,6 @@ package com.farcr.nomansland.core.events.listeners;
 import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
@@ -97,9 +96,12 @@ public class AnchorListener implements GameEventListener {
         return 5;
     }
 
-    @Override
-    public boolean handleGameEvent(ServerLevel level, Holder<GameEvent> gameEvent, GameEvent.Context context, Vec3 pos) {
-        if (gameEvent == GameEvent.ENTITY_DIE) {
+    public DeliveryMode getDeliveryMode() {
+        return DeliveryMode.BY_DISTANCE;
+    }
+
+    public boolean handleGameEvent(ServerLevel level, GameEvent event, GameEvent.Context context, Vec3 pos) {
+        if (event == GameEvent.ENTITY_DIE) {
             Entity entity = context.sourceEntity();
             if (entity instanceof Monster deadEntity) {
                 if (!deadEntity.wasExperienceConsumed()) {
@@ -122,9 +124,5 @@ public class AnchorListener implements GameEventListener {
             return true;
         }
         return false;
-    }
-
-    public DeliveryMode getDeliveryMode() {
-        return DeliveryMode.BY_DISTANCE;
     }
 }

@@ -6,7 +6,6 @@ import com.farcr.nomansland.core.registry.NMLTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -28,11 +27,6 @@ public class FirebombEntity extends ThrowableBombEntity {
 
     public FirebombEntity(Level level, double x, double y, double z) {
         super(NMLEntities.FIREBOMB.get(), x, y, z, level);
-    }
-
-    // TODO: ensure firebomb works
-    @Override
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {
     }
 
     @Override

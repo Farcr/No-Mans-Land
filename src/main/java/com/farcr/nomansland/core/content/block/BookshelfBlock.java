@@ -1,6 +1,5 @@
 package com.farcr.nomansland.core.content.block;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 

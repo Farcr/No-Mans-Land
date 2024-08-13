@@ -1,10 +1,10 @@
 {
-  "type": "neoforge:add_table",
+  "type": "nomansland:add_loot_table",
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
       "loot_table_id": "minecraft:entities/mule"
     }
   ],
-  "table": "nomansland:entities/mule_addition"
+  "lootTable": "nomansland:entities/mule_addition"
 }

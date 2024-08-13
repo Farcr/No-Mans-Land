@@ -8,6 +8,6 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
 public class HugeMushrooms {
     public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_FIELD_MUSHROOM =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "huge_field_mushroom"));
+            ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NoMansLand.MODID, "huge_field_mushroom"));
 
 }

@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -40,25 +41,23 @@ public class PebbleBlock extends Block implements SimpleWaterloggedBlock {
         return SHAPE;
     }
 
-
-    // TODO: should this be possible while also holding an item
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         ItemStack pebble = new ItemStack(NMLBlocks.PEBBLES.get());
-        if (!player.addItem(pebble)) {
-            player.drop(pebble, false);
+        if (!pPlayer.addItem(pebble)) {
+            pPlayer.drop(pebble, false);
         } else {
-            level.playSound(player,
-                    player.getX(),
-                    player.getY(),
-                    player.getZ(),
+            pLevel.playSound(pPlayer,
+                    pPlayer.getX(),
+                    pPlayer.getY(),
+                    pPlayer.getZ(),
                     SoundEvents.ITEM_PICKUP,
                     SoundSource.PLAYERS,
                     0.2F,
-                    (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
+                    (pLevel.random.nextFloat() - pLevel.random.nextFloat()) * 1.4F + 2.0F);
         }
-        level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        pLevel.setBlock(pPos, Blocks.AIR.defaultBlockState(), 3);
+        return InteractionResult.sidedSuccess(pLevel.isClientSide);
     }
 
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {

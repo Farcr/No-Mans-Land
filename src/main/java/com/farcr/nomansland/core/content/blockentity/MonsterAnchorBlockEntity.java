@@ -30,7 +30,7 @@ import java.util.List;
 
 import static com.farcr.nomansland.core.events.listeners.AnchorListener.processPoints;
 
-public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventListener.Provider<AnchorListener> {
+public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventListener.Holder<AnchorListener> {
 
     public final LinkedHashMap<LivingEntity, Vec3> entityQueue;
     private final AnchorListener anchorListener;
