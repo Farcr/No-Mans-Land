@@ -81,7 +81,7 @@ dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
 
     //SmartBrainLib Dependency
-    implementation "net.tslat.smartbrainlib:SmartBrainLib-neoforge-1.21:${sbl_version}"
+    implementation "net.tslat.smartbrainlib:SmartBrainLib-neoforge-${minecraft_version}:${sbl_version}"
 
     //Optional Farmer's Delight Dependency, for compat use
 //    implementation fg.deobf("curse.maven:farmers-delight-398521:${farmers_delight_version}")
