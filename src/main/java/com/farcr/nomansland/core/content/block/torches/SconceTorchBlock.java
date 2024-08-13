@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.block;
+package com.farcr.nomansland.core.content.block.torches;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;

@@ -1,13 +1,14 @@
-package com.farcr.nomansland.core.content.block;
+package com.farcr.nomansland.core.content.block.signs;
 
 import com.farcr.nomansland.core.content.blockentity.NMLHangingSignBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.CeilingHangingSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
-public class WallHangingSignBlock extends net.minecraft.world.level.block.WallHangingSignBlock {
-    public WallHangingSignBlock(WoodType pType, Properties pProperties) {
+public class HangingSignBlock extends CeilingHangingSignBlock {
+    public HangingSignBlock(WoodType pType, Properties pProperties) {
         super(pType, pProperties);
     }
 

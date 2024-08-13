@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.block;
+package com.farcr.nomansland.core.content.block.torches;
 
 import com.farcr.nomansland.core.registry.NMLTags;
 import net.minecraft.core.BlockPos;

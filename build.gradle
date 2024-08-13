@@ -91,18 +91,25 @@ dependencies {
 //            requireCapability('dev.lukebemish:biomesquisher-neoforge')
 //        }
 //    }
+
     // compile against the JEI API but do not include it at runtime
 //    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
 //    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
     // at runtime, use the full JEI jar for Forge
 //    runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
 
-//    runtimeOnly "maven.modrinth:xaeros-world-map:1.38.8_NeoForge_1.20.4"
+    // Mods in the devenv to help the testing process
+
+    runtimeOnly "maven.modrinth:xaeros-world-map:1.38.9_NeoForge_1.21"
+
+    runtimeOnly "maven.modrinth:appleskin:3.0.5+mc1.21"
+
+    runtimeOnly "maven.modrinth:jade:15.1.6+neoforge"
+    
+    runtimeOnly "maven.modrinth:worldedit:7.3.6"
 
 //    runtimeOnly fg.deobf("curse.maven:tagtooltips-899941:${tagtooltip_version}")
 //    runtimeOnly fg.deobf("curse.maven:cyanide-541676:${cyanide_version}")
-//    runtimeOnly fg.deobf("curse.maven:appleskin-248787:4770828")
-//    runtimeOnly fg.deobf("curse.maven:worldedit-225608:4586218")
 }
 
 

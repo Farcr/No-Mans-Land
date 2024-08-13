@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.block;
+package com.farcr.nomansland.core.content.block.signs;
 
 import com.farcr.nomansland.core.content.blockentity.NMLSignBlockEntity;
 import net.minecraft.core.BlockPos;
