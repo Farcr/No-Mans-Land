@@ -93,18 +93,16 @@ dependencies {
 //    }
 
     // compile against the JEI API but do not include it at runtime
-//    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
-//    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
     // at runtime, use the full JEI jar for Forge
-//    runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+    runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
 
     // Mods in the devenv to help the testing process
 
     runtimeOnly "maven.modrinth:xaeros-world-map:1.38.9_NeoForge_1.21"
 
     runtimeOnly "maven.modrinth:appleskin:3.0.5+mc1.21"
-
-    runtimeOnly "maven.modrinth:jade:15.1.6+neoforge"
     
     runtimeOnly "maven.modrinth:worldedit:7.3.6"
 
