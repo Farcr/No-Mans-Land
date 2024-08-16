@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "nomansland:raw_horse"
   },
-  "result": "nomansland:horse_steak"
+  "result": {
+"id": "nomansland:horse_steak"
+  }
 }

@@ -24,7 +24,7 @@
           }
         },
         "result": {
-          "item": "nomansland:walnut_cabinet",
+          "id": "nomansland:walnut_cabinet",
           "count": 1
         },
         "group": "cabinets"

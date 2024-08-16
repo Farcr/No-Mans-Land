@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "nomansland:resin"
   },
-  "result": "minecraft:brown_dye"
+  "result": {
+"id": "minecraft:brown_dye"
+  }
 }

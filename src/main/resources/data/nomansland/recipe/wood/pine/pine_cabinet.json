@@ -24,7 +24,7 @@
           }
         },
         "result": {
-          "item": "nomansland:pine_cabinet",
+          "id": "nomansland:pine_cabinet",
           "count": 1
         },
         "group": "cabinets"

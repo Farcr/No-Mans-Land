@@ -13,7 +13,7 @@
         }
     },
     "result": {
-        "item": "minecraft:dripstone_block",
+        "id": "minecraft:dripstone_block",
         "count": 4
     }
 }

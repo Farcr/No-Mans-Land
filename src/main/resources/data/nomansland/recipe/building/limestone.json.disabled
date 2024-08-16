@@ -13,7 +13,7 @@
         }
     },
     "result": {
-        "item": "nomansland:limestone",
+        "id": "nomansland:limestone",
         "count": 4
     }
 }

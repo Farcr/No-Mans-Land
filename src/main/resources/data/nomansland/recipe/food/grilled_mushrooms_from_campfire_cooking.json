@@ -6,5 +6,7 @@
   "ingredient": {
     "tag": "nomansland:edible_mushrooms"
   },
-  "result": "nomansland:grilled_mushrooms"
+  "result": {
+"id": "nomansland:grilled_mushrooms"
+  }
 }

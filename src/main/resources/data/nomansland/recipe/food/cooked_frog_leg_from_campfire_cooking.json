@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "nomansland:frog_leg"
   },
-  "result": "nomansland:cooked_frog_leg"
+  "result": {
+"id": "nomansland:cooked_frog_leg"
+  }
 }
