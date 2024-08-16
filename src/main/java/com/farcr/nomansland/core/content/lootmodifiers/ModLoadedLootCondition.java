@@ -13,10 +13,10 @@ import net.neoforged.fml.ModList;
 public record ModLoadedLootCondition(String modId) implements LootItemCondition {
     private static final ResourceLocation NAME = ResourceLocation.fromNamespaceAndPath("nomansland", "mod_loaded");
     public static MapCodec<ModLoadedLootCondition> CODEC = RecordCodecBuilder.mapCodec(
-            builder -> builder
+            instance -> instance
                     .group(
                             Codec.STRING.fieldOf("modid").forGetter(ModLoadedLootCondition::modId))
-                    .apply(builder, ModLoadedLootCondition::new));
+                    .apply(instance, ModLoadedLootCondition::new));
 
     @Override
     public LootItemConditionType getType() {

@@ -1,5 +1,5 @@
 {
-  "type": "farmersdelight:add_item",
+  "type": "nomansland:add_item",
   "conditions": [
     {
       "condition": "minecraft:random_chance",
