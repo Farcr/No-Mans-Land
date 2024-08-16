@@ -270,7 +270,7 @@ public class NMLItems {
             event.accept(NMLItems.WALNUT_HANGING_SIGN.get());
             event.accept(NMLItems.SCONCE_TORCH.get());
             event.accept(NMLItems.SCONCE_SOUL_TORCH.get());
-//            event.accept(NMLBlocks.TAP.get());
+            event.accept(NMLBlocks.TAP.get());
             event.accept(NMLItems.WOODEN_SCAFFOLDING.get());
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
@@ -292,8 +292,10 @@ public class NMLItems {
             event.accept(Items.BUNDLE);
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
-            event.accept(NMLItems.RESIN_OIL_BOTTLE.get());
             event.accept(NMLItems.FIREBOMB.get());
+            if (ModList.get().isLoaded("alembic")) {
+                event.accept(NMLItems.RESIN_OIL_BOTTLE.get());
+            }
         }
 
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {

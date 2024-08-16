@@ -28,7 +28,7 @@
                 }
             ],
             "result": {
-                "item": "nomansland:resin_oil"
+                "id": "nomansland:resin_oil"
             }
         }
       },
@@ -51,7 +51,7 @@
                 }
             ],
             "result": {
-                "item": "nomansland:resin_oil",
+                "id": "nomansland:resin_oil",
                 "count": 1
             }
         }

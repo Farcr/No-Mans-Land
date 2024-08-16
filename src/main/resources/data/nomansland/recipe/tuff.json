@@ -13,7 +13,7 @@
     }
   },
   "result": {
-    "item": "minecraft:tuff",
+    "id": "minecraft:tuff",
     "count": 4
   }
 }

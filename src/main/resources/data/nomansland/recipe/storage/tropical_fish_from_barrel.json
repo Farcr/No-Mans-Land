@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "minecraft:tropical_fish",
+    "id": "minecraft:tropical_fish",
     "count": 9
   },
   "group": "fish_barrels"

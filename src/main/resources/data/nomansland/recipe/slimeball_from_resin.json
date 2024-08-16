@@ -33,7 +33,7 @@
           }
         ],
         "result": {
-          "item": "minecraft:slime_ball"
+          "id": "minecraft:slime_ball"
         }
       }
     },
@@ -62,7 +62,7 @@
           }
         ],
         "result": {
-          "item": "minecraft:slime_ball",
+          "id": "minecraft:slime_ball",
           "count": 1
         }
       }

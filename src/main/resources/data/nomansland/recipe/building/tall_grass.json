@@ -10,7 +10,7 @@
     }
   },
   "result": {
-    "item": "minecraft:tall_grass",
+    "id": "minecraft:tall_grass",
     "count": 1
   }
 }

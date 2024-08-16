@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "minecraft:salmon",
+    "id": "minecraft:salmon",
     "count": 9
   },
   "group": "fish_barrels"

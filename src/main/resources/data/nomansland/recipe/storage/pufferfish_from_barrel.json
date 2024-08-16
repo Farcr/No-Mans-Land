@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "minecraft:pufferfish",
+    "id": "minecraft:pufferfish",
     "count": 9
   },
   "group": "fish_barrels"

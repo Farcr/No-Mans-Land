@@ -11,7 +11,7 @@
     }
   },
   "result": {
-    "item": "nomansland:pufferfish_barrel",
+    "id": "nomansland:pufferfish_barrel",
     "count": 1
   },
   "group": "fish_barrels"

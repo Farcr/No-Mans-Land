@@ -11,7 +11,7 @@
     }
   },
   "result": {
-    "item": "nomansland:salmon_barrel",
+    "id": "nomansland:salmon_barrel",
     "count": 1
   },
   "group": "fish_barrels"
