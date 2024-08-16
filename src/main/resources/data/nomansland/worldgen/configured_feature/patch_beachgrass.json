@@ -8,7 +8,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "nomansland:white_flowerbed"
+              "Name": "nomansland:short_beachgrass"
             }
           }
         }
@@ -23,7 +23,7 @@
         }
       ]
     },
-    "tries": 5020,
+    "tries": 1024,
     "xz_spread": 4,
     "y_spread": 3
   }

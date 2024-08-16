@@ -100,6 +100,10 @@ public class NMLBlocks {
             () -> new GrassSproutsBlock(Block.Properties.ofFullCopy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
     public static final DeferredBlock<Block> OAT_GRASS = registerBlock("oat_grass",
             () -> new SimpleFoliageBlock(Block.Properties.ofFullCopy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
+    public static final DeferredBlock<Block> SHORT_BEACHGRASS = registerBlock("short_beachgrass",
+            () -> new DesertPlantBlock(Block.Properties.ofFullCopy(Blocks.DEAD_BUSH).offsetType(BlockBehaviour.OffsetType.XYZ)));
+    public static final DeferredBlock<Block> TALL_BEACHGRASS = registerBlock("tall_beachgrass",
+            () -> new DesertPlantBlock(Block.Properties.ofFullCopy(Blocks.DEAD_BUSH).offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final DeferredBlock<Block> DRIED_GRASS = registerBlock("dried_grass",
             () -> new DesertPlantBlock(Block.Properties.ofFullCopy(Blocks.DEAD_BUSH).offsetType(BlockBehaviour.OffsetType.XZ)));
     public static final DeferredBlock<Block> FIDDLEHEAD = registerBlock("fiddlehead",

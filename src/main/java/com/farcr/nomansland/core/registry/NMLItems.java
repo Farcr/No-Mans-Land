@@ -45,10 +45,10 @@ public class NMLItems {
     public static final DeferredItem<Item> RESIN = registerItem("resin",
             () -> new FuelItem(new Item.Properties(), 1000));
     //    !!!Depends on Alembic
-    public static final DeferredItem<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
-            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
-    //    public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerIntegrationItem("maple_syrup_bottle",
-//            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)), "alembic");
+    public static final DeferredItem<Item> RESIN_OIL_BOTTLE = registerIntegrationItem("resin_oil_bottle",
+            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)), "alembic");
+    //    public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
+//            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
     public static final DeferredItem<Item> SCONCE_TORCH = registerItem("sconce_torch",
             () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_TORCH.get(), NMLBlocks.SCONCE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
     public static final DeferredItem<Item> SCONCE_SOUL_TORCH = registerItem("sconce_soul_torch",
@@ -184,6 +184,8 @@ public class NMLItems {
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(NMLBlocks.GRASS_SPROUTS.get());
             event.accept(NMLBlocks.OAT_GRASS.get());
+            event.accept(NMLBlocks.SHORT_BEACHGRASS.get());
+            event.accept(NMLBlocks.TALL_BEACHGRASS.get());
             event.accept(NMLBlocks.DRIED_GRASS.get());
             event.accept(NMLBlocks.FIDDLEHEAD.get());
             event.accept(NMLBlocks.CATTAIL.get());
