@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:random_patch",
+  "type": "nomansland:spread_patch",
   "config": {
     "feature": {
       "feature": {

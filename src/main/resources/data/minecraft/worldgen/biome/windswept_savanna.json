@@ -18,8 +18,8 @@
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "water_color": 4159204,
-    "water_fog_color": 329011
+    "water_color": 3906239,
+    "water_fog_color": 2979747
   },
   "features": [
     [],
