@@ -30,23 +30,13 @@ public class PathMakingEvents {
         Player player = event.getEntity();
         ItemStack stack = event.getItemStack();
 
-        if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && state.is(BlockTags.REPLACEABLE)) {
+        if ((stack.is(ItemTags.HOES) || stack.is(ItemTags.SHOVELS)) && !player.isSpectator() && state.canBeReplaced()) {
             state = level.getBlockState(pos.below());
             pos = pos.below();
-
-            if (state.is(Blocks.GRASS_BLOCK)) {
-                level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
-                if (!level.isClientSide) {
-                    stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
-                    level.setBlockAndUpdate(pos, Blocks.DIRT_PATH.defaultBlockState());
-                }
-                event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
-                event.setCanceled(true);
-            }
         }
 
-        //Dirt Paths
-        if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && (level.isEmptyBlock(pos.above()) || level.getBlockState(pos.above()).is(BlockTags.REPLACEABLE))) {
+        //Paths
+        if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && (level.isEmptyBlock(pos.above()) || level.getBlockState(pos.above()).canBeReplaced())) {
             if (state.is(Blocks.PODZOL) ||
                     state.is(Blocks.MYCELIUM) ||
                     state.is(Blocks.SAND) ||
@@ -54,37 +44,32 @@ public class PathMakingEvents {
                     state.is(Blocks.GRAVEL) ||
                     state.is(Blocks.DIRT) ||
                     state.is(Blocks.COARSE_DIRT) ||
-                    state.is(Blocks.ROOTED_DIRT)) {
+                    state.is(Blocks.ROOTED_DIRT) ||
+                    state.is(Blocks.GRASS_BLOCK) ||
+                    state.is(Blocks.SNOW_BLOCK) ||
+                    (state.is(Blocks.GRASS_BLOCK) && state.getValue(SNOWY))) {
                 if (state.is(BlockTags.SAND)) {
-                    level.playSound(player, pos, SoundEvents.SAND_FALL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    level.playSound(player, pos, SoundEvents.SAND_FALL, SoundSource.BLOCKS, 1, 1);
                 } else if (state.is(Blocks.GRAVEL)) {
-                    level.playSound(player, pos, SoundEvents.GRAVEL_FALL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    level.playSound(player, pos, SoundEvents.GRAVEL_FALL, SoundSource.BLOCKS, 1, 1);
+                } else if ((state.is(Blocks.GRASS_BLOCK) && state.getValue(SNOWY)) || state.is(Blocks.SNOW_BLOCK)) {
+                    level.playSound(player, pos, SoundEvents.SNOW_BREAK, SoundSource.BLOCKS, 1, 1);
                 } else {
-                    level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1, 1);
                 }
                 if (!level.isClientSide) {
                     stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
 
                     level.setBlockAndUpdate(pos,
                             state.is(Blocks.PODZOL) ? NMLBlocks.PODZOL_PATH.get().defaultBlockState() :
-                                    state.is(Blocks.MYCELIUM) ? NMLBlocks.MYCELIUM_PATH.get().defaultBlockState() :
-                                            state.is(Blocks.SAND) ? NMLBlocks.SAND_PATH.get().defaultBlockState() :
-                                                    state.is(Blocks.RED_SAND) ? NMLBlocks.RED_SAND_PATH.get().defaultBlockState() :
-                                                            state.is(Blocks.GRAVEL) ? NMLBlocks.GRAVEL_PATH.get().defaultBlockState() :
-                                                                    NMLBlocks.DIRT_PATH.get().defaultBlockState());
-                }
-                event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
-                event.setCanceled(true);
-            }
-        }
-
-        //Snow Path (TODO: Add extra checks for snow layers on top)
-        if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && (level.isEmptyBlock(pos.above()) || level.getBlockState(pos.above()).is(BlockTags.REPLACEABLE))) {
-            if (state.is(Blocks.SNOW_BLOCK) || (state.is(Blocks.GRASS_BLOCK) && state.getValue(SNOWY))) {
-                level.playSound(player, pos, SoundEvents.SNOW_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
-                if (!level.isClientSide) {
-                    stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
-                    level.setBlockAndUpdate(pos, NMLBlocks.SNOW_PATH.get().defaultBlockState());
+                            state.is(Blocks.MYCELIUM) ? NMLBlocks.MYCELIUM_PATH.get().defaultBlockState() :
+                            state.is(Blocks.SAND) ? NMLBlocks.SAND_PATH.get().defaultBlockState() :
+                            state.is(Blocks.RED_SAND) ? NMLBlocks.RED_SAND_PATH.get().defaultBlockState() :
+                            state.is(Blocks.GRAVEL) ? NMLBlocks.GRAVEL_PATH.get().defaultBlockState() :
+                            ((state.is(Blocks.GRASS_BLOCK) && state.getValue(SNOWY)) || (state.is(Blocks.DIRT) && level.getBlockState(pos.above()).is(Blocks.SNOW))) ? NMLBlocks.SNOWY_GRASS_PATH.get().defaultBlockState() :
+                            state.is(Blocks.DIRT) ? NMLBlocks.DIRT_PATH.get().defaultBlockState() :
+                            state.is(Blocks.GRASS_BLOCK) ? Blocks.DIRT_PATH.defaultBlockState() :
+                            NMLBlocks.SNOW_PATH.get().defaultBlockState());
                 }
                 event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
                 event.setCanceled(true);
@@ -102,6 +87,20 @@ public class PathMakingEvents {
             event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
             event.setCanceled(true);
         }
+
+        // Farmland
+        if ((state.is(Blocks.GRASS_BLOCK) || state.is(Blocks.DIRT)) && stack.is(ItemTags.HOES)) {
+            level.playSound(player, pos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1, 1);
+            if (!level.isClientSide()) {
+                stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
+
+                level.setBlockAndUpdate(pos, Blocks.FARMLAND.defaultBlockState());
+                if (level.getBlockState(pos.above()).canBeReplaced()) level.destroyBlock(pos.above(), false);
+            }
+            event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
+            event.setCanceled(true);
+        }
+
         //Farmland untilling
         if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && state.is(Blocks.FARMLAND) && !player.isSpectator() && level.isEmptyBlock(pos.above())) {
             level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
