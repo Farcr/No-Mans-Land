@@ -60,10 +60,6 @@ configurations {
 
 repositories {
     maven {
-        name = "SmartBrainLib"
-        url = "https://dl.cloudsmith.io/public/tslat/sbl/maven/"
-    }
-    maven {
         name = "JEI"
         url = "https://maven.blamejared.com/"
     }
@@ -79,9 +75,6 @@ repositories {
 
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
-
-    //SmartBrainLib Dependency
-    implementation "net.tslat.smartbrainlib:SmartBrainLib-neoforge-1.21:${sbl_version}"
 
     //Optional Farmer's Delight Dependency, for compat use
 //    implementation fg.deobf("curse.maven:farmers-delight-398521:${farmers_delight_version}")
@@ -112,8 +105,6 @@ tasks.withType(ProcessResources).configureEach {
             neo_version            : neo_version,
             neo_version_range      : neo_version_range,
             loader_version_range   : loader_version_range,
-            sbl_version            : sbl_version,
-            sbl_version_range      : sbl_version_range,
             fd_version             : fd_version,
             fd_version_range       : fd_version_range,
             bs_version             : bs_version,
