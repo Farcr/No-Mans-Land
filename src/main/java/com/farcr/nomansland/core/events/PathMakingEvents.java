@@ -18,6 +18,8 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
+import static net.minecraft.world.level.block.SnowyDirtBlock.SNOWY;
+
 @EventBusSubscriber(modid = NoMansLand.MODID)
 public class PathMakingEvents {
     @SubscribeEvent
@@ -28,8 +30,23 @@ public class PathMakingEvents {
         Player player = event.getEntity();
         ItemStack stack = event.getItemStack();
 
+        if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && state.is(BlockTags.REPLACEABLE)) {
+            state = level.getBlockState(pos.below());
+            pos = pos.below();
+
+            if (state.is(Blocks.GRASS_BLOCK)) {
+                level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
+                if (!level.isClientSide) {
+                    stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
+                    level.setBlockAndUpdate(pos, Blocks.DIRT_PATH.defaultBlockState());
+                }
+                event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
+                event.setCanceled(true);
+            }
+        }
+
         //Dirt Paths
-        if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && level.isEmptyBlock(pos.above())) {
+        if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && (level.isEmptyBlock(pos.above()) || level.getBlockState(pos.above()).is(BlockTags.REPLACEABLE))) {
             if (state.is(Blocks.PODZOL) ||
                     state.is(Blocks.MYCELIUM) ||
                     state.is(Blocks.SAND) ||
@@ -62,8 +79,8 @@ public class PathMakingEvents {
         }
 
         //Snow Path (TODO: Add extra checks for snow layers on top)
-        if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && level.isEmptyBlock(pos.above())) {
-            if (state.is(Blocks.SNOW_BLOCK)) {
+        if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && (level.isEmptyBlock(pos.above()) || level.getBlockState(pos.above()).is(BlockTags.REPLACEABLE))) {
+            if (state.is(Blocks.SNOW_BLOCK) || (state.is(Blocks.GRASS_BLOCK) && state.getValue(SNOWY))) {
                 level.playSound(player, pos, SoundEvents.SNOW_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!level.isClientSide) {
                     stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
