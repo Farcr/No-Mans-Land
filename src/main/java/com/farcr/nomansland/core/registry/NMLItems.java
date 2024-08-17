@@ -203,6 +203,8 @@ public class NMLItems {
             event.accept(NMLBlocks.WILD_MINT.get());
             event.accept(NMLBlocks.AUTUMN_CROCUS.get());
             event.accept(NMLBlocks.RAFFLESIA.get());
+            event.accept(NMLBlocks.BARREL_CACTUS.get());
+            event.accept(NMLBlocks.SUCCULENT.get());
             event.accept(NMLBlocks.PEBBLES.get());
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES.get());
             event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
@@ -227,6 +229,9 @@ public class NMLItems {
 
             event.accept(NMLBlocks.QUARTZITE.get());
             event.accept(NMLBlocks.QUARTZITE_CLUSTER.get());
+            event.accept(NMLBlocks.SMALL_QUARTZITE_BUD.get());
+            event.accept(NMLBlocks.MEDIUM_QUARTZITE_BUD.get());
+            event.accept(NMLBlocks.LARGE_QUARTZITE_BUD.get());
             event.accept(NMLBlocks.BUDDING_QUARTZITE.get());
             event.accept(NMLBlocks.PETRIFIED_LOG.get());
             event.accept(NMLBlocks.PETRIFIED_WOOD.get());
