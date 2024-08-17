@@ -1,6 +1,7 @@
 {
   "item.nomansland.no_mans_globe": "No Man's Globe",
   "itemGroup.nomansland": "No Man's Land",
+  
   "biome.nomansland.caves": "Caves",
   "biome.nomansland.deep_caves": "Deep Caves",
   "biome.nomansland.old_growth_forest": "Old Growth Forest",
@@ -8,6 +9,7 @@
   "biome.nomansland.autumnal_forest": "Autumnal Forest",
   "biome.nomansland.autumnal_fields": "Autumnal Fields",
   "biome.nomansland.maple_forest": "Maple Forest",
+
   "block.nomansland.grass_sprouts": "Grass Sprouts",
   "block.nomansland.oat_grass": "Oat Grass",
   "block.nomansland.dried_grass": "Dried Grass",
@@ -17,14 +19,18 @@
   "block.nomansland.pebbles": "Pebbles",
   "block.nomansland.cattail": "Cattail",
   "block.nomansland.clover_patch": "Clover Patch",
+
   "block.nomansland.white_flowerbed": "White Flowerbed",
   "block.nomansland.red_flowerbed": "Red Flowerbed",
   "block.nomansland.blue_flowerbed": "Blue Flowerbed",
   "block.nomansland.violet_flowerbed": "Violet Flowerbed",
   "block.nomansland.yellow_flowerbed": "Yellow Flowerbed",
+
   "block.nomansland.wooden_scaffolding": "Wooden Scaffolding",
+
   "block.nomansland.mundane_tiles": "Mundane Tiles",
   "block.nomansland.earthen_tiles": "Earthen Tiles",
+
   "block.nomansland.aconite": "Aconite",
   "block.nomansland.potted_aconite": "Potted Aconite",
   "block.nomansland.autumn_crocus": "Autumn Crocus",
@@ -44,6 +50,7 @@
   "block.nomansland.succulent": "Succulent",
   "block.nomansland.potted_succulent": "Potted Succulent",
   "block.nomansland.rafflesia": "Rafflesia",
+
   "block.nomansland.yellow_birch_leaves": "Yellow Birch Leaves",
   "block.nomansland.yellow_birch_sapling": "Yellow Birch Sapling",
   "block.nomansland.potted_yellow_birch_sapling": "Potted Yellow Birch Sapling",
@@ -53,10 +60,12 @@
   "block.nomansland.pale_cherry_leaves": "Pale Cherry Leaves",
   "block.nomansland.pale_cherry_sapling": "Pale Cherry Sapling",
   "block.nomansland.potted_pale_cherry_sapling": "Potted Pale Cherry Sapling",
+
   "block.nomansland.field_mushroom": "Field Mushroom",
   "block.nomansland.field_mushroom_colony": "Field Mushroom Colony",
   "block.nomansland.field_mushroom_block": "Field Mushroom Block",
   "block.nomansland.potted_field_mushroom": "Potted Field Mushroom",
+
   "block.nomansland.dirt_path": "Dirt Path",
   "block.nomansland.snowy_grass_path": "Snowy Grass Path",
   "block.nomansland.mycelium_path": "Mycelium Path",
@@ -65,11 +74,13 @@
   "block.nomansland.red_sand_path": "Red Sand Path",
   "block.nomansland.snow_path": "Snow Path",
   "block.nomansland.gravel_path": "Gravel Path",
+
   "block.nomansland.remains": "Remains",
   "entity.nomansland.buried": "Buried",
   "item.nomansland.buried_spawn_egg": "Buried Spawn Egg",
   "block.nomansland.monster_anchor": "Monster Anchor",
   "block.nomansland.spike_trap": "Spike Trap",
+
   "block.nomansland.quartzite": "Quartzite",
   "block.nomansland.budding_quartzite": "Budding Quartzite",
   "item.nomansland.trinket": "Trinket",
@@ -79,6 +90,7 @@
   "block.nomansland.quartzite_cluster": "Quartzite Cluster",
   "block.nomansland.petrified_wood": "Petrified Wood",
   "block.nomansland.petrified_log": "Petrified Log",
+
   "block.nomansland.trimmed_oak_planks": "Trimmed Oak Planks",
   "block.nomansland.spruce_bookshelf": "Spruce Bookshelf",
   "block.nomansland.trimmed_spruce_planks": "Trimmed Spruce Planks",
@@ -100,6 +112,7 @@
   "block.nomansland.trimmed_crimson_planks": "Trimmed Crimson Planks",
   "block.nomansland.bamboo_bookshelf": "Bamboo Bookshelf",
   "block.nomansland.trimmed_bamboo_planks": "Trimmed Bamboo Planks",
+
   "block.nomansland.faded_stone_bricks": "Faded Stone Bricks",
   "block.nomansland.polished_stone": "Polished Stone",
   "block.nomansland.polished_stone_slab": "Polished Stone Slab",
@@ -112,14 +125,22 @@
   "block.nomansland.mossy_cobblestone_brick_slab": "Mossy Cobblestone Brick Slab",
   "block.nomansland.mossy_cobblestone_brick_stairs": "Mossy Cobblestone Brick Stairs",
   "block.nomansland.mossy_cobblestone_brick_wall": "Mossy Cobblestone Brick Wall",
+
   "block.nomansland.sconce_torch": "Sconce Torch",
   "block.nomansland.sconce_soul_torch": "Sconce Soul Torch",
+  "block.nomansland.extinguished_sconce_torch": "Extinguished Sconce Torch",
+  "block.nomansland.extinguished_sconce_soul_torch": "Extinguished Sconce Soul Torch",
+  "block.nomansland.extinguished_torch": "Extinguished Torch",
+  "block.nomansland.extinguished_soul_torch": "Extinguished Soul Torch",
+
   "block.nomansland.tap": "Tap",
   "block.nomansland.resin_cauldron": "Cauldron Filled With Resin",
   "block.nomansland.honey_cauldron": "Cauldron Filled With Honey",
   "block.nomansland.maple_syrup_cauldron": "Cauldron Filled With Maple Syrup",
+
   "entity.nomansland.boat": "Boat",
   "entity.nomansland.chest_boat": "Boat with Chest",
+
   "block.nomansland.pine_planks": "Pine Planks",
   "block.nomansland.pine_stairs": "Pine Stairs",
   "block.nomansland.pine_slab": "Pine Slab",
@@ -145,6 +166,7 @@
   "block.nomansland.pine_wall_hanging_sign": "Pine Wall Hanging Sign",
   "item.nomansland.pine_boat": "Pine Boat",
   "item.nomansland.pine_chest_boat": "Pine Boat with Chest",
+
   "block.nomansland.maple_planks": "Maple Planks",
   "block.nomansland.maple_stairs": "Maple Stairs",
   "block.nomansland.maple_slab": "Maple Slab",
@@ -173,6 +195,7 @@
   "block.nomansland.maple_wall_hanging_sign": "Maple Wall Hanging Sign",
   "item.nomansland.maple_boat": "Maple Boat",
   "item.nomansland.maple_chest_boat": "Maple Boat with Chest",
+
   "block.nomansland.walnut_planks": "Walnut Planks",
   "block.nomansland.walnut_stairs": "Walnut Stairs",
   "block.nomansland.walnut_slab": "Walnut Slab",
@@ -198,27 +221,13 @@
   "block.nomansland.walnut_wall_hanging_sign": "Walnut Wall Hanging Sign",
   "item.nomansland.walnut_boat": "Walnut Boat",
   "item.nomansland.walnut_chest_boat": "Walnut Boat with Chest",
+
   "block.nomansland.cod_barrel": "Cod Barrel",
   "block.nomansland.salmon_barrel": "Salmon Barrel",
   "block.nomansland.tropical_fish_barrel": "Tropical Fish Barrel",
   "block.nomansland.pufferfish_barrel": "Pufferfish Barrel",
   "block.nomansland.gunpowder_barrel": "Gunpowder Barrel",
-  "block.nomansland.white_dye_sack": "White Dye Sack",
-  "block.nomansland.light_gray_dye_sack": "Light Gray Dye Sack",
-  "block.nomansland.gray_dye_sack": "Gray Dye Sack",
-  "block.nomansland.black_dye_sack": "Black Dye Sack",
-  "block.nomansland.brown_dye_sack": "Brown Dye Sack",
-  "block.nomansland.red_dye_sack": "Red Dye Sack",
-  "block.nomansland.orange_dye_sack": "Orange Dye Sack",
-  "block.nomansland.yellow_dye_sack": "Yellow Dye Sack",
-  "block.nomansland.lime_dye_sack": "Lime Dye Sack",
-  "block.nomansland.green_dye_sack": "Green Dye Sack",
-  "block.nomansland.cyan_dye_sack": "Cyan Dye Sack",
-  "block.nomansland.blue_dye_sack": "Blue Dye Sack",
-  "block.nomansland.light_blue_dye_sack": "Light Blue Dye Sack",
-  "block.nomansland.purple_dye_sack": "Purple Dye Sack",
-  "block.nomansland.magenta_dye_sack": "Magenta Dye Sack",
-  "block.nomansland.pink_dye_sack": "Pink Dye Sack",
+
   "item.nomansland.mashed_potatoes_with_mushrooms": "Mashed Potatoes with Mushrooms",
   "item.nomansland.grilled_mushrooms": "Grilled Mushrooms",
   "item.nomansland.frog_leg": "Frog Leg",
@@ -233,6 +242,7 @@
   "item.nomansland.resin": "Resin",
   "item.nomansland.resin_oil_bottle": "Resin Oil Bottle",
   "item.nomansland.firebomb": "Firebomb",
+
   "nomansland.subtitles.block.spike_trap.extend": "Spikes extend",
   "nomansland.subtitles.block.spike_trap.retract": "Spikes retract",
   "death.attack.nomansland.spike_fall": "%1$s found the sharp end of spikes",

@@ -4,9 +4,7 @@ import com.farcr.nomansland.client.NMLModelLayers;
 import com.farcr.nomansland.client.models.BuriedModel;
 import com.farcr.nomansland.client.models.MooseModel;
 import com.farcr.nomansland.client.particle.*;
-import com.farcr.nomansland.client.render.BuriedRenderer;
 import com.farcr.nomansland.client.render.FirebombRenderer;
-import com.farcr.nomansland.client.render.MooseRenderer;
 import com.farcr.nomansland.client.render.NMLBoatRenderer;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
@@ -34,8 +32,8 @@ public class ClientEvents {
         EntityRenderers.register(NMLEntities.BOAT.get(), pContext -> new NMLBoatRenderer(pContext, false));
         EntityRenderers.register(NMLEntities.CHEST_BOAT.get(), pContext -> new NMLBoatRenderer(pContext, true));
 
-        EntityRenderers.register(NMLEntities.BURIED.get(), BuriedRenderer::new);
-        EntityRenderers.register(NMLEntities.MOOSE.get(), MooseRenderer::new);
+//        EntityRenderers.register(NMLEntities.BURIED.get(), BuriedRenderer::new);
+//        EntityRenderers.register(NMLEntities.MOOSE.get(), MooseRenderer::new);
 
         EntityRenderers.register(NMLEntities.FIREBOMB.get(), FirebombRenderer::new);
     }

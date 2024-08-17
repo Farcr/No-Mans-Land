@@ -2,9 +2,7 @@ package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;
-import com.farcr.nomansland.core.content.entity.BuriedEntity;
 import com.farcr.nomansland.core.content.entity.ChestBoatEntity;
-import com.farcr.nomansland.core.content.entity.MooseEntity;
 import com.farcr.nomansland.core.content.entity.bombs.FirebombEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
@@ -27,12 +25,12 @@ public class NMLEntities {
             ENTITIES.register("firebomb", () -> EntityType.Builder.<FirebombEntity>of(FirebombEntity::new, MobCategory.MISC)
                     .sized(0.375F, 0.375F).clientTrackingRange(4).updateInterval(20).build("fire_bomb"));
 
-    public static final DeferredHolder<EntityType<?>, EntityType<BuriedEntity>> BURIED =
-            ENTITIES.register("buried", () -> EntityType.Builder.of(BuriedEntity::new, MobCategory.MONSTER)
-                    .sized(1.0f, 1.0f).clientTrackingRange(8).build("buried"));
-
-    public static final DeferredHolder<EntityType<?>, EntityType<MooseEntity>> MOOSE =
-            ENTITIES.register("moose", () -> EntityType.Builder.of(MooseEntity::new, MobCategory.CREATURE)
-                    .sized(2.5f, 2.5f).build("moose"));
+//    public static final DeferredHolder<EntityType<?>, EntityType<BuriedEntity>> BURIED =
+//            ENTITIES.register("buried", () -> EntityType.Builder.of(BuriedEntity::new, MobCategory.MONSTER)
+//                    .sized(1.0f, 1.0f).clientTrackingRange(8).build("buried"));
+//
+//    public static final DeferredHolder<EntityType<?>, EntityType<MooseEntity>> MOOSE =
+//            ENTITIES.register("moose", () -> EntityType.Builder.of(MooseEntity::new, MobCategory.CREATURE)
+//                    .sized(2.5f, 2.5f).build("moose"));
 
 }

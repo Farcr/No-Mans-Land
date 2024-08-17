@@ -1,22 +1,19 @@
 package com.farcr.nomansland.core.content.blockentity;
 
 import com.farcr.nomansland.core.config.NMLConfig;
-import com.farcr.nomansland.core.content.entity.BuriedEntity;
 import com.farcr.nomansland.core.content.mixin.BlockEntityAccessor;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
-import com.farcr.nomansland.core.registry.NMLEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BrushableBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.BrushableBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
-import javax.annotation.Nullable;
 import java.util.Random;
 
 public class RemainsBlockEntity extends BrushableBlockEntity {
@@ -37,7 +34,8 @@ public class RemainsBlockEntity extends BrushableBlockEntity {
             if (remainsBlockState instanceof BrushableBlock) {
                 float a = new Random().nextFloat();
                 if (a <= NMLConfig.BURIED_SPAWNING_CHANCE.get()) {
-                    BuriedEntity buried = NMLEntities.BURIED.get().create(level);
+                    //TODO: When Buried is readded/worked on, replace SKELETON with BURIED
+                    Skeleton buried = EntityType.SKELETON.create(level);
                     if (buried != null) {
                         Vec3 playerPosition = pPlayer.getPosition(1);
                         BlockPos spawningPosition = worldPosition.relative(this.getHitDirection());

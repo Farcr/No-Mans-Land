@@ -1,8 +1,7 @@
 package com.farcr.nomansland.core.events;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.entity.BuriedEntity;
-import com.farcr.nomansland.core.content.entity.MooseEntity;
+//import com.farcr.nomansland.core.content.entity.BuriedEntity;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.farcr.nomansland.core.registry.NMLEntities;
 import net.minecraft.core.BlockPos;
@@ -66,8 +65,9 @@ public class MiscellaneousEvents {
     public static class ModEventBusEvents {
         @SubscribeEvent
         public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
-            event.put(NMLEntities.BURIED.get(), BuriedEntity.createAttributes().build());
-            event.put(NMLEntities.MOOSE.get(), MooseEntity.createAttributes().build());
+            //    TODO: BURIED AND MOOSE
+//            event.put(NMLEntities.BURIED.get(), BuriedEntity.createAttributes().build());
+//            event.put(NMLEntities.MOOSE.get(), MooseEntity.createAttributes().build());
         }
     }
 }

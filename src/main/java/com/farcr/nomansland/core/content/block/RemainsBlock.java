@@ -1,13 +1,13 @@
 package com.farcr.nomansland.core.content.block;
 
 import com.farcr.nomansland.core.content.blockentity.RemainsBlockEntity;
-import com.farcr.nomansland.core.content.entity.BuriedEntity;
-import com.farcr.nomansland.core.registry.NMLEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.FallingBlockEntity;
+import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -47,7 +47,8 @@ public class RemainsBlock extends BrushableBlock {
         super.spawnAfterBreak(pState, pLevel, pPos, pStack, pDropExperience);
         int a = new Random().nextInt(10);
         if (a < 1) {
-            BuriedEntity buried = NMLEntities.BURIED.get().create(pLevel);
+            //TODO: When Buried is readded/worked on, replace SKELETON with BURIED
+            Skeleton buried = EntityType.SKELETON.create(pLevel);
             if (buried != null) {
                 buried.moveTo((double) pPos.getX() + 0.5D, pPos.getY(), (double) pPos.getZ() + 0.5D, 0.0F, 0.0F);
                 pLevel.addFreshEntity(buried);
@@ -63,7 +64,8 @@ public class RemainsBlock extends BrushableBlock {
         pLevel.gameEvent(pFallingBlock, GameEvent.BLOCK_DESTROY, vec3);
         int a = new Random().nextInt(10);
         if (a < 5) {
-            BuriedEntity buried = NMLEntities.BURIED.get().create(pLevel);
+            //TODO: When Buried is readded/worked on, replace SKELETON with BURIED
+            Skeleton buried = EntityType.SKELETON.create(pLevel);
             if (buried != null) {
                 buried.moveTo((double) pPos.getX() + 0.5D, pPos.getY(), (double) pPos.getZ() + 0.5D, 0.0F, 0.0F);
                 pLevel.addFreshEntity(buried);

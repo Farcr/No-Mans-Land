@@ -1,30 +1,57 @@
 {
-  "type": "nomansland:spread_patch",
-  "config": {
-    "feature": {
-      "feature": {
-        "type": "minecraft:simple_block",
-        "config": {
-          "to_place": {
-            "type": "minecraft:simple_state_provider",
-            "state": {
-              "Name": "nomansland:short_beachgrass"
-            }
-          }
-        }
-      },
-      "placement": [
-        {
-          "type": "minecraft:block_predicate_filter",
-          "predicate": {
-            "type": "minecraft:matching_blocks",
-            "blocks": "minecraft:air"
-          }
-        }
-      ]
-    },
-    "tries": 1024,
-    "xz_spread": 4,
-    "y_spread": 3
-  }
+	"type": "nomansland:multispread_patch",
+	"config": {
+		"tries": 1024,
+		"xz_spread": 4,
+		"y_spread": 3,
+		"features": [
+		
+			{
+				"feature": {
+					"type": "minecraft:simple_block",
+					"config": {
+						"to_place": {
+							"type": "minecraft:simple_state_provider",
+							"state": {
+								"Name": "nomansland:tall_beachgrass"
+							}
+						}
+					}
+				},
+				"placement": [
+					{
+					  "type": "minecraft:block_predicate_filter",
+					  "predicate": {
+						"type": "minecraft:matching_blocks",
+						"blocks": "minecraft:air"
+					  }
+					}
+				]
+			},
+			
+			{
+				"feature": {
+					"type": "minecraft:simple_block",
+					"config": {
+						"to_place": {
+							"type": "minecraft:simple_state_provider",
+							"state": {
+								"Name": "nomansland:short_beachgrass"
+							}
+						}
+					}
+				},
+				"placement": [
+					{
+					  "type": "minecraft:block_predicate_filter",
+					  "predicate": {
+						"type": "minecraft:matching_blocks",
+						"blocks": "minecraft:air"
+					  }
+					}
+				]
+			}
+			
+    ]
+	}
 }

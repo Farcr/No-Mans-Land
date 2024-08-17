@@ -1,6 +1,8 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
+import com.farcr.nomansland.core.content.world.feature.MultiSpreadPatchConfiguration;
+import com.farcr.nomansland.core.content.world.feature.MultiSpreadPatchFeature;
 import com.farcr.nomansland.core.content.world.feature.SpreadPatchFeature;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -14,4 +16,6 @@ public class NMLFeatures {
 
     public static final DeferredHolder<Feature<?>, Feature<RandomPatchConfiguration>> SPREAD_PATCH = FEATURES.register("spread_patch",
             () -> new SpreadPatchFeature(RandomPatchConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>, Feature<MultiSpreadPatchConfiguration>> MULTISPREAD_PATCH = FEATURES.register("multispread_patch",
+            () -> new MultiSpreadPatchFeature(MultiSpreadPatchConfiguration.CODEC));
 }
