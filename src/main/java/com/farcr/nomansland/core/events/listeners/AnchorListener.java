@@ -1,19 +1,14 @@
 package com.farcr.nomansland.core.events.listeners;
 
-import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
-import com.farcr.nomansland.core.content.mixinduck.LivingEntityDuck;
+import com.farcr.nomansland.core.content.entity.LivingEntityDuck;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import com.farcr.nomansland.core.registry.NMLTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -23,7 +18,6 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class AnchorListener implements GameEventListener {

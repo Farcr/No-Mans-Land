@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.mixinduck;
+package com.farcr.nomansland.core.content.entity;
 
 public interface LivingEntityDuck {
 

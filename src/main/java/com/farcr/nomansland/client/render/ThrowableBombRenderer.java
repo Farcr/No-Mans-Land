@@ -1,6 +1,6 @@
 package com.farcr.nomansland.client.render;
 
-import com.farcr.nomansland.core.content.entity.ThrowableBombEntity;
+import com.farcr.nomansland.core.content.entity.bombs.ThrowableBombEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -49,6 +49,7 @@ public abstract class ThrowableBombRenderer<T extends ThrowableBombEntity> exten
     public void render(T entity, float yaw, float partialTicks, PoseStack matrixStack, MultiBufferSource buffers, int packedLight) {
         BakedModel model = Minecraft.getInstance().getModelManager().getModel(this.getModelLocation(entity));
         matrixStack.pushPose();
+
         matrixStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entity.yRotO, entity.getYRot()) - 90.0F));
 
         matrixStack.translate(0, entity.getBbHeight() / 2F, 0);

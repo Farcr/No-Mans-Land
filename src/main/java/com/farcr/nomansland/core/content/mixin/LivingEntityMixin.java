@@ -1,6 +1,6 @@
 package com.farcr.nomansland.core.content.mixin;
 
-import com.farcr.nomansland.core.content.mixinduck.LivingEntityDuck;
+import com.farcr.nomansland.core.content.entity.LivingEntityDuck;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;

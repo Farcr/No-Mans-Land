@@ -1,6 +1,7 @@
-package com.farcr.nomansland.core.content.entity;
+package com.farcr.nomansland.core.content.entity.bombs;
 
 
+import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.farcr.nomansland.core.registry.NMLEntities;
 import com.farcr.nomansland.core.registry.NMLTags;
 import net.minecraft.core.BlockPos;
@@ -16,6 +17,8 @@ import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.TntBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
+import static net.minecraft.world.level.block.WallTorchBlock.FACING;
+
 public class FirebombEntity extends ThrowableBombEntity {
 
     public FirebombEntity(EntityType<? extends ThrowableBombEntity> entityType, Level level) {
@@ -30,9 +33,9 @@ public class FirebombEntity extends ThrowableBombEntity {
         super(NMLEntities.FIREBOMB.get(), x, y, z, level);
     }
 
-    // TODO: ensure firebomb works
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
     }
 
     @Override
@@ -90,6 +93,25 @@ public class FirebombEntity extends ThrowableBombEntity {
                 TntBlock.explode(this.level(), pos);
                 this.level().setBlock(pos, Blocks.AIR.defaultBlockState(), 11);
             }
+            if (state.getBlock() == NMLBlocks.EXTINGUISHED_TORCH.get()) {
+                this.level().setBlock(pos, Blocks.TORCH.defaultBlockState(), 3);
+            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_WALL_TORCH.get()) {
+                this.level().setBlock(pos, Blocks.WALL_TORCH.defaultBlockState().setValue(FACING, state.getValue(FACING)), 3);
+            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_SOUL_TORCH.get()) {
+                this.level().setBlock(pos, Blocks.SOUL_TORCH.defaultBlockState(), 3);
+            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_SOUL_WALL_TORCH.get()) {
+                this.level().setBlock(pos, Blocks.SOUL_WALL_TORCH.defaultBlockState().setValue(FACING, state.getValue(FACING)), 3);
+            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_SCONCE_TORCH.get()) {
+                this.level().setBlock(pos, NMLBlocks.SCONCE_TORCH.get().defaultBlockState(), 3);
+            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_SCONCE_WALL_TORCH.get()) {
+                this.level().setBlock(pos, NMLBlocks.SCONCE_WALL_TORCH.get().defaultBlockState().setValue(FACING, state.getValue(FACING)), 3);
+            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_SCONCE_SOUL_TORCH.get()) {
+                this.level().setBlock(pos, NMLBlocks.SCONCE_SOUL_TORCH.get().defaultBlockState(), 3);
+            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_SCONCE_SOUL_WALL_TORCH.get()) {
+
+                this.level().setBlock(pos, NMLBlocks.SCONCE_SOUL_WALL_TORCH.get().defaultBlockState().setValue(FACING, state.getValue(FACING)), 3);
+            }
+
         });
         this.level().broadcastEntityEvent(this, (byte) (this.isInWater() ? 1 : 0));
         this.discard();

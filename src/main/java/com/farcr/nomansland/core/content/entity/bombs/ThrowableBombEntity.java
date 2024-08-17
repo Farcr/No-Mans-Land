@@ -1,9 +1,10 @@
-package com.farcr.nomansland.core.content.entity;
+package com.farcr.nomansland.core.content.entity.bombs;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
@@ -20,25 +21,33 @@ public abstract class ThrowableBombEntity extends ThrowableProjectile {
     private static final float VERTICAL_RESTITUTION = 0.3F;
     private static final float HORIZONTAL_RESTITUTION = 0.4F;
     private static final int MAX_LIFE = 200;
+    private static final EntityDataAccessor<Integer> DATA_FUSE_ID = SynchedEntityData.defineId(ThrowableBombEntity.class, EntityDataSerializers.INT);
 
-    private int explodeTimer = -1;
     private float oRoll;
     private float roll;
 
     protected ThrowableBombEntity(EntityType<? extends ThrowableProjectile> entityType, Level level) {
         super(entityType, level);
+        this.setFuse(60);
     }
 
     protected ThrowableBombEntity(EntityType<? extends ThrowableProjectile> entityType, double d, double e, double f, Level level) {
         super(entityType, d, e, f, level);
+        this.setFuse(60);
     }
 
     protected ThrowableBombEntity(EntityType<? extends ThrowableProjectile> entityType, LivingEntity livingEntity, Level level) {
         super(entityType, livingEntity, level);
+        this.setFuse(60);
     }
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        builder.define(DATA_FUSE_ID, 80);
+    }
+
+    public int getFuse() {
+        return this.entityData.get(DATA_FUSE_ID);
     }
 
     @Override
@@ -70,8 +79,8 @@ public abstract class ThrowableBombEntity extends ThrowableProjectile {
                         -motion.z() * HORIZONTAL_RESTITUTION
                 );
             }
-            if (this.explodeTimer == -1) {
-                this.explodeTimer = 30;
+            if (this.getFuse() == -1) {
+                this.setFuse(30);;
             }
         }
 
@@ -98,17 +107,20 @@ public abstract class ThrowableBombEntity extends ThrowableProjectile {
 
     @Override
     protected void addAdditionalSaveData(CompoundTag nbt) {
+        nbt.putShort("fuse", (short)this.getFuse());
         super.addAdditionalSaveData(nbt);
-        if (this.explodeTimer > -1) {
-            nbt.putByte("ExplodeTime", (byte) this.explodeTimer);
-        }
     }
 
     @Override
     protected void readAdditionalSaveData(CompoundTag nbt) {
+        this.setFuse(nbt.getShort("fuse"));
         super.readAdditionalSaveData(nbt);
-        this.explodeTimer = nbt.contains("ExplodeTime", Tag.TAG_INT) ? nbt.getInt("ExplodeTime") : -1;
     }
+
+    public void setFuse(int life) {
+        this.entityData.set(DATA_FUSE_ID, life);
+    }
+
 
     @Override
     public void tick() {
@@ -126,9 +138,9 @@ public abstract class ThrowableBombEntity extends ThrowableProjectile {
                 this.level().addParticle(this.getParticle(), this.getX(), this.getY() + this.getBbHeight(), this.getZ(), 0, 0, 0);
             }
         } else {
-            if (this.explodeTimer > -1) {
-                this.explodeTimer--;
-                if (this.explodeTimer <= 0) {
+            if (this.getFuse() > -1) {
+                this.setFuse(this.getFuse()-1);;
+                if (this.getFuse() <= 0) {
                     this.explode();
                 }
             } else if (this.tickCount >= MAX_LIFE) {

@@ -1,7 +1,7 @@
 package com.farcr.nomansland.core.content.item;
 
 
-import com.farcr.nomansland.core.content.entity.ThrowableBombEntity;
+import com.farcr.nomansland.core.content.entity.bombs.ThrowableBombEntity;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -35,8 +35,9 @@ public abstract class BombItem extends Item {
 
     @Override
     public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int remainingTicks) {
-        if (!entity.isShiftKeyDown() && this.getUseDuration(stack, entity) - remainingTicks >= DEFAULT_THROW_TIME) {
-            entity.releaseUsingItem();
+        if (this.getUseDuration(stack, entity) - remainingTicks >= DEFAULT_THROW_TIME) {
+            if (!entity.isShiftKeyDown()) entity.releaseUsingItem();
+//            else stack.
         }
     }
 
