@@ -45,8 +45,8 @@ public class NMLItems {
     public static final DeferredItem<Item> RESIN = registerItem("resin",
             () -> new FuelItem(new Item.Properties(), 1000));
     //    !!!Depends on Alembic
-    public static final DeferredItem<Item> RESIN_OIL_BOTTLE = registerIntegrationItem("resin_oil_bottle",
-            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)), "alembic");
+    public static final DeferredItem<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
+            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
     //    public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
 //            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
     public static final DeferredItem<Item> SCONCE_TORCH = registerItem("sconce_torch",
