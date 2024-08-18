@@ -35,9 +35,10 @@ public abstract class BombItem extends Item {
 
     @Override
     public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int remainingTicks) {
-        if (this.getUseDuration(stack, entity) - remainingTicks >= DEFAULT_THROW_TIME) {
+        int timeUsed = this.getUseDuration(stack, entity) - remainingTicks;
+        if (timeUsed >= DEFAULT_THROW_TIME) {
             if (!entity.isShiftKeyDown()) entity.releaseUsingItem();
-//            else stack.
+//            if (timeUsed < DEFAULT_THROW_TIME + 30)
         }
     }
 

@@ -2,8 +2,8 @@ package com.farcr.nomansland.core.events;
 
 import com.farcr.nomansland.core.NoMansLand;
 //import com.farcr.nomansland.core.content.entity.BuriedEntity;
+import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.registry.NMLBlocks;
-import com.farcr.nomansland.core.registry.NMLEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -18,10 +18,11 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.level.BlockEvent;
 
 public class MiscellaneousEvents {
     @EventBusSubscriber(modid = NoMansLand.MODID)
-    public static class ForgeEvents {
+    public static class NeoForgeEvents {
         @SubscribeEvent
         public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
             Level level = event.getLevel();
@@ -31,7 +32,7 @@ public class MiscellaneousEvents {
             ItemStack stack = event.getItemStack();
 
             //Torch Extinguishing
-            if (stack.is(ItemTags.SHOVELS) && !player.isSpectator()) {
+            if (stack.is(ItemTags.SHOVELS) && !player.isSpectator() && NMLConfig.TORCH_EXTINGUISHING.get()) {
                 if (state.is(Blocks.TORCH) ||
                         state.is(Blocks.WALL_TORCH) ||
                         state.is(Blocks.SOUL_TORCH) ||
@@ -58,6 +59,11 @@ public class MiscellaneousEvents {
                     event.setCanceled(true);
                 }
             }
+        }
+
+        @SubscribeEvent
+        public static void onFarmlandTrample(BlockEvent.FarmlandTrampleEvent event) {
+            if (!NMLConfig.TRAMPLING.get()) event.setCanceled(true);
         }
     }
 

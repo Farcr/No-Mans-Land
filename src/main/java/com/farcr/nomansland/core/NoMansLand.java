@@ -3,6 +3,7 @@ package com.farcr.nomansland.core;
 import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.registry.*;
 import com.mojang.logging.LogUtils;
+import net.minecraft.server.Services;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -33,6 +34,7 @@ public class NoMansLand {
 
         modContainer.registerConfig(ModConfig.Type.COMMON, NMLConfig.COMMON_CONFIG);
         modContainer.registerConfig(ModConfig.Type.CLIENT, NMLConfig.CLIENT_CONFIG);
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
