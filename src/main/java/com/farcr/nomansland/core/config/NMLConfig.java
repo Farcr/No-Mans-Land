@@ -25,6 +25,8 @@ public class NMLConfig {
     public static ModConfigSpec.BooleanValue MYCELIUM_SPREADS;
     public static ModConfigSpec.BooleanValue GRASS_SPREADS;
     public static ModConfigSpec.BooleanValue MALEVOLENT_SPAWNER;
+    public static ModConfigSpec.BooleanValue TRAMPLING;
+    public static ModConfigSpec.BooleanValue TORCH_EXTINGUISHING;
     public static ModConfigSpec.DoubleValue FILLING_SPEED_MULTIPLIER;
     public static ModConfigSpec.IntValue TICKS_TO_FILL_CAULDRON;
     public static ModConfigSpec.IntValue TICKS_BETWEEN_RESURRECTIONS;
@@ -46,6 +48,8 @@ public class NMLConfig {
         MYCELIUM_SPREADS = COMMON_BUILDER.define("myceliumSpreads", true);
         MALEVOLENT_SPAWNER = COMMON_BUILDER.comment("If monster spawners should produce malevolent fire instead of regular fire (like monster anchors).")
                 .define("malevolentSpawner", true);
+        TRAMPLING = COMMON_BUILDER.comment("If players and mobs can trample farmland").define("allowTrampling", false);
+        TORCH_EXTINGUISHING = COMMON_BUILDER.comment("If torches can be extinguished manually like campfires").define("torchExtinguishing", true);
         COMMON_BUILDER.pop();
 
         COMMON_BUILDER.push(CATEGORY_TAP);
