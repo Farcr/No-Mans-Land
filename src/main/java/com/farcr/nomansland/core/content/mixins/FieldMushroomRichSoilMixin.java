@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.mixin;
+package com.farcr.nomansland.core.content.mixins;
 
 // TODO: when fd is added
 //@Debug(export = true)
