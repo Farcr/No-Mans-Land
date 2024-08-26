@@ -45,8 +45,8 @@ public class NMLItems {
     public static final DeferredItem<Item> RESIN = registerItem("resin",
             () -> new FuelItem(new Item.Properties(), 1000));
     //    !!!Depends on Alembic
-    public static final DeferredItem<Item> RESIN_OIL_BOTTLE = registerIntegrationItem("resin_oil_bottle",
-            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)), "alembic");
+    public static final DeferredItem<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
+            () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
     //    public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
 //            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
     public static final DeferredItem<Item> SCONCE_TORCH = registerItem("sconce_torch",
@@ -203,6 +203,8 @@ public class NMLItems {
             event.accept(NMLBlocks.WILD_MINT.get());
             event.accept(NMLBlocks.AUTUMN_CROCUS.get());
             event.accept(NMLBlocks.RAFFLESIA.get());
+            event.accept(NMLBlocks.BARREL_CACTUS.get());
+            event.accept(NMLBlocks.SUCCULENT.get());
             event.accept(NMLBlocks.PEBBLES.get());
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES.get());
             event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
@@ -227,6 +229,9 @@ public class NMLItems {
 
             event.accept(NMLBlocks.QUARTZITE.get());
             event.accept(NMLBlocks.QUARTZITE_CLUSTER.get());
+            event.accept(NMLBlocks.SMALL_QUARTZITE_BUD.get());
+            event.accept(NMLBlocks.MEDIUM_QUARTZITE_BUD.get());
+            event.accept(NMLBlocks.LARGE_QUARTZITE_BUD.get());
             event.accept(NMLBlocks.BUDDING_QUARTZITE.get());
             event.accept(NMLBlocks.PETRIFIED_LOG.get());
             event.accept(NMLBlocks.PETRIFIED_WOOD.get());
