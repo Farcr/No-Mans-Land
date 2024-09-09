@@ -35,18 +35,18 @@ public class NMLOverworldRegion  extends Region {
                 .weirdness(Weirdness.VALLEY, Weirdness.LOW_SLICE_NORMAL_DESCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.HIGH_SLICE_NORMAL_DESCENDING, Weirdness.PEAK_NORMAL)
                 .build().forEach(point -> builder.add(point, NMLBiomes.AUTUMNAL_FOREST));
         // Maple Forest
-//        new ParameterPointListBuilder()
-//                .temperature(Temperature.span(Temperature.COOL, Temperature.ICY))
-//                .humidity(Humidity.span(Humidity.DRY, Humidity.NEUTRAL))
-//                .continentalness(Continentalness.INLAND)
-//                .erosion(Erosion.EROSION_1, Erosion.EROSION_5)
-//                .depth(Depth.SURFACE, Depth.FLOOR)
-//                .weirdness(Weirdness.VALLEY, Weirdness.LOW_SLICE_NORMAL_DESCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.HIGH_SLICE_NORMAL_DESCENDING, Weirdness.PEAK_NORMAL)
-//                .build().forEach(point -> builder.add(point, NMLBiomes.MAPLE_FOREST));
+        new ParameterPointListBuilder()
+                .temperature(Temperature.span(Temperature.COOL, Temperature.ICY))
+                .humidity(Humidity.span(Humidity.DRY, Humidity.WET))
+                .continentalness(Continentalness.INLAND)
+                .erosion(Erosion.EROSION_1, Erosion.EROSION_5)
+                .depth(Depth.SURFACE, Depth.FLOOR)
+                .weirdness(Weirdness.VALLEY, Weirdness.LOW_SLICE_NORMAL_DESCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.HIGH_SLICE_NORMAL_DESCENDING, Weirdness.PEAK_NORMAL)
+                .build().forEach(point -> builder.add(point, NMLBiomes.MAPLE_FOREST));
         // Old Growth Forest
         new ParameterPointListBuilder()
                 .temperature(Temperature.NEUTRAL)
-                .humidity(Humidity.NEUTRAL)
+                .humidity(Humidity.span(Humidity.DRY, Humidity.WET))
                 .continentalness(Continentalness.INLAND)
                 .erosion(Erosion.EROSION_1, Erosion.EROSION_5)
                 .depth(Depth.SURFACE, Depth.FLOOR)

@@ -1,6 +1,7 @@
 package com.farcr.nomansland.core.content.block;
 
 import com.farcr.nomansland.core.registry.NMLBlocks;
+import com.farcr.nomansland.core.registry.NMLItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -45,7 +46,7 @@ public class PebbleBlock extends Block implements SimpleWaterloggedBlock {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         ItemStack pebble = new ItemStack(NMLBlocks.PEBBLES.get());
-        if (!player.addItem(pebble)) {
+        if (!(player.isCreative() && player.getMainHandItem().is(NMLBlocks.PEBBLES.asItem())) && !player.addItem(pebble)) {
             player.drop(pebble, false);
         } else {
             level.playSound(player,
