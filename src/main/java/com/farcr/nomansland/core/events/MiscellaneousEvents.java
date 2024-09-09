@@ -1,11 +1,9 @@
 package com.farcr.nomansland.core.events;
 
 import com.farcr.nomansland.core.NoMansLand;
-//import com.farcr.nomansland.core.content.entity.BuriedEntity;
 import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.core.BlockPos;
-import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;

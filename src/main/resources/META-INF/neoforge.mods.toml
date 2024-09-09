@@ -32,6 +32,14 @@ ordering="NONE"
 side="BOTH"
 
 [[dependencies.${mod_id}]]
+modId="terrablender"
+type="required"
+reason="Biome generation"
+versionRange="${tb_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
 modId="farmersdelight"
 type="optional"
 reason="No Man's Land ties well with Farmer's Delight"

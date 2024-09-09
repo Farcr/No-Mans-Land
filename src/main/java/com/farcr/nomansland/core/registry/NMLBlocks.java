@@ -1,13 +1,13 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
+import com.farcr.nomansland.core.content.block.*;
+import com.farcr.nomansland.core.content.block.cauldrons.HoneyCauldronBlock;
+import com.farcr.nomansland.core.content.block.cauldrons.ResinCauldronBlock;
 import com.farcr.nomansland.core.content.block.signs.HangingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.StandingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.WallHangingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.WallSignBlock;
-import com.farcr.nomansland.core.content.block.*;
-import com.farcr.nomansland.core.content.block.cauldrons.HoneyCauldronBlock;
-import com.farcr.nomansland.core.content.block.cauldrons.ResinCauldronBlock;
 import com.farcr.nomansland.core.content.block.torches.*;
 import com.farcr.nomansland.core.content.world.tree.HugeMushrooms;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;

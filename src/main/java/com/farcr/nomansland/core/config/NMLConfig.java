@@ -1,17 +1,6 @@
 package com.farcr.nomansland.core.config;
 
-import com.farcr.nomansland.core.events.listeners.AnchorListener;
-import com.ibm.icu.impl.Trie2;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.monster.Creeper;
-import net.minecraft.world.entity.monster.Zombie;
 import net.neoforged.neoforge.common.ModConfigSpec;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
 
 public class NMLConfig {
 

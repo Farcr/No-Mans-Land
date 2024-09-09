@@ -84,10 +84,12 @@
       "nomansland:biome_trees/trees_maple_forest"
     ],
     [
+      "minecraft:patch_grass_forest"
+    ],
+    [
       "minecraft:glow_lichen",
       "nomansland:flower_patches/flowers_maple",
       "nomansland:flower_patches/flowerbed_red",
-      "minecraft:patch_grass_forest",
       "nomansland:patch_rose_bush",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",

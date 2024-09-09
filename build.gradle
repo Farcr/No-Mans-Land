@@ -77,13 +77,21 @@ dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
 
     //Optional Farmer's Delight Dependency, for compat use
-//    implementation fg.deobf("curse.maven:farmers-delight-398521:${farmers_delight_version}")
+//    implementation("maven.modrinth:farmers-delight:1.21-$fd_version")
+
+    implementation("maven.modrinth:terrablender:cNsceBWL")
 
     // compile against the JEI API but do not include it at runtime
-    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
-    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
+    compileOnly "mezz.jei:jei-$minecraft_version-common-api:$jei_version"
+    compileOnly "mezz.jei:jei-$minecraft_version-neoforge-api:$jei_version"
     // at runtime, use the full JEI jar for Forge
-    runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+    runtimeOnly "mezz.jei:jei-$minecraft_version-neoforge:$jei_version"
+
+//    implementation("dev.lukebemish:biomesquisher:${bs_version}") {
+//        capabilities {
+//            requireCapability('dev.lukebemish:biomesquisher-neoforge')
+//        }
+//    }
 
     // Mods in the devenv to help the testing process
 
@@ -104,13 +112,12 @@ dependencies {
 
 tasks.withType(ProcessResources).configureEach {
     var replaceProperties = [
-            minecraft_version      : minecraft_version,
             minecraft_version_range: minecraft_version_range,
-            neo_version            : neo_version,
             neo_version_range      : neo_version_range,
             loader_version_range   : loader_version_range,
-            fd_version             : fd_version,
             fd_version_range       : fd_version_range,
+            tb_version_range       : tb_version_range,
+            bs_version_range       : bs_version_range,
             mod_id                 : mod_id,
             mod_name               : mod_name,
             mod_license            : mod_license,

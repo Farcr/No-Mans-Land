@@ -9,8 +9,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
-import javax.swing.text.html.parser.Entity;
-
 public class NMLTags {
     public static final TagKey<Item> FIRESTARTERS = createItemTag("firestarters");
     public static final TagKey<Block> BONEMEAL_SPREADS = createBlockTag("bonemeal_spreads");

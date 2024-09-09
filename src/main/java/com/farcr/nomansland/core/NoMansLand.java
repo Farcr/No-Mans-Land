@@ -1,9 +1,9 @@
 package com.farcr.nomansland.core;
 
 import com.farcr.nomansland.core.config.NMLConfig;
+import com.farcr.nomansland.core.content.world.biome.NMLTerrablender;
 import com.farcr.nomansland.core.registry.*;
 import com.mojang.logging.LogUtils;
-import net.minecraft.server.Services;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -28,6 +28,7 @@ public class NoMansLand {
         NMLBlockEntities.BLOCK_ENTITIES.register(modEventBus);
         NMLLootModifiers.LOOT_MODIFIERS.register(modEventBus);
         NMLLootItemConditions.LOOT_CONDITIONS.register(modEventBus);
+        NMLTerrablender.registerBiomes();
 
         modEventBus.addListener(NMLItems::addCreative);
         modEventBus.addListener(this::commonSetup);
