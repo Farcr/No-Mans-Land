@@ -2,15 +2,11 @@ package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.lootmodifiers.AddItemModifier;
-import com.farcr.nomansland.core.content.lootmodifiers.ModLoadedLootCondition;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
-
-import java.util.function.Supplier;
 
 public class NMLLootModifiers {
 

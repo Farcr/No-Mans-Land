@@ -31,6 +31,22 @@ versionRange="${minecraft_version_range}"
 ordering="NONE"
 side="BOTH"
 
+#[[dependencies.${mod_id}]]
+#modId="terrablender"
+#type="required"
+#reason="Biome generation"
+#versionRange="${tb_version_range}"
+#ordering="NONE"
+#side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="biomesquisher"
+type="required"
+reason="Biome generation"
+versionRange="${bs_version_range}"
+ordering="NONE"
+side="BOTH"
+
 [[dependencies.${mod_id}]]
 modId="farmersdelight"
 type="optional"
