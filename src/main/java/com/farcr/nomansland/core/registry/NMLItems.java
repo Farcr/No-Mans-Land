@@ -294,6 +294,7 @@ public class NMLItems {
             event.accept(NMLItems.MAPLE_CHEST_BOAT.get());
             event.accept(NMLItems.WALNUT_BOAT.get());
             event.accept(NMLItems.WALNUT_CHEST_BOAT.get());
+            // TODO: this crashes the game if you have the bundle experiment on
             event.accept(Items.BUNDLE);
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {

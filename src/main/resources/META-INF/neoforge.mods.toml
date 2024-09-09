@@ -9,7 +9,7 @@ version="${mod_version}"
 displayName="${mod_name}"
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
-logoFile="nomansland.png" #optional
+logoFile="${mod_id}.png" #optional
 #credits="" #optional
 authors="${mod_authors}" #optional
 description='''${mod_description}'''
@@ -30,14 +30,6 @@ type="required"
 versionRange="${minecraft_version_range}"
 ordering="NONE"
 side="BOTH"
-
-#[[dependencies.${mod_id}]]
-#modId="biomesquisher"
-#type="required"
-#reason="Biome Generation"
-#versionRange="${bs_version_range}"
-#ordering="NONE"
-#side="BOTH"
 
 [[dependencies.${mod_id}]]
 modId="farmersdelight"

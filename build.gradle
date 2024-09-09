@@ -90,8 +90,12 @@ dependencies {
     runtimeOnly "maven.modrinth:xaeros-world-map:1.38.9_NeoForge_1.21"
 
     runtimeOnly "maven.modrinth:appleskin:3.0.5+mc1.21"
-    
+
     runtimeOnly "maven.modrinth:worldedit:7.3.6"
+    
+    runtimeOnly "maven.modrinth:sodium:mc1.21-0.6.0-beta.1-neoforge"
+    
+    runtimeOnly "maven.modrinth:iris:1.8.0-beta.1+1.21-neoforge"
 
 //    runtimeOnly fg.deobf("curse.maven:tagtooltips-899941:${tagtooltip_version}")
 //    runtimeOnly fg.deobf("curse.maven:cyanide-541676:${cyanide_version}")
@@ -107,8 +111,6 @@ tasks.withType(ProcessResources).configureEach {
             loader_version_range   : loader_version_range,
             fd_version             : fd_version,
             fd_version_range       : fd_version_range,
-            bs_version             : bs_version,
-            bs_version_range       : bs_version_range,
             mod_id                 : mod_id,
             mod_name               : mod_name,
             mod_license            : mod_license,

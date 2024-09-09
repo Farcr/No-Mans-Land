@@ -5,6 +5,7 @@ import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
@@ -19,6 +20,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.neoforge.event.level.BlockGrowFeatureEvent;
 
 public class MiscellaneousEvents {
     @EventBusSubscriber(modid = NoMansLand.MODID)
@@ -64,6 +66,11 @@ public class MiscellaneousEvents {
         @SubscribeEvent
         public static void onFarmlandTrample(BlockEvent.FarmlandTrampleEvent event) {
             if (!NMLConfig.TRAMPLING.get()) event.setCanceled(true);
+        }
+
+        @SubscribeEvent
+        public static void onPodzolSpread(BlockGrowFeatureEvent event) {
+//            if ((event.getFeature().is(TreeFeatures.MEGA_PINE)) || (event.getFeature().is(TreeFeatures.MEGA_SPRUCE))) event.setCanceled(true);
         }
     }
 

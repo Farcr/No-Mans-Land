@@ -14,7 +14,7 @@ import org.slf4j.Logger;
 @Mod(NoMansLand.MODID)
 public class NoMansLand {
     public static final String MODID = "nomansland";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public NoMansLand(IEventBus modEventBus, ModContainer modContainer) {
 

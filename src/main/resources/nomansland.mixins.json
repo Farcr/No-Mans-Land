@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.farcr.nomansland.core.content.mixin",
+  "package": "com.farcr.nomansland.core.content.mixins",
   "compatibilityLevel": "JAVA_21",
   "refmap": "nomansland.refmap.json",
   "mixins": [
