@@ -14,7 +14,6 @@ public class NMLBiomes {
     public static final ResourceKey<Biome> OLD_GROWTH_FOREST = createKey("old_growth_forest");
 
     //Underground
-
     public static final ResourceKey<Biome> CAVES = createKey("caves");
 
 
