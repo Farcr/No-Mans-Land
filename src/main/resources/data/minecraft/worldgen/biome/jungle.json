@@ -76,8 +76,7 @@
     [],
     [
       "minecraft:spring_water",
-      "minecraft:spring_lava",
-      "nomansland:coarse_dirt_patch_extra"
+      "minecraft:spring_lava"
     ],
     [
       "minecraft:trees_jungle",

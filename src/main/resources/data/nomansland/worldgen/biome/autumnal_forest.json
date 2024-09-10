@@ -8,10 +8,10 @@
   },
   "downfall": 0.8,
   "effects": {
-    "fog_color": 13822166,
+    "fog_color": 12906239,
     "sky_color": 7715315,
-    "foliage_color": 11314505,
-    "grass_color": 13217363,
+    "foliage_color": 12363081,
+    "grass_color": 10658891,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -77,8 +77,7 @@
     [],
     [
       "minecraft:spring_water",
-      "minecraft:spring_lava",
-      "nomansland:coarse_dirt_patch_extra"
+      "minecraft:spring_lava"
     ],
     [
       "nomansland:biome_trees/trees_autumnal_forest"

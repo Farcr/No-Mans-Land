@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.world.biome;
+package com.farcr.nomansland.core.content.world.regions;
 
 import com.farcr.nomansland.core.registry.NMLBiomes;
 import com.mojang.datafixers.util.Pair;
@@ -27,20 +27,20 @@ public class NMLOverworldRegion  extends Region {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
         // Autumnal Forest
         new ParameterPointListBuilder()
-                .temperature(Temperature.span(Temperature.NEUTRAL, Temperature.COOL))
+                .temperature(Temperature.span(Temperature.COOL, Temperature.NEUTRAL))
                 .humidity(Humidity.span(Humidity.DRY, Humidity.WET))
                 .continentalness(Continentalness.INLAND)
                 .erosion(Erosion.EROSION_1, Erosion.EROSION_5)
-                .depth(Depth.SURFACE, Depth.FLOOR)
+                .depth(Depth.FULL_RANGE)
                 .weirdness(Weirdness.VALLEY, Weirdness.LOW_SLICE_NORMAL_DESCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.HIGH_SLICE_NORMAL_DESCENDING, Weirdness.PEAK_NORMAL)
                 .build().forEach(point -> builder.add(point, NMLBiomes.AUTUMNAL_FOREST));
         // Maple Forest
         new ParameterPointListBuilder()
-                .temperature(Temperature.span(Temperature.COOL, Temperature.ICY))
+                .temperature(Temperature.span(Temperature.ICY, Temperature.COOL))
                 .humidity(Humidity.span(Humidity.DRY, Humidity.WET))
                 .continentalness(Continentalness.INLAND)
                 .erosion(Erosion.EROSION_1, Erosion.EROSION_5)
-                .depth(Depth.SURFACE, Depth.FLOOR)
+                .depth(Depth.FULL_RANGE)
                 .weirdness(Weirdness.VALLEY, Weirdness.LOW_SLICE_NORMAL_DESCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.HIGH_SLICE_NORMAL_DESCENDING, Weirdness.PEAK_NORMAL)
                 .build().forEach(point -> builder.add(point, NMLBiomes.MAPLE_FOREST));
         // Old Growth Forest
@@ -49,7 +49,7 @@ public class NMLOverworldRegion  extends Region {
                 .humidity(Humidity.span(Humidity.DRY, Humidity.WET))
                 .continentalness(Continentalness.INLAND)
                 .erosion(Erosion.EROSION_1, Erosion.EROSION_5)
-                .depth(Depth.SURFACE, Depth.FLOOR)
+                .depth(Depth.FULL_RANGE)
                 .weirdness(Weirdness.VALLEY, Weirdness.LOW_SLICE_NORMAL_DESCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.HIGH_SLICE_NORMAL_DESCENDING, Weirdness.PEAK_NORMAL)
                 .build().forEach(point -> builder.add(point, NMLBiomes.OLD_GROWTH_FOREST));
 

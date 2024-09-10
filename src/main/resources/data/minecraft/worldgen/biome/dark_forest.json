@@ -76,8 +76,7 @@
     [],
     [
       "minecraft:spring_water",
-      "minecraft:spring_lava",
-      "nomansland:podzol_patch"
+      "minecraft:spring_lava"
     ],
     [
       "minecraft:dark_forest_vegetation"
