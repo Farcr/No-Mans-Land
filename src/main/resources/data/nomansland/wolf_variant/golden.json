@@ -1,0 +1,7 @@
+{
+  "angry_texture": "nomansland:entity/variants/wolf/wolf_golden_angry",
+  "biomes": 
+    "nomansland:autumnal_forest",
+  "tame_texture": "nomansland:entity/variants/wolf/wolf_golden_tame",
+  "wild_texture": "nomansland:entity/variants/wolf/wolf_golden"
+}

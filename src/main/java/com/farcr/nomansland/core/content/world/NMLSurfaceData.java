@@ -12,6 +12,7 @@ import net.minecraft.world.level.levelgen.VerticalAnchor;
 public class NMLSurfaceData {
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
     private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
+    private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
     private static final SurfaceRules.RuleSource AIR = makeStateRule(Blocks.AIR);
     private static final SurfaceRules.RuleSource ICE = makeStateRule(Blocks.ICE);
     private static final SurfaceRules.RuleSource WATER = makeStateRule(Blocks.WATER);
@@ -28,16 +29,20 @@ public class NMLSurfaceData {
                 //Old Growth Forest
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(NMLBiomes.OLD_GROWTH_FOREST),
-                        SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.5), COARSE_DIRT))),
+                        SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.25), COARSE_DIRT))),
+                //Maple Forest
+                SurfaceRules.ifTrue(
+                        SurfaceRules.isBiome(NMLBiomes.MAPLE_FOREST),
+                        SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.25), PODZOL))),
                 //Dark Forest
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(Biomes.DARK_FOREST),
-                        SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.5), COARSE_DIRT))),
+                        SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.25), PODZOL))),
                 //Jungle
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(Biomes.JUNGLE),
-                        SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.5), COARSE_DIRT)))
-            )
+                        SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.25), COARSE_DIRT)))
+                )
         );
     }
 
