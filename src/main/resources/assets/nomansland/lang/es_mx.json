@@ -5,6 +5,7 @@
   "biome.nomansland.caves": "Cuevas",
   "biome.nomansland.deep_caves": "Cuevas profundas",
   "biome.nomansland.old_growth_forest": "Bosque antiguo",
+  "biome.nomansland.old_growth_forest_clearing": "Desbroce de bosque antiguo",
   "biome.nomansland.boreal_forest": "Bosque boreal",
   "biome.nomansland.autumnal_forest": "Bosque otoñal",
   "biome.nomansland.autumnal_fields": "Campo otoñal",
@@ -245,6 +246,7 @@
 
   "nomansland.subtitles.block.spike_trap.extend": "Picos se extienden",
   "nomansland.subtitles.block.spike_trap.retract": "Picos se retraen",
+  
   "death.attack.nomansland.spike_fall": "%1$s encontró un final afilado en los picos",
   "death.attack.nomansland.spike_fall.player": "%1$s encontró un final afilado en los picos mientras luchaba contra %2$s",
   "death.attack.nomansland.spike_impale": "%1$s fue empalado por picos",
@@ -253,6 +255,7 @@
   "death.attack.nomansland.spike_poke.player": "%1$s ue pinchado hasta la muerte por trampa picos mientras luchaba contra %2$s",
   "death.attack.nomansland.spike_skewer": "%1$s fue ensartado por picos moviéndose",
   "death.attack.nomansland.spike_skewer.player": "%1$s fue ensartado por picos moviéndose mientras luchaba contra %2$s",
+  
   "tooltip.nomansland.missing_interaction_block": "§8Este bloque forma parte de la integración de mods, pero falta el mod necesario!",
   "tooltip.nomansland.missing_interaction_item": "§8Este bloque objeto parte de la integración de mods, pero falta el mod necesario!"
 }
