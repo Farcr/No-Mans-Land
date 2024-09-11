@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "nomansland:frosted_spruce_checked",
+    "features": [
+      {
+        "chance": 0.3,
+        "feature": "nomansland:frosted_spruce_alt_checked"
+      },
+      {
+        "chance": 0.3,
+        "feature": "nomansland:frosted_pine_checked"
+      }
+    ]
+  }
+}

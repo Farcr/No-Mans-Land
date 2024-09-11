@@ -66,9 +66,6 @@ public class NMLBlocks {
             () -> new WoodenScaffoldingBlock(Block.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.CHERRY_WOOD)));
     public static final DeferredBlock<StandingSignBlock> PINE_SIGN = BLOCKS.register("pine_sign",
             () -> new StandingSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
-
-    //    public static final DeferredBlock<Block> SHRUB = registerBlock("shrub",
-//            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)));
     public static final DeferredBlock<WallSignBlock> PINE_WALL_SIGN = BLOCKS.register("pine_wall_sign",
             () -> new WallSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
     public static final DeferredBlock<HangingSignBlock> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",
@@ -133,6 +130,8 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> POTTED_PALE_CHERRY_SAPLING = BLOCKS.register("potted_pale_cherry_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.PALE_CHERRY_SAPLING,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_CHERRY_SAPLING).noOcclusion()));
+    public static final DeferredBlock<Block> FROSTED_LEAVES = registerBlock("frosted_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
     public static final DeferredBlock<Block> ACONITE = registerBlock("aconite",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 20, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
     public static final DeferredBlock<Block> POTTED_ACONITE = BLOCKS.register("potted_aconite",
