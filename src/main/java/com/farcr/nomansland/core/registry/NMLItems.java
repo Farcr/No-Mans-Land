@@ -212,6 +212,7 @@ public class NMLItems {
             event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
             event.accept(NMLBlocks.PALE_CHERRY_LEAVES.get());
             event.accept(NMLBlocks.PALE_CHERRY_SAPLING);
+            event.accept(NMLBlocks.FROSTED_LEAVES.get());
             event.accept(NMLBlocks.FIELD_MUSHROOM.get());
             if (ModList.get().isLoaded("farmersdelight")) {
                 event.accept(NMLItems.FIELD_MUSHROOM_COLONY.get());
