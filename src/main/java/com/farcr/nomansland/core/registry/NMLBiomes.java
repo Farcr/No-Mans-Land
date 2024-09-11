@@ -11,6 +11,8 @@ public class NMLBiomes {
     //Surface
     public static final ResourceKey<Biome> AUTUMNAL_FOREST = createKey("autumnal_forest");
     public static final ResourceKey<Biome> MAPLE_FOREST = createKey("maple_forest");
+    // TODO: make this key different when there's actually a snowy maple forest
+    public static final ResourceKey<Biome> SNOWY_MAPLE_FOREST = createKey("maple_forest");
     public static final ResourceKey<Biome> OLD_GROWTH_FOREST = createKey("old_growth_forest");
 
     //Underground

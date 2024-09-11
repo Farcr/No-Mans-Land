@@ -12,10 +12,6 @@ import net.minecraft.world.level.levelgen.VerticalAnchor;
 public class NMLSurfaceData {
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
     private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
-    private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
-    private static final SurfaceRules.RuleSource AIR = makeStateRule(Blocks.AIR);
-    private static final SurfaceRules.RuleSource ICE = makeStateRule(Blocks.ICE);
-    private static final SurfaceRules.RuleSource WATER = makeStateRule(Blocks.WATER);
 
     protected static SurfaceRules.RuleSource makeRules() {
 
