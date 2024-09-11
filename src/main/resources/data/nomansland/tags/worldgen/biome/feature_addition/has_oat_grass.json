@@ -6,7 +6,6 @@
     "minecraft:old_growth_birch_forest",
     "minecraft:cherry_grove",
     "#minecraft:is_savanna",
-    "nomansland:autumnal_forest",
-    "nomansland:autumnal_fields"
+    "nomansland:autumnal_forest"
   ]
 }
