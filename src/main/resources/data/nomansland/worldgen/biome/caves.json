@@ -22,7 +22,7 @@
       "options": {
         "type": "nomansland:cave_dust"
       },
-      "probability": 0.05
+      "probability": 0.01
     },
     "water_color": 6913929,
     "water_fog_color": 3820113

@@ -2,11 +2,24 @@ package com.farcr.nomansland.client.particle;
 
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.BaseAshSmokeParticle;
+import net.minecraft.client.particle.ParticleRenderType;
 import net.minecraft.client.particle.SpriteSet;
+import net.minecraft.client.particle.TextureSheetParticle;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.core.particles.SimpleParticleType;
 
-public class CaveDustParticle extends BaseAshSmokeParticle {
+public class CaveDustParticle extends TextureSheetParticle {
 
-    public CaveDustParticle(ClientLevel pLevel, double pX, double pY, double pZ, float pXSeedMultiplier, float pYSpeedMultiplier, float pZSpeedMultiplier, double pXSpeed, double pYSpeed, double pZSpeed, float pQuadSizeMultiplier, SpriteSet pSprites, float pRColMultiplier, int pLifetime, float pGravity, boolean pHasPhysics) {
-        super(pLevel, pX, pY, pZ, pXSeedMultiplier, pYSpeedMultiplier, pZSpeedMultiplier, pXSpeed, pYSpeed, pZSpeed, pQuadSizeMultiplier, pSprites, pRColMultiplier, pLifetime, pGravity, pHasPhysics);
+
+    public CaveDustParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet) {
+        super(level, x, y, z);
+        this.setSprite(spriteSet.get(this.random.nextInt(3), 3));
+        this.gravity = 0.01F;
+        this.lifetime = (int) (64.0 / (Math.random() * 0.8 + 0.2));
+    }
+
+    @Override
+    public ParticleRenderType getRenderType() {
+        return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
     }
 }

@@ -72,7 +72,7 @@ public class ClientEvents {
                 -> new FallingParticle(clientLevel, d, e, f, pSprites));
         event.registerSpriteSet(NMLParticleTypes.CAVE_DUST.get(), pSprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new FallingParticle(clientLevel, d, e, f, pSprites));
+                -> new CaveDustParticle(clientLevel, d, e, f, pSprites));
         event.registerSpriteSet(NMLParticleTypes.RESIN_DROPLET.get(), pSprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
                 -> new ResinFallingParticle(clientLevel, d, e, f, pSprites));
