@@ -1,6 +1,7 @@
 package com.farcr.nomansland.core.content.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -13,15 +14,18 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.storage.loot.entries.TagEntry;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.internal.NeoForgeBlockTagsProvider;
 
-public class WaterDoublePlantBlock extends DoublePlantBlock implements SimpleWaterloggedBlock {
+public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedBlock {
 
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
 
-    public WaterDoublePlantBlock(Properties pProperties) {
+    public CattailBlock(Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
@@ -44,5 +48,9 @@ public class WaterDoublePlantBlock extends DoublePlantBlock implements SimpleWat
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
         FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
         return super.getStateForPlacement(pContext).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+    }
+
+    protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
+        return state.is(BlockTags.DIRT) ||state.is(Tags.Blocks.GRAVELS) ||state.is(Tags.Blocks.SANDS) ||state.getBlock() instanceof net.minecraft.world.level.block.FarmBlock;
     }
 }
