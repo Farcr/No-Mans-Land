@@ -43,6 +43,7 @@ public class PebbleBlock extends Block implements SimpleWaterloggedBlock {
 
 
     // TODO: should this be possible while also holding an item
+    //@Farcr: it already is dumbass
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         ItemStack pebble = new ItemStack(NMLBlocks.PEBBLES.get());

@@ -1,7 +1,7 @@
 {
     "parent": "block/tinted_cross",
     "render_type": "minecraft:cutout",
-        "ambientocclusion": false,
+    "ambientocclusion": false,
         "textures": {
             "particle": "#cross",
             "cross": "nomansland:block/plants/frosted_grass_base",

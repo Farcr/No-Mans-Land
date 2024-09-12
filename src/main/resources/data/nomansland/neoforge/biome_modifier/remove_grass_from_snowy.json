@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:remove_features",
+  "biomes": "#c:is_snowy",
+  "features": [
+    "minecraft:patch_grass_badlands",
+    "minecraft:patch_grass_forest",
+    "minecraft:patch_grass_jungle",
+    "minecraft:patch_grass_plain",
+    "minecraft:patch_grass_savanna",
+    "minecraft:patch_grass_taiga",
+    "minecraft:patch_grass_taiga_2"
+  ]
+}

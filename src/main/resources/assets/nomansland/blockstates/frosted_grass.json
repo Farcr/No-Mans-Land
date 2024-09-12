@@ -1,10 +1,31 @@
 {
-  "variants": {
-    "snowy=true": {
-      "model": "nomansland:block/plants/frosted_grass_snowy"
+    "multipart": [
+    {
+      "apply": {
+        "model": "nomansland:block/plants/frosted_grass_snowy",
+        "uvlock": true
+      },
+      "when": {
+        "snowy": "true"
+      }
     },
-    "snowy=false": {
-      "model": "nomansland:block/plants/frosted_grass"
+    {
+      "apply": {
+        "model": "nomansland:block/plants/frosted_grass",
+        "uvlock": true
+      },
+      "when": {
+        "snowy": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "nomansland:block/plants/frosted_grass_snow_layer",
+        "uvlock": true
+      },
+      "when": {
+        "snowy": "true"
+      }
     }
-  }
+  ]
 }

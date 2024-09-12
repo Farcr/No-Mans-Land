@@ -19,8 +19,7 @@ public class ColorHandler {
                     return GrassColor.get(0.5D, 1.0D);
                 },
                 NMLBlocks.GRASS_SPROUTS.get(),
-                NMLBlocks.FIDDLEHEAD.get(),
-                NMLBlocks.FROSTED_GRASS.get()
+                NMLBlocks.FIDDLEHEAD.get()
         );
         //TODO: REMEMBER TO GET THIS FIXED, CAPPIN SAID NEO HAD SOMETHING FOR THIS? OTHERWISE VEIL WILL BE ABLE TO FIX THIS WHEN IT'S STABLE
         event.getItemColors().register((stack, index) -> {
