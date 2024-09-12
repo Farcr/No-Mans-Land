@@ -19,7 +19,8 @@ public class ColorHandler {
                     return GrassColor.get(0.5D, 1.0D);
                 },
                 NMLBlocks.GRASS_SPROUTS.get(),
-                NMLBlocks.FIDDLEHEAD.get()
+                NMLBlocks.FIDDLEHEAD.get(),
+                NMLBlocks.FROSTED_GRASS.get()
         );
         //TODO: REMEMBER TO GET THIS FIXED, CAPPIN SAID NEO HAD SOMETHING FOR THIS? OTHERWISE VEIL WILL BE ABLE TO FIX THIS WHEN IT'S STABLE
         event.getItemColors().register((stack, index) -> {
@@ -45,7 +46,8 @@ public class ColorHandler {
                 },
                 NMLBlocks.GRASS_SPROUTS.get(),
                 NMLBlocks.FIDDLEHEAD.get(),
-                NMLBlocks.CUT_SUGAR_CANE.get()
+                NMLBlocks.CUT_SUGAR_CANE.get(),
+                NMLBlocks.FROSTED_GRASS.get()
         );
         event.getBlockColors().register((state, world, pos, tintIndex) -> {
                     int grassColorPacked = GrassColor.get(0.5D, 1.0D);

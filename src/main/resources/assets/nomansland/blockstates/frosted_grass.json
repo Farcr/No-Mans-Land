@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "snowy=true": {
+      "model": "nomansland:block/plants/frosted_grass_snowy"
+    },
+    "snowy=false": {
+      "model": "nomansland:block/plants/frosted_grass"
+    }
+  }
+}

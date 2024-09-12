@@ -1,40 +1,44 @@
 {
-    "parent": "block/tinted_cross",
-        "ambientocclusion": false,
-        "textures": {
-            "particle": "#cross",
-            "cross": "nomansland:block/plants/frosted_grass_base",
-            "snow": "minecraft:block/snow"
-        },
-        "elements": [
-            {   "from": [ 0.8, 0, 8 ],
-                "to": [ 15.2, 16, 8 ],
-                "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
-                "shade": false,
-                "faces": {
-                    "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#cross"},
-                    "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#cross"}
-                }
-            },
-            {   "from": [ 8, 0, 0.8 ],
-                "to": [ 8, 16, 15.2 ],
-                "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
-                "shade": false,
-                "faces": {
-                    "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#cross"},
-                    "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#cross"}
-                }
-            },
-            {   "from": [ 0, 0, 0 ],
-            "to": [ 16, 2, 16 ],
-            "faces": {
-                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#snow", "cullface": "down" },
-                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#snow" },
-                "north": { "uv": [ 0, 14, 16, 16 ], "texture": "#snow", "cullface": "north" },
-                "south": { "uv": [ 0, 14, 16, 16 ], "texture": "#snow", "cullface": "south" },
-                "west":  { "uv": [ 0, 14, 16, 16 ], "texture": "#snow", "cullface": "west" },
-                "east":  { "uv": [ 0, 14, 16, 16 ], "texture": "#snow", "cullface": "east" }
-            }
-        }
-        ]
-    }
+	"credit": "Made by Farcr",
+	"parent": "block/cross",
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"particle": "nomansland:block/plants/frosted_grass_snowy",
+		"cross": "nomansland:block/plants/frosted_grass_snowy",
+		"snow": "block/snow"
+	},
+	"elements": [
+		{
+			"from": [0.8, 2, 8],
+			"to": [15.2, 16, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 14], "texture": "#cross"},
+				"south": {"uv": [0, 0, 16, 14], "texture": "#cross"}
+			}
+		},
+		{
+			"from": [8, 1.9, 0.8],
+			"to": [8, 17.9, 15.2],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 9.9, 8], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 14], "texture": "#cross"},
+				"west": {"uv": [0, 0, 16, 14], "texture": "#cross"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 2, 16],
+			"faces": {
+				"north": {"uv": [0, 14, 16, 16], "texture": "#snow", "cullface": "north"},
+				"east": {"uv": [0, 14, 16, 16], "texture": "#snow", "cullface": "east"},
+				"south": {"uv": [0, 14, 16, 16], "texture": "#snow", "cullface": "south"},
+				"west": {"uv": [0, 14, 16, 16], "texture": "#snow", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#snow"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#snow", "cullface": "down"}
+			}
+		}
+	]
+}
