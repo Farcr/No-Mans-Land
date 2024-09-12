@@ -10,16 +10,16 @@ import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConf
 
 //Thank you greatest cappin for helping with this
 public class SpreadPatchFeature extends Feature<RandomPatchConfiguration> {
-    public SpreadPatchFeature(Codec<RandomPatchConfiguration> pCodec) {
-        super(pCodec);
+    public SpreadPatchFeature(Codec<RandomPatchConfiguration> codec) {
+        super(codec);
     }
 
     @Override
-    public boolean place(FeaturePlaceContext<RandomPatchConfiguration> pContext) {
-        BlockPos origin = pContext.origin();
-        WorldGenLevel level = pContext.level();
-        RandomSource random = pContext.random();
-        RandomPatchConfiguration config = pContext.config();
+    public boolean place(FeaturePlaceContext<RandomPatchConfiguration> context) {
+        BlockPos origin = context.origin();
+        WorldGenLevel level = context.level();
+        RandomSource random = context.random();
+        RandomPatchConfiguration config = context.config();
 
         int tries = config.tries();
         int xzSpread = config.xzSpread();
@@ -33,7 +33,7 @@ public class SpreadPatchFeature extends Feature<RandomPatchConfiguration> {
             pos.set(x, y, z);
 
             if (this.shouldPlace(level, random, pos)) {
-                config.feature().value().place(level, pContext.chunkGenerator(), random, pos);
+                config.feature().value().place(level, context.chunkGenerator(), random, pos);
             }
         }
         return true;
