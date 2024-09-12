@@ -1,10 +1,13 @@
 {
   "values": [
     "nomansland:grass_sprouts",
+    "nomansland:cattail",
+    "#nomansland:flowerbeds",
     "nomansland:oat_grass",
     "nomansland:fiddlehead",
+    "nomansland:frosted_grass",
     "nomansland:dried_grass",
-    "nomansland:cattail",
-    "#nomansland:flowerbeds"
+    "nomansland:tall_beachgrass",
+    "nomansland:short_beachgrass"
   ]
 }
