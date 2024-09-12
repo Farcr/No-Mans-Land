@@ -1,0 +1,18 @@
+{
+	"credit": "Made by Farcr",
+	"textures": {
+		"0": "nomansland:block/plants/duckweed",
+		"particle": "nomansland:block/plants/duckweed"
+	},
+	"elements": [
+		{
+			"from": [0, 15, 0],
+			"to": [16, 15, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 0, 0]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		}
+	]
+}

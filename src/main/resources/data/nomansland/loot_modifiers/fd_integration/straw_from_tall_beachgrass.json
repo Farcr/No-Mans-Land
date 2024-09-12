@@ -1,0 +1,24 @@
+{
+  "type": "nomansland:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:random_chance",
+      "chance": 0.6
+    },
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "tag": "farmersdelight:straw_harvesters"
+      }
+    },
+    {
+      "condition": "block_state_property",
+      "block": "nomansland:tall_beachgrass"
+    },
+    {
+      "condition": "nomansland:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "item": "farmersdelight:straw"
+}
