@@ -9,16 +9,16 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
 public class MultiSpreadPatchFeature extends Feature<MultiSpreadPatchConfiguration> {
-    public MultiSpreadPatchFeature(Codec<MultiSpreadPatchConfiguration> pCodec) {
-        super(pCodec);
+    public MultiSpreadPatchFeature(Codec<MultiSpreadPatchConfiguration> codec) {
+        super(codec);
     }
 
     @Override
-    public boolean place(FeaturePlaceContext<MultiSpreadPatchConfiguration> pContext) {
-        BlockPos origin = pContext.origin();
-        WorldGenLevel level = pContext.level();
-        RandomSource random = pContext.random();
-        MultiSpreadPatchConfiguration config = pContext.config();
+    public boolean place(FeaturePlaceContext<MultiSpreadPatchConfiguration> context) {
+        BlockPos origin = context.origin();
+        WorldGenLevel level = context.level();
+        RandomSource random = context.random();
+        MultiSpreadPatchConfiguration config = context.config();
 
         int tries = config.tries();
         int xzSpread = config.xzSpread();
@@ -36,7 +36,7 @@ public class MultiSpreadPatchFeature extends Feature<MultiSpreadPatchConfigurati
             distanceFromOriginXZ = Mth.clamp(distanceFromOriginXZ / (xzSpread*3), 0.0f, 0.99f);
             int index = Mth.floor(distanceFromOriginXZ * config.features().size());
 
-            if (distanceFromOriginXZ < 1.5*16) config.features().get(index).value().place(level, pContext.chunkGenerator(), random, pos);
+            if (distanceFromOriginXZ < 1.5*16) config.features().get(index).value().place(level, context.chunkGenerator(), random, pos);
         }
 
         return true;

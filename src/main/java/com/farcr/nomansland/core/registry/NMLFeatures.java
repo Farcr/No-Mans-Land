@@ -1,9 +1,7 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.world.feature.MultiSpreadPatchConfiguration;
-import com.farcr.nomansland.core.content.world.feature.MultiSpreadPatchFeature;
-import com.farcr.nomansland.core.content.world.feature.SpreadPatchFeature;
+import com.farcr.nomansland.core.content.world.feature.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
@@ -18,4 +16,7 @@ public class NMLFeatures {
             () -> new SpreadPatchFeature(RandomPatchConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<MultiSpreadPatchConfiguration>> MULTISPREAD_PATCH = FEATURES.register("multispread_patch",
             () -> new MultiSpreadPatchFeature(MultiSpreadPatchConfiguration.CODEC));
+
+    public static final DeferredHolder<Feature<?> ,Feature<FillBiomeAboveConfiguration>> FILL_BIOME_ABOVE = FEATURES.register("fill_biome_above",
+            () -> new FillBiomeAboveFeature(FillBiomeAboveConfiguration.CODEC));
 }

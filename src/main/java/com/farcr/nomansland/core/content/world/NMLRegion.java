@@ -1,6 +1,5 @@
 package com.farcr.nomansland.core.content.world;
 
-import com.farcr.nomansland.core.content.world.NMLBiomeBuilder;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
@@ -13,14 +12,13 @@ import terrablender.api.RegionType;
 import java.util.function.Consumer;
 
 
-public class NMLOverworldRegion  extends Region {
-    public NMLOverworldRegion(ResourceLocation name, int weight) {
+public class NMLRegion extends Region {
+    public NMLRegion(ResourceLocation name, int weight) {
         super(name, RegionType.OVERWORLD, weight);
     }
 
     @Override
-    public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper)
-    {
+    public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         (new NMLBiomeBuilder()).addBiomes(registry, mapper);
     }
 }

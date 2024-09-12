@@ -7,8 +7,7 @@ import terrablender.api.SurfaceRuleManager;
 
 public class NMLTerrablender {
     public static void registerRegions() {
-        Regions.register(new NMLOverworldRegion(ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "overworld"), 10));
-//        Regions.register(new AutumnalRegion(ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "overworld"), 10));
+        Regions.register(new NMLRegion(ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "overworld"), 10));
     }
 
     public static void registerSurfaceData() {
