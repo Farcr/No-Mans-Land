@@ -1,0 +1,29 @@
+{
+  "feature": "nomansland:patch_frosted_grass",
+  "placement": [
+    {
+      "type": "minecraft:noise_threshold_count",
+      "noise_level": -0.8,
+      "below_noise": 48,
+      "above_noise": 64
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "absolute": 112
+        },
+        "max_inclusive": {
+          "absolute": 200
+        }
+      }
+    }
+  ]
+}

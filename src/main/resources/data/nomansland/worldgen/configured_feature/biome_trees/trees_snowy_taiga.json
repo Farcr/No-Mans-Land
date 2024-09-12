@@ -4,7 +4,7 @@
     "default": "minecraft:spruce_checked",
     "features": [
       {
-        "chance": 0.33333334,
+        "chance": 0.2,
         "feature": "minecraft:pine_checked"
       },
       {
@@ -14,6 +14,18 @@
       {
         "chance": 0.2,
         "feature": "nomansland:maple_checked"
+      },
+      {
+        "chance": 0.1,
+        "feature": "nomansland:frosted_pine_checked"
+      },
+      {
+        "chance": 0.05,
+        "feature": "nomansland:frosted_spruce_checked"
+      },
+      {
+        "chance": 0.05,
+        "feature": "nomansland:frosted_spruce_alt_checked"
       }
     ]
   }

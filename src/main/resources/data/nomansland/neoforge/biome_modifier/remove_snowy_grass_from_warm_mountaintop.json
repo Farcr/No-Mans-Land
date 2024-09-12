@@ -1,0 +1,7 @@
+{
+  "type": "neoforge:remove_features",
+  "biomes": "#c:is_warm",
+  "features": [
+    "nomansland:patch_frosted_grass_mountain"
+  ]
+}
