@@ -5,6 +5,7 @@ import com.farcr.nomansland.core.content.entity.BoatEntity;
 import com.farcr.nomansland.core.content.item.BoatItem;
 import com.farcr.nomansland.core.content.item.FirebombItem;
 import com.farcr.nomansland.core.content.item.FuelItem;
+import com.farcr.nomansland.core.content.item.MapleSyrupBottleItem;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Direction;
@@ -29,6 +30,7 @@ public class NMLItems {
             () -> new Item(new Item.Properties().food(NMLFoods.MASHED_POTATOES_WITH_MUSHROOMS).stacksTo(1)));
     public static final DeferredItem<Item> GRILLED_MUSHROOMS = registerItem("grilled_mushrooms",
             () -> new Item(new Item.Properties().food(NMLFoods.GRILLED_MUSHROOMS)));
+
     public static final DeferredItem<Item> FROG_LEG = registerItem("frog_leg",
             () -> new Item(new Item.Properties().food(NMLFoods.FROG_LEG)));
     public static final DeferredItem<Item> COOKED_FROG_LEG = registerItem("cooked_frog_leg",
@@ -38,21 +40,28 @@ public class NMLItems {
     public static final DeferredItem<Item> HORSE_STEAK = registerItem("horse_steak",
             () -> new Item(new Item.Properties().food(NMLFoods.HORSE_STEAK)));
 
+//    public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
+//            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+//
+//    public static final DeferredItem<Item> PEAR = registerItem("pear",
+//            () -> new Item(new Item.Properties().food(NMLFoods.PEAR)));
+//    public static final DeferredItem<Item> MAPLE_PEAR = registerItem("maple_pear",
+//            () -> new Item(new Item.Properties().food(NMLFoods.MAPLE_PEAR)));
+
     //Materials
     public static final DeferredItem<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
             !ModList.get().isLoaded("farmersdelight") ? () -> new Item(new Item.Properties())
                     : FDIntegration.mushroomColonyItem(), "farmersdelight");
     public static final DeferredItem<Item> RESIN = registerItem("resin",
             () -> new FuelItem(new Item.Properties(), 1000));
-    //    !!!Depends on Alembic
     public static final DeferredItem<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
             () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
-    //    public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
-//            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+
     public static final DeferredItem<Item> SCONCE_TORCH = registerItem("sconce_torch",
             () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_TORCH.get(), NMLBlocks.SCONCE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
     public static final DeferredItem<Item> SCONCE_SOUL_TORCH = registerItem("sconce_soul_torch",
             () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_SOUL_TORCH.get(), NMLBlocks.SCONCE_SOUL_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
+
     public static final DeferredItem<Item> FIREBOMB = registerItem("firebomb",
             () -> new FirebombItem(new Item.Properties().stacksTo(8)));
 
@@ -226,7 +235,6 @@ public class NMLItems {
             event.accept(NMLBlocks.GRAVEL_PATH.get());
             event.accept(NMLBlocks.SAND_PATH.get());
             event.accept(NMLBlocks.RED_SAND_PATH.get());
-
 
             event.accept(NMLBlocks.QUARTZITE.get());
             event.accept(NMLBlocks.QUARTZITE_CLUSTER.get());
