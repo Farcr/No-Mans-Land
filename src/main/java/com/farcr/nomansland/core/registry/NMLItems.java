@@ -46,7 +46,7 @@ public class NMLItems {
 //    public static final DeferredItem<Item> PEAR = registerItem("pear",
 //            () -> new Item(new Item.Properties().food(NMLFoods.PEAR)));
 //    public static final DeferredItem<Item> MAPLE_PEAR = registerItem("maple_pear",
-//            () -> new Item(new Item.Properties().food(NMLFoods.MAPLE_PEAR)));
+//            () -> new MapleFoodItem(new Item.Properties().food(NMLFoods.MAPLE_PEAR)));
 
     //Materials
     public static final DeferredItem<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
