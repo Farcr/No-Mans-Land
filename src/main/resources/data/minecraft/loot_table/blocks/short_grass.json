@@ -42,7 +42,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "tag": "minecraft:hoes"
+                    "items": "#minecraft:hoes"
                   }
                 },
                 {
