@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "tag": "nomansland:smelt_into_dried_grass"
+    }
+  ],
+  "result": {
+"id": "nomansland:dried_grass"
+  }
+}
