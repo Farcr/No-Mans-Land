@@ -5,6 +5,10 @@
       {
         "type": "minecraft:beehive",
         "probability": 0.005
+      },
+      {
+        "type": "minecraft:trunk_vine",
+        "probability": 0.1
       }
     ],
     "dirt_provider": {
