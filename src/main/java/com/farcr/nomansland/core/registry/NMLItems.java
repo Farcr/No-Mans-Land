@@ -309,9 +309,7 @@ public class NMLItems {
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(NMLItems.FIREBOMB.get());
-            if (ModList.get().isLoaded("alembic")) {
-                event.accept(NMLItems.RESIN_OIL_BOTTLE.get());
-            }
+            event.accept(NMLItems.RESIN_OIL_BOTTLE.get());
         }
 
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
