@@ -28,6 +28,7 @@ import java.util.Objects;
 public class FrostedGrassBlock extends BushBlock {
     private static final BooleanProperty SNOWY = BlockStateProperties.SNOWY;
     protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 13.0D, 15.0D);
+    //TODO: change shape when snowy
     public FrostedGrassBlock(Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(SNOWY, Boolean.valueOf(false)));
