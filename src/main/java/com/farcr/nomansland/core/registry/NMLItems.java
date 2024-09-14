@@ -50,8 +50,7 @@ public class NMLItems {
 
     //Materials
     public static final DeferredItem<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
-            !ModList.get().isLoaded("farmersdelight") ? () -> new Item(new Item.Properties())
-                    : FDIntegration.mushroomColonyItem(), "farmersdelight");
+            ModList.get().isLoaded("farmersdelight") ? FDIntegration.mushroomColonyItem() : null, "farmersdelight");
     public static final DeferredItem<Item> RESIN = registerItem("resin",
             () -> new FuelItem(new Item.Properties(), 1000));
     public static final DeferredItem<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
@@ -222,10 +221,11 @@ public class NMLItems {
             event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
             event.accept(NMLBlocks.PALE_CHERRY_LEAVES.get());
             event.accept(NMLBlocks.PALE_CHERRY_SAPLING);
-            event.accept(NMLBlocks.FROSTED_LEAVES.get());
             event.accept(NMLBlocks.FIELD_MUSHROOM.get());
+            event.accept(NMLBlocks.FROSTED_LEAVES.get());
+
             if (ModList.get().isLoaded("farmersdelight")) {
-                event.accept(NMLItems.FIELD_MUSHROOM_COLONY.get());
+                event.accept(NMLBlocks.FIELD_MUSHROOM_COLONY.get());
             }
             event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK.get());
             event.accept(NMLBlocks.DIRT_PATH.get());
@@ -326,17 +326,18 @@ public class NMLItems {
         }
     }
 
-    public static <T extends Item> DeferredItem<Item> registerItem(final String name, final Supplier<? extends Item> supplier) {
-        DeferredItem<Item> item = ITEMS.register(name, supplier);
-        CREATIVE_TAB_ITEMS.add(item);
-        return item;
+    @SuppressWarnings("unchecked")
+    public static <T extends Item> DeferredItem<T> registerItem(final String name, final Supplier<? extends Item> item) {
+        DeferredItem<Item> toReturn = ITEMS.register(name, item);
+        CREATIVE_TAB_ITEMS.add(toReturn);
+        return (DeferredItem<T>) toReturn;
     }
 
-    public static <T extends Item> DeferredItem<Item> registerIntegrationItem(final String name, final Supplier<? extends Item> supplier, String modId) {
-        DeferredItem<Item> item = ITEMS.register(name, supplier);
-        if (ModList.get().isLoaded(modId)) {
-            CREATIVE_TAB_ITEMS.add(item);
-        }
-        return item;
+    @SuppressWarnings("unchecked")
+    public static <T extends Item> DeferredItem<T> registerIntegrationItem(final String name, final Supplier<? extends Item> item, String modId) {
+        if (!ModList.get().isLoaded(modId)) return null;
+        DeferredItem<Item> toReturn = ITEMS.register(name, item);
+        CREATIVE_TAB_ITEMS.add(toReturn);
+        return (DeferredItem<T>) toReturn;
     }
 }

@@ -4,7 +4,7 @@ import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.block.cauldrons.HoneyCauldronBlock;
 import com.farcr.nomansland.core.content.block.cauldrons.ResinCauldronBlock;
-import com.farcr.nomansland.core.content.block.signs.HangingSignBlock;
+import com.farcr.nomansland.core.content.block.signs.CeilingHangingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.StandingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.WallHangingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.WallSignBlock;
@@ -25,6 +25,7 @@ import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import vectorwing.farmersdelight.common.block.MushroomColonyBlock;
 
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
@@ -70,24 +71,24 @@ public class NMLBlocks {
             () -> new StandingSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
     public static final DeferredBlock<WallSignBlock> PINE_WALL_SIGN = BLOCKS.register("pine_wall_sign",
             () -> new WallSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
-    public static final DeferredBlock<HangingSignBlock> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",
-            () -> new HangingSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
+    public static final DeferredBlock<CeilingHangingSignBlock> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",
+            () -> new CeilingHangingSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
     public static final DeferredBlock<WallHangingSignBlock> PINE_HANGING_WALL_SIGN = BLOCKS.register("pine_wall_hanging_sign",
             () -> new WallHangingSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
     public static final DeferredBlock<StandingSignBlock> MAPLE_SIGN = BLOCKS.register("maple_sign",
             () -> new StandingSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
     public static final DeferredBlock<WallSignBlock> MAPLE_WALL_SIGN = BLOCKS.register("maple_wall_sign",
             () -> new WallSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
-    public static final DeferredBlock<HangingSignBlock> MAPLE_HANGING_SIGN = BLOCKS.register("maple_hanging_sign",
-            () -> new HangingSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
+    public static final DeferredBlock<CeilingHangingSignBlock> MAPLE_HANGING_SIGN = BLOCKS.register("maple_hanging_sign",
+            () -> new CeilingHangingSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
     public static final DeferredBlock<WallHangingSignBlock> MAPLE_HANGING_WALL_SIGN = BLOCKS.register("maple_wall_hanging_sign",
             () -> new WallHangingSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
     public static final DeferredBlock<StandingSignBlock> WALNUT_SIGN = BLOCKS.register("walnut_sign",
             () -> new StandingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
     public static final DeferredBlock<WallSignBlock> WALNUT_WALL_SIGN = BLOCKS.register("walnut_wall_sign",
             () -> new WallSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
-    public static final DeferredBlock<HangingSignBlock> WALNUT_HANGING_SIGN = BLOCKS.register("walnut_hanging_sign",
-            () -> new HangingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
+    public static final DeferredBlock<CeilingHangingSignBlock> WALNUT_HANGING_SIGN = BLOCKS.register("walnut_hanging_sign",
+            () -> new CeilingHangingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
     public static final DeferredBlock<WallHangingSignBlock> WALNUT_HANGING_WALL_SIGN = BLOCKS.register("walnut_wall_hanging_sign",
             () -> new WallHangingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
 
@@ -355,8 +356,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> PINE_BOOKSHELF = registerBlock("pine_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF)));
     public static final DeferredBlock<Block> PINE_CABINET = registerIntegrationBlock("pine_cabinet",
-            !ModList.get().isLoaded("farmersdelight") ?
-                    () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight", true);
+            ModList.get().isLoaded("farmersdelight") ? FDIntegration.cabinetBlock() : null, "farmersdelight");
     //Maple
     public static final DeferredBlock<Block> MAPLE_PLANKS = registerBlock("maple_planks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
@@ -404,8 +404,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> MAPLE_BOOKSHELF = registerBlock("maple_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF)));
     public static final DeferredBlock<Block> MAPLE_CABINET = registerIntegrationBlock("maple_cabinet",
-            !ModList.get().isLoaded("farmersdelight") ?
-                    () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight", true);
+            ModList.get().isLoaded("farmersdelight") ? FDIntegration.cabinetBlock() : null, "farmersdelight");
     //Walnut
     public static final DeferredBlock<Block> WALNUT_PLANKS = registerBlock("walnut_planks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
@@ -445,8 +444,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> WALNUT_BOOKSHELF = registerBlock("walnut_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF)));
     public static final DeferredBlock<Block> WALNUT_CABINET = registerIntegrationBlock("walnut_cabinet",
-            !ModList.get().isLoaded("farmersdelight") ?
-                    () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight", true);
+            ModList.get().isLoaded("farmersdelight") ? FDIntegration.cabinetBlock() : null, "farmersdelight");
     public static final DeferredBlock<Block> TAP = registerBlock("tap",
             () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops().noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> SPIKE_TRAP = registerBlock("spike_trap",
@@ -466,9 +464,9 @@ public class NMLBlocks {
     //Mushrooms
     public static final DeferredBlock<Block> FIELD_MUSHROOM = registerBlock("field_mushroom",
             () -> new SurfaceMushroomBlock(HugeMushrooms.HUGE_FIELD_MUSHROOM, (BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM).mapColor(MapColor.TERRACOTTA_WHITE))));
-    public static final DeferredBlock<Block> FIELD_MUSHROOM_COLONY = registerIntegrationBlock("field_mushroom_colony",
-            !ModList.get().isLoaded("farmersdelight") ? () -> new Block(BlockBehaviour.Properties.ofFullCopy(NMLBlocks.FIELD_MUSHROOM.get()))
-                    : FDIntegration.mushroomColony(), "farmersdelight", false);
+
+    public static final DeferredBlock<Block> FIELD_MUSHROOM_COLONY = ModList.get().isLoaded("farmersdelight") ?
+            BLOCKS.register("field_mushroom_colony", FDIntegration.mushroomColony()): null;
     public static final DeferredBlock<FlowerPotBlock> POTTED_FIELD_MUSHROOM = BLOCKS.register("potted_field_mushroom",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.FIELD_MUSHROOM,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_RED_MUSHROOM).noOcclusion()));
@@ -483,19 +481,18 @@ public class NMLBlocks {
     }
 
     @SuppressWarnings("unchecked")
-    private static <T extends Block> DeferredBlock<T> registerIntegrationBlock(String name, Supplier<? extends Block> block, String modId, Boolean blockItem) {
-        DeferredBlock<Block> blocks = BLOCKS.register(name, block);
-        if (ModList.get().isLoaded(modId) && blockItem) {
-            CREATIVE_TAB_ITEMS.add(registerIntegrationBlockItem(name, blocks));
-        }
-        return (DeferredBlock<T>) blocks;
+    private static <T extends Block> DeferredBlock<T> registerIntegrationBlock(String name, Supplier<? extends Block> block, String modId) {
+        if (!ModList.get().isLoaded(modId)) return null;
+        DeferredBlock<Block> toReturn = BLOCKS.register(name, block);
+        CREATIVE_TAB_ITEMS.add(registerIntegrationBlockItem(name, toReturn));
+        return (DeferredBlock<T>) toReturn;
     }
 
-    private static <T extends Block> DeferredHolder<Item, BlockItem> registerBlockItem(String name, Supplier<? extends Block> block) {
+    private static DeferredHolder<Item, BlockItem> registerBlockItem(String name, Supplier<? extends Block> block) {
         return NMLItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-    private static <T extends Block> DeferredHolder<Item, BlockItem> registerIntegrationBlockItem(String name, Supplier<? extends Block> block) {
-        return NMLItems.ITEMS.register(name, !ModList.get().isLoaded("farmersdelight") ? () -> new MissingIntegrationBlock(block.get(), new Item.Properties()) : () -> new BlockItem(block.get(), new Item.Properties()));
+    private static DeferredHolder<Item, BlockItem> registerIntegrationBlockItem(String name, Supplier<? extends Block> block) {
+        return NMLItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 }

@@ -44,7 +44,6 @@ public class ResinCauldronBlock extends LayeredCauldronBlock {
     public void handlePrecipitation(BlockState pState, Level pLevel, BlockPos pPos, Biome.Precipitation pPrecipitation) {
     }
 
-    // TODO: ensure this works
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         ItemStack resin = new ItemStack(NMLItems.RESIN.get(), level.random.nextInt(2, 5));

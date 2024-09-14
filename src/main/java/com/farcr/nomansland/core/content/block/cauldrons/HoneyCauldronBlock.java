@@ -45,7 +45,6 @@ public class HoneyCauldronBlock extends LayeredCauldronBlock {
     public void handlePrecipitation(BlockState pState, Level pLevel, BlockPos pPos, Biome.Precipitation pPrecipitation) {
     }
 
-    // TODO: ensure this works
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         AbstractCauldronBlock cauldron = (AbstractCauldronBlock) state.getBlock();
