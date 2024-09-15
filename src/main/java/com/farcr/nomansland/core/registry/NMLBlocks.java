@@ -4,6 +4,9 @@ import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.block.cauldrons.HoneyCauldronBlock;
 import com.farcr.nomansland.core.content.block.cauldrons.ResinCauldronBlock;
+import com.farcr.nomansland.core.content.block.fruit_trees.FruitType;
+import com.farcr.nomansland.core.content.block.fruit_trees.FruitLeavesBlock;
+import com.farcr.nomansland.core.content.block.fruit_trees.FruitBlock;
 import com.farcr.nomansland.core.content.block.signs.CeilingHangingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.StandingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.WallHangingSignBlock;
@@ -25,7 +28,6 @@ import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import vectorwing.farmersdelight.common.block.MushroomColonyBlock;
 
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
@@ -472,6 +474,20 @@ public class NMLBlocks {
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_RED_MUSHROOM).noOcclusion()));
     public static final DeferredBlock<Block> FIELD_MUSHROOM_BLOCK = registerBlock("field_mushroom_block",
             () -> new HugeMushroomBlock((BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM_BLOCK))));
+
+    // Fruity Stuff
+    public static final DeferredBlock<Block> APPLE_FRUIT = BLOCKS.register("apple_fruit",
+            () -> new FruitBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PLANT)
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.HARD_CROP)
+                    .pushReaction(PushReaction.DESTROY), FruitType.APPLE)
+    );
+
+    public static final DeferredBlock<Block> APPLE_FRUIT_LEAVES = registerBlock("apple_fruit_leaves",
+            () -> new FruitLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false)), FruitType.APPLE, Blocks.OAK_LEAVES));
+
 
     @SuppressWarnings("unchecked")
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<? extends Block> block) {
