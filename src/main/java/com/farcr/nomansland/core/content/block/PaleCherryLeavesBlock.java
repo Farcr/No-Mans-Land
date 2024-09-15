@@ -15,9 +15,7 @@ public class PaleCherryLeavesBlock extends LeavesBlock {
         super(p_273704_);
     }
 
-    /**
-     * Called periodically clientside on blocks near the player to show effects (like furnace fire particles).
-     */
+    @Override
     public void animateTick(BlockState p_272714_, Level p_272837_, BlockPos p_273218_, RandomSource p_273360_) {
         super.animateTick(p_272714_, p_272837_, p_273218_, p_273360_);
         if (p_273360_.nextInt(10) == 0) {

@@ -36,9 +36,9 @@ public class FrostedGrassBlock extends BushBlock {
     protected static final VoxelShape SNOWLOGGED_SHAPE = Shapes.or(SHAPE, Block.box(0.0, 0.0, 0.0, 16.0, 2.0, 16.0));
 
     //TODO: change shape when snowy
-    public FrostedGrassBlock(Properties pProperties) {
-        super(pProperties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(SNOWLOGGED, Boolean.valueOf(false)));
+    public FrostedGrassBlock(Properties properties) {
+        super(properties);
+        registerDefaultState(this.stateDefinition.any().setValue(SNOWLOGGED, Boolean.FALSE));
     }
 
     @Override
@@ -72,8 +72,9 @@ public class FrostedGrassBlock extends BushBlock {
     protected MapCodec<? extends BushBlock> codec() {
         return null;
     }
+
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(SNOWLOGGED);
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(SNOWLOGGED);
     }
 }
