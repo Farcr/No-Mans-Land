@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "nomansland:block/mushrooms/shelf_mushroom",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "nomansland:block/mushrooms/shelf_mushroom"
+    },
+    "facing=south": {
+      "model": "nomansland:block/mushrooms/shelf_mushroom",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "nomansland:block/mushrooms/shelf_mushroom",
+      "y": 270
+    }
+  }
+}

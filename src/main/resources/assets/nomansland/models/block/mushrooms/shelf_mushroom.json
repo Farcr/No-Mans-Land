@@ -1,0 +1,23 @@
+{
+	"credit": "Made by Farcr",
+	"parent": "minecraft:block/coral_wall_fan",
+	"textures": {
+		"0": "nomansland:block/mushrooms/shelf_mushroom",
+		"particle": "nomansland:block/mushrooms/shelf_mushroom_block_top"
+	},
+	"elements": [
+		{
+			"from": [4, 6, 9],
+			"to": [12, 9, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 6, 9]},
+			"faces": {
+				"north": {"uv": [8, 0, 16, 3], "texture": "#0"},
+				"east": {"uv": [16, 3, 9, 6], "texture": "#0"},
+				"south": {"uv": [8, 6, 16, 9], "texture": "#0"},
+				"west": {"uv": [9, 3, 16, 6], "texture": "#0"},
+				"up": {"uv": [0, 0, 8, 7], "texture": "#0"},
+				"down": {"uv": [0, 9, 8, 16], "texture": "#0"}
+			}
+		}
+	]
+}

@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "nomansland:field_mushroom_block"
+              "name": "nomansland:shelf_mushroom_block"
             },
             {
               "type": "minecraft:item",
@@ -36,7 +36,7 @@
                   "count": {
                     "type": "minecraft:uniform",
                     "max": 2.0,
-                    "min": -6.0
+                    "min": -4.0
                   },
                   "function": "minecraft:set_count"
                 },
@@ -50,13 +50,12 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "nomansland:field_mushroom"
+              "name": "nomansland:shelf_mushroom"
             }
           ]
         }
       ],
       "rolls": 1.0
     }
-  ],
-  "random_sequence": "minecraft:blocks/brown_mushroom_block"
+  ]
 }
