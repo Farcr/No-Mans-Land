@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.util.TriState;
-//import vectorwing.farmersdelight.common.registry.ModBlocks;
+import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class SurfaceMushroomBlock extends MushroomBlock {
     public SurfaceMushroomBlock(ResourceKey<ConfiguredFeature<?, ?>> pFeature, Properties pProperties) {
@@ -21,7 +21,7 @@ public class SurfaceMushroomBlock extends MushroomBlock {
 
     protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
         if (ModList.get().isLoaded("farmersdelight")) {
-//            return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND) || pState.is(ModBlocks.ORGANIC_COMPOST.get());
+            return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND) || pState.is(ModBlocks.ORGANIC_COMPOST.get());
         }
         return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND);
     }

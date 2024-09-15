@@ -77,7 +77,7 @@ dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
 
     //Optional Farmer's Delight Dependency, for compat use
-//    implementation("maven.modrinth:farmers-delight:1.21-$fd_version")
+    compileOnly "maven.modrinth:farmers-delight:1.21-$fd_version"
 
     implementation("maven.modrinth:terrablender:cNsceBWL")
 
