@@ -6,9 +6,11 @@
   "mixins": [
     "AbstractCauldronBlockMixin",
     "BaseSpawnerMixin",
+    "BiomeMixin",
     "BlockEntityAccessor",
-    "RichSoilBlockMixin",
     "LivingEntityMixin",
+    "RichSoilBlockMixin",
+    "ServerLevelMixin",
     "SnowAndFreezeFeatureMixin",
     "SpreadingSnowyDirtBlockMixin"
   ],

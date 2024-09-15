@@ -14,11 +14,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -56,7 +58,7 @@ public class FrostedGrassBlock extends BushBlock {
 
     @Override
     protected boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
-        if (useContext.getItemInHand().is(Blocks.SNOW.asItem())) {
+        if (useContext.getItemInHand().is(Blocks.SNOW.asItem()) || useContext.getItemInHand().is(Blocks.SHORT_GRASS.asItem())) {
             return false;
         }
         return super.canBeReplaced(state, useContext);

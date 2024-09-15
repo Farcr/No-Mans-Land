@@ -9,10 +9,10 @@ import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 import terrablender.worldgen.DefaultOverworldRegion;
 
-public class NMLTerrablender{
+public class NMLTerrablender {
     public static void registerRegions() {
-        Regions.remove(RegionType.OVERWORLD, ResourceLocation.withDefaultNamespace("overworld"));
         Regions.register(new NMLRegion(ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "overworld"), 10));
+//        Regions.remove(RegionType.OVERWORLD, ResourceLocation.withDefaultNamespace("overworld"));
     }
 
     public static void registerSurfaceData() {
