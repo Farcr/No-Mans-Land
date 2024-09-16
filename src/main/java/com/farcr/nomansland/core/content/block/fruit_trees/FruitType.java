@@ -11,11 +11,11 @@ import java.util.function.Supplier;
 
 public enum FruitType {
     APPLE_OAK(NMLBlocks.APPLE_FRUIT, NMLBlocks.APPLE_FRUIT_LEAVES, null, 3, new ItemStack(Items.APPLE), new VoxelShape[]{
-            Block.box(6, 10, 7, 10, 14, 11),
-            Block.box(6, 10, 7, 10, 14, 11),
-            Block.box(5.5, 9, 6.5, 10.5, 14, 11.5),
-            Block.box(5.5, 9, 6.5, 10.5, 14, 11.5),
-            Block.box(5.5, 9, 6.5, 10.5, 14, 11.5)
+            Block.box(6, 11, 7, 10, 15, 11),
+            Block.box(6, 11, 7, 10, 15, 11),
+            Block.box(5.5, 10, 6.5, 10.5, 15, 11.5),
+            Block.box(5.5, 10, 6.5, 10.5, 15, 11.5),
+            Block.box(5.5, 10, 6.5, 10.5, 15, 11.5)
     });
 
     private final Supplier<? extends Block> fruit;
