@@ -486,7 +486,11 @@ public class NMLBlocks {
                     .randomTicks()
                     .instabreak()
                     .sound(SoundType.HARD_CROP)
-                    .pushReaction(PushReaction.DESTROY), FruitType.APPLE)
+                    .pushReaction(PushReaction.DESTROY)
+                    .offsetType(BlockBehaviour.OffsetType.XYZ)
+                    .dynamicShape()
+                    ,FruitType.APPLE)
+
     );
 
     public static final DeferredBlock<Block> APPLE_FRUIT_LEAVES = registerBlock("apple_fruit_leaves",
