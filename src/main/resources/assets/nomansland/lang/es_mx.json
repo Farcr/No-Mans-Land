@@ -16,10 +16,12 @@
   "block.nomansland.dried_grass": "Pasto seco",
   "block.nomansland.short_beachgrass": "Pasto de playa corto",
   "block.nomansland.tall_beachgrass": "Pasto de playa alto",
+  "block.nomansland.frosted_grass": "Pasto helado",
   "block.nomansland.fiddlehead": "Brotes de helecho",
   "block.nomansland.pebbles": "Piedra",
   "block.nomansland.cattail": "Totora",
   "block.nomansland.clover_patch": "Parche de trébol",
+  "block.nomansland.duckweed": "Lenteja",
 
   "block.nomansland.white_flowerbed": "Macizo blanco",
   "block.nomansland.red_flowerbed": "Macizo rojo",
@@ -67,6 +69,10 @@
   "block.nomansland.field_mushroom_colony": "Colonia de hongos de campo",
   "block.nomansland.field_mushroom_block": "Bloque de hongos de campo",
   "block.nomansland.potted_field_mushroom": "Hongo de campo en maceta ",
+
+  "block.nomansland.shelf_mushroom": "Hongo poliporo",
+  "block.nomansland.shelf_mushroom_colony": "Colonia de hongos políporos",
+  "block.nomansland.shelf_mushroom_block": "BLoque de hongos políporos",
 
   "block.nomansland.dirt_path": "Camino de tierra",
   "block.nomansland.snowy_grass_path": "Camino de pasto nevado",
@@ -223,6 +229,8 @@
   "block.nomansland.walnut_wall_hanging_sign": "Letrero colgante de nogal en pared",
   "item.nomansland.walnut_boat": "Bote de nogal",
   "item.nomansland.walnut_chest_boat": "Bote de nogal con cofre",
+
+  "block.nomansland.apple_fruit_leaves": "Hojas de manzano",
 
   "block.nomansland.cod_barrel": "Barril de bacalo",
   "block.nomansland.salmon_barrel": "Barril de salmón",
