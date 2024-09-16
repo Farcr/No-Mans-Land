@@ -1,6 +1,5 @@
 package com.farcr.nomansland.core.content.block.fruit_trees;
 
-import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -12,17 +11,18 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.function.Supplier;
 
 import static com.farcr.nomansland.core.content.block.fruit_trees.FruitBlock.AGE;
-import static com.farcr.nomansland.core.content.block.fruit_trees.FruitBlock.getGrowthSpeed;
 
 public class FruitLeavesBlock extends LeavesBlock {
 
     public Supplier<? extends Block> fruit;
     public Block leaves;
+    public int growthSpeed;
 
     public FruitLeavesBlock(Properties properties, FruitType fruitType, Block leaves) {
         super(properties);
         this.fruit = fruitType.getFruitBlock();
         this.leaves = leaves;
+        this.growthSpeed = fruitType.getGrowthSpeed();
     }
 
 
@@ -56,8 +56,8 @@ public class FruitLeavesBlock extends LeavesBlock {
         // place or grow the fruit block underneath
         BlockPos fruitPos = pos.below();
         BlockState fruitState = level.getBlockState(fruitPos);
-        if (!level.isAreaLoaded(fruitPos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
-        if (level.getRawBrightness(fruitPos.below(), 0) >= 9 && random.nextInt((int)(25.0F / getGrowthSpeed()) + 1) == 0) {
+        if (!level.isAreaLoaded(fruitPos, 1)) return;
+        if (level.getRawBrightness(fruitPos, 0) >= 9 && random.nextInt(growthSpeed, 10) == growthSpeed) {
             if (fruitState.getBlock() instanceof FruitBlock fruitBlock) {
                 int fruitAge = fruitState.getValue(AGE);
                 if (fruitAge < fruitBlock.getMaxAge()) {

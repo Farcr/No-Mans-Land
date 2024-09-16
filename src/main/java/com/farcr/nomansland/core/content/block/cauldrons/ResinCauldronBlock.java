@@ -47,12 +47,20 @@ public class ResinCauldronBlock extends LayeredCauldronBlock {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         ItemStack resin = new ItemStack(NMLItems.RESIN.get(), level.random.nextInt(2, 5));
-        if (!player.addItem(resin)) {
-            if (!player.isCreative()) player.drop(resin, false);
-        }
+        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == resin.getItem())))
+            if (!player.addItem(resin)) {
+                player.drop(resin, false);
+            } else {
+                level.playSound(
+                        player,
+                        pos,
+                        SoundEvents.ITEM_PICKUP,
+                        SoundSource.PLAYERS,
+                        0.2F,
+                        (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
+            }
         player.awardStat(Stats.USE_CAULDRON);
         lowerFillLevel(state, level, pos);
-        level.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2F, (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 

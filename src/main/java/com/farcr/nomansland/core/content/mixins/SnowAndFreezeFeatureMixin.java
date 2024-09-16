@@ -26,13 +26,12 @@ import static net.minecraft.world.level.block.SnowyDirtBlock.SNOWY;
 @Mixin(SnowAndFreezeFeature.class)
 public class SnowAndFreezeFeatureMixin {
 
-    @Inject(method = "place", at = @At(value = "TAIL"))
+    @Inject(method = "place", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/WorldGenLevel;setBlock(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Z", ordinal = 1, shift = At.Shift.BEFORE), cancellable = true)
     private void place(FeaturePlaceContext<NoneFeatureConfiguration> p_160368_, CallbackInfoReturnable<Boolean> cir) {
         WorldGenLevel worldgenlevel = p_160368_.level();
         BlockPos blockpos = p_160368_.origin();
         BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
         BlockPos.MutableBlockPos blockpos$mutableblockpos1 = new BlockPos.MutableBlockPos();
-
 
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
@@ -41,30 +40,16 @@ public class SnowAndFreezeFeatureMixin {
                 int i1 = worldgenlevel.getHeight(Heightmap.Types.MOTION_BLOCKING, k, l);
                 blockpos$mutableblockpos.set(k, i1, l);
                 blockpos$mutableblockpos1.set(blockpos$mutableblockpos).move(Direction.DOWN, 1);
-                Biome biome = worldgenlevel.getBiome(blockpos$mutableblockpos).value();
 
-                if (no_Mans_Land$isFrostedGrass(biome, worldgenlevel, blockpos$mutableblockpos)) {
+                if (worldgenlevel.getBlockState(blockpos$mutableblockpos).is(NMLBlocks.FROSTED_GRASS)) {
                     worldgenlevel.setBlock(blockpos$mutableblockpos, NMLBlocks.FROSTED_GRASS.get().defaultBlockState().setValue(SNOWLOGGED, true), 2);
                     BlockState blockstate = worldgenlevel.getBlockState(blockpos$mutableblockpos1);
-                    if (blockstate.hasProperty(SNOWY)) {
-                        worldgenlevel.setBlock(blockpos$mutableblockpos1, blockstate.setValue(SNOWY, Boolean.valueOf(true)), 2);
+                    if (blockstate.hasProperty(SnowyDirtBlock.SNOWY)) {
+                        worldgenlevel.setBlock(blockpos$mutableblockpos1, blockstate.setValue(SnowyDirtBlock.SNOWY, Boolean.TRUE), 2);
                     }
+                    cir.setReturnValue(true);
                 }
             }
         }
-    }
-
-    @Unique
-    private boolean no_Mans_Land$isFrostedGrass(Biome biome, LevelReader level, BlockPos pos) {
-        if (!biome.warmEnoughToRain(pos)) {
-            if (pos.getY() >= level.getMinBuildHeight()
-                    && pos.getY() < level.getMaxBuildHeight()
-                    && level.getBrightness(LightLayer.BLOCK, pos) < 10) {
-                BlockState blockstate = level.getBlockState(pos);
-                return blockstate.is(NMLBlocks.FROSTED_GRASS);
-            }
-
-        }
-        return false;
     }
 }
