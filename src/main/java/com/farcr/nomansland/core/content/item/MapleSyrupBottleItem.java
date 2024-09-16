@@ -14,7 +14,6 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
 public class MapleSyrupBottleItem extends Item {
-    private static final int DRINK_DURATION = 40;
 
     public MapleSyrupBottleItem(Item.Properties pProperties) {
         super(pProperties);
@@ -46,20 +45,11 @@ public class MapleSyrupBottleItem extends Item {
             return pStack;
         }
     }
-
-    public int getUseDuration(ItemStack pStack) {
-        return 40;
-    }
-
     public UseAnim getUseAnimation(ItemStack pStack) {
         return UseAnim.DRINK;
     }
 
     public SoundEvent getDrinkingSound() {
-        return SoundEvents.HONEY_DRINK;
-    }
-
-    public SoundEvent getEatingSound() {
         return SoundEvents.HONEY_DRINK;
     }
 

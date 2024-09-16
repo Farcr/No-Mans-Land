@@ -16,10 +16,12 @@
   "block.nomansland.dried_grass": "Dried Grass",
   "block.nomansland.short_beachgrass": "Short Beachgrass",
   "block.nomansland.tall_beachgrass": "Tall Beachgrass",
+  "block.nomansland.frosted_grass": "Frosted Grass",
   "block.nomansland.fiddlehead": "Fiddlehead",
   "block.nomansland.pebbles": "Pebbles",
   "block.nomansland.cattail": "Cattail",
   "block.nomansland.clover_patch": "Clover Patch",
+  "block.nomansland.duckweed": "Duckweed",
 
   "block.nomansland.white_flowerbed": "White Flowerbed",
   "block.nomansland.red_flowerbed": "Red Flowerbed",
@@ -67,6 +69,10 @@
   "block.nomansland.field_mushroom_colony": "Field Mushroom Colony",
   "block.nomansland.field_mushroom_block": "Field Mushroom Block",
   "block.nomansland.potted_field_mushroom": "Potted Field Mushroom",
+
+  "block.nomansland.shelf_mushroom": "Shelf Mushroom",
+  "block.nomansland.shelf_mushroom_colony": "Shelf Mushroom Colony",
+  "block.nomansland.shelf_mushroom_block": "Shelf Mushroom Block",
 
   "block.nomansland.dirt_path": "Dirt Path",
   "block.nomansland.snowy_grass_path": "Snowy Grass Path",
@@ -223,6 +229,8 @@
   "block.nomansland.walnut_wall_hanging_sign": "Walnut Wall Hanging Sign",
   "item.nomansland.walnut_boat": "Walnut Boat",
   "item.nomansland.walnut_chest_boat": "Walnut Boat with Chest",
+
+  "block.nomansland.apple_fruit_leaves": "Apple Fruit Leaves",
 
   "block.nomansland.cod_barrel": "Cod Barrel",
   "block.nomansland.salmon_barrel": "Salmon Barrel",

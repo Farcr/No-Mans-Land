@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "snowlogged=true": [
+      {
+        "model": "nomansland:block/plants/frosted_grass_snowy",
+        "uvlock": true,
+        "y": 270
+      }
+    ],
+    "snowlogged=false": [
+      {
+        "model": "nomansland:block/plants/frosted_grass",
+        "uvlock": true,
+        "y": 270
+      }
+    ]
+  }
+}

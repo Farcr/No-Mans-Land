@@ -1,7 +1,14 @@
 {
   "values": [
     "nomansland:grass_sprouts",
+    "nomansland:cattail",
     "nomansland:cut_sugar_cane",
-    "nomansland:field_mushroom"
+    "nomansland:field_mushroom",
+    "nomansland:oat_grass",
+    "nomansland:fiddlehead",
+    "nomansland:frosted_grass",
+    "nomansland:dried_grass",
+    "nomansland:tall_beachgrass",
+    "nomansland:short_beachgrass"
   ]
 }

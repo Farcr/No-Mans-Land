@@ -6,11 +6,16 @@
   "mixins": [
     "AbstractCauldronBlockMixin",
     "BaseSpawnerMixin",
+    "BiomeMixin",
     "BlockEntityAccessor",
     "LivingEntityMixin",
+    "RichSoilBlockMixin",
+    "ServerLevelMixin",
+    "SnowAndFreezeFeatureMixin",
     "SpreadingSnowyDirtBlockMixin"
   ],
   "client": [
+    "ModelBlockRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

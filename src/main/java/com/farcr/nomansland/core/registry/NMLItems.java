@@ -5,6 +5,7 @@ import com.farcr.nomansland.core.content.entity.BoatEntity;
 import com.farcr.nomansland.core.content.item.BoatItem;
 import com.farcr.nomansland.core.content.item.FirebombItem;
 import com.farcr.nomansland.core.content.item.FuelItem;
+import com.farcr.nomansland.core.content.item.MapleSyrupBottleItem;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Direction;
@@ -29,6 +30,7 @@ public class NMLItems {
             () -> new Item(new Item.Properties().food(NMLFoods.MASHED_POTATOES_WITH_MUSHROOMS).stacksTo(1)));
     public static final DeferredItem<Item> GRILLED_MUSHROOMS = registerItem("grilled_mushrooms",
             () -> new Item(new Item.Properties().food(NMLFoods.GRILLED_MUSHROOMS)));
+
     public static final DeferredItem<Item> FROG_LEG = registerItem("frog_leg",
             () -> new Item(new Item.Properties().food(NMLFoods.FROG_LEG)));
     public static final DeferredItem<Item> COOKED_FROG_LEG = registerItem("cooked_frog_leg",
@@ -38,21 +40,27 @@ public class NMLItems {
     public static final DeferredItem<Item> HORSE_STEAK = registerItem("horse_steak",
             () -> new Item(new Item.Properties().food(NMLFoods.HORSE_STEAK)));
 
+//    public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
+//            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+//
+//    public static final DeferredItem<Item> PEAR = registerItem("pear",
+//            () -> new Item(new Item.Properties().food(NMLFoods.PEAR)));
+//    public static final DeferredItem<Item> MAPLE_PEAR = registerItem("maple_pear",
+//            () -> new MapleFoodItem(new Item.Properties().food(NMLFoods.MAPLE_PEAR)));
+
     //Materials
     public static final DeferredItem<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
-            !ModList.get().isLoaded("farmersdelight") ? () -> new Item(new Item.Properties())
-                    : FDIntegration.mushroomColonyItem(), "farmersdelight");
+            ModList.get().isLoaded("farmersdelight") ? FDIntegration.mushroomColonyItem() : null, "farmersdelight");
     public static final DeferredItem<Item> RESIN = registerItem("resin",
             () -> new FuelItem(new Item.Properties(), 1000));
-    //    !!!Depends on Alembic
     public static final DeferredItem<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
             () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
-    //    public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
-//            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+
     public static final DeferredItem<Item> SCONCE_TORCH = registerItem("sconce_torch",
             () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_TORCH.get(), NMLBlocks.SCONCE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
     public static final DeferredItem<Item> SCONCE_SOUL_TORCH = registerItem("sconce_soul_torch",
             () -> new StandingAndWallBlockItem(NMLBlocks.SCONCE_SOUL_TORCH.get(), NMLBlocks.SCONCE_SOUL_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
+
     public static final DeferredItem<Item> FIREBOMB = registerItem("firebomb",
             () -> new FirebombItem(new Item.Properties().stacksTo(8)));
 
@@ -186,6 +194,7 @@ public class NMLItems {
             event.accept(NMLBlocks.OAT_GRASS.get());
             event.accept(NMLBlocks.SHORT_BEACHGRASS.get());
             event.accept(NMLBlocks.TALL_BEACHGRASS.get());
+            event.accept(NMLBlocks.FROSTED_GRASS.get());
             event.accept(NMLBlocks.DRIED_GRASS.get());
             event.accept(NMLBlocks.FIDDLEHEAD.get());
             event.accept(NMLBlocks.CATTAIL.get());
@@ -212,12 +221,15 @@ public class NMLItems {
             event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
             event.accept(NMLBlocks.PALE_CHERRY_LEAVES.get());
             event.accept(NMLBlocks.PALE_CHERRY_SAPLING);
-            event.accept(NMLBlocks.FROSTED_LEAVES.get());
             event.accept(NMLBlocks.FIELD_MUSHROOM.get());
-            if (ModList.get().isLoaded("farmersdelight")) {
-                event.accept(NMLItems.FIELD_MUSHROOM_COLONY.get());
-            }
             event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK.get());
+            event.accept(NMLBlocks.SHELF_MUSHROOM.get());
+            event.accept(NMLBlocks.SHELF_MUSHROOM_BLOCK.get());
+            event.accept(NMLBlocks.FROSTED_LEAVES.get());
+
+            if (ModList.get().isLoaded("farmersdelight")) {
+                event.accept(NMLBlocks.FIELD_MUSHROOM_COLONY.get());
+            }
             event.accept(NMLBlocks.DIRT_PATH.get());
             event.accept(NMLBlocks.MYCELIUM_PATH.get());
             event.accept(NMLBlocks.PODZOL_PATH.get());
@@ -226,7 +238,6 @@ public class NMLItems {
             event.accept(NMLBlocks.GRAVEL_PATH.get());
             event.accept(NMLBlocks.SAND_PATH.get());
             event.accept(NMLBlocks.RED_SAND_PATH.get());
-
 
             event.accept(NMLBlocks.QUARTZITE.get());
             event.accept(NMLBlocks.QUARTZITE_CLUSTER.get());
@@ -300,9 +311,7 @@ public class NMLItems {
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(NMLItems.FIREBOMB.get());
-            if (ModList.get().isLoaded("alembic")) {
-                event.accept(NMLItems.RESIN_OIL_BOTTLE.get());
-            }
+            event.accept(NMLItems.RESIN_OIL_BOTTLE.get());
         }
 
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
@@ -319,17 +328,18 @@ public class NMLItems {
         }
     }
 
-    public static <T extends Item> DeferredItem<Item> registerItem(final String name, final Supplier<? extends Item> supplier) {
-        DeferredItem<Item> item = ITEMS.register(name, supplier);
-        CREATIVE_TAB_ITEMS.add(item);
-        return item;
+    @SuppressWarnings("unchecked")
+    public static <T extends Item> DeferredItem<T> registerItem(final String name, final Supplier<? extends Item> item) {
+        DeferredItem<Item> toReturn = ITEMS.register(name, item);
+        CREATIVE_TAB_ITEMS.add(toReturn);
+        return (DeferredItem<T>) toReturn;
     }
 
-    public static <T extends Item> DeferredItem<Item> registerIntegrationItem(final String name, final Supplier<? extends Item> supplier, String modId) {
-        DeferredItem<Item> item = ITEMS.register(name, supplier);
-        if (ModList.get().isLoaded(modId)) {
-            CREATIVE_TAB_ITEMS.add(item);
-        }
-        return item;
+    @SuppressWarnings("unchecked")
+    public static <T extends Item> DeferredItem<T> registerIntegrationItem(final String name, final Supplier<? extends Item> item, String modId) {
+        if (!ModList.get().isLoaded(modId)) return null;
+        DeferredItem<Item> toReturn = ITEMS.register(name, item);
+        CREATIVE_TAB_ITEMS.add(toReturn);
+        return (DeferredItem<T>) toReturn;
     }
 }

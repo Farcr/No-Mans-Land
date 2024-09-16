@@ -4,7 +4,10 @@ import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.block.*;
 import com.farcr.nomansland.core.content.block.cauldrons.HoneyCauldronBlock;
 import com.farcr.nomansland.core.content.block.cauldrons.ResinCauldronBlock;
-import com.farcr.nomansland.core.content.block.signs.HangingSignBlock;
+import com.farcr.nomansland.core.content.block.fruit_trees.FruitType;
+import com.farcr.nomansland.core.content.block.fruit_trees.FruitLeavesBlock;
+import com.farcr.nomansland.core.content.block.fruit_trees.FruitBlock;
+import com.farcr.nomansland.core.content.block.signs.CeilingHangingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.StandingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.WallHangingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.WallSignBlock;
@@ -62,32 +65,35 @@ public class NMLBlocks {
             () -> new ExtinguishedTorchBlock(ParticleTypes.SOUL_FIRE_FLAME, BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY), Blocks.SOUL_TORCH));
     public static final DeferredBlock<ExtinguishedWallTorchBlock> EXTINGUISHED_SOUL_WALL_TORCH = BLOCKS.register("extinguished_soul_wall_torch",
             () -> new ExtinguishedWallTorchBlock(ParticleTypes.SOUL_FIRE_FLAME, BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY), Blocks.SOUL_WALL_TORCH));
+
     public static final DeferredBlock<WoodenScaffoldingBlock> WOODEN_SCAFFOLDING = BLOCKS.register("wooden_scaffolding",
             () -> new WoodenScaffoldingBlock(Block.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.CHERRY_WOOD)));
+
     public static final DeferredBlock<StandingSignBlock> PINE_SIGN = BLOCKS.register("pine_sign",
             () -> new StandingSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
     public static final DeferredBlock<WallSignBlock> PINE_WALL_SIGN = BLOCKS.register("pine_wall_sign",
             () -> new WallSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
-    public static final DeferredBlock<HangingSignBlock> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",
-            () -> new HangingSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
+    public static final DeferredBlock<CeilingHangingSignBlock> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",
+            () -> new CeilingHangingSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
     public static final DeferredBlock<WallHangingSignBlock> PINE_HANGING_WALL_SIGN = BLOCKS.register("pine_wall_hanging_sign",
             () -> new WallHangingSignBlock(NMLWoodTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
     public static final DeferredBlock<StandingSignBlock> MAPLE_SIGN = BLOCKS.register("maple_sign",
             () -> new StandingSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
     public static final DeferredBlock<WallSignBlock> MAPLE_WALL_SIGN = BLOCKS.register("maple_wall_sign",
             () -> new WallSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
-    public static final DeferredBlock<HangingSignBlock> MAPLE_HANGING_SIGN = BLOCKS.register("maple_hanging_sign",
-            () -> new HangingSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
+    public static final DeferredBlock<CeilingHangingSignBlock> MAPLE_HANGING_SIGN = BLOCKS.register("maple_hanging_sign",
+            () -> new CeilingHangingSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
     public static final DeferredBlock<WallHangingSignBlock> MAPLE_HANGING_WALL_SIGN = BLOCKS.register("maple_wall_hanging_sign",
             () -> new WallHangingSignBlock(NMLWoodTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
     public static final DeferredBlock<StandingSignBlock> WALNUT_SIGN = BLOCKS.register("walnut_sign",
             () -> new StandingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
     public static final DeferredBlock<WallSignBlock> WALNUT_WALL_SIGN = BLOCKS.register("walnut_wall_sign",
             () -> new WallSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
-    public static final DeferredBlock<HangingSignBlock> WALNUT_HANGING_SIGN = BLOCKS.register("walnut_hanging_sign",
-            () -> new HangingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
+    public static final DeferredBlock<CeilingHangingSignBlock> WALNUT_HANGING_SIGN = BLOCKS.register("walnut_hanging_sign",
+            () -> new CeilingHangingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
     public static final DeferredBlock<WallHangingSignBlock> WALNUT_HANGING_WALL_SIGN = BLOCKS.register("walnut_wall_hanging_sign",
             () -> new WallHangingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
+
     public static final DeferredBlock<ResinCauldronBlock> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
             ResinCauldronBlock::new);
     public static final DeferredBlock<HoneyCauldronBlock> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
@@ -103,6 +109,8 @@ public class NMLBlocks {
             () -> new DesertPlantBlock(Block.Properties.ofFullCopy(Blocks.DEAD_BUSH).offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final DeferredBlock<Block> DRIED_GRASS = registerBlock("dried_grass",
             () -> new DesertPlantBlock(Block.Properties.ofFullCopy(Blocks.DEAD_BUSH).offsetType(BlockBehaviour.OffsetType.XZ)));
+    public static final DeferredBlock<Block> FROSTED_GRASS = registerBlock("frosted_grass",
+            () -> new FrostedGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> FIDDLEHEAD = registerBlock("fiddlehead",
             () -> new SimpleFoliageBlock(Block.Properties.ofFullCopy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final DeferredBlock<Block> CATTAIL = registerBlock("cattail",
@@ -168,7 +176,7 @@ public class NMLBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final DeferredBlock<Block> RAFFLESIA = registerBlock("rafflesia",
-            () -> new FlatFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
+            () -> new FlatFlowerBlock(MobEffects.HUNGER, 60, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
     public static final DeferredBlock<Block> BARREL_CACTUS = registerBlock("barrel_cactus",
             () -> new DesertPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.BIG_DRIPLEAF).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> POTTED_BARREL_CACTUS = BLOCKS.register("potted_barrel_cactus",
@@ -180,17 +188,17 @@ public class NMLBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.SUCCULENT,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final DeferredBlock<Block> CLOVER_PATCH = registerBlock("clover_patch",
-            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(MobEffects.LUCK, 5, Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> WHITE_FLOWERBED = registerBlock("white_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> YELLOW_FLOWERBED = registerBlock("yellow_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(MobEffects.MOVEMENT_SLOWDOWN, 5, Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> RED_FLOWERBED = registerBlock("red_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(MobEffects.HEAL, 1, Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> BLUE_FLOWERBED = registerBlock("blue_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(MobEffects.DAMAGE_RESISTANCE, 10, Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> VIOLET_FLOWERBED = registerBlock("violet_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(MobEffects.DAMAGE_RESISTANCE, 5, Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     //Underground
     public static final DeferredBlock<Block> QUARTZITE = registerBlock("quartzite",
             () -> new AmethystBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(1.3F).sound(SoundType.NETHER_GOLD_ORE).requiresCorrectToolForDrops()));
@@ -350,8 +358,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> PINE_BOOKSHELF = registerBlock("pine_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF)));
     public static final DeferredBlock<Block> PINE_CABINET = registerIntegrationBlock("pine_cabinet",
-            !ModList.get().isLoaded("farmersdelight") ?
-                    () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight", true);
+            ModList.get().isLoaded("farmersdelight") ? FDIntegration.cabinetBlock() : null, "farmersdelight");
     //Maple
     public static final DeferredBlock<Block> MAPLE_PLANKS = registerBlock("maple_planks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
@@ -399,8 +406,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> MAPLE_BOOKSHELF = registerBlock("maple_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF)));
     public static final DeferredBlock<Block> MAPLE_CABINET = registerIntegrationBlock("maple_cabinet",
-            !ModList.get().isLoaded("farmersdelight") ?
-                    () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight", true);
+            ModList.get().isLoaded("farmersdelight") ? FDIntegration.cabinetBlock() : null, "farmersdelight");
     //Walnut
     public static final DeferredBlock<Block> WALNUT_PLANKS = registerBlock("walnut_planks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
@@ -440,8 +446,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> WALNUT_BOOKSHELF = registerBlock("walnut_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF)));
     public static final DeferredBlock<Block> WALNUT_CABINET = registerIntegrationBlock("walnut_cabinet",
-            !ModList.get().isLoaded("farmersdelight") ?
-                    () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)) : FDIntegration.cabinetBlock(), "farmersdelight", true);
+            ModList.get().isLoaded("farmersdelight") ? FDIntegration.cabinetBlock() : null, "farmersdelight");
     public static final DeferredBlock<Block> TAP = registerBlock("tap",
             () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops().noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> SPIKE_TRAP = registerBlock("spike_trap",
@@ -461,14 +466,32 @@ public class NMLBlocks {
     //Mushrooms
     public static final DeferredBlock<Block> FIELD_MUSHROOM = registerBlock("field_mushroom",
             () -> new SurfaceMushroomBlock(HugeMushrooms.HUGE_FIELD_MUSHROOM, (BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM).mapColor(MapColor.TERRACOTTA_WHITE))));
-    public static final DeferredBlock<Block> FIELD_MUSHROOM_COLONY = registerIntegrationBlock("field_mushroom_colony",
-            !ModList.get().isLoaded("farmersdelight") ? () -> new Block(BlockBehaviour.Properties.ofFullCopy(NMLBlocks.FIELD_MUSHROOM.get()))
-                    : FDIntegration.mushroomColony(), "farmersdelight", false);
+    public static final DeferredBlock<Block> FIELD_MUSHROOM_COLONY = ModList.get().isLoaded("farmersdelight") ?
+            BLOCKS.register("field_mushroom_colony", FDIntegration.mushroomColony()): null;
     public static final DeferredBlock<FlowerPotBlock> POTTED_FIELD_MUSHROOM = BLOCKS.register("potted_field_mushroom",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.FIELD_MUSHROOM,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_RED_MUSHROOM).noOcclusion()));
     public static final DeferredBlock<Block> FIELD_MUSHROOM_BLOCK = registerBlock("field_mushroom_block",
-            () -> new HugeMushroomBlock((BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM_BLOCK))));
+            () -> new HugeMushroomBlock((BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM_BLOCK).mapColor(MapColor.TERRACOTTA_WHITE))));
+
+    public static final DeferredBlock<Block> SHELF_MUSHROOM = registerBlock("shelf_mushroom",
+            () -> new ShelfMushroomBlock((BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM))));
+    public static final DeferredBlock<Block> SHELF_MUSHROOM_BLOCK = registerBlock("shelf_mushroom_block",
+            () -> new SlabBlock((BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK))));
+
+    // Fruity Stuff
+    public static final DeferredBlock<Block> APPLE_FRUIT = BLOCKS.register("apple_fruit",
+            () -> new FruitBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PLANT)
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.HARD_CROP)
+                    .pushReaction(PushReaction.DESTROY), FruitType.APPLE)
+    );
+
+    public static final DeferredBlock<Block> APPLE_FRUIT_LEAVES = registerBlock("apple_fruit_leaves",
+            () -> new FruitLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false)), FruitType.APPLE, Blocks.OAK_LEAVES));
+
 
     @SuppressWarnings("unchecked")
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<? extends Block> block) {
@@ -478,19 +501,18 @@ public class NMLBlocks {
     }
 
     @SuppressWarnings("unchecked")
-    private static <T extends Block> DeferredBlock<T> registerIntegrationBlock(String name, Supplier<? extends Block> block, String modId, Boolean blockItem) {
-        DeferredBlock<Block> blocks = BLOCKS.register(name, block);
-        if (ModList.get().isLoaded(modId) && blockItem) {
-            CREATIVE_TAB_ITEMS.add(registerIntegrationBlockItem(name, blocks));
-        }
-        return (DeferredBlock<T>) blocks;
+    private static <T extends Block> DeferredBlock<T> registerIntegrationBlock(String name, Supplier<? extends Block> block, String modId) {
+        if (!ModList.get().isLoaded(modId)) return null;
+        DeferredBlock<Block> toReturn = BLOCKS.register(name, block);
+        CREATIVE_TAB_ITEMS.add(registerIntegrationBlockItem(name, toReturn));
+        return (DeferredBlock<T>) toReturn;
     }
 
-    private static <T extends Block> DeferredHolder<Item, BlockItem> registerBlockItem(String name, Supplier<? extends Block> block) {
+    private static DeferredHolder<Item, BlockItem> registerBlockItem(String name, Supplier<? extends Block> block) {
         return NMLItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-    private static <T extends Block> DeferredHolder<Item, BlockItem> registerIntegrationBlockItem(String name, Supplier<? extends Block> block) {
-        return NMLItems.ITEMS.register(name, !ModList.get().isLoaded("farmersdelight") ? () -> new MissingIntegrationBlock(block.get(), new Item.Properties()) : () -> new BlockItem(block.get(), new Item.Properties()));
+    private static DeferredHolder<Item, BlockItem> registerIntegrationBlockItem(String name, Supplier<? extends Block> block) {
+        return NMLItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 }

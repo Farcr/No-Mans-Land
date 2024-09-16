@@ -34,18 +34,18 @@ public class ColorHandler {
                     return FoliageColor.get(0.5D, 1.0D);
                 },
                 NMLBlocks.MAPLE_LEAVES.get(),
-                NMLBlocks.WALNUT_LEAVES.get()
+                NMLBlocks.WALNUT_LEAVES.get(),
+                NMLBlocks.APPLE_FRUIT_LEAVES.get()
         );
     }
 
     @SubscribeEvent
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
-        event.getBlockColors().register((state, world, pos, tintIndex) -> {
-                    return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
-                },
+        event.getBlockColors().register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D),
                 NMLBlocks.GRASS_SPROUTS.get(),
                 NMLBlocks.FIDDLEHEAD.get(),
-                NMLBlocks.CUT_SUGAR_CANE.get()
+                NMLBlocks.CUT_SUGAR_CANE.get(),
+                NMLBlocks.FROSTED_GRASS.get()
         );
         event.getBlockColors().register((state, world, pos, tintIndex) -> {
                     int grassColorPacked = GrassColor.get(0.5D, 1.0D);
@@ -56,11 +56,10 @@ public class ColorHandler {
                 },
                 NMLBlocks.OAT_GRASS.get()
         );
-        event.getBlockColors().register((state, world, pos, tintIndex) -> {
-                    return world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : GrassColor.get(0.5D, 1.0D);
-                },
+        event.getBlockColors().register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : GrassColor.get(0.5D, 1.0D),
                 NMLBlocks.MAPLE_LEAVES.get(),
-                NMLBlocks.WALNUT_LEAVES.get()
+                NMLBlocks.WALNUT_LEAVES.get(),
+                NMLBlocks.APPLE_FRUIT_LEAVES.get()
 //                NMLBlocks.CUT_VINE.get()
         );
     }

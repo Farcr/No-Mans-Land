@@ -1,0 +1,43 @@
+{
+  "feature": "nomansland:biome_trees/trees_old_growth_forest_sparse",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "data": 20,
+            "weight": 7
+          },
+          {
+            "data": 15,
+            "weight": 2
+          },
+          {
+            "data": 30,
+            "weight": 0.5
+          },
+          {
+            "data": 5,
+            "weight": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 0
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -12,26 +12,23 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.util.TriState;
-//import vectorwing.farmersdelight.common.registry.ModBlocks;
+import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class SurfaceMushroomBlock extends MushroomBlock {
     public SurfaceMushroomBlock(ResourceKey<ConfiguredFeature<?, ?>> pFeature, Properties pProperties) {
         super(pFeature, pProperties);
     }
 
-    protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        if (ModList.get().isLoaded("farmersdelight")) {
-//            return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND) || pState.is(ModBlocks.ORGANIC_COMPOST.get());
-        }
-        return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND);
+    @Override
+    protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
+        return state.is(BlockTags.DIRT);
     }
 
-
-    // TODO: fix
-    public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
-        BlockPos blockpos = pPos.below();
-        if (pState.getBlock() == this)
-            return pLevel.getBlockState(blockpos).canSustainPlant(pLevel, blockpos, Direction.UP, this.defaultBlockState()) == TriState.TRUE;
-        return this.mayPlaceOn(pLevel.getBlockState(blockpos), pLevel, blockpos);
+    @Override
+    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockPos lowerPos = pos.below();
+        BlockState lowerState = level.getBlockState(lowerPos);
+        TriState soilDecision = lowerState.canSustainPlant(level, lowerPos, net.minecraft.core.Direction.UP, state);
+        return lowerState.is(BlockTags.MUSHROOM_GROW_BLOCK) || (soilDecision.isDefault() ? this.mayPlaceOn(lowerState, level, lowerPos) : soilDecision.isTrue());
     }
 }

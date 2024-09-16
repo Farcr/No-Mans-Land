@@ -1,5 +1,6 @@
 {
-  "blocks.minecraft.dirt_path": "Grass Path",
-  "blocks.minecraft.scaffolding": "Bamboo Scaffolding",
-  "items.minecraft.quartz": "Quartz"
+  "block.minecraft.dirt_path": "Grass Path",
+  "block.minecraft.scaffolding": "Bamboo Scaffolding",
+  "item.minecraft.quartz": "Quartz",
+  "block.minecraft.bookshelf": "Oak Bookshelf"
 }
