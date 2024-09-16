@@ -4,7 +4,7 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "nomansland:block/plants/apple_fruit",
-		"particle": "nomansland:block/plants/apple_fruit"
+		"particle": "nomansland:block/no_particle"
 	},
 	"elements": [
 		{

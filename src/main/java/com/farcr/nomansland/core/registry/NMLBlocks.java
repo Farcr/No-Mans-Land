@@ -176,7 +176,7 @@ public class NMLBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final DeferredBlock<Block> RAFFLESIA = registerBlock("rafflesia",
-            () -> new FlatFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
+            () -> new FlatFlowerBlock(MobEffects.HUNGER, 60, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
     public static final DeferredBlock<Block> BARREL_CACTUS = registerBlock("barrel_cactus",
             () -> new DesertPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.BIG_DRIPLEAF).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> POTTED_BARREL_CACTUS = BLOCKS.register("potted_barrel_cactus",
@@ -188,17 +188,17 @@ public class NMLBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.SUCCULENT,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final DeferredBlock<Block> CLOVER_PATCH = registerBlock("clover_patch",
-            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(MobEffects.LUCK, 5, Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> WHITE_FLOWERBED = registerBlock("white_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> YELLOW_FLOWERBED = registerBlock("yellow_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(MobEffects.MOVEMENT_SLOWDOWN, 5, Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> RED_FLOWERBED = registerBlock("red_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(MobEffects.HEAL, 1, Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> BLUE_FLOWERBED = registerBlock("blue_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(MobEffects.DAMAGE_RESISTANCE, 10, Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> VIOLET_FLOWERBED = registerBlock("violet_flowerbed",
-            () -> new FlowerbedBlock(Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new FlowerbedBlock(MobEffects.DAMAGE_RESISTANCE, 5, Block.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     //Underground
     public static final DeferredBlock<Block> QUARTZITE = registerBlock("quartzite",
             () -> new AmethystBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(1.3F).sound(SoundType.NETHER_GOLD_ORE).requiresCorrectToolForDrops()));
@@ -466,14 +466,18 @@ public class NMLBlocks {
     //Mushrooms
     public static final DeferredBlock<Block> FIELD_MUSHROOM = registerBlock("field_mushroom",
             () -> new SurfaceMushroomBlock(HugeMushrooms.HUGE_FIELD_MUSHROOM, (BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM).mapColor(MapColor.TERRACOTTA_WHITE))));
-
     public static final DeferredBlock<Block> FIELD_MUSHROOM_COLONY = ModList.get().isLoaded("farmersdelight") ?
             BLOCKS.register("field_mushroom_colony", FDIntegration.mushroomColony()): null;
     public static final DeferredBlock<FlowerPotBlock> POTTED_FIELD_MUSHROOM = BLOCKS.register("potted_field_mushroom",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.FIELD_MUSHROOM,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_RED_MUSHROOM).noOcclusion()));
     public static final DeferredBlock<Block> FIELD_MUSHROOM_BLOCK = registerBlock("field_mushroom_block",
-            () -> new HugeMushroomBlock((BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM_BLOCK))));
+            () -> new HugeMushroomBlock((BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM_BLOCK).mapColor(MapColor.TERRACOTTA_WHITE))));
+
+    public static final DeferredBlock<Block> SHELF_MUSHROOM = registerBlock("shelf_mushroom",
+            () -> new ShelfMushroomBlock((BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM))));
+    public static final DeferredBlock<Block> SHELF_MUSHROOM_BLOCK = registerBlock("shelf_mushroom_block",
+            () -> new SlabBlock((BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK))));
 
     // Fruity Stuff
     public static final DeferredBlock<Block> APPLE_FRUIT = BLOCKS.register("apple_fruit",
@@ -482,11 +486,15 @@ public class NMLBlocks {
                     .randomTicks()
                     .instabreak()
                     .sound(SoundType.AZALEA)
-                    .pushReaction(PushReaction.DESTROY), FruitType.APPLE_OAK)
+                    .pushReaction(PushReaction.DESTROY)
+                    .offsetType(BlockBehaviour.OffsetType.XYZ)
+                    .dynamicShape()
+                    , FruitType.APPLE_OAK)
+
     );
 
     public static final DeferredBlock<Block> APPLE_FRUIT_LEAVES = registerBlock("apple_fruit_leaves",
-            () -> new FruitLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false)), FruitType.APPLE_OAK, Blocks.OAK_LEAVES));
+            () -> new FruitLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false)), FruitType.APPLE, Blocks.OAK_LEAVES));
 
 
     @SuppressWarnings("unchecked")

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nomansland:block/mushrooms/shelf_mushroom_block_bottom"
+    },
+    "type=double": {
+      "model": "nomansland:block/mushrooms/shelf_mushroom_block_full"
+    },
+    "type=top": {
+      "model": "nomansland:block/mushrooms/shelf_mushroom_block_top"
+    }
+  }
+}

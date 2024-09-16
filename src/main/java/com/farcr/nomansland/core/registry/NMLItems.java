@@ -222,12 +222,14 @@ public class NMLItems {
             event.accept(NMLBlocks.PALE_CHERRY_LEAVES.get());
             event.accept(NMLBlocks.PALE_CHERRY_SAPLING);
             event.accept(NMLBlocks.FIELD_MUSHROOM.get());
+            event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK.get());
+            event.accept(NMLBlocks.SHELF_MUSHROOM.get());
+            event.accept(NMLBlocks.SHELF_MUSHROOM_BLOCK.get());
             event.accept(NMLBlocks.FROSTED_LEAVES.get());
 
             if (ModList.get().isLoaded("farmersdelight")) {
                 event.accept(NMLBlocks.FIELD_MUSHROOM_COLONY.get());
             }
-            event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK.get());
             event.accept(NMLBlocks.DIRT_PATH.get());
             event.accept(NMLBlocks.MYCELIUM_PATH.get());
             event.accept(NMLBlocks.PODZOL_PATH.get());
