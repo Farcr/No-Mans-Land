@@ -489,9 +489,7 @@ public class NMLBlocks {
                     .pushReaction(PushReaction.DESTROY)
                     .offsetType(BlockBehaviour.OffsetType.XYZ)
                     .dynamicShape()
-                    , FruitType.APPLE_OAK)
-
-    );
+                    , FruitType.APPLE_OAK));
 
     public static final DeferredBlock<Block> APPLE_FRUIT_LEAVES = registerBlock("apple_fruit_leaves",
             () -> new FruitLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false)), FruitType.APPLE_OAK, Blocks.OAK_LEAVES));

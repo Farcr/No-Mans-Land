@@ -1,7 +1,7 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "minecraft:fancy_oak_checked",
+    "default": "nomansland:fancy_oak_apple_005",
     "features": [
       {
         "chance": 0.3,
@@ -13,7 +13,7 @@
       },
       {
         "chance": 0.025,
-        "feature": "minecraft:oak_checked"
+        "feature": "nomansland:oak_apple_005"
       },
       {
         "chance": 0.05,

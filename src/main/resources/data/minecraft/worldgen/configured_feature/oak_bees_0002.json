@@ -26,8 +26,8 @@
             }
           }
         },
-        "exclusion_radius_xz": 2,
-        "probability": 1
+        "exclusion_radius_xz": 1,
+        "probability": 0.05
       }
     ],
     "dirt_provider": {

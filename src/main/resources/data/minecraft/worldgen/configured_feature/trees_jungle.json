@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "minecraft:jungle_tree",
+    "features": [
+      {
+        "chance": 0.2,
+        "feature": "nomansland:fancy_oak_apple_01"
+      },
+      {
+        "chance": 0.4,
+        "feature": "minecraft:jungle_bush"
+      },
+      {
+        "chance": 0.33333334,
+        "feature": "minecraft:mega_jungle_tree_checked"
+      }
+    ]
+  }
+}
