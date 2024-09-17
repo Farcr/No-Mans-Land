@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "A"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:honey_bottle"
+        },
+        "A": {
+            "item": "minecraft:apple"
+        }
+    },
+    "result": {
+        "id": "nomansland:honeyed_apple",
+        "count": 1
+    }
+}

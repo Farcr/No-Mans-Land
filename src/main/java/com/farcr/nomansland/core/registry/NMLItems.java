@@ -40,13 +40,16 @@ public class NMLItems {
     public static final DeferredItem<Item> HORSE_STEAK = registerItem("horse_steak",
             () -> new Item(new Item.Properties().food(NMLFoods.HORSE_STEAK)));
 
-//    public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
-//            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
-//
-//    public static final DeferredItem<Item> PEAR = registerItem("pear",
-//            () -> new Item(new Item.Properties().food(NMLFoods.PEAR)));
-//    public static final DeferredItem<Item> MAPLE_PEAR = registerItem("maple_pear",
-//            () -> new MapleFoodItem(new Item.Properties().food(NMLFoods.MAPLE_PEAR)));
+    public static final DeferredItem<Item> PEAR = registerItem("pear",
+            () -> new Item(new Item.Properties().food(NMLFoods.PEAR)));
+    public static final DeferredItem<Item> SYRUPED_PEAR = registerItem("syruped_pear",
+            () -> new Item(new Item.Properties().food(NMLFoods.SYRUPED_PEAR)));
+    public static final DeferredItem<Item> PEAR_COBBLER = registerItem("pear_cobbler",
+            () -> new Item(new Item.Properties().food(NMLFoods.PEAR_COBBLER)));
+    //TODO: FD compat pear juice
+
+    public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
+            () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
 
     //Materials
     public static final DeferredItem<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
@@ -297,7 +300,10 @@ public class NMLItems {
             event.accept(NMLItems.COOKED_FROG_LEG.get());
             event.accept(NMLItems.RAW_HORSE.get());
             event.accept(NMLItems.HORSE_STEAK.get());
-//            event.accept(NMLItems.MAPLE_SYRUP_BOTTLE);
+            event.accept(NMLItems.MAPLE_SYRUP_BOTTLE);
+            event.accept(NMLItems.PEAR.get());
+            event.accept(NMLItems.SYRUPED_PEAR.get());
+            event.accept(NMLItems.PEAR_COBBLER.get());
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(NMLItems.PINE_BOAT.get());

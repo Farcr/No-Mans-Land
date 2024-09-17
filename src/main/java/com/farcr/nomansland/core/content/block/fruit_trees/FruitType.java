@@ -1,6 +1,7 @@
 package com.farcr.nomansland.core.content.block.fruit_trees;
 
 import com.farcr.nomansland.core.registry.NMLBlocks;
+import com.farcr.nomansland.core.registry.NMLItems;
 import net.minecraft.core.Holder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -13,6 +14,13 @@ import java.util.function.Supplier;
 
 public enum FruitType {
     APPLE_OAK(NMLBlocks.APPLE_FRUIT, NMLBlocks.APPLE_FRUIT_LEAVES, Blocks.OAK_LEAVES.defaultBlockState().getBlockHolder(), 3, Items.APPLE.getDefaultInstance().getItemHolder(), new VoxelShape[]{
+            Block.box(6, 11, 7, 10, 15, 11),
+            Block.box(6, 11, 7, 10, 15, 11),
+            Block.box(5.5, 10, 6.5, 10.5, 15, 11.5),
+            Block.box(5.5, 10, 6.5, 10.5, 15, 11.5),
+            Block.box(5.5, 10, 6.5, 10.5, 15, 11.5)
+    }),
+    PEAR_AUTUMNAL_OAK(NMLBlocks.PEAR_FRUIT, NMLBlocks.PEAR_FRUIT_LEAVES, NMLBlocks.AUTUMNAL_OAK_LEAVES.get().defaultBlockState().getBlockHolder(), 3, NMLItems.PEAR, new VoxelShape[]{
             Block.box(6, 11, 7, 10, 15, 11),
             Block.box(6, 11, 7, 10, 15, 11),
             Block.box(5.5, 10, 6.5, 10.5, 15, 11.5),

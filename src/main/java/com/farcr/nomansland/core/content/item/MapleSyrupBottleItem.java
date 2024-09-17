@@ -53,6 +53,10 @@ public class MapleSyrupBottleItem extends Item {
         return SoundEvents.HONEY_DRINK;
     }
 
+    public SoundEvent getEatingSound() {
+        return SoundEvents.HONEY_DRINK;
+    }
+
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pHand);
     }

@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "nomansland:pear"
+        },
+        {
+            "item": "minecraft:red_wool"
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "item": "minecraft:wheat"
+        }
+    ],
+    "result": {
+        "id": "nomansland:pear_cobbler",
+        "count": 1
+    }
+}
