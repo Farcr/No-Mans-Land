@@ -28,6 +28,9 @@ public class NMLFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> OAK_APPLE_01 = register("oak_apple_01");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OAK_APPLE_05 = register("oak_apple_05");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_OAK_APPLE_01 = register("fancy_oak_apple_01");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_OAK_APPLE_05 = register("fancy_oak_apple_05");
+
     public static ResourceKey<ConfiguredFeature<?, ?>> register(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, name));
     }

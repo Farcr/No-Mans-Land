@@ -46,8 +46,8 @@ public class PebbleBlock extends Block implements SimpleWaterloggedBlock {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        ItemStack pebble = new ItemStack(NMLBlocks.PEBBLES.get());
-        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == pebble.getItem()))) {
+        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == NMLBlocks.PEBBLES.asItem()))) {
+            ItemStack pebble = new ItemStack(NMLBlocks.PEBBLES.get());
             if (!player.addItem(pebble) ) {
                 player.drop(pebble, false);
             } else {

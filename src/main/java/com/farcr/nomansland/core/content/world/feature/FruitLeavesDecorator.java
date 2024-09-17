@@ -20,6 +20,7 @@ public class FruitLeavesDecorator extends TreeDecorator {
             p_225996_ -> p_225996_.group(
                             Codec.floatRange(0.0F, 1.0F).fieldOf("probability").forGetter(f -> f.probability),
                             Codec.intRange(0, 16).fieldOf("exclusion_radius_xz").forGetter(f -> f.exclusionRadiusXZ),
+                            Codec.intRange(0, 16).fieldOf("limit").forGetter(f -> f.limit),
                             BlockStateProvider.CODEC.fieldOf("leaves_provider").forGetter(f -> f.leavesProvider),
                             BlockStateProvider.CODEC.fieldOf("fruit_provider").forGetter(f -> f.leavesProvider)
                             )
@@ -27,12 +28,14 @@ public class FruitLeavesDecorator extends TreeDecorator {
     );
     protected final float probability;
     protected final int exclusionRadiusXZ;
+    protected final int limit;
     protected final BlockStateProvider leavesProvider;
     protected final BlockStateProvider fruitProvider;
 
-    public FruitLeavesDecorator(float probability, int exclusionRadiusXZ, BlockStateProvider leavesProvider, BlockStateProvider fruitProvider) {
+    public FruitLeavesDecorator(float probability, int exclusionRadiusXZ, int limit, BlockStateProvider leavesProvider, BlockStateProvider fruitProvider) {
         this.probability = probability;
         this.exclusionRadiusXZ = exclusionRadiusXZ;
+        this.limit = limit;
         this.leavesProvider = leavesProvider;
         this.fruitProvider = fruitProvider;
     }
@@ -40,6 +43,7 @@ public class FruitLeavesDecorator extends TreeDecorator {
     @Override
     public void place(TreeDecorator.Context context) {
         Set<BlockPos> set = new HashSet<>();
+        int leaves = 0;
         RandomSource randomsource = context.random();
         if (randomsource.nextFloat() < this.probability) {
             for (BlockPos blockpos : Util.shuffledCopy(context.leaves(), randomsource)) {
@@ -52,8 +56,10 @@ public class FruitLeavesDecorator extends TreeDecorator {
                     }
 
                     context.setBlock(blockpos, this.leavesProvider.getState(randomsource, blockpos));
-                    context.setBlock(blockpos.below(), this.fruitProvider.getState(randomsource, blockpos.below()));
+                    if (!context.isAir(blockpos.below())) context.setBlock(blockpos.below(), this.fruitProvider.getState(randomsource, blockpos.below()));
+                    leaves++;
                 }
+                if (leaves > limit) break;
             }
         }
     }
