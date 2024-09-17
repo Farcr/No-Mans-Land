@@ -1,7 +1,21 @@
 {
   "variants": {
-    "": {
+    "": [
+      {
       "model": "nomansland:block/plants/duckweed"
+    },
+    {
+      "model": "nomansland:block/plants/duckweed",
+      "y": 90
+    },
+    {
+      "model": "nomansland:block/plants/duckweed",
+      "y": 180
+    },
+    {
+      "model": "nomansland:block/plants/duckweed",
+      "y": 270
     }
+  ]
   }
 }
