@@ -3,8 +3,13 @@ package com.farcr.nomansland.core.events;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.registry.NMLBlocks;
+import com.farcr.nomansland.core.registry.NMLFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.data.worldgen.features.TreeFeatures;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
@@ -12,9 +17,13 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SnowyDirtBlock;
+import net.minecraft.world.level.block.SpreadingSnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
@@ -22,7 +31,12 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.level.BlockGrowFeatureEvent;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import static com.farcr.nomansland.core.content.block.FrostedGrassBlock.SNOWLOGGED;
+import static net.minecraft.world.level.block.Block.isFaceFull;
 import static net.minecraft.world.level.block.SnowyDirtBlock.SNOWY;
 
 public class MiscellaneousEvents {
@@ -102,10 +116,41 @@ public class MiscellaneousEvents {
         @SubscribeEvent
         public static void onBlockGrow(BlockGrowFeatureEvent event) {
 //            if ((event.getFeature().is(TreeFeatures.MEGA_PINE)) || (event.getFeature().is(TreeFeatures.MEGA_SPRUCE))) event.setCanceled(true);
-//            switch (event.getFeature().getKey()) {
-//                case TreeFeatures.OAK || TreeFeatures.OAK_BEES_002 || TreeFeatures.OAK_BEES_0002 || TreeFeatures.OAK_BEES_005:
-//                    event.setFeature();
-//            }
+
+            ResourceKey<ConfiguredFeature<?, ?>> feature = event.getFeature().getKey();
+            List<ResourceKey<ConfiguredFeature<?, ?>>> regularOakFeatures = new ArrayList<>();
+            List<ResourceKey<ConfiguredFeature<?, ?>>> fancyOakFeatures = new ArrayList<>();
+            BlockPos pos = event.getPos();
+            int x = pos.getX();
+            int y = pos.getY();
+            int z = pos.getZ();
+            Level level = (Level) event.getLevel();
+            int apples = 0;
+            regularOakFeatures.add(TreeFeatures.OAK);
+            regularOakFeatures.add(TreeFeatures.OAK_BEES_0002);
+            regularOakFeatures.add(TreeFeatures.OAK_BEES_002);
+            regularOakFeatures.add(TreeFeatures.OAK_BEES_005);
+
+            fancyOakFeatures.add(TreeFeatures.FANCY_OAK);
+            fancyOakFeatures.add(TreeFeatures.FANCY_OAK_BEES_0002);
+            fancyOakFeatures.add(TreeFeatures.FANCY_OAK_BEES_002);
+            fancyOakFeatures.add(TreeFeatures.FANCY_OAK_BEES_005);
+            if (regularOakFeatures.contains(feature) || fancyOakFeatures.contains(feature)) {
+                Iterator<BlockPos> it = BlockPos.betweenClosedStream(x - 5, y - 10, z - 5, x + 5, y + 10, z + 5).iterator();
+                while (it.hasNext()) {
+                    BlockPos bp = it.next();
+                    BlockState state = level.getBlockState(bp);
+                    if (state.is(NMLBlocks.APPLE_FRUIT)) apples++;
+                }
+                if (apples >= 12) {
+                    if (regularOakFeatures.contains(feature)) event.setFeature(NMLFeatures.OAK_APPLE_05);
+                    if (fancyOakFeatures.contains(feature)) event.setFeature(NMLFeatures.FANCY_OAK_APPLE_05);
+                }
+                else if (apples > 0) {
+                    if (regularOakFeatures.contains(feature)) event.setFeature(NMLFeatures.OAK_APPLE_01);
+                    if (fancyOakFeatures.contains(feature)) event.setFeature(NMLFeatures.FANCY_OAK_APPLE_01);
+                }
+            }
         }
     }
 

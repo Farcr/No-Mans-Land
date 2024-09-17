@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "nomansland:block/plants/fruit/pear_age_0"
+    },
+    "age=1": {
+      "model": "nomansland:block/plants/fruit/pear_age_1"
+    },
+    "age=2": {
+      "model": "nomansland:block/plants/fruit/pear_age_2"
+    },
+    "age=3": {
+      "model": "nomansland:block/plants/fruit/pear_age_3"
+    },
+    "age=4": {
+      "model": "nomansland:block/plants/fruit/pear_age_4"
+    }
+  }
+}

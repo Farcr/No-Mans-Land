@@ -28,11 +28,10 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 public class FruitBlock extends BushBlock {
-    public static final int MAX_AGE = 4;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_4;
     private final VoxelShape[] shapesByAge;
     private final Holder<Block> fruitLeaves;
-    private final ItemStack fruitDrops;
+    private final Holder<Item> fruitDrops;
 
     public FruitBlock(Properties properties, FruitType fruitType) {
         super(properties);
@@ -72,9 +71,10 @@ public class FruitBlock extends BushBlock {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if (state.getValue(AGE) != getMaxAge()) return InteractionResult.PASS;
-        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == fruitDrops.getItem()))) {
-            if (!player.addItem(fruitDrops) ) {
-                player.drop(fruitDrops, false);
+        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == fruitDrops.value()))) {
+            ItemStack fruitStack = new ItemStack(fruitDrops.value());
+            if (!player.addItem(fruitStack)) {
+                player.drop(fruitStack, false);
             } else {
                 level.playSound(player,
                         player.getX(),

@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "A"
+    ],
+    "key": {
+        "#": {
+            "item": "nomansland:maple_syrup_bottle"
+        },
+        "A": {
+            "item": "nomansland:pear"
+        }
+    },
+    "result": {
+        "id": "nomansland:syruped_pear",
+        "count": 1
+    }
+}

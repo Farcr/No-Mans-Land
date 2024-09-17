@@ -230,13 +230,22 @@
   "item.nomansland.walnut_boat": "Walnut Boat",
   "item.nomansland.walnut_chest_boat": "Walnut Boat with Chest",
 
-  "block.nomansland.apple_fruit_leaves": "Apple Fruit Leaves",
-
   "block.nomansland.cod_barrel": "Cod Barrel",
   "block.nomansland.salmon_barrel": "Salmon Barrel",
   "block.nomansland.tropical_fish_barrel": "Tropical Fish Barrel",
   "block.nomansland.pufferfish_barrel": "Pufferfish Barrel",
   "block.nomansland.gunpowder_barrel": "Gunpowder Barrel",
+
+  "block.nomansland.apple_fruit_leaves": "Apple Fruit Leaves",
+  "block.nomansland.apple_fruit": "Apple",
+
+  "block.nomansland.pear_fruit_leaves": "Pear Fruit Leaves",
+  "block.nomansland.pear_fruit": "Pear",
+  "item.nomansland.pear": "Pear",
+  "item.nomansland.pear_cobbler": "Pear Cobbler",
+  "item.nomansland.syruped_pear": "Syruped Pear",
+  "item.nomansland.pear_juice": "Pear Juice",
+
 
   "item.nomansland.mashed_potatoes_with_mushrooms": "Mashed Potatoes with Mushrooms",
   "item.nomansland.grilled_mushrooms": "Grilled Mushrooms",

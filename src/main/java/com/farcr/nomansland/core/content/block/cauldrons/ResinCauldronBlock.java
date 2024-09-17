@@ -1,5 +1,6 @@
 package com.farcr.nomansland.core.content.block.cauldrons;
 
+import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.farcr.nomansland.core.registry.NMLItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
@@ -46,19 +47,30 @@ public class ResinCauldronBlock extends LayeredCauldronBlock {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        ItemStack resin = new ItemStack(NMLItems.RESIN.get(), level.random.nextInt(2, 5));
-        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == resin.getItem())))
-            if (!player.addItem(resin)) {
+        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == NMLItems.RESIN.asItem()))) {
+            ItemStack resin = new ItemStack(NMLItems.RESIN.get(), level.random.nextInt(2, 5));
+            if (!player.addItem(resin) ) {
                 player.drop(resin, false);
             } else {
-                level.playSound(
-                        player,
-                        pos,
+                level.playSound(player,
+                        player.getX(),
+                        player.getY(),
+                        player.getZ(),
                         SoundEvents.ITEM_PICKUP,
                         SoundSource.PLAYERS,
                         0.2F,
                         (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
             }
+        } else {
+            level.playSound(player,
+                    player.getX(),
+                    player.getY(),
+                    player.getZ(),
+                    SoundEvents.ITEM_PICKUP,
+                    SoundSource.PLAYERS,
+                    0.2F,
+                    (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
+        }
         player.awardStat(Stats.USE_CAULDRON);
         lowerFillLevel(state, level, pos);
         return InteractionResult.sidedSuccess(level.isClientSide);

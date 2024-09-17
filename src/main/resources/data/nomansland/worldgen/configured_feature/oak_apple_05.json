@@ -23,7 +23,8 @@
           }
         },
         "exclusion_radius_xz": 1,
-        "probability": 0.5
+        "probability": 0.5,
+        "limit": 4
       }
     ],
     "dirt_provider": {
