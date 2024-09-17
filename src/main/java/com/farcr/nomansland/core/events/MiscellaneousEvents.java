@@ -17,6 +17,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SnowyDirtBlock;
@@ -115,17 +116,17 @@ public class MiscellaneousEvents {
 
         @SubscribeEvent
         public static void onBlockGrow(BlockGrowFeatureEvent event) {
-//            if ((event.getFeature().is(TreeFeatures.MEGA_PINE)) || (event.getFeature().is(TreeFeatures.MEGA_SPRUCE))) event.setCanceled(true);
-
             ResourceKey<ConfiguredFeature<?, ?>> feature = event.getFeature().getKey();
             List<ResourceKey<ConfiguredFeature<?, ?>>> regularOakFeatures = new ArrayList<>();
             List<ResourceKey<ConfiguredFeature<?, ?>>> fancyOakFeatures = new ArrayList<>();
+            List<ResourceKey<ConfiguredFeature<?, ?>>> autumnalOakFeatures = new ArrayList<>();
             BlockPos pos = event.getPos();
             int x = pos.getX();
             int y = pos.getY();
             int z = pos.getZ();
-            Level level = (Level) event.getLevel();
-            int apples = 0;
+            LevelAccessor level = event.getLevel();
+            int fruit = 0;
+
             regularOakFeatures.add(TreeFeatures.OAK);
             regularOakFeatures.add(TreeFeatures.OAK_BEES_0002);
             regularOakFeatures.add(TreeFeatures.OAK_BEES_002);
@@ -135,18 +136,28 @@ public class MiscellaneousEvents {
             fancyOakFeatures.add(TreeFeatures.FANCY_OAK_BEES_0002);
             fancyOakFeatures.add(TreeFeatures.FANCY_OAK_BEES_002);
             fancyOakFeatures.add(TreeFeatures.FANCY_OAK_BEES_005);
-            if (regularOakFeatures.contains(feature) || fancyOakFeatures.contains(feature)) {
-                Iterator<BlockPos> it = BlockPos.betweenClosedStream(x - 5, y - 10, z - 5, x + 5, y + 10, z + 5).iterator();
+
+            autumnalOakFeatures.add(NMLFeatures.AUTUMNAL_OAK);
+            autumnalOakFeatures.add(NMLFeatures.LARGE_AUTUMNAL_OAK);
+
+            boolean apple = regularOakFeatures.contains(feature) || fancyOakFeatures.contains(feature);
+            boolean pear = autumnalOakFeatures.contains(feature);
+
+            if (apple || pear) {
+                Iterator<BlockPos> it = BlockPos.betweenClosedStream(x - 8, y - 12, z - 8, x + 8, y + 12, z + 8).iterator();
                 while (it.hasNext()) {
                     BlockPos bp = it.next();
                     BlockState state = level.getBlockState(bp);
-                    if (state.is(NMLBlocks.APPLE_FRUIT)) apples++;
+                    if (apple && state.is(NMLBlocks.APPLE_FRUIT)) fruit++;
+                    if (pear && state.is(NMLBlocks.PEAR_FRUIT)) fruit++;
                 }
-                if (apples >= 12) {
+                if (fruit >= 12) {
                     if (regularOakFeatures.contains(feature)) event.setFeature(NMLFeatures.OAK_APPLE_05);
                     if (fancyOakFeatures.contains(feature)) event.setFeature(NMLFeatures.FANCY_OAK_APPLE_05);
+                    if (feature == NMLFeatures.AUTUMNAL_OAK) event.setFeature(NMLFeatures.AUTUMNAL_OAK_PEAR_05);
+                    if (feature == NMLFeatures.LARGE_AUTUMNAL_OAK) event.setFeature(NMLFeatures.LARGE_AUTUMNAL_OAK_PEAR_05);
                 }
-                else if (apples > 0) {
+                else if (fruit > 0) {
                     if (regularOakFeatures.contains(feature)) event.setFeature(NMLFeatures.OAK_APPLE_01);
                     if (fancyOakFeatures.contains(feature)) event.setFeature(NMLFeatures.FANCY_OAK_APPLE_01);
                 }
