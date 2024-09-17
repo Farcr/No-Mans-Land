@@ -47,8 +47,8 @@ public class PebbleBlock extends Block implements SimpleWaterloggedBlock {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         ItemStack pebble = new ItemStack(NMLBlocks.PEBBLES.get());
-        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == pebble.getItem())))
-            if (!player.addItem(pebble)) {
+        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == pebble.getItem()))) {
+            if (!player.addItem(pebble) ) {
                 player.drop(pebble, false);
             } else {
                 level.playSound(player,
@@ -60,8 +60,18 @@ public class PebbleBlock extends Block implements SimpleWaterloggedBlock {
                         0.2F,
                         (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
             }
-        level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        } else {
+            level.playSound(player,
+                    player.getX(),
+                    player.getY(),
+                    player.getZ(),
+                    SoundEvents.ITEM_PICKUP,
+                    SoundSource.PLAYERS,
+                    0.2F,
+                    (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
+        }
+    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
+    return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {

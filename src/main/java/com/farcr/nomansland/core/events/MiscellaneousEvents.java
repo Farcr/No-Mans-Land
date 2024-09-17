@@ -15,16 +15,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.dimension.DimensionType;
-import net.minecraft.world.level.dimension.LevelStem;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.level.BlockGrowFeatureEvent;
-import net.neoforged.neoforge.event.tick.ServerTickEvent;
 
 import static com.farcr.nomansland.core.content.block.FrostedGrassBlock.SNOWLOGGED;
 import static net.minecraft.world.level.block.SnowyDirtBlock.SNOWY;
@@ -104,8 +100,12 @@ public class MiscellaneousEvents {
         }
 
         @SubscribeEvent
-        public static void onPodzolSpread(BlockGrowFeatureEvent event) {
+        public static void onBlockGrow(BlockGrowFeatureEvent event) {
 //            if ((event.getFeature().is(TreeFeatures.MEGA_PINE)) || (event.getFeature().is(TreeFeatures.MEGA_SPRUCE))) event.setCanceled(true);
+//            switch (event.getFeature().getKey()) {
+//                case TreeFeatures.OAK || TreeFeatures.OAK_BEES_002 || TreeFeatures.OAK_BEES_0002 || TreeFeatures.OAK_BEES_005:
+//                    event.setFeature();
+//            }
         }
     }
 

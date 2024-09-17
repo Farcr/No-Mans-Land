@@ -2,9 +2,12 @@ package com.farcr.nomansland.core.content.block.fruit_trees;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -14,14 +17,14 @@ import static com.farcr.nomansland.core.content.block.fruit_trees.FruitBlock.AGE
 
 public class FruitLeavesBlock extends LeavesBlock {
 
-    public Supplier<? extends Block> fruit;
-    public Block leaves;
+    public Holder<Block> fruit;
+    public Holder<Block> leaves;
     public int growthSpeed;
 
-    public FruitLeavesBlock(Properties properties, FruitType fruitType, Block leaves) {
+    public FruitLeavesBlock(Properties properties, FruitType fruitType) {
         super(properties);
         this.fruit = fruitType.getFruitBlock();
-        this.leaves = leaves;
+        this.leaves = fruitType.getLeaves();
         this.growthSpeed = fruitType.getGrowthSpeed();
     }
 
@@ -48,10 +51,9 @@ public class FruitLeavesBlock extends LeavesBlock {
                     if (level.getBlockState(relativePos1).is(leaves)) regularLeaves++;
                 }
             }
-            int distance = state.getValue(DISTANCE);
-            boolean waterlogged = state.getValue(WATERLOGGED);
-            if (regularLeaves < 4) level.setBlockAndUpdate(pos, leaves.defaultBlockState().setValue(DISTANCE, distance).setValue(WATERLOGGED, waterlogged));
-            if (fruitLeaves > 4) level.setBlockAndUpdate(pos, leaves.defaultBlockState().setValue(DISTANCE, distance).setValue(WATERLOGGED, waterlogged));
+
+            if (regularLeaves < 4) rot(level, pos, state);
+            if (fruitLeaves > 4) rot(level, pos, state);
         }
         // place or grow the fruit block underneath
         BlockPos fruitPos = pos.below();
@@ -63,7 +65,14 @@ public class FruitLeavesBlock extends LeavesBlock {
                 if (fruitAge < fruitBlock.getMaxAge()) {
                     level.setBlockAndUpdate(fruitPos, fruitState.setValue(AGE, fruitAge+1));
                 }
-            } else if (fruitState.isAir()) level.setBlockAndUpdate(fruitPos, fruit.get().defaultBlockState().setValue(AGE, 0));
+            } else if (fruitState.isAir()) level.setBlockAndUpdate(fruitPos, fruit.value().defaultBlockState().setValue(AGE, 0));
         }
+    }
+
+    public void rot(Level level, BlockPos pos, BlockState state) {
+        int distance = state.getValue(DISTANCE);
+        boolean waterlogged = state.getValue(WATERLOGGED);
+        level.setBlockAndUpdate(pos.below(), Blocks.AIR.defaultBlockState());
+        level.setBlockAndUpdate(pos, leaves.value().defaultBlockState().setValue(DISTANCE, distance).setValue(WATERLOGGED, waterlogged));
     }
 }

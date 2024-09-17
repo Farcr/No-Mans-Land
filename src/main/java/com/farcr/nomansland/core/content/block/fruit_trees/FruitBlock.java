@@ -1,7 +1,9 @@
 package com.farcr.nomansland.core.content.block.fruit_trees;
 
+import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -11,6 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -28,7 +31,7 @@ public class FruitBlock extends BushBlock {
     public static final int MAX_AGE = 4;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_4;
     private final VoxelShape[] shapesByAge;
-    private final Supplier<? extends Block> fruitLeaves;
+    private final Holder<Block> fruitLeaves;
     private final ItemStack fruitDrops;
 
     public FruitBlock(Properties properties, FruitType fruitType) {
@@ -46,7 +49,7 @@ public class FruitBlock extends BushBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
-        return level.getBlockState(pos.above(2)).is(fruitLeaves.get());
+        return level.getBlockState(pos.above(2)).is(fruitLeaves.value());
     }
 
     @Override
@@ -69,8 +72,8 @@ public class FruitBlock extends BushBlock {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if (state.getValue(AGE) != getMaxAge()) return InteractionResult.PASS;
-        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == fruitDrops.getItem())))
-            if (!player.addItem(fruitDrops)) {
+        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == fruitDrops.getItem()))) {
+            if (!player.addItem(fruitDrops) ) {
                 player.drop(fruitDrops, false);
             } else {
                 level.playSound(player,
@@ -82,6 +85,16 @@ public class FruitBlock extends BushBlock {
                         0.2F,
                         (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
             }
+        } else {
+            level.playSound(player,
+                    player.getX(),
+                    player.getY(),
+                    player.getZ(),
+                    SoundEvents.ITEM_PICKUP,
+                    SoundSource.PLAYERS,
+                    0.2F,
+                    (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
+        }
         level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
@@ -93,6 +106,6 @@ public class FruitBlock extends BushBlock {
     @Override
     protected void onProjectileHit(Level level, BlockState state, BlockHitResult hit, Projectile projectile) {
         if (state.getValue(AGE) != getMaxAge()) return;
-        level.destroyBlock(projectile.getOnPos(), true);
+        level.destroyBlock(hit.getBlockPos(), true);
     }
 }

@@ -41,18 +41,19 @@ public class FruitLeavesDecorator extends TreeDecorator {
     public void place(TreeDecorator.Context context) {
         Set<BlockPos> set = new HashSet<>();
         RandomSource randomsource = context.random();
+        if (randomsource.nextFloat() < this.probability) {
+            for (BlockPos blockpos : Util.shuffledCopy(context.leaves(), randomsource)) {
+                if (!set.contains(blockpos) && context.isAir(blockpos.below())) {
+                    BlockPos blockpos2 = blockpos.offset(-this.exclusionRadiusXZ, 0, -this.exclusionRadiusXZ);
+                    BlockPos blockpos3 = blockpos.offset(this.exclusionRadiusXZ, 0, this.exclusionRadiusXZ);
 
-        for (BlockPos blockpos : Util.shuffledCopy(context.leaves(), randomsource)) {
-            if (!set.contains(blockpos) && randomsource.nextFloat() < this.probability && context.isAir(blockpos.below())) {
-                BlockPos blockpos2 = blockpos.offset(-this.exclusionRadiusXZ, 0, -this.exclusionRadiusXZ);
-                BlockPos blockpos3 = blockpos.offset(this.exclusionRadiusXZ, 0, this.exclusionRadiusXZ);
+                    for (BlockPos blockpos4 : BlockPos.betweenClosed(blockpos2, blockpos3)) {
+                        set.add(blockpos4.immutable());
+                    }
 
-                for (BlockPos blockpos4 : BlockPos.betweenClosed(blockpos2, blockpos3)) {
-                    set.add(blockpos4.immutable());
+                    context.setBlock(blockpos, this.leavesProvider.getState(randomsource, blockpos));
+                    context.setBlock(blockpos.below(), this.fruitProvider.getState(randomsource, blockpos.below()));
                 }
-
-                context.setBlock(blockpos, this.leavesProvider.getState(randomsource, blockpos));
-                context.setBlock(blockpos.below(), this.fruitProvider.getState(randomsource, blockpos.below()));
             }
         }
     }
