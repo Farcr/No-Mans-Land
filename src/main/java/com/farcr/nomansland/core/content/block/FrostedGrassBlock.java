@@ -32,7 +32,7 @@ import static net.minecraft.world.level.block.SnowyDirtBlock.SNOWY;
 
 public class FrostedGrassBlock extends BushBlock {
     public static final BooleanProperty SNOWLOGGED = BooleanProperty.create("snowlogged");
-    protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 13.0D, 15.0D);
+    protected static final VoxelShape SHAPE = Block.box(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
     protected static final VoxelShape SNOWLOGGED_SHAPE = Shapes.or(SHAPE, Block.box(0.0, 0.0, 0.0, 16.0, 2.0, 16.0));
 
     //TODO: change shape when snowy

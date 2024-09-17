@@ -8,6 +8,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -28,6 +29,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.Set;
+
 public class PebbleBlock extends Block implements SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 15.0D);
@@ -41,14 +44,22 @@ public class PebbleBlock extends Block implements SimpleWaterloggedBlock {
         return SHAPE;
     }
 
-
-    // TODO: should this be possible while also holding an item
-    //@Farcr: it already is dumbass
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         ItemStack pebble = new ItemStack(NMLBlocks.PEBBLES.get());
-        if (!(player.isCreative() && player.getMainHandItem().is(NMLBlocks.PEBBLES.asItem())) && !player.addItem(pebble)) {
-            player.drop(pebble, false);
+        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == pebble.getItem()))) {
+            if (!player.addItem(pebble) ) {
+                player.drop(pebble, false);
+            } else {
+                level.playSound(player,
+                        player.getX(),
+                        player.getY(),
+                        player.getZ(),
+                        SoundEvents.ITEM_PICKUP,
+                        SoundSource.PLAYERS,
+                        0.2F,
+                        (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
+            }
         } else {
             level.playSound(player,
                     player.getX(),
@@ -59,8 +70,8 @@ public class PebbleBlock extends Block implements SimpleWaterloggedBlock {
                     0.2F,
                     (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
         }
-        level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-        return InteractionResult.sidedSuccess(level.isClientSide);
+    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
+    return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {

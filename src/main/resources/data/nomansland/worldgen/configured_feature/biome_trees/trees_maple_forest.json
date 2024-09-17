@@ -5,11 +5,11 @@
     "features": [
       {
         "chance": 0.05,
-        "feature": "minecraft:oak_checked"
+        "feature": "nomansland:oak_apple_01"
       },
       {
         "chance": 0.05,
-        "feature": "minecraft:fancy_oak_checked"
+        "feature": "nomansland:fancy_oak_apple_01"
       },
       {
         "chance": 0.1,

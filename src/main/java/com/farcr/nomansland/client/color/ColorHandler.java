@@ -15,9 +15,7 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 public class ColorHandler {
     @SubscribeEvent
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
-        event.getItemColors().register((stack, index) -> {
-                    return GrassColor.get(0.5D, 1.0D);
-                },
+        event.getItemColors().register((stack, index) -> GrassColor.get(0.5D, 1.0D),
                 NMLBlocks.GRASS_SPROUTS.get(),
                 NMLBlocks.FIDDLEHEAD.get()
         );
@@ -30,9 +28,7 @@ public class ColorHandler {
                 },
                 NMLBlocks.OAT_GRASS.get()
         );
-        event.getItemColors().register((stack, index) -> {
-                    return FoliageColor.get(0.5D, 1.0D);
-                },
+        event.getItemColors().register((stack, index) -> FoliageColor.get(0.5D, 1.0D),
                 NMLBlocks.MAPLE_LEAVES.get(),
                 NMLBlocks.WALNUT_LEAVES.get(),
                 NMLBlocks.APPLE_FRUIT_LEAVES.get()

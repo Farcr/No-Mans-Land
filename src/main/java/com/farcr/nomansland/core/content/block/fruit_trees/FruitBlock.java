@@ -1,43 +1,44 @@
 package com.farcr.nomansland.core.content.block.fruit_trees;
 
+import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.Set;
 import java.util.function.Supplier;
 
 public class FruitBlock extends BushBlock {
     public static final int MAX_AGE = 4;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_4;
-    private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
-            Block.box(6, 10, 7, 10, 14, 11),
-            Block.box(6, 10, 7, 10, 14, 11),
-            Block.box(5.5, 9, 6.5, 10.5, 14, 11.5),
-            Block.box(5.5, 9, 6.5, 10.5, 14, 11.5),
-            Block.box(5.5, 9, 6.5, 10.5, 14, 11.5)
-            };
-    public Supplier<? extends Block> fruitLeaves;
-    public ItemStack fruitItem;
+    private final VoxelShape[] shapesByAge;
+    private final Holder<Block> fruitLeaves;
+    private final ItemStack fruitDrops;
 
     public FruitBlock(Properties properties, FruitType fruitType) {
         super(properties);
+        this.shapesByAge = fruitType.getShapesByAge();
         this.fruitLeaves = fruitType.getFruitLeaves();
-        this.fruitItem = fruitType.getFruitDrops();
+        this.fruitDrops = fruitType.getFruitDrops();
         registerDefaultState(stateDefinition.any().setValue(AGE, 0));
     }
 
@@ -48,7 +49,7 @@ public class FruitBlock extends BushBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
-        return level.getBlockState(pos.above(2)).is(fruitLeaves.get());
+        return level.getBlockState(pos.above(2)).is(fruitLeaves.value());
     }
 
     @Override
@@ -58,7 +59,9 @@ public class FruitBlock extends BushBlock {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE_BY_AGE[state.getValue(AGE)];
+        Vec3 vec3 = state.getOffset(level, pos);
+        VoxelShape voxelshape = shapesByAge[state.getValue(AGE)];
+        return voxelshape.move(vec3.x, vec3.y, vec3.z);
     }
 
     @Override
@@ -69,12 +72,30 @@ public class FruitBlock extends BushBlock {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if (state.getValue(AGE) != getMaxAge()) return InteractionResult.PASS;
-        ItemStack fruit = new ItemStack(Items.APPLE);
-        if (!player.addItem(fruit)) {
-            if (!player.isCreative()) player.drop(fruit, false);
+        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == fruitDrops.getItem()))) {
+            if (!player.addItem(fruitDrops) ) {
+                player.drop(fruitDrops, false);
+            } else {
+                level.playSound(player,
+                        player.getX(),
+                        player.getY(),
+                        player.getZ(),
+                        SoundEvents.ITEM_PICKUP,
+                        SoundSource.PLAYERS,
+                        0.2F,
+                        (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
+            }
+        } else {
+            level.playSound(player,
+                    player.getX(),
+                    player.getY(),
+                    player.getZ(),
+                    SoundEvents.ITEM_PICKUP,
+                    SoundSource.PLAYERS,
+                    0.2F,
+                    (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
         }
         level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-        level.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2F, (level.random.nextFloat() - level.random.nextFloat()) * 1.4F + 2.0F);
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
@@ -82,7 +103,9 @@ public class FruitBlock extends BushBlock {
         return 4;
     }
 
-    protected static int getGrowthSpeed() {
-        return 3;
+    @Override
+    protected void onProjectileHit(Level level, BlockState state, BlockHitResult hit, Projectile projectile) {
+        if (state.getValue(AGE) != getMaxAge()) return;
+        level.destroyBlock(hit.getBlockPos(), true);
     }
 }
