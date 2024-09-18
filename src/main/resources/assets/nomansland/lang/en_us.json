@@ -33,6 +33,7 @@
 
   "block.nomansland.mundane_tiles": "Mundane Tiles",
   "block.nomansland.earthen_tiles": "Earthen Tiles",
+  "block.nomansland.olivine_tiles": "Olivine Tiles",
 
   "block.nomansland.aconite": "Aconite",
   "block.nomansland.potted_aconite": "Potted Aconite",
@@ -241,10 +242,14 @@
 
   "block.nomansland.pear_fruit_leaves": "Pear Fruit Leaves",
   "block.nomansland.pear_fruit": "Pear",
+  "block.nomansland.pear_crate": "Pear Crate",
   "item.nomansland.pear": "Pear",
   "item.nomansland.pear_cobbler": "Pear Cobbler",
   "item.nomansland.syruped_pear": "Syruped Pear",
   "item.nomansland.pear_juice": "Pear Juice",
+
+  "item.nomansland.honeyed_apple": "Honeyed Apple",
+  "block.nomansland.apple_crate": "Apple Crate",
 
 
   "item.nomansland.mashed_potatoes_with_mushrooms": "Mashed Potatoes with Mushrooms",
