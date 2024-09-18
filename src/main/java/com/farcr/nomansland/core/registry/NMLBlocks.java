@@ -2,7 +2,8 @@ package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.block.*;
-import com.farcr.nomansland.core.content.block.cauldrons.HoneyCauldronBlock;
+import com.farcr.nomansland.core.content.block.cauldrons.BottledCauldronBlock;
+import com.farcr.nomansland.core.content.block.cauldrons.BottledCauldronType;
 import com.farcr.nomansland.core.content.block.cauldrons.ResinCauldronBlock;
 import com.farcr.nomansland.core.content.block.fruit_trees.FruitType;
 import com.farcr.nomansland.core.content.block.fruit_trees.FruitLeavesBlock;
@@ -96,8 +97,11 @@ public class NMLBlocks {
 
     public static final DeferredBlock<ResinCauldronBlock> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
             ResinCauldronBlock::new);
-    public static final DeferredBlock<HoneyCauldronBlock> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
-            HoneyCauldronBlock::new);
+    public static final DeferredBlock<BottledCauldronBlock> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
+            () -> new BottledCauldronBlock(BottledCauldronType.HONEY));
+
+    public static final DeferredBlock<BottledCauldronBlock> MAPLE_SYRUP_CAULDRON = BLOCKS.register("maple_syrup_cauldron",
+            () -> new BottledCauldronBlock(BottledCauldronType.MAPLE));
     //Plants and Other Natural Decorations
     public static final DeferredBlock<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
             () -> new GrassSproutsBlock(Block.Properties.ofFullCopy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));

@@ -52,7 +52,7 @@ public final class NMLTreeGrowers {
     public static final TreeGrower PINE = new TreeGrower(
             "pine",
             Optional.empty(),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "pine"))),
+            Optional.of(NMLFeatures.PINE),
             Optional.empty()
     );
 

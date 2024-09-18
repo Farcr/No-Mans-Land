@@ -11,8 +11,6 @@ import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConf
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.util.Optional;
-
 public class NMLFeatures {
     public static final DeferredRegister<Feature<?>> FEATURES =
             DeferredRegister.create(Registries.FEATURE, NoMansLand.MODID);
@@ -36,6 +34,13 @@ public class NMLFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> AUTUMNAL_OAK_PEAR_05 = register("autumnal_oak_pear_05");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_AUTUMNAL_OAK_PEAR_05 = register("large_autumnal_oak_pear_05");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FROSTED_SPRUCE = register("frosted_spruce");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FROSTED_SPRUCE_ALT = register("frosted_spruce_alt");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FROSTED_PINE = register("frosted_pine");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PINE = register("pine");
+
 
     public static ResourceKey<ConfiguredFeature<?, ?>> register(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, name));

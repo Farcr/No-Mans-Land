@@ -26,7 +26,7 @@ import net.minecraft.world.phys.HitResult;
 
 public class ResinCauldronBlock extends LayeredCauldronBlock {
     public ResinCauldronBlock() {
-        super(null, CauldronInteraction.EMPTY, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON));
+        super(Biome.Precipitation.NONE, CauldronInteraction.EMPTY, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON));
     }
 
     public void fillUp(BlockState state, Level level, BlockPos pos) {

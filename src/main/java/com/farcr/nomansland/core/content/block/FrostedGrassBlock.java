@@ -47,10 +47,10 @@ public class FrostedGrassBlock extends BushBlock {
             level.setBlockAndUpdate(pos, state.setValue(SNOWLOGGED, true));
             stack.consume(1, player);
             level.playSound(player, pos, SoundEvents.SNOW_PLACE, SoundSource.PLAYERS, 1.0F, (level.random.nextFloat() - level.random.nextFloat()) * 0.6F + 1.2F);
-            BlockPos posUnder = pos.relative(Direction.DOWN);
-            BlockState stateUnder = level.getBlockState(posUnder);
+            BlockPos posBelow = pos.below();
+            BlockState stateUnder = level.getBlockState(posBelow);
             if (stateUnder.getBlock() instanceof SnowyDirtBlock)
-                level.setBlockAndUpdate(posUnder, stateUnder.setValue(SNOWY, true));
+                level.setBlockAndUpdate(posBelow, stateUnder.setValue(SNOWY, true));
             return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
         return ItemInteractionResult.FAIL;
