@@ -43,16 +43,20 @@ public final class NMLTreeGrowers {
             0.1F,
             Optional.empty(),
             Optional.empty(),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "autumnal_oak"))),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "large_autumnal_oak"))),
+            Optional.of(NMLFeatures.AUTUMNAL_OAK),
+            Optional.of(NMLFeatures.LARGE_AUTUMNAL_OAK),
             Optional.empty(),
             Optional.empty()
     );
 
     public static final TreeGrower PINE = new TreeGrower(
             "pine",
+            0.2f,
+            Optional.empty(),
             Optional.empty(),
             Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "pine"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "large_pine"))),
+            Optional.empty(),
             Optional.empty()
     );
 

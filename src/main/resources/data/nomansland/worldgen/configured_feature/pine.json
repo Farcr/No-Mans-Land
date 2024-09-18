@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:tree",
+  "type": "nomansland:pine_tree",
   "config": {
     "decorators": [],
     "dirt_provider": {

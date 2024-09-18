@@ -35,7 +35,7 @@ public enum FruitType {
     private final Holder<Item> fruitDrops;
     private final VoxelShape[] shapesByAge;
 
-    private FruitType(Holder<Block> fruit, Holder<Block> fruitLeaves, Holder<Block> leaves, int growthSpeed, Holder<Item> fruitDrops, VoxelShape[] shapesByAge) {
+    FruitType(Holder<Block> fruit, Holder<Block> fruitLeaves, Holder<Block> leaves, int growthSpeed, Holder<Item> fruitDrops, VoxelShape[] shapesByAge) {
         this.fruit = fruit;
         this.fruitLeaves = fruitLeaves;
         this.leaves = leaves;

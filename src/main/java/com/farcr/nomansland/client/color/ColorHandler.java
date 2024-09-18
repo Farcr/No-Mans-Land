@@ -55,7 +55,8 @@ public class ColorHandler {
         event.getBlockColors().register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : GrassColor.get(0.5D, 1.0D),
                 NMLBlocks.MAPLE_LEAVES.get(),
                 NMLBlocks.WALNUT_LEAVES.get(),
-                NMLBlocks.APPLE_FRUIT_LEAVES.get()
+                NMLBlocks.APPLE_FRUIT_LEAVES.get(),
+                NMLBlocks.DUCKWEED.get()
 //                NMLBlocks.CUT_VINE.get()
         );
     }

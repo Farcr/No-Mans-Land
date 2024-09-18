@@ -201,6 +201,7 @@ public class NMLItems {
             event.accept(NMLBlocks.DRIED_GRASS.get());
             event.accept(NMLBlocks.FIDDLEHEAD.get());
             event.accept(NMLBlocks.CATTAIL.get());
+            event.accept(NMLBlocks.DUCKWEED.get());
             event.accept(NMLBlocks.CLOVER_PATCH.get());
             event.accept(NMLBlocks.RED_FLOWERBED.get());
             event.accept(NMLBlocks.YELLOW_FLOWERBED.get());

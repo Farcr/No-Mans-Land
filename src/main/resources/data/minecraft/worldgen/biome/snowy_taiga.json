@@ -24,8 +24,8 @@
       "replace_current_music": false,
       "sound": "music.overworld.old_growth_taiga"
     },
-    "water_color": 4223408,
-    "water_fog_color": 2383519
+    "water_color": 4220592,
+    "water_fog_color": 2771621
   },
   "features": [
     [],
@@ -83,8 +83,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_taiga_2",
+      "nomansland:flower_patches/flowers_white",
+      "nomansland:flower_patches/flowerbed_frosted",
       "minecraft:patch_large_fern",
       "minecraft:brown_mushroom_taiga",
       "minecraft:red_mushroom_taiga",
@@ -114,12 +114,6 @@
         "maxCount": 4,
         "minCount": 1,
         "weight": 6
-      },
-      {
-        "type": "minecraft:pig",
-        "maxCount": 6,
-        "minCount": 4,
-        "weight": 14
       },
       {
         "type": "minecraft:chicken",

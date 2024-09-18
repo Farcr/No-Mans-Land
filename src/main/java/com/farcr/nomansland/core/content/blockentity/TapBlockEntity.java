@@ -1,13 +1,12 @@
 package com.farcr.nomansland.core.content.blockentity;
 
 import com.farcr.nomansland.core.config.NMLConfig;
-import com.farcr.nomansland.core.content.block.cauldrons.HoneyCauldronBlock;
+import com.farcr.nomansland.core.content.block.cauldrons.BottledCauldronBlock;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AbstractCauldronBlock;
-import net.minecraft.world.level.block.BeehiveBlock;
 import net.minecraft.world.level.block.CauldronBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -29,18 +28,17 @@ public class TapBlockEntity extends BlockEntity {
         BlockPos cauldronPos = getCauldronPos(level, pos);
         if (cauldronPos == null) return;
         BlockState cauldronState = level.getBlockState(cauldronPos);
-
-        BlockState blockBehindState = getBlockStateBehind(level, pos, state);
+        BlockState stateBehind = getBlockStateBehind(level, pos, state);
 
         // Fill selected cauldron with honey if the block behind is a full beehive
-        if (blockBehindState.getBlock() instanceof BeehiveBlock && blockBehindState.getValue(HONEY_LEVEL) == 5) {
+        if (stateBehind.hasProperty(HONEY_LEVEL) && stateBehind.getValue(HONEY_LEVEL) == 5) {
             tap.timeHoney++;
             boolean honeyConsumed = false;
             if (cauldronState.getBlock() instanceof AbstractCauldronBlock cauldron) {
                 if (!cauldron.isFull(cauldronState)) {
                     if (tap.timeHoney < NMLConfig.TICKS_TO_FILL_CAULDRON.get())
-                        spawnDrippingParticles(level, pos, state, FluidType.HONEY);
-                    else if (cauldronState.getBlock() instanceof HoneyCauldronBlock honeyCauldron) {
+                        spawnDrippingParticles(level, pos, state, FluidParticleType.HONEY);
+                    else if (cauldronState.getBlock() instanceof BottledCauldronBlock honeyCauldron) {
                         honeyCauldron.fillUp(cauldronState, level, cauldronPos);
                         honeyConsumed = true;
                     } else if (cauldronState.getBlock() instanceof CauldronBlock) {
@@ -53,8 +51,8 @@ public class TapBlockEntity extends BlockEntity {
             if (honeyConsumed) {
                 tap.timeHoney = 0;
                 BlockPos beehivePos = pos.relative(state.getValue(FACING).getOpposite());
-                level.setBlockAndUpdate(beehivePos, blockBehindState.setValue(HONEY_LEVEL, 0));
-                level.gameEvent(GameEvent.BLOCK_CHANGE, beehivePos, GameEvent.Context.of(blockBehindState));
+                level.setBlockAndUpdate(beehivePos, stateBehind.setValue(HONEY_LEVEL, 0));
+                level.gameEvent(GameEvent.BLOCK_CHANGE, beehivePos, GameEvent.Context.of(stateBehind));
             }
         }
     }

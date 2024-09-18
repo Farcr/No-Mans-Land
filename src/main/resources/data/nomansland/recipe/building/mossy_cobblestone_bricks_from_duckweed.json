@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "#C#",
+        " # "
+    ],
+    "key": {
+        "#": {
+            "item": "nomansland:duckweed"
+        },
+        "C": {
+            "item": "nomansland:cobblestone_bricks"
+        }
+    },
+    "result": {
+        "id": "nomansland:mossy_cobblestone_bricks",
+        "count": 1
+    }
+}

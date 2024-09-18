@@ -1,0 +1,18 @@
+{
+  "feature": "nomansland:stony_shore_tide_pool",
+  "placement": [
+    {
+      "type": "minecraft:noise_threshold_count",
+      "above_noise": 55,
+      "below_noise": 40,
+      "noise_level": -0.8
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}
