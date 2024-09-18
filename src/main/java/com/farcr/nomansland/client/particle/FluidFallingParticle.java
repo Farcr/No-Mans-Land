@@ -9,8 +9,8 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 
-public class ResinFallingParticle extends TextureSheetParticle {
-    public ResinFallingParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet) {
+public class FluidFallingParticle extends TextureSheetParticle {
+    public FluidFallingParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet) {
         super(level, x, y, z);
         this.setSprite(spriteSet.get(this.random.nextInt(4), 4));
         this.gravity = 0.01F;

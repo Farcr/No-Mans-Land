@@ -1,6 +1,7 @@
 package com.farcr.nomansland.core.content.block;
 
 import com.farcr.nomansland.core.config.NMLConfig;
+import com.farcr.nomansland.core.content.block.cauldrons.BottledCauldronBlock;
 import com.farcr.nomansland.core.content.block.cauldrons.ResinCauldronBlock;
 import com.farcr.nomansland.core.content.blockentity.TapBlockEntity;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
@@ -58,22 +59,22 @@ public class TapBlock extends BaseEntityBlock {
     }
 
     public static BlockState getBlockStateBehind(Level level, BlockPos pos, BlockState state) {
-        BlockState levelBlockStateBehind = level.getBlockState(pos.relative(state.getValue(FACING).getOpposite()));
-        return levelBlockStateBehind;
+        return level.getBlockState(pos.relative(state.getValue(FACING).getOpposite()));
     }
 
     public static BlockPos getCauldronPos(Level level, BlockPos tapPos) {
         // Get the position and state of the closest cauldron downwards (up to a max of 3 blocks down)
         for (int i = 0; i <= 3; i++) {
-            BlockState blockUnder = level.getBlockState(tapPos.relative(Direction.DOWN, i));
-            if (blockUnder.getBlock() instanceof AbstractCauldronBlock) {
-                return tapPos.relative(Direction.DOWN, i);
-            }
+            BlockPos posBelow = tapPos.below(i);
+            BlockState stateBelow = level.getBlockState(posBelow);
+            if (stateBelow.getBlock() instanceof AbstractCauldronBlock) {
+                return posBelow;
+            } else if (stateBelow.isCollisionShapeFullBlock(level, posBelow)) return null;
         }
         return null;
     }
 
-    public static void spawnDrippingParticles(Level level, BlockPos pos, BlockState state, FluidType fluidType) {
+    public static void spawnDrippingParticles(Level level, BlockPos pos, BlockState state, FluidParticleType fluidParticleType) {
         double x = pos.getX();
         double y = pos.getY();
         double z = pos.getZ();
@@ -103,9 +104,7 @@ public class TapBlock extends BaseEntityBlock {
                 break;
             }
         }
-        ParticleOptions particle = null;
-        if (fluidType.equals(FluidType.RESIN)) particle = NMLParticleTypes.RESIN_DROPLET.get();
-        if (fluidType.equals(FluidType.HONEY)) particle = ParticleTypes.FALLING_HONEY;
+        ParticleOptions particle = fluidParticleType.getParticle();
         if (level.isClientSide) level.addParticle(particle, x, y, z, 0.0, 0.0, 0.0);
         else {
             ServerLevel serverLevel = (ServerLevel) level;
@@ -152,7 +151,7 @@ public class TapBlock extends BaseEntityBlock {
     }
 
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.relative(state.getValue(FACING).getOpposite())).isSolid();
+        return level.getBlockState(pos.relative(state.getValue(FACING).getOpposite())).isCollisionShapeFullBlock(level, pos);
     }
 
     public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
@@ -168,14 +167,6 @@ public class TapBlock extends BaseEntityBlock {
         return true;
     }
 
-    public float getTickingChance() {
-        // this is here for the offchance that we support stuff other than resin (or a mod adds the support)
-        // to allow easy changing of ticking chance depending on fluid type
-
-        // The ticking chance is the chance that one tick will actually go through
-        return (float) (0.1F * NMLConfig.FILLING_SPEED_MULTIPLIER.get());
-    }
-
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         // Ensure only 0.3 of ticks actually cause the function to run
@@ -185,37 +176,50 @@ public class TapBlock extends BaseEntityBlock {
         if (cauldronPos == null) return;
         BlockState cauldronState = level.getBlockState(cauldronPos);
 
-        BlockState blockBehindState = getBlockStateBehind(level, pos, state);
-
-        // Set ticking speed for resin
-        if (random.nextFloat() > getTickingChance()) return;
+        BlockState stateBehind = getBlockStateBehind(level, pos, state);
 
         // Fill selected cauldron with resin
-        tryResin(blockBehindState, cauldronState, cauldronPos, level);
+        if (stateBehind.is(NMLTags.CONIFEROUS_LOGS)) tryResin(cauldronState, cauldronPos, level, random);
+        if (stateBehind.is(NMLBlocks.MAPLE_LOG)) tryMaple(cauldronState, cauldronPos, level, random);
     }
 
-    public void tryResin(BlockState blockBehindState, BlockState cauldronState, BlockPos cauldronPos, Level level) {
-        if (blockBehindState.is(NMLTags.CONIFEROUS_LOGS)) {
-            if (cauldronState.getBlock() instanceof ResinCauldronBlock cauldron) {
-                if (!cauldron.isFull(cauldronState)) cauldron.fillUp(cauldronState, level, cauldronPos);
+    public void tryResin(BlockState cauldronState, BlockPos cauldronPos, Level level, RandomSource random) {
+            if (cauldronState.getBlock() instanceof ResinCauldronBlock cauldron
+                    && !cauldron.isFull(cauldronState) && random.nextFloat() < 0.1F * NMLConfig.FILLING_SPEED_MULTIPLIER.get()) {
+                cauldron.fillUp(cauldronState, level, cauldronPos);
             } else if (cauldronState.getBlock() instanceof CauldronBlock) {
                 level.setBlockAndUpdate(cauldronPos, NMLBlocks.RESIN_CAULDRON.get().defaultBlockState());
                 level.gameEvent(GameEvent.BLOCK_CHANGE, cauldronPos, GameEvent.Context.of(cauldronState));
             }
+    }
+
+    public void tryMaple(BlockState cauldronState, BlockPos cauldronPos, Level level, RandomSource random) {
+        if (cauldronState.getBlock() instanceof BottledCauldronBlock cauldron && cauldron.getCauldronBlock() == NMLBlocks.MAPLE_SYRUP_CAULDRON &&
+                !cauldron.isFull(cauldronState) && random.nextFloat() < 0.1F * NMLConfig.FILLING_SPEED_MULTIPLIER.get()) {
+            cauldron.fillUp(cauldronState, level, cauldronPos);
+        } else if (cauldronState.getBlock() instanceof CauldronBlock) {
+            level.setBlockAndUpdate(cauldronPos, NMLBlocks.MAPLE_SYRUP_CAULDRON.get().defaultBlockState());
+            level.gameEvent(GameEvent.BLOCK_CHANGE, cauldronPos, GameEvent.Context.of(cauldronState));
         }
     }
 
     @Override
     @OnlyIn(Dist.CLIENT)
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        BlockState blockStateBehind = getBlockStateBehind(level, pos, state);
-        if (blockStateBehind.is(NMLTags.CONIFEROUS_LOGS)) {
+        BlockState stateBehind = getBlockStateBehind(level, pos, state);
+        if (stateBehind.is(NMLTags.CONIFEROUS_LOGS)) {
             if (random.nextFloat() <= 0.05F) {
-                spawnDrippingParticles(level, pos, state, FluidType.RESIN);
+                spawnDrippingParticles(level, pos, state, FluidParticleType.RESIN);
             }
-        } else if (blockStateBehind.getBlock() instanceof BeehiveBlock && blockStateBehind.getValue(HONEY_LEVEL) > 0) {
-            if (random.nextFloat() <= (0.05F * blockStateBehind.getValue(HONEY_LEVEL))) {
-                spawnDrippingParticles(level, pos, state, FluidType.HONEY);
+        }
+        if (stateBehind.hasProperty(HONEY_LEVEL) && stateBehind.getValue(HONEY_LEVEL) > 0) {
+            if (random.nextFloat() <= (0.05F * stateBehind.getValue(HONEY_LEVEL))) {
+                spawnDrippingParticles(level, pos, state, FluidParticleType.HONEY);
+            }
+        }
+        if (stateBehind.is(NMLBlocks.MAPLE_LOG)) {
+            if (random.nextFloat() <= 0.05F) {
+                spawnDrippingParticles(level, pos, state, FluidParticleType.MAPLE);
             }
         }
     }
@@ -231,8 +235,19 @@ public class TapBlock extends BaseEntityBlock {
         return createTickerHelper(blockEntity, NMLBlockEntities.TAP.get(), TapBlockEntity::tick);
     }
 
-    public enum FluidType {
-        RESIN,
-        HONEY
+    public enum FluidParticleType {
+        RESIN(NMLParticleTypes.RESIN_DROPLET.get()),
+        HONEY(ParticleTypes.FALLING_HONEY),
+        MAPLE(NMLParticleTypes.MAPLE_SYRUP_DROPLET.get());
+
+        private final ParticleOptions particle;
+
+        FluidParticleType(ParticleOptions particle) {
+            this.particle = particle;
+        }
+
+        public ParticleOptions getParticle() {
+            return particle;
+        }
     }
 }

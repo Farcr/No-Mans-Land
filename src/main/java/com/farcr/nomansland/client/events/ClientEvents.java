@@ -75,10 +75,16 @@ public class ClientEvents {
                 -> new CaveDustParticle(clientLevel, d, e, f, pSprites));
         event.registerSpriteSet(NMLParticleTypes.RESIN_DROPLET.get(), pSprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new ResinFallingParticle(clientLevel, d, e, f, pSprites));
+                -> new FluidFallingParticle(clientLevel, d, e, f, pSprites));
         event.registerSpriteSet(NMLParticleTypes.RESIN_DROPLET_FLAT.get(), pSprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new ResinLandParticle(clientLevel, d, e, f, pSprites));
+                -> new FluidLandParticle(clientLevel, d, e, f, pSprites));
+        event.registerSpriteSet(NMLParticleTypes.MAPLE_SYRUP_DROPLET.get(), pSprites
+                -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new FluidFallingParticle(clientLevel, d, e, f, pSprites));
+        event.registerSpriteSet(NMLParticleTypes.MAPLE_SYRUP_DROPLET_FLAT.get(), pSprites
+                -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new FluidLandParticle(clientLevel, d, e, f, pSprites));
         event.registerSpriteSet(NMLParticleTypes.SCULK_AMBIENCE.get(), pSprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
                 -> new SculkAmbienceParticle(clientLevel, d, e, f, pSprites));

@@ -39,10 +39,10 @@ public abstract class ServerLevelMixin {
 
         if (state.is(Blocks.SHORT_GRASS) || state.is(NMLBlocks.FROSTED_GRASS.get())) {
             level.setBlockAndUpdate(pos, NMLBlocks.FROSTED_GRASS.get().defaultBlockState().setValue(SNOWLOGGED, true));
-            BlockPos posUnder = pos.relative(Direction.DOWN);
-            BlockState stateUnder = level.getBlockState(posUnder);
+            BlockPos posBelow = pos.below();
+            BlockState stateUnder = level.getBlockState(posBelow);
             if (stateUnder.getBlock() instanceof SnowyDirtBlock)
-                level.setBlockAndUpdate(posUnder, stateUnder.setValue(SNOWY, true));
+                level.setBlockAndUpdate(posBelow, stateUnder.setValue(SNOWY, true));
             ci.cancel();
         }
     }

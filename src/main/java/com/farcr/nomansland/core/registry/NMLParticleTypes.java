@@ -23,6 +23,12 @@ public class NMLParticleTypes {
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> RESIN_DROPLET_FLAT = PARTICLE_TYPES.register("resin_droplet_flat",
             () -> new SimpleParticleType(false) {
             });
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> MAPLE_SYRUP_DROPLET = PARTICLE_TYPES.register("maple_syrup_droplet",
+            () -> new SimpleParticleType(false) {
+            });
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> MAPLE_SYRUP_DROPLET_FLAT = PARTICLE_TYPES.register("maple_syrup_droplet_flat",
+            () -> new SimpleParticleType(false) {
+            });
 
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> MALEVOLENT_FLAME = PARTICLE_TYPES.register("malevolent_flame",
             () -> new SimpleParticleType(false) {

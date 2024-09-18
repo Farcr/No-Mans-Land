@@ -95,8 +95,8 @@ public class BoneMealingEvents {
                     }
                 } else if (level.getBlockState(pos.above()) == state) {
                     for (int y = 0; y < 128; y++) {
-                        BlockPos emptyBlock = pos.relative(Direction.UP, y + 1);
-                        if (level.getBlockState(pos.relative(Direction.UP, y)) == state && level.isEmptyBlock(emptyBlock)) {
+                        BlockPos emptyBlock = pos.above(y+1);
+                        if (level.getBlockState(pos.above(y)) == state && level.isEmptyBlock(emptyBlock)) {
                             level.playSound(player, pos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1F, 1F);
                             if (!level.isClientSide) {
                                 if (!player.isCreative()) stack.shrink(1);
