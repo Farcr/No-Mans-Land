@@ -6,23 +6,17 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.4,
+  "downfall": 0.3,
   "effects": {
     "fog_color": 15200511,
     "sky_color": 10797823,
-    "foliage_color": 13415770,
+    "foliage_color": 5541228,
     "grass_color": 10205860,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
-    },
-    "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "music.overworld.old_growth_taiga"
     },
     "water_color": 4220592,
     "water_fog_color": 2771621
@@ -79,18 +73,17 @@
       "minecraft:spring_lava"
     ],
     [
-      "nomansland:biome_trees/trees_snowy_taiga"
+      "minecraft:trees_water"
     ],
     [
       "minecraft:glow_lichen",
       "nomansland:flower_patches/flowers_white",
       "nomansland:flower_patches/flowerbed_frosted",
-      "minecraft:patch_large_fern",
-      "minecraft:brown_mushroom_taiga",
-      "minecraft:red_mushroom_taiga",
+      "minecraft:patch_grass_badlands",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "minecraft:patch_berry_common"
+      "minecraft:patch_pumpkin"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -108,44 +101,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "maxCount": 4,
-        "minCount": 1,
-        "weight": 6
-      },
-      {
-        "type": "minecraft:chicken",
-        "maxCount": 8,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:wolf",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 8
-      },
-      {
-        "type": "minecraft:rabbit",
-        "maxCount": 3,
-        "minCount": 2,
-        "weight": 12
-      },
-      {
-        "type": "minecraft:fox",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:polar_bear",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 2
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
@@ -208,5 +164,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": -0.5
+  "temperature": 0.05
 }
