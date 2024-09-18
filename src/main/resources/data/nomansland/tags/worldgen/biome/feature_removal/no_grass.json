@@ -1,6 +1,7 @@
 {
   "values": [
     "minecraft:mushroom_fields",
-    "#c:is_snowy"
+    "#c:is_snowy",
+    "minecraft:frozen_river"
   ]
 }
