@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -16,6 +17,9 @@ import java.util.Optional;
 public class NMLFeatures {
     public static final DeferredRegister<Feature<?>> FEATURES =
             DeferredRegister.create(Registries.FEATURE, NoMansLand.MODID);
+
+    public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> LARGE_PINE_TREE = FEATURES.register("large_pine_tree", ()->new PineTreeFeature(true, TreeConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> PINE_TREE = FEATURES.register("pine_tree", ()->new PineTreeFeature(false, TreeConfiguration.CODEC));
 
     public static final DeferredHolder<Feature<?>, Feature<RandomPatchConfiguration>> SPREAD_PATCH = FEATURES.register("spread_patch",
             () -> new SpreadPatchFeature(RandomPatchConfiguration.CODEC));
