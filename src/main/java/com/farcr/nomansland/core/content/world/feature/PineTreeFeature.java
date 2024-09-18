@@ -1,24 +1,16 @@
 package com.farcr.nomansland.core.content.world.feature;
 
-import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.rootplacers.RootPlacer;
 
-import java.util.List;
-import java.util.OptionalInt;
 import java.util.Set;
 
 public class PineTreeFeature extends Feature<TreeConfiguration> {
@@ -36,7 +28,7 @@ public class PineTreeFeature extends Feature<TreeConfiguration> {
 
     @Override
     public boolean place(FeaturePlaceContext<TreeConfiguration> context) {
-        TreeConfiguration config = (TreeConfiguration) context.config();
+        TreeConfiguration config = context.config();
         WorldGenLevel level = context.level();
         RandomSource random = context.random();
         BlockPos origin = context.origin();
