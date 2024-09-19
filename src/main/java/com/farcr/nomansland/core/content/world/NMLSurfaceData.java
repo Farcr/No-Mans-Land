@@ -34,6 +34,10 @@ public class NMLSurfaceData {
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(Biomes.DARK_FOREST),
                         SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.25), PODZOL))),
+                //Dark Forest, TODO: ADD SWAMPINESS TO WATER BORDER
+                SurfaceRules.ifTrue(
+                         SurfaceRules.isBiome(NMLBiomes.DARK_SWAMP),
+                         SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.25), PODZOL))),
                 //Jungle
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(Biomes.JUNGLE),

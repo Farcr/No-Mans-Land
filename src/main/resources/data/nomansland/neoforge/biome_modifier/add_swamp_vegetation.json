@@ -2,7 +2,8 @@
   "type": "neoforge:add_features",
   "biomes": "#c:is_swamp",
   "features": [
-    "nomansland:patch_duckweed"
+    "nomansland:patch_duckweed",
+    "nomansland:patch_pickleweed"
   ],
   "step": "vegetal_decoration"
 }
