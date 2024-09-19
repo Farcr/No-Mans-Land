@@ -263,9 +263,12 @@
   "item.nomansland.cooked_venison": "Cooked Venison",
   "item.nomansland.raw_camelid": "Raw Camel",
   "item.nomansland.cooked_camelid": "Cooked Camel",
+
   "item.nomansland.resin": "Resin",
   "item.nomansland.resin_oil_bottle": "Resin Oil Bottle",
+
   "item.nomansland.firebomb": "Firebomb",
+  "item.nomansland.explosive": "Explosive",
 
   "nomansland.subtitles.block.spike_trap.extend": "Spikes extend",
   "nomansland.subtitles.block.spike_trap.retract": "Spikes retract",
