@@ -12,13 +12,12 @@ import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
 public class PineFoliagePlacer extends FoliagePlacer {
-    public static final MapCodec<PineFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
-        return foliagePlacerParts(instance).apply(instance, PineFoliagePlacer::new);
-    });
+    public static final MapCodec<PineFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec((instance) -> foliagePlacerParts(instance).apply(instance, PineFoliagePlacer::new));
 
     public Set<BlockPos> leafPositions;
     public Set<BlockPos> leafPositions50;
@@ -28,11 +27,11 @@ public class PineFoliagePlacer extends FoliagePlacer {
         super(radius, offset);
     }
 
-    protected FoliagePlacerType<?> type() {
+    protected @NotNull FoliagePlacerType<?> type() {
         return NMLFoliagePlacerType.PINE_FOLIAGE_PLACER.get();
     }
 
-    protected void createFoliage(LevelSimulatedReader level, FoliageSetter blockSetter, RandomSource random, TreeConfiguration config, int maxFreeTreeHeight, FoliageAttachment attachment, int foliageHeight, int foliageRadius, int foliageOffset) {
+    protected void createFoliage(@NotNull LevelSimulatedReader level, @NotNull FoliageSetter blockSetter, @NotNull RandomSource random, @NotNull TreeConfiguration config, int maxFreeTreeHeight, @NotNull FoliageAttachment attachment, int foliageHeight, int foliageRadius, int foliageOffset) {
         /*for (int j = foliageOffset; j >= foliageOffset - foliageHeight; --j) {
             this.placeLeavesRow(reader, blockSetter, random, config, attachment.pos(), 2, j, attachment.doubleTrunk());
         }*/
@@ -55,7 +54,7 @@ public class PineFoliagePlacer extends FoliagePlacer {
         this.leafPositions.add(attachment.pos().above(4));
         this.leafPositions20.add(attachment.pos().above(5));
 
-        for (int i = 0; i < (numCanopies < 3 ? numCanopies : 3); i++) {
+        for (int i = 0; i < (Math.min(numCanopies, 3)); i++) {
             placeSmallLayer(attachment.pos().below(2 + 2*i));
         }
         if (numCanopies >= 3) {
@@ -122,11 +121,11 @@ public class PineFoliagePlacer extends FoliagePlacer {
         }
     }
 
-    public int foliageHeight(RandomSource random, int height, TreeConfiguration config) {
+    public int foliageHeight(@NotNull RandomSource random, int height, @NotNull TreeConfiguration config) {
         return height;
     }
 
-    protected boolean shouldSkipLocation(RandomSource random, int localX, int localY, int localZ, int range, boolean large) {
+    protected boolean shouldSkipLocation(@NotNull RandomSource random, int localX, int localY, int localZ, int range, boolean large) {
         return false;
     }
 }
