@@ -20,8 +20,7 @@ public class PineFoliagePlacer extends FoliagePlacer {
     public static final MapCodec<PineFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec((instance) -> foliagePlacerParts(instance).apply(instance, PineFoliagePlacer::new));
 
     public Set<BlockPos> leafPositions;
-    public Set<BlockPos> leafPositions30;
-    public Set<BlockPos> leafPositions10;
+    public Set<BlockPos> leafPositions20;
 
     public PineFoliagePlacer(IntProvider radius, IntProvider offset) {
         super(radius, offset);
@@ -33,8 +32,7 @@ public class PineFoliagePlacer extends FoliagePlacer {
 
     protected void createFoliage(@NotNull LevelSimulatedReader level, @NotNull FoliageSetter blockSetter, @NotNull RandomSource random, @NotNull TreeConfiguration config, int maxFreeTreeHeight, @NotNull FoliageAttachment attachment, int foliageHeight, int foliageRadius, int foliageOffset) {
         this.leafPositions = Sets.newHashSet();
-        this.leafPositions30 = Sets.newHashSet();
-        this.leafPositions10 = Sets.newHashSet();
+        this.leafPositions20 = Sets.newHashSet();
 
         int numCanopies = (foliageHeight - 5) / 2;
         // Add tree topper
@@ -43,13 +41,13 @@ public class PineFoliagePlacer extends FoliagePlacer {
             this.leafPositions.add(attachment.pos().below(2).relative(d));
             this.leafPositions.add(attachment.pos().below(2).relative(d).relative(d.getClockWise()));
             this.leafPositions.add(attachment.pos().below().relative(d));
-            this.leafPositions10.add(attachment.pos().below().relative(d).relative(d.getClockWise()));
+            this.leafPositions20.add(attachment.pos().below().relative(d).relative(d.getClockWise()));
             this.leafPositions.add(attachment.pos().relative(d));
         }
         this.leafPositions.add(attachment.pos());
         this.leafPositions.add(attachment.pos().above());
         this.leafPositions.add(attachment.pos().above(2));
-        this.leafPositions10.add(attachment.pos().above(3));
+        this.leafPositions20.add(attachment.pos().above(3));
 
         for (int i = 0; i < (Math.min(numCanopies, 3)); i++) {
             placeSmallLayer(attachment.pos().below(4 + 2*i));
@@ -69,12 +67,8 @@ public class PineFoliagePlacer extends FoliagePlacer {
         for (BlockPos leafPos : leafPositions) {
             tryPlaceLeaf(level, blockSetter, random, config, leafPos);
         }
-        for (BlockPos leafPos : leafPositions10) {
+        for (BlockPos leafPos : leafPositions20) {
             if (random.nextFloat() > 0.1)
-                tryPlaceLeaf(level, blockSetter, random, config, leafPos);
-        }
-        for (BlockPos leafPos : leafPositions30) {
-            if (random.nextFloat() > 0.3)
                 tryPlaceLeaf(level, blockSetter, random, config, leafPos);
         }
     }
@@ -82,23 +76,15 @@ public class PineFoliagePlacer extends FoliagePlacer {
 
 
     private void placeLargeLayer(BlockPos localOrigin) {
-        for (int x = -2; x <= 2; x++) {
-            for (int z = -2; z <= 2; z++) {
-                if (Math.abs(x) != 2 || Math.abs(z) != 2) {
+        for (int x = -3; x <= 3; x++) {
+            for (int z = -3; z <= 3; z++) {
+                if (Math.abs(x) + Math.abs(z) < 5) {
                     this.leafPositions.add(localOrigin.offset(x, 0, z));
                 }
-                if (Math.abs(x) < 2 && Math.abs(z) < 2) {
+                if (Math.abs(x) + Math.abs(z) < 3) {
                     this.leafPositions.add(localOrigin.offset(x, 1, z));
                 }
             }
-        }
-
-        for (int di = 0; di < 4; di++) {
-            Direction d = Direction.from2DDataValue(di);
-            this.leafPositions10.add(localOrigin.relative(d, 3));
-            this.leafPositions30.add(localOrigin.relative(d, 3).relative(d.getClockWise()));
-            this.leafPositions30.add(localOrigin.relative(d, 3).relative(d.getCounterClockWise()));
-            this.leafPositions.add(localOrigin.above().relative(d, 2));
         }
     }
 
@@ -112,8 +98,8 @@ public class PineFoliagePlacer extends FoliagePlacer {
         for (int di = 0; di < 4; di++) {
             Direction d = Direction.from2DDataValue(di);
             this.leafPositions.add(localOrigin.relative(d, 2));
-            this.leafPositions10.add(localOrigin.relative(d, 2).relative(d.getClockWise()));
-            this.leafPositions10.add(localOrigin.relative(d, 2).relative(d.getCounterClockWise()));
+            this.leafPositions.add(localOrigin.relative(d, 2).relative(d.getClockWise()));
+            this.leafPositions.add(localOrigin.relative(d, 2).relative(d.getCounterClockWise()));
             this.leafPositions.add(localOrigin.above().relative(d, 1));
         }
     }
