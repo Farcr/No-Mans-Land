@@ -5,20 +5,25 @@
   "biome.nomansland.caves": "Cuevas",
   "biome.nomansland.deep_caves": "Cuevas profundas",
   "biome.nomansland.old_growth_forest": "Bosque antiguo",
+  "biome.nomansland.old_growth_forest_clearing": "Desbroce de bosque antiguo",
+  "biome.nomansland.old_growth_forest_edge": "Límite de bosque antiguo",
   "biome.nomansland.boreal_forest": "Bosque boreal",
   "biome.nomansland.autumnal_forest": "Bosque otoñal",
   "biome.nomansland.autumnal_fields": "Campo otoñal",
   "biome.nomansland.maple_forest": "Bosque de arce",
+  "biome.nomansland.dark_swamp": "Pantano oscuro",
 
   "block.nomansland.grass_sprouts": "Brotes de pasto",
   "block.nomansland.oat_grass": "Pasto de avena",
   "block.nomansland.dried_grass": "Pasto seco",
   "block.nomansland.short_beachgrass": "Pasto de playa corto",
   "block.nomansland.tall_beachgrass": "Pasto de playa alto",
+  "block.nomansland.frosted_grass": "Pasto congelado",
   "block.nomansland.fiddlehead": "Brotes de helecho",
   "block.nomansland.pebbles": "Piedra",
   "block.nomansland.cattail": "Totora",
   "block.nomansland.clover_patch": "Parche de trébol",
+  "block.nomansland.duckweed": "Lenteja",
 
   "block.nomansland.white_flowerbed": "Macizo blanco",
   "block.nomansland.red_flowerbed": "Macizo rojo",
@@ -30,6 +35,7 @@
 
   "block.nomansland.mundane_tiles": "Azulejos mundanos",
   "block.nomansland.earthen_tiles": "Azulejos de tierra",
+  "block.nomansland.olivine_tiles": "Azulejos de olivino",
 
   "block.nomansland.aconite": "Aconita",
   "block.nomansland.potted_aconite": "Aconita en maceta",
@@ -49,6 +55,8 @@
   "block.nomansland.potted_barrel_cactus": "Cactus barril en maceta",
   "block.nomansland.succulent": "Suculenta",
   "block.nomansland.potted_succulent": "Suculenta en maceta",
+  "block.nomansland.pickleweed": "Pepinillo",
+  "block.nomansland.potted_pickleweed": "Pepinillo en maceta",
   "block.nomansland.rafflesia": "Rafflesia",
 
   "block.nomansland.yellow_birch_leaves": "Hojas amarillas de abedul",
@@ -60,11 +68,16 @@
   "block.nomansland.pale_cherry_leaves": "Hojas de cerezo pálido",
   "block.nomansland.pale_cherry_sapling": "Retoño de cerezo pálido",
   "block.nomansland.potted_pale_cherry_sapling": "Retoño de cerezo pálido en maceta",
+  "block.nomansland.frosted_leaves": "Hojas congeladas",
 
   "block.nomansland.field_mushroom": "Hongo de campo",
   "block.nomansland.field_mushroom_colony": "Colonia de hongos de campo",
   "block.nomansland.field_mushroom_block": "Bloque de hongos de campo",
   "block.nomansland.potted_field_mushroom": "Hongo de campo en maceta ",
+
+  "block.nomansland.shelf_mushroom": "Hongo poliporo",
+  "block.nomansland.shelf_mushroom_colony": "Colonia de hongos políporos",
+  "block.nomansland.shelf_mushroom_block": "Bloque de hongos políporos",
 
   "block.nomansland.dirt_path": "Camino de tierra",
   "block.nomansland.snowy_grass_path": "Camino de pasto nevado",
@@ -227,7 +240,21 @@
   "block.nomansland.tropical_fish_barrel": "Barril de pez tropical",
   "block.nomansland.pufferfish_barrel": "Barril de pez globo",
   "block.nomansland.gunpowder_barrel": "Barril de pólvora",
+  
+  "block.nomansland.apple_fruit_leaves": "Hojas de manzano",
+  "block.nomansland.apple_fruit": "Manzana",
 
+  "block.nomansland.pear_fruit_leaves": "Hojas de peral",
+  "block.nomansland.pear_fruit": "Pera",
+  "block.nomansland.pear_crate": "Caja de peras",
+  "item.nomansland.pear": "Pera",
+  "item.nomansland.pear_cobbler": "Pastel de pera",
+  "item.nomansland.syruped_pear": "Pera en almíbar",
+  "item.nomansland.pear_juice": "Jugo de pera",
+
+  "item.nomansland.honeyed_apple": "Manzana enmielada",
+  "block.nomansland.apple_crate": "Caja manzana",
+  
   "item.nomansland.mashed_potatoes_with_mushrooms": "Puré de papas con hongos",
   "item.nomansland.grilled_mushrooms": "Hongos a la plancha",
   "item.nomansland.frog_leg": "Pata de rana",
@@ -239,12 +266,16 @@
   "item.nomansland.cooked_venison": "Venado asado",
   "item.nomansland.raw_camelid": "Camello crudo",
   "item.nomansland.cooked_camelid": "Camello asado",
+  
   "item.nomansland.resin": "Resina",
   "item.nomansland.resin_oil_bottle": "Botella de aceite de resina",
+  
   "item.nomansland.firebomb": "Bomba",
+  "item.nomansland.explosive": "Explosive",
 
   "nomansland.subtitles.block.spike_trap.extend": "Picos se extienden",
   "nomansland.subtitles.block.spike_trap.retract": "Picos se retraen",
+  
   "death.attack.nomansland.spike_fall": "%1$s encontró un final afilado en los picos",
   "death.attack.nomansland.spike_fall.player": "%1$s encontró un final afilado en los picos mientras luchaba contra %2$s",
   "death.attack.nomansland.spike_impale": "%1$s fue empalado por picos",
@@ -253,6 +284,7 @@
   "death.attack.nomansland.spike_poke.player": "%1$s ue pinchado hasta la muerte por trampa picos mientras luchaba contra %2$s",
   "death.attack.nomansland.spike_skewer": "%1$s fue ensartado por picos moviéndose",
   "death.attack.nomansland.spike_skewer.player": "%1$s fue ensartado por picos moviéndose mientras luchaba contra %2$s",
+  
   "tooltip.nomansland.missing_interaction_block": "§8Este bloque forma parte de la integración de mods, pero falta el mod necesario!",
   "tooltip.nomansland.missing_interaction_item": "§8Este bloque objeto parte de la integración de mods, pero falta el mod necesario!"
 }
