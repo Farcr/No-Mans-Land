@@ -9,14 +9,15 @@
       }
     },
     "foliage_placer": {
-      "type": "nomansland:pine_foliage_placer",
-      "offset": 1,
-      "radius": 1
+      "type": "minecraft:fancy_foliage_placer",
+      "height": 3,
+      "offset": 2,
+      "radius": 2
     },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "nomansland:yellow_birch_leaves",
+        "Name": "nomansland:walnut_leaves",
         "Properties": {
           "distance": "7",
           "persistent": "false",
@@ -28,20 +29,25 @@
     "ignore_vines": true,
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",
-      "limit": 2,
-      "lower_size": 1,
-      "upper_size": 3
+      "limit": 0,
+      "lower_size": 0,
+      "min_clipped_height": 6,
+      "upper_size": 0
     },
     "trunk_placer": {
-      "type": "minecraft:straight_trunk_placer",
-      "base_height": 7,
-      "height_rand_a": 6,
-      "height_rand_b": 0
+      "type": "nomansland:branchy_trunk_placer",
+      "base_height": 5,
+      "height_rand_a": 4,
+      "height_rand_b": 0,
+      "branch_length": 2,
+      "branch_count": 2,
+      "branch_min_height": 4,
+      "branch_max_height": 3
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:birch_log",
+        "Name": "nomansland:walnut_log",
         "Properties": {
           "axis": "y"
         }

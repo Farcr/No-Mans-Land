@@ -23,6 +23,7 @@ public class NoMansLand {
         NMLEntities.ENTITIES.register(modEventBus);
         NMLFeatures.FEATURES.register(modEventBus);
         NMLFoliagePlacerType.FOLIAGE_PLACER_TYPES.register(modEventBus);
+        NMLTrunkPlacerType.TRUNK_PLACER_TYPES.register(modEventBus);
         NMLSounds.SOUND_EVENTS.register(modEventBus);
         NMLCreativeTabs.CREATIVE_TABS.register(modEventBus);
         NMLParticleTypes.PARTICLE_TYPES.register(modEventBus);
