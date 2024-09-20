@@ -50,11 +50,11 @@ public class PineFoliagePlacer extends FoliagePlacer {
         this.leafPositions20.add(attachment.pos().above(3));
 
         for (int i = 0; i < (Math.min(numCanopies, 3)); i++) {
-            placeSmallLayer(attachment.pos().below(4 + 2*i));
+            placeLayer(attachment.pos().below(4 + 2*i), foliageRadius);
         }
         if (numCanopies >= 3) {
             for (int i = 0; i < numCanopies - 3; i++) {
-                placeLargeLayer(attachment.pos().below(10 + 2*i));
+                placeLayer(attachment.pos().below(10 + 2*i), foliageRadius + 1);
             }
         }
 
@@ -75,32 +75,16 @@ public class PineFoliagePlacer extends FoliagePlacer {
 
 
 
-    private void placeLargeLayer(BlockPos localOrigin) {
-        for (int x = -3; x <= 3; x++) {
-            for (int z = -3; z <= 3; z++) {
-                if (Math.abs(x) + Math.abs(z) < 5) {
+    private void placeLayer(BlockPos localOrigin, int size) {
+        for (int x = -size; x <= size; x++) {
+            for (int z = -size; z <= size; z++) {
+                if (Math.abs(x) + Math.abs(z) < size + 2) {
                     this.leafPositions.add(localOrigin.offset(x, 0, z));
                 }
-                if (Math.abs(x) + Math.abs(z) < 3) {
+                if (Math.abs(x) + Math.abs(z) < size) {
                     this.leafPositions.add(localOrigin.offset(x, 1, z));
                 }
             }
-        }
-    }
-
-    private void placeSmallLayer(BlockPos localOrigin) {
-        for (int x = -1; x <= 1; x++) {
-            for (int z = -1; z <= 1; z++) {
-                this.leafPositions.add(localOrigin.offset(x, 0, z));
-            }
-        }
-
-        for (int di = 0; di < 4; di++) {
-            Direction d = Direction.from2DDataValue(di);
-            this.leafPositions.add(localOrigin.relative(d, 2));
-            this.leafPositions.add(localOrigin.relative(d, 2).relative(d.getClockWise()));
-            this.leafPositions.add(localOrigin.relative(d, 2).relative(d.getCounterClockWise()));
-            this.leafPositions.add(localOrigin.above().relative(d, 1));
         }
     }
 
