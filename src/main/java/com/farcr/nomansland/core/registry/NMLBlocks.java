@@ -181,6 +181,11 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> POTTED_WILD_MINT = BLOCKS.register("potted_wild_mint",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final DeferredBlock<Block> PICKLEWEED = registerBlock("pickleweed",
+            () -> new FlowerBlock(MobEffects.SATURATION, 1, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
+    public static final DeferredBlock<Block> POTTED_PICKLEWEED = BLOCKS.register("potted_pickleweed",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final DeferredBlock<Block> RAFFLESIA = registerBlock("rafflesia",
             () -> new FlatFlowerBlock(MobEffects.HUNGER, 60, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
     public static final DeferredBlock<Block> BARREL_CACTUS = registerBlock("barrel_cactus",
@@ -226,10 +231,10 @@ public class NMLBlocks {
             () -> new AmethystClusterBlock(5, 3, BlockBehaviour.Properties.ofFullCopy(NMLBlocks.QUARTZITE_CLUSTER.get()).sound(SoundType.NETHER_GOLD_ORE).forceSolidOn().lightLevel((p_152629_) -> {
                 return 4;
             }).pushReaction(PushReaction.DESTROY)));
-    public static final DeferredBlock<Block> PETRIFIED_LOG = registerBlock("petrified_log",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF)));
-    public static final DeferredBlock<Block> PETRIFIED_WOOD = registerBlock("petrified_wood",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF)));
+//    public static final DeferredBlock<Block> PETRIFIED_LOG = registerBlock("petrified_log",
+//            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF)));
+//    public static final DeferredBlock<Block> PETRIFIED_WOOD = registerBlock("petrified_wood",
+//            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF)));
     //Paths
     public static final DeferredBlock<Block> DIRT_PATH = registerBlock("dirt_path",
             () -> new PathBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT), Blocks.DIRT, false));
@@ -468,6 +473,10 @@ public class NMLBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(NMLBlocks.COD_BARREL.get())));
     public static final DeferredBlock<Block> TROPICAL_FISH_BARREL = registerBlock("tropical_fish_barrel",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(NMLBlocks.COD_BARREL.get())));
+    public static final DeferredBlock<Block> APPLE_CRATE = registerBlock("apple_crate",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
+    public static final DeferredBlock<Block> PEAR_CRATE = registerBlock("pear_crate",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
 
     //Mushrooms
     public static final DeferredBlock<Block> FIELD_MUSHROOM = registerBlock("field_mushroom",

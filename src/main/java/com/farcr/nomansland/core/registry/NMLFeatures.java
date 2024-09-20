@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -19,6 +20,9 @@ public class NMLFeatures {
             () -> new SpreadPatchFeature(RandomPatchConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<MultiSpreadPatchConfiguration>> MULTISPREAD_PATCH = FEATURES.register("multispread_patch",
             () -> new MultiSpreadPatchFeature(MultiSpreadPatchConfiguration.CODEC));
+
+    public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> SHELF_MUSHROOM = FEATURES.register("shelf_mushroom",
+            () -> new ShelfMushroomFeature(NoneFeatureConfiguration.CODEC));
 
     public static final DeferredHolder<Feature<?> ,Feature<FillBiomeAboveConfiguration>> FILL_BIOME_ABOVE = FEATURES.register("fill_biome_above",
             () -> new FillBiomeAboveFeature(FillBiomeAboveConfiguration.CODEC));

@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "G",
+        "S"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:paper"
+        },
+        "G": {
+            "item": "minecraft:gunpowder"
+        },
+        "S": {
+            "tag": "c:sands"
+        }
+    },
+    "result": {
+        "id": "nomansland:explosive",
+        "count": 1
+    }
+}

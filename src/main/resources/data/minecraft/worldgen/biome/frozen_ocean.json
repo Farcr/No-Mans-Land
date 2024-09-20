@@ -10,7 +10,7 @@
   "effects": {
     "fog_color": 15200511,
     "sky_color": 8431871,
-    "foliage_color": 9680231,
+    "foliage_color": 5541228,
     "grass_color": 10205860,
     "mood_sound": {
       "block_search_extent": 8,
@@ -18,8 +18,8 @@
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "water_color": 4223408,
-    "water_fog_color": 2383519
+    "water_color": 4220592,
+    "water_fog_color": 2771621
   },
   "features": [
     [],
@@ -77,10 +77,12 @@
       "minecraft:spring_lava"
     ],
     [
+      "minecraft:trees_water"
+    ],
+    [
       "minecraft:glow_lichen",
-      "minecraft:trees_water",
       "nomansland:flower_patches/flowers_white",
-      "nomansland:flower_patches/flowerbed_white",
+      "nomansland:flower_patches/flowerbed_frosted",
       "minecraft:patch_grass_badlands",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal"

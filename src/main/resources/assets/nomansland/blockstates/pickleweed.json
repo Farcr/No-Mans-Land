@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/plants/pickleweed_0"
+      },
+      {
+        "model": "nomansland:block/plants/pickleweed_1"
+      },
+      {
+        "model": "nomansland:block/plants/pickleweed_2"
+      }
+    ]
+  }
+}

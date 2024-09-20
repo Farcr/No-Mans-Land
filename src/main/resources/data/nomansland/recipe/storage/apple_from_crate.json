@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "nomansland:apple_crate"
+    }
+  ],
+  "result": {
+    "id": "minecraft:apple",
+    "count": 9
+  },
+  "group": "fruit_crates"
+}

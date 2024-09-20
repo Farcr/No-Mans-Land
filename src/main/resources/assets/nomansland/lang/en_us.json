@@ -6,10 +6,12 @@
   "biome.nomansland.deep_caves": "Deep Caves",
   "biome.nomansland.old_growth_forest": "Old Growth Forest",
   "biome.nomansland.old_growth_forest_clearing": "Old Growth Forest Clearing",
+  "biome.nomansland.old_growth_forest_edge": "Old Growth Forest Edge",
   "biome.nomansland.boreal_forest": "Boreal Forest",
   "biome.nomansland.autumnal_forest": "Autumnal Forest",
   "biome.nomansland.autumnal_fields": "Autumnal Fields",
   "biome.nomansland.maple_forest": "Maple Forest",
+  "biome.nomansland.dark_swamp": "Dark Swamp",
 
   "block.nomansland.grass_sprouts": "Grass Sprouts",
   "block.nomansland.oat_grass": "Oat Grass",
@@ -33,6 +35,7 @@
 
   "block.nomansland.mundane_tiles": "Mundane Tiles",
   "block.nomansland.earthen_tiles": "Earthen Tiles",
+  "block.nomansland.olivine_tiles": "Olivine Tiles",
 
   "block.nomansland.aconite": "Aconite",
   "block.nomansland.potted_aconite": "Potted Aconite",
@@ -52,6 +55,8 @@
   "block.nomansland.potted_barrel_cactus": "Potted Barrel Cactus",
   "block.nomansland.succulent": "Succulent",
   "block.nomansland.potted_succulent": "Potted Succulent",
+  "block.nomansland.pickleweed": "Pickleweed",
+  "block.nomansland.potted_pickleweed": "Potted Pickleweed",
   "block.nomansland.rafflesia": "Rafflesia",
 
   "block.nomansland.yellow_birch_leaves": "Yellow Birch Leaves",
@@ -241,10 +246,14 @@
 
   "block.nomansland.pear_fruit_leaves": "Pear Fruit Leaves",
   "block.nomansland.pear_fruit": "Pear",
+  "block.nomansland.pear_crate": "Pear Crate",
   "item.nomansland.pear": "Pear",
   "item.nomansland.pear_cobbler": "Pear Cobbler",
   "item.nomansland.syruped_pear": "Syruped Pear",
   "item.nomansland.pear_juice": "Pear Juice",
+
+  "item.nomansland.honeyed_apple": "Honeyed Apple",
+  "block.nomansland.apple_crate": "Apple Crate",
 
 
   "item.nomansland.mashed_potatoes_with_mushrooms": "Mashed Potatoes with Mushrooms",
@@ -258,9 +267,12 @@
   "item.nomansland.cooked_venison": "Cooked Venison",
   "item.nomansland.raw_camelid": "Raw Camel",
   "item.nomansland.cooked_camelid": "Cooked Camel",
+
   "item.nomansland.resin": "Resin",
   "item.nomansland.resin_oil_bottle": "Resin Oil Bottle",
+
   "item.nomansland.firebomb": "Firebomb",
+  "item.nomansland.explosive": "Explosive",
 
   "nomansland.subtitles.block.spike_trap.extend": "Spikes extend",
   "nomansland.subtitles.block.spike_trap.retract": "Spikes retract",

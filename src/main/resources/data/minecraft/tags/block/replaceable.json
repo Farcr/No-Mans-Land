@@ -1,7 +1,5 @@
 {
   "values": [
-    "#minecraft:replaceable_by_trees",
-    "nomansland:pebbles",
-    "nomansland:duckweed"
+    "#minecraft:replaceable_by_trees"
   ]
 }

@@ -2,10 +2,8 @@ package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;
+import com.farcr.nomansland.core.content.item.*;
 import com.farcr.nomansland.core.content.item.BoatItem;
-import com.farcr.nomansland.core.content.item.FirebombItem;
-import com.farcr.nomansland.core.content.item.FuelItem;
-import com.farcr.nomansland.core.content.item.MapleSyrupBottleItem;
 import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Direction;
@@ -43,10 +41,12 @@ public class NMLItems {
     public static final DeferredItem<Item> PEAR = registerItem("pear",
             () -> new Item(new Item.Properties().food(NMLFoods.PEAR)));
     public static final DeferredItem<Item> SYRUPED_PEAR = registerItem("syruped_pear",
-            () -> new Item(new Item.Properties().food(NMLFoods.SYRUPED_PEAR)));
+            () -> new MapleFoodItem(new Item.Properties().food(NMLFoods.SYRUPED_PEAR)));
     public static final DeferredItem<Item> PEAR_COBBLER = registerItem("pear_cobbler",
             () -> new Item(new Item.Properties().food(NMLFoods.PEAR_COBBLER)));
-    //TODO: FD compat pear juice
+    //TODO: FD compat pear juice and cobbler slice
+    public static final DeferredItem<Item> HONEYED_APPLE = registerItem("honeyed_apple",
+            () -> new HoneyFoodItem(new Item.Properties().food(NMLFoods.HONEYED_APPLE)));
 
     public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
             () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
@@ -66,6 +66,8 @@ public class NMLItems {
 
     public static final DeferredItem<Item> FIREBOMB = registerItem("firebomb",
             () -> new FirebombItem(new Item.Properties().stacksTo(8)));
+    public static final DeferredItem<Item> EXPLOSIVE = registerItem("explosive",
+            () -> new Item(new Item.Properties().stacksTo(8)));
 
     public static final DeferredItem<Item> WOODEN_SCAFFOLDING = registerItem("wooden_scaffolding",
             () -> new ScaffoldingBlockItem(NMLBlocks.WOODEN_SCAFFOLDING.get(), new Item.Properties()));
@@ -177,6 +179,8 @@ public class NMLItems {
             event.accept(NMLBlocks.SALMON_BARREL.get());
             event.accept(NMLBlocks.PUFFERFISH_BARREL.get());
             event.accept(NMLBlocks.TROPICAL_FISH_BARREL.get());
+            event.accept(NMLBlocks.APPLE_CRATE.get());
+            event.accept(NMLBlocks.PEAR_CRATE.get());
 
             event.accept(NMLBlocks.TRIMMED_OAK_PLANKS.get());
             event.accept(NMLBlocks.TRIMMED_SPRUCE_PLANKS.get());
@@ -218,6 +222,7 @@ public class NMLItems {
             event.accept(NMLBlocks.RAFFLESIA.get());
             event.accept(NMLBlocks.BARREL_CACTUS.get());
             event.accept(NMLBlocks.SUCCULENT.get());
+            event.accept(NMLBlocks.PICKLEWEED.get());
             event.accept(NMLBlocks.PEBBLES.get());
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES.get());
             event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
@@ -249,8 +254,8 @@ public class NMLItems {
             event.accept(NMLBlocks.MEDIUM_QUARTZITE_BUD.get());
             event.accept(NMLBlocks.LARGE_QUARTZITE_BUD.get());
             event.accept(NMLBlocks.BUDDING_QUARTZITE.get());
-            event.accept(NMLBlocks.PETRIFIED_LOG.get());
-            event.accept(NMLBlocks.PETRIFIED_WOOD.get());
+//            event.accept(NMLBlocks.PETRIFIED_LOG.get());
+//            event.accept(NMLBlocks.PETRIFIED_WOOD.get());
 
             event.accept(NMLBlocks.REMAINS.get());
 
@@ -305,6 +310,7 @@ public class NMLItems {
             event.accept(NMLItems.PEAR.get());
             event.accept(NMLItems.SYRUPED_PEAR.get());
             event.accept(NMLItems.PEAR_COBBLER.get());
+            event.accept(NMLItems.HONEYED_APPLE.get());
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(NMLItems.PINE_BOAT.get());
@@ -318,6 +324,7 @@ public class NMLItems {
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(NMLItems.FIREBOMB.get());
+            event.accept(NMLItems.EXPLOSIVE.get());
             event.accept(NMLItems.RESIN_OIL_BOTTLE.get());
         }
 

@@ -14,7 +14,9 @@ public class NMLBiomes {
     // TODO: make this key different when there's actually a snowy maple forest
     public static final ResourceKey<Biome> SNOWY_MAPLE_FOREST = createKey("maple_forest");
     public static final ResourceKey<Biome> OLD_GROWTH_FOREST = createKey("old_growth_forest");
-    public static final ResourceKey<Biome> OLD_GROWTH_FOREST_CLEARING = createKey("old_growth_forest_clearing.json");
+    public static final ResourceKey<Biome> OLD_GROWTH_FOREST_CLEARING = createKey("old_growth_forest_clearing");
+
+    public static final ResourceKey<Biome> DARK_SWAMP = createKey("dark_swamp");
 
     //Underground
     public static final ResourceKey<Biome> CAVES = createKey("caves");

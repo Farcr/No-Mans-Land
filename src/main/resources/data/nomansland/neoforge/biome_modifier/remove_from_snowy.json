@@ -8,6 +8,8 @@
     "minecraft:patch_grass_plain",
     "minecraft:patch_grass_savanna",
     "minecraft:patch_grass_taiga",
-    "minecraft:patch_grass_taiga_2"
+    "minecraft:patch_grass_taiga_2",
+
+    "nomansland:patch_waterlily_common"
   ]
 }
