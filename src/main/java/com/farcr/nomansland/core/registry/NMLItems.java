@@ -222,6 +222,7 @@ public class NMLItems {
             event.accept(NMLBlocks.RAFFLESIA.get());
             event.accept(NMLBlocks.BARREL_CACTUS.get());
             event.accept(NMLBlocks.SUCCULENT.get());
+            event.accept(NMLBlocks.PICKLEWEED.get());
             event.accept(NMLBlocks.PEBBLES.get());
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES.get());
             event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);

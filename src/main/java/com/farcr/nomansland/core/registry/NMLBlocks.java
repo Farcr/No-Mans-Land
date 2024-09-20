@@ -181,6 +181,11 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> POTTED_WILD_MINT = BLOCKS.register("potted_wild_mint",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY).noOcclusion()));
+    public static final DeferredBlock<Block> PICKLEWEED = registerBlock("pickleweed",
+            () -> new FlowerBlock(MobEffects.SATURATION, 1, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
+    public static final DeferredBlock<Block> POTTED_PICKLEWEED = BLOCKS.register("potted_pickleweed",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.WILD_MINT,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY).noOcclusion()));
     public static final DeferredBlock<Block> RAFFLESIA = registerBlock("rafflesia",
             () -> new FlatFlowerBlock(MobEffects.HUNGER, 60, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
     public static final DeferredBlock<Block> BARREL_CACTUS = registerBlock("barrel_cactus",
