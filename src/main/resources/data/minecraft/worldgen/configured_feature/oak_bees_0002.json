@@ -27,7 +27,7 @@
           }
         },
         "exclusion_radius_xz": 1,
-        "probability": 0.05,
+        "probability": 0.025,
         "limit": 4
       }
     ],
