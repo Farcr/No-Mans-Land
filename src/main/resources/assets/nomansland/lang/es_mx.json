@@ -6,10 +6,12 @@
   "biome.nomansland.deep_caves": "Cuevas profundas",
   "biome.nomansland.old_growth_forest": "Bosque antiguo",
   "biome.nomansland.old_growth_forest_clearing": "Desbroce de bosque antiguo",
+  "biome.nomansland.old_growth_forest_edge": "Límite de bosque antiguo",
   "biome.nomansland.boreal_forest": "Bosque boreal",
   "biome.nomansland.autumnal_forest": "Bosque otoñal",
   "biome.nomansland.autumnal_fields": "Campo otoñal",
   "biome.nomansland.maple_forest": "Bosque de arce",
+  "biome.nomansland.dark_swamp": "Pantano oscuro",
 
   "block.nomansland.grass_sprouts": "Brotes de pasto",
   "block.nomansland.oat_grass": "Pasto de avena",
@@ -33,6 +35,7 @@
 
   "block.nomansland.mundane_tiles": "Azulejos mundanos",
   "block.nomansland.earthen_tiles": "Azulejos de tierra",
+  "block.nomansland.olivine_tiles": "Azulejos de olivino",
 
   "block.nomansland.aconite": "Aconita",
   "block.nomansland.potted_aconite": "Aconita en maceta",
@@ -52,6 +55,8 @@
   "block.nomansland.potted_barrel_cactus": "Cactus barril en maceta",
   "block.nomansland.succulent": "Suculenta",
   "block.nomansland.potted_succulent": "Suculenta en maceta",
+  "block.nomansland.pickleweed": "Pepinillo",
+  "block.nomansland.potted_pickleweed": "Pepinillo en maceta",
   "block.nomansland.rafflesia": "Rafflesia",
 
   "block.nomansland.yellow_birch_leaves": "Hojas amarillas de abedul",
@@ -72,7 +77,7 @@
 
   "block.nomansland.shelf_mushroom": "Hongo poliporo",
   "block.nomansland.shelf_mushroom_colony": "Colonia de hongos políporos",
-  "block.nomansland.shelf_mushroom_block": "BLoque de hongos políporos",
+  "block.nomansland.shelf_mushroom_block": "Bloque de hongos políporos",
 
   "block.nomansland.dirt_path": "Camino de tierra",
   "block.nomansland.snowy_grass_path": "Camino de pasto nevado",
@@ -230,14 +235,26 @@
   "item.nomansland.walnut_boat": "Bote de nogal",
   "item.nomansland.walnut_chest_boat": "Bote de nogal con cofre",
 
-  "block.nomansland.apple_fruit_leaves": "Hojas de manzano",
-
   "block.nomansland.cod_barrel": "Barril de bacalo",
   "block.nomansland.salmon_barrel": "Barril de salmón",
   "block.nomansland.tropical_fish_barrel": "Barril de pez tropical",
   "block.nomansland.pufferfish_barrel": "Barril de pez globo",
   "block.nomansland.gunpowder_barrel": "Barril de pólvora",
+  
+  "block.nomansland.apple_fruit_leaves": "Hojas de manzano",
+  "block.nomansland.apple_fruit": "Manzana",
 
+  "block.nomansland.pear_fruit_leaves": "Hojas de peral",
+  "block.nomansland.pear_fruit": "Pera",
+  "block.nomansland.pear_crate": "Caja de peras",
+  "item.nomansland.pear": "Pera",
+  "item.nomansland.pear_cobbler": "Pastel de pera",
+  "item.nomansland.syruped_pear": "Pera en almíbar",
+  "item.nomansland.pear_juice": "Jugo de pera",
+
+  "item.nomansland.honeyed_apple": "Manzana enmielada",
+  "block.nomansland.apple_crate": "Caja manzana",
+  
   "item.nomansland.mashed_potatoes_with_mushrooms": "Puré de papas con hongos",
   "item.nomansland.grilled_mushrooms": "Hongos a la plancha",
   "item.nomansland.frog_leg": "Pata de rana",
@@ -249,9 +266,12 @@
   "item.nomansland.cooked_venison": "Venado asado",
   "item.nomansland.raw_camelid": "Camello crudo",
   "item.nomansland.cooked_camelid": "Camello asado",
+  
   "item.nomansland.resin": "Resina",
   "item.nomansland.resin_oil_bottle": "Botella de aceite de resina",
+  
   "item.nomansland.firebomb": "Bomba",
+  "item.nomansland.explosive": "Explosive",
 
   "nomansland.subtitles.block.spike_trap.extend": "Picos se extienden",
   "nomansland.subtitles.block.spike_trap.retract": "Picos se retraen",
