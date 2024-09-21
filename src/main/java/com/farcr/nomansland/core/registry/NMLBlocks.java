@@ -2,19 +2,17 @@ package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.block.*;
-import com.farcr.nomansland.core.content.block.cauldrons.BottledCauldronBlock;
-import com.farcr.nomansland.core.content.block.cauldrons.BottledCauldronType;
-import com.farcr.nomansland.core.content.block.cauldrons.ResinCauldronBlock;
-import com.farcr.nomansland.core.content.block.fruit_trees.FruitType;
-import com.farcr.nomansland.core.content.block.fruit_trees.FruitLeavesBlock;
+import com.farcr.nomansland.core.content.block.cauldrons.NMLCauldronBlock;
+import com.farcr.nomansland.core.content.block.cauldrons.NMLCauldronType;
 import com.farcr.nomansland.core.content.block.fruit_trees.FruitBlock;
+import com.farcr.nomansland.core.content.block.fruit_trees.FruitLeavesBlock;
+import com.farcr.nomansland.core.content.block.fruit_trees.FruitType;
 import com.farcr.nomansland.core.content.block.signs.CeilingHangingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.StandingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.WallHangingSignBlock;
 import com.farcr.nomansland.core.content.block.signs.WallSignBlock;
 import com.farcr.nomansland.core.content.block.torches.*;
 import com.farcr.nomansland.core.content.world.tree.HugeMushrooms;
-import com.farcr.nomansland.core.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -95,13 +93,15 @@ public class NMLBlocks {
     public static final DeferredBlock<WallHangingSignBlock> WALNUT_HANGING_WALL_SIGN = BLOCKS.register("walnut_wall_hanging_sign",
             () -> new WallHangingSignBlock(NMLWoodTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
 
-    public static final DeferredBlock<ResinCauldronBlock> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
-            ResinCauldronBlock::new);
-    public static final DeferredBlock<BottledCauldronBlock> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
-            () -> new BottledCauldronBlock(BottledCauldronType.HONEY));
+    public static final DeferredBlock<NMLCauldronBlock> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
+            () -> new NMLCauldronBlock(NMLCauldronType.RESIN));
+    public static final DeferredBlock<NMLCauldronBlock> RESIN_OIL_CAULDRON = BLOCKS.register("resin_oil_cauldron",
+            () -> new NMLCauldronBlock(NMLCauldronType.RESIN_OIL));
+    public static final DeferredBlock<NMLCauldronBlock> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
+            () -> new NMLCauldronBlock(NMLCauldronType.HONEY));
 
-    public static final DeferredBlock<BottledCauldronBlock> MAPLE_SYRUP_CAULDRON = BLOCKS.register("maple_syrup_cauldron",
-            () -> new BottledCauldronBlock(BottledCauldronType.MAPLE));
+    public static final DeferredBlock<NMLCauldronBlock> MAPLE_SYRUP_CAULDRON = BLOCKS.register("maple_syrup_cauldron",
+            () -> new NMLCauldronBlock(NMLCauldronType.MAPLE));
     //Plants and Other Natural Decorations
     public static final DeferredBlock<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
             () -> new GrassSproutsBlock(Block.Properties.ofFullCopy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));
@@ -368,8 +368,10 @@ public class NMLBlocks {
             () -> new TrapDoorBlock(NMLBlockSetTypes.PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)));
     public static final DeferredBlock<Block> PINE_BOOKSHELF = registerBlock("pine_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF)));
-    public static final DeferredBlock<Block> PINE_CABINET = registerIntegrationBlock("pine_cabinet",
-            ModList.get().isLoaded("farmersdelight") ? FDIntegration.cabinetBlock() : null, "farmersdelight");
+
+//    public static final DeferredBlock<Block> PINE_CABINET = registerIntegrationBlock("pine_cabinet",
+//            ModList.get().isLoaded("farmersdelight") ? FDIntegration.cabinetBlock() : null, "farmersdelight");
+
     //Maple
     public static final DeferredBlock<Block> MAPLE_PLANKS = registerBlock("maple_planks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
@@ -416,8 +418,8 @@ public class NMLBlocks {
             () -> new TrapDoorBlock(NMLBlockSetTypes.MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)));
     public static final DeferredBlock<Block> MAPLE_BOOKSHELF = registerBlock("maple_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF)));
-    public static final DeferredBlock<Block> MAPLE_CABINET = registerIntegrationBlock("maple_cabinet",
-            ModList.get().isLoaded("farmersdelight") ? FDIntegration.cabinetBlock() : null, "farmersdelight");
+//    public static final DeferredBlock<Block> MAPLE_CABINET = registerIntegrationBlock("maple_cabinet",
+//            ModList.get().isLoaded("farmersdelight") ? FDIntegration.cabinetBlock() : null, "farmersdelight");
     //Walnut
     public static final DeferredBlock<Block> WALNUT_PLANKS = registerBlock("walnut_planks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
@@ -456,8 +458,8 @@ public class NMLBlocks {
             () -> new TrapDoorBlock(NMLBlockSetTypes.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)));
     public static final DeferredBlock<Block> WALNUT_BOOKSHELF = registerBlock("walnut_bookshelf",
             () -> new BookshelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF)));
-    public static final DeferredBlock<Block> WALNUT_CABINET = registerIntegrationBlock("walnut_cabinet",
-            ModList.get().isLoaded("farmersdelight") ? FDIntegration.cabinetBlock() : null, "farmersdelight");
+//    public static final DeferredBlock<Block> WALNUT_CABINET = registerIntegrationBlock("walnut_cabinet",
+//            ModList.get().isLoaded("farmersdelight") ? FDIntegration.cabinetBlock() : null, "farmersdelight");
     public static final DeferredBlock<Block> TAP = registerBlock("tap",
             () -> new TapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops().noOcclusion().strength(2.0F).randomTicks().pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> SPIKE_TRAP = registerBlock("spike_trap",
@@ -481,8 +483,8 @@ public class NMLBlocks {
     //Mushrooms
     public static final DeferredBlock<Block> FIELD_MUSHROOM = registerBlock("field_mushroom",
             () -> new SurfaceMushroomBlock(HugeMushrooms.HUGE_FIELD_MUSHROOM, (BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM).mapColor(MapColor.TERRACOTTA_WHITE))));
-    public static final DeferredBlock<Block> FIELD_MUSHROOM_COLONY = ModList.get().isLoaded("farmersdelight") ?
-            BLOCKS.register("field_mushroom_colony", FDIntegration.mushroomColony()): null;
+//    public static final DeferredBlock<Block> FIELD_MUSHROOM_COLONY = ModList.get().isLoaded("farmersdelight") ?
+//            BLOCKS.register("field_mushroom_colony", FDIntegration.mushroomColony()): null;
     public static final DeferredBlock<FlowerPotBlock> POTTED_FIELD_MUSHROOM = BLOCKS.register("potted_field_mushroom",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), NMLBlocks.FIELD_MUSHROOM,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_RED_MUSHROOM).noOcclusion()));

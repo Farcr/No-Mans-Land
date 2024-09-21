@@ -1,6 +1,5 @@
 package com.farcr.nomansland.core.content.mixins;
 
-import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -30,9 +29,9 @@ public class RichSoilBlockMixin {
                 return;
             }
 
-            if (level.getBlockState(pos.above()).getBlock() == NMLBlocks.FIELD_MUSHROOM.get()) {
-                level.setBlockAndUpdate(pos.above(), (NMLBlocks.FIELD_MUSHROOM_COLONY.get()).defaultBlockState());
-            }
+//            if (level.getBlockState(pos.above()).getBlock() == NMLBlocks.FIELD_MUSHROOM.get()) {
+//                level.setBlockAndUpdate(pos.above(), (NMLBlocks.FIELD_MUSHROOM_COLONY.get()).defaultBlockState());
+//            }
         }
     }
 }

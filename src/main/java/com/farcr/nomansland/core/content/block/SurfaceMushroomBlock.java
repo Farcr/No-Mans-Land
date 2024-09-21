@@ -1,18 +1,14 @@
 package com.farcr.nomansland.core.content.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.MushroomBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.util.TriState;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class SurfaceMushroomBlock extends MushroomBlock {
     public SurfaceMushroomBlock(ResourceKey<ConfiguredFeature<?, ?>> pFeature, Properties pProperties) {

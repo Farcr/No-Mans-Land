@@ -13,6 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -47,6 +48,7 @@ public class PathMakingEvents {
                     state.is(Blocks.ROOTED_DIRT) ||
                     state.is(Blocks.GRASS_BLOCK) ||
                     state.is(Blocks.SNOW_BLOCK) ||
+                    state.is(Blocks.SNOW) ||
                     (state.is(Blocks.GRASS_BLOCK) && state.getValue(SNOWY))) {
                 if (state.is(BlockTags.SAND)) {
                     level.playSound(player, pos, SoundEvents.SAND_FALL, SoundSource.BLOCKS, 1, 1);
@@ -59,15 +61,18 @@ public class PathMakingEvents {
                 }
                 if (!level.isClientSide) {
                     stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
-
+                    if (state.is(Blocks.SNOW) && !(level.getBlockState(pos.above()).getBlock() instanceof SnowyDirtBlock)) {
+                        event.setCancellationResult(InteractionResult.FAIL);
+                        event.setCanceled(true);
+                    }
                     level.setBlockAndUpdate(pos,
                             state.is(Blocks.PODZOL) ? NMLBlocks.PODZOL_PATH.get().defaultBlockState() :
                             state.is(Blocks.MYCELIUM) ? NMLBlocks.MYCELIUM_PATH.get().defaultBlockState() :
                             state.is(Blocks.SAND) ? NMLBlocks.SAND_PATH.get().defaultBlockState() :
                             state.is(Blocks.RED_SAND) ? NMLBlocks.RED_SAND_PATH.get().defaultBlockState() :
                             state.is(Blocks.GRAVEL) ? NMLBlocks.GRAVEL_PATH.get().defaultBlockState() :
-                            ((state.is(Blocks.GRASS_BLOCK) && state.getValue(SNOWY)) || (state.is(Blocks.DIRT) && level.getBlockState(pos.above()).is(Blocks.SNOW))) ? NMLBlocks.SNOWY_GRASS_PATH.get().defaultBlockState() :
-                            state.is(Blocks.DIRT) ? NMLBlocks.DIRT_PATH.get().defaultBlockState() :
+                            ((state.is(Blocks.GRASS_BLOCK) && state.getValue(SNOWY)) || (state.is(Blocks.DIRT) && level.getBlockState(pos.above()).is(Blocks.SNOW)) || (state.is(Blocks.SNOW) && level.getBlockState(pos.below()).getBlock() instanceof SnowyDirtBlock)) ? NMLBlocks.SNOWY_GRASS_PATH.get().defaultBlockState() :
+                            state.is(Blocks.DIRT) || state.is(Blocks.COARSE_DIRT) ? NMLBlocks.DIRT_PATH.get().defaultBlockState() :
                             state.is(Blocks.GRASS_BLOCK) ? Blocks.DIRT_PATH.defaultBlockState() :
                             NMLBlocks.SNOW_PATH.get().defaultBlockState());
                 }

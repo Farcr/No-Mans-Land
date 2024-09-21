@@ -54,8 +54,8 @@ public final class NMLTreeGrowers {
             0.2f,
             Optional.empty(),
             Optional.empty(),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "pine"))),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "large_pine"))),
+            Optional.of(NMLFeatures.PINE),
+            Optional.of(NMLFeatures.LARGE_PINE),
             Optional.empty(),
             Optional.empty()
     );

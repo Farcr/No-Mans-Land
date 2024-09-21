@@ -2,9 +2,8 @@ package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;
-import com.farcr.nomansland.core.content.item.*;
 import com.farcr.nomansland.core.content.item.BoatItem;
-import com.farcr.nomansland.core.registry.integration.FDIntegration;
+import com.farcr.nomansland.core.content.item.*;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.*;
@@ -52,8 +51,8 @@ public class NMLItems {
             () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
 
     //Materials
-    public static final DeferredItem<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
-            ModList.get().isLoaded("farmersdelight") ? FDIntegration.mushroomColonyItem() : null, "farmersdelight");
+//    public static final DeferredItem<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
+//            ModList.get().isLoaded("farmersdelight") ? FDIntegration.mushroomColonyItem() : null, "farmersdelight");
     public static final DeferredItem<Item> RESIN = registerItem("resin",
             () -> new FuelItem(new Item.Properties(), 1000));
     public static final DeferredItem<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
@@ -135,9 +134,9 @@ public class NMLItems {
             event.accept(NMLBlocks.PINE_TRAPDOOR.get());
             event.accept(NMLBlocks.PINE_PRESSURE_PLATE.get());
             event.accept(NMLBlocks.PINE_BUTTON.get());
-            if (ModList.get().isLoaded("farmersdelight")) {
-                event.accept(NMLBlocks.PINE_CABINET.get());
-            }
+//            if (ModList.get().isLoaded("farmersdelight")) {
+//                event.accept(NMLBlocks.PINE_CABINET.get());
+//            }
 
             event.accept(NMLBlocks.MAPLE_LOG.get());
             event.accept(NMLBlocks.MAPLE_WOOD.get());
@@ -153,9 +152,9 @@ public class NMLItems {
             event.accept(NMLBlocks.MAPLE_TRAPDOOR.get());
             event.accept(NMLBlocks.MAPLE_PRESSURE_PLATE.get());
             event.accept(NMLBlocks.MAPLE_BUTTON.get());
-            if (ModList.get().isLoaded("farmersdelight")) {
-                event.accept(NMLBlocks.MAPLE_CABINET.get());
-            }
+//            if (ModList.get().isLoaded("farmersdelight")) {
+//                event.accept(NMLBlocks.MAPLE_CABINET.get());
+//            }
 
             event.accept(NMLBlocks.WALNUT_LOG.get());
             event.accept(NMLBlocks.WALNUT_WOOD.get());
@@ -171,9 +170,9 @@ public class NMLItems {
             event.accept(NMLBlocks.WALNUT_TRAPDOOR.get());
             event.accept(NMLBlocks.WALNUT_PRESSURE_PLATE.get());
             event.accept(NMLBlocks.WALNUT_BUTTON.get());
-            if (ModList.get().isLoaded("farmersdelight")) {
-                event.accept(NMLBlocks.WALNUT_CABINET.get());
-            }
+//            if (ModList.get().isLoaded("farmersdelight")) {
+//                event.accept(NMLBlocks.WALNUT_CABINET.get());
+//            }
 
             event.accept(NMLBlocks.COD_BARREL.get());
             event.accept(NMLBlocks.SALMON_BARREL.get());
@@ -236,9 +235,9 @@ public class NMLItems {
             event.accept(NMLBlocks.SHELF_MUSHROOM_BLOCK.get());
             event.accept(NMLBlocks.FROSTED_LEAVES.get());
 
-            if (ModList.get().isLoaded("farmersdelight")) {
-                event.accept(NMLBlocks.FIELD_MUSHROOM_COLONY.get());
-            }
+//            if (ModList.get().isLoaded("farmersdelight")) {
+//                event.accept(NMLBlocks.FIELD_MUSHROOM_COLONY.get());
+//            }
             event.accept(NMLBlocks.DIRT_PATH.get());
             event.accept(NMLBlocks.MYCELIUM_PATH.get());
             event.accept(NMLBlocks.PODZOL_PATH.get());

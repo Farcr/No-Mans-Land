@@ -4,13 +4,10 @@ import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.farcr.nomansland.core.registry.NMLItems;
 import net.minecraft.core.Holder;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import java.util.function.Supplier;
 
 public enum FruitType {
     APPLE_OAK(NMLBlocks.APPLE_FRUIT, NMLBlocks.APPLE_FRUIT_LEAVES, Blocks.OAK_LEAVES.defaultBlockState().getBlockHolder(), 3, Items.APPLE.getDefaultInstance().getItemHolder(), new VoxelShape[]{

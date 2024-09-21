@@ -23,7 +23,6 @@ public class NMLConfig {
     public static ModConfigSpec.DoubleValue FALLING_DAMAGE;
     public static ModConfigSpec.DoubleValue IMPALING_DAMAGE;
     public static ModConfigSpec.DoubleValue SKEWERING_DAMAGE;
-    public static ModConfigSpec.IntValue WOODEN_SCAFFOLDING_DISTANCE;
     public static ModConfigSpec.DoubleValue BURIED_SPAWNING_CHANCE;
     public static ModConfigSpec CLIENT_CONFIG;
     public static ModConfigSpec.BooleanValue FOG_MODIFIERS;
@@ -73,9 +72,6 @@ public class NMLConfig {
         COMMON_BUILDER.pop();
 
         COMMON_BUILDER.push(CATEGORY_MISC);
-        WOODEN_SCAFFOLDING_DISTANCE = COMMON_BUILDER
-                .comment("The max distance a wooden scaffolding can be from another scaffolding.")
-                .defineInRange("woodenScaffoldingDistance", 6, 2, 20);
         BURIED_SPAWNING_CHANCE = COMMON_BUILDER
                 .comment("The chance a buried is spawned upon brushing a remains block.")
                 .defineInRange("buriedSpawningChance", 0.05, 0, 1);

@@ -1,13 +1,9 @@
 package com.farcr.nomansland.core.content.world;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.registry.NMLBiomes;
-import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
-import terrablender.api.RegionType;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
-import terrablender.worldgen.DefaultOverworldRegion;
 
 public class NMLTerrablender {
     public static void registerRegions() {

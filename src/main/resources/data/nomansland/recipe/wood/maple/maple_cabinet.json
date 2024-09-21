@@ -1,34 +1,27 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "neoforge:conditions": [
     {
-      "conditions": [
-        {
-          "type": "forge:mod_loaded",
-          "modid": "farmersdelight"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "___",
-          "S S",
-          "___"
-        ],
-        "key": {
-          "_": {
-            "item": "nomansland:maple_slab"
-          },
-          "S": {
-            "item": "nomansland:maple_trapdoor"
-          }
-        },
-        "result": {
-          "id": "nomansland:maple_cabinet",
-          "count": 1
-        },
-        "group": "cabinets"
-      }
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
     }
-  ]
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "___",
+    "S S",
+    "___"
+  ],
+  "key": {
+    "_": {
+      "item": "nomansland:maple_slab"
+    },
+    "S": {
+      "item": "nomansland:maple_trapdoor"
+    }
+  },
+  "result": {
+    "id": "nomansland:maple_cabinet",
+    "count": 1
+  },
+  "group": "cabinets"
 }

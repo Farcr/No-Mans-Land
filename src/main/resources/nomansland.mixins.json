@@ -9,7 +9,6 @@
     "BiomeMixin",
     "BlockEntityAccessor",
     "LivingEntityMixin",
-    "RichSoilBlockMixin",
     "ServerLevelMixin",
     "SnowAndFreezeFeatureMixin",
     "SpreadingSnowyDirtBlockMixin"

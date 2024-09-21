@@ -1,13 +1,11 @@
 package com.farcr.nomansland.core.content.world;
 
 import com.farcr.nomansland.core.registry.NMLBiomes;
-import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
-import net.minecraft.world.level.levelgen.VerticalAnchor;
 
 public class NMLSurfaceData {
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);

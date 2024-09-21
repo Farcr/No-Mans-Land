@@ -11,8 +11,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.function.Supplier;
-
 import static com.farcr.nomansland.core.content.block.fruit_trees.FruitBlock.AGE;
 
 public class FruitLeavesBlock extends LeavesBlock {

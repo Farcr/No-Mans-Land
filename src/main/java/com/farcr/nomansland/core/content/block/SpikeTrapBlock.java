@@ -35,7 +35,8 @@ import java.util.function.Predicate;
 
 import static java.lang.Boolean.FALSE;
 
-public class SpikeTrapBlock extends DirectionalBlock implements SimpleWaterloggedBlock {
+public class
+SpikeTrapBlock extends DirectionalBlock implements SimpleWaterloggedBlock {
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final MapCodec<SpikeTrapBlock> CODEC = simpleCodec(SpikeTrapBlock::new);

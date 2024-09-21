@@ -1,8 +1,7 @@
 package com.farcr.nomansland.core.content.block;
 
 import com.farcr.nomansland.core.config.NMLConfig;
-import com.farcr.nomansland.core.content.block.cauldrons.BottledCauldronBlock;
-import com.farcr.nomansland.core.content.block.cauldrons.ResinCauldronBlock;
+import com.farcr.nomansland.core.content.block.cauldrons.NMLCauldronBlock;
 import com.farcr.nomansland.core.content.blockentity.TapBlockEntity;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.farcr.nomansland.core.registry.NMLBlocks;
@@ -15,6 +14,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -74,7 +74,7 @@ public class TapBlock extends BaseEntityBlock {
         return null;
     }
 
-    public static void spawnDrippingParticles(Level level, BlockPos pos, BlockState state, FluidParticleType fluidParticleType) {
+    public static void spawnDrippingParticles(Level level, BlockPos pos, BlockState state, SimpleParticleType particleType) {
         double x = pos.getX();
         double y = pos.getY();
         double z = pos.getZ();
@@ -104,7 +104,7 @@ public class TapBlock extends BaseEntityBlock {
                 break;
             }
         }
-        ParticleOptions particle = fluidParticleType.getParticle();
+        ParticleOptions particle = (ParticleOptions) particleType;
         if (level.isClientSide) level.addParticle(particle, x, y, z, 0.0, 0.0, 0.0);
         else {
             ServerLevel serverLevel = (ServerLevel) level;
@@ -151,7 +151,8 @@ public class TapBlock extends BaseEntityBlock {
     }
 
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.relative(state.getValue(FACING).getOpposite())).isCollisionShapeFullBlock(level, pos);
+        BlockState stateBehind = level.getBlockState(pos.relative(state.getValue(FACING).getOpposite()));
+        return stateBehind.isCollisionShapeFullBlock(level, pos) || stateBehind.getBlock() instanceof AbstractCauldronBlock;
     }
 
     public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
@@ -184,7 +185,7 @@ public class TapBlock extends BaseEntityBlock {
     }
 
     public void tryResin(BlockState cauldronState, BlockPos cauldronPos, Level level, RandomSource random) {
-            if (cauldronState.getBlock() instanceof ResinCauldronBlock cauldron
+            if (cauldronState.getBlock() instanceof NMLCauldronBlock cauldron && cauldron.getCauldronBlock() == NMLBlocks.RESIN_CAULDRON
                     && !cauldron.isFull(cauldronState) && random.nextFloat() < 0.1F * NMLConfig.FILLING_SPEED_MULTIPLIER.get()) {
                 cauldron.fillUp(cauldronState, level, cauldronPos);
             } else if (cauldronState.getBlock() instanceof CauldronBlock) {
@@ -194,7 +195,7 @@ public class TapBlock extends BaseEntityBlock {
     }
 
     public void tryMaple(BlockState cauldronState, BlockPos cauldronPos, Level level, RandomSource random) {
-        if (cauldronState.getBlock() instanceof BottledCauldronBlock cauldron && cauldron.getCauldronBlock() == NMLBlocks.MAPLE_SYRUP_CAULDRON &&
+        if (cauldronState.getBlock() instanceof NMLCauldronBlock cauldron && cauldron.getCauldronBlock() == NMLBlocks.MAPLE_SYRUP_CAULDRON &&
                 !cauldron.isFull(cauldronState) && random.nextFloat() < 0.1F * NMLConfig.FILLING_SPEED_MULTIPLIER.get()) {
             cauldron.fillUp(cauldronState, level, cauldronPos);
         } else if (cauldronState.getBlock() instanceof CauldronBlock) {
@@ -209,17 +210,17 @@ public class TapBlock extends BaseEntityBlock {
         BlockState stateBehind = getBlockStateBehind(level, pos, state);
         if (stateBehind.is(NMLTags.CONIFEROUS_LOGS)) {
             if (random.nextFloat() <= 0.05F) {
-                spawnDrippingParticles(level, pos, state, FluidParticleType.RESIN);
+                spawnDrippingParticles(level, pos, state, NMLParticleTypes.RESIN_DROPLET.get());
             }
         }
         if (stateBehind.hasProperty(HONEY_LEVEL) && stateBehind.getValue(HONEY_LEVEL) > 0) {
             if (random.nextFloat() <= (0.05F * stateBehind.getValue(HONEY_LEVEL))) {
-                spawnDrippingParticles(level, pos, state, FluidParticleType.HONEY);
+                spawnDrippingParticles(level, pos, state, ParticleTypes.FALLING_HONEY);
             }
         }
         if (stateBehind.is(NMLBlocks.MAPLE_LOG)) {
             if (random.nextFloat() <= 0.05F) {
-                spawnDrippingParticles(level, pos, state, FluidParticleType.MAPLE);
+                spawnDrippingParticles(level, pos, state, NMLParticleTypes.MAPLE_SYRUP_DROPLET.get());
             }
         }
     }
@@ -233,21 +234,5 @@ public class TapBlock extends BaseEntityBlock {
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntity) {
         return createTickerHelper(blockEntity, NMLBlockEntities.TAP.get(), TapBlockEntity::tick);
-    }
-
-    public enum FluidParticleType {
-        RESIN(NMLParticleTypes.RESIN_DROPLET.get()),
-        HONEY(ParticleTypes.FALLING_HONEY),
-        MAPLE(NMLParticleTypes.MAPLE_SYRUP_DROPLET.get());
-
-        private final ParticleOptions particle;
-
-        FluidParticleType(ParticleOptions particle) {
-            this.particle = particle;
-        }
-
-        public ParticleOptions getParticle() {
-            return particle;
-        }
     }
 }

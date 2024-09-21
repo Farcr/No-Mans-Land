@@ -30,6 +30,14 @@ public class NMLParticleTypes {
             () -> new SimpleParticleType(false) {
             });
 
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> OIL = PARTICLE_TYPES.register("oil",
+            () -> new SimpleParticleType(false) {
+            });
+
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> OIL_FLAT = PARTICLE_TYPES.register("oil_flat",
+            () -> new SimpleParticleType(false) {
+            });
+
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> MALEVOLENT_FLAME = PARTICLE_TYPES.register("malevolent_flame",
             () -> new SimpleParticleType(false) {
             });

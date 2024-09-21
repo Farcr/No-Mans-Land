@@ -27,7 +27,6 @@ public class NoMansLand {
         NMLParticleTypes.PARTICLE_TYPES.register(modEventBus);
         NMLBlockEntities.BLOCK_ENTITIES.register(modEventBus);
         NMLLootModifiers.LOOT_MODIFIERS.register(modEventBus);
-        NMLLootItemConditions.LOOT_CONDITIONS.register(modEventBus);
         NMLTreeDecoratorType.TREE_DECORATOR_TYPES.register(modEventBus);
         NMLTerrablender.registerRegions();
         NMLTerrablender.registerSurfaceData();

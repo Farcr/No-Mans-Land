@@ -38,13 +38,30 @@ public class AbstractCauldronBlockMixin {
                 level.playSound(null, pos, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
                 cir.setReturnValue(ItemInteractionResult.sidedSuccess(level.isClientSide));
             }
-            if (player.isHolding(NMLItems.RESIN.get())) {
-                player.setItemInHand(hand, new ItemStack(player.getItemInHand(hand).getItemHolder(), player.getItemInHand(hand).getCount()-1));
+            if (player.isHolding(NMLItems.MAPLE_SYRUP_BOTTLE.get())) {
+                player.setItemInHand(hand, ItemUtils.createFilledResult(player.getItemInHand(hand), player, new ItemStack(Items.GLASS_BOTTLE)));
                 player.awardStat(Stats.USE_CAULDRON);
-                player.awardStat(Stats.ITEM_USED.get(NMLItems.RESIN.get()));
-                level.setBlockAndUpdate(pos, NMLBlocks.RESIN_CAULDRON.get().defaultBlockState());
+                player.awardStat(Stats.ITEM_USED.get(NMLItems.MAPLE_SYRUP_BOTTLE.get()));
+                level.setBlockAndUpdate(pos, NMLBlocks.MAPLE_SYRUP_CAULDRON.get().defaultBlockState());
                 level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(state));
                 level.playSound(null, pos, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
+                cir.setReturnValue(ItemInteractionResult.sidedSuccess(level.isClientSide));
+            }
+            if (player.isHolding(NMLItems.RESIN_OIL_BOTTLE.get())) {
+                player.setItemInHand(hand, ItemUtils.createFilledResult(player.getItemInHand(hand), player, new ItemStack(Items.GLASS_BOTTLE)));
+                player.awardStat(Stats.USE_CAULDRON);
+                player.awardStat(Stats.ITEM_USED.get(NMLItems.RESIN_OIL_BOTTLE.get()));
+                level.setBlockAndUpdate(pos, NMLBlocks.RESIN_OIL_CAULDRON.get().defaultBlockState());
+                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(state));
+                level.playSound(null, pos, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
+                cir.setReturnValue(ItemInteractionResult.sidedSuccess(level.isClientSide));
+            }
+            if (player.isHolding(NMLItems.RESIN.get()) && (player.isCreative() || player.getItemInHand(hand).getCount() >= 3)) {
+                if (!player.isCreative()) player.setItemInHand(hand, new ItemStack(player.getItemInHand(hand).getItemHolder(), player.getItemInHand(hand).getCount()-3));
+                player.awardStat(Stats.USE_CAULDRON);
+                level.setBlockAndUpdate(pos, NMLBlocks.RESIN_CAULDRON.get().defaultBlockState());
+                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(state));
+                level.playSound(null, pos, SoundEvents.HONEY_BLOCK_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
                 cir.setReturnValue(ItemInteractionResult.sidedSuccess(level.isClientSide));
             }
         }

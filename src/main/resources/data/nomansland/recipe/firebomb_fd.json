@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "item": "minecraft:gunpowder"
+    },
+    "P": {
+      "item": "nomansland:resin"
+    },
+    "R": {
+      "item": "farmers_delight:rope"
+    }
+  },
+  "pattern": [
+    "  R",
+    "GP ",
+    "GG "
+  ],
+  "result": {
+    "count": 2,
+    "id": "nomansland:firebomb"
+  }
+}

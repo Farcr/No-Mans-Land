@@ -48,6 +48,7 @@ public class NMLFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FROSTED_PINE = register("frosted_pine");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE = register("pine");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_PINE = register("large_pine");
 
 
     public static ResourceKey<ConfiguredFeature<?, ?>> register(String name) {

@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
   "type": "nomansland:add_item",
   "conditions": [
     {
@@ -14,10 +20,6 @@
     {
       "condition": "block_state_property",
       "block": "nomansland:oat_grass"
-    },
-    {
-      "condition": "nomansland:mod_loaded",
-      "modid": "farmersdelight"
     }
   ],
   "item": "farmersdelight:straw"

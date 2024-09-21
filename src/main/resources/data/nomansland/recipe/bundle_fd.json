@@ -8,20 +8,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "X": {
-      "item": "minecraft:stick"
+    "L": {
+      "item": "minecraft:leather"
     },
-    "Y": {
-      "item": "minecraft:string"
+    "R": {
+      "item": "farmers_delight:rope"
     }
   },
   "pattern": [
-    "XYX",
-    "X X",
-    "X X"
+    "RRR",
+    "L L",
+    "LLL"
   ],
   "result": {
     "count": 1,
-    "id": "nomansland:wooden_scaffolding"
+    "id": "minecraft:bundle"
   }
 }
