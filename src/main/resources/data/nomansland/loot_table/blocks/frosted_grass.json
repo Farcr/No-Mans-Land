@@ -64,7 +64,7 @@
               {
                 "condition": "minecraft:block_state_property",
                 "block": "nomansland:frosted_grass",
-                "properties": {"snowy": "true"}
+                "properties": {"snowlogged": "true"}
               }
             ]
           }

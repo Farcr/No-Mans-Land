@@ -108,36 +108,36 @@ public class NMLBiomeBuilder {
 
     // NML Biomes
     protected final ResourceKey<Biome>[][] MIDDLE_BIOMES_NML = new ResourceKey[][]{
-            {null, null, NMLBiomes.SNOWY_MAPLE_FOREST, null, NMLBiomes.MAPLE_FOREST},
+            {null, null, NMLBiomes.SNOWY_MAPLE_FOREST, NMLBiomes.SNOWY_MAPLE_FOREST, null},
             {null, null, NMLBiomes.MAPLE_FOREST, NMLBiomes.MAPLE_FOREST, null},
-            {null, NMLBiomes.AUTUMNAL_FOREST, null, NMLBiomes.OLD_GROWTH_FOREST, null},
+            {null, NMLBiomes.AUTUMNAL_FOREST, NMLBiomes.AUTUMNAL_FOREST, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null}
     };
     protected final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT_NML = new ResourceKey[][]{
             {null, null, null, null, null},
             {null, null, null, null, null},
-            {null, null, null, null, null},
+            {null, null, NMLBiomes.OLD_GROWTH_FOREST, NMLBiomes.OLD_GROWTH_FOREST, null},
             {null, null, null, null, null},
             {null, null, null, null, null}
     };
     protected final ResourceKey<Biome>[][] PLATEAU_BIOMES_NML = new ResourceKey[][]{
             {null, null, NMLBiomes.SNOWY_MAPLE_FOREST, null, null},
             {null, null, NMLBiomes.MAPLE_FOREST, NMLBiomes.MAPLE_FOREST, null},
-            {null, NMLBiomes.AUTUMNAL_FOREST, NMLBiomes.AUTUMNAL_FOREST, null, null},
-            {null, null, NMLBiomes.OLD_GROWTH_FOREST, null, null},
+            {null, NMLBiomes.AUTUMNAL_FOREST, null, null, null},
+            {null, null, null, null, null},
             {null, null, null, null, null}
     };
     protected final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT_NML = new ResourceKey[][]{
             {null, null, null, null, null},
             {null, null, NMLBiomes.MAPLE_FOREST, null, null},
-            {NMLBiomes.AUTUMNAL_FOREST, null, null, null, null},
+            {null, null, NMLBiomes.OLD_GROWTH_FOREST, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null}
     };
     protected final ResourceKey<Biome>[][] SLOPE_BIOMES_NML = new ResourceKey[][]{
-            {null, null, null, null, null},
-            {null, null, null, null, null},
+            {null, null, NMLBiomes.SNOWY_MAPLE_FOREST, NMLBiomes.SNOWY_MAPLE_FOREST, null},
+            {null, null, NMLBiomes.MAPLE_FOREST, NMLBiomes.MAPLE_FOREST, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null}
@@ -158,8 +158,8 @@ public class NMLBiomeBuilder {
     };
     protected final ResourceKey<Biome>[][] SWAMP_BIOMES_NML = new ResourceKey[][]{
             {null, null, null, null, null},
-            {null, null, null, NMLBiomes.DARK_SWAMP, NMLBiomes.DARK_SWAMP},
             {null, null, null, null, NMLBiomes.DARK_SWAMP},
+            {null, null, null, NMLBiomes.DARK_SWAMP, NMLBiomes.DARK_SWAMP},
             {null, null, null, null, null},
             {null, null, null, null, null}
     };
