@@ -16,7 +16,11 @@
         "feature": "minecraft:pine_checked"
       },
       {
-        "chance": 0.45,
+        "chance": 0.35,
+        "feature": "nomansland:large_pine_checked"
+      },
+      {
+        "chance": 0.1,
         "feature": "nomansland:pine_checked"
       }
     ]
