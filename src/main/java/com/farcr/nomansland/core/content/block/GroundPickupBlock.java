@@ -1,6 +1,5 @@
 package com.farcr.nomansland.core.content.block;
 
-import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -27,11 +26,11 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class PebbleBlock extends Block implements SimpleWaterloggedBlock {
+public class GroundPickupBlock extends Block implements SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 15.0D);
 
-    public PebbleBlock(BlockBehaviour.Properties pProperties) {
+    public GroundPickupBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
@@ -42,10 +41,10 @@ public class PebbleBlock extends Block implements SimpleWaterloggedBlock {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == NMLBlocks.PEBBLES.asItem()))) {
-            ItemStack pebble = new ItemStack(NMLBlocks.PEBBLES.get());
-            if (!player.addItem(pebble) ) {
-                player.drop(pebble, false);
+        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == this .asItem()))) {
+            ItemStack item = new ItemStack(this);
+            if (!player.addItem(item) ) {
+                player.drop(item, false);
             } else {
                 level.playSound(player,
                         player.getX(),

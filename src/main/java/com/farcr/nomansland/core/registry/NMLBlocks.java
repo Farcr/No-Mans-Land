@@ -122,7 +122,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> DUCKWEED = registerBlock("duckweed",
             () -> new DuckweedBlock(Block.Properties.ofFullCopy(Blocks.LILY_PAD).noCollission().offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final DeferredBlock<Block> PEBBLES = registerBlock("pebbles",
-            () -> new PebbleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noCollission().instabreak().sound(SoundType.STONE).pushReaction(PushReaction.DESTROY)));
+            () -> new GroundPickupBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noCollission().instabreak().sound(SoundType.STONE).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> YELLOW_BIRCH_LEAVES = registerBlock("yellow_birch_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
     public static final DeferredBlock<Block> YELLOW_BIRCH_SAPLING = registerBlock("yellow_birch_sapling",
