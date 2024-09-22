@@ -41,6 +41,7 @@ import java.util.Map;
 import static net.minecraft.world.level.block.BeehiveBlock.HONEY_LEVEL;
 
 public class TapBlock extends BaseEntityBlock {
+    public static final MapCodec<TapBlock> CODEC = simpleCodec(TapBlock::new);
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
             Direction.NORTH, Block.box(6.0D, 3.0D, 10.0D, 10.0D, 8.0D, 16.0D),
@@ -52,6 +53,11 @@ public class TapBlock extends BaseEntityBlock {
     public TapBlock(Properties pProperties) {
         super(pProperties);
 
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
     }
 
     public static VoxelShape getShape(BlockState state) {
@@ -104,17 +110,12 @@ public class TapBlock extends BaseEntityBlock {
                 break;
             }
         }
-        ParticleOptions particle = (ParticleOptions) particleType;
+        ParticleOptions particle = particleType;
         if (level.isClientSide) level.addParticle(particle, x, y, z, 0.0, 0.0, 0.0);
         else {
             ServerLevel serverLevel = (ServerLevel) level;
             serverLevel.sendParticles(particle, x, y, z, 1, 0, 0, 0, 0);
         }
-    }
-
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return null;
     }
 
     @Nullable
@@ -233,6 +234,6 @@ public class TapBlock extends BaseEntityBlock {
 
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntity) {
-        return createTickerHelper(blockEntity, NMLBlockEntities.TAP.get(), TapBlockEntity::tick);
+        return level.isClientSide ? null : createTickerHelper(blockEntity, NMLBlockEntities.TAP.get(), TapBlockEntity::tick);
     }
 }

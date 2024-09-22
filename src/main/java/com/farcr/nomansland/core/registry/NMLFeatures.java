@@ -43,6 +43,9 @@ public class NMLFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FROSTED_SPRUCE_ALT = register("frosted_spruce_alt");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FROSTED_PINE = register("frosted_pine");
 
+ public static final ResourceKey<ConfiguredFeature<?, ?>> MEGA_FROSTED_SPRUCE = register("mega_frosted_spruce");
+ public static final ResourceKey<ConfiguredFeature<?, ?>> MEGA_FROSTED_SPRUCE_ALT = register("mega_frosted_spruce_alt");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE = register("pine");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_PINE = register("large_pine");
 

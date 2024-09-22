@@ -17,6 +17,7 @@ public class NMLTags {
     public static final TagKey<Block> CONIFEROUS_LOGS = createBlockTag("coniferous_logs");
     public static final TagKey<Biome> HAS_DENSE_FOG = createBiomeTag("has_dense_fog");
     public static final TagKey<Block> FIREBOMB_EXPLODE = createBlockTag("firebomb_explode");
+    public static final TagKey<Block> HEAT_SOURCES = createBlockTag("heat_sources");
     public static final TagKey<EntityType<?>> ANCHOR_BLACKLIST = createEntityTag("anchor_blacklist");
 
     private static TagKey<Item> createItemTag(String name) {

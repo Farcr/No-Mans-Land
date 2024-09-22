@@ -74,6 +74,7 @@ public class TapBlockEntity extends BlockEntity {
                     else level.setBlockAndUpdate(cauldronPos, stateBehind.getBlock().defaultBlockState());
                 }
                 level.gameEvent(GameEvent.BLOCK_CHANGE, cauldronPos, GameEvent.Context.of(cauldronState));
+                level.gameEvent(GameEvent.BLOCK_CHANGE, posBehind, GameEvent.Context.of(stateBehind));
             }
         }
     }
