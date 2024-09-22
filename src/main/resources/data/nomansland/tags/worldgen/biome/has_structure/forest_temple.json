@@ -1,7 +1,7 @@
 {
   "values": [
     "minecraft:forest",
-    "nomansland:old_growth_forest",
+    "#nomansland:old_growth_forest",
     "minecraft:birch_forest",
     "minecraft:old_growth_birch_forest"
   ]
