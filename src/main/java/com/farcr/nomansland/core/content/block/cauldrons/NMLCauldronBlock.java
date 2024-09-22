@@ -9,14 +9,17 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.biome.Biome;
@@ -31,6 +34,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.common.data.internal.NeoForgeBlockTagsProvider;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class NMLCauldronBlock extends LayeredCauldronBlock {
@@ -168,6 +172,11 @@ public class NMLCauldronBlock extends LayeredCauldronBlock {
         if (entity instanceof LivingEntity && sticky) {
             if (entity.getY() > pos.getY()+.6) level.playSound(null, pos, SoundEvents.HONEY_BLOCK_SLIDE, SoundSource.BLOCKS, 1, 1);
             if (state.getValue(LEVEL) > 1) entity.makeStuckInBlock(state, new Vec3(.9, .9, .9));
+        }
+        BlockState stateUnder = level.getBlockState(pos.below());
+        if (entity instanceof ItemEntity item && item.getItem().is(Items.HONEYCOMB) && stateUnder.is(BlockTags.FIRE) && cauldronBlock == NMLBlocks.RESIN_CAULDRON) {
+            entity.remove(Entity.RemovalReason.KILLED);
+            level.setBlockAndUpdate(pos, NMLBlocks.RESIN_OIL_CAULDRON.get().defaultBlockState());
         }
     }
 

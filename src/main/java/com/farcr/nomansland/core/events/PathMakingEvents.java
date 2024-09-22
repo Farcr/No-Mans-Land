@@ -1,9 +1,13 @@
 package com.farcr.nomansland.core.events;
 
 import com.farcr.nomansland.core.NoMansLand;
+import com.farcr.nomansland.core.content.block.cauldrons.NMLCauldronBlock;
 import com.farcr.nomansland.core.registry.NMLBlocks;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
@@ -12,16 +16,25 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BambooSaplingBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
 import static net.minecraft.world.level.block.SnowyDirtBlock.SNOWY;
 
 @EventBusSubscriber(modid = NoMansLand.MODID)
+@SuppressWarnings("unused")
 public class PathMakingEvents {
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
@@ -32,53 +45,54 @@ public class PathMakingEvents {
         ItemStack stack = event.getItemStack();
 
         if ((stack.is(ItemTags.HOES) || stack.is(ItemTags.SHOVELS)) && !player.isSpectator() && state.canBeReplaced()) {
-            state = level.getBlockState(pos.below());
             pos = pos.below();
+            state = level.getBlockState(pos);
         }
 
+        List<Block> pathableBlocks = List.of(
+                Blocks.GRAVEL,
+                Blocks.SAND,
+                Blocks.RED_SAND,
+                Blocks.MYCELIUM,
+                Blocks.PODZOL,
+                Blocks.DIRT,
+                Blocks.COARSE_DIRT,
+                Blocks.ROOTED_DIRT,
+                Blocks.SNOW_BLOCK,
+                Blocks.GRASS_BLOCK
+        );
         //Paths
-        if (event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && (level.isEmptyBlock(pos.above()) || level.getBlockState(pos.above()).canBeReplaced())) {
-            if (state.is(Blocks.PODZOL) ||
-                    state.is(Blocks.MYCELIUM) ||
-                    state.is(Blocks.SAND) ||
-                    state.is(Blocks.RED_SAND) ||
-                    state.is(Blocks.GRAVEL) ||
-                    state.is(Blocks.DIRT) ||
-                    state.is(Blocks.COARSE_DIRT) ||
-                    state.is(Blocks.ROOTED_DIRT) ||
-                    state.is(Blocks.GRASS_BLOCK) ||
-                    state.is(Blocks.SNOW_BLOCK) ||
-                    state.is(Blocks.SNOW) ||
-                    (state.is(Blocks.GRASS_BLOCK) && state.getValue(SNOWY))) {
-                if (state.is(BlockTags.SAND)) {
-                    level.playSound(player, pos, SoundEvents.SAND_FALL, SoundSource.BLOCKS, 1, 1);
-                } else if (state.is(Blocks.GRAVEL)) {
-                    level.playSound(player, pos, SoundEvents.GRAVEL_FALL, SoundSource.BLOCKS, 1, 1);
-                } else if ((state.is(Blocks.GRASS_BLOCK) && state.getValue(SNOWY)) || state.is(Blocks.SNOW_BLOCK)) {
-                    level.playSound(player, pos, SoundEvents.SNOW_BREAK, SoundSource.BLOCKS, 1, 1);
-                } else {
-                    level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1, 1);
-                }
-                if (!level.isClientSide) {
-                    stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
-                    if (state.is(Blocks.SNOW) && !(level.getBlockState(pos.above()).getBlock() instanceof SnowyDirtBlock)) {
-                        event.setCancellationResult(InteractionResult.FAIL);
-                        event.setCanceled(true);
-                    }
-                    level.setBlockAndUpdate(pos,
-                            state.is(Blocks.PODZOL) ? NMLBlocks.PODZOL_PATH.get().defaultBlockState() :
-                            state.is(Blocks.MYCELIUM) ? NMLBlocks.MYCELIUM_PATH.get().defaultBlockState() :
-                            state.is(Blocks.SAND) ? NMLBlocks.SAND_PATH.get().defaultBlockState() :
-                            state.is(Blocks.RED_SAND) ? NMLBlocks.RED_SAND_PATH.get().defaultBlockState() :
-                            state.is(Blocks.GRAVEL) ? NMLBlocks.GRAVEL_PATH.get().defaultBlockState() :
-                            ((state.is(Blocks.GRASS_BLOCK) && state.getValue(SNOWY)) || (state.is(Blocks.DIRT) && level.getBlockState(pos.above()).is(Blocks.SNOW)) || (state.is(Blocks.SNOW) && level.getBlockState(pos.below()).getBlock() instanceof SnowyDirtBlock)) ? NMLBlocks.SNOWY_GRASS_PATH.get().defaultBlockState() :
-                            state.is(Blocks.DIRT) || state.is(Blocks.COARSE_DIRT) ? NMLBlocks.DIRT_PATH.get().defaultBlockState() :
-                            state.is(Blocks.GRASS_BLOCK) ? Blocks.DIRT_PATH.defaultBlockState() :
-                            NMLBlocks.SNOW_PATH.get().defaultBlockState());
-                }
-                event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
-                event.setCanceled(true);
+        if ((pathableBlocks.contains(state.getBlock()) || (state.is(Blocks.GRASS_BLOCK) && state.getValue(SNOWY))) && event.getFace() != Direction.DOWN && stack.is(ItemTags.SHOVELS) && !player.isSpectator() && (level.isEmptyBlock(pos.above()) || level.getBlockState(pos.above()).canBeReplaced())) {
+            if (state.is(BlockTags.SAND)) {
+                level.playSound(player, pos, SoundEvents.SAND_FALL, SoundSource.BLOCKS, 1, 1);
+            } else if (state.is(Blocks.GRAVEL)) {
+                level.playSound(player, pos, SoundEvents.GRAVEL_FALL, SoundSource.BLOCKS, 1, 1);
+            } else if (((state.is(Blocks.DIRT) || state.is(Blocks.COARSE_DIRT) || state.is(Blocks.ROOTED_DIRT) || state.is(Blocks.GRASS_BLOCK)) && level.getBlockState(pos.above()).is(Blocks.SNOW)) || state.is(Blocks.SNOW)) {
+                level.playSound(player, pos, SoundEvents.SNOW_BREAK, SoundSource.BLOCKS, 1, 1);
+            } else {
+                level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1, 1);
             }
+            if (!level.isClientSide) {
+                stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
+
+                BlockState pathState = ImmutableMap.ofEntries(
+                        Map.entry(Blocks.GRAVEL, NMLBlocks.GRAVEL_PATH),
+                        Map.entry(Blocks.SAND, NMLBlocks.SAND_PATH),
+                        Map.entry(Blocks.RED_SAND, NMLBlocks.RED_SAND_PATH),
+                        Map.entry(Blocks.GRASS_BLOCK, Blocks.GRASS_BLOCK.defaultBlockState().getBlockHolder()),
+                        Map.entry(Blocks.MYCELIUM, NMLBlocks.MYCELIUM_PATH),
+                        Map.entry(Blocks.PODZOL, NMLBlocks.PODZOL_PATH),
+                        Map.entry(Blocks.DIRT, NMLBlocks.DIRT_PATH),
+                        Map.entry(Blocks.COARSE_DIRT, NMLBlocks.DIRT_PATH),
+                        Map.entry(Blocks.ROOTED_DIRT, NMLBlocks.DIRT_PATH),
+                        Map.entry(Blocks.SNOW_BLOCK, NMLBlocks.SNOW_PATH)
+                ).get(state.getBlock()).value().defaultBlockState();
+
+                if ((state.is(Blocks.DIRT) || state.is(Blocks.COARSE_DIRT) || state.is(Blocks.ROOTED_DIRT) || state.is(Blocks.GRASS_BLOCK)) && level.getBlockState(pos.above()).is(Blocks.SNOW)) level.setBlockAndUpdate(pos, NMLBlocks.SNOWY_GRASS_PATH.get().defaultBlockState());
+                else level.setBlockAndUpdate(pos, pathState);
+            }
+            event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
+            event.setCanceled(true);
         }
 
         //Dirt Path into Farmland

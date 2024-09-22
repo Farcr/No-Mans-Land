@@ -24,6 +24,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import java.util.Iterator;
 
 @EventBusSubscriber(modid = NoMansLand.MODID)
+@SuppressWarnings("unused")
 public class BoneMealingEvents {
 
     // TODO: make sure these events consume durability and can break the item
