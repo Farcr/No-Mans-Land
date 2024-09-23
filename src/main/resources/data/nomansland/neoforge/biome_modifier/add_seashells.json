@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_beach",
+  "features": [
+    "nomansland:seashells"
+  ],
+  "step": "local_modifications"
+}

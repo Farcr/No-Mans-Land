@@ -1,0 +1,141 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/ocean/seashells_1"
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_1",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_1",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_1",
+        "y": 270
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_2"
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_2",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_2",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_2",
+        "y": 270
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_3"
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_3",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_3",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_3",
+        "y": 270
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_4"
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_4",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_4",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_4",
+        "y": 270
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_5"
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_5",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_5",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_5",
+        "y": 270
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_6"
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_6",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_6",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_6",
+        "y": 270
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_7"
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_7",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_7",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_7",
+        "y": 270
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_8"
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_8",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_8",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_8",
+        "y": 270
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_9"
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_9",
+        "y": 90
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_9",
+        "y": 180
+      },
+      {
+        "model": "nomansland:block/ocean/seashells_9",
+        "y": 270
+      }
+    ]
+  }
+}

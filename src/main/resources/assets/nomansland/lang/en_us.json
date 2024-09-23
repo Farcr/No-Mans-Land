@@ -20,10 +20,12 @@
   "block.nomansland.tall_beachgrass": "Tall Beachgrass",
   "block.nomansland.frosted_grass": "Frosted Grass",
   "block.nomansland.fiddlehead": "Fiddlehead",
-  "block.nomansland.pebbles": "Pebbles",
   "block.nomansland.cattail": "Cattail",
   "block.nomansland.clover_patch": "Clover Patch",
   "block.nomansland.duckweed": "Duckweed",
+
+  "block.nomansland.pebbles": "Pebbles",
+  "block.nomansland.seashells": "Seashells",
 
   "block.nomansland.white_flowerbed": "White Flowerbed",
   "block.nomansland.red_flowerbed": "Red Flowerbed",

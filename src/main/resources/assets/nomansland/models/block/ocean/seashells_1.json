@@ -1,0 +1,7 @@
+{
+  "parent": "nomansland:block/flat_plane",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "texture": "nomansland:block/ocean/seashells_1"
+  }
+}

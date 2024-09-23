@@ -223,6 +223,7 @@ public class NMLItems {
             event.accept(NMLBlocks.SUCCULENT.get());
             event.accept(NMLBlocks.PICKLEWEED.get());
             event.accept(NMLBlocks.PEBBLES.get());
+            event.accept(NMLBlocks.SEASHELLS.get());
             event.accept(NMLBlocks.YELLOW_BIRCH_LEAVES.get());
             event.accept(NMLBlocks.YELLOW_BIRCH_SAPLING);
             event.accept(NMLBlocks.AUTUMNAL_OAK_LEAVES.get());
@@ -319,7 +320,7 @@ public class NMLItems {
             event.accept(NMLItems.WALNUT_BOAT.get());
             event.accept(NMLItems.WALNUT_CHEST_BOAT.get());
             // TODO: this crashes the game if you have the bundle experiment on
-            event.accept(Items.BUNDLE);
+//            event.accept(Items.BUNDLE);
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(NMLItems.FIREBOMB.get());
