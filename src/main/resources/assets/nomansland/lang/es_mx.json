@@ -20,10 +20,12 @@
   "block.nomansland.tall_beachgrass": "Pasto de playa alto",
   "block.nomansland.frosted_grass": "Pasto congelado",
   "block.nomansland.fiddlehead": "Brotes de helecho",
-  "block.nomansland.pebbles": "Piedra",
   "block.nomansland.cattail": "Totora",
   "block.nomansland.clover_patch": "Parche de trébol",
   "block.nomansland.duckweed": "Lenteja",
+
+  "block.nomansland.pebbles": "Piedra",
+  "block.nomansland.seashells": "Caracolas",
 
   "block.nomansland.white_flowerbed": "Macizo blanco",
   "block.nomansland.red_flowerbed": "Macizo rojo",
