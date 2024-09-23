@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "nomansland:small_dungeon",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 4355,
+    "separation": 5,
+    "spacing": 16,
+    "type": "minecraft:random_spread"
+  }
+}

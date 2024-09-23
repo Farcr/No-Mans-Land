@@ -1,8 +1,8 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#c:is_beach",
+  "biomes": "#nomansland:is_shoreline",
   "features": [
     "nomansland:seashells"
   ],
-  "step": "local_modifications"
+  "step": "vegetal_decoration"
 }
