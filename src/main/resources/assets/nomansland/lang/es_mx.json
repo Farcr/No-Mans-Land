@@ -33,7 +33,7 @@
   "block.nomansland.violet_flowerbed": "Macizo violeta",
   "block.nomansland.yellow_flowerbed": "Macizo amarillo",
 
-  "block.nomansland.wooden_scaffolding": "Andamios de madera",
+  "block.nomansland.wooden_scaffolding": "Andamio de madera",
 
   "block.nomansland.mundane_tiles": "Azulejos mundanos",
   "block.nomansland.earthen_tiles": "Azulejos de tierra",
@@ -177,8 +177,8 @@
   "block.nomansland.potted_pine_sapling": "Retoño de pino en maceta",
   "block.nomansland.pine_sign": "Letrero de pino",
   "block.nomansland.pine_wall_sign": "Letrero de pino en pared",
-  "block.nomansland.pine_hanging_sign": "Letrero de pino colgante",
-  "block.nomansland.pine_wall_hanging_sign": "Letrero de pino colgante en pared",
+  "block.nomansland.pine_hanging_sign": "Letrero colgante de pino ",
+  "block.nomansland.pine_wall_hanging_sign": "Letrero colgante de pino en pared",
   "item.nomansland.pine_boat": "Bote de pino",
   "item.nomansland.pine_chest_boat": "Bote de pino con cofre",
 
@@ -206,8 +206,8 @@
   "block.nomansland.potted_red_maple_sapling": "Retoño de arce rojo en maceta",
   "block.nomansland.maple_sign": "Letrero de arce",
   "block.nomansland.maple_wall_sign": "Letrero de arce en pared",
-  "block.nomansland.maple_hanging_sign": "Letrero de arce colgante",
-  "block.nomansland.maple_wall_hanging_sign": "Letrero de arce colgante en pared",
+  "block.nomansland.maple_hanging_sign": "Letrero colgante de arce",
+  "block.nomansland.maple_wall_hanging_sign": "Letrero colgante de arce en pared",
   "item.nomansland.maple_boat": "Bote de arce",
   "item.nomansland.maple_chest_boat": "Bote de arce con cofre",
 
@@ -237,7 +237,7 @@
   "item.nomansland.walnut_boat": "Bote de nogal",
   "item.nomansland.walnut_chest_boat": "Bote de nogal con cofre",
 
-  "block.nomansland.cod_barrel": "Barril de bacalo",
+  "block.nomansland.cod_barrel": "Barril de bacalao",
   "block.nomansland.salmon_barrel": "Barril de salmón",
   "block.nomansland.tropical_fish_barrel": "Barril de pez tropical",
   "block.nomansland.pufferfish_barrel": "Barril de pez globo",
@@ -263,7 +263,7 @@
   "item.nomansland.cooked_frog_leg": "Pata de rana asada",
   "item.nomansland.maple_syrup_bottle": "Botella de jarabe de arce",
   "item.nomansland.raw_horse": "Caballo crudo",
-  "item.nomansland.horse_steak": "Filete de caballo",
+  "item.nomansland.horse_steak": "Caballo asado",
   "item.nomansland.venison": "Venado",
   "item.nomansland.cooked_venison": "Venado asado",
   "item.nomansland.raw_camelid": "Camello crudo",
@@ -273,7 +273,7 @@
   "item.nomansland.resin_oil_bottle": "Botella de aceite de resina",
   
   "item.nomansland.firebomb": "Bomba",
-  "item.nomansland.explosive": "Explosive",
+  "item.nomansland.explosive": "Explosivo",
 
   "nomansland.subtitles.block.spike_trap.extend": "Picos se extienden",
   "nomansland.subtitles.block.spike_trap.retract": "Picos se retraen",
