@@ -152,6 +152,8 @@
   "block.nomansland.resin_cauldron": "Cauldron Filled With Resin",
   "block.nomansland.honey_cauldron": "Cauldron Filled With Honey",
   "block.nomansland.maple_syrup_cauldron": "Cauldron Filled With Maple Syrup",
+  "block.nomansland.resin_oil_cauldron": "Cauldron Filled With Resin Oil",
+  "block.nomansland.milk_cauldron": "Cauldron Filled With Milk",
 
   "entity.nomansland.boat": "Boat",
   "entity.nomansland.chest_boat": "Boat with Chest",
