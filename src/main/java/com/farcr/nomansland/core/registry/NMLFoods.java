@@ -23,4 +23,6 @@ public class NMLFoods {
     public static final FoodProperties PEAR_COBBLER = new FoodProperties.Builder().nutrition(8).saturationModifier(0.5f).build();
 
     public static final FoodProperties HONEYED_APPLE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.4f).build();
+
+    public static final FoodProperties WALNUTS = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3f).fast().build();
 }
