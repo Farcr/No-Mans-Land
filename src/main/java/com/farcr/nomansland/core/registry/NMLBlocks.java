@@ -212,7 +212,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> PEBBLES = registerBlock("pebbles",
             () -> new GroundPickupBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).noCollission().instabreak().sound(SoundType.STONE).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> SEASHELLS = registerBlock("seashells",
-            () -> new GroundPickupBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NONE).noCollission().instabreak().sound(SoundType.CALCITE).pushReaction(PushReaction.DESTROY)));
+            () -> new GroundPickupBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NONE).noCollission().instabreak().sound(SoundType.CALCITE).pushReaction(PushReaction.DESTROY).offsetType(BlockBehaviour.OffsetType.XYZ)));
     //Underground
     public static final DeferredBlock<Block> QUARTZITE = registerBlock("quartzite",
             () -> new AmethystBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(1.3F).sound(SoundType.NETHER_GOLD_ORE).requiresCorrectToolForDrops()));
