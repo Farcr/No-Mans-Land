@@ -128,6 +128,31 @@
         }
       ],
       "rolls": 1.0
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:survives_explosion"
+            },
+            {
+              "chances": [
+                0.075,
+                0.0833333355,
+                0.09375,
+                0.12500001,
+                0.375
+              ],
+              "condition": "minecraft:table_bonus",
+              "enchantment": "minecraft:fortune"
+            }
+          ],
+          "name": "nomansland:walnuts"
+        }
+      ],
+      "rolls": 1.0
     }
   ],
   "random_sequence": "minecraft:blocks/walnut_leaves"

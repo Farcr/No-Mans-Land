@@ -46,9 +46,12 @@ public class NMLItems {
     //TODO: FD compat pear juice and cobbler slice
     public static final DeferredItem<Item> HONEYED_APPLE = registerItem("honeyed_apple",
             () -> new HoneyFoodItem(new Item.Properties().food(NMLFoods.HONEYED_APPLE)));
+    public static final DeferredItem<Item> WALNUTS = registerItem("walnuts",
+            () -> new Item(new Item.Properties().food(NMLFoods.WALNUTS)));
 
     public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
             () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+
 
     //Materials
 //    public static final DeferredItem<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
@@ -311,6 +314,7 @@ public class NMLItems {
             event.accept(NMLItems.SYRUPED_PEAR.get());
             event.accept(NMLItems.PEAR_COBBLER.get());
             event.accept(NMLItems.HONEYED_APPLE.get());
+            event.accept(NMLItems.WALNUTS.get());
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(NMLItems.PINE_BOAT.get());
