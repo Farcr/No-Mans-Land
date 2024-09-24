@@ -1,0 +1,8 @@
+{
+  "parent": "nomansland:block/alt_door_top_right_open",
+  "textures": {
+    "bottom": "nomansland:block/willow/willow_door_bottom",
+    "top": "nomansland:block/willow/willow_door_top",
+    "side": "nomansland:block/willow/willow_door_sides"
+  }
+}

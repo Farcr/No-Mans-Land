@@ -41,6 +41,7 @@ public class ChestBoatEntity extends ChestBoat {
             case PINE -> NMLItems.PINE_CHEST_BOAT.get();
             case MAPLE -> NMLItems.MAPLE_CHEST_BOAT.get();
             case WALNUT -> NMLItems.WALNUT_CHEST_BOAT.get();
+            case WILLOW -> NMLItems.WILLOW_CHEST_BOAT.get();
         };
     }
 
@@ -71,7 +72,8 @@ public class ChestBoatEntity extends ChestBoat {
     public enum Type implements StringRepresentable {
         PINE(NMLBlocks.PINE_PLANKS.get(), "pine"),
         MAPLE(NMLBlocks.MAPLE_PLANKS.get(), "maple"),
-        WALNUT(NMLBlocks.WALNUT_PLANKS.get(), "maple");
+        WALNUT(NMLBlocks.WALNUT_PLANKS.get(), "walnut"),
+        WILLOW(NMLBlocks.WILLOW_PLANKS.get(), "willow");
 
 
         public static final StringRepresentable.EnumCodec<ChestBoatEntity.Type> CODEC = StringRepresentable.fromEnum(ChestBoatEntity.Type::values);

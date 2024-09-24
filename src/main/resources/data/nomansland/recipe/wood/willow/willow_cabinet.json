@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "___",
+    "S S",
+    "___"
+  ],
+  "key": {
+    "_": {
+      "item": "nomansland:willow_slab"
+    },
+    "S": {
+      "item": "nomansland:willow_trapdoor"
+    }
+  },
+  "result": {
+    "id": "nomansland:willow_cabinet",
+    "count": 1
+  },
+  "group": "cabinets"
+}

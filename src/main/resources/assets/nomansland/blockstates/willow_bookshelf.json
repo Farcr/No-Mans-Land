@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/willow/willow_bookshelf"
+      },
+      {
+        "model": "nomansland:block/willow/willow_bookshelf_alt"
+      }
+    ]
+  }
+}

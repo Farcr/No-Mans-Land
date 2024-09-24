@@ -21,6 +21,11 @@ public class NMLModelLayers {
     public static final ModelLayerLocation WALNUT_CHEST_BOAT_LAYER = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "chest_boat/walnut"), "main");
 
+    public static final ModelLayerLocation WILLOW_BOAT_LAYER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "boat/willow"), "main");
+    public static final ModelLayerLocation WILLOW_CHEST_BOAT_LAYER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "chest_boat/willow"), "main");
+
     public static final ModelLayerLocation BURIED_LAYER = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "buried"), "main");
 

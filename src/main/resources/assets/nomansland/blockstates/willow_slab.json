@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nomansland:block/willow/willow_slab"
+    },
+    "type=double": {
+      "model": "nomansland:block/willow/willow_planks"
+    },
+    "type=top": {
+      "model": "nomansland:block/willow/willow_slab_top"
+    }
+  }
+}

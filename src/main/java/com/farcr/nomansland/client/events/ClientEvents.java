@@ -61,6 +61,9 @@ public class ClientEvents {
         event.registerLayerDefinition(NMLModelLayers.WALNUT_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(NMLModelLayers.WALNUT_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
 
+        event.registerLayerDefinition(NMLModelLayers.WILLOW_BOAT_LAYER, BoatModel::createBodyModel);
+        event.registerLayerDefinition(NMLModelLayers.WILLOW_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+
         event.registerLayerDefinition(NMLModelLayers.MOOSE_LAYER, MooseModel::createBodyLayer);
         event.registerLayerDefinition(NMLModelLayers.BURIED_LAYER, BuriedModel::createBodyLayer);
     }
