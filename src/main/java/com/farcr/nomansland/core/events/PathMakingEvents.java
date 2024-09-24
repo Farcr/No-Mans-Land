@@ -79,7 +79,7 @@ public class PathMakingEvents {
                         Map.entry(Blocks.GRAVEL, NMLBlocks.GRAVEL_PATH),
                         Map.entry(Blocks.SAND, NMLBlocks.SAND_PATH),
                         Map.entry(Blocks.RED_SAND, NMLBlocks.RED_SAND_PATH),
-                        Map.entry(Blocks.GRASS_BLOCK, Blocks.GRASS_BLOCK.defaultBlockState().getBlockHolder()),
+                        Map.entry(Blocks.GRASS_BLOCK, Blocks.DIRT_PATH.defaultBlockState().getBlockHolder()),
                         Map.entry(Blocks.MYCELIUM, NMLBlocks.MYCELIUM_PATH),
                         Map.entry(Blocks.PODZOL, NMLBlocks.PODZOL_PATH),
                         Map.entry(Blocks.DIRT, NMLBlocks.DIRT_PATH),

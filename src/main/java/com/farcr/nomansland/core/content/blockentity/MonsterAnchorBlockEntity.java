@@ -145,6 +145,8 @@ public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventLi
                         }
 
                         level.addFreshEntity(resurrectedEntity);
+                        serverLevel.gameEvent(resurrectedEntity, GameEvent.ENTITY_PLACE, spawningPosition);
+                        serverLevel.broadcastEntityEvent(resurrectedEntity, (byte) 20);
                         entityQueue.remove(deadEntity);
                         for (double y = 0; y <= 4; y++) {
                             if (level.getBlockState(BlockPos.containing(spawningPosition.relative(Direction.DOWN, y))).isSolid()) {

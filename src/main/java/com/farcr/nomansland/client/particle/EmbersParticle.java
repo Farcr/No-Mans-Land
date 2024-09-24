@@ -15,7 +15,7 @@ public class EmbersParticle extends BaseAshSmokeParticle {
     }
 
     @Override
-    public void setSpriteFromAge(SpriteSet pSprite) {
+    public void setSpriteFromAge(SpriteSet sprite) {
     }
 
     @Override

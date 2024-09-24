@@ -26,7 +26,6 @@ public class CutSugarCaneBlock extends SugarCaneBlock {
         return SHAPE;
     }
 
-    // TODO: fix this
     @Override
     public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
         BlockState soil = pLevel.getBlockState(pPos.below());

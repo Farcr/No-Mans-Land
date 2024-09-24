@@ -30,7 +30,6 @@ public class FrostedGrassBlock extends BushBlock {
     protected static final VoxelShape SHAPE = Block.box(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
     protected static final VoxelShape SNOWLOGGED_SHAPE = Shapes.or(SHAPE, Block.box(0.0, 0.0, 0.0, 16.0, 2.0, 16.0));
 
-    //TODO: change shape when snowy
     public FrostedGrassBlock(Properties properties) {
         super(properties);
         registerDefaultState(this.stateDefinition.any().setValue(SNOWLOGGED, Boolean.FALSE));
@@ -48,7 +47,7 @@ public class FrostedGrassBlock extends BushBlock {
                 level.setBlockAndUpdate(posBelow, stateUnder.setValue(SNOWY, true));
             return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
-        return ItemInteractionResult.FAIL;
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     @Override

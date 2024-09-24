@@ -27,7 +27,6 @@ import java.util.Iterator;
 @SuppressWarnings("unused")
 public class BoneMealingEvents {
 
-    // TODO: make sure these events consume durability and can break the item
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         Level level = event.getLevel();

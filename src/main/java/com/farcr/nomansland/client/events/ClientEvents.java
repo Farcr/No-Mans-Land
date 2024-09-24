@@ -67,38 +67,44 @@ public class ClientEvents {
 
     @SubscribeEvent
     public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
-        event.registerSpriteSet(NMLParticleTypes.PALE_CHERRY_LEAVES.get(), pSprites
+        event.registerSpriteSet(NMLParticleTypes.PALE_CHERRY_LEAVES.get(), sprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new FallingParticle(clientLevel, d, e, f, pSprites));
-        event.registerSpriteSet(NMLParticleTypes.CAVE_DUST.get(), pSprites
+                -> new FallingParticle(clientLevel, d, e, f, sprites));
+        event.registerSpriteSet(NMLParticleTypes.CAVE_DUST.get(), sprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new CaveDustParticle(clientLevel, d, e, f, pSprites));
-        event.registerSpriteSet(NMLParticleTypes.RESIN_DROPLET.get(), pSprites
+                -> new CaveDustParticle(clientLevel, d, e, f, sprites));
+        event.registerSpriteSet(NMLParticleTypes.RESIN_DROPLET.get(), sprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new FluidFallingParticle(clientLevel, d, e, f, pSprites, NMLParticleTypes.RESIN_DROPLET_FLAT.get()));
-        event.registerSpriteSet(NMLParticleTypes.RESIN_DROPLET_FLAT.get(), pSprites
+                -> new FluidFallingParticle(clientLevel, d, e, f, sprites, NMLParticleTypes.RESIN_DROPLET_FLAT.get()));
+        event.registerSpriteSet(NMLParticleTypes.RESIN_DROPLET_FLAT.get(), sprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new FluidLandParticle(clientLevel, d, e, f, pSprites));
-        event.registerSpriteSet(NMLParticleTypes.MAPLE_SYRUP_DROPLET.get(), pSprites
+                -> new FluidLandParticle(clientLevel, d, e, f, sprites));
+        event.registerSpriteSet(NMLParticleTypes.MAPLE_SYRUP_DROPLET.get(), sprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new FluidFallingParticle(clientLevel, d, e, f, pSprites, NMLParticleTypes.MAPLE_SYRUP_DROPLET_FLAT.get()));
-        event.registerSpriteSet(NMLParticleTypes.MAPLE_SYRUP_DROPLET_FLAT.get(), pSprites
+                -> new FluidFallingParticle(clientLevel, d, e, f, sprites, NMLParticleTypes.MAPLE_SYRUP_DROPLET_FLAT.get()));
+        event.registerSpriteSet(NMLParticleTypes.MAPLE_SYRUP_DROPLET_FLAT.get(), sprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new FluidLandParticle(clientLevel, d, e, f, pSprites));
-        event.registerSpriteSet(NMLParticleTypes.OIL.get(), pSprites
+                -> new FluidLandParticle(clientLevel, d, e, f, sprites));
+        event.registerSpriteSet(NMLParticleTypes.OIL.get(), sprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new FluidFallingParticle(clientLevel, d, e, f, pSprites, NMLParticleTypes.OIL_FLAT.get()));
-        event.registerSpriteSet(NMLParticleTypes.OIL_FLAT.get(), pSprites
+                -> new FluidFallingParticle(clientLevel, d, e, f, sprites, NMLParticleTypes.OIL_FLAT.get()));
+        event.registerSpriteSet(NMLParticleTypes.OIL_FLAT.get(), sprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new FluidLandParticle(clientLevel, d, e, f, pSprites));
-        event.registerSpriteSet(NMLParticleTypes.SCULK_AMBIENCE.get(), pSprites
+                -> new FluidLandParticle(clientLevel, d, e, f, sprites));
+        event.registerSpriteSet(NMLParticleTypes.RESIN_OIL_BUBBLE.get(), sprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new SculkAmbienceParticle(clientLevel, d, e, f, pSprites));
-        event.registerSpriteSet(NMLParticleTypes.MALEVOLENT_EMBERS.get(), pSprites
+                -> new BubbleParticle(clientLevel, d, e, f, g, h, i, sprites, NMLParticleTypes.RESIN_OIL_BUBBLE_POP.get()));
+        event.registerSpriteSet(NMLParticleTypes.RESIN_OIL_BUBBLE_POP.get(), sprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new EmbersParticle(clientLevel, d, e, f, g, h, i, pSprites));
-        event.registerSpriteSet(NMLParticleTypes.MALEVOLENT_FLAME.get(), pSprites
+                -> new BubblePopParticle(clientLevel, d, e, f, g, h, i, sprites));
+        event.registerSpriteSet(NMLParticleTypes.SCULK_AMBIENCE.get(), sprites
                 -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
-                -> new FlameParticle(clientLevel, d, e, f, g, h, i, pSprites));
+                -> new SculkAmbienceParticle(clientLevel, d, e, f, sprites));
+        event.registerSpriteSet(NMLParticleTypes.MALEVOLENT_EMBERS.get(), sprites
+                -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new EmbersParticle(clientLevel, d, e, f, g, h, i, sprites));
+        event.registerSpriteSet(NMLParticleTypes.MALEVOLENT_FLAME.get(), sprites
+                -> (simpleParticleType, clientLevel, d, e, f, g, h, i)
+                -> new FlameParticle(clientLevel, d, e, f, g, h, i, sprites));
     }
 }

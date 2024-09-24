@@ -2,13 +2,17 @@ package com.farcr.nomansland.core.content.block.torches;
 
 import com.farcr.nomansland.core.registry.NMLTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.WallTorchBlock;
@@ -17,35 +21,41 @@ import net.minecraft.world.phys.BlockHitResult;
 
 public class ExtinguishedWallTorchBlock extends WallTorchBlock {
 
-    public final Block mainBlock;
+    public final Block litBlock;
 
-    public ExtinguishedWallTorchBlock(SimpleParticleType pFlameParticle, Properties pProperties, Block mainBlock) {
-        super(pFlameParticle, pProperties);
-        this.mainBlock = mainBlock;
+    public ExtinguishedWallTorchBlock(SimpleParticleType flameParticle, Properties properties, Block litBlock) {
+        super(flameParticle, properties);
+        this.litBlock = litBlock;
     }
 
     @Override
-    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
     }
 
-    // TODO: ensure this works
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (pPlayer.getItemInHand(pHand).is(NMLTags.FIRESTARTERS)) {
-            pLevel.playSound(pPlayer,
-                    pPlayer.getX(),
-                    pPlayer.getY(),
-                    pPlayer.getZ(),
+    @Override
+    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+        if (stack.is(NMLTags.FIRESTARTERS)) {
+            level.playSound(player,
+                    player.getX(),
+                    player.getY(),
+                    player.getZ(),
                     SoundEvents.FLINTANDSTEEL_USE,
                     SoundSource.BLOCKS,
                     1.0F,
-                    (pLevel.random.nextFloat() - pLevel.random.nextFloat()) * 0.8F + 1.8F);
-            pLevel.setBlock(pPos, mainBlock.withPropertiesOf(pState), 3);
-            //TODO:pFlameParticle spark
-
-            return InteractionResult.SUCCESS;
+                    (level.random.nextFloat() - level.random.nextFloat()) * 0.8F + 1.8F);
+            level.setBlock(pos, litBlock.withPropertiesOf(state), 3);
+            if (!level.isClientSide) {
+                Direction direction = state.getValue(FACING).getOpposite();
+                ServerLevel serverLevel = (ServerLevel) level;
+                serverLevel.sendParticles(flameParticle, pos.getX() + 0.5 + 0.2 * direction.getStepX(), pos.getY() + 0.92, pos.getZ() + 0.5 + 0.2 * direction.getStepZ(), 5, 0, 0, 0, 0);
+            }
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
-        return InteractionResult.FAIL;
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
-    //TODO:Produce Smoke on break
+    @Override
+    protected void spawnAfterBreak(BlockState state, ServerLevel level, BlockPos pos, ItemStack stack, boolean dropExperience) {
+        level.sendParticles(ParticleTypes.SMOKE, pos.getX() + 0.5, pos.getY() + 0.7, pos.getZ() + 0.5, 5, 0, 0, 0, 0.05);
+    }
 }

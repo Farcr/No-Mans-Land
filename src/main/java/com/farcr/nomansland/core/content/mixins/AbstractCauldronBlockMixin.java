@@ -23,6 +23,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import static net.minecraft.world.level.block.LayeredCauldronBlock.LEVEL;
+
 @Mixin(AbstractCauldronBlock.class)
 public class AbstractCauldronBlockMixin {
 
@@ -54,6 +56,15 @@ public class AbstractCauldronBlockMixin {
                 level.setBlockAndUpdate(pos, NMLBlocks.RESIN_OIL_CAULDRON.get().defaultBlockState());
                 level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(state));
                 level.playSound(null, pos, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
+                cir.setReturnValue(ItemInteractionResult.sidedSuccess(level.isClientSide));
+            }
+            if (player.isHolding(Items.MILK_BUCKET)) {
+                if (!player.isCreative()) player.setItemInHand(hand, new ItemStack(Items.BUCKET));
+                player.awardStat(Stats.USE_CAULDRON);
+                player.awardStat(Stats.ITEM_USED.get(Items.MILK_BUCKET));
+                level.setBlockAndUpdate(pos, NMLBlocks.MILK_CAULDRON.get().defaultBlockState().setValue(LEVEL, 3));
+                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(state));
+                level.playSound(null, pos, SoundEvents.BUCKET_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
                 cir.setReturnValue(ItemInteractionResult.sidedSuccess(level.isClientSide));
             }
             if (player.isHolding(NMLItems.RESIN.get()) && (player.isCreative() || player.getItemInHand(hand).getCount() >= 3)) {

@@ -12,8 +12,8 @@ public class ExtinguishedSconceTorchBlock extends ExtinguishedTorchBlock {
 
     protected static final VoxelShape AABB = Block.box(6.0D, 0.0D, 6.0D, 10.0D, 12.0D, 10.0D);
 
-    public ExtinguishedSconceTorchBlock(Properties pProperties, Block mainBlock, SimpleParticleType pFlameParticle) {
-        super(pFlameParticle, pProperties, mainBlock);
+    public ExtinguishedSconceTorchBlock(SimpleParticleType flameParticle, Properties properties, Block litBlock) {
+        super(flameParticle, properties, litBlock);
     }
 
     @Override

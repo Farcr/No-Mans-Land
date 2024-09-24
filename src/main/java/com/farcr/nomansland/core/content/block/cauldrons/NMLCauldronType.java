@@ -4,16 +4,23 @@ import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.farcr.nomansland.core.registry.NMLItems;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.core.Holder;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
+import java.util.function.Supplier;
+
 public enum NMLCauldronType {
 
-    HONEY(NMLBlocks.HONEY_CAULDRON, Items.GLASS_BOTTLE.getDefaultInstance().getItemHolder(), Items.HONEY_BOTTLE.getDefaultInstance().getItemHolder(), Items.APPLE.getDefaultInstance().getItemHolder(), NMLItems.HONEYED_APPLE, null, NMLParticleTypes.MAPLE_SYRUP_DROPLET, true),
+    HONEY(NMLBlocks.HONEY_CAULDRON, Items.GLASS_BOTTLE.getDefaultInstance().getItemHolder(), Items.HONEY_BOTTLE.getDefaultInstance().getItemHolder(), Items.APPLE.getDefaultInstance().getItemHolder(), NMLItems.HONEYED_APPLE, null, () -> ParticleTypes.FALLING_HONEY, true),
+    MILK(NMLBlocks.MILK_CAULDRON, null, null, null, null, null, () -> ParticleTypes.FALLING_NECTAR, false),
     MAPLE(NMLBlocks.MAPLE_SYRUP_CAULDRON, Items.GLASS_BOTTLE.getDefaultInstance().getItemHolder(), NMLItems.MAPLE_SYRUP_BOTTLE, NMLItems.PEAR, NMLItems.SYRUPED_PEAR, null, NMLParticleTypes.MAPLE_SYRUP_DROPLET, true),
     RESIN_OIL(NMLBlocks.RESIN_OIL_CAULDRON, Items.GLASS_BOTTLE.getDefaultInstance().getItemHolder(), NMLItems.RESIN_OIL_BOTTLE, null, null, null, NMLParticleTypes.OIL, false),
     RESIN(NMLBlocks.RESIN_CAULDRON, null, null, null, null, NMLItems.RESIN, NMLParticleTypes.RESIN_DROPLET, true);
@@ -24,10 +31,10 @@ public enum NMLCauldronType {
     private final Holder<Item> inputItem;
     private final Holder<Item> outputItem;
     private final Holder<Item> containedItem;
-    private final DeferredHolder<ParticleType<?>, SimpleParticleType> particleType;
+    private final Supplier<SimpleParticleType> particleType;
     private final boolean sticky;
 
-    NMLCauldronType(Holder<Block> cauldron, Holder<Item> emptyBottle, Holder<Item> fullBottle, Holder<Item> inputItem, Holder<Item> outputItem, Holder<Item> containedItem, DeferredHolder<ParticleType<?>, SimpleParticleType> particleType, boolean sticky) {
+    NMLCauldronType(Holder<Block> cauldron, Holder<Item> emptyBottle, Holder<Item> fullBottle, Holder<Item> inputItem, Holder<Item> outputItem, Holder<Item> containedItem, Supplier<SimpleParticleType> particleType, boolean sticky) {
         this.cauldron = cauldron;
         this.emptyBottle = emptyBottle;
         this.fullBottle = fullBottle;
@@ -62,7 +69,7 @@ public enum NMLCauldronType {
         return containedItem;
     }
 
-    public DeferredHolder<ParticleType<?>, SimpleParticleType> getParticleType() {
+    public Supplier<SimpleParticleType> getParticleType() {
         return particleType;
     }
 

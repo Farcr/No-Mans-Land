@@ -44,7 +44,6 @@ public class RemainsBlock extends BrushableBlock {
 
     @Override
     public void spawnAfterBreak(BlockState pState, ServerLevel pLevel, BlockPos pPos, ItemStack pStack, boolean pDropExperience) {
-        super.spawnAfterBreak(pState, pLevel, pPos, pStack, pDropExperience);
         int a = new Random().nextInt(10);
         if (a < 1) {
             //TODO: When Buried is readded/worked on, replace SKELETON with BURIED

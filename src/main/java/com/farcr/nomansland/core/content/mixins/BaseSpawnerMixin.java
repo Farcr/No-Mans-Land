@@ -12,14 +12,11 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 @Mixin(BaseSpawner.class)
 public class BaseSpawnerMixin {
 
-    // clienttick
-    @ModifyArg(method = "clientTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V"), index = 0)
+    @ModifyArg(method = "clientTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V", ordinal = 1), index = 0)
     private ParticleOptions injected(ParticleOptions particle) {
-        if (particle == ParticleTypes.FLAME && NMLConfig.MALEVOLENT_SPAWNER.get()) {
+        if (NMLConfig.MALEVOLENT_SPAWNER.get()) {
             return NMLParticleTypes.MALEVOLENT_FLAME.get();
         }
         return particle;
     }
-
-    // TODO: add mixin to change particles to malevolent flames on spawn event
 }

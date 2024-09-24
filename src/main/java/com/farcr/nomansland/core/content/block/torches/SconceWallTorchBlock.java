@@ -20,35 +20,34 @@ import java.util.Map;
 public class SconceWallTorchBlock extends WallTorchBlock {
 
     private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
-            Direction.NORTH, Block.box(5.5D, 1.5D, 11.0D, 10.5D, 13.5D, 16.0D),
-            Direction.SOUTH, Block.box(5.5D, 1.5D, 0.0D, 10.5D, 13.5D, 5.0D),
-            Direction.WEST, Block.box(11.0D, 1.5D, 5.5D, 16.0D, 13.5D, 10.5D),
-            Direction.EAST, Block.box(0.0D, 1.5D, 5.5D, 5.0D, 13.5D, 10.5D)
+            Direction.NORTH, Block.box(5.5, 1.5, 11.0, 10.5, 13.5, 16.0),
+            Direction.SOUTH, Block.box(5.5, 1.5, 0.0, 10.5, 13.5, 5.0),
+            Direction.WEST, Block.box(11.0, 1.5, 5.5, 16.0, 13.5, 10.5),
+            Direction.EAST, Block.box(0.0, 1.5, 5.5, 5.0, 13.5, 10.5)
     ));
 
-    public SconceWallTorchBlock(SimpleParticleType pFlameParticle, Properties pProperties) {
-        super(pFlameParticle, pProperties);
+    public SconceWallTorchBlock(SimpleParticleType flameParticle, Properties properties) {
+        super(flameParticle, properties);
     }
 
-    public static VoxelShape getShape(BlockState pState) {
-        return AABBS.get(pState.getValue(FACING));
+    public static VoxelShape getShape(BlockState state) {
+        return AABBS.get(state.getValue(FACING));
     }
 
-    //TODO:PARTICLES ARE FUCKED UP!!!!!
+    //TOO:PARTICLES ARE FUCKE UP!!!!!
 
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return getShape(pState);
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return getShape(state);
     }
 
     @Override
-    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
-        Direction direction = pState.getValue(FACING);
-        double d0 = (double) pPos.getX() + 0.45D;
-        double d1 = (double) pPos.getY() + 0.7D;
-        double d2 = (double) pPos.getZ() + 0.5D;
-        Direction direction1 = direction.getOpposite();
-        pLevel.addParticle(ParticleTypes.SMOKE, d0 + 0.27D * (double) direction1.getStepX(), d1 + 0.22D, d2 + 0.27D * (double) direction1.getStepZ(), 0.0D, 0.0D, 0.0D);
-        pLevel.addParticle(this.flameParticle, d0 + 0.27D * (double) direction1.getStepX(), d1 + 0.22D, d2 + 0.27D * (double) direction1.getStepZ(), 0.0D, 0.0D, 0.0D);
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        Direction direction = state.getValue(FACING).getOpposite();
+        double d0 = pos.getX() + 0.45;
+        double d1 = pos.getY() + 0.7;
+        double d2 = pos.getZ() + 0.5;
+        level.addParticle(ParticleTypes.SMOKE, d0 + 0.2 * direction.getStepX(), d1 + 0.22, d2 + 0.2 * direction.getStepZ(), 0.0, 0.0, 0.0);
+        level.addParticle(this.flameParticle, d0 + 0.2 * direction.getStepX(), d1 + 0.22, d2 + 0.2 * direction.getStepZ(), 0.0, 0.0, 0.0);
     }
 }
