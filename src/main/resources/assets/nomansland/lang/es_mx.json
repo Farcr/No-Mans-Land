@@ -152,6 +152,8 @@
   "block.nomansland.resin_cauldron": "Caldero lleno de resina",
   "block.nomansland.honey_cauldron": "Caldero lleno de miel",
   "block.nomansland.maple_syrup_cauldron": "Caldero lleno de jarabe de arce",
+  "block.nomansland.resin_oil_cauldron": "Caldero lleno de aceite de resina",
+  "block.nomansland.milk_cauldron": "Caldero lleno de leche",
 
   "entity.nomansland.boat": "Bote",
   "entity.nomansland.chest_boat": "Bote con cofre",
