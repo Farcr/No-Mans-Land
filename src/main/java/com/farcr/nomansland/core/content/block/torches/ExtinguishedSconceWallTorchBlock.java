@@ -21,16 +21,16 @@ public class ExtinguishedSconceWallTorchBlock extends ExtinguishedWallTorchBlock
             Direction.EAST, Block.box(0.0D, 1.5D, 5.5D, 5.0D, 13.5D, 10.5D)
     ));
 
-    public ExtinguishedSconceWallTorchBlock(Properties pProperties, Block mainBlock, SimpleParticleType pFlameParticle) {
-        super(pFlameParticle, pProperties, mainBlock);
+    public ExtinguishedSconceWallTorchBlock(Properties properties, Block litBlock, SimpleParticleType pFlameParticle) {
+        super(pFlameParticle, properties, litBlock);
     }
 
-    public static VoxelShape getShape(BlockState pState) {
-        return AABBS.get(pState.getValue(FACING));
+    public static VoxelShape getShape(BlockState state) {
+        return AABBS.get(state.getValue(FACING));
     }
 
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return getShape(pState);
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return getShape(state);
     }
 }

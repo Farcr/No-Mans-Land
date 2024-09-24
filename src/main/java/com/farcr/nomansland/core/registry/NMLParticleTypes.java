@@ -38,6 +38,14 @@ public class NMLParticleTypes {
             () -> new SimpleParticleType(false) {
             });
 
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> RESIN_OIL_BUBBLE = PARTICLE_TYPES.register("resin_oil_bubble",
+            () -> new SimpleParticleType(false) {
+            });
+
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> RESIN_OIL_BUBBLE_POP = PARTICLE_TYPES.register("resin_oil_bubble_pop",
+            () -> new SimpleParticleType(false) {
+            });
+
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> MALEVOLENT_FLAME = PARTICLE_TYPES.register("malevolent_flame",
             () -> new SimpleParticleType(false) {
             });

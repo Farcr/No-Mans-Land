@@ -2,8 +2,10 @@ package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.block.*;
+import com.farcr.nomansland.core.content.block.cauldrons.MilkCauldron;
 import com.farcr.nomansland.core.content.block.cauldrons.NMLCauldronBlock;
 import com.farcr.nomansland.core.content.block.cauldrons.NMLCauldronType;
+import com.farcr.nomansland.core.content.block.cauldrons.ResinOilCauldron;
 import com.farcr.nomansland.core.content.block.fruit_trees.FruitBlock;
 import com.farcr.nomansland.core.content.block.fruit_trees.FruitLeavesBlock;
 import com.farcr.nomansland.core.content.block.fruit_trees.FruitType;
@@ -43,7 +45,7 @@ public class NMLBlocks {
     public static final DeferredBlock<SconceTorchBlock> SCONCE_TORCH = BLOCKS.register("sconce_torch",
             () -> new SconceTorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH).sound(SoundType.LANTERN)));
     public static final DeferredBlock<ExtinguishedSconceTorchBlock> EXTINGUISHED_SCONCE_TORCH = BLOCKS.register("extinguished_sconce_torch",
-            () -> new ExtinguishedSconceTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.LANTERN).pushReaction(PushReaction.DESTROY), NMLBlocks.SCONCE_TORCH.get(), ParticleTypes.FLAME));
+            () -> new ExtinguishedSconceTorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.LANTERN).pushReaction(PushReaction.DESTROY), NMLBlocks.SCONCE_TORCH.get()));
     public static final DeferredBlock<SconceWallTorchBlock> SCONCE_WALL_TORCH = BLOCKS.register("sconce_wall_torch",
             () -> new SconceWallTorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.WALL_TORCH).sound(SoundType.LANTERN)));
     public static final DeferredBlock<ExtinguishedSconceWallTorchBlock> EXTINGUISHED_SCONCE_WALL_TORCH = BLOCKS.register("extinguished_sconce_wall_torch",
@@ -51,7 +53,7 @@ public class NMLBlocks {
     public static final DeferredBlock<SconceTorchBlock> SCONCE_SOUL_TORCH = BLOCKS.register("sconce_soul_torch",
             () -> new SconceTorchBlock(ParticleTypes.SOUL_FIRE_FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_TORCH).sound(SoundType.LANTERN)));
     public static final DeferredBlock<ExtinguishedSconceTorchBlock> EXTINGUISHED_SCONCE_SOUL_TORCH = BLOCKS.register("extinguished_sconce_soul_torch",
-            () -> new ExtinguishedSconceTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.LANTERN).pushReaction(PushReaction.DESTROY), NMLBlocks.SCONCE_SOUL_TORCH.get(), ParticleTypes.SOUL_FIRE_FLAME));
+            () -> new ExtinguishedSconceTorchBlock(ParticleTypes.SOUL_FIRE_FLAME, BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.LANTERN).pushReaction(PushReaction.DESTROY), NMLBlocks.SCONCE_SOUL_TORCH.get()));
     public static final DeferredBlock<SconceWallTorchBlock> SCONCE_SOUL_WALL_TORCH = BLOCKS.register("sconce_soul_wall_torch",
             () -> new SconceWallTorchBlock(ParticleTypes.SOUL_FIRE_FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_WALL_TORCH).sound(SoundType.LANTERN)));
     public static final DeferredBlock<ExtinguishedSconceWallTorchBlock> EXTINGUISHED_SCONCE_SOUL_WALL_TORCH = BLOCKS.register("extinguished_sconce_soul_wall_torch",
@@ -95,13 +97,18 @@ public class NMLBlocks {
 
     public static final DeferredBlock<NMLCauldronBlock> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
             () -> new NMLCauldronBlock(NMLCauldronType.RESIN));
-    public static final DeferredBlock<NMLCauldronBlock> RESIN_OIL_CAULDRON = BLOCKS.register("resin_oil_cauldron",
-            () -> new NMLCauldronBlock(NMLCauldronType.RESIN_OIL));
+
+    public static final DeferredBlock<NMLCauldronBlock> RESIN_OIL_CAULDRON = BLOCKS.register("resin_oil_cauldron", ResinOilCauldron::new);
+
     public static final DeferredBlock<NMLCauldronBlock> HONEY_CAULDRON = BLOCKS.register("honey_cauldron",
             () -> new NMLCauldronBlock(NMLCauldronType.HONEY));
 
+    public static final DeferredBlock<NMLCauldronBlock> MILK_CAULDRON = BLOCKS.register("milk_cauldron", MilkCauldron::new);
+
     public static final DeferredBlock<NMLCauldronBlock> MAPLE_SYRUP_CAULDRON = BLOCKS.register("maple_syrup_cauldron",
             () -> new NMLCauldronBlock(NMLCauldronType.MAPLE));
+
+
     //Plants and Other Natural Decorations
     public static final DeferredBlock<Block> GRASS_SPROUTS = registerBlock("grass_sprouts",
             () -> new GrassSproutsBlock(Block.Properties.ofFullCopy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XZ)));

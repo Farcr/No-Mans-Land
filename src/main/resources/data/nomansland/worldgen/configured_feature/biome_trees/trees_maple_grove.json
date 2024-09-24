@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "nomansland:red_maple_checked",
+    "features": [
+        {
+          "chance": 0.35,
+          "feature": "nomansland:large_red_maple_checked"
+        },
+      {
+        "chance": 0.15,
+        "feature": "nomansland:large_maple_checked"
+      },
+      {
+        "chance": 0.15,
+        "feature": "nomansland:maple_checked"
+      }
+    ]
+  }
+}

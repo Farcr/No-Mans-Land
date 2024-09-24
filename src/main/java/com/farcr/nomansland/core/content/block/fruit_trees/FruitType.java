@@ -7,6 +7,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public enum FruitType {
@@ -19,10 +20,10 @@ public enum FruitType {
     }),
     PEAR_AUTUMNAL_OAK(NMLBlocks.PEAR_FRUIT, NMLBlocks.PEAR_FRUIT_LEAVES, NMLBlocks.AUTUMNAL_OAK_LEAVES.get().defaultBlockState().getBlockHolder(), 3, NMLItems.PEAR, new VoxelShape[]{
             Block.box(6, 11, 7, 10, 15, 11),
-            Block.box(6, 11, 7, 10, 15, 11),
-            Block.box(5.5, 10, 6.5, 10.5, 15, 11.5),
-            Block.box(5.5, 10, 6.5, 10.5, 15, 11.5),
-            Block.box(5.5, 10, 6.5, 10.5, 15, 11.5)
+            Block.box(6, 10, 7, 10, 15, 11),
+            Shapes.or(Block.box(5.5, 9, 6.5, 10.5, 13, 11.5), Block.box(6.5, 13, 7.5, 9.5, 15, 10.5)),
+            Shapes.or(Block.box(5.5, 9, 6.5, 10.5, 13, 11.5), Block.box(6.5, 13, 7.5, 9.5, 15, 10.5)),
+            Shapes.or(Block.box(5.5, 9, 6.5, 10.5, 13, 11.5), Block.box(6.5, 13, 7.5, 9.5, 15, 10.5))
     });
 
     private final Holder<Block> fruit;

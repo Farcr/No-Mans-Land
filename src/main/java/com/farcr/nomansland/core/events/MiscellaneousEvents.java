@@ -72,7 +72,7 @@ public class MiscellaneousEvents {
                             Map.entry(NMLBlocks.SCONCE_TORCH.get(), NMLBlocks.EXTINGUISHED_SCONCE_TORCH),
                             Map.entry(NMLBlocks.SCONCE_WALL_TORCH.get(), NMLBlocks.EXTINGUISHED_SCONCE_WALL_TORCH),
                             Map.entry(NMLBlocks.SCONCE_SOUL_TORCH.get(), NMLBlocks.EXTINGUISHED_SCONCE_SOUL_TORCH),
-                            Map.entry(NMLBlocks.EXTINGUISHED_SCONCE_SOUL_WALL_TORCH.get(), NMLBlocks.EXTINGUISHED_SCONCE_SOUL_WALL_TORCH)
+                            Map.entry(NMLBlocks.SCONCE_SOUL_WALL_TORCH.get(), NMLBlocks.EXTINGUISHED_SCONCE_SOUL_WALL_TORCH)
                     ).get(state.getBlock()).value().withPropertiesOf(state);
 
 

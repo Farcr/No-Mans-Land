@@ -41,7 +41,7 @@ public class GroundPickupBlock extends Block implements SimpleWaterloggedBlock {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == this .asItem()))) {
+        if (!(player.isCreative() && player.getInventory().hasAnyMatching(stack -> stack.getItem() == this.asItem()))) {
             ItemStack item = new ItemStack(this);
             if (!player.addItem(item) ) {
                 player.drop(item, false);

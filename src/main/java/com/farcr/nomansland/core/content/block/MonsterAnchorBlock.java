@@ -4,8 +4,11 @@ import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
@@ -61,14 +64,9 @@ public class MonsterAnchorBlock extends BaseEntityBlock {
         return 15 / (anchor.entityQueue.size() - 1) * anchor.entityQueue.size();
     }
 
-    public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {
-        return false;
+    public int getExpDrop(BlockState state, LevelAccessor level, BlockPos pos, BlockEntity blockEntity, Entity breaker, ItemStack tool) {
+        return 20 + level.getRandom().nextInt(20) + level.getRandom().nextInt(20);
     }
-
-    // TODO: change amount of experience dropped
-//    public int getExpDrop(BlockState state, LevelReader level, RandomSource randomSource, BlockPos pos, int fortuneLevel, int silkTouchLevel) {
-//        return 15 + randomSource.nextInt(15) + randomSource.nextInt(15);
-//    }
 
 
     @Nullable
