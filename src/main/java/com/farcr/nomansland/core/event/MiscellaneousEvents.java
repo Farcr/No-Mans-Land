@@ -2,20 +2,17 @@ package com.farcr.nomansland.core.event;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.config.NMLConfig;
+import com.farcr.nomansland.core.content.entity.variant.DolphinVariant;
+import com.farcr.nomansland.core.content.entity.variant.FoxVariant;
 import com.farcr.nomansland.core.content.entity.variant.GoatVariant;
-import com.farcr.nomansland.core.content.entity.variant.GoatVariants;
+import com.farcr.nomansland.core.content.entity.variant.SalmonVariant;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.farcr.nomansland.core.registry.NMLFeatures;
 import com.farcr.nomansland.core.registry.NMLVariants;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.RegistrySetBuilder;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
@@ -25,8 +22,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SnowyDirtBlock;
@@ -34,8 +29,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
-import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
@@ -45,7 +38,6 @@ import net.neoforged.neoforge.registries.DataPackRegistryEvent;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import static com.farcr.nomansland.core.content.block.FrostedGrassBlock.SNOWLOGGED;
 import static net.minecraft.world.level.block.SnowyDirtBlock.SNOWY;
@@ -214,18 +206,10 @@ public class MiscellaneousEvents {
         @SubscribeEvent
         public static void registerDatapackRegistries(DataPackRegistryEvent.NewRegistry event) {
             event.dataPackRegistry(NMLVariants.GOAT_VARIANT_KEY, GoatVariant.DIRECT_CODEC, GoatVariant.DIRECT_CODEC);
-        }
+            event.dataPackRegistry(NMLVariants.FOX_VARIANT_KEY, FoxVariant.DIRECT_CODEC, FoxVariant.DIRECT_CODEC);
+            event.dataPackRegistry(NMLVariants.DOLPHIN_VARIANT_KEY, DolphinVariant.DIRECT_CODEC, DolphinVariant.DIRECT_CODEC);
+            event.dataPackRegistry(NMLVariants.SALMON_VARIANT_KEY, SalmonVariant.DIRECT_CODEC, SalmonVariant.DIRECT_CODEC);
 
-//        @SubscribeEvent
-//        public static void onGatherData(GatherDataEvent event) {
-//            event.getGenerator().addProvider(
-//                    event.includeServer(), new DatapackBuiltinEntriesProvider(
-//                            event.getGenerator().getPackOutput(),
-//                            event.getLookupProvider(), new RegistrySetBuilder()
-//                            .add(NMLVariants.GOAT_VARIANT_KEY, bootstrapContext -> bootstrapContext.register(GoatVariants.DEFAULT,
-//                                    new GoatVariant(ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "entity/goat/beige.png"),
-//                                            HolderSet.direct(bootstrapContext.lookup(Registries.BIOME).getOrThrow(Biomes.PLAINS))))),
-//                            Set.of(NoMansLand.MODID)));
-//        }
+        }
     }
 }

@@ -1,7 +1,10 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
+import com.farcr.nomansland.core.content.entity.variant.DolphinVariant;
+import com.farcr.nomansland.core.content.entity.variant.FoxVariant;
 import com.farcr.nomansland.core.content.entity.variant.GoatVariant;
+import com.farcr.nomansland.core.content.entity.variant.SalmonVariant;
 import net.minecraft.core.Holder;
 import net.minecraft.network.syncher.EntityDataSerializer;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -13,5 +16,8 @@ public class NMLDataSerializers {
             DeferredRegister.create(NeoForgeRegistries.ENTITY_DATA_SERIALIZERS, NoMansLand.MODID);
 
     public static final DeferredHolder<EntityDataSerializer<?>, EntityDataSerializer<Holder<GoatVariant>>> GOAT_VARIANT = ENTITY_DATA_SERIALIZERS.register("goat_variant", () -> EntityDataSerializer.forValueType(GoatVariant.STREAM_CODEC));
+    public static final DeferredHolder<EntityDataSerializer<?>, EntityDataSerializer<Holder<FoxVariant>>> FOX_VARIANT = ENTITY_DATA_SERIALIZERS.register("fox_variant", () -> EntityDataSerializer.forValueType(FoxVariant.STREAM_CODEC));
+    public static final DeferredHolder<EntityDataSerializer<?>, EntityDataSerializer<Holder<DolphinVariant>>> DOLPHIN_VARIANT = ENTITY_DATA_SERIALIZERS.register("dolphin_variant", () -> EntityDataSerializer.forValueType(DolphinVariant.STREAM_CODEC));
+    public static final DeferredHolder<EntityDataSerializer<?>, EntityDataSerializer<Holder<SalmonVariant>>> SALMON_VARIANT = ENTITY_DATA_SERIALIZERS.register("salmon_variant", () -> EntityDataSerializer.forValueType(SalmonVariant.STREAM_CODEC));
 
 }
