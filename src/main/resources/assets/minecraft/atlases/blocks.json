@@ -3,6 +3,10 @@
     {
       "type": "single",
       "resource": "nomansland:entity/bombs/firebomb"
+    },
+    {
+      "type": "single",
+      "resource": "nomansland:entity/bombs/explosive"
     }
   ]
 }

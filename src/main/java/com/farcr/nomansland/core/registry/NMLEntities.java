@@ -3,6 +3,7 @@ package com.farcr.nomansland.core.registry;
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.BoatEntity;
 import com.farcr.nomansland.core.content.entity.ChestBoatEntity;
+import com.farcr.nomansland.core.content.entity.bombs.ExplosiveEntity;
 import com.farcr.nomansland.core.content.entity.bombs.FirebombEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
@@ -24,6 +25,10 @@ public class NMLEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<FirebombEntity>> FIREBOMB =
             ENTITIES.register("firebomb", () -> EntityType.Builder.<FirebombEntity>of(FirebombEntity::new, MobCategory.MISC)
                     .sized(0.375F, 0.375F).clientTrackingRange(4).updateInterval(20).build("fire_bomb"));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<ExplosiveEntity>> EXPLOSIVE =
+            ENTITIES.register("explosive", () -> EntityType.Builder.<ExplosiveEntity>of(ExplosiveEntity::new, MobCategory.MISC)
+                    .sized(0.3F, 0.3F).clientTrackingRange(4).updateInterval(20).build("explosive"));
 
 //    public static final DeferredHolder<EntityType<?>, EntityType<BuriedEntity>> BURIED =
 //            ENTITIES.register("buried", () -> EntityType.Builder.of(BuriedEntity::new, MobCategory.MONSTER)

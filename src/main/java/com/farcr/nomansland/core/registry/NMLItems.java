@@ -69,7 +69,7 @@ public class NMLItems {
     public static final DeferredItem<Item> FIREBOMB = registerItem("firebomb",
             () -> new FirebombItem(new Item.Properties().stacksTo(8)));
     public static final DeferredItem<Item> EXPLOSIVE = registerItem("explosive",
-            () -> new Item(new Item.Properties().stacksTo(8)));
+            () -> new ExplosiveItem(new Item.Properties().stacksTo(8)));
 
     public static final DeferredItem<Item> WOODEN_SCAFFOLDING = registerItem("wooden_scaffolding",
             () -> new ScaffoldingBlockItem(NMLBlocks.WOODEN_SCAFFOLDING.get(), new Item.Properties()));

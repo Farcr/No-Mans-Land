@@ -50,6 +50,7 @@ public abstract class ThrowableBombEntity extends ThrowableProjectile {
         return this.entityData.get(DATA_FUSE_ID);
     }
 
+
     @Override
     protected void onHit(HitResult hitResult) {
         if (hitResult.getType() == HitResult.Type.MISS) {

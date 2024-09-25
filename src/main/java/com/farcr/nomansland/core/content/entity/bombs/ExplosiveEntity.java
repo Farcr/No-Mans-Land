@@ -1,6 +1,5 @@
 package com.farcr.nomansland.core.content.entity.bombs;
 
-
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.farcr.nomansland.core.registry.NMLEntities;
 import com.farcr.nomansland.core.registry.NMLTags;
@@ -11,26 +10,34 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.projectile.ThrowableProjectile;
+import net.minecraft.world.level.Explosion;
+import net.minecraft.world.level.ExplosionDamageCalculator;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.TntBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.HitResult;
 
 import static net.minecraft.world.level.block.WallTorchBlock.FACING;
 
-public class FirebombEntity extends ThrowableBombEntity {
+public class ExplosiveEntity extends ThrowableBombEntity {
 
-    public FirebombEntity(EntityType<? extends ThrowableBombEntity> entityType, Level level) {
+    public ExplosiveEntity(EntityType<? extends ThrowableProjectile> entityType, Level level) {
         super(entityType, level);
+        this.setFuse(100);
     }
 
-    public FirebombEntity(LivingEntity livingEntity, Level level) {
-        super(NMLEntities.FIREBOMB.get(), livingEntity, level);
+    public ExplosiveEntity(LivingEntity livingEntity, Level level) {
+        super(NMLEntities.EXPLOSIVE.get(), livingEntity, level);
+        this.setFuse(100);
     }
 
-    public FirebombEntity(Level level, double x, double y, double z) {
-        super(NMLEntities.FIREBOMB.get(), x, y, z, level);
+    public ExplosiveEntity(Level level, double x, double y, double z) {
+        super(NMLEntities.EXPLOSIVE.get(), x, y, z, level);
+        this.setFuse(100);
     }
 
     @Override
@@ -82,7 +89,7 @@ public class FirebombEntity extends ThrowableBombEntity {
 
     @Override
     protected void explode() {
-        this.level().explode(this, this.getX(), this.getY(0.0625), this.getZ(), 2.0F, Level.ExplosionInteraction.NONE);
+        this.level().explode(this, Explosion.getDefaultDamageSource(this.level(), this), (ExplosionDamageCalculator) null, this.getX(), this.getY(0.0625), this.getZ(), 2.5F, false, Level.ExplosionInteraction.TNT);
         // Light nearby campfires on fire
         BlockPos.withinManhattan(this.blockPosition(), 6, 4, 6).forEach(pos -> {
             BlockState state = this.level().getBlockState(pos);
@@ -115,6 +122,18 @@ public class FirebombEntity extends ThrowableBombEntity {
         });
         this.level().broadcastEntityEvent(this, (byte) (this.isInWater() ? 1 : 0));
         this.discard();
+    }
+
+    //@Override
+    //protected void onHit(HitResult hitResult) {
+    //}
+
+    @Override
+    protected void onHitEntity(EntityHitResult entityHitResult) {
+        if (!this.level().isClientSide()) {
+            //this.explode();
+            //add countdown
+        }
     }
 
     @Override

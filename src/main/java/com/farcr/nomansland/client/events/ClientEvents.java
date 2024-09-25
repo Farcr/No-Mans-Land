@@ -4,6 +4,7 @@ import com.farcr.nomansland.client.NMLModelLayers;
 import com.farcr.nomansland.client.models.BuriedModel;
 import com.farcr.nomansland.client.models.MooseModel;
 import com.farcr.nomansland.client.particle.*;
+import com.farcr.nomansland.client.render.ExplosiveRenderer;
 import com.farcr.nomansland.client.render.FirebombRenderer;
 import com.farcr.nomansland.client.render.NMLBoatRenderer;
 import com.farcr.nomansland.core.NoMansLand;
@@ -36,11 +37,13 @@ public class ClientEvents {
 //        EntityRenderers.register(NMLEntities.MOOSE.get(), MooseRenderer::new);
 
         EntityRenderers.register(NMLEntities.FIREBOMB.get(), FirebombRenderer::new);
+        EntityRenderers.register(NMLEntities.EXPLOSIVE.get(), ExplosiveRenderer::new);
     }
 
     @SubscribeEvent
     public static void registerModels(ModelEvent.RegisterAdditional event) {
         event.register(ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "entity/firebomb")));
+        event.register(ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "entity/explosive")));
     }
 
     @SubscribeEvent
