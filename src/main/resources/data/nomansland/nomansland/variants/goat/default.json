@@ -1,4 +1,4 @@
 {
   "texture": "minecraft:entity/goat/goat",
-  "biomes": "minecraft:plains"
+  "biomes": "#nomansland:entity/spawns_highland_goats"
 }

@@ -1,5 +1,5 @@
 {
   "texture": "nomansland:entity/variants/fox/forest_fox",
   "sleeping_texture": "nomansland:entity/variants/fox/forest_fox_sleep",
-  "biomes": "minecraft:plains"
+  "biomes": "#nomansland:entity/spawns_forest_fox"
 }

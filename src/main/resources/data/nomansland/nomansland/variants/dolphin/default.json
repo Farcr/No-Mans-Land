@@ -1,4 +1,4 @@
 {
   "texture": "minecraft:entity/dolphin",
-  "biomes": "minecraft:plains"
+  "biomes": "#minecraft:is_ocean"
 }
