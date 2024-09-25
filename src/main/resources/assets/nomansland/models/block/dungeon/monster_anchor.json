@@ -1,8 +1,9 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "minecraft:block/cube_bottom_top_inner_faces",
   "render_type": "minecraft:cutout",
   "textures": {
-    "end": "nomansland:block/dungeon/monster_anchor_top",
+    "top": "nomansland:block/dungeon/monster_anchor_top",
+    "bottom": "nomansland:block/dungeon/monster_anchor_top",
     "side": "nomansland:block/dungeon/monster_anchor"
   }
 }
