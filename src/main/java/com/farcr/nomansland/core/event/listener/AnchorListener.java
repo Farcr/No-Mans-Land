@@ -1,7 +1,7 @@
 package com.farcr.nomansland.core.event.listener;
 
 import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
-import com.farcr.nomansland.core.content.entity.LivingEntityDuck;
+import com.farcr.nomansland.core.content.mixinduck.LivingEntityDuck;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import com.farcr.nomansland.core.registry.NMLTags;
 import net.minecraft.core.BlockPos;

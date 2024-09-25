@@ -4,17 +4,12 @@ import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.content.world.NMLTerrablender;
 import com.farcr.nomansland.core.registry.*;
 import com.mojang.logging.LogUtils;
-import net.minecraft.Util;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.registries.VanillaRegistries;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import org.slf4j.Logger;
-
-import java.util.concurrent.CompletableFuture;
 
 @Mod(NoMansLand.MODID)
 public class NoMansLand {

@@ -12,13 +12,19 @@
     "ServerLevelMixin",
     "SnowAndFreezeFeatureMixin",
     "SpreadingSnowyDirtBlockMixin",
+    "variants.DolphinMixin",
     "variants.EntityMixin",
+    "variants.FoxMixin",
     "variants.GoatMixin",
-    "variants.MobMixin"
+    "variants.MobMixin",
+    "variants.SalmonMixin"
   ],
   "client": [
     "ModelBlockRendererMixin",
-    "variants.GoatRendererMixin"
+    "variants.DolphinRendererMixin",
+    "variants.FoxRendererMixin",
+    "variants.GoatRendererMixin",
+    "variants.SalmonRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

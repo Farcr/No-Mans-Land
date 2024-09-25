@@ -1,0 +1,5 @@
+{
+  "texture": "minecraft:entity/fox/snow_fox",
+  "sleeping_texture": "minecraft:entity/snow_fox_sleep",
+  "biomes": "minecraft:plains"
+}

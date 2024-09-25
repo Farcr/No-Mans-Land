@@ -16,20 +16,20 @@ import net.minecraft.world.level.biome.Biome;
 
 import java.util.Objects;
 
-public record GoatVariant(ResourceLocation texture, HolderSet<Biome> biomes) {
-    public static final Codec<GoatVariant> DIRECT_CODEC = RecordCodecBuilder.create((record) -> record.group(
+public record SalmonVariant(ResourceLocation texture, HolderSet<Biome> biomes) {
+    public static final Codec<SalmonVariant> DIRECT_CODEC = RecordCodecBuilder.create((record) -> record.group(
                     ResourceLocation.CODEC.fieldOf("texture").forGetter((config) -> config.texture),
-                    RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biomes").forGetter(GoatVariant::biomes))
-            .apply(record, GoatVariant::new));
-    public static final StreamCodec<RegistryFriendlyByteBuf, GoatVariant> DIRECT_STREAM_CODEC;
-    public static final Codec<Holder<GoatVariant>> CODEC;
-    public static final StreamCodec<RegistryFriendlyByteBuf, Holder<GoatVariant>> STREAM_CODEC;
+                    RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biomes").forGetter(SalmonVariant::biomes))
+            .apply(record, SalmonVariant::new));
+    public static final StreamCodec<RegistryFriendlyByteBuf, SalmonVariant> DIRECT_STREAM_CODEC;
+    public static final Codec<Holder<SalmonVariant>> CODEC;
+    public static final StreamCodec<RegistryFriendlyByteBuf, Holder<SalmonVariant>> STREAM_CODEC;
     public boolean equals(Object other) {
         if (other == this) {
             return true;
         } else {
             boolean equals;
-            if (other instanceof GoatVariant v) {
+            if (other instanceof SalmonVariant v) {
                 equals = Objects.equals(this.texture, v.texture) && Objects.equals(this.biomes, v.biomes);
             } else {
                 equals = false;
@@ -40,9 +40,9 @@ public record GoatVariant(ResourceLocation texture, HolderSet<Biome> biomes) {
     }
 
     static {
-        DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, GoatVariant::texture, ByteBufCodecs.holderSet(Registries.BIOME), GoatVariant::biomes, GoatVariant::new);
-        CODEC = RegistryFileCodec.create(NMLVariants.GOAT_VARIANT_KEY, DIRECT_CODEC);
-        STREAM_CODEC = ByteBufCodecs.holder(NMLVariants.GOAT_VARIANT_KEY, DIRECT_STREAM_CODEC);
+        DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, SalmonVariant::texture, ByteBufCodecs.holderSet(Registries.BIOME), SalmonVariant::biomes, SalmonVariant::new);
+        CODEC = RegistryFileCodec.create(NMLVariants.SALMON_VARIANT_KEY, DIRECT_CODEC);
+        STREAM_CODEC = ByteBufCodecs.holder(NMLVariants.SALMON_VARIANT_KEY, DIRECT_STREAM_CODEC);
     }
 }
 
