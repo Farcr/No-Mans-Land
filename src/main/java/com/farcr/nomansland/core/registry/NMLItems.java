@@ -103,6 +103,14 @@ public class NMLItems {
     public static final DeferredItem<Item> WALNUT_CHEST_BOAT = registerItem("walnut_chest_boat",
             () -> new BoatItem(true, BoatEntity.Type.WALNUT, new Item.Properties().stacksTo(1)));
 
+    public static final DeferredItem<Item> WILLOW_SIGN = registerItem("willow_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), NMLBlocks.WILLOW_SIGN.get(), NMLBlocks.WILLOW_WALL_SIGN.get()));
+    public static final DeferredItem<Item> WILLOW_HANGING_SIGN = registerItem("willow_hanging_sign",
+            () -> new HangingSignItem(NMLBlocks.WILLOW_HANGING_SIGN.get(), NMLBlocks.WILLOW_HANGING_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final DeferredItem<Item> WILLOW_BOAT = registerItem("willow_boat",
+            () -> new BoatItem(false, BoatEntity.Type.WILLOW, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WILLOW_CHEST_BOAT = registerItem("willow_chest_boat",
+            () -> new BoatItem(true, BoatEntity.Type.WILLOW, new Item.Properties().stacksTo(1)));
 
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {

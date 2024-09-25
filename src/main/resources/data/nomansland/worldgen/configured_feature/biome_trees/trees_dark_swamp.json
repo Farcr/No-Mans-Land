@@ -1,7 +1,7 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "nomansland:swamp_willow_checked",
+    "default": "nomansland:willow_checked",
     "features": [
       {
         "chance": 0.2,
@@ -11,11 +11,15 @@
         }
       },
       {
+        "chance": 0.05,
+        "feature": "nomansland:small_willow_checked"
+      },
+      {
         "chance": 0.5,
         "feature": "nomansland:swamp_dark_oak_checked"
       },
       {
-        "chance": 0.1,
+        "chance": 0.05,
         "feature": "nomansland:walnut_checked"
       },
       {

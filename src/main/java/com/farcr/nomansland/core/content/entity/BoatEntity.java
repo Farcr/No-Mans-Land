@@ -39,6 +39,7 @@ public class BoatEntity extends Boat {
             case PINE -> NMLItems.PINE_BOAT.get();
             case MAPLE -> NMLItems.MAPLE_BOAT.get();
             case WALNUT -> NMLItems.WALNUT_BOAT.get();
+            case WILLOW -> NMLItems.WILLOW_BOAT.get();
         };
     }
 
@@ -69,7 +70,8 @@ public class BoatEntity extends Boat {
     public enum Type implements StringRepresentable {
         PINE(NMLBlocks.PINE_PLANKS.get(), "pine"),
         MAPLE(NMLBlocks.MAPLE_PLANKS.get(), "maple"),
-        WALNUT(NMLBlocks.WALNUT_PLANKS.get(), "walnut");
+        WALNUT(NMLBlocks.WALNUT_PLANKS.get(), "walnut"),
+        WILLOW(NMLBlocks.WILLOW_PLANKS.get(), "willow");
 
         public static final StringRepresentable.EnumCodec<BoatEntity.Type> CODEC = StringRepresentable.fromEnum(BoatEntity.Type::values);
         private static final IntFunction<Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);

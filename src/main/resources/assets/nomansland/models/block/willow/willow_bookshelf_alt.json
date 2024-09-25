@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "nomansland:block/willow/willow_planks",
+    "side": "nomansland:block/willow/willow_bookshelf_alt"
+  }
+}

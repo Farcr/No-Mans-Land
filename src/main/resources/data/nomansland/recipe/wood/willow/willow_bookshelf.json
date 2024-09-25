@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bookshelves",
+  "key": {
+    "#": {
+      "item": "nomansland:willow_planks"
+    },
+    "X": {
+      "item": "minecraft:book"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "id": "nomansland:willow_bookshelf"
+  },
+  "show_notification": true
+}

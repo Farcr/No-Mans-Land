@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "nomansland:block/willow/willow_cabinet_side",
+    "front": "nomansland:block/willow/willow_cabinet_front_open",
+    "top": "nomansland:block/willow/willow_cabinet_top"
+  }
+}

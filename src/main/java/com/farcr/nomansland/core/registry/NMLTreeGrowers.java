@@ -77,4 +77,16 @@ public final class NMLTreeGrowers {
             Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "yellow_birch"))),
             Optional.empty()
     );
+
+    //TODO: FINISH
+    public static final TreeGrower WILLOW = new TreeGrower(
+            "maple",
+            0.1F,
+            Optional.empty(),
+            Optional.empty(),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "maple"))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "large_maple"))),
+            Optional.empty(),
+            Optional.empty()
+    );
 }
