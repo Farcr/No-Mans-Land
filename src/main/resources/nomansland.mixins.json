@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.farcr.nomansland.core.content.mixins",
+  "package": "com.farcr.nomansland.core.content.mixin",
   "compatibilityLevel": "JAVA_21",
   "refmap": "nomansland.refmap.json",
   "mixins": [
@@ -11,10 +11,14 @@
     "LivingEntityMixin",
     "ServerLevelMixin",
     "SnowAndFreezeFeatureMixin",
-    "SpreadingSnowyDirtBlockMixin"
+    "SpreadingSnowyDirtBlockMixin",
+    "variants.EntityMixin",
+    "variants.GoatMixin",
+    "variants.MobMixin"
   ],
   "client": [
-    "ModelBlockRendererMixin"
+    "ModelBlockRendererMixin",
+    "variants.GoatRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

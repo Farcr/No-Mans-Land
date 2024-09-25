@@ -2,7 +2,7 @@ package com.farcr.nomansland.core.content.blockentity;
 
 import com.farcr.nomansland.core.config.NMLConfig;
 import com.farcr.nomansland.core.content.block.MonsterAnchorBlock;
-import com.farcr.nomansland.core.events.listeners.AnchorListener;
+import com.farcr.nomansland.core.event.listener.AnchorListener;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.core.BlockPos;
@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import static com.farcr.nomansland.core.events.listeners.AnchorListener.processPoints;
+import static com.farcr.nomansland.core.event.listener.AnchorListener.processPoints;
 
 public class MonsterAnchorBlockEntity extends BlockEntity implements GameEventListener.Provider<AnchorListener> {
 

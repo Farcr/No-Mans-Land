@@ -1,6 +1,8 @@
-package com.farcr.nomansland.core.content.mixins;
+package com.farcr.nomansland.core.content.mixin;
 
 import com.farcr.nomansland.core.content.entity.LivingEntityDuck;
+import com.farcr.nomansland.core.content.entity.variant.GoatVariant;
+import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -19,6 +21,15 @@ public class LivingEntityMixin implements LivingEntityDuck {
     @Override
     public void nomansland$skipDroppingDeathLoot() {
         this.nomansland$skipDroppingDeathLoot = true;
+    }
+
+    @Override
+    public Holder<GoatVariant> nomansland$getVariant() {
+        return null;
+    }
+
+    @Override
+    public void nomansland$setVariant(Holder<GoatVariant> variant) {
     }
 
     @Inject(method = "dropAllDeathLoot", at = @At("HEAD"), cancellable = true)

@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.mixins;
+package com.farcr.nomansland.core.content.mixin;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;

@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.mixins;
+package com.farcr.nomansland.core.content.mixin;
 
 import com.farcr.nomansland.core.content.block.FrostedGrassBlock;
 import com.mojang.blaze3d.vertex.PoseStack;

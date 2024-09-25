@@ -4,16 +4,11 @@ import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.farcr.nomansland.core.registry.NMLItems;
 import com.farcr.nomansland.core.registry.NMLParticleTypes;
 import net.minecraft.core.Holder;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.function.Supplier;
 

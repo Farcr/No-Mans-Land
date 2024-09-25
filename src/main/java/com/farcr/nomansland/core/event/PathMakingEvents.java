@@ -1,13 +1,10 @@
-package com.farcr.nomansland.core.events;
+package com.farcr.nomansland.core.event;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.block.cauldrons.NMLCauldronBlock;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
@@ -16,20 +13,15 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.BambooSaplingBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import static net.minecraft.world.level.block.SnowyDirtBlock.SNOWY;
 

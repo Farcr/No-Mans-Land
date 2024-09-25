@@ -4,27 +4,27 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class NMLConfig {
 
-    public static final String CATEGORY_OVERRIDES = "overrides";
-    public static final String CATEGORY_TAP = "tap";
-    public static final String CATEGORY_ANCHOR = "monster_anchor";
-    public static final String CATEGORY_SPIKE = "spike";
-    public static final String CATEGORY_MISC = "miscellaneous";
-    public static final String CATEGORY_FOG_MODIFIERS = "fog_modifiers";
     public static ModConfigSpec COMMON_CONFIG;
+    public static final String CATEGORY_OVERRIDES = "overrides";
     public static ModConfigSpec.BooleanValue MYCELIUM_SPREADS;
     public static ModConfigSpec.BooleanValue GRASS_SPREADS;
     public static ModConfigSpec.BooleanValue MALEVOLENT_SPAWNER;
     public static ModConfigSpec.BooleanValue TRAMPLING;
     public static ModConfigSpec.BooleanValue TORCH_EXTINGUISHING;
+    public static final String CATEGORY_TAP = "tap";
     public static ModConfigSpec.DoubleValue FILLING_SPEED_MULTIPLIER;
     public static ModConfigSpec.IntValue TICKS_TO_FILL_CAULDRON;
+    public static final String CATEGORY_ANCHOR = "monster_anchor";
     public static ModConfigSpec.IntValue TICKS_BETWEEN_RESURRECTIONS;
+    public static final String CATEGORY_SPIKE = "spike";
     public static ModConfigSpec.DoubleValue POKING_DAMAGE;
     public static ModConfigSpec.DoubleValue FALLING_DAMAGE;
     public static ModConfigSpec.DoubleValue IMPALING_DAMAGE;
     public static ModConfigSpec.DoubleValue SKEWERING_DAMAGE;
+    public static final String CATEGORY_MISC = "miscellaneous";
     public static ModConfigSpec.DoubleValue BURIED_SPAWNING_CHANCE;
     public static ModConfigSpec CLIENT_CONFIG;
+    public static final String CATEGORY_FOG_MODIFIERS = "fog_modifiers";
     public static ModConfigSpec.BooleanValue FOG_MODIFIERS;
 
     static {

@@ -1,7 +1,7 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.lootmodifiers.AddItemModifier;
+import com.farcr.nomansland.core.content.lootmodifier.AddItemModifier;
 import com.mojang.serialization.MapCodec;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.registries.DeferredHolder;

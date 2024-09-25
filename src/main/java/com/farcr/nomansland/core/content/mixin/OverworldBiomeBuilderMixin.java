@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.mixins;
+package com.farcr.nomansland.core.content.mixin;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.resources.ResourceKey;

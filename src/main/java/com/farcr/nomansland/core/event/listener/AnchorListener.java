@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.events.listeners;
+package com.farcr.nomansland.core.event.listener;
 
 import com.farcr.nomansland.core.content.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.core.content.entity.LivingEntityDuck;
