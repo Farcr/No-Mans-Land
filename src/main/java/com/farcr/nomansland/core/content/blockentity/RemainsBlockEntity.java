@@ -1,7 +1,7 @@
 package com.farcr.nomansland.core.content.blockentity;
 
 import com.farcr.nomansland.core.config.NMLConfig;
-import com.farcr.nomansland.core.content.mixins.BlockEntityAccessor;
+import com.farcr.nomansland.core.content.mixin.BlockEntityAccessor;
 import com.farcr.nomansland.core.registry.NMLBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
@@ -33,7 +33,7 @@ public class RemainsBlockEntity extends BrushableBlockEntity {
             Block remainsBlockState = this.getBlockState().getBlock();
             if (remainsBlockState instanceof BrushableBlock) {
                 float a = new Random().nextFloat();
-                if (a <= NMLConfig.BURIED_SPAWNING_CHANCE.get()) {
+                if (a < NMLConfig.BURIED_SPAWNING_CHANCE.get()) {
                     //TODO: When Buried is readded/worked on, replace SKELETON with BURIED
                     Skeleton buried = EntityType.SKELETON.create(level);
                     if (buried != null) {

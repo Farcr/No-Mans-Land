@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.lootmodifiers;
+package com.farcr.nomansland.core.content.lootmodifier;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;

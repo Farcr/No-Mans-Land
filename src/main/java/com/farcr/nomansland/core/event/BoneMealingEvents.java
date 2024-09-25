@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.events;
+package com.farcr.nomansland.core.event;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.registry.NMLBlocks;

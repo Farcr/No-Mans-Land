@@ -8,16 +8,18 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "nomansland:walnut_sign"
+      "item": "nomansland:walnut_door"
     }
   ],
   "result": [
     {
-      "id": "nomansland:walnut_planks"
+      "item": {
+        "id": "nomansland:walnut_planks"
+      }
     }
   ],
   "tool": {
-    "type": "farmersdelight:tool_action",
+    "type": "farmersdelight:item_ability",
     "action": "axe_dig"
   }
 }

@@ -11,6 +11,7 @@
   "biome.nomansland.autumnal_forest": "Bosque otoñal",
   "biome.nomansland.autumnal_fields": "Campo otoñal",
   "biome.nomansland.maple_forest": "Bosque de arce",
+  "biome.nomansland.maple_grove": "Arboleada de arce",
   "biome.nomansland.dark_swamp": "Pantano oscuro",
 
   "block.nomansland.grass_sprouts": "Brotes de pasto",
@@ -20,10 +21,12 @@
   "block.nomansland.tall_beachgrass": "Pasto de playa alto",
   "block.nomansland.frosted_grass": "Pasto congelado",
   "block.nomansland.fiddlehead": "Brotes de helecho",
-  "block.nomansland.pebbles": "Piedra",
   "block.nomansland.cattail": "Totora",
   "block.nomansland.clover_patch": "Parche de trébol",
   "block.nomansland.duckweed": "Lenteja",
+
+  "block.nomansland.pebbles": "Piedra",
+  "block.nomansland.seashells": "Caracolas",
 
   "block.nomansland.white_flowerbed": "Macizo blanco",
   "block.nomansland.red_flowerbed": "Macizo rojo",
@@ -31,7 +34,7 @@
   "block.nomansland.violet_flowerbed": "Macizo violeta",
   "block.nomansland.yellow_flowerbed": "Macizo amarillo",
 
-  "block.nomansland.wooden_scaffolding": "Andamios de madera",
+  "block.nomansland.wooden_scaffolding": "Andamio de madera",
 
   "block.nomansland.mundane_tiles": "Azulejos mundanos",
   "block.nomansland.earthen_tiles": "Azulejos de tierra",
@@ -150,6 +153,8 @@
   "block.nomansland.resin_cauldron": "Caldero lleno de resina",
   "block.nomansland.honey_cauldron": "Caldero lleno de miel",
   "block.nomansland.maple_syrup_cauldron": "Caldero lleno de jarabe de arce",
+  "block.nomansland.resin_oil_cauldron": "Caldero lleno de aceite de resina",
+  "block.nomansland.milk_cauldron": "Caldero lleno de leche",
 
   "entity.nomansland.boat": "Bote",
   "entity.nomansland.chest_boat": "Bote con cofre",
@@ -175,11 +180,37 @@
   "block.nomansland.potted_pine_sapling": "Retoño de pino en maceta",
   "block.nomansland.pine_sign": "Letrero de pino",
   "block.nomansland.pine_wall_sign": "Letrero de pino en pared",
-  "block.nomansland.pine_hanging_sign": "Letrero de pino colgante",
-  "block.nomansland.pine_wall_hanging_sign": "Letrero de pino colgante en pared",
+  "block.nomansland.pine_hanging_sign": "Letrero colgante de pino ",
+  "block.nomansland.pine_wall_hanging_sign": "Letrero colgante de pino en pared",
   "item.nomansland.pine_boat": "Bote de pino",
   "item.nomansland.pine_chest_boat": "Bote de pino con cofre",
 
+  "block.nomansland.willow_planks": "Madera de sauce",
+  "block.nomansland.willow_stairs": "Escaleras de sauce",
+  "block.nomansland.willow_slab": "Losa de sauce",
+  "block.nomansland.willow_log": "Tronco de sauce",
+  "block.nomansland.willow_fence": "Valla de sauce",
+  "block.nomansland.willow_trapdoor": "Trampilla de sauce",
+  "block.nomansland.willow_door": "Puerta de sauce",
+  "block.nomansland.willow_fence_gate": "Puerta de valla de sauce",
+  "block.nomansland.willow_button": "Botón de sauce",
+  "block.nomansland.willow_pressure_plate": "Placa a presión de sauce",
+  "block.nomansland.trimmed_willow_planks": "Tablones recortados de sauce",
+  "block.nomansland.willow_bookshelf": "Librería de sauce",
+  "block.nomansland.willow_cabinet": "Gabinete de sauce",
+  "block.nomansland.willow_wood": "Leño de sauce",
+  "block.nomansland.stripped_willow_log": "Tronco de sauce sin corteza",
+  "block.nomansland.stripped_willow_wood": "Leño de sauce sin corteza",
+  "block.nomansland.willow_leaves": "Hojas de sauce",
+  "block.nomansland.willow_sapling": "Retoño de sauce",
+  "block.nomansland.potted_willow_sapling": "Retoño de sauce en maceto",
+  "block.nomansland.willow_sign": "Letrero de sauce",
+  "block.nomansland.willow_wall_sign": "Letrero de sauce en pared",
+  "block.nomansland.willow_hanging_sign": "Letrero colgante de sauce",
+  "block.nomansland.willow_wall_hanging_sign": "Letrero colgante de sauce en pared",
+  "item.nomansland.willow_boat": "Bote de sauce",
+  "item.nomansland.willow_chest_boat": "Bote de sauce con cofre",
+  
   "block.nomansland.maple_planks": "Madera de arce",
   "block.nomansland.maple_stairs": "Escaleras de arce",
   "block.nomansland.maple_slab": "Losa de arce",
@@ -204,8 +235,8 @@
   "block.nomansland.potted_red_maple_sapling": "Retoño de arce rojo en maceta",
   "block.nomansland.maple_sign": "Letrero de arce",
   "block.nomansland.maple_wall_sign": "Letrero de arce en pared",
-  "block.nomansland.maple_hanging_sign": "Letrero de arce colgante",
-  "block.nomansland.maple_wall_hanging_sign": "Letrero de arce colgante en pared",
+  "block.nomansland.maple_hanging_sign": "Letrero colgante de arce",
+  "block.nomansland.maple_wall_hanging_sign": "Letrero colgante de arce en pared",
   "item.nomansland.maple_boat": "Bote de arce",
   "item.nomansland.maple_chest_boat": "Bote de arce con cofre",
 
@@ -235,7 +266,7 @@
   "item.nomansland.walnut_boat": "Bote de nogal",
   "item.nomansland.walnut_chest_boat": "Bote de nogal con cofre",
 
-  "block.nomansland.cod_barrel": "Barril de bacalo",
+  "block.nomansland.cod_barrel": "Barril de bacalao",
   "block.nomansland.salmon_barrel": "Barril de salmón",
   "block.nomansland.tropical_fish_barrel": "Barril de pez tropical",
   "block.nomansland.pufferfish_barrel": "Barril de pez globo",
@@ -254,6 +285,8 @@
 
   "item.nomansland.honeyed_apple": "Manzana enmielada",
   "block.nomansland.apple_crate": "Caja manzana",
+
+  "item.nomansland.walnuts": "Nueces",
   
   "item.nomansland.mashed_potatoes_with_mushrooms": "Puré de papas con hongos",
   "item.nomansland.grilled_mushrooms": "Hongos a la plancha",
@@ -261,7 +294,7 @@
   "item.nomansland.cooked_frog_leg": "Pata de rana asada",
   "item.nomansland.maple_syrup_bottle": "Botella de jarabe de arce",
   "item.nomansland.raw_horse": "Caballo crudo",
-  "item.nomansland.horse_steak": "Filete de caballo",
+  "item.nomansland.horse_steak": "Caballo asado",
   "item.nomansland.venison": "Venado",
   "item.nomansland.cooked_venison": "Venado asado",
   "item.nomansland.raw_camelid": "Camello crudo",
@@ -271,7 +304,7 @@
   "item.nomansland.resin_oil_bottle": "Botella de aceite de resina",
   
   "item.nomansland.firebomb": "Bomba",
-  "item.nomansland.explosive": "Explosive",
+  "item.nomansland.explosive": "Explosivo",
 
   "nomansland.subtitles.block.spike_trap.extend": "Picos se extienden",
   "nomansland.subtitles.block.spike_trap.retract": "Picos se retraen",

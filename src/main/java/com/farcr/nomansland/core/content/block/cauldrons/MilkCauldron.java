@@ -11,18 +11,14 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.MilkBucketItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
-import net.neoforged.neoforge.common.EffectCure;
 import net.neoforged.neoforge.common.EffectCures;
 import net.neoforged.neoforge.event.EventHooks;
-import vectorwing.farmersdelight.common.item.MilkBottleItem;
 
 import java.util.ArrayList;
 import java.util.Iterator;

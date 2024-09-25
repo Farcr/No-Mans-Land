@@ -8,7 +8,6 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.MushroomBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.neoforged.neoforge.common.util.TriState;
 
 public class SurfaceMushroomBlock extends MushroomBlock {
     public SurfaceMushroomBlock(ResourceKey<ConfiguredFeature<?, ?>> pFeature, Properties pProperties) {
@@ -22,9 +21,10 @@ public class SurfaceMushroomBlock extends MushroomBlock {
 
     @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        BlockPos lowerPos = pos.below();
-        BlockState lowerState = level.getBlockState(lowerPos);
-        TriState soilDecision = lowerState.canSustainPlant(level, lowerPos, net.minecraft.core.Direction.UP, state);
-        return lowerState.is(BlockTags.MUSHROOM_GROW_BLOCK) || (soilDecision.isDefault() ? this.mayPlaceOn(lowerState, level, lowerPos) : soilDecision.isTrue());
+        return true;
+//        BlockPos lowerPos = pos.below();
+//        BlockState lowerState = level.getBlockState(lowerPos);
+//        TriState soilDecision = lowerState.canSustainPlant(level, lowerPos, net.minecraft.core.Direction.UP, state);
+//        return lowerState.is(BlockTags.MUSHROOM_GROW_BLOCK) || (soilDecision.isDefault() ? this.mayPlaceOn(lowerState, level, lowerPos) : soilDecision.isTrue());
     }
 }

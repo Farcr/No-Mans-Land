@@ -1,4 +1,4 @@
-package com.farcr.nomansland.core.content.mixins;
+package com.farcr.nomansland.core.content.mixin;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

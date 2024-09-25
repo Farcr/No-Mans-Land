@@ -4,13 +4,11 @@ import com.farcr.nomansland.core.registry.NMLBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.cauldron.CauldronInteraction;
-import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -35,8 +33,6 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.data.internal.NeoForgeBlockTagsProvider;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.function.Supplier;
 
@@ -98,6 +94,7 @@ public class NMLCauldronBlock extends LayeredCauldronBlock {
             }
         }
         if (inputItem != null && player.isHolding(inputItem.value())) {
+            player.setItemInHand(hand, new ItemStack(inputItem, player.getItemInHand(hand).getCount() - 1));
             if (!(player.isCreative() && player.getInventory().hasAnyMatching(s -> s.is(outputItem)))) {
                 ItemStack outputStack = new ItemStack(outputItem);
                 if (!player.addItem(outputStack)) {
@@ -108,7 +105,6 @@ public class NMLCauldronBlock extends LayeredCauldronBlock {
             } else {
                 level.playSound(player, pos, SoundEvents.HONEY_BLOCK_STEP, SoundSource.PLAYERS, 2, 1);
             }
-            player.setItemInHand(hand, new ItemStack(inputItem, player.getItemInHand(hand).getCount() - 1));
             player.awardStat(Stats.ITEM_USED.get(inputItem.value()));
             lowerFillLevel(state, level, pos);
             level.playSound(player, pos, SoundEvents.HONEY_BLOCK_STEP, SoundSource.PLAYERS, 2, 1);
