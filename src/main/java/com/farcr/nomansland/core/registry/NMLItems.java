@@ -184,6 +184,23 @@ public class NMLItems {
 //            if (ModList.get().isLoaded("farmersdelight")) {
 //                event.accept(NMLBlocks.WALNUT_CABINET.get());
 //            }
+            event.accept(NMLBlocks.WILLOW_LOG.get());
+            event.accept(NMLBlocks.WILLOW_WOOD.get());
+            event.accept(NMLBlocks.STRIPPED_WILLOW_LOG.get());
+            event.accept(NMLBlocks.STRIPPED_WILLOW_WOOD.get());
+            event.accept(NMLBlocks.WILLOW_PLANKS.get());
+            event.accept(NMLBlocks.WILLOW_STAIRS.get());
+            event.accept(NMLBlocks.WILLOW_SLAB.get());
+            event.accept(NMLBlocks.TRIMMED_WILLOW_PLANKS.get());
+            event.accept(NMLBlocks.WILLOW_FENCE.get());
+            event.accept(NMLBlocks.WILLOW_FENCE_GATE.get());
+            event.accept(NMLBlocks.WILLOW_DOOR.get());
+            event.accept(NMLBlocks.WILLOW_TRAPDOOR.get());
+            event.accept(NMLBlocks.WILLOW_PRESSURE_PLATE.get());
+            event.accept(NMLBlocks.WILLOW_BUTTON.get());
+//            if (ModList.get().isLoaded("farmersdelight")) {
+//                event.accept(NMLBlocks.WILLOW_CABINET.get());
+//            }
 
             event.accept(NMLBlocks.COD_BARREL.get());
             event.accept(NMLBlocks.SALMON_BARREL.get());
@@ -284,6 +301,10 @@ public class NMLItems {
             event.accept(NMLBlocks.WALNUT_LEAVES.get());
             event.accept(NMLBlocks.WALNUT_SAPLING);
 
+            event.accept(NMLBlocks.WILLOW_LOG.get());
+            event.accept(NMLBlocks.WILLOW_LEAVES.get());
+            event.accept(NMLBlocks.WILLOW_SAPLING);
+
         }
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(NMLBlocks.PINE_BOOKSHELF.get());
@@ -305,6 +326,8 @@ public class NMLItems {
             event.accept(NMLItems.MAPLE_HANGING_SIGN.get());
             event.accept(NMLItems.WALNUT_SIGN.get());
             event.accept(NMLItems.WALNUT_HANGING_SIGN.get());
+            event.accept(NMLItems.WILLOW_SIGN.get());
+            event.accept(NMLItems.WILLOW_HANGING_SIGN.get());
             event.accept(NMLItems.SCONCE_TORCH.get());
             event.accept(NMLItems.SCONCE_SOUL_TORCH.get());
             event.accept(NMLBlocks.TAP.get());
@@ -331,6 +354,8 @@ public class NMLItems {
             event.accept(NMLItems.MAPLE_CHEST_BOAT.get());
             event.accept(NMLItems.WALNUT_BOAT.get());
             event.accept(NMLItems.WALNUT_CHEST_BOAT.get());
+            event.accept(NMLItems.WILLOW_BOAT.get());
+            event.accept(NMLItems.WILLOW_CHEST_BOAT.get());
             // TODO: this crashes the game if you have the bundle experiment on
 //            event.accept(Items.BUNDLE);
         }
