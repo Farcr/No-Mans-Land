@@ -1,6 +1,7 @@
 {
   "values": [
     "minecraft:deep_dark",
-    "nomansland:dark_swamp"
+    "nomansland:dark_swamp",
+    "nomansland:bog"
   ]
 }

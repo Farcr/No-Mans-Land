@@ -18,6 +18,9 @@ public class NMLBiomes {
 
     public static final ResourceKey<Biome> DARK_SWAMP = createKey("dark_swamp");
 
+    public static final ResourceKey<Biome> BOG = createKey("bog");
+    public static final ResourceKey<Biome> MUSKEG = createKey("bog");
+
     //Underground
     public static final ResourceKey<Biome> CAVES = createKey("caves");
 

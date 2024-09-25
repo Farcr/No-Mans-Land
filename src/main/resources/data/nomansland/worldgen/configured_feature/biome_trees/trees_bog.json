@@ -4,8 +4,20 @@
     "default": "nomansland:pine_checked",
     "features": [
       {
-        "chance": 0.3,
-        "feature": "minecraft:oak_checked"
+        "chance": 0.2,
+        "feature": "nomansland:willow_checked"
+      },
+      {
+        "chance": 0.2,
+        "feature": "nomansland:small_willow_checked"
+      },
+      {
+        "chance": 0.1,
+        "feature": "nomansland:autumnal_oak_checked"
+      },
+      {
+        "chance": 0.2,
+        "feature": "nomansland:large_autumnal_oak_checked"
       }
     ]
   }

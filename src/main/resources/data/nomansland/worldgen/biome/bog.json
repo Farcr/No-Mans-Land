@@ -10,8 +10,8 @@
   "effects": {
     "fog_color": 10996903,
     "sky_color": 7715315,
-    "foliage_color": 6975545,
-    "grass_color_modifier": "swamp",
+    "foliage_color": 8615756,
+    "grass_color": 9798741,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -79,7 +79,7 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:trees_swamp"
+      "nomansland:biome_trees/trees_bog"
     ],
     [
       "minecraft:glow_lichen",
@@ -116,25 +116,25 @@
         "type": "minecraft:sheep",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 6
+        "weight": 8
       },
       {
         "type": "minecraft:pig",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 16
+        "weight": 14
       },
       {
         "type": "minecraft:chicken",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 6
+        "weight": 3
       },
       {
         "type": "minecraft:cow",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 8
+        "weight": 14
       },
       {
         "type": "minecraft:frog",

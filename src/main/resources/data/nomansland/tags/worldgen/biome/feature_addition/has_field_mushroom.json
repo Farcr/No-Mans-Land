@@ -13,6 +13,7 @@
     "minecraft:old_growth_pine_taiga",
     "minecraft:sunflower_plains",
     "minecraft:cherry_grove",
-    "#minecraft:is_forest"
+    "#minecraft:is_forest",
+    "nomansland:bog"
   ]
 }

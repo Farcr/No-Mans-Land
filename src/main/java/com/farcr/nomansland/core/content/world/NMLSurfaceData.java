@@ -10,6 +10,7 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 public class NMLSurfaceData {
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
     private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
+    private static final SurfaceRules.RuleSource MUD = makeStateRule(Blocks.MUD);
 
     protected static SurfaceRules.RuleSource makeRules() {
 
@@ -24,6 +25,10 @@ public class NMLSurfaceData {
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(NMLBiomes.OLD_GROWTH_FOREST),
                         SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.25), COARSE_DIRT))),
+                //Bog
+                SurfaceRules.ifTrue(
+                        SurfaceRules.isBiome(NMLBiomes.BOG),
+                        SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(2.0), MUD))),
                 //Maple Forest
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(NMLBiomes.MAPLE_FOREST),
