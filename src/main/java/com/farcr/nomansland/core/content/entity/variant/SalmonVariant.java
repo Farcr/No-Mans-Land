@@ -15,11 +15,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 
 import java.util.Objects;
+import java.util.Optional;
 
-public record SalmonVariant(ResourceLocation texture, HolderSet<Biome> biomes) {
+public record SalmonVariant(ResourceLocation texture, Optional<HolderSet<Biome>> biomes) {
     public static final Codec<SalmonVariant> DIRECT_CODEC = RecordCodecBuilder.create((record) -> record.group(
                     ResourceLocation.CODEC.fieldOf("texture").forGetter((config) -> config.texture),
-                    RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biomes").forGetter(SalmonVariant::biomes))
+                    RegistryCodecs.homogeneousList(Registries.BIOME).optionalFieldOf("biomes").forGetter(SalmonVariant::biomes))
             .apply(record, SalmonVariant::new));
     public static final StreamCodec<RegistryFriendlyByteBuf, SalmonVariant> DIRECT_STREAM_CODEC;
     public static final Codec<Holder<SalmonVariant>> CODEC;
@@ -40,7 +41,7 @@ public record SalmonVariant(ResourceLocation texture, HolderSet<Biome> biomes) {
     }
 
     static {
-        DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, SalmonVariant::texture, ByteBufCodecs.holderSet(Registries.BIOME), SalmonVariant::biomes, SalmonVariant::new);
+        DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, SalmonVariant::texture, ByteBufCodecs.optional(ByteBufCodecs.holderSet(Registries.BIOME)), SalmonVariant::biomes, SalmonVariant::new);
         CODEC = RegistryFileCodec.create(NMLVariants.SALMON_VARIANT_KEY, DIRECT_CODEC);
         STREAM_CODEC = ByteBufCodecs.holder(NMLVariants.SALMON_VARIANT_KEY, DIRECT_STREAM_CODEC);
     }

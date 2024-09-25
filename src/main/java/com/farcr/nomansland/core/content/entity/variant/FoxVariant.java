@@ -15,12 +15,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 
 import java.util.Objects;
+import java.util.Optional;
 
-public record FoxVariant(ResourceLocation texture, ResourceLocation sleepingTexture, HolderSet<Biome> biomes) {
+public record FoxVariant(ResourceLocation texture, ResourceLocation sleepingTexture, Optional<HolderSet<Biome>> biomes) {
     public static final Codec<FoxVariant> DIRECT_CODEC = RecordCodecBuilder.create((record) -> record.group(
                     ResourceLocation.CODEC.fieldOf("texture").forGetter((config) -> config.texture),
                     ResourceLocation.CODEC.fieldOf("sleeping_texture").forGetter((config) -> config.sleepingTexture),
-                    RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biomes").forGetter(FoxVariant::biomes))
+                    RegistryCodecs.homogeneousList(Registries.BIOME).optionalFieldOf("biomes").forGetter(FoxVariant::biomes))
             .apply(record, FoxVariant::new));
     public static final StreamCodec<RegistryFriendlyByteBuf, FoxVariant> DIRECT_STREAM_CODEC;
     public static final Codec<Holder<FoxVariant>> CODEC;
@@ -41,7 +42,7 @@ public record FoxVariant(ResourceLocation texture, ResourceLocation sleepingText
     }
 
     static {
-        DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, FoxVariant::texture, ResourceLocation.STREAM_CODEC, FoxVariant::sleepingTexture, ByteBufCodecs.holderSet(Registries.BIOME), FoxVariant::biomes, FoxVariant::new);
+        DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, FoxVariant::texture, ResourceLocation.STREAM_CODEC, FoxVariant::sleepingTexture, ByteBufCodecs.optional(ByteBufCodecs.holderSet(Registries.BIOME)), FoxVariant::biomes, FoxVariant::new);
         CODEC = RegistryFileCodec.create(NMLVariants.FOX_VARIANT_KEY, DIRECT_CODEC);
         STREAM_CODEC = ByteBufCodecs.holder(NMLVariants.FOX_VARIANT_KEY, DIRECT_STREAM_CODEC);
     }

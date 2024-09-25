@@ -1,4 +1,3 @@
 {
-  "texture": "minecraft:entity/fish/salmon",
-  "biomes": "#minecraft:is_river"
+  "texture": "minecraft:entity/fish/salmon"
 }

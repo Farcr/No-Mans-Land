@@ -15,15 +15,17 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 
 import java.util.Objects;
+import java.util.Optional;
 
-public record DolphinVariant(ResourceLocation texture, HolderSet<Biome> biomes) {
+public record DolphinVariant(ResourceLocation texture, Optional<HolderSet<Biome>> biomes) {
     public static final Codec<DolphinVariant> DIRECT_CODEC = RecordCodecBuilder.create((record) -> record.group(
                     ResourceLocation.CODEC.fieldOf("texture").forGetter((config) -> config.texture),
-                    RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biomes").forGetter(DolphinVariant::biomes))
+                    RegistryCodecs.homogeneousList(Registries.BIOME).optionalFieldOf("biomes").forGetter(DolphinVariant::biomes))
             .apply(record, DolphinVariant::new));
     public static final StreamCodec<RegistryFriendlyByteBuf, DolphinVariant> DIRECT_STREAM_CODEC;
     public static final Codec<Holder<DolphinVariant>> CODEC;
     public static final StreamCodec<RegistryFriendlyByteBuf, Holder<DolphinVariant>> STREAM_CODEC;
+
     public boolean equals(Object other) {
         if (other == this) {
             return true;
@@ -40,7 +42,7 @@ public record DolphinVariant(ResourceLocation texture, HolderSet<Biome> biomes) 
     }
 
     static {
-        DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, DolphinVariant::texture, ByteBufCodecs.holderSet(Registries.BIOME), DolphinVariant::biomes, DolphinVariant::new);
+        DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, DolphinVariant::texture, ByteBufCodecs.optional(ByteBufCodecs.holderSet(Registries.BIOME)), DolphinVariant::biomes, DolphinVariant::new);
         CODEC = RegistryFileCodec.create(NMLVariants.DOLPHIN_VARIANT_KEY, DIRECT_CODEC);
         STREAM_CODEC = ByteBufCodecs.holder(NMLVariants.DOLPHIN_VARIANT_KEY, DIRECT_STREAM_CODEC);
     }

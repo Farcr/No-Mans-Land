@@ -2,6 +2,7 @@ package com.farcr.nomansland.core.content.mixin.variants;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.content.entity.variant.SalmonVariant;
+import com.farcr.nomansland.core.content.entity.variant.SalmonVariant;
 import com.farcr.nomansland.core.registry.NMLDataSerializers;
 import com.farcr.nomansland.core.registry.NMLVariants;
 import net.minecraft.core.Holder;
@@ -23,8 +24,10 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Mixin(Salmon.class)
 public abstract class SalmonMixin extends MobMixin implements VariantHolder<Holder<SalmonVariant>> {
@@ -59,11 +62,12 @@ public abstract class SalmonMixin extends MobMixin implements VariantHolder<Hold
     @Override
     protected void finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, SpawnGroupData spawnGroupData, CallbackInfoReturnable<SpawnGroupData> cir) {
         Registry<SalmonVariant> registry = this.registryAccess().registryOrThrow(NMLVariants.SALMON_VARIANT_KEY);
-        Optional<Holder.Reference<SalmonVariant>> variant = registry.holders()
-                .filter((v) -> v.value().biomes().contains(level.getBiome(this.blockPosition()))).findFirst()
-                .or(() -> registry.getHolder(DEFAULT_VARIANT));
-        Objects.requireNonNull(registry);
-        this.setVariant(variant.or(registry::getAny).orElseThrow());
+        Stream<Holder.Reference<SalmonVariant>> allVariants = registry.holders();
+        List<Holder.Reference<SalmonVariant>> possibleVariants = allVariants
+                .filter((v) -> v.value().biomes().isPresent())
+                .filter((v) -> v.value().biomes().get().contains(level.getBiome(this.blockPosition())))
+                .toList();
+        this.setVariant(possibleVariants.isEmpty() ? registry.getHolderOrThrow(DEFAULT_VARIANT) : possibleVariants.get(random.nextInt(possibleVariants.size())));
     }
 
     @Override
