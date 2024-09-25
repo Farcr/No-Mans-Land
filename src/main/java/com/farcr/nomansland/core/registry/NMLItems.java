@@ -263,6 +263,7 @@ public class NMLItems {
             event.accept(NMLBlocks.SHELF_MUSHROOM.get());
             event.accept(NMLBlocks.SHELF_MUSHROOM_BLOCK.get());
             event.accept(NMLBlocks.FROSTED_LEAVES.get());
+            event.accept(NMLBlocks.BEARD_MOSS.get());
 
 //            if (ModList.get().isLoaded("farmersdelight")) {
 //                event.accept(NMLBlocks.FIELD_MUSHROOM_COLONY.get());
