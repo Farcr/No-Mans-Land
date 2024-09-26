@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "minecraft:mangrove_checked",
+    "features": [
+      {
+        "chance": 0.65,
+        "feature": "minecraft:tall_mangrove_checked"
+      },
+      {
+        "chance": 0.2,
+        "feature": "nomansland:towering_willow_checked"
+      }
+    ]
+  }
+}
