@@ -286,7 +286,7 @@ public class NMLItems {
 //            event.accept(NMLBlocks.PETRIFIED_LOG.get());
 //            event.accept(NMLBlocks.PETRIFIED_WOOD.get());
 
-            event.accept(NMLBlocks.REMAINS.get());
+//            event.accept(NMLBlocks.REMAINS.get());
 
             event.accept(NMLBlocks.PINE_LOG.get());
             event.accept(NMLBlocks.PINE_LEAVES.get());
