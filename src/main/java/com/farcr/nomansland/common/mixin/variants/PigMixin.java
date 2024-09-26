@@ -64,7 +64,7 @@ public abstract class PigMixin extends MobMixin implements VariantHolder<Holder<
         List<Holder.Reference<PigVariant>> defaultVariants = registry.holders()
                 .filter((v) -> v.value().biomes().isEmpty())
                 .toList();
-        this.setVariant(possibleVariants.isEmpty() ? registry.getHolderOrThrow(DEFAULT_VARIANT) : possibleVariants.get(random.nextInt(possibleVariants.size())));
+        this.setVariant(possibleVariants.isEmpty() ? defaultVariants.get(random.nextInt(defaultVariants.size())) : possibleVariants.get(random.nextInt(possibleVariants.size())));
     }
 
     @Override

@@ -60,6 +60,10 @@ public class AbstractCauldronBlockMixin {
             }
             if (player.isHolding(Items.MILK_BUCKET)) {
                 if (!player.isCreative()) player.setItemInHand(hand, new ItemStack(Items.BUCKET));
+                if (player.isCreative() && !player.getInventory().hasAnyMatching(s -> s.getItem() == Items.BUCKET)) {
+                    ItemStack item = new ItemStack(Items.BUCKET);
+                    player.addItem(item);
+                }
                 player.awardStat(Stats.USE_CAULDRON);
                 player.awardStat(Stats.ITEM_USED.get(Items.MILK_BUCKET));
                 level.setBlockAndUpdate(pos, NMLBlocks.MILK_CAULDRON.get().defaultBlockState().setValue(LEVEL, 3));
