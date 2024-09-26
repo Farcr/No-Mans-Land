@@ -1,5 +1,4 @@
 {
   "texture": "nomansland:entity/variants/pig/pig_saddleback",
-  "baby_texture": "nomansland:entity/variants/pig/pig_saddleback_baby",
-  "biomes": "minecraft:plains"
+  "baby_texture": "nomansland:entity/variants/pig/pig_saddleback_baby"
 }

@@ -1,6 +1,6 @@
 package com.farcr.nomansland.client;
 
-import com.farcr.nomansland.core.NoMansLand;
+import com.farcr.nomansland.NoMansLand;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 

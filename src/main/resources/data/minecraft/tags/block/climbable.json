@@ -1,5 +1,7 @@
 {
   "values": [
-    "nomansland:wooden_scaffolding"
+    "nomansland:wooden_scaffolding",
+    "minecraft:cobweb",
+    "nomansland:beard_moss"
   ]
 }

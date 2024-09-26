@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.farcr.nomansland.core.content.mixin",
+  "package": "com.farcr.nomansland.common.mixin",
   "compatibilityLevel": "JAVA_21",
   "refmap": "nomansland.refmap.json",
   "mixins": [
@@ -24,7 +24,6 @@
   ],
   "client": [
     "ModelBlockRendererMixin",
-    "variants.AgeableListModelMixin",
     "variants.DolphinRendererMixin",
     "variants.FoxRendererMixin",
     "variants.GoatRendererMixin",
