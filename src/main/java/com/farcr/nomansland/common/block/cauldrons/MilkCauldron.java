@@ -31,7 +31,11 @@ public class MilkCauldron extends NMLCauldronBlock {
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (player.isHolding(Items.BUCKET) && isFull(state)) {
-            if (!player.isCreative()) player.setItemInHand(hand, new ItemStack(Items.MILK_BUCKET));
+            if (!(player.isCreative() && player.getInventory().hasAnyMatching(s -> s.getItem() == Items.MILK_BUCKET))) {
+                ItemStack item = new ItemStack(Items.MILK_BUCKET);
+                if (!player.isCreative()) player.setItemInHand(hand, new ItemStack(player.getItemInHand(hand).getItem(), player.getItemInHand(hand).getCount()-1));
+                player.addItem(item);
+            }
             player.awardStat(Stats.ITEM_USED.get(Items.BUCKET));
             level.setBlockAndUpdate(pos, Blocks.CAULDRON.defaultBlockState());
             level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(state));
@@ -39,6 +43,10 @@ public class MilkCauldron extends NMLCauldronBlock {
             return ItemInteractionResult.sidedSuccess(level.isClientSide);
         } else if (player.isHolding(Items.MILK_BUCKET) && !isFull(state)) {
             if (!player.isCreative()) player.setItemInHand(hand, new ItemStack(Items.BUCKET));
+            if (player.isCreative() && !player.getInventory().hasAnyMatching(s -> s.getItem() == Items.BUCKET)) {
+                ItemStack item = new ItemStack(Items.BUCKET);
+                player.addItem(item);
+            }
             player.awardStat(Stats.ITEM_USED.get(Items.MILK_BUCKET));
             level.setBlockAndUpdate(pos, state.setValue(LEVEL, 3));
             level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(state));
