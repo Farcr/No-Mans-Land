@@ -115,10 +115,10 @@ public class NMLBiomeBuilder {
             {null, null, null, null, null}
     };
     protected final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT_NML = new ResourceKey[][]{
-            {null, null, null, null, null},
-            {null, null, null, null, null},
+            {NMLBiomes.MUSKEG, null, null, null, null},
+            {NMLBiomes.BOG, null, null, null, null},
             {null, null, NMLBiomes.OLD_GROWTH_FOREST, NMLBiomes.OLD_GROWTH_FOREST, null},
-            {null, null, null, null, null},
+            {null, null, null, null, NMLBiomes.BAYOU},
             {null, null, null, null, null}
     };
     protected final ResourceKey<Biome>[][] PLATEAU_BIOMES_NML = new ResourceKey[][]{
@@ -160,7 +160,7 @@ public class NMLBiomeBuilder {
             {NMLBiomes.MUSKEG, NMLBiomes.MUSKEG, NMLBiomes.MUSKEG, NMLBiomes.MUSKEG, NMLBiomes.MUSKEG},
             {NMLBiomes.BOG, NMLBiomes.BOG, NMLBiomes.BOG, NMLBiomes.BOG, NMLBiomes.DARK_SWAMP},
             {NMLBiomes.BOG, null, null, NMLBiomes.DARK_SWAMP, NMLBiomes.DARK_SWAMP},
-            {null, null, null, null, null},
+            {null, null, null, NMLBiomes.BAYOU, NMLBiomes.BAYOU},
             {null, null, null, null, null}
     };
     protected final ResourceKey<Biome>[][] RIVER_BIOMES_NML = new ResourceKey[][]{

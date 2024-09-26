@@ -2,6 +2,7 @@
   "values": [
     "minecraft:deep_dark",
     "nomansland:dark_swamp",
-    "nomansland:bog"
+    "nomansland:bog",
+    "#minecraft:is_jungle"
   ]
 }

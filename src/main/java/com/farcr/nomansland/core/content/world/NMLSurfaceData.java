@@ -29,6 +29,10 @@ public class NMLSurfaceData {
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(NMLBiomes.BOG),
                         SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(2.0), MUD))),
+                //Bayou
+                SurfaceRules.ifTrue(
+                        SurfaceRules.isBiome(NMLBiomes.BAYOU),
+                        SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(2.0), MUD), SurfaceRules.ifTrue(surfaceNoiseAbove(1.5), PODZOL))),
                 //Maple Forest
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(NMLBiomes.MAPLE_FOREST),
