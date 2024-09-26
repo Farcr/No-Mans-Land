@@ -9,7 +9,7 @@
   "downfall": 0.9,
   "effects": {
     "fog_color": 10996903,
-    "sky_color": 7715315,
+    "sky_color": 8431871,
     "foliage_color": 8615756,
     "grass_color": 9798741,
     "mood_sound": {
@@ -83,7 +83,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:flower_swamp",
+      "nomansland:flower_patches/flowers_bog",
+      "nomansland:flower_patches/flowerbed_red_and_violet",
       "minecraft:patch_grass_normal",
       "minecraft:patch_dead_bush",
       "minecraft:patch_waterlily",
