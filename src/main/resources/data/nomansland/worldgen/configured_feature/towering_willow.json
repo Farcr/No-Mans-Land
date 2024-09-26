@@ -1,0 +1,79 @@
+{
+  "type": "minecraft:tree",
+  "config": {
+    "decorators": [
+      {
+        "type": "minecraft:leave_vine",
+        "probability": 0.25
+      },
+      {
+        "type": "nomansland:beard_moss",
+        "probability": 0.5,
+        "size": {
+          "type": "minecraft:uniform",
+          "min_inclusive": 1,
+          "max_inclusive": 5
+        }
+      }
+    ],
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:dirt"
+      }
+    },
+    "foliage_placer": {
+      "type": "nomansland:cypress_foliage_placer",
+      "height": 2,
+      "offset": 0,
+      "radius": 3
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "nomansland:willow_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "force_dirt": false,
+    "ignore_vines": true,
+    "minimum_size": {
+      "type": "minecraft:two_layers_feature_size",
+      "limit": 1,
+      "lower_size": 0,
+      "upper_size": 1
+    },
+    "trunk_placer": {
+      "type": "nomansland:cypress_trunk_placer",
+      "base_height": 12,
+      "height_rand_a": 1,
+      "height_rand_b": 5,
+      "root_height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": 2,
+        "max_inclusive": 5
+      },
+      "branch_count": {
+        "type": "minecraft:uniform",
+        "min_inclusive": 1,
+        "max_inclusive": 3
+      },
+      "branch_length": 3,
+      "branch_min_height": 5,
+      "branch_max_height": 3
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "nomansland:willow_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}

@@ -103,11 +103,8 @@ public class NMLBlocks {
             () -> new CattailBlock(Block.Properties.ofFullCopy(Blocks.TALL_GRASS).offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final DeferredBlock<Block> DUCKWEED = registerBlock("duckweed",
             () -> new DuckweedBlock(Block.Properties.ofFullCopy(Blocks.LILY_PAD).noCollission().offsetType(BlockBehaviour.OffsetType.XYZ)));
-    //TODO: MAKE CUSTOM CLASS N SHIT FOR BEARD MOSS
     public static final DeferredBlock<Block> BEARD_MOSS = registerBlock("beard_moss",
-            () -> new WeepingVinesBlock(Block.Properties.ofFullCopy(Blocks.WEEPING_VINES).mapColor(MapColor.NONE).noCollission()));
-    public static final DeferredBlock<Block> BEARD_MOSS_PLANT = BLOCKS.register("beard_moss_plant",
-                () -> new WeepingVinesPlantBlock(Block.Properties.ofFullCopy(Blocks.WEEPING_VINES_PLANT).mapColor(MapColor.NONE).noCollission()));
+            () -> new BeardMossBlock(Block.Properties.of().mapColor(MapColor.PLANT).instabreak().sound(SoundType.MOSS).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> YELLOW_BIRCH_LEAVES = registerBlock("yellow_birch_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES).isViewBlocking((s, g, p) -> false).isSuffocating(((s, g, p) -> false))));
     public static final DeferredBlock<Block> YELLOW_BIRCH_SAPLING = registerBlock("yellow_birch_sapling",

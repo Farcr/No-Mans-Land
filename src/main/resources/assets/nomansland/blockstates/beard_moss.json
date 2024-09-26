@@ -1,6 +1,9 @@
 {
   "variants": {
-    "": {
+    "half=lower": {
+      "model": "nomansland:block/plants/beard_moss_bottom"
+    },
+    "half=upper": {
       "model": "nomansland:block/plants/beard_moss"
     }
   }

@@ -1,6 +1,7 @@
 package com.farcr.nomansland.core.registry;
 
 import com.farcr.nomansland.core.NoMansLand;
+import com.farcr.nomansland.core.content.world.feature.foliageplacers.CypressFoliagePlacer;
 import com.farcr.nomansland.core.content.world.feature.foliageplacers.PineFoliagePlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
@@ -12,4 +13,5 @@ public class NMLFoliagePlacerType {
             DeferredRegister.create(Registries.FOLIAGE_PLACER_TYPE, NoMansLand.MODID);
 
     public static final DeferredHolder<FoliagePlacerType<?>, FoliagePlacerType<PineFoliagePlacer>> PINE_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPES.register("pine_foliage_placer", () -> new FoliagePlacerType<>(PineFoliagePlacer.CODEC));
+    public static final DeferredHolder<FoliagePlacerType<?>, FoliagePlacerType<CypressFoliagePlacer>> CYPRESS_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPES.register("cypress_foliage_placer", () -> new FoliagePlacerType<>(CypressFoliagePlacer.CODEC));
 }
