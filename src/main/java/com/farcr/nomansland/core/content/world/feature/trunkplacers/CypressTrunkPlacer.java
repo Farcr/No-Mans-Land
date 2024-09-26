@@ -110,13 +110,13 @@ public class CypressTrunkPlacer extends TrunkPlacer {
         CODEC = RecordCodecBuilder.mapCodec((instance) -> {
             return trunkPlacerParts(instance).and(instance.group(IntProvider.codec(1, 5).fieldOf("root_height").forGetter((tree) -> {
                 return tree.rootHeight;
-            }), IntProvider.codec(1, 8).fieldOf("branch_count").forGetter((tree) -> {
+            }), IntProvider.codec(0, 8).fieldOf("branch_count").forGetter((tree) -> {
                 return tree.branchCount;
             }), IntProvider.codec(1, 8).fieldOf("branch_length").forGetter((tree) -> {
                 return tree.branchLength;
-            }), IntProvider.codec(1, 8).fieldOf("branch_min_height").forGetter((tree) -> {
+            }), IntProvider.codec(0, 8).fieldOf("branch_min_height").forGetter((tree) -> {
                 return tree.branchMinHeight;
-            }), IntProvider.codec(1, 8).fieldOf("branch_max_height").forGetter((tree) -> {
+            }), IntProvider.codec(0, 8).fieldOf("branch_max_height").forGetter((tree) -> {
                 return tree.branchMaxHeight;
             }))).apply(instance, CypressTrunkPlacer::new);
         });

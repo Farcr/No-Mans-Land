@@ -7,6 +7,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.valueproviders.FloatProvider;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -17,13 +18,20 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 
 public class PineFoliagePlacer extends FoliagePlacer {
-    public static final MapCodec<PineFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec((instance) -> foliagePlacerParts(instance).apply(instance, PineFoliagePlacer::new));
+    public static final MapCodec<PineFoliagePlacer> CODEC;
+
+    private final IntProvider offsetIncrease;
+    private final IntProvider numSmallCanopies;
+    private final FloatProvider leafProbability;
 
     public Set<BlockPos> leafPositions;
-    public Set<BlockPos> leafPositions20;
+    public Set<BlockPos> probLeafPositions;
 
-    public PineFoliagePlacer(IntProvider radius, IntProvider offset) {
+    public PineFoliagePlacer(IntProvider radius, IntProvider offset, IntProvider offsetIncrease, IntProvider numSmallCanopies, FloatProvider leafProbability) {
         super(radius, offset);
+        this.offsetIncrease = offsetIncrease;
+        this.numSmallCanopies = numSmallCanopies;
+        this.leafProbability = leafProbability;
     }
 
     protected @NotNull FoliagePlacerType<?> type() {
@@ -32,7 +40,7 @@ public class PineFoliagePlacer extends FoliagePlacer {
 
     protected void createFoliage(@NotNull LevelSimulatedReader level, @NotNull FoliageSetter blockSetter, @NotNull RandomSource random, @NotNull TreeConfiguration config, int maxFreeTreeHeight, @NotNull FoliageAttachment attachment, int foliageHeight, int foliageRadius, int foliageOffset) {
         this.leafPositions = Sets.newHashSet();
-        this.leafPositions20 = Sets.newHashSet();
+        this.probLeafPositions = Sets.newHashSet();
 
         int numCanopies = (foliageHeight - 5) / 2;
         // Add tree topper
@@ -41,20 +49,21 @@ public class PineFoliagePlacer extends FoliagePlacer {
             this.leafPositions.add(attachment.pos().below(2).relative(d));
             this.leafPositions.add(attachment.pos().below(2).relative(d).relative(d.getClockWise()));
             this.leafPositions.add(attachment.pos().below().relative(d));
-            this.leafPositions20.add(attachment.pos().below().relative(d).relative(d.getClockWise()));
+            this.probLeafPositions.add(attachment.pos().below().relative(d).relative(d.getClockWise()));
             this.leafPositions.add(attachment.pos().relative(d));
         }
         this.leafPositions.add(attachment.pos());
         this.leafPositions.add(attachment.pos().above());
         this.leafPositions.add(attachment.pos().above(2));
-        this.leafPositions20.add(attachment.pos().above(3));
+        this.probLeafPositions.add(attachment.pos().above(3));
 
-        for (int i = 0; i < (Math.min(numCanopies, 3)); i++) {
+        int numSmallCanopiesSampled = numSmallCanopies.sample(random);
+        for (int i = 0; i < (Math.min(numCanopies, numSmallCanopiesSampled)); i++) {
             placeLayer(attachment.pos().below(4 + 2*i), foliageRadius);
         }
-        if (numCanopies >= 3) {
-            for (int i = 0; i < numCanopies - 3; i++) {
-                placeLayer(attachment.pos().below(10 + 2*i), foliageRadius + 1);
+        if (numCanopies >= numSmallCanopiesSampled) {
+            for (int i = 0; i < numCanopies - numSmallCanopiesSampled; i++) {
+                placeLayer(attachment.pos().below(4 + 2*numSmallCanopiesSampled + 2*i), foliageRadius + offsetIncrease.sample(random));
             }
         }
 
@@ -67,8 +76,9 @@ public class PineFoliagePlacer extends FoliagePlacer {
         for (BlockPos leafPos : leafPositions) {
             tryPlaceLeaf(level, blockSetter, random, config, leafPos);
         }
-        for (BlockPos leafPos : leafPositions20) {
-            if (random.nextFloat() > 0.1)
+        float leafProbabilitySampled = leafProbability.sample(random);
+        for (BlockPos leafPos : probLeafPositions) {
+            if (random.nextFloat() > leafProbabilitySampled)
                 tryPlaceLeaf(level, blockSetter, random, config, leafPos);
         }
     }
@@ -94,5 +104,17 @@ public class PineFoliagePlacer extends FoliagePlacer {
 
     protected boolean shouldSkipLocation(@NotNull RandomSource random, int localX, int localY, int localZ, int range, boolean large) {
         return false;
+    }
+
+    static {
+        CODEC = RecordCodecBuilder.mapCodec((instance) -> {
+            return foliagePlacerParts(instance).and(instance.group(IntProvider.codec(-4, 4).fieldOf("offset_increase").forGetter((tree) -> {
+                return tree.offsetIncrease;
+            }), IntProvider.codec(1, 8).fieldOf("num_small_canopies").forGetter((tree) -> {
+                return tree.numSmallCanopies;
+            }), FloatProvider.codec(0.0F, 1.0F).fieldOf("leaf_probability").forGetter((tree) -> {
+                return tree.leafProbability;
+            }))).apply(instance, PineFoliagePlacer::new);
+        });
     }
 }
