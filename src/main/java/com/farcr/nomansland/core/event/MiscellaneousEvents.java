@@ -2,10 +2,7 @@ package com.farcr.nomansland.core.event;
 
 import com.farcr.nomansland.core.NoMansLand;
 import com.farcr.nomansland.core.config.NMLConfig;
-import com.farcr.nomansland.core.content.entity.variant.DolphinVariant;
-import com.farcr.nomansland.core.content.entity.variant.FoxVariant;
-import com.farcr.nomansland.core.content.entity.variant.GoatVariant;
-import com.farcr.nomansland.core.content.entity.variant.SalmonVariant;
+import com.farcr.nomansland.core.content.entity.variant.*;
 import com.farcr.nomansland.core.registry.NMLBlocks;
 import com.farcr.nomansland.core.registry.NMLFeatures;
 import com.farcr.nomansland.core.registry.NMLVariants;
@@ -209,7 +206,8 @@ public class MiscellaneousEvents {
             event.dataPackRegistry(NMLVariants.FOX_VARIANT_KEY, FoxVariant.DIRECT_CODEC, FoxVariant.DIRECT_CODEC);
             event.dataPackRegistry(NMLVariants.DOLPHIN_VARIANT_KEY, DolphinVariant.DIRECT_CODEC, DolphinVariant.DIRECT_CODEC);
             event.dataPackRegistry(NMLVariants.SALMON_VARIANT_KEY, SalmonVariant.DIRECT_CODEC, SalmonVariant.DIRECT_CODEC);
-
+            event.dataPackRegistry(NMLVariants.TURTLE_VARIANT_KEY, TurtleVariant.DIRECT_CODEC, TurtleVariant.DIRECT_CODEC);
+            event.dataPackRegistry(NMLVariants.PIG_VARIANT_KEY, PigVariant.DIRECT_CODEC, PigVariant.DIRECT_CODEC);
         }
     }
 }

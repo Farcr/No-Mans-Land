@@ -1,8 +1,7 @@
 package com.farcr.nomansland.core.content.mixin.variants;
 
 import com.farcr.nomansland.core.NoMansLand;
-import com.farcr.nomansland.core.content.entity.variant.GoatVariant;
-import com.farcr.nomansland.core.content.mixinduck.FoxDuck;
+import com.farcr.nomansland.core.content.entity.variant.TurtleVariant;
 import com.farcr.nomansland.core.registry.NMLDataSerializers;
 import com.farcr.nomansland.core.registry.NMLVariants;
 import net.minecraft.core.Holder;
@@ -15,7 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.animal.Fox;
+import net.minecraft.world.entity.animal.Turtle;
 import net.minecraft.world.entity.animal.goat.Goat;
 import net.minecraft.world.level.ServerLevelAccessor;
 import org.spongepowered.asm.mixin.Mixin;
@@ -26,23 +25,22 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@Mixin(Goat.class)
-public abstract class GoatMixin extends MobMixin implements VariantHolder<Holder<GoatVariant>> {
+@Mixin(Turtle.class)
+public abstract class TurtleMixin extends MobMixin implements VariantHolder<Holder<TurtleVariant>> {
 
     @Unique
-    private static final EntityDataAccessor<Holder<GoatVariant>> DATA_VARIANT_ID = SynchedEntityData.defineId(Goat.class, NMLDataSerializers.GOAT_VARIANT.get());
+    private static final EntityDataAccessor<Holder<TurtleVariant>> DATA_VARIANT_ID = SynchedEntityData.defineId(Turtle.class, NMLDataSerializers.TURTLE_VARIANT.get());
     @Unique
     private static final String VARIANT_KEY = "variant";
     @Unique
-    private static final ResourceKey<GoatVariant> DEFAULT_VARIANT = ResourceKey.create(NMLVariants.GOAT_VARIANT_KEY, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "default"));
+    private static final ResourceKey<TurtleVariant> DEFAULT_VARIANT = ResourceKey.create(NMLVariants.TURTLE_VARIANT_KEY, ResourceLocation.fromNamespaceAndPath(NoMansLand.MODID, "default"));
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder, CallbackInfo ci) {
-        builder.define(DATA_VARIANT_ID, this.registryAccess().registryOrThrow(NMLVariants.GOAT_VARIANT_KEY).getHolderOrThrow(DEFAULT_VARIANT));
+        builder.define(DATA_VARIANT_ID, this.registryAccess().registryOrThrow(NMLVariants.TURTLE_VARIANT_KEY).getHolderOrThrow(DEFAULT_VARIANT));
     }
 
     @Override
@@ -55,16 +53,16 @@ public abstract class GoatMixin extends MobMixin implements VariantHolder<Holder
     @Override
     protected void readAdditionalSaveData(CompoundTag compound, CallbackInfo ci) {
         Optional.ofNullable(ResourceLocation.tryParse(compound.getString(VARIANT_KEY)))
-                .map((string) -> ResourceKey.create(NMLVariants.GOAT_VARIANT_KEY, string))
-                .flatMap((variant) -> this.registryAccess().registryOrThrow(NMLVariants.GOAT_VARIANT_KEY).getHolder(variant))
+                .map((string) -> ResourceKey.create(NMLVariants.TURTLE_VARIANT_KEY, string))
+                .flatMap((variant) -> this.registryAccess().registryOrThrow(NMLVariants.TURTLE_VARIANT_KEY).getHolder(variant))
                 .ifPresent(this::setVariant);
     }
 
     @Override
     protected void finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, SpawnGroupData spawnGroupData, CallbackInfoReturnable<SpawnGroupData> cir) {
-        Registry<GoatVariant> registry = this.registryAccess().registryOrThrow(NMLVariants.GOAT_VARIANT_KEY);
-        Stream<Holder.Reference<GoatVariant>> allVariants = registry.holders();
-        List<Holder.Reference<GoatVariant>> possibleVariants = allVariants
+        Registry<TurtleVariant> registry = this.registryAccess().registryOrThrow(NMLVariants.TURTLE_VARIANT_KEY);
+        Stream<Holder.Reference<TurtleVariant>> allVariants = registry.holders();
+        List<Holder.Reference<TurtleVariant>> possibleVariants = allVariants
                 .filter((v) -> v.value().biomes().isPresent())
                 .filter((v) -> v.value().biomes().get().contains(level.getBiome(this.blockPosition())))
                 .toList();
@@ -72,12 +70,12 @@ public abstract class GoatMixin extends MobMixin implements VariantHolder<Holder
     }
 
     @Override
-    public Holder<GoatVariant> getVariant() {
+    public Holder<TurtleVariant> getVariant() {
         return this.entityData.get(DATA_VARIANT_ID);
     }
 
     @Override
-    public void setVariant(Holder<GoatVariant> variantHolder) {
+    public void setVariant(Holder<TurtleVariant> variantHolder) {
         this.entityData.set(DATA_VARIANT_ID, variantHolder);
     }
 
@@ -85,7 +83,7 @@ public abstract class GoatMixin extends MobMixin implements VariantHolder<Holder
     private void getBreedOffspring(ServerLevel level, AgeableMob otherParent, CallbackInfoReturnable<AgeableMob> cir) {
         Goat goat = EntityType.GOAT.create(level);
         if (goat != null) {
-            ((VariantHolder<Holder<GoatVariant>>)goat).setVariant(this.random.nextBoolean() ?  this.getVariant() : ((VariantHolder<Holder<GoatVariant>>)otherParent).getVariant());
+            ((VariantHolder<Holder<TurtleVariant>>)goat).setVariant(this.random.nextBoolean() ?  this.getVariant() : ((VariantHolder<Holder<TurtleVariant>>)otherParent).getVariant());
         }
         cir.setReturnValue(goat);
     }

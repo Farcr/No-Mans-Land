@@ -1,0 +1,5 @@
+{
+  "texture": "nomansland:entity/variants/pig/pig_tan",
+  "baby_texture": "nomansland:entity/variants/pig/pig_tan_baby",
+  "biomes": "minecraft:plains"
+}

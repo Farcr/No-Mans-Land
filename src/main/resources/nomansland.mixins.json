@@ -18,14 +18,21 @@
     "variants.FrogMixin",
     "variants.GoatMixin",
     "variants.MobMixin",
-    "variants.SalmonMixin"
+    "variants.PigMixin",
+    "variants.SalmonMixin",
+    "variants.TurtleMixin"
   ],
   "client": [
     "ModelBlockRendererMixin",
+    "variants.AgeableListModelMixin",
     "variants.DolphinRendererMixin",
     "variants.FoxRendererMixin",
     "variants.GoatRendererMixin",
-    "variants.SalmonRendererMixin"
+    "variants.PigModelMixin",
+    "variants.PigRendererMixin",
+    "variants.QuadrupedModelMixin",
+    "variants.SalmonRendererMixin",
+    "variants.TurtleRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
