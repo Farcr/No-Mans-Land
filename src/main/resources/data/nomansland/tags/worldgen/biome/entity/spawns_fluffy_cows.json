@@ -3,7 +3,7 @@
     "#c:is_windswept",
     "minecraft:meadow",
     "minecraft:stony_peaks",
-    "#c:is_plains",
-    "#c:is_plateau"
+    "#c:is_mountain",
+    "#c:is_snowy"
   ]
 }

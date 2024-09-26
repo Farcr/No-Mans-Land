@@ -157,9 +157,9 @@ public class NMLBiomeBuilder {
             {null, null, null, null, null}
     };
     protected final ResourceKey<Biome>[][] SWAMP_BIOMES_NML = new ResourceKey[][]{
-            {null, null, null, null, null},
-            {null, null, null, null, NMLBiomes.DARK_SWAMP},
-            {null, null, null, NMLBiomes.DARK_SWAMP, NMLBiomes.DARK_SWAMP},
+            {NMLBiomes.MUSKEG, NMLBiomes.MUSKEG, NMLBiomes.MUSKEG, NMLBiomes.MUSKEG, NMLBiomes.MUSKEG},
+            {NMLBiomes.BOG, NMLBiomes.BOG, NMLBiomes.BOG, NMLBiomes.BOG, NMLBiomes.DARK_SWAMP},
+            {NMLBiomes.BOG, null, null, NMLBiomes.DARK_SWAMP, NMLBiomes.DARK_SWAMP},
             {null, null, null, null, null},
             {null, null, null, null, null}
     };
