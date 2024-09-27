@@ -126,8 +126,7 @@ dependencies {
     localRuntime "maven.modrinth:xaeros-world-map:1.38.9_NeoForge_1.21"
     localRuntime "maven.modrinth:appleskin:3.0.5+mc1.21"
     localRuntime "maven.modrinth:worldedit:7.3.6"
-    localRuntime "maven.modrinth:sodium:mc1.21-0.6.0-beta.1-neoforge"
-    localRuntime "maven.modrinth:iris:1.8.0-beta.1+1.21-neoforge"
+    localRuntime "maven.modrinth:sodium:mc1.21-0.6.0-beta.2-neoforge"
 }
 
 tasks.withType(ProcessResources).configureEach {
