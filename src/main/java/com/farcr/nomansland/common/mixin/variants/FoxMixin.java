@@ -69,7 +69,7 @@ public abstract class FoxMixin extends MobMixin implements FoxDuck {
                 .filter((v) -> v.value().biomes().isPresent() && v.value().biomes().get().contains(level.getBiome(this.blockPosition())))
                 .toList();
         List<Holder.Reference<FoxVariant>> defaultVariants = registry.holders()
-                .filter((v) -> v.value().biomes().isEmpty())
+                .filter((v) -> v.value().biomes().isEmpty() || v.is(DEFAULT_VARIANT))
                 .toList();
         this.noMansLand$setCustomVariant(possibleVariants.isEmpty() ? defaultVariants.get(random.nextInt(defaultVariants.size())) : possibleVariants.get(random.nextInt(possibleVariants.size())));
     }
