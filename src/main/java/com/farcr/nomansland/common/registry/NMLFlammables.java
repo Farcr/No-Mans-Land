@@ -10,11 +10,17 @@ public class NMLFlammables {
         fireBlock.setFlammable(NMLBlocks.YELLOW_BIRCH_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(NMLBlocks.AUTUMNAL_OAK_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(NMLBlocks.PALE_CHERRY_LEAVES.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.FROSTED_LEAVES.get(), 30, 60);
+
+        fireBlock.setFlammable(NMLBlocks.APPLE_FRUIT_LEAVES.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.PEAR_FRUIT_LEAVES.get(), 30, 60);
 
         fireBlock.setFlammable(NMLBlocks.GRASS_SPROUTS.get(), 30, 60);
         fireBlock.setFlammable(NMLBlocks.OAT_GRASS.get(), 30, 60);
         fireBlock.setFlammable(NMLBlocks.FIDDLEHEAD.get(), 30, 60);
-        fireBlock.setFlammable(NMLBlocks.DRIED_GRASS.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.DRIED_GRASS.get(), 45, 60);
+        fireBlock.setFlammable(NMLBlocks.FROSTED_GRASS.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.BEARD_MOSS.get(), 30, 60);
 
         fireBlock.setFlammable(NMLBlocks.PINE_PLANKS.get(), 5, 20);
         fireBlock.setFlammable(NMLBlocks.PINE_STAIRS.get(), 5, 20);
@@ -40,6 +46,14 @@ public class NMLFlammables {
         fireBlock.setFlammable(NMLBlocks.WALNUT_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(NMLBlocks.WALNUT_BOOKSHELF.get(), 30, 20);
         fireBlock.setFlammable(NMLBlocks.TRIMMED_WALNUT_PLANKS.get(), 5, 20);
+
+        fireBlock.setFlammable(NMLBlocks.WILLOW_PLANKS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.WILLOW_STAIRS.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.WILLOW_SLAB.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.WILLOW_FENCE.get(), 5, 20);
+        fireBlock.setFlammable(NMLBlocks.WILLOW_LEAVES.get(), 30, 60);
+        fireBlock.setFlammable(NMLBlocks.WILLOW_BOOKSHELF.get(), 30, 20);
+        fireBlock.setFlammable(NMLBlocks.TRIMMED_WILLOW_PLANKS.get(), 5, 20);
 
         fireBlock.setFlammable(NMLBlocks.TRIMMED_OAK_PLANKS.get(), 5, 20);
         fireBlock.setFlammable(NMLBlocks.SPRUCE_BOOKSHELF.get(), 30, 20);

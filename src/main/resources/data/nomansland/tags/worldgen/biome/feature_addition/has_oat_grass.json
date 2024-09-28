@@ -1,7 +1,6 @@
 {
   "values": [
-    "minecraft:plains",
-    "minecraft:sunflower_plains",
+    "#c:is_plains",
     "minecraft:birch_forest",
     "minecraft:old_growth_birch_forest",
     "minecraft:cherry_grove",
