@@ -31,8 +31,4 @@ public abstract class MobMixin extends EntityMixin {
     @Inject(method = "finalizeSpawn", at = @At("RETURN"))
     protected void finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, SpawnGroupData spawnGroupData, CallbackInfoReturnable<SpawnGroupData> cir) {
     }
-
-    @Inject(method = "tick", at = @At("RETURN"))
-    protected void tick(CallbackInfo ci) {
-    }
 }

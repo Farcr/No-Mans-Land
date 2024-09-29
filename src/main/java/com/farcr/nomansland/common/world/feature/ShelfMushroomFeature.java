@@ -16,20 +16,18 @@ public class ShelfMushroomFeature extends Feature<NoneFeatureConfiguration> {
         super(p_67337_);
     }
 
-    public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> p_160628_) {
-        WorldGenLevel worldgenlevel = p_160628_.level();
-        BlockPos blockpos = p_160628_.origin();
-        p_160628_.config();
-        if (!worldgenlevel.isEmptyBlock(blockpos)) {
-            return false;
-        } else {
-            for(Direction direction : Direction.values()) {
+    public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
+        WorldGenLevel worldgenlevel = context.level();
+        BlockPos blockpos = context.origin();
+        context.config();
+        if (worldgenlevel.isEmptyBlock(blockpos)) {
+            for (Direction direction : Direction.values()) {
                 if (direction != Direction.DOWN && direction != Direction.UP && ShelfMushroomBlock.isAcceptableNeighbour(worldgenlevel, blockpos.relative(direction)) && !worldgenlevel.getBlockState(blockpos).is(NMLBlocks.SHELF_MUSHROOM)) {
-                    worldgenlevel.setBlock(blockpos, (BlockState) NMLBlocks.SHELF_MUSHROOM.get().defaultBlockState().setValue(ShelfMushroomBlock.FACING, direction), 2);
+                    worldgenlevel.setBlock(blockpos, NMLBlocks.SHELF_MUSHROOM.get().defaultBlockState().setValue(ShelfMushroomBlock.FACING, direction), 2);
                     return true;
                 }
             }
-            return false;
         }
+        return false;
     }
 }

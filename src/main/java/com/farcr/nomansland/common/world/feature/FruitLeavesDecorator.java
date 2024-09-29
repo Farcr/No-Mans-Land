@@ -40,7 +40,7 @@ public class FruitLeavesDecorator extends TreeDecorator {
     }
 
     @Override
-    public void place(TreeDecorator.Context context) {
+    public void place(Context context) {
         Set<BlockPos> excludedPositions = new HashSet<>();
         int leaves = 0;
         RandomSource randomsource = context.random();

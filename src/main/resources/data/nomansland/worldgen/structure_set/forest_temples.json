@@ -1,10 +1,5 @@
 {
-  "structures": [
-    {
-      "structure": "nomansland:forest_temple",
-      "weight": 1
-    }
-  ],
+  "structures": [],
   "placement": {
     "salt": 4355,
     "separation": 10,

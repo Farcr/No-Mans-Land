@@ -62,7 +62,7 @@ public abstract class DolphinMixin extends MobMixin implements VariantHolder<Hol
                 .filter((v) -> v.value().biomes().isPresent() && v.value().biomes().get().contains(level.getBiome(this.blockPosition())))
                 .toList();
         List<Holder.Reference<DolphinVariant>> defaultVariants = registry.holders()
-                .filter((v) -> v.value().biomes().isEmpty())
+                .filter((v) -> v.value().biomes().isEmpty() || v.is(DEFAULT_VARIANT))
                 .toList();
         this.setVariant(possibleVariants.isEmpty() ? defaultVariants.get(random.nextInt(defaultVariants.size())) : possibleVariants.get(random.nextInt(possibleVariants.size())));
     }
