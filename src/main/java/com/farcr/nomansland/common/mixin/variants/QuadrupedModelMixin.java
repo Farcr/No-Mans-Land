@@ -34,7 +34,7 @@ public class QuadrupedModelMixin<T extends Entity> {
             NMLCowModel.setupAnim(cow, root, limbSwing, limbSwingAmount, netHeadYaw, headPitch);
         }
         else if (entity instanceof Sheep sheep) {
-            NMLSheepModel.setupAnim(sheep, root, limbSwing, limbSwingAmount, netHeadYaw, headPitch);
+//            NMLSheepModel.setupAnim(sheep, root, limbSwing, limbSwingAmount, netHeadYaw, headPitch);
         }
     }
 }
