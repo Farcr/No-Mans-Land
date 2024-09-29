@@ -85,17 +85,9 @@ file="META-INF/accesstransformer.cfg"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
-    modId="minecraft"
-    type="required"
-    # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="${minecraft_version_range}"
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.${mod_id}]]
     modId="terrablender"
     type="required"
-    reason="Biome generation"
+    reason="${tb_reason}"
     versionRange="${tb_version_range}"
     ordering="NONE"
     side="BOTH"
