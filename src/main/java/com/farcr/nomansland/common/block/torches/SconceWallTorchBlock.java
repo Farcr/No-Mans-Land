@@ -20,10 +20,10 @@ import java.util.Map;
 public class SconceWallTorchBlock extends WallTorchBlock {
 
     private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
-            Direction.NORTH, Block.box(5.5, 1.5, 11.0, 10.5, 13.5, 16.0),
-            Direction.SOUTH, Block.box(5.5, 1.5, 0.0, 10.5, 13.5, 5.0),
-            Direction.WEST, Block.box(11.0, 1.5, 5.5, 16.0, 13.5, 10.5),
-            Direction.EAST, Block.box(0.0, 1.5, 5.5, 5.0, 13.5, 10.5)
+            Direction.NORTH, Block.box(5.5, 1.5, 11, 10.5, 13.5, 16.0),
+            Direction.SOUTH, Block.box(5.5, 1.5, 0, 10.5, 13.5, 5.0),
+            Direction.WEST, Block.box(11, 1.5, 5.5, 16, 13.5, 10.5),
+            Direction.EAST, Block.box(0, 1.5, 5.5, 5, 13.5, 10.5)
     ));
 
     public SconceWallTorchBlock(SimpleParticleType flameParticle, Properties properties) {
@@ -44,10 +44,10 @@ public class SconceWallTorchBlock extends WallTorchBlock {
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         Direction direction = state.getValue(FACING).getOpposite();
-        double d0 = pos.getX() + 0.45;
-        double d1 = pos.getY() + 0.7;
-        double d2 = pos.getZ() + 0.5;
-        level.addParticle(ParticleTypes.SMOKE, d0 + 0.2 * direction.getStepX(), d1 + 0.22, d2 + 0.2 * direction.getStepZ(), 0.0, 0.0, 0.0);
-        level.addParticle(this.flameParticle, d0 + 0.2 * direction.getStepX(), d1 + 0.22, d2 + 0.2 * direction.getStepZ(), 0.0, 0.0, 0.0);
+        double dx = pos.getX() + 0.5;
+        double dy = pos.getY() + 0.7;
+        double dz = pos.getZ() + 0.5;
+        level.addParticle(ParticleTypes.SMOKE, dx + 0.2 * direction.getStepX(), dy + 0.22, dz + 0.2 * direction.getStepZ(), 0, 0, 0);
+        level.addParticle(this.flameParticle, dx + 0.2 * direction.getStepX(), dy + 0.22, dz + 0.2 * direction.getStepZ(), 0, 0, 0);
     }
 }
