@@ -1,6 +1,7 @@
 package com.farcr.nomansland.common.block;
 
 import com.farcr.nomansland.NMLConfig;
+import com.farcr.nomansland.NoMansLand;
 import com.farcr.nomansland.common.registry.NMLDamageTypes;
 import com.farcr.nomansland.common.registry.NMLSounds;
 import com.mojang.serialization.MapCodec;
@@ -26,6 +27,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
@@ -105,17 +107,10 @@ SpikeTrapBlock extends DirectionalBlock implements SimpleWaterloggedBlock {
         if (state.getValue(POWERED)) return;
         if (entity instanceof LivingEntity le && entity.isAlive()) {
             boolean up = state.getValue(FACING) == Direction.UP;
-            //does not reset fall distance
-            float fall = entity.fallDistance;
-//            entity.makeStuckInBlock(state, new Vec3(0.95, 1, 0.95));
-//            entity.fallDistance = fall;
-
-//            if ((entity.getY() < pos.getY()+0.3 && up) || ())
-//                le.moveTo(le.getX(), le.getY()+0.4, le.getZ());
 
             if (!level.isClientSide) {
-                if (up && entity instanceof Player && entity.isShiftKeyDown()) return;
-                entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_POKE), NMLConfig.POKING_DAMAGE.get().floatValue());
+                NoMansLand.LOGGER.info(String.valueOf(le.getDeltaMovement()));
+                if (!entity.isShiftKeyDown() || !le.getPosition(0).equals(le.getPosition(1))) entity.hurt(NMLDamageTypes.getSimpleDamageSource(level, NMLDamageTypes.SPIKE_POKE), NMLConfig.POKING_DAMAGE.get().floatValue());
             }
         }
     }

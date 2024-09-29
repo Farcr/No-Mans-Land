@@ -1,4 +1,5 @@
 {
   "texture": "nomansland:entity/variants/cow/cow_wild",
-  "baby_texture": "nomansland:entity/variants/cow/cow_wild_baby"
+  "baby_texture": "nomansland:entity/variants/cow/cow_wild_baby",
+  "biomes": "#nomansland:spawns_fluffy_cows"
 }
