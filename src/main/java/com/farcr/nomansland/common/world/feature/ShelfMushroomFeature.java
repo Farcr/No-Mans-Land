@@ -21,8 +21,8 @@ public class ShelfMushroomFeature extends Feature<NoneFeatureConfiguration> {
         context.config();
         if (worldgenlevel.isEmptyBlock(blockpos)) {
             for (Direction direction : Direction.values()) {
-                if (direction != Direction.DOWN && direction != Direction.UP && ShelfMushroomBlock.isAcceptableNeighbour(worldgenlevel, blockpos.relative(direction)) && !worldgenlevel.getBlockState(blockpos).is(NMLBlocks.SHELF_MUSHROOM)) {
-                    worldgenlevel.setBlock(blockpos, NMLBlocks.SHELF_MUSHROOM.get().defaultBlockState().setValue(ShelfMushroomBlock.FACING, direction), 2);
+                if (direction != Direction.DOWN && direction != Direction.UP && ShelfMushroomBlock.isAcceptableNeighbour(worldgenlevel, blockpos.relative(direction))) {
+                    worldgenlevel.setBlock(blockpos, NMLBlocks.SHELF_MUSHROOM.get().defaultBlockState().setValue(ShelfMushroomBlock.FACING, direction.getOpposite()), 2);
                     return true;
                 }
             }

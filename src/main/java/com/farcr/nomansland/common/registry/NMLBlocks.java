@@ -243,7 +243,7 @@ public class NMLBlocks {
     public static final DeferredBlock<Block> REMAINS = BLOCKS.register("remains",
             () -> new RemainsBlock(Blocks.COARSE_DIRT, BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
     public static final DeferredBlock<Block> MONSTER_ANCHOR = registerBlock("monster_anchor",
-            () -> new MonsterAnchorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPAWNER).strength(7, 7).noOcclusion()));
+            () -> new MonsterAnchorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPAWNER).strength(7, 7).sound(SoundType.TRIAL_SPAWNER).noOcclusion()));
     //Tiles
     public static final DeferredBlock<Block> MUNDANE_TILES = registerBlock("mundane_tiles",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS)));
