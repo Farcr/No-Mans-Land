@@ -2,7 +2,6 @@ package com.farcr.nomansland.common.world;
 
 import com.farcr.nomansland.NoMansLand;
 import net.minecraft.resources.ResourceLocation;
-import terrablender.api.RegionType;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 

@@ -1,7 +1,7 @@
 package com.farcr.nomansland.common.blockentity;
 
-import com.farcr.nomansland.common.block.MonsterAnchorBlock;
 import com.farcr.nomansland.NMLConfig;
+import com.farcr.nomansland.common.block.MonsterAnchorBlock;
 import com.farcr.nomansland.common.event.listener.AnchorListener;
 import com.farcr.nomansland.common.registry.NMLBlockEntities;
 import com.farcr.nomansland.common.registry.NMLParticleTypes;

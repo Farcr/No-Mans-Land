@@ -1,7 +1,6 @@
 package com.farcr.nomansland.common.registry;
 
 import com.farcr.nomansland.NoMansLand;
-
 import com.farcr.nomansland.common.entity.BoatEntity;
 import com.farcr.nomansland.common.entity.ChestBoatEntity;
 import com.farcr.nomansland.common.entity.bombs.ExplosiveEntity;

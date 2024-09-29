@@ -1,5 +1,6 @@
 package com.farcr.nomansland.client.event;
 
+import com.farcr.nomansland.NoMansLand;
 import com.farcr.nomansland.client.NMLModelLayers;
 import com.farcr.nomansland.client.model.BuriedModel;
 import com.farcr.nomansland.client.model.MooseModel;
@@ -7,7 +8,6 @@ import com.farcr.nomansland.client.particle.*;
 import com.farcr.nomansland.client.renderer.ExplosiveRenderer;
 import com.farcr.nomansland.client.renderer.FirebombRenderer;
 import com.farcr.nomansland.client.renderer.NMLBoatRenderer;
-import com.farcr.nomansland.NoMansLand;
 import com.farcr.nomansland.common.registry.NMLBlockEntities;
 import com.farcr.nomansland.common.registry.NMLEntities;
 import com.farcr.nomansland.common.registry.NMLParticleTypes;

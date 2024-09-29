@@ -1,0 +1,5 @@
+{
+  "texture": "nomansland:entity/variants/sheep/sheep",
+  "baby_texture": "nomansland:entity/variants/sheep/sheep_baby",
+  "sheared_texture": "nomansland:entity/variants/sheep/sheep_sheared"
+}

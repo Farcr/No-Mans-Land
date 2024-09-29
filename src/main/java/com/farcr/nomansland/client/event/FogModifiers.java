@@ -1,7 +1,7 @@
 package com.farcr.nomansland.client.event;
 
-import com.farcr.nomansland.NoMansLand;
 import com.farcr.nomansland.NMLConfig;
+import com.farcr.nomansland.NoMansLand;
 import com.farcr.nomansland.common.registry.NMLTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;

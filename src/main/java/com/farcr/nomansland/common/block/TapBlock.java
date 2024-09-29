@@ -1,8 +1,8 @@
 package com.farcr.nomansland.common.block;
 
+import com.farcr.nomansland.NMLConfig;
 import com.farcr.nomansland.common.block.cauldrons.NMLCauldronBlock;
 import com.farcr.nomansland.common.blockentity.TapBlockEntity;
-import com.farcr.nomansland.NMLConfig;
 import com.farcr.nomansland.common.registry.NMLBlockEntities;
 import com.farcr.nomansland.common.registry.NMLBlocks;
 import com.farcr.nomansland.common.registry.NMLParticleTypes;
