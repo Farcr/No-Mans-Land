@@ -10,10 +10,13 @@ public class NMLBiomes {
 
     //Surface
     public static final ResourceKey<Biome> AUTUMNAL_FOREST = createKey("autumnal_forest");
+
     public static final ResourceKey<Biome> MAPLE_FOREST = createKey("maple_forest");
     public static final ResourceKey<Biome> MAPLE_GROVE = createKey("maple_grove");
+
     public static final ResourceKey<Biome> OLD_GROWTH_FOREST = createKey("old_growth_forest");
     public static final ResourceKey<Biome> OLD_GROWTH_FOREST_CLEARING = createKey("old_growth_forest_clearing");
+    public static final ResourceKey<Biome> OLD_GROWTH_FOREST_EDGE = createKey("old_growth_forest_edge");
 
     public static final ResourceKey<Biome> DARK_SWAMP = createKey("dark_swamp");
 
@@ -24,6 +27,7 @@ public class NMLBiomes {
 
     //Underground
     public static final ResourceKey<Biome> CAVES = createKey("caves");
+    public static final ResourceKey<Biome> DEEP_CAVES = createKey("caves");
 
 
     public static ResourceKey<Biome> createKey(String name) {

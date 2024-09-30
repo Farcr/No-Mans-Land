@@ -36,6 +36,10 @@ public class NMLItems {
             () -> new Item(new Item.Properties().food(NMLFoods.RAW_HORSE)));
     public static final DeferredItem<Item> HORSE_STEAK = registerItem("horse_steak",
             () -> new Item(new Item.Properties().food(NMLFoods.HORSE_STEAK)));
+    public static final DeferredItem<Item> RAW_VENISON = registerItem("raw_venison",
+            () -> new Item(new Item.Properties().food(NMLFoods.RAW_VENISON)));
+    public static final DeferredItem<Item> COOKED_VENISON = registerItem("cooked_venison",
+            () -> new Item(new Item.Properties().food(NMLFoods.COOKED_VENISON)));
 
     public static final DeferredItem<Item> PEAR = registerItem("pear",
             () -> new Item(new Item.Properties().food(NMLFoods.PEAR)));
@@ -341,6 +345,8 @@ public class NMLItems {
             event.accept(NMLItems.COOKED_FROG_LEG.get());
             event.accept(NMLItems.RAW_HORSE.get());
             event.accept(NMLItems.HORSE_STEAK.get());
+            event.accept(NMLItems.RAW_VENISON.get());
+            event.accept(NMLItems.COOKED_VENISON.get());
             event.accept(NMLItems.MAPLE_SYRUP_BOTTLE);
             event.accept(NMLItems.PEAR.get());
             event.accept(NMLItems.SYRUPED_PEAR.get());

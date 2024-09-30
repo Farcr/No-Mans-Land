@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_taiga",
+  "features": [
+    "nomansland:shelf_mushroom_taiga"
+  ],
+  "step": "vegetal_decoration"
+}
