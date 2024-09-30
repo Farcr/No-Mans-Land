@@ -3,10 +3,7 @@
   "placement": [
     {
       "type": "minecraft:count_on_every_layer",
-      "count": 50
-    },
-    {
-      "type": "minecraft:in_square"
+      "count": 100
     },
     {
       "type": "minecraft:height_range",

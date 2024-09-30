@@ -14,7 +14,7 @@ public class NMLFoods {
     public static final FoodProperties HORSE_STEAK = new FoodProperties.Builder().nutrition(9).saturationModifier(0.8f).build();
 
     public static final FoodProperties RAW_VENISON = new FoodProperties.Builder().nutrition(3).saturationModifier(0.3f).build();
-    public static final FoodProperties COOKED_VENISON = new FoodProperties.Builder().nutrition(7).saturationModifier(0.8f).build();
+    public static final FoodProperties COOKED_VENISON = new FoodProperties.Builder().nutrition(6).saturationModifier(0.8f).build();
 
     public static final FoodProperties MAPLE_SYRUP_BOTTLE = new FoodProperties.Builder().nutrition(5).saturationModifier(0.2f).alwaysEdible().usingConvertsTo(Items.GLASS_BOTTLE).build();
 
