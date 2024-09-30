@@ -24,6 +24,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Mixin(Cow.class)
@@ -84,5 +85,10 @@ public abstract class CowMixin extends MobMixin implements VariantHolder<Holder<
             ((VariantHolder<Holder<CowVariant>>)cow).setVariant(this.random.nextBoolean() ?  this.getVariant() : ((VariantHolder<Holder<CowVariant>>)otherParent).getVariant());
         }
         cir.setReturnValue(cow);
+    }
+
+    @Inject(method = "getDefaultDimensions", at = @At("RETURN"), cancellable = true)
+    private void getDefaultDimensions(Pose pose, CallbackInfoReturnable<EntityDimensions> cir) {
+        cir.setReturnValue(((Cow)(Object)this).isBaby() ? EntityType.COW.getDimensions().scale(0.6F).withEyeHeight(0.75F) : EntityType.COW.getDimensions().scale(1.8F).withEyeHeight(3F));
     }
 }
