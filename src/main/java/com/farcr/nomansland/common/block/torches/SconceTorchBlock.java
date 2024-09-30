@@ -13,7 +13,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class SconceTorchBlock extends TorchBlock {
-    protected static final VoxelShape AABB = Block.box(6.0D, 0.0D, 6.0D, 10.0D, 12.0D, 10.0D);
+    protected static final VoxelShape AABB = Block.box(6, 0, 6, 10, 12, 10);
 
     public SconceTorchBlock(SimpleParticleType flameParticle, Properties properties) {
         super(flameParticle, properties);
@@ -30,7 +30,7 @@ public class SconceTorchBlock extends TorchBlock {
         double d0 = (double) pos.getX() + 0.5D;
         double d1 = (double) pos.getY() + 0.8D;
         double d2 = (double) pos.getZ() + 0.5D;
-        level.addParticle(ParticleTypes.SMOKE, d0, d1, d2, 0.0D, 0.0D, 0.0D);
-        level.addParticle(this.flameParticle, d0, d1, d2, 0.0D, 0.0D, 0.0D);
+        level.addParticle(ParticleTypes.SMOKE, d0, d1, d2, 0, 0, 0);
+        level.addParticle(this.flameParticle, d0, d1, d2, 0, 0, 0);
     }
 }

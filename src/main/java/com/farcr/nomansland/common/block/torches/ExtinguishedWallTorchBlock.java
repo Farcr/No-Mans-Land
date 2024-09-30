@@ -56,6 +56,10 @@ public class ExtinguishedWallTorchBlock extends WallTorchBlock {
 
     @Override
     protected void spawnAfterBreak(BlockState state, ServerLevel level, BlockPos pos, ItemStack stack, boolean dropExperience) {
-        level.sendParticles(ParticleTypes.SMOKE, pos.getX() + 0.5, pos.getY() + 0.7, pos.getZ() + 0.5, 5, 0, 0, 0, 0.05);
+        Direction direction = state.getValue(FACING).getOpposite();
+        double dx = pos.getX() + 0.5;
+        double dy = pos.getY() + 0.7;
+        double dz = pos.getZ() + 0.5;
+        level.sendParticles(ParticleTypes.SMOKE, dx + 0.2 * direction.getStepX(), dy + 0.22, dz + 0.2 * direction.getStepZ(), level.random.nextInt(2, 7), 0, 0, 0, 0);
     }
 }

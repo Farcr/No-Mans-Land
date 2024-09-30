@@ -6,7 +6,6 @@ import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
@@ -22,8 +21,8 @@ public class ShelfMushroomFeature extends Feature<NoneFeatureConfiguration> {
         context.config();
         if (worldgenlevel.isEmptyBlock(blockpos)) {
             for (Direction direction : Direction.values()) {
-                if (direction != Direction.DOWN && direction != Direction.UP && ShelfMushroomBlock.isAcceptableNeighbour(worldgenlevel, blockpos.relative(direction)) && !worldgenlevel.getBlockState(blockpos).is(NMLBlocks.SHELF_MUSHROOM)) {
-                    worldgenlevel.setBlock(blockpos, NMLBlocks.SHELF_MUSHROOM.get().defaultBlockState().setValue(ShelfMushroomBlock.FACING, direction), 2);
+                if (direction != Direction.DOWN && direction != Direction.UP && ShelfMushroomBlock.isAcceptableNeighbour(worldgenlevel, blockpos.relative(direction))) {
+                    worldgenlevel.setBlock(blockpos, NMLBlocks.SHELF_MUSHROOM.get().defaultBlockState().setValue(ShelfMushroomBlock.FACING, direction.getOpposite()), 2);
                     return true;
                 }
             }

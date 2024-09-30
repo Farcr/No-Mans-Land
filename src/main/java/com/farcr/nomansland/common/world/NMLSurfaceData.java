@@ -1,7 +1,6 @@
 package com.farcr.nomansland.common.world;
 
 import com.farcr.nomansland.common.registry.NMLBiomes;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;

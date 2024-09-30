@@ -1,0 +1,24 @@
+{
+  "feature": "nomansland:shelf_mushroom",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 120
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+          "absolute": 250
+        },
+        "min_inclusive": {
+          "absolute": 61
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -143,6 +143,7 @@ tasks.withType(ProcessResources).configureEach {
             mod_authors             : mod_authors,
             mod_description         : mod_description,
             tb_version_range        : tb_version_range,
+            tb_reason               : tb_reason,
             fd_version_range        : fd_version_range,
             fd_reason               : fd_reason
     ]

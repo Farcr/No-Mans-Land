@@ -12,6 +12,7 @@
     "ServerLevelMixin",
     "SnowAndFreezeFeatureMixin",
     "SpreadingSnowyDirtBlockMixin",
+    "variants.CowMixin",
     "variants.DolphinMixin",
     "variants.EntityMixin",
     "variants.FoxMixin",
@@ -20,18 +21,21 @@
     "variants.MobMixin",
     "variants.PigMixin",
     "variants.SalmonMixin",
+    "variants.SheepMixin",
     "variants.TurtleMixin"
   ],
   "client": [
     "ModelBlockRendererMixin",
+    "variants.CowModelMixin",
+    "variants.CowRendererMixin",
     "variants.DolphinRendererMixin",
     "variants.FoxRendererMixin",
     "variants.GoatRendererMixin",
     "variants.PigModelMixin",
     "variants.PigRendererMixin",
-    "variants.QuadrupedModelMixin",
     "variants.SalmonRendererMixin",
-    "variants.TurtleRendererMixin"
+    "variants.TurtleRendererMixin",
+    "variants.QuadrupedModelMixin"
   ],
   "injectors": {
     "defaultRequire": 1
