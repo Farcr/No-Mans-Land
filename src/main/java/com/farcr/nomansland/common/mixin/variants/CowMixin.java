@@ -87,8 +87,8 @@ public abstract class CowMixin extends MobMixin implements VariantHolder<Holder<
         cir.setReturnValue(cow);
     }
 
-    @Inject(method = "getDefaultDimensions", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "getDefaultDimensions", at = @At("HEAD"), cancellable = true)
     private void getDefaultDimensions(Pose pose, CallbackInfoReturnable<EntityDimensions> cir) {
-        cir.setReturnValue(((Cow)(Object)this).isBaby() ? EntityType.COW.getDimensions().scale(0.6F).withEyeHeight(0.75F) : EntityType.COW.getDimensions().scale(1.8F).withEyeHeight(3F));
+        cir.setReturnValue(((Cow)(Object)this).isBaby() ? EntityType.COW.getDimensions().scale(0.6F).withEyeHeight(0.85F) : EntityType.COW.getDimensions().scale(10F));
     }
 }
