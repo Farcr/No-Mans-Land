@@ -23,6 +23,7 @@ public class NMLConfig {
     public static ModConfigSpec.DoubleValue SKEWERING_DAMAGE;
     public static final String CATEGORY_MISC = "miscellaneous";
     public static ModConfigSpec.DoubleValue BURIED_SPAWNING_CHANCE;
+
     public static ModConfigSpec CLIENT_CONFIG;
     public static final String CATEGORY_FOG_MODIFIERS = "fog_modifiers";
     public static ModConfigSpec.BooleanValue FOG_MODIFIERS;

@@ -7,10 +7,10 @@
   ],
   "type": "farmersdelight:cooking",
   "container": {
-    "item": "minecraft:glass_bottle"
+    "id": "minecraft:glass_bottle"
   },
   "cookingtime": 100,
-  "experience": 0.25,
+  "experience": 0.7,
   "ingredients": [
     {
       "item": "nomansland:resin"
@@ -22,7 +22,8 @@
       "item": "minecraft:honeycomb"
     }
   ],
+  "recipe_book_tab": "misc",
   "result": {
-    "id": "nomansland:resin_oil"
+    "id": "nomansland:resin_oil_bottle"
   }
 }

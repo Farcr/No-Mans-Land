@@ -13,15 +13,20 @@
   ],
   "result": [
     {
-      "id": "nomansland:stripped_willow_log"
+      "item": {
+        "id": "nomansland:stripped_willow_log"
+      }
     },
     {
-      "id": "farmersdelight:tree_bark"
+      "item": {
+        "id": "farmersdelight:tree_bark"
+      }
     }
   ],
-  "sound": "minecraft:item.axe.strip",
-  "tool": {
-    "type": "farmersdelight:tool_action",
+  "sound": {
+    "sound_id": "minecraft:item.axe.strip"
+  },  "tool": {
+    "type": "farmersdelight:item_ability",
     "action": "axe_strip"
   }
 }
