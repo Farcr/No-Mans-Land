@@ -14,7 +14,7 @@
     {
       "condition": "minecraft:match_tool",
       "predicate": {
-        "tag": "farmersdelight:straw_harvesters"
+        "items": "#farmersdelight:straw_harvesters"
       }
     },
     {

@@ -8,16 +8,18 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "nomansland:willow_sign"
+      "item": "nomansland:willow_door"
     }
   ],
   "result": [
     {
-      "id": "nomansland:willow_planks"
+      "item": {
+        "id": "nomansland:willow_planks"
+      }
     }
   ],
   "tool": {
-    "type": "farmersdelight:tool_action",
+    "type": "farmersdelight:item_ability",
     "action": "axe_dig"
   }
 }
