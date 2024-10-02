@@ -100,6 +100,10 @@ public class NMLBlocks {
             () -> new FrostedGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> FIDDLEHEAD = registerBlock("fiddlehead",
             () -> new SimpleFoliageBlock(Block.Properties.ofFullCopy(Blocks.FERN).offsetType(BlockBehaviour.OffsetType.XYZ)));
+    public static final DeferredBlock<Block> MYCELIUM_SPROUTS = registerBlock("mycelium_sprouts",
+            () -> new SimpleFoliageBlock(Block.Properties.ofFullCopy(Blocks.SHORT_GRASS).mapColor(MapColor.COLOR_PURPLE).offsetType(BlockBehaviour.OffsetType.XYZ)));
+    public static final DeferredBlock<Block> MYCELIUM_GROWTHS = registerBlock("mycelium_growths",
+            () -> new SimpleFoliageBlock(Block.Properties.ofFullCopy(Blocks.SHORT_GRASS).mapColor(MapColor.COLOR_PURPLE).offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final DeferredBlock<Block> CATTAIL = registerBlock("cattail",
             () -> new CattailBlock(Block.Properties.ofFullCopy(Blocks.TALL_GRASS).offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final DeferredBlock<Block> DUCKWEED = registerBlock("duckweed",
@@ -219,10 +223,6 @@ public class NMLBlocks {
             () -> new AmethystClusterBlock(5, 3, BlockBehaviour.Properties.ofFullCopy(NMLBlocks.QUARTZITE_CLUSTER.get()).sound(SoundType.NETHER_GOLD_ORE).forceSolidOn().lightLevel((p_152629_) -> {
                 return 4;
             }).pushReaction(PushReaction.DESTROY)));
-//    public static final DeferredBlock<Block> PETRIFIED_LOG = registerBlock("petrified_log",
-//            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF)));
-//    public static final DeferredBlock<Block> PETRIFIED_WOOD = registerBlock("petrified_wood",
-//            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF)));
     //Paths
     public static final DeferredBlock<Block> DIRT_PATH = registerBlock("dirt_path",
             () -> new PathBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT), Blocks.DIRT, false));

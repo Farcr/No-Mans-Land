@@ -232,6 +232,8 @@ public class NMLItems {
             event.accept(NMLBlocks.TALL_BEACHGRASS.get());
             event.accept(NMLBlocks.FROSTED_GRASS.get());
             event.accept(NMLBlocks.DRIED_GRASS.get());
+            event.accept(NMLBlocks.MYCELIUM_SPROUTS.get());
+            event.accept(NMLBlocks.MYCELIUM_GROWTHS.get());
             event.accept(NMLBlocks.FIDDLEHEAD.get());
             event.accept(NMLBlocks.CATTAIL.get());
             event.accept(NMLBlocks.DUCKWEED.get());
