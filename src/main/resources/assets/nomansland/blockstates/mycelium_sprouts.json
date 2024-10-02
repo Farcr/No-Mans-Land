@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/mushrooms/mycelium_sprouts"
+      },
+      {
+        "model": "nomansland:block/mushrooms/mycelium_sprouts_alt"
+      }
+    ]
+  }
+}

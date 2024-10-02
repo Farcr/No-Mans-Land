@@ -83,16 +83,14 @@
       "nomansland:biome_trees/trees_maple_forest"
     ],
     [
-      "minecraft:patch_grass_forest"
-    ],
-    [
       "minecraft:glow_lichen",
       "nomansland:flower_patches/flowers_maple",
       "nomansland:flower_patches/flowerbed_red",
       "nomansland:patch_rose_bush",
+      "minecraft:patch_grass_forest",
+      "minecraft:red_mushroom_old_growth",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
-      "minecraft:red_mushroom_old_growth",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin"
     ],

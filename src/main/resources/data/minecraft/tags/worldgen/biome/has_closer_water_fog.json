@@ -3,6 +3,7 @@
     "minecraft:deep_dark",
     "nomansland:dark_swamp",
     "nomansland:bog",
-    "#minecraft:is_jungle"
+    "#minecraft:is_jungle",
+    "minecraft:mushroom_fields"
   ]
 }
