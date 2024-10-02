@@ -1,0 +1,17 @@
+{
+  "feature": "nomansland:huge_field_mushroom",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "nomansland:field_mushroom",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
+    }
+  ]
+}
