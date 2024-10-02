@@ -17,10 +17,11 @@ import net.minecraft.world.level.biome.Biome;
 import java.util.Objects;
 import java.util.Optional;
 
-public record CowVariant(ResourceLocation texture, ResourceLocation babyTexture, Optional<HolderSet<Biome>> biomes) {
+public record CowVariant(ResourceLocation texture, ResourceLocation babyTexture, Optional<Boolean> mooshroom,  Optional<HolderSet<Biome>> biomes) {
     public static final Codec<CowVariant> DIRECT_CODEC = RecordCodecBuilder.create((record) -> record.group(
                     ResourceLocation.CODEC.fieldOf("texture").forGetter(CowVariant::texture),
                     ResourceLocation.CODEC.fieldOf("baby_texture").forGetter(CowVariant::babyTexture),
+                    Codec.BOOL.optionalFieldOf("mooshroom").forGetter(CowVariant::mooshroom),
                     RegistryCodecs.homogeneousList(Registries.BIOME).optionalFieldOf("biomes").forGetter(CowVariant::biomes))
             .apply(record, CowVariant::new));
     public static final StreamCodec<RegistryFriendlyByteBuf, CowVariant> DIRECT_STREAM_CODEC;
@@ -43,7 +44,7 @@ public record CowVariant(ResourceLocation texture, ResourceLocation babyTexture,
     }
 
     static {
-        DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, CowVariant::texture, ResourceLocation.STREAM_CODEC, CowVariant::babyTexture, ByteBufCodecs.optional(ByteBufCodecs.holderSet(Registries.BIOME)), CowVariant::biomes, CowVariant::new);
+        DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, CowVariant::texture, ResourceLocation.STREAM_CODEC, CowVariant::babyTexture, ByteBufCodecs.optional(ByteBufCodecs.BOOL), CowVariant::mooshroom, ByteBufCodecs.optional(ByteBufCodecs.holderSet(Registries.BIOME)), CowVariant::biomes, CowVariant::new);
         CODEC = RegistryFileCodec.create(NMLVariants.COW_VARIANT_KEY, DIRECT_CODEC);
         STREAM_CODEC = ByteBufCodecs.holder(NMLVariants.COW_VARIANT_KEY, DIRECT_STREAM_CODEC);
     }

@@ -5,6 +5,10 @@
     "nomansland:clover_patch",
     "nomansland:oat_grass",
     "nomansland:fiddlehead",
-    "nomansland:duckweed"
+    "nomansland:duckweed",
+    "nomansland:tall_beachgrass",
+    "nomansland:short_beachgrass",
+    "nomansland:mycelium_sprouts",
+    "nomansland:mycelium_growths"
   ]
 }

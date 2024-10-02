@@ -1,14 +1,11 @@
 package com.farcr.nomansland.common.mixin.variants;
 
-import com.farcr.nomansland.common.entity.variant.CowVariant;
 import com.farcr.nomansland.common.entity.variant.SheepVariant;
-import net.minecraft.client.renderer.entity.CowRenderer;
 import net.minecraft.client.renderer.entity.SheepRenderer;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.VariantHolder;
-import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.animal.Sheep;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

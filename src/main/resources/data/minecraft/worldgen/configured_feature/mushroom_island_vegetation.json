@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "nomansland:huge_field_mushroom_checked",
+    "features": [
+      {
+        "chance": 0.33,
+        "feature": "nomansland:huge_brown_mushroom_checked",
+          "placement": []
+      },
+      {
+        "chance": 0.33,
+        "feature": "nomansland:huge_red_mushroom_checked",
+          "placement": []
+      }
+    ]
+  }
+}

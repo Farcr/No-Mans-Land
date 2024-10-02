@@ -112,7 +112,7 @@ public class AnchorListener implements GameEventListener {
 
                     // Stop the mob from dropping experience and loot
                     deadEntity.skipDropExperience();
-                    ((LivingEntityDuck) deadEntity).nomansland$skipDroppingDeathLoot();
+                    ((LivingEntityDuck) deadEntity).noMansLand$skipDroppingDeathLoot();
 
                     AABB boundingBox = deadEntity.getBoundingBox();
                     processPoints(level, boundingBox, 0.2D).forEach(point -> {

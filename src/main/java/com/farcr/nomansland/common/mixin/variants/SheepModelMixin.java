@@ -1,8 +1,6 @@
 package com.farcr.nomansland.common.mixin.variants;
 
-import com.farcr.nomansland.client.model.NMLCowModel;
 import com.farcr.nomansland.client.model.NMLSheepModel;
-import net.minecraft.client.model.CowModel;
 import net.minecraft.client.model.SheepModel;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import org.spongepowered.asm.mixin.Mixin;

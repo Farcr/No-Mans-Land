@@ -1,0 +1,5 @@
+{
+  "texture": "nomansland:entity/variants/cow/cow_shroom_mycelial",
+  "baby_texture": "nomansland:entity/variants/cow/cow_shroom_mycelial_baby",
+  "mooshroom": true
+}

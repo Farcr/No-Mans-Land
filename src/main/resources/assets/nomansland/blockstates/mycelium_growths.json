@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "nomansland:block/mushrooms/mycelium_growths"
+      },
+      {
+        "model": "nomansland:block/mushrooms/mycelium_growths_alt"
+      }
+    ]
+  }
+}
