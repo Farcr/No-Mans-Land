@@ -1,4 +1,4 @@
-package com.farcr.nomansland.common.compat;
+package com.farcr.nomansland.integration;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;

@@ -5,6 +5,8 @@ import com.farcr.nomansland.common.blockentity.MonsterAnchorBlockEntity;
 import com.farcr.nomansland.common.blockentity.NMLSignBlockEntity;
 import com.farcr.nomansland.common.blockentity.RemainsBlockEntity;
 import com.farcr.nomansland.common.blockentity.TapBlockEntity;
+import com.farcr.nomansland.integration.Mods;
+import com.farcr.nomansland.integration.farmersdelight.FDIntegration;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -44,4 +46,6 @@ public class NMLBlockEntities {
             BLOCK_ENTITIES.register("remains", () ->
                     BlockEntityType.Builder.of(RemainsBlockEntity::new, NMLBlocks.REMAINS.get()).build(null));
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> CABINET =
+            BLOCK_ENTITIES.register("nml_cabinets", Mods.FARMERSDELIGHT.isLoaded() ? FDIntegration.cabinetBlockEntity() : () -> null);
 }
