@@ -2,6 +2,7 @@ package com.farcr.nomansland.common.mixin.variants;
 
 import com.farcr.nomansland.NoMansLand;
 import com.farcr.nomansland.common.entity.variant.FoxVariant;
+import com.farcr.nomansland.common.mixin.MobMixin;
 import com.farcr.nomansland.common.mixinduck.FoxDuck;
 import com.farcr.nomansland.common.registry.NMLDataSerializers;
 import com.farcr.nomansland.common.registry.NMLVariants;

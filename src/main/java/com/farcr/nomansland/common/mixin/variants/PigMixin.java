@@ -2,6 +2,7 @@ package com.farcr.nomansland.common.mixin.variants;
 
 import com.farcr.nomansland.NoMansLand;
 import com.farcr.nomansland.common.entity.variant.PigVariant;
+import com.farcr.nomansland.common.mixin.MobMixin;
 import com.farcr.nomansland.common.registry.NMLDataSerializers;
 import com.farcr.nomansland.common.registry.NMLVariants;
 import net.minecraft.core.Holder;

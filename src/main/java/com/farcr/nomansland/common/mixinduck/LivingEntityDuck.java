@@ -2,5 +2,5 @@ package com.farcr.nomansland.common.mixinduck;
 
 public interface LivingEntityDuck {
 
-    void nomansland$skipDroppingDeathLoot();
+    void noMansLand$skipDroppingDeathLoot();
 }

@@ -2,6 +2,9 @@ package com.farcr.nomansland.common.mixin.variants;
 
 import com.farcr.nomansland.NoMansLand;
 import com.farcr.nomansland.common.entity.variant.CowVariant;
+import com.farcr.nomansland.common.mixin.MobMixin;
+import com.farcr.nomansland.common.mixinduck.MooshroomDuck;
+import com.farcr.nomansland.common.registry.NMLBlocks;
 import com.farcr.nomansland.common.registry.NMLDataSerializers;
 import com.farcr.nomansland.common.registry.NMLVariants;
 import net.minecraft.core.Holder;
@@ -15,7 +18,10 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.animal.Cow;
+import net.minecraft.world.entity.animal.MushroomCow;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,11 +30,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 @Mixin(Cow.class)
-public abstract class CowMixin extends MobMixin implements VariantHolder<Holder<CowVariant>> {
+public abstract class CowMixin extends MobMixin implements VariantHolder<Holder<CowVariant>>, MooshroomDuck {
     @Unique
     private static final EntityDataAccessor<Holder<CowVariant>> DATA_VARIANT_ID = SynchedEntityData.defineId(Cow.class, NMLDataSerializers.COW_VARIANT.get());
     @Unique
@@ -58,14 +63,25 @@ public abstract class CowMixin extends MobMixin implements VariantHolder<Holder<
 
     @Override
     protected void finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, SpawnGroupData spawnGroupData, CallbackInfoReturnable<SpawnGroupData> cir) {
-        Registry<CowVariant> registry = this.registryAccess().registryOrThrow(NMLVariants.COW_VARIANT_KEY);
-        List<Holder.Reference<CowVariant>> possibleVariants = registry.holders()
-                .filter((v) -> v.value().biomes().isPresent() && v.value().biomes().get().contains(level.getBiome(this.blockPosition())))
-                .toList();
-        List<Holder.Reference<CowVariant>> defaultVariants = registry.holders()
-                .filter((v) -> v.value().biomes().isEmpty() || v.is(DEFAULT_VARIANT))
-                .toList();
-        this.setVariant(possibleVariants.isEmpty() ? defaultVariants.get(random.nextInt(defaultVariants.size())) : possibleVariants.get(random.nextInt(possibleVariants.size())));
+        if (this.getType() == EntityType.MOOSHROOM) {
+            Registry<CowVariant> registry = this.registryAccess().registryOrThrow(NMLVariants.COW_VARIANT_KEY);
+            List<Holder.Reference<CowVariant>> possibleMooshroomVariants = registry.holders()
+                    .filter((v) -> noMansLand$isMooshroomVariant(v) && v.value().biomes().isPresent() && v.value().biomes().get().contains(level.getBiome(this.blockPosition())))
+                    .toList();
+            List<Holder.Reference<CowVariant>> defaultMooshroomVariants = registry.holders()
+                    .filter((v) -> noMansLand$isMooshroomVariant(v) && v.value().biomes().isEmpty())
+                    .toList();
+            this.setVariant(possibleMooshroomVariants.isEmpty() ? defaultMooshroomVariants.get(random.nextInt(defaultMooshroomVariants.size())) : possibleMooshroomVariants.get(random.nextInt(possibleMooshroomVariants.size())));
+        } else {
+            Registry<CowVariant> registry = this.registryAccess().registryOrThrow(NMLVariants.COW_VARIANT_KEY);
+            List<Holder.Reference<CowVariant>> possibleVariants = registry.holders()
+                    .filter((v) -> !noMansLand$isMooshroomVariant(v) && v.value().biomes().isPresent() && v.value().biomes().get().contains(level.getBiome(this.blockPosition())))
+                    .toList();
+            List<Holder.Reference<CowVariant>> defaultVariants = registry.holders()
+                    .filter((v) -> !noMansLand$isMooshroomVariant(v) && v.value().biomes().isEmpty() || v.is(DEFAULT_VARIANT))
+                    .toList();
+            this.setVariant(possibleVariants.isEmpty() ? defaultVariants.get(random.nextInt(defaultVariants.size())) : possibleVariants.get(random.nextInt(possibleVariants.size())));
+        }
     }
 
     @Override
@@ -78,17 +94,50 @@ public abstract class CowMixin extends MobMixin implements VariantHolder<Holder<
         this.entityData.set(DATA_VARIANT_ID, variantHolder);
     }
 
+    @Override
+    public boolean noMansLand$isMooshroomVariant(Holder<CowVariant> cowVariantHolder) {
+        return cowVariantHolder.value().mooshroom().isPresent() && cowVariantHolder.value().mooshroom().get();
+    }
+
+    @Override
+    public BlockState noMansLand$getMushroomBlock(Holder<CowVariant> mooshroomVariantHolder) {
+        return switch(mooshroomVariantHolder.unwrapKey().get().location().toString()) {
+            default -> Blocks.AIR.defaultBlockState();
+            case "nomansland:red_shroom" -> Blocks.RED_MUSHROOM.defaultBlockState();
+            case "nomansland:brown_shroom" -> Blocks.BROWN_MUSHROOM.defaultBlockState();
+            case "nomansland:field_shroom" -> NMLBlocks.FIELD_MUSHROOM.get().defaultBlockState();
+        };
+    }
+
     @Inject(method = "getBreedOffspring*", at = @At("RETURN"), cancellable = true)
-    private void getBreedOffspring(ServerLevel level, AgeableMob otherParent, CallbackInfoReturnable<AgeableMob> cir) {
-        Cow cow = EntityType.COW.create(level);
-        if (cow != null) {
-            ((VariantHolder<Holder<CowVariant>>)cow).setVariant(this.random.nextBoolean() ?  this.getVariant() : ((VariantHolder<Holder<CowVariant>>)otherParent).getVariant());
+    protected void getBreedOffspring(ServerLevel level, AgeableMob otherParent, CallbackInfoReturnable<AgeableMob> cir) {
+        if (this.getType() == EntityType.MOOSHROOM) {
+            MushroomCow mooshroom = EntityType.MOOSHROOM.create(level);
+            if (mooshroom != null) {
+                ((MooshroomDuck)mooshroom).noMansLand$setCustomVariant(this.random.nextBoolean() ?  this.noMansLand$getCustomVariant() : ((MooshroomDuck)otherParent).noMansLand$getCustomVariant());
+            }
+            cir.setReturnValue(mooshroom);
+        } else {
+            Cow cow = EntityType.COW.create(level);
+            if (cow != null) {
+                ((VariantHolder<Holder<CowVariant>>) cow).setVariant(this.random.nextBoolean() ? this.getVariant() : ((VariantHolder<Holder<CowVariant>>) otherParent).getVariant());
+            }
+            cir.setReturnValue(cow);
         }
-        cir.setReturnValue(cow);
     }
 
     @Inject(method = "getDefaultDimensions", at = @At("HEAD"), cancellable = true)
     private void getDefaultDimensions(Pose pose, CallbackInfoReturnable<EntityDimensions> cir) {
         cir.setReturnValue(((Cow)(Object)this).isBaby() ? EntityType.COW.getDimensions().scale(0.6F).withEyeHeight(0.85F) : EntityType.COW.getDimensions().scale(10F));
+    }
+
+    @Override
+    public Holder<CowVariant> noMansLand$getCustomVariant() {
+        return this.entityData.get(DATA_VARIANT_ID);
+    }
+
+    @Override
+    public void noMansLand$setCustomVariant(Holder<CowVariant> mooshroomVariantHolder) {
+        this.entityData.set(DATA_VARIANT_ID, mooshroomVariantHolder);
     }
 }

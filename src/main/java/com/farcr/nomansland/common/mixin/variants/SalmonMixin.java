@@ -2,6 +2,7 @@ package com.farcr.nomansland.common.mixin.variants;
 
 import com.farcr.nomansland.NoMansLand;
 import com.farcr.nomansland.common.entity.variant.SalmonVariant;
+import com.farcr.nomansland.common.mixin.MobMixin;
 import com.farcr.nomansland.common.registry.NMLDataSerializers;
 import com.farcr.nomansland.common.registry.NMLVariants;
 import net.minecraft.core.Holder;
@@ -57,14 +58,16 @@ public abstract class SalmonMixin extends MobMixin implements VariantHolder<Hold
 
     @Override
     protected void finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, SpawnGroupData spawnGroupData, CallbackInfoReturnable<SpawnGroupData> cir) {
-        Registry<SalmonVariant> registry = this.registryAccess().registryOrThrow(NMLVariants.SALMON_VARIANT_KEY);
-        List<Holder.Reference<SalmonVariant>> possibleVariants = registry.holders()
-                .filter((v) -> v.value().biomes().isPresent() && v.value().biomes().get().contains(level.getBiome(this.blockPosition())))
-                .toList();
-        List<Holder.Reference<SalmonVariant>> defaultVariants = registry.holders()
-                .filter((v) -> v.value().biomes().isEmpty() || v.is(DEFAULT_VARIANT))
-                .toList();
-        this.setVariant(possibleVariants.isEmpty() ? defaultVariants.get(random.nextInt(defaultVariants.size())) : possibleVariants.get(random.nextInt(possibleVariants.size())));
+        if (spawnType != MobSpawnType.BUCKET) {
+            Registry<SalmonVariant> registry = this.registryAccess().registryOrThrow(NMLVariants.SALMON_VARIANT_KEY);
+            List<Holder.Reference<SalmonVariant>> possibleVariants = registry.holders()
+                    .filter((v) -> v.value().biomes().isPresent() && v.value().biomes().get().contains(level.getBiome(this.blockPosition())))
+                    .toList();
+            List<Holder.Reference<SalmonVariant>> defaultVariants = registry.holders()
+                    .filter((v) -> v.value().biomes().isEmpty() || v.is(DEFAULT_VARIANT))
+                    .toList();
+            this.setVariant(possibleVariants.isEmpty() ? defaultVariants.get(random.nextInt(defaultVariants.size())) : possibleVariants.get(random.nextInt(possibleVariants.size())));
+        }
     }
 
     @Override
