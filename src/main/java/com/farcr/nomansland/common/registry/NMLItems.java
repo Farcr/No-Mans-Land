@@ -4,6 +4,7 @@ import com.farcr.nomansland.NoMansLand;
 import com.farcr.nomansland.common.entity.BoatEntity;
 import com.farcr.nomansland.common.item.BoatItem;
 import com.farcr.nomansland.common.item.*;
+import com.farcr.nomansland.common.registry.integration.FDIntegration;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.*;
@@ -53,13 +54,10 @@ public class NMLItems {
     public static final DeferredItem<Item> WALNUTS = registerItem("walnuts",
             () -> new Item(new Item.Properties().food(NMLFoods.WALNUTS)));
 
+    //Materials
     public static final DeferredItem<Item> MAPLE_SYRUP_BOTTLE = registerItem("maple_syrup_bottle",
             () -> new MapleSyrupBottleItem(new Item.Properties().food(NMLFoods.MAPLE_SYRUP_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
 
-
-    //Materials
-//    public static final DeferredItem<Item> FIELD_MUSHROOM_COLONY = registerIntegrationItem("field_mushroom_colony",
-//            ModList.get().isLoaded("farmersdelight") ? FDIntegration.mushroomColonyItem() : null, "farmersdelight");
     public static final DeferredItem<Item> RESIN = registerItem("resin",
             () -> new FuelItem(new Item.Properties(), 1000));
     public static final DeferredItem<Item> RESIN_OIL_BOTTLE = registerItem("resin_oil_bottle",
@@ -149,9 +147,9 @@ public class NMLItems {
             event.accept(NMLBlocks.PINE_TRAPDOOR.get());
             event.accept(NMLBlocks.PINE_PRESSURE_PLATE.get());
             event.accept(NMLBlocks.PINE_BUTTON.get());
-//            if (ModList.get().isLoaded("farmersdelight")) {
-//                event.accept(NMLBlocks.PINE_CABINET.get());
-//            }
+            if (ModList.get().isLoaded("farmersdelight")) {
+                event.accept(NMLBlocks.PINE_CABINET.get());
+            }
 
             event.accept(NMLBlocks.MAPLE_LOG.get());
             event.accept(NMLBlocks.MAPLE_WOOD.get());
@@ -167,9 +165,9 @@ public class NMLItems {
             event.accept(NMLBlocks.MAPLE_TRAPDOOR.get());
             event.accept(NMLBlocks.MAPLE_PRESSURE_PLATE.get());
             event.accept(NMLBlocks.MAPLE_BUTTON.get());
-//            if (ModList.get().isLoaded("farmersdelight")) {
-//                event.accept(NMLBlocks.MAPLE_CABINET.get());
-//            }
+            if (ModList.get().isLoaded("farmersdelight")) {
+                event.accept(NMLBlocks.MAPLE_CABINET.get());
+            }
 
             event.accept(NMLBlocks.WALNUT_LOG.get());
             event.accept(NMLBlocks.WALNUT_WOOD.get());
@@ -185,9 +183,9 @@ public class NMLItems {
             event.accept(NMLBlocks.WALNUT_TRAPDOOR.get());
             event.accept(NMLBlocks.WALNUT_PRESSURE_PLATE.get());
             event.accept(NMLBlocks.WALNUT_BUTTON.get());
-//            if (ModList.get().isLoaded("farmersdelight")) {
-//                event.accept(NMLBlocks.WALNUT_CABINET.get());
-//            }
+            if (ModList.get().isLoaded("farmersdelight")) {
+                event.accept(NMLBlocks.WALNUT_CABINET.get());
+            }
             event.accept(NMLBlocks.WILLOW_LOG.get());
             event.accept(NMLBlocks.WILLOW_WOOD.get());
             event.accept(NMLBlocks.STRIPPED_WILLOW_LOG.get());
@@ -202,9 +200,9 @@ public class NMLItems {
             event.accept(NMLBlocks.WILLOW_TRAPDOOR.get());
             event.accept(NMLBlocks.WILLOW_PRESSURE_PLATE.get());
             event.accept(NMLBlocks.WILLOW_BUTTON.get());
-//            if (ModList.get().isLoaded("farmersdelight")) {
-//                event.accept(NMLBlocks.WILLOW_CABINET.get());
-//            }
+            if (ModList.get().isLoaded("farmersdelight")) {
+                event.accept(NMLBlocks.WILLOW_CABINET.get());
+            }
 
             event.accept(NMLBlocks.COD_BARREL.get());
             event.accept(NMLBlocks.SALMON_BARREL.get());
@@ -262,16 +260,14 @@ public class NMLItems {
             event.accept(NMLBlocks.AUTUMNAL_OAK_SAPLING);
             event.accept(NMLBlocks.PALE_CHERRY_LEAVES.get());
             event.accept(NMLBlocks.PALE_CHERRY_SAPLING);
-            event.accept(NMLBlocks.FIELD_MUSHROOM.get());
+            if (ModList.get().isLoaded("farmersdelight")) {
+                event.accept(NMLBlocks.FIELD_MUSHROOM_COLONY.get());
+            }
             event.accept(NMLBlocks.FIELD_MUSHROOM_BLOCK.get());
             event.accept(NMLBlocks.SHELF_MUSHROOM.get());
             event.accept(NMLBlocks.SHELF_MUSHROOM_BLOCK.get());
             event.accept(NMLBlocks.FROSTED_LEAVES.get());
             event.accept(NMLBlocks.BEARD_MOSS.get());
-
-//            if (ModList.get().isLoaded("farmersdelight")) {
-//                event.accept(NMLBlocks.FIELD_MUSHROOM_COLONY.get());
-//            }
             event.accept(NMLBlocks.DIRT_PATH.get());
             event.accept(NMLBlocks.MYCELIUM_PATH.get());
             event.accept(NMLBlocks.PODZOL_PATH.get());
