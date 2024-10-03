@@ -1,20 +1,16 @@
 package com.farcr.nomansland.common.mixin.variants;
 
 import com.farcr.nomansland.common.entity.variant.SalmonVariant;
-import com.farcr.nomansland.common.entity.variant.SheepVariant;
+import com.farcr.nomansland.common.mixin.EntityMixin;
 import com.farcr.nomansland.common.registry.NMLVariants;
 import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.VariantHolder;
 import net.minecraft.world.entity.animal.AbstractFish;
-import net.minecraft.world.entity.animal.Salmon;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.CustomData;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

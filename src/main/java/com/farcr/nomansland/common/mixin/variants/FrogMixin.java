@@ -1,6 +1,7 @@
 package com.farcr.nomansland.common.mixin.variants;
 
 
+import com.farcr.nomansland.common.mixin.EntityMixin;
 import com.farcr.nomansland.common.registry.NMLTags;
 import com.farcr.nomansland.common.registry.NMLVariants;
 import net.minecraft.core.Holder;
