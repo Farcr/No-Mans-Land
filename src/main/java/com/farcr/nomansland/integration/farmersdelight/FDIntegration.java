@@ -1,19 +1,16 @@
 package com.farcr.nomansland.integration.farmersdelight;
 
-import com.farcr.nomansland.common.registry.NMLItems;
-import com.farcr.nomansland.integration.farmersdelight.NMLCabinetBlock;
-import com.farcr.nomansland.integration.farmersdelight.NMLCabinetBlockEntity;
 import com.farcr.nomansland.common.registry.NMLBlocks;
+import com.farcr.nomansland.common.registry.NMLItems;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import vectorwing.farmersdelight.common.block.MushroomColonyBlock;
 
-
 import java.util.function.Supplier;
 
 public class FDIntegration {
-    public static Supplier<? extends Block> mushroomColony() {
+    public static Supplier<? extends Block> fieldMushroomColony() {
         return () -> new MushroomColonyBlock(NMLItems.FIELD_MUSHROOM, Block.Properties.ofFullCopy(NMLBlocks.FIELD_MUSHROOM.get()));
     }
 

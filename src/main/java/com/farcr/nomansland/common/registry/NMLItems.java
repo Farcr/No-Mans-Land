@@ -13,6 +13,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import javax.annotation.Nullable;
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
 
@@ -388,15 +389,8 @@ public class NMLItems {
     }
 
     @SuppressWarnings("unchecked")
-    public static <T extends Item> DeferredItem<T> registerItem(final String name, final Supplier<? extends Item> item) {
-        DeferredItem<Item> toReturn = ITEMS.register(name, item);
-        CREATIVE_TAB_ITEMS.add(toReturn);
-        return (DeferredItem<T>) toReturn;
-    }
-
-    @SuppressWarnings("unchecked")
-    public static <T extends Item> DeferredItem<T> registerIntegrationItem(final String name, final Supplier<? extends Item> item, String modId) {
-        if (!ModList.get().isLoaded(modId)) return null;
+    public static <T extends Item> DeferredItem<T> registerItem(String name, @Nullable Supplier<? extends Item> item) {
+        if (item == null) return null;
         DeferredItem<Item> toReturn = ITEMS.register(name, item);
         CREATIVE_TAB_ITEMS.add(toReturn);
         return (DeferredItem<T>) toReturn;

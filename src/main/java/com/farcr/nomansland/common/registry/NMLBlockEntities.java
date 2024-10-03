@@ -46,6 +46,6 @@ public class NMLBlockEntities {
             BLOCK_ENTITIES.register("remains", () ->
                     BlockEntityType.Builder.of(RemainsBlockEntity::new, NMLBlocks.REMAINS.get()).build(null));
 
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> CABINET =
-            BLOCK_ENTITIES.register("nml_cabinets", Mods.FARMERSDELIGHT.isLoaded() ? FDIntegration.cabinetBlockEntity() : () -> null);
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> CABINET = Mods.FARMERSDELIGHT.isLoaded() ?
+            BLOCK_ENTITIES.register("nml_cabinets", FDIntegration.cabinetBlockEntity()) : null;
 }
