@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+  {
+    "type": "neoforge:mod_loaded",
+    "modid": "farmersdelight"
+  }
+],
   "type": "minecraft:block",
   "pools": [
     {
@@ -80,7 +86,7 @@
                   "term": {
                     "condition": "minecraft:match_tool",
                     "predicate": {
-                      "tag": "forge:shears"
+                      "items": "minecraft:shears"
                     }
                   }
                 }
@@ -106,7 +112,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "tag": "forge:shears"
+                      "items": "minecraft:shears"
                   }
                 }
               ],
