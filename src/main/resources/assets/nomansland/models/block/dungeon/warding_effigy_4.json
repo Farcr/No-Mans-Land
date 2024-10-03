@@ -6,8 +6,8 @@
     32
   ],
   "textures": {
-    "0": "nomansland:block/warding_effigy",
-    "particle": "nomansland:block/warding_effigy"
+    "0": "nomansland:block/dungeon/warding_effigy",
+    "particle": "nomansland:block/dungeon/warding_effigy"
   },
   "elements": [
     {

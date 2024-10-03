@@ -1,0 +1,60 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:desert_well/desert_well_small_1",
+        "processors": "nomansland:desert_well_desert",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:desert_well/desert_well_small_2",
+        "processors": "nomansland:desert_well_desert",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:desert_well/desert_well_small_3",
+        "processors": "nomansland:desert_well_desert",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:desert_well/desert_well_small_roof_1",
+        "processors": "nomansland:desert_well_desert",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:desert_well/desert_well_small_roof_2",
+        "processors": "nomansland:desert_well_desert",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:desert_well/desert_well_small_roof_3",
+        "processors": "nomansland:desert_well_desert",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+
+  ]
+}
