@@ -1,9 +1,7 @@
 package com.farcr.nomansland.common.mixin;
 
-import com.farcr.nomansland.common.mixin.variants.EntityMixin;
 import com.farcr.nomansland.common.mixinduck.LivingEntityDuck;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,8 +16,6 @@ public abstract class LivingEntityMixin extends EntityMixin implements LivingEnt
     @Shadow public abstract float getHealth();
 
     @Shadow public float yBodyRot;
-
-    @Shadow public abstract void swing(InteractionHand hand);
 
     @Unique
     private boolean nomansland$skipDroppingDeathLoot = false;

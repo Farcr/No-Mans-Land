@@ -18,7 +18,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.animal.Cow;
-import net.minecraft.world.entity.animal.MushroomCow;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -111,24 +110,16 @@ public abstract class CowMixin extends MobMixin implements VariantHolder<Holder<
 
     @Inject(method = "getBreedOffspring*", at = @At("RETURN"), cancellable = true)
     protected void getBreedOffspring(ServerLevel level, AgeableMob otherParent, CallbackInfoReturnable<AgeableMob> cir) {
-        if (this.getType() == EntityType.MOOSHROOM) {
-            MushroomCow mooshroom = EntityType.MOOSHROOM.create(level);
-            if (mooshroom != null) {
-                ((MooshroomDuck)mooshroom).noMansLand$setCustomVariant(this.random.nextBoolean() ?  this.noMansLand$getCustomVariant() : ((MooshroomDuck)otherParent).noMansLand$getCustomVariant());
-            }
-            cir.setReturnValue(mooshroom);
-        } else {
-            Cow cow = EntityType.COW.create(level);
-            if (cow != null) {
-                ((VariantHolder<Holder<CowVariant>>) cow).setVariant(this.random.nextBoolean() ? this.getVariant() : ((VariantHolder<Holder<CowVariant>>) otherParent).getVariant());
-            }
-            cir.setReturnValue(cow);
+        Cow cow = EntityType.COW.create(level);
+        if (cow != null) {
+            ((VariantHolder<Holder<CowVariant>>) cow).setVariant(this.random.nextBoolean() ? this.getVariant() : ((VariantHolder<Holder<CowVariant>>) otherParent).getVariant());
         }
+        cir.setReturnValue(cow);
     }
 
     @Inject(method = "getDefaultDimensions", at = @At("HEAD"), cancellable = true)
     private void getDefaultDimensions(Pose pose, CallbackInfoReturnable<EntityDimensions> cir) {
-        cir.setReturnValue(((Cow)(Object)this).isBaby() ? EntityType.COW.getDimensions().scale(0.6F).withEyeHeight(0.85F) : EntityType.COW.getDimensions().scale(10F));
+        cir.setReturnValue(((Cow)(Object)this).isBaby() ? EntityType.COW.getDimensions().scale(0.65F).withEyeHeight(0.8F) : EntityType.COW.getDimensions().scale(1.25F, 1.1F).withEyeHeight(3F));
     }
 
     @Override

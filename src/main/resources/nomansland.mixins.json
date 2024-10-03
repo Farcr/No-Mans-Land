@@ -8,6 +8,7 @@
     "BaseSpawnerMixin",
     "BiomeMixin",
     "BlockEntityAccessor",
+    "EntityMixin",
     "EntityTypeMixin",
     "LivingEntityMixin",
     "MobMixin",
@@ -17,7 +18,6 @@
     "variants.AbstractFishMixin",
     "variants.CowMixin",
     "variants.DolphinMixin",
-    "variants.EntityMixin",
     "variants.FoxMixin",
     "variants.FrogMixin",
     "variants.GoatMixin",
@@ -40,6 +40,7 @@
     "variants.PigModelMixin",
     "variants.PigRendererMixin",
     "variants.QuadrupedModelMixin",
+    "variants.SaddleLayerMixin",
     "variants.SalmonRendererMixin",
     "variants.TurtleRendererMixin"
   ],
