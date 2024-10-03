@@ -96,7 +96,15 @@
       }
     ],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+      "type": "minecraft:sheep",
+      "maxCount": 3,
+      "minCount": 1,
+      "weight": 5
+    }
+  ]
+    ,
     "misc": [],
     "monster": [
       {
