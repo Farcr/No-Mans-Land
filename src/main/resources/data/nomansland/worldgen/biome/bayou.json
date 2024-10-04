@@ -8,7 +8,7 @@
   },
   "downfall": 0.9,
   "effects": {
-    "fog_color": 10996903,
+    "fog_color": 11071699,
     "sky_color": 7194319,
     "foliage_color": 6924847,
     "grass_color": 6798649,
@@ -24,8 +24,8 @@
       "replace_current_music": false,
       "sound": "minecraft:music.overworld.swamp"
     },
-    "water_color": 5536348,
-    "water_fog_color": 2897190
+    "water_color": 2403207,
+    "water_fog_color": 1479552
   },
   "features": [
     [],
