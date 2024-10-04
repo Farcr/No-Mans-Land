@@ -1,8 +1,9 @@
 {
+  "name": "nomansland:small_dungeon/small_dungeon_decoration",
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 1,
+      "weight": 3,
       "element": {
         "location": "nomansland:small_dungeon/small_dungeon_chest",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
@@ -11,9 +12,27 @@
       }
     },
     {
-      "weight": 1,
+      "weight": 2,
       "element": {
         "location": "nomansland:small_dungeon/small_dungeon_cauldron",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "nomansland:small_dungeon/small_dungeon_plant",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "nomansland:small_dungeon/small_dungeon_bookshelf_small",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

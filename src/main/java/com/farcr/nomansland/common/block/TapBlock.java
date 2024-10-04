@@ -157,7 +157,7 @@ public class TapBlock extends BaseEntityBlock {
         BlockPos posBehind = pos.relative(state.getValue(FACING).getOpposite());
         BlockState stateBehind = level.getBlockState(posBehind);
         if (stateBehind.hasProperty(HONEY_LEVEL) && stateBehind.hasProperty(FACING) && !(stateBehind.getValue(FACING) == state.getValue(FACING))) return false;
-        return MultifaceBlock.canAttachTo(level, direction, posBehind, stateBehind) || stateBehind.is(Blocks.CAULDRON);
+        return MultifaceBlock.canAttachTo(level, direction, posBehind, stateBehind) || stateBehind.getBlock() instanceof AbstractCauldronBlock;
     }
 
     public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {

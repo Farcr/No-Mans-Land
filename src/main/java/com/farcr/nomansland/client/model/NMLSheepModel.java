@@ -12,9 +12,9 @@ public class NMLSheepModel {
 
         PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(0, 0, 0, 0, 0, 0), PartPose.offset(0, 0, 0));
 
-        PartDefinition bodyAdult = body.addOrReplaceChild("body_adult", CubeListBuilder.create().texOffs(0, 0).addBox(-4, -4, -7, 8, 8, 14), PartPose.offset(0, 12, -1));
+        PartDefinition bodyAdult = body.addOrReplaceChild("body_adult", CubeListBuilder.create().texOffs(0, 0).addBox(-4, -4, -7, 8, 8, 14), PartPose.offset(0, 12, 0));
 
-        PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 22).addBox(-2, -5, -7, 4, 5, 8), PartPose.offsetAndRotation(0, -3, -5.5F, 0.6981F, 0, 0));
+        PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 22).addBox(-2, -5, -7, 4, 5, 8), PartPose.offsetAndRotation(0, -8, -5.5F, 0.6981F, 0, 0));
 
         PartDefinition rightEar = head.addOrReplaceChild("right_ear", CubeListBuilder.create().texOffs(0, 0).addBox(-2, -1, 0, 2, 2, 1), PartPose.offsetAndRotation(-2, -3.8F, -0.7F, -0.6981F, 0, 0));
 
@@ -26,19 +26,19 @@ public class NMLSheepModel {
 
         PartDefinition shearedTail = bodyAdult.addOrReplaceChild("sheared_tail", CubeListBuilder.create().texOffs(0, 3).addBox(-1, -1, 0, 2, 2, 2), PartPose.offset(0, -3, 7));
 
-        PartDefinition rightFrontLeg = partdefinition.addOrReplaceChild("right_front_leg", CubeListBuilder.create().texOffs(30, 0).mirror().addBox(-1.5F, 0, -1.5F, 3, 8, 3).mirror(false), PartPose.offset(-2.4F, 4, -4.5F));
+        PartDefinition rightFrontLeg = partdefinition.addOrReplaceChild("right_front_leg", CubeListBuilder.create().texOffs(30, 0).mirror().addBox(-1.5F, 0, -1.5F, 3, 8, 3).mirror(false), PartPose.offset(-2.4F, 16, -4.5F));
 
         PartDefinition rightFrontLegWool = rightFrontLeg.addOrReplaceChild("right_front_leg_wool", CubeListBuilder.create().texOffs(78, 0).addBox(-2, -1, -2, 4, 4, 4), PartPose.offset(0, 0, 0));
 
-        PartDefinition leftFrontLeg = partdefinition.addOrReplaceChild("left_front_leg", CubeListBuilder.create().texOffs(42, 0).mirror().addBox(-1.5F, 0, -1.5F, 3, 8, 3).mirror(false), PartPose.offset(2.4F, 4, -4.5F));
+        PartDefinition leftFrontLeg = partdefinition.addOrReplaceChild("left_front_leg", CubeListBuilder.create().texOffs(42, 0).mirror().addBox(-1.5F, 0, -1.5F, 3, 8, 3).mirror(false), PartPose.offset(2.4F, 16, -4.5F));
 
         PartDefinition leftFrontLegWool = leftFrontLeg.addOrReplaceChild("left_front_leg_wool", CubeListBuilder.create().texOffs(78, 8).addBox(-2, -1, -2, 4, 4, 4), PartPose.offset(0, 0, 0));
 
-        PartDefinition rightHindLeg = partdefinition.addOrReplaceChild("right_hind_leg", CubeListBuilder.create().texOffs(24, 22).mirror().addBox(-1.5F, -2, -1.5F, 3, 10, 3).mirror(false), PartPose.offset(-2.4F, 4, 6.5F));
+        PartDefinition rightHindLeg = partdefinition.addOrReplaceChild("right_hind_leg", CubeListBuilder.create().texOffs(24, 22).mirror().addBox(-1.5F, -2, -1.5F, 3, 10, 3).mirror(false), PartPose.offset(-2.4F, 16, 6.5F));
 
         PartDefinition rightHindLegWool = rightHindLeg.addOrReplaceChild("right_hind_leg_wool", CubeListBuilder.create().texOffs(48, 25).addBox(-2, -1, -2, 4, 4, 4), PartPose.offset(0, 0, 0));
 
-        PartDefinition leftHindLeg = partdefinition.addOrReplaceChild("left_hind_leg", CubeListBuilder.create().texOffs(36, 22).mirror().addBox(-1.5F, -2, -1.5F, 3, 10, 3).mirror(false), PartPose.offset(2.4F, 4, 6.5F));
+        PartDefinition leftHindLeg = partdefinition.addOrReplaceChild("left_hind_leg", CubeListBuilder.create().texOffs(36, 22).mirror().addBox(-1.5F, -2, -1.5F, 3, 10, 3).mirror(false), PartPose.offset(2.4F, 16, 6.5F));
 
         PartDefinition leftHindLegWool = leftHindLeg.addOrReplaceChild("left_hind_leg_wool", CubeListBuilder.create().texOffs(64, 25).addBox(-2, -1, -2, 4, 4, 4), PartPose.offset(0, 0, 0));
 
@@ -59,11 +59,11 @@ public class NMLSheepModel {
 
         PartDefinition rightFrontLegBaby = bodyBaby.addOrReplaceChild("right_front_leg_baby", CubeListBuilder.create().texOffs(14, 13).mirror().addBox(-1, 0, -1, 2, 4, 2).mirror(false), PartPose.offset(-1.5F, 2.5F, -3));
 
-        PartDefinition leftFrontLegBaby = bodyBaby.addOrReplaceChild("left_front_leg_baby", CubeListBuilder.create().texOffs(14, 13).addBox(-1, 0, -1, 2, 4, 2), PartPose.offset(1.5F, 2.5F, -3));
+        PartDefinition leftFrontLegBaby = bodyBaby.addOrReplaceChild("left_front_leg_baby", CubeListBuilder.create().texOffs(14, 13).addBox(-1, 0, -1, 2, 4, 2), PartPose.offset(1.5F, 2.5F, -2));
 
         PartDefinition rightHindLegBaby = bodyBaby.addOrReplaceChild("right_hind_leg_baby", CubeListBuilder.create().texOffs(22, 13).mirror().addBox(-1, 0, -1, 2, 4, 2).mirror(false), PartPose.offset(-1.5F, 2.5F, 3));
 
-        PartDefinition leftHindLegBaby = bodyBaby.addOrReplaceChild("left_hind_leg_baby", CubeListBuilder.create().texOffs(22, 13).addBox(-1, 0, -1, 2, 4, 2), PartPose.offset(1.5F, 2.5F, 3));
+        PartDefinition leftHindLegBaby = bodyBaby.addOrReplaceChild("left_hind_leg_baby", CubeListBuilder.create().texOffs(22, 13).addBox(-1, 0, -1, 2, 4, 2), PartPose.offset(1.5F, 2.5F, 2));
 
         return LayerDefinition.create(meshdefinition, 128, 64);
     }

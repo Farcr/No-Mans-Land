@@ -2,6 +2,7 @@ package com.farcr.nomansland.common.mixin.variants;
 
 import com.farcr.nomansland.client.model.NMLCowModel;
 import com.farcr.nomansland.client.model.NMLPigModel;
+import com.farcr.nomansland.client.model.NMLSheepModel;
 import net.minecraft.client.model.QuadrupedModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.world.entity.Entity;
@@ -25,15 +26,12 @@ public class QuadrupedModelMixin<T extends Entity> {
     }
 
     @Inject(method = "setupAnim", at = @At("TAIL"))
-    protected void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci) {
+    private void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci) {
         if (entity instanceof Pig pig) {
             NMLPigModel.setupAnim(pig, root, limbSwing, limbSwingAmount, netHeadYaw, headPitch);
         }
-        else if (entity instanceof Cow cow) {
+        if (entity instanceof Cow cow) {
             NMLCowModel.setupAnim(cow, root, limbSwing, limbSwingAmount, netHeadYaw, headPitch);
-        }
-        else if (entity instanceof Sheep sheep) {
-//            NMLSheepModel.setupAnim(sheep, root, limbSwing, limbSwingAmount, netHeadYaw, headPitch);
         }
     }
 }

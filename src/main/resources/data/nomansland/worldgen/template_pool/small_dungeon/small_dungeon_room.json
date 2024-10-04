@@ -1,4 +1,5 @@
 {
+  "name": "nomansland:small_dungeon/small_dungeon_room",
   "fallback": "minecraft:empty",
   "elements": [
     {

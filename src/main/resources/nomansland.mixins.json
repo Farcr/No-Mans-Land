@@ -42,6 +42,8 @@
     "variants.QuadrupedModelMixin",
     "variants.SaddleLayerMixin",
     "variants.SalmonRendererMixin",
+    "variants.SheepModelMixin",
+    "variants.SheepRendererMixin",
     "variants.TurtleRendererMixin"
   ],
   "injectors": {
