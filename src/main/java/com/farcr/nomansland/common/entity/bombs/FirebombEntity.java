@@ -5,6 +5,7 @@ import com.farcr.nomansland.common.registry.NMLBlocks;
 import com.farcr.nomansland.common.registry.NMLEntities;
 import com.farcr.nomansland.common.registry.NMLTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -16,10 +17,16 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.TntBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
 
 import static net.minecraft.world.level.block.WallTorchBlock.FACING;
 
 public class FirebombEntity extends ThrowableBombEntity {
+
+    private static final float VERTICAL_RESTITUTION = 0.3F;
+    private static final float HORIZONTAL_RESTITUTION = 0.4F;
 
     public FirebombEntity(EntityType<? extends ThrowableBombEntity> entityType, Level level) {
         super(entityType, level);
@@ -36,15 +43,6 @@ public class FirebombEntity extends ThrowableBombEntity {
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-
-        if (!this.level().isClientSide() && this.level().getBlockState(this.blockPosition()).is(NMLTags.BOMB_EXPLODE)) {
-            this.explode();
-        }
     }
 
     private void spawnParticles(ParticleOptions particle, int amount) {
@@ -115,6 +113,55 @@ public class FirebombEntity extends ThrowableBombEntity {
         });
         this.level().broadcastEntityEvent(this, (byte) (this.isInWater() ? 1 : 0));
         this.discard();
+    }
+
+    @Override
+    protected void onHitEntity(EntityHitResult result) {
+        if (!this.level().isClientSide()) {
+            this.explode();
+        }
+    }
+
+    @Override
+    protected void onHitBlock(BlockHitResult result) {
+        Vec3 motion = this.getDeltaMovement();
+        if (motion.lengthSqr() < 0.1) {
+            this.setDeltaMovement(Vec3.ZERO);
+            this.setOnGround(true);
+            return;
+        }
+
+        Direction direction = result.getDirection();
+        switch (direction.getAxis()) {
+            case X -> this.setDeltaMovement(
+                    -motion.x() * HORIZONTAL_RESTITUTION,
+                    motion.y(),
+                    motion.z()
+            );
+            case Y ->
+                    this.setDeltaMovement(motion.x() * VERTICAL_RESTITUTION, -motion.y() * VERTICAL_RESTITUTION, motion.z() * VERTICAL_RESTITUTION);
+            case Z -> this.setDeltaMovement(
+                    motion.x(),
+                    motion.y(),
+                    -motion.z() * HORIZONTAL_RESTITUTION
+            );
+        }
+        if (this.getFuse() == -1) {
+            this.setFuse(30);;
+        }
+    }
+
+    @Override
+    public void tick() {
+        if (!this.level().isClientSide) {
+            if (this.getFuse() > -1) {
+                this.setFuse(this.getFuse()-1);;
+                if (this.getFuse() <= 0) {
+                    this.explode();
+                }
+            }
+        }
+        super.tick();
     }
 
     @Override

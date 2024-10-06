@@ -4,6 +4,7 @@ import com.farcr.nomansland.common.registry.NMLBlocks;
 import com.farcr.nomansland.common.registry.NMLEntities;
 import com.farcr.nomansland.common.registry.NMLTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -18,11 +19,15 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.TntBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
 
 import static net.minecraft.world.level.block.WallTorchBlock.FACING;
 
 public class ExplosiveEntity extends ThrowableBombEntity {
+
+    private static boolean shouldFuse = false;
 
     public ExplosiveEntity(EntityType<? extends ThrowableProjectile> entityType, Level level) {
         super(entityType, level);
@@ -42,15 +47,6 @@ public class ExplosiveEntity extends ThrowableBombEntity {
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-
-        if (!this.level().isClientSide() && this.level().getBlockState(this.blockPosition()).is(NMLTags.BOMB_EXPLODE)) {
-            this.explode();
-        }
     }
 
     private void spawnParticles(ParticleOptions particle, int amount) {
@@ -93,29 +89,29 @@ public class ExplosiveEntity extends ThrowableBombEntity {
         BlockPos.withinManhattan(this.blockPosition(), 6, 4, 6).forEach(pos -> {
             BlockState state = this.level().getBlockState(pos);
             if (state.is(BlockTags.CAMPFIRES) && state.hasProperty(CampfireBlock.LIT) && !state.getValue(CampfireBlock.LIT)) {
-                this.level().setBlock(pos, state.setValue(CampfireBlock.LIT, true), 3);
+                this.level().setBlockAndUpdate(pos, state.setValue(CampfireBlock.LIT, true));
             }
-            if (state.getBlock() == Blocks.TNT) {
+            if (state.is(Blocks.TNT)) {
                 TntBlock.explode(this.level(), pos);
                 this.level().setBlock(pos, Blocks.AIR.defaultBlockState(), 11);
             }
-            if (state.getBlock() == NMLBlocks.EXTINGUISHED_TORCH.get()) {
-                this.level().setBlock(pos, Blocks.TORCH.defaultBlockState(), 3);
-            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_WALL_TORCH.get()) {
-                this.level().setBlock(pos, Blocks.WALL_TORCH.defaultBlockState().setValue(FACING, state.getValue(FACING)), 3);
-            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_SOUL_TORCH.get()) {
-                this.level().setBlock(pos, Blocks.SOUL_TORCH.defaultBlockState(), 3);
-            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_SOUL_WALL_TORCH.get()) {
-                this.level().setBlock(pos, Blocks.SOUL_WALL_TORCH.defaultBlockState().setValue(FACING, state.getValue(FACING)), 3);
-            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_SCONCE_TORCH.get()) {
-                this.level().setBlock(pos, NMLBlocks.SCONCE_TORCH.get().defaultBlockState(), 3);
-            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_SCONCE_WALL_TORCH.get()) {
-                this.level().setBlock(pos, NMLBlocks.SCONCE_WALL_TORCH.get().defaultBlockState().setValue(FACING, state.getValue(FACING)), 3);
-            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_SCONCE_SOUL_TORCH.get()) {
-                this.level().setBlock(pos, NMLBlocks.SCONCE_SOUL_TORCH.get().defaultBlockState(), 3);
-            } else if (state.getBlock() == NMLBlocks.EXTINGUISHED_SCONCE_SOUL_WALL_TORCH.get()) {
+            if (state.is(NMLBlocks.EXTINGUISHED_TORCH.get())) {
+                this.level().setBlockAndUpdate(pos, Blocks.TORCH.defaultBlockState());
+            } else if (state.is(NMLBlocks.EXTINGUISHED_WALL_TORCH.get())) {
+                this.level().setBlockAndUpdate(pos, Blocks.WALL_TORCH.defaultBlockState().setValue(FACING, state.getValue(FACING)));
+            } else if (state.is(NMLBlocks.EXTINGUISHED_SOUL_TORCH.get())) {
+                this.level().setBlockAndUpdate(pos, Blocks.SOUL_TORCH.defaultBlockState());
+            } else if (state.is(NMLBlocks.EXTINGUISHED_SOUL_WALL_TORCH.get())) {
+                this.level().setBlockAndUpdate(pos, Blocks.SOUL_WALL_TORCH.defaultBlockState().setValue(FACING, state.getValue(FACING)));
+            } else if (state.is(NMLBlocks.EXTINGUISHED_SCONCE_TORCH.get())) {
+                this.level().setBlockAndUpdate(pos, NMLBlocks.SCONCE_TORCH.get().defaultBlockState());
+            } else if (state.is(NMLBlocks.EXTINGUISHED_SCONCE_WALL_TORCH.get())) {
+                this.level().setBlockAndUpdate(pos, NMLBlocks.SCONCE_WALL_TORCH.get().defaultBlockState().setValue(FACING, state.getValue(FACING)));
+            } else if (state.is(NMLBlocks.EXTINGUISHED_SCONCE_SOUL_TORCH.get())) {
+                this.level().setBlockAndUpdate(pos, NMLBlocks.SCONCE_SOUL_TORCH.get().defaultBlockState());
+            } else if (state.is(NMLBlocks.EXTINGUISHED_SCONCE_SOUL_WALL_TORCH.get())) {
 
-                this.level().setBlock(pos, NMLBlocks.SCONCE_SOUL_WALL_TORCH.get().defaultBlockState().setValue(FACING, state.getValue(FACING)), 3);
+                this.level().setBlockAndUpdate(pos, NMLBlocks.SCONCE_SOUL_WALL_TORCH.get().defaultBlockState().setValue(FACING, state.getValue(FACING)));
             }
 
         });
@@ -123,16 +119,31 @@ public class ExplosiveEntity extends ThrowableBombEntity {
         this.discard();
     }
 
-    //@Override
-    //protected void onHit(HitResult hitResult) {
-    //}
+    @Override
+    protected void onHitBlock(BlockHitResult result) {
+        Vec3 vec3 = this.position().vectorTo(result.getLocation());
+        this.setDeltaMovement(vec3);
+    }
 
     @Override
-    protected void onHitEntity(EntityHitResult entityHitResult) {
-        if (!this.level().isClientSide()) {
-            //this.explode();
-            //add countdown
+    protected void onHitEntity(EntityHitResult result) {
+        Vec3 vec3 = this.position().vectorTo(result.getLocation());
+        this.setDeltaMovement(vec3);
+        shouldFuse = true;
+    }
+
+    @Override
+    public void tick() {
+        if (!shouldFuse) shouldFuse = !this.getInBlockState().is(Blocks.AIR);
+        if (!this.level().isClientSide) {
+            if (this.getFuse() > -1 && shouldFuse) {
+                this.setFuse(this.getFuse()-1);;
+                if (this.getFuse() <= 0) {
+                    this.explode();
+                }
+            }
         }
+        super.tick();
     }
 
     @Override

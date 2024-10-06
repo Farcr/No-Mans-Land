@@ -1,38 +1,55 @@
 {
-  "name": "nomansland:small_dungeon/small_dungeon_decoration",
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 3,
+      "weight": 4,
       "element": {
-        "location": "nomansland:small_dungeon/small_dungeon_chest",
+        "location": "nomansland:small_dungeon/decoration/chest",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
     },
     {
-      "weight": 2,
+      "weight": 1,
       "element": {
-        "location": "nomansland:small_dungeon/small_dungeon_cauldron",
+        "location": "nomansland:small_dungeon/decoration/cauldron",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
     },
     {
-      "weight": 2,
+      "weight": 1,
       "element": {
-        "location": "nomansland:small_dungeon/small_dungeon_plant",
+        "location": "nomansland:small_dungeon/decoration/dead_bush",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
     },
     {
-      "weight": 2,
+      "weight": 1,
       "element": {
-        "location": "nomansland:small_dungeon/small_dungeon_bookshelf_small",
+        "location": "nomansland:small_dungeon/decoration/bookshelf_small",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:small_dungeon/decoration/bookshelf",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:small_dungeon/decoration/bookshelf_large",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

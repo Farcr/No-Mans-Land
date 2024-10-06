@@ -1,5 +1,6 @@
 package com.farcr.nomansland.common.entity.bombs;
 
+import com.farcr.nomansland.common.registry.NMLTags;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.nbt.CompoundTag;
@@ -18,8 +19,6 @@ import net.minecraft.world.phys.Vec3;
 
 public abstract class ThrowableBombEntity extends ThrowableProjectile {
 
-    private static final float VERTICAL_RESTITUTION = 0.3F;
-    private static final float HORIZONTAL_RESTITUTION = 0.4F;
     private static final int MAX_LIFE = 200;
     private static final EntityDataAccessor<Integer> DATA_FUSE_ID = SynchedEntityData.defineId(ThrowableBombEntity.class, EntityDataSerializers.INT);
 
@@ -48,51 +47,6 @@ public abstract class ThrowableBombEntity extends ThrowableProjectile {
 
     public int getFuse() {
         return this.entityData.get(DATA_FUSE_ID);
-    }
-
-
-    @Override
-    protected void onHit(HitResult hitResult) {
-        if (hitResult.getType() == HitResult.Type.MISS) {
-            return;
-        }
-
-        if (hitResult instanceof BlockHitResult blockHitResult) {
-            Vec3 motion = this.getDeltaMovement();
-            if (motion.lengthSqr() < 0.1) {
-                this.setDeltaMovement(Vec3.ZERO);
-                this.setOnGround(true);
-                return;
-            }
-
-            Direction direction = blockHitResult.getDirection();
-            switch (direction.getAxis()) {
-                case X -> this.setDeltaMovement(
-                        -motion.x() * HORIZONTAL_RESTITUTION,
-                        motion.y(),
-                        motion.z()
-                );
-                case Y ->
-                        this.setDeltaMovement(motion.x() * VERTICAL_RESTITUTION, -motion.y() * VERTICAL_RESTITUTION, motion.z() * VERTICAL_RESTITUTION);
-                case Z -> this.setDeltaMovement(
-                        motion.x(),
-                        motion.y(),
-                        -motion.z() * HORIZONTAL_RESTITUTION
-                );
-            }
-            if (this.getFuse() == -1) {
-                this.setFuse(30);;
-            }
-        }
-
-        super.onHit(hitResult);
-    }
-
-    @Override
-    protected void onHitEntity(EntityHitResult entityHitResult) {
-        if (!this.level().isClientSide()) {
-            this.explode();
-        }
     }
 
     @Override
@@ -128,6 +82,7 @@ public abstract class ThrowableBombEntity extends ThrowableProjectile {
         super.tick();
 
         if (this.level().isClientSide()) {
+
             this.oRoll = this.roll;
 
             double distance = this.getDeltaMovement().lengthSqr();
@@ -139,12 +94,7 @@ public abstract class ThrowableBombEntity extends ThrowableProjectile {
                 this.level().addParticle(this.getParticle(), this.getX(), this.getY() + this.getBbHeight(), this.getZ(), 0, 0, 0);
             }
         } else {
-            if (this.getFuse() > -1) {
-                this.setFuse(this.getFuse()-1);;
-                if (this.getFuse() <= 0) {
-                    this.explode();
-                }
-            } else if (this.tickCount >= MAX_LIFE) {
+            if (this.level().getBlockState(this.blockPosition()).is(NMLTags.BOMB_EXPLODE)) {
                 this.explode();
             }
         }

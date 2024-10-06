@@ -71,7 +71,7 @@ public class NMLBlocks {
             () -> new ExtinguishedWallTorchBlock(ParticleTypes.SOUL_FIRE_FLAME, BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY), Blocks.SOUL_WALL_TORCH));
 
     public static final DeferredBlock<WoodenScaffoldingBlock> WOODEN_SCAFFOLDING = BLOCKS.register("wooden_scaffolding",
-            () -> new WoodenScaffoldingBlock(Block.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.CHERRY_WOOD)));
+            () -> new WoodenScaffoldingBlock(Block.Properties.ofFullCopy(Blocks.SCAFFOLDING).noCollission().sound(SoundType.CHERRY_WOOD)));
 
     public static final DeferredBlock<NMLCauldronBlock> RESIN_CAULDRON = BLOCKS.register("resin_cauldron",
             () -> new NMLCauldronBlock(NMLCauldronType.RESIN));

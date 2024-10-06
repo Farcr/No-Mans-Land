@@ -19,7 +19,7 @@ import java.util.Random;
 public class RemainsBlockEntity extends BrushableBlockEntity {
     public RemainsBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(pPos, pBlockState);
-        ((BlockEntityAccessor) this).setType(NMLBlockEntities.REMAINS.get());
+//        ((BlockEntityAccessor) this).setType(NMLBlockEntities.REMAINS.get());
     }
 
     @Override

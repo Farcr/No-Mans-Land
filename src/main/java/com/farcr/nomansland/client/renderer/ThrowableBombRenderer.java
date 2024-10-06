@@ -6,6 +6,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -57,7 +58,7 @@ public abstract class ThrowableBombRenderer<T extends ThrowableBombEntity> exten
         matrixStack.translate(0, -entity.getBbHeight() / 2F, 0);
 
         matrixStack.translate(-0.5, 0.0, -0.5);
-        this.renderModelLists(model, packedLight, OverlayTexture.NO_OVERLAY, matrixStack, buffers.getBuffer(Sheets.translucentCullBlockSheet()));
+        this.renderModelLists(model, packedLight, OverlayTexture.NO_OVERLAY, matrixStack, buffers.getBuffer(RenderType.entityCutout(this.getTextureLocation(entity))));
 
         matrixStack.popPose();
 
