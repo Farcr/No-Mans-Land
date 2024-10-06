@@ -2,9 +2,36 @@
   "fallback": "minecraft:empty",
   "elements": [
     {
+      "weight": 3,
+      "element": {
+        "location": "nomansland:small_dungeon/core_0",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "location": "nomansland:small_dungeon/core_1",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
       "weight": 1,
       "element": {
-        "location": "nomansland:small_dungeon/core",
+        "location": "nomansland:small_dungeon/core_2",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:small_dungeon/core_2_corner",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

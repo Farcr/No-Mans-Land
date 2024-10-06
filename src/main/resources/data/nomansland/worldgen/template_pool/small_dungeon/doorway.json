@@ -2,9 +2,9 @@
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 4,
+      "weight": 1,
       "element": {
-        "location": "nomansland:small_dungeon/decoration/chest",
+        "location": "nomansland:small_dungeon/doorway/arch",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -13,7 +13,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "nomansland:small_dungeon/decoration/cauldron",
+        "location": "nomansland:small_dungeon/doorway/closed",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -22,7 +22,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "nomansland:small_dungeon/decoration/dead_bush",
+        "location": "nomansland:small_dungeon/doorway/dead_end",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -31,7 +31,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "nomansland:small_dungeon/decoration/bookshelf_small",
+        "location": "nomansland:small_dungeon/doorway/hidden",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -40,7 +40,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "nomansland:small_dungeon/decoration/bookshelf",
+        "location": "nomansland:small_dungeon/doorway/open",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -49,7 +49,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "nomansland:small_dungeon/decoration/bookshelf_large",
+        "location": "nomansland:small_dungeon/doorway/small",
         "processors": "nomansland:small_dungeon_cobblestone_floor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

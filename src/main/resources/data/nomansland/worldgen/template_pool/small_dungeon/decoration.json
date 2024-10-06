@@ -1,0 +1,86 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 4,
+      "element": {
+        "location": "nomansland:small_dungeon/decoration/chest",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:small_dungeon/decoration/cauldron",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:small_dungeon/decoration/dead_bush",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:small_dungeon/decoration/brown_mushroom",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:small_dungeon/decoration/bookshelf_small",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:small_dungeon/decoration/bookshelf",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:small_dungeon/decoration/bookshelf_large",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:small_dungeon/decoration/torch",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:small_dungeon/decoration/sconce_torch",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
