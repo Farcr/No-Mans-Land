@@ -1,7 +1,12 @@
 {
-  "structures": [],
+  "structures": [
+    {
+      "structure": "nomansland:forest_temple",
+      "weight": 1
+    }
+  ],
   "placement": {
-    "salt": 4355,
+    "salt": 2952,
     "separation": 10,
     "spacing": 32,
     "type": "minecraft:random_spread"

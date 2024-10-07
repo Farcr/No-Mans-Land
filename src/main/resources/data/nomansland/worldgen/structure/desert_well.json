@@ -1,7 +1,7 @@
 {
   "type": "minecraft:jigsaw",
   "start_pool": "nomansland:desert_well/desert_well_desert_base",
-  "size": 7,
+  "size": 10,
   "max_distance_from_center": 64,
   "biomes": "#c:is_desert",
   "step": "surface_structures",
