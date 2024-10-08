@@ -15,6 +15,8 @@
     "ServerLevelMixin",
     "SnowAndFreezeFeatureMixin",
     "SpreadingSnowyDirtBlockMixin",
+    "ProjectileMixin",
+    "ThrownPotionMixin",
     "variants.AbstractFishMixin",
     "variants.CodMixin",
     "variants.CowMixin",

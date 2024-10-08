@@ -133,6 +133,9 @@ dependencies {
     localRuntime "maven.modrinth:worldedit:7.3.6"
     localRuntime "maven.modrinth:sodium:mc1.21-0.6.0-beta.2-neoforge"
     localRuntime "maven.modrinth:iris:1.8.0-beta.5+1.21-neoforge"
+    localRuntime "maven.modrinth:nbt-autocomplete:McjFDyOt"
+    localRuntime "maven.modrinth:cyanide:v4LiMGGH"
+
     localRuntime "me.djtheredstoner:DevAuth-neoforge:1.2.1"
 }
 

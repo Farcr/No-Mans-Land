@@ -78,6 +78,8 @@ public abstract class EntityMixin {
 
     @Shadow public abstract Set<String> getTags();
 
+    @Shadow public abstract void igniteForSeconds(float seconds);
+
     @Inject(method = "<init>", at = @At("TAIL"))
     private void init(EntityType entityType, Level level, CallbackInfo ci) {
         this.dimensions = this.getDimensions(this.getPose());
