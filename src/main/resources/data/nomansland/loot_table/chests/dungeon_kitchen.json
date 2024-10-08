@@ -10,28 +10,8 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:cobweb",
-          "weight": 1
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:string",
-          "weight": 4,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 3
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
           "name": "nomansland:field_mushroom",
-          "weight": 6,
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -60,15 +40,45 @@
         },
         {
           "type": "minecraft:item",
-          "name": "nomansland:wooden_scaffolding",
+          "name": "minecraft:wheat",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:beetroot",
           "weight": 5,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
+                "min": 4,
+                "max": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rotten_flesh",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
                 "min": 1,
-                "max": 4
+                "max": 10
               }
             }
           ]
@@ -79,17 +89,42 @@
       "rolls": {
         "type": "minecraft:uniform",
         "min": 1,
-        "max": 3
-      },
-      "bonus_rolls": {
-        "type": "minecraft:uniform",
-        "min": 0,
-        "max": 2
+        "max": 4
       },
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stick",
+          "name": "minecraft:apple",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nomansland:pear",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot",
           "weight": 10,
           "functions": [
             {
@@ -97,15 +132,30 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 4
+                "max": 5
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:seagrass",
-          "weight": 5,
+          "name": "minecraft:potato",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:poisonous_potato",
+          "weight": 1,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -119,22 +169,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "nomansland:duckweed",
-          "weight": 5,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 3
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:gold_nugget",
+          "name": "minecraft:pumpkin",
           "weight": 5,
           "functions": [
             {
@@ -154,18 +189,59 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:tadpole_bucket",
-          "weight": 1
+          "name": "minecraft:wheat_seeds",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 9
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:water_bucket",
-          "weight": 5
+          "name": "minecraft:beetroot_seeds",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 9
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:bucket",
-          "weight": 10
+          "name": "minecraft:pumpkin_seeds",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:red_mushroom",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1
+            }
+          ]
         }
       ]
     }

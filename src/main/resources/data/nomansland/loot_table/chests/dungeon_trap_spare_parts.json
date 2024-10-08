@@ -5,18 +5,28 @@
       "rolls": {
         "type": "minecraft:uniform",
         "min": 1,
-        "max": 2
+        "max": 4
       },
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:cobweb",
-          "weight": 1
+          "name": "minecraft:redstone",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:string",
-          "weight": 4,
+          "name": "minecraft:redstone_torch",
+          "weight": 8,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -30,37 +40,22 @@
         },
         {
           "type": "minecraft:item",
-          "name": "nomansland:field_mushroom",
-          "weight": 6,
+          "name": "minecraft:quartz",
+          "weight": 4,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 4
+                "max": 6
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:brown_mushroom",
-          "weight": 5,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 4
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "nomansland:wooden_scaffolding",
+          "name": "minecraft:copper_ingot",
           "weight": 5,
           "functions": [
             {
@@ -81,15 +76,10 @@
         "min": 1,
         "max": 3
       },
-      "bonus_rolls": {
-        "type": "minecraft:uniform",
-        "min": 0,
-        "max": 2
-      },
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stick",
+          "name": "minecraft:repeater",
           "weight": 10,
           "functions": [
             {
@@ -97,21 +87,6 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 4
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:seagrass",
-          "weight": 5,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
                 "max": 3
               }
             }
@@ -119,7 +94,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "nomansland:duckweed",
+          "name": "minecraft:comparator",
           "weight": 5,
           "functions": [
             {
@@ -127,14 +102,40 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 3
+                "max": 2
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:gold_nugget",
+          "name": "minecraft:redstone_lamp",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dispenser",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dropper",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:observer",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lever",
           "weight": 5,
           "functions": [
             {
@@ -142,30 +143,26 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 6
+                "max": 2
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
+        },
         {
           "type": "minecraft:item",
-          "name": "minecraft:tadpole_bucket",
+          "name": "minecraft:piston",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:note_block",
           "weight": 1
-        },
+        }
+      ],
+      "functions": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:water_bucket",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:bucket",
-          "weight": 10
+          "function": "minecraft:set_count",
+          "count": 1
         }
       ]
     }
