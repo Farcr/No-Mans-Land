@@ -17,7 +17,9 @@ public class NMLSurfaceData {
     protected static SurfaceRules.RuleSource makeRules() {
         return SurfaceRules.ifTrue(
                 SurfaceRules.ON_FLOOR,
-                    SurfaceRules.sequence(
+                SurfaceRules.ifTrue(
+                SurfaceRules.abovePreliminarySurface(),
+                SurfaceRules.sequence(
                 //Autumnal Forest
                 SurfaceRules.ifTrue(
                     SurfaceRules.isBiome(NMLBiomes.AUTUMNAL_FOREST),
@@ -65,7 +67,7 @@ public class NMLSurfaceData {
                     SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(62), 0),
                     SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(63), 0)),
                     SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0), WATER))))
-                ));
+                )));
     }
 
     private static SurfaceRules.RuleSource makeStateRule(Block block)
