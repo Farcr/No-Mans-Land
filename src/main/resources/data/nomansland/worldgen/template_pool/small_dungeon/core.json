@@ -36,6 +36,15 @@
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "nomansland:small_dungeon/core_long",
+        "processors": "nomansland:small_dungeon_cobblestone_floor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
     }
   ]
 }
