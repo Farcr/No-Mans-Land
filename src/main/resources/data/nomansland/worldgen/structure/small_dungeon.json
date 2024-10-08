@@ -4,8 +4,8 @@
   "size": 20,
   "max_distance_from_center": 100,
   "biomes": "#minecraft:is_overworld",
-  "step": "underground_decoration",
-  "terrain_adaptation": "beard_box",
+  "step": "underground_structures",
+  "terrain_adaptation": "none",
   "liquid_settings": "ignore_waterlogging",
   "start_height": {
     "type": "uniform",
