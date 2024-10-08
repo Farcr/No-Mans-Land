@@ -16,6 +16,7 @@
     "SnowAndFreezeFeatureMixin",
     "SpreadingSnowyDirtBlockMixin",
     "variants.AbstractFishMixin",
+    "variants.CodMixin",
     "variants.CowMixin",
     "variants.DolphinMixin",
     "variants.FoxMixin",
@@ -30,6 +31,7 @@
   "client": [
     "ModelBlockRendererMixin",
     "RenderLayerMixin",
+    "variants.CodRendererMixin",
     "variants.CowModelMixin",
     "variants.CowRendererMixin",
     "variants.DolphinRendererMixin",

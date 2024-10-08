@@ -202,6 +202,7 @@ public class MiscellaneousEvents {
 
         @SubscribeEvent
         public static void registerDatapackRegistries(DataPackRegistryEvent.NewRegistry event) {
+            event.dataPackRegistry(NMLVariants.COD_VARIANT_KEY, CodVariant.DIRECT_CODEC, CodVariant.DIRECT_CODEC);
             event.dataPackRegistry(NMLVariants.COW_VARIANT_KEY, CowVariant.DIRECT_CODEC, CowVariant.DIRECT_CODEC);
             event.dataPackRegistry(NMLVariants.DOLPHIN_VARIANT_KEY, DolphinVariant.DIRECT_CODEC, DolphinVariant.DIRECT_CODEC);
             event.dataPackRegistry(NMLVariants.GOAT_VARIANT_KEY, GoatVariant.DIRECT_CODEC, GoatVariant.DIRECT_CODEC);

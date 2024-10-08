@@ -12,6 +12,7 @@ public class NMLDataSerializers {
     public static final DeferredRegister<EntityDataSerializer<?>> ENTITY_DATA_SERIALIZERS =
             DeferredRegister.create(NeoForgeRegistries.ENTITY_DATA_SERIALIZERS, NoMansLand.MODID);
 
+    public static final DeferredHolder<EntityDataSerializer<?>, EntityDataSerializer<Holder<CodVariant>>> COD_VARIANT = ENTITY_DATA_SERIALIZERS.register("cod_variant", () -> EntityDataSerializer.forValueType(CodVariant.STREAM_CODEC));
     public static final DeferredHolder<EntityDataSerializer<?>, EntityDataSerializer<Holder<CowVariant>>> COW_VARIANT = ENTITY_DATA_SERIALIZERS.register("cow_variant", () -> EntityDataSerializer.forValueType(CowVariant.STREAM_CODEC));
     public static final DeferredHolder<EntityDataSerializer<?>, EntityDataSerializer<Holder<DolphinVariant>>> DOLPHIN_VARIANT = ENTITY_DATA_SERIALIZERS.register("dolphin_variant", () -> EntityDataSerializer.forValueType(DolphinVariant.STREAM_CODEC));
     public static final DeferredHolder<EntityDataSerializer<?>, EntityDataSerializer<Holder<GoatVariant>>> GOAT_VARIANT = ENTITY_DATA_SERIALIZERS.register("goat_variant", () -> EntityDataSerializer.forValueType(GoatVariant.STREAM_CODEC));

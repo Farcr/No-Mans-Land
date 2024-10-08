@@ -13,18 +13,22 @@ import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.Optional;
+
 @Mixin(AbstractFish.class)
 public abstract class AbstractFishMixin extends EntityMixin implements VariantHolder<Holder<?>> {
+
     @Inject(method = "saveToBucketTag", at = @At("TAIL"))
     private void saveToBucketTag(ItemStack stack, CallbackInfo ci) {
-        if (this.getType() == EntityType.SALMON) {
+        if (this.getTags().contains("variant")) {
             CustomData.update(DataComponents.BUCKET_ENTITY_DATA, stack, (data) -> {
                 this.getVariant().unwrapKey().ifPresent((variant) -> {
-                    data.putString("bucketVariant", variant.location().toString());
+                    data.putString("variant", variant.location().toString());
                 });
             });
         }
@@ -32,11 +36,12 @@ public abstract class AbstractFishMixin extends EntityMixin implements VariantHo
 
     @Inject(method = "loadFromBucketTag", at = @At("TAIL"))
     private void loadFromBucketTag(CompoundTag tag, CallbackInfo ci) {
-        if (this.getType() == EntityType.SALMON) {
             if (tag.contains("variant")) {
-                Registry<SalmonVariant> registry = this.registryAccess().registryOrThrow(NMLVariants.SALMON_VARIANT_KEY);
-                this.setVariant(registry.holders().filter(v -> v.unwrapKey().get().location().toString().equals(tag.getString("bucketVariant"))).findAny().get());
+                Optional<Registry<Object>> optionalRegistry = this.registryAccess().registry(NMLVariants.getVariantOfType(this.getType()));
+                if (optionalRegistry.isPresent()) {
+                    Registry<Object> registry = optionalRegistry.get();
+                    this.setVariant(registry.holders().filter(v -> v.unwrapKey().get().location().toString().equals(tag.getString("variant"))).findAny().get());
+                }
             }
-        }
     }
 }
