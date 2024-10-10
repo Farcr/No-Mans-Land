@@ -34,13 +34,13 @@ config="${mod_id}.mixins.json"
     ordering="AFTER"
     side="BOTH"
 
-[[dependencies.${mod_id}]]
-    modId="terrablender"
-    type="required"
-    reason="${tb_reason}"
-    versionRange="${tb_version_range}"
-    ordering="NONE"
-    side="BOTH"
+#[[dependencies.${mod_id}]]
+#    modId="terrablender"
+#    type="required"
+#    reason="${tb_reason}"
+#    versionRange="${tb_version_range}"
+#    ordering="NONE"
+#    side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="farmersdelight"

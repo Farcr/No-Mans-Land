@@ -15,6 +15,10 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.animal.Rabbit;
+import net.minecraft.world.entity.animal.camel.Camel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -23,10 +27,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.level.BlockGrowFeatureEvent;
@@ -211,6 +217,11 @@ public class MiscellaneousEvents {
             event.dataPackRegistry(NMLVariants.SALMON_VARIANT_KEY, SalmonVariant.DIRECT_CODEC, SalmonVariant.DIRECT_CODEC);
             event.dataPackRegistry(NMLVariants.SHEEP_VARIANT_KEY, SheepVariant.DIRECT_CODEC, SheepVariant.DIRECT_CODEC);
             event.dataPackRegistry(NMLVariants.TURTLE_VARIANT_KEY, TurtleVariant.DIRECT_CODEC, TurtleVariant.DIRECT_CODEC);
+        }
+
+        @SubscribeEvent
+        public static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+            event.register(EntityType.CAMEL, SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Camel::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.OR);
         }
     }
 }
