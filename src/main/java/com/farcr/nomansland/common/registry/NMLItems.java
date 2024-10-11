@@ -47,8 +47,10 @@ public class NMLItems {
             () -> new Item(new Item.Properties().food(NMLFoods.PEAR)));
     public static final DeferredItem<Item> SYRUPED_PEAR = registerItem("syruped_pear",
             () -> new MapleFoodItem(new Item.Properties().food(NMLFoods.SYRUPED_PEAR)));
+    public static final DeferredItem<Item> PANCAKE = registerItem("pancake",
+            () -> new MapleFoodItem(new Item.Properties().food(NMLFoods.PANCAKE)));
     public static final DeferredItem<Item> PEAR_COBBLER = registerItem("pear_cobbler",
-            () -> new Item(new Item.Properties().food(NMLFoods.PEAR_COBBLER)));
+            () -> new MapleFoodItem(new Item.Properties().food(NMLFoods.PEAR_COBBLER)));
     //TODO: FD compat pear juice and cobbler slice
     public static final DeferredItem<Item> HONEYED_APPLE = registerItem("honeyed_apple",
             () -> new HoneyFoodItem(new Item.Properties().food(NMLFoods.HONEYED_APPLE)));
@@ -352,6 +354,7 @@ public class NMLItems {
             event.accept(NMLItems.MAPLE_SYRUP_BOTTLE);
             event.accept(NMLItems.PEAR);
             event.accept(NMLItems.SYRUPED_PEAR);
+            event.accept(NMLItems.PANCAKE);
             event.accept(NMLItems.PEAR_COBBLER);
             event.accept(NMLItems.HONEYED_APPLE);
             event.accept(NMLItems.WALNUTS);
