@@ -11,7 +11,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "minecraft:wheat"
+      "item": "minecraft:wheat"
     },
     {
       "item": "minecraft:egg"
