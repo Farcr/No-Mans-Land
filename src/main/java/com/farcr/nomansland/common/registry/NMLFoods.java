@@ -19,11 +19,11 @@ public class NMLFoods {
     public static final FoodProperties MAPLE_SYRUP_BOTTLE = new FoodProperties.Builder().nutrition(5).saturationModifier(0.2f).alwaysEdible().usingConvertsTo(Items.GLASS_BOTTLE).build();
 
     public static final FoodProperties PEAR = new FoodProperties.Builder().nutrition(4).saturationModifier(0.3f).build();
-    public static final FoodProperties SYRUPED_PEAR = new FoodProperties.Builder().nutrition(6).saturationModifier(0.4f).build();
+    public static final FoodProperties SYRUPED_PEAR = new FoodProperties.Builder().nutrition(5).saturationModifier(0.4f).build();
     public static final FoodProperties PEAR_COBBLER = new FoodProperties.Builder().nutrition(7).saturationModifier(0.5f).build();
     public static final FoodProperties PANCAKE = new FoodProperties.Builder().nutrition(7).saturationModifier(0.5f).build();
 
-    public static final FoodProperties HONEYED_APPLE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.4f).build();
+    public static final FoodProperties HONEYED_APPLE = new FoodProperties.Builder().nutrition(5).saturationModifier(0.4f).build();
 
     public static final FoodProperties WALNUTS = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3f).fast().build();
 }
