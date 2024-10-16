@@ -14,6 +14,8 @@ import java.util.function.Supplier;
  */
 public enum Mods {
     FARMERSDELIGHT,
+    TERRABLENDER,
+    BIOLITH,
     CREATE;
 
     private final String id;

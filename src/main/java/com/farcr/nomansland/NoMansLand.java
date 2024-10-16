@@ -1,7 +1,7 @@
 package com.farcr.nomansland;
 
 import com.farcr.nomansland.common.registry.*;
-import com.farcr.nomansland.common.world.NMLTerrablender;
+import com.farcr.nomansland.integration.biolith.NMLBiomePlacements;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -30,8 +30,9 @@ public class NoMansLand {
         NMLLootModifiers.LOOT_MODIFIERS.register(modEventBus);
         NMLTreeDecoratorType.TREE_DECORATOR_TYPES.register(modEventBus);
         NMLDataSerializers.ENTITY_DATA_SERIALIZERS.register(modEventBus);
-        NMLTerrablender.registerRegions();
-        NMLTerrablender.registerSurfaceData();
+//        NMLTerrablender.registerRegions();
+//        NMLTerrablender.registerSurfaceData();
+        NMLBiomePlacements.registerBiomes();
 
         modEventBus.addListener(NMLItems::addCreative);
         modEventBus.addListener(this::commonSetup);

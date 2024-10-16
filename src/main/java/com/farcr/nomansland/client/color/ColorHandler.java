@@ -11,24 +11,23 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
+@SuppressWarnings("unused")
 @EventBusSubscriber(modid = NoMansLand.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ColorHandler {
     @SubscribeEvent
-    public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
-        event.getItemColors().register((stack, index) -> GrassColor.get(0.5D, 1.0D),
+    public static void registerItemColorHandlers(RegisterColorHandlersEvent.Item event) {
+        event.register((state, tintIndex) -> GrassColor.get(0.5D, 1),
                 NMLBlocks.GRASS_SPROUTS.get(),
-                NMLBlocks.FIDDLEHEAD.get()
-        );
-        //TODO: REMEMBER TO GET THIS FIXED, CAPPIN SAID NEO HAD SOMETHING FOR THIS? OTHERWISE VEIL WILL BE ABLE TO FIX THIS WHEN IT'S STABLE
-        event.getItemColors().register((stack, index) -> {
-                    int grassColorPacked = GrassColor.get(0.5D, 1.0D);
-                    return packColor(unpackRed(grassColorPacked) / 0.556862745F,
-                            unpackGreen(grassColorPacked) / 0.745098039F,
-                            unpackBlue(grassColorPacked) / 0.705882353F);
-                },
-                NMLBlocks.OAT_GRASS.get()
-        );
-        event.getItemColors().register((stack, index) -> FoliageColor.get(0.5D, 1.0D),
+                NMLBlocks.FIDDLEHEAD.get());
+
+        event.register((state, tintIndex) -> {
+            int grassColorPacked = GrassColor.get(0.5D, 1.0D);
+            return packColor(unpackRed(grassColorPacked) / 0.556862745F,
+                    unpackGreen(grassColorPacked) / 0.745098039F,
+                    unpackBlue(grassColorPacked) / 0.705882353F);
+        }, NMLBlocks.OAT_GRASS.get());
+
+        event.register((stack, index) -> FoliageColor.get(0.5D, 1.0D),
                 NMLBlocks.MAPLE_LEAVES.get(),
                 NMLBlocks.WALNUT_LEAVES.get(),
                 NMLBlocks.APPLE_FRUIT_LEAVES.get(),
@@ -37,23 +36,23 @@ public class ColorHandler {
     }
 
     @SubscribeEvent
-    public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
-        event.getBlockColors().register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D),
+    public static void registerBlockColorHandlers(RegisterColorHandlersEvent.Block event) {
+        event.register((state, level, pos, tintIndex) -> level != null && pos != null ? BiomeColors.getAverageGrassColor(level, pos) : GrassColor.get(0.5D, 1.0D),
                 NMLBlocks.GRASS_SPROUTS.get(),
                 NMLBlocks.FIDDLEHEAD.get(),
                 NMLBlocks.CUT_SUGAR_CANE.get(),
                 NMLBlocks.FROSTED_GRASS.get()
         );
-        event.getBlockColors().register((state, world, pos, tintIndex) -> {
+        event.register((state, level, pos, tintIndex) -> {
                     int grassColorPacked = GrassColor.get(0.5D, 1.0D);
-                    if (world != null && pos != null) grassColorPacked = BiomeColors.getAverageGrassColor(world, pos);
+                    if (level != null && pos != null) grassColorPacked = BiomeColors.getAverageGrassColor(level, pos);
                     return packColor(unpackRed(grassColorPacked) / 0.556862745F,
                             unpackGreen(grassColorPacked) / 0.745098039F,
                             unpackBlue(grassColorPacked) / 0.705882353F);
                 },
                 NMLBlocks.OAT_GRASS.get()
         );
-        event.getBlockColors().register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : GrassColor.get(0.5D, 1.0D),
+        event.register((state, level, pos, tintIndex) -> level != null && pos != null ? BiomeColors.getAverageFoliageColor(level, pos) : GrassColor.get(0.5D, 1.0D),
                 NMLBlocks.MAPLE_LEAVES.get(),
                 NMLBlocks.WALNUT_LEAVES.get(),
                 NMLBlocks.APPLE_FRUIT_LEAVES.get(),
